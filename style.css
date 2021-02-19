@@ -1,0 +1,188 @@
+/*body { margin:0; padding:0;}*/
+#map1 { 
+	display: block;
+	position:absolute; 
+	top:0; bottom:0; left: 0; width:50%; height: 400px; }
+#map2 { 
+	display: block;
+	position:absolute; 
+	top:0; bottom:0; right: 0; width:50%; height: 400px; }
+
+.mapbox1{
+	position: relative;
+	margin-right: 10px;
+}
+.mapbox2{
+	position: relative;
+	margin-left: 10px;
+}
+.maplabel {
+  position: top;
+	text-align: center;
+  background: white;
+  z-index: 1000;
+  font-size: 14px;
+	font-family: sans-serif;
+  padding: 10px;
+}
+
+#map1-metric { 
+	display: block; position: absolute; top:0; bottom:0; left: 0; width:50%; height: 400px; }
+#map2-metric { 
+	display: block; position: absolute; top:0; bottom:0; right: 0; width:50%; height: 400px; }
+
+.left-metrics{
+	position: relative;
+	margin-right: 10px;
+}
+
+.right-metrics{
+	position: relative;
+	margin-left: 10px;
+}
+
+.atlas-title h2{
+	font-size: 180%;
+	font-weight: bold;
+	text-align: center;
+}
+.atlas-query{
+	text-align: center;
+}
+.emptyspace{
+	height: 20px;
+}
+.emptyspace-table{
+	height: 430px;
+}
+
+/* START OF LEFT CONTROLS STYLE */
+.left-map-controls{
+	float: left;
+}
+/* END OF LEFT CONTROLS STYLE */
+
+
+/* START OF CITY 1 DROPDOWN STYLE*/
+
+.atlas-city1 select{
+	width: 142px;
+}
+
+/* END OF CITY 1 DROPDOWN STYLE*/
+
+/* START OF CITY 2 DROPDOWN STYLE*/
+
+.atlas-city2 select{
+	width: 142px;
+}
+
+/* END OF CITY 2 DROPDOWN STYLE*/
+
+/* START OF DIRECT/NODE TOGGLE STYLE*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #d81b60;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #d81b60;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.toggleText{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/* END OF DIRECT/NODE TOGGLE STYLE*/
+
+/* START OF RIGHT CONTROLS STYLE */
+.right-map-controls{
+	float: right;
+}
+/* END OF RIGHT CONTROLS STYLE */
+
+/* START OF MAP CONTROLS AREA STYLE */
+.group:before, .group:after{
+content: "";
+display: table;
+}
+
+.group:after{
+	clear: both;
+}
+
+.group{
+	zoom: 1;
+}
+/* END OF MAP CONTROLS AREA STYLE */
+
+/* START OF COMPARE BUTTON STYLE*/
+.compare-btn{
+	text-align: center;
+}
+
+.compare-btn .button{
+	background-color: #d81b60;
+  border: none;
+  color: white;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* END OF COMPARE BUTTON STYLE*/

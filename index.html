@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset='utf-8' />
+<title>Map Comparison</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+	<!-- START OF WEB ATLAS -->
+	<div class="atlas-title">
+		<h2>
+			CAMMM Web Atlas
+		</h2>
+	</div>
+	
+	
+	<!-- START OF QUERY LIST -->
+	<div class="atlas-query">
+		<select id="queryList" onchange="getSelectedQuery();">
+        <option diasbled selected>Select Query</option>
+        <option value="NodEdg">Bus Node-Edge Ratio</option>
+        <option value="CenDeg">Bus Stop Centrality - Degree</option>
+        <option value="CenClo">Bus Stop Centrality - Closeness</option>
+			<option value="CenEig">Bus Stop Centrality - Eigen Vector</option>
+      </select>
+	</div>
+	<div class="emptyspace"></div>
+	<!-- END OF QUERY LIST -->
+	
+	<!-- START OF MAP CONTROLS AREA -->
+	<div class="map-controls-area group">
+<!-- 	::before -->
+	<!-- START OF LEFT CONTROLS -->
+	<div class="left-map-controls">
+	
+		<!-- START OF CITY 1 LIST -->
+	<div class="atlas-city1">
+		<select id="city1List" onchange="getSelectedCity1();">
+        <option diasbled selected>Select City 1</option>
+        <option value="Montreal">Montreal</option>
+        <option value="Vienna">Vienna</option>
+        <option value="Barcelona">Barcelona</option>
+			<option value="Budapest">Budapest</option>
+			<option value="Quebec">Quebec</option>
+      </select>
+	</div>
+	<div class="emptyspace"></div>
+	<!-- END OF CITY 1 LIST -->
+	
+	<!-- START OF DIRECT/NODE TOGGLE 1 -->
+	<p class="toggleText">Direct     
+		<label class="switch">
+  <input type="checkbox" id="toggBtn1" onclick="getToggle1Value();">
+  <span class="slider round"></span>
+</label>     Node
+	</p>
+	
+	<!-- END OF DIRECT/NODE TOGGLE 1 -->
+		
+	</div> <!--END OF LEFT CONTROLS -->
+	
+	<!-- START OF RIGHT CONTROLS -->
+	<div class="right-map-controls">
+	
+		<!-- START OF CITY 2 LIST -->
+	<div class="atlas-city2">
+		<select id="city2List" onchange="getSelectedCity2();">
+        <option diasbled selected>Select City 2</option>
+        <option value="Montreal">Montreal</option>
+        <option value="Vienna">Vienna</option>
+        <option value="Barcelona">Barcelona</option>
+			<option value="Budapest">Budapest</option>
+			<option value="Quebec">Quebec</option>
+      </select>
+	</div>
+	<div class="emptyspace"></div>
+	<!-- END OF CITY 2 LIST -->
+	
+	<!-- START OF DIRECT/NODE TOGGLE 2 -->
+	<p class="toggleText">Direct     
+		<label class="switch">
+  <input type="checkbox" id="toggBtn2" onclick="getToggle2Value();">
+  <span class="slider round"></span>
+</label>     Node
+	</p>
+	
+	<!-- END OF DIRECT/NODE TOGGLE 2 -->
+		
+	</div> <!--END OF RIGHT CONTROLS -->
+<!-- 	::after -->
+	</div> <!--END OF MAP CONTROLS AREA -->
+	
+	<!-- START OF COMPARE BUTTON -->
+	
+	<div class="compare-btn">
+		<button class="button" onclick="MapUpdater();">Compare</button>
+	</div>
+	<div class="emptyspace"></div>
+	
+	<!-- END OF COMPARE BUTTON -->
+	
+	<!-- START OF MAPBOX -->
+	<div class="mapbox1" id="map1div" style = "display: none;">
+		  <div class='maplabel'>Map 1</div>
+  		<div id='map1'></div>
+	</div>
+	<div class="mapbox2" id= "map2div" style = "display: none;">
+		<div class='maplabel map2'>Map 2</div>
+  	<div id='map2'></div>
+	</div>
+	<!-- END OF MAPBOX -->
+	
+	<div class="emptyspace-table"></div>
+	
+<!-- START OF MAP METRICS AREA	-->
+		<div class = "left-metrics">
+			<div id = "map1-metric">
+				[wpdatatable id=1]
+			</div>
+		</div>
+		<div class = "right-metrics">
+			<div id = "map2-metric">
+				[wpdatatable id=2]
+			</div>
+		</div>
+<!-- END OF MAP METRICS AREA -->
+
+	
+	<!-- START OF FUNCTION FOR QUERY  SELECTION -->
+	<script>
+        function getSelectedQuery(){
+            var selectedQuery = document.getElementById("queryList").value;
+            QueryUpdater(selectedQuery);
+          }
+        getSelectedQuery();
+</script>
+
+<!-- END OF FUNCTION FOR QUERY SELECTION  -->
+
+	
+	
+<!-- START OF FUNCTION FOR CITY 1 SELECTION  -->
+	<script> 
+		function getSelectedCity1(){
+			var selectedCity = document.getElementById("city1List").value;
+			CityUpdater1(selectedCity);
+			var map1div = document.getElementById('map1div');
+
+			var map1display = map1div.style.display;
+			if(map1display == 'none')
+				{
+					map1div.style.display = 'block';
+				}
+			}
+		getSelectedCity1();
+	</script>
+	<!-- END OF FUNCTION FOR CITY 1 SELECTION  -->
+	
+	<!-- START OF FUNCTION FOR TOGGLE 1 SELECTION  -->
+	<script>
+	function getToggle1Value(){
+		var selFormAnalysis1 = document.getElementById('toggBtn1').checked;
+		AnalysisUpdater1(selFormAnalysis1);
+	}
+		getToggle1Value();
+	</script>
+<!-- END OF FUNCTION FOR TOGGLE 1 SELECTION  -->
+	
+	<!-- START OF FUNCTION FOR CITY 2 SELECTION  -->
+	<script> 
+		function getSelectedCity2(){
+			var selectedCity = document.getElementById("city2List").value;
+			CityUpdater2(selectedCity);
+			var map2div = document.getElementById('map2div');
+			
+			var map2display = map2div.style.display;
+			if(map2display == 'none')
+				{
+					map2div.style.display = 'block';
+				}
+		}
+		getSelectedCity2();
+	</script>
+	<!-- END OF FUNCTION FOR CITY 2 SELECTION  -->
+	
+	<!-- START OF FUNCTION FOR TOGGLE 2 SELECTION  -->
+	<script>
+	function getToggle2Value(){
+		var selFormAnalysis2 = document.getElementById('toggBtn2').checked;
+		AnalysisUpdater2(selFormAnalysis2);
+	}
+		getToggle2Value();
+	</script>
+<!-- END OF FUNCTION FOR TOGGLE 2 SELECTION  -->
+	
+	<!-- END OF WEB ATLAS -->
+</body>
+</html>
