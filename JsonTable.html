@@ -13,8 +13,6 @@
 <table class="table table-striped">
     <tr class="bg-info">
         <th>Name</th>
-        <th>Age</th>
-        <th>Birthday</th>
     </tr>
 
     <tbody id="myTable">
@@ -35,15 +33,19 @@
             
         }
         );
-        console.log(json["Quebec"]);
+        console.log(json["City"]["Quebec"]);
         
-    // buildTable(myArray)
+    buildTable(json)
 
 
 
-    // function buildTable(data) {
-    //     var table = document.getElementById('myTable')
-
+    function buildTable(data) {
+        var table = document.getElementById('myTable')
+        var row = `<tr>
+                        <td>${data["City"]["Quebec"].name}</td>
+ 				  </tr>`
+       table.innerHTML += row
+                }
     //     for (var i = 0; i < data.length; i++) {
     //         var row = `<tr>
 	// 						<td>${data[i].name}</td>
