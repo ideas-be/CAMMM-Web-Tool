@@ -83,21 +83,23 @@
         // const json = require('./CityMetrics.json');
         fetch("./CityMetrics.json")
         .then(response => {
-        return response.json();})
+        return response.json();}
+        )
         .then(data => 
             {
                 console.log(data);
                 var json=data;
+                $("#tbody").jPut({
+                    jsonData:json[0],
+                    //ajax_url:"youfile.json",  if you want to call from a json file
+                    name:"tbody_template",
+                });
             }
         );
         //while running this code the template will be appended in your div with json data
-        $(document).ready(function(){
-        $("#tbody").jPut({
-            jsonData:json[0],
-            //ajax_url:"youfile.json",  if you want to call from a json file
-            name:"tbody_template",
-        });
-        });
+        // $(document).ready(function(){
+        
+        // });
     </script>
 </body>
 
