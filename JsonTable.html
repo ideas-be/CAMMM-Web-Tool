@@ -23,6 +23,7 @@
 </table>
 
 <script>
+    var json;
     fetch("./CityMetrics.json")
         .then(response => {
             return response.json();
@@ -30,12 +31,13 @@
         )
         .then(data => {
             console.log(data);
-            var json = data;
-            console.log(json[0]);
+            json = data;
+            
         }
         );
-
-    buildTable(myArray)
+        console.log(json[0]);
+        
+    // buildTable(myArray)
 
 
 
