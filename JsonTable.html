@@ -34,13 +34,15 @@
         }
         );
         // console.log(json["City"]["Quebec"]);
+        var QuebecData=json["City"]["Quebec"];
+        console.log(QuebecData.name);
         
     buildTable()
 
     function buildTable() {
         var table = document.getElementById('myTable')
         var row = `<tr>
-                        <td>json["City"]["Quebec"].name</td>
+                        <td>`+json["City"]["Quebec"].name+`</td>
  				  </tr>`
        table.innerHTML += row
                 }
