@@ -35,14 +35,14 @@
         );
         // console.log(json["City"]["Quebec"]);
         
-    buildTable(json)
+    buildTable()
 
 
 
-    function buildTable(data) {
+    function buildTable() {
         var table = document.getElementById('myTable')
         var row = `<tr>
-                        <td>${data["City"]["Quebec"].name}</td>
+                        <td>${json["City"]["Quebec"].name}</td>
  				  </tr>`
        table.innerHTML += row
                 }
