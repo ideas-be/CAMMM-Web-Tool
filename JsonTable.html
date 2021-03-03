@@ -21,7 +21,7 @@
 </table>
 
 <script>
-    var json;
+    var CityData;
     fetch("./CityMetrics.json")
         .then(response => {
             return response.json();
@@ -29,12 +29,12 @@
         )
         .then(data => {
             console.log(data);
-            json = data;
+            CityData = data;
             
         }
         );
         // console.log(json["City"]["Quebec"]);
-        var QuebecData=json[0][0];
+        var QuebecData= CityData[0][0];
         console.log(QuebecData.name);
         
     buildTable()
@@ -42,7 +42,7 @@
     function buildTable() {
         var table = document.getElementById('myTable')
         var row = `<tr>
-                        <td>`+json["City"]["Quebec"].name+`</td>
+                        <td>`+ CityData["City"]["Quebec"].name+`</td>
  				  </tr>`
        table.innerHTML += row
                 }
