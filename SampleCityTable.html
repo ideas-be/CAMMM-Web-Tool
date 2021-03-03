@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset='utf-8' />
+<title>Map Comparison</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+</head>
+<body>
+    <table jput = "t_template">
+        <tbody jput = "tbody_template">
+            <tr>
+                <td>
+                    City: {{name}}
+                </td>
+                <td>
+                    Number of Transportation Systems: {{NumTransportSystem}}
+                </td>
+                <td>
+                    Number of Bus Stops: {{NumBusStops}}
+                </td>
+                <td>
+                    Number of Rail Stations: {{NumRailStations}}
+                </td>
+                <td>
+                    Number of Metro Stations: {{NumMetroStations}}
+                </td>
+                <td>
+                    Number of Boroughs: {{NumBoroughs}}
+                </td>
+                <td>
+                    Area in sqkm: {{AreaSqKm}}
+                </td>
+                <td>
+                    Population in million: {{PopulationMillion}}
+                </td>
+                <td>
+                    Density per sqkm: {{DensityPersonSqKm}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function(){
+        const json = require('CityMetrics.json');
+        // const json = [{"name": "name1","email":"email1@domain.com"},{"name": "name2","link":"email2@domain.com"}];
+        //while running this code the template will be appended in your div with json data
+        $("#tbody").jPut({
+            jsonData:json,
+            //ajax_url:"youfile.json",  if you want to call from a json file
+            name:"tbody_template",
+        });
+        });
+    </script>
+</body>
+
+</html>
