@@ -1,6 +1,6 @@
 {
-    "City" : [
-        {
+    "City" : {
+        "Montreal":{
             "name": "Montréal",
             "NumTransportSystem": 3,
             "NumBusStops": 65666,
@@ -11,7 +11,7 @@
             "PopulationMillion":1.78,
             "DensityPersonSqKm":4115
         },
-        {
+        "Vienna":{
             "name": "Vienna",
             "NumTransportSystem": 6,
             "NumBusStops": 78888,
@@ -22,7 +22,7 @@
             "PopulationMillion":1.8,
             "DensityPersonSqKm":4341
         },
-        {
+        "Barcelona":{
             "name": "Barcelona",
             "NumTransportSystem": 6,
             "NumBusStops": 44444,
@@ -33,7 +33,7 @@
             "PopulationMillion":5.575,
             "DensityPersonSqKm":54710
         },
-        {
+        "Budapest":{
             "name": "Budapest",
             "NumTransportSystem": 2,
             "NumBusStops": 3333333,
@@ -44,7 +44,7 @@
             "PopulationMillion":1.75,
             "DensityPersonSqKm":3388
         },
-        {
+        "Quebec":{
             "name": "Quebec",
             "NumTransportSystem": 4,
             "NumBusStops": 777777,
@@ -55,6 +55,6 @@
             "PopulationMillion":0.57,
             "DensityPersonSqKm":1648
         }
-    ]
+    }
 }
 
