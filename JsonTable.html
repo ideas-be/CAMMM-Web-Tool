@@ -21,22 +21,45 @@
 </table>
 
 <script>
-    var CityData;
-    fetch("./CityMetrics.json")
-        .then(response => {
-            return response.json();
-        }
-        )
-        .then(data =>{
-            // console.log(data);
-            let CityData = data;
-        }
-        );
-        console.log(CityData);
+    // var CityData;
+    // fetch("./CityMetrics.json")
+    //     .then(response => {
+    //         return response.json();
+    //     }
+    //     )
+    //     .then(data =>{
+    //         // console.log(data);
+    //         let CityData = data;
+    //     }
+    //     );
+    //     console.log(CityData);
         // console.log(json["City"]["Quebec"]);
         // var QuebecData= CityData["City"]["Quebec"];
         // console.log(QuebecData.name);
         
+    function loadJSON(callback) {   
+        xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', './CityMetrics.json', true); // Replace 'my_data' with the path to your file
+        xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+            }
+        };
+        xobj.send(null); 
+    }
+
+    function init() {
+        loadJSON(function(response) {
+        // Parse JSON string into object
+            var actual_JSON = JSON.parse(response);
+            });
+    }
+
+    function init();
+    console.log(actual_JSON);
+
     // buildTable()
 
     // function buildTable() {
