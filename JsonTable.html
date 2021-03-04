@@ -27,13 +27,12 @@
             return response.json();
         }
         )
-        .then(data => {
+        .then(data =>{
             // console.log(data);
-            CityData = data;
-            
+            CityData = toString(data);
+            console.log(CityData);
         }
         );
-        console.log(CityData);
         // console.log(json["City"]["Quebec"]);
         // var QuebecData= CityData["City"]["Quebec"];
         // console.log(QuebecData.name);
