@@ -21,7 +21,7 @@
 </table>
 
 <script>
-    var CityData="";
+    // var CityData="";
     fetch("./CityMetrics.json")
         .then(response => {
             return response.json();
@@ -29,7 +29,7 @@
         )
         .then(data =>{
             // console.log(data);
-            CityData = toString(data);
+            let CityData = data;
             console.log(CityData);
         }
         );
@@ -37,15 +37,15 @@
         // var QuebecData= CityData["City"]["Quebec"];
         // console.log(QuebecData.name);
         
-    buildTable()
+    // buildTable()
 
-    function buildTable() {
-        var table = document.getElementById('myTable')
-        var row = `<tr>
-                        <td>`+ CityData["City"]["Quebec"].name+`</td>
- 				  </tr>`
-       table.innerHTML += row
-                }
+    // function buildTable() {
+    //     var table = document.getElementById('myTable')
+    //     var row = `<tr>
+    //                     <td>`+ CityData["City"]["Quebec"].name+`</td>
+ 	// 			  </tr>`
+    //    table.innerHTML += row
+                // }
     //     for (var i = 0; i < data.length; i++) {
     //         var row = `<tr>
 	// 						<td>${data[i].name}</td>
