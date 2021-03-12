@@ -137,7 +137,7 @@
 		function getSelectedCity1(){
 			var selectedCity = document.getElementById("city1List").value;
 			CityUpdater1(selectedCity);
-			CityDataDisplay(selectedCity);
+			CityDataDisplay(selectedCity, 1);
 			var map1div = document.getElementById('map1div');
 
 			var map1display = map1div.style.display;
@@ -165,7 +165,7 @@
 		function getSelectedCity2(){
 			var selectedCity = document.getElementById("city2List").value;
 			CityUpdater2(selectedCity);
-			CityDataDisplay(selectedCity);
+			CityDataDisplay(selectedCity, 2);
 			var map2div = document.getElementById('map2div');
 			
 			var map2display = map2div.style.display;
@@ -217,10 +217,10 @@
         document.getElementById("output").innerHTML = myContainer;                          // The looped data is integrated into the HTML
     }
 
-	function CityDataDisplay(selCity){
+	function CityDataDisplay(selCity, cityNum){
 		for(key in myJson["City"]){
 			if (myJson["City"][key].name == selCity) {
-				city1Container+=
+				cityContainer+=
 				"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" + 
 				"Number of Bus Stops: " + myJson["City"][key].NumBusStops + "<br>"+ 
 				"Number of Rail Stops: " + myJson["City"][key].NumTransportSystem + "<br>" + 
@@ -229,10 +229,15 @@
 				"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" +
 				"Area in sq. km.: " + myJson["City"][key].AreaSqKm + "<br>" + 
 				"Population in million: " + myJson["City"][key].PopulationMillion + "<br>" + 
-				"Density per sq. km.: " + myJson["City"][key].DensityPersonSqKm + "<br>"		
+				"Density per sq. km.: " + myJson["City"][key].DensityPersonSqKm + "<br>";		
 			}
 		  }
-		document.getElementById("output").innerHTML = cityContainer; 
+		if(cityNum == 1){
+			document.getElementById("city1table").innerHTML = cityContainer;
+		}else if(cityNum == 2){
+			document.getElementById("city2table").innerHTML = cityContainer;
+		}
+		 
 	}
 
     a.send();        // Closes the XMLHttpRequest                                         
