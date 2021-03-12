@@ -19,10 +19,10 @@
 		<h2>
 			CAMMM Web Atlas
 		</h2>
-		<a href="MapBoxExample.html">MapBox Example</a>
+		<!-- <a href="MapBoxExample.html">MapBox Example</a>
 		<a href="SampleCityTable.html">Table Experiment</a>
 		<a href="JsonTable.html">Jason Table Experiment</a>
-		<a href="jsontestTable.html">Updated Jason Table Test</a>
+		<a href="jsontestTable.html">Updated Jason Table Test</a> -->
 	</div>
 	
 	
@@ -165,6 +165,7 @@
 		function getSelectedCity2(){
 			var selectedCity = document.getElementById("city2List").value;
 			CityUpdater2(selectedCity);
+			CityDataDisplay(selectedCity);
 			var map2div = document.getElementById('map2div');
 			
 			var map2display = map2div.style.display;
@@ -190,8 +191,7 @@
 <!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
 <script>
     var myContainer = "";
-	var city1Container = "";
-	var city2Container = "";
+	var cityContainer = "";
     var myJson;
 
     var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
@@ -217,9 +217,9 @@
         document.getElementById("output").innerHTML = myContainer;                          // The looped data is integrated into the HTML
     }
 
-	function CityDataDisplay(selCity1){
+	function CityDataDisplay(selCity){
 		for(key in myJson["City"]){
-			if (myJson["City"][key].name == selCity1) {
+			if (myJson["City"][key].name == selCity) {
 				city1Container+=
 				"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" + 
 				"Number of Bus Stops: " + myJson["City"][key].NumBusStops + "<br>"+ 
@@ -232,6 +232,7 @@
 				"Density per sq. km.: " + myJson["City"][key].DensityPersonSqKm + "<br>"		
 			}
 		  }
+		document.getElementById("output").innerHTML = cityContainer; 
 	}
 
     a.send();        // Closes the XMLHttpRequest                                         
