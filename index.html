@@ -135,16 +135,23 @@
 <!-- START OF FUNCTION FOR CITY 1 SELECTION  -->
 	<script> 
 		function getSelectedCity1(){
+			
 			var selectedCity = document.getElementById("city1List").value;
-			CityUpdater1(selectedCity);
-			CityDataDisplay(selectedCity, 1);
-			var map1div = document.getElementById('map1div');
 
-			var map1display = map1div.style.display;
-			if(map1display == 'none')
-				{
-					map1div.style.display = 'block';
-				}
+			if(selectedCity != "Select City 1"){
+				
+				CityUpdater1(selectedCity);
+				CityDataDisplay(selectedCity, 1);
+				
+				var map1div = document.getElementById('map1div');
+
+				var map1display = map1div.style.display;
+				if(map1display == 'none')
+					{
+						map1div.style.display = 'block';
+					}
+			}
+			
 			}
 		getSelectedCity1();
 	</script>
@@ -164,15 +171,20 @@
 	<script> 
 		function getSelectedCity2(){
 			var selectedCity = document.getElementById("city2List").value;
-			CityUpdater2(selectedCity);
-			CityDataDisplay(selectedCity, 2);
-			var map2div = document.getElementById('map2div');
-			
-			var map2display = map2div.style.display;
-			if(map2display == 'none')
-				{
-					map2div.style.display = 'block';
-				}
+
+			if(selectedCity != "Select City 2"){
+
+				CityUpdater2(selectedCity);
+				CityDataDisplay(selectedCity, 2);
+
+				var map2div = document.getElementById('map2div');
+				
+				var map2display = map2div.style.display;
+				if(map2display == 'none')
+					{
+						map2div.style.display = 'block';
+					}
+			}
 		}
 		getSelectedCity2();
 	</script>
