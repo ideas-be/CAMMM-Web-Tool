@@ -33,11 +33,9 @@
         for(i=0;i<myJson.length;i++){                                                       // Loop with the data
             myContainer += myJson[i].name.first + " " + myJson[i].name.last + "<br>";           // loopy actions in the data to display them in the HTML
         }
-        
+        document.getElementById("output").innerHTML = myContainer;                          // The looped data is integrated into the HTML
     }
 
-    document.getElementById("output").innerHTML = myContainer;                          // The looped data is integrated into the HTML
-    
     a.send();        // Closes the XMLHttpRequest                                         
 </script>
 </body>

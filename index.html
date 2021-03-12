@@ -26,19 +26,6 @@
 	</div>
 	
 	
-	<!-- START OF QUERY LIST -->
-	<!-- <div class="atlas-query">
-		<select id="queryList" onchange="getSelectedQuery();">
-        <option diasbled selected>Select Query</option>
-        <option value="NodEdg">Bus Node-Edge Ratio</option>
-        <option value="CenDeg">Bus Stop Centrality - Degree</option>
-        <option value="CenClo">Bus Stop Centrality - Closeness</option>
-			<option value="CenEig">Bus Stop Centrality - Eigen Vector</option>
-      </select>
-	</div>
-	<div class="emptyspace"></div> -->
-	<!-- END OF QUERY LIST -->
-	
 	<!-- START OF MAP CONTROLS AREA -->
 	<div class="map-controls-area group">
 <!-- 	::before -->
@@ -130,31 +117,17 @@
 	
 	<div class="emptyspace-table"></div>
 	
-<!-- START OF MAP METRICS AREA	-->
-		<div class = "left-metrics">
+<!-- START OF CITY METRICS AREA	-->
+	<div id="output" class="oput">Nothing</div>
+		<!-- <div class = "left-metrics">
 			<div id = "map1-metric">
-				<!-- [wpdatatable id=1] -->
 			</div>
 		</div>
 		<div class = "right-metrics">
 			<div id = "map2-metric">
-				<!-- [wpdatatable id=2] -->
 			</div>
-		</div>
-<!-- END OF MAP METRICS AREA -->
-
-	
-	<!-- START OF FUNCTION FOR QUERY  SELECTION
-	<script>
-        function getSelectedQuery(){
-            var selectedQuery = document.getElementById("queryList").value;
-            QueryUpdater(selectedQuery);
-          }
-        getSelectedQuery();
-</script> -->
-
-<!-- END OF FUNCTION FOR QUERY SELECTION  -->
-
+		</div> -->
+<!-- END OF CITY METRICS AREA -->
 	
 	
 <!-- START OF FUNCTION FOR CITY 1 SELECTION  -->
@@ -210,6 +183,38 @@
 		getToggle2Value();
 	</script>
 <!-- END OF FUNCTION FOR TOGGLE 2 SELECTION  -->
+
+<!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
+<script>
+    var myContainer = "";
+    var myJson;
+
+    var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+    a.open('GET',"Data.json", true); // This is reading the JSON FILE 
+    a.onreadystatechange = function(){  //When the JSON file is open it starts a function 
+        
+        if(this.readyState == 4){     //When the file is read, code 4, this IF is True
+            var obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+            initJson(obj);
+            // console.log(obj);   // TADAAAAAAA
+        }
+    }
+    
+    function initJson(jsonObj){  // This creates a function to pull out the json
+        myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
+        console.log("Using the Var outside");   //Testing
+        console.log(myJson);                    //Testing
+        console.log("Using the Var outside");   //Testing
+        for(i=0;i<myJson.length;i++){                                                       // Loop with the data
+            myContainer += myJson[i].name.first + " " + myJson[i].name.last + "<br>";           // loopy actions in the data to display them in the HTML
+        }
+        document.getElementById("output").innerHTML = myContainer;                          // The looped data is integrated into the HTML
+    }
+
+    a.send();        // Closes the XMLHttpRequest                                         
+</script>
+
+<!-- END OF FUNCTION TO DISPLAY CITY METRICS JSON -->
 	
 	<!-- END OF WEB ATLAS -->
 </body>
