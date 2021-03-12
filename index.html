@@ -209,7 +209,7 @@
         myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
         console.log("Using the Var outside");   //Testing
         console.log(myJson["City"] + typeof(myJson["City"]) );                    //Testing
-        console.log("Using the Var outside 13.18");   //Testing
+        console.log("Using the Var outside 14.48");   //Testing
         for(key in myJson["City"]){                                                       // Loop with the data
             myContainer+= myJson["City"][key].name +"<br>"           // loopy actions in the data to display them in the HTML
         }
@@ -221,12 +221,12 @@
 		for(key in myJson["City"]){
 			if (myJson["City"][key].name == selCity) {
 				cityContainer+=
+				"City: " + myJson["City"][key].name + "<br>" +
 				"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" + 
 				"Number of Bus Stops: " + myJson["City"][key].NumBusStops + "<br>"+ 
 				"Number of Rail Stops: " + myJson["City"][key].NumTransportSystem + "<br>" + 
 				"Number Metro Stations: " + myJson["City"][key].NumMetroStations + "<br>" + 
 				"Number Boroughs: " + myJson["City"][key].NumBoroughs + "<br>" + 
-				"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" +
 				"Area in sq. km.: " + myJson["City"][key].AreaSqKm + "<br>" + 
 				"Population in million: " + myJson["City"][key].PopulationMillion + "<br>" + 
 				"Density per sq. km.: " + myJson["City"][key].DensityPersonSqKm + "<br>";		
