@@ -36,7 +36,7 @@
 	<div class="atlas-city1">
 		<select id="city1List" onchange="getSelectedCity1();">
         <option diasbled selected>Select City 1</option>
-        <option value="Montreal">Montreal</option>
+        <option value="Montréal">Montréal</option>
         <option value="Vienna">Vienna</option>
         <option value="Barcelona">Barcelona</option>
 			<option value="Budapest">Budapest</option>
@@ -65,7 +65,7 @@
 	<div class="atlas-city2">
 		<select id="city2List" onchange="getSelectedCity2();">
         <option diasbled selected>Select City 2</option>
-        <option value="Montreal">Montreal</option>
+        <option value="Montréal">Montréal</option>
         <option value="Vienna">Vienna</option>
         <option value="Barcelona">Barcelona</option>
 			<option value="Budapest">Budapest</option>
@@ -221,7 +221,7 @@
 		for(key in myJson["City"]){
 			if (myJson["City"][key].name == selCity) {
 				cityContainer+=
-				"City: " + myJson["City"][key].name + "<br>" +
+				"City "+ cityNum + ": " + myJson["City"][key].name + "<br>" +
 				"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" + 
 				"Number of Bus Stops: " + myJson["City"][key].NumBusStops + "<br>"+ 
 				"Number of Rail Stops: " + myJson["City"][key].NumTransportSystem + "<br>" + 
