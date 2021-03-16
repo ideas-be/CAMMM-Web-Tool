@@ -60,9 +60,25 @@ body { margin: 0; padding: 0; }
         content: '✔';
         margin-right: 5px;
     }
+    .filter-group #theatre label {
+        background-color:  #3386c0;
+        text-transform: capitalize;
+    }
+
 </style>
 <div id="map"></div>
-<nav id="filter-group" class="filter-group"></nav>
+<nav id="filter-group" class="filter-group">
+    <form>
+        <input type="radio" id="theatre" value="theatre">
+        <label for="theatre">Theatre</label>
+        <input type="radio" id="gasstation" value="gasstation">
+        <label for="gasstation">Gas Station</label>
+        <input type="radio" id="concert" value="concert">
+        <label for="concert">Concert</label>
+        <input type="radio" id="restaurant" value="restaurant">
+        <label for="restaurant">Restaurant</label>
+    </form>
+</nav>
 
 <script>
 	// TO MAKE THE MAP APPEAR YOU MUST
