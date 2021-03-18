@@ -74,21 +74,26 @@ body { margin: 0; padding: 0; }
         if(this.readyState == 4){     //When the file is read, code 4, this IF is True
                 var obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
                 initJson(obj);
-                // console.log(obj);   // TADAAAAAAA
+                console.log(obj);   // TADAAAAAAA
         }
     }
                 
             
     function initJson(jsonObj){  // This creates a function to pull out the json
             myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
-       
-               for(key in myJson["City"]){                                                       // Loop with the data
+            console.log(myJson["City"][city].DirectStyleURL); 
+            console.log("before for loop");
+            for(key in myJson["City"]){                                                       // Loop with the data
                 if(key == city){
                     cityURL = myJson["City"][key].DirectStyleURL 
                 }
-               }
-               console.log(city + ": " + cityURL);
             }
+            console.log("after for loop");
+            console.log(city + ": " + cityURL);
+            }
+            
+
+
                     
     
     var filterGroup = document.getElementById('filter-group');
