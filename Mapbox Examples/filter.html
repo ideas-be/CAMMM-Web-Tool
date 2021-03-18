@@ -173,6 +173,34 @@ body { margin: 0; padding: 0; }
         ]
     };
 
+    var city = "Quebec";
+
+        var myContainer = "";
+         cityContainer = "";
+        var myJson;
+            
+            a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+            en('GET',"CityMetrics.json", true); // This is reading the JSON FILE 
+            readystatechange = function(){  //When the JSON file is open it starts a function 
+            
+        if(this.readyState == 4){     //When the file is read, code 4, this IF is True
+                var obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+                initJson(obj);
+                // console.log(obj);   // TADAAAAAAA
+                
+                
+            
+    function initJson(jsonObj){  // This creates a function to pull out the json
+            myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
+                ole.log("Using the Var outside");   //Testing
+                ole.log(myJson["City"] + typeof(myJson["City"]) );                    //Testing
+        console.log("Using the Var outside 14.48");   //Testing
+                key in myJson["City"]){                                                       // Loop with the data
+                myContainer+= myJson["City"][key].name +"<br>"           // loopy actions in the data to display them in the HTML
+                    
+                        
+                        ElementById("output").innerHTML = myContainer;                          // The looped data is integrated into the HTML
+    
     var filterGroup = document.getElementById('filter-group');
     var map = new mapboxgl.Map({
         container: 'map',
