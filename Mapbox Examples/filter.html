@@ -67,16 +67,17 @@ body { margin: 0; padding: 0; }
     var cityURL = "";
     var myJson;
             
-            var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-            a.open('GET',"CityMetrics.json", true); // This is reading the JSON FILE 
-            a.onreadystatechange = function(){  //When the JSON file is open it starts a function 
+        var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+        a.open('GET',"CityMetrics.json", true); // This is reading the JSON FILE 
+        a.onreadystatechange = function(){  //When the JSON file is open it starts a function 
             
         if(this.readyState == 4){     //When the file is read, code 4, this IF is True
                 var obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
                 initJson(obj);
                 console.log(obj);   // TADAAAAAAA
+            }
         }
-    }
+        console.log(a);
                 
             
     function initJson(jsonObj){  // This creates a function to pull out the json
@@ -125,7 +126,7 @@ body { margin: 0; padding: 0; }
                 //     );
                 // });
                 a.send();        // Closes the XMLHttpRequest
-                
+
 </script>
 
 </body>
