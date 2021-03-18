@@ -74,7 +74,7 @@ body { margin: 0; padding: 0; }
         if(this.readyState == 4){     //When the file is read, code 4, this IF is True
                 var obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
                 initJson(obj);
-                console.log(obj);   // TADAAAAAAA
+                console.log("TADAAAAAAA"+obj);   // TADAAAAAAA
             }
         }
         console.log(a);
