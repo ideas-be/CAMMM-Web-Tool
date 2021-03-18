@@ -34,14 +34,14 @@ body { margin: 0; padding: 0; }
 <div id="map"></div>
 <nav id="filter-group" class="filter-group">
     <form name = "sampleForm" id="radioForm">
-        <input type="radio" name="mapRadios" id="theatre" value="theatre">
+        <!-- <input type="radio" name="mapRadios" id="theatre" value="theatre">
         <label for="theatre">Theatre</label>
         <input type="radio"  name="mapRadios" id="gasstation" value="gasstation">
         <label for="gasstation">Gas Station</label>
         <input type="radio"  name="mapRadios" id="concert" value="concert">
         <label for="concert">Concert</label>
         <input type="radio"  name="mapRadios" id="restaurant" value="restaurant">
-        <label for="restaurant">Restaurant</label>
+        <label for="restaurant">Restaurant</label> -->
     </form>
 </nav>
 
@@ -94,12 +94,17 @@ body { margin: 0; padding: 0; }
             var formHTML ="";
             var NameOfQueries = ["Centrality Degree", "Closeness"];
             // "Eigen Vector","Weight"
-                for (layer in ListOfLayers){
-                formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\"theatre\">" +
-                "<label for=\"theatre\">Theatre</label>"
-            }
+            ListOfLayers.forEach(function (value,layer) {
+                formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\""+ value + "\">" +
+                "<label for=\""+ value+"\">" + NameOfQueries[value] +"</label>"
+                            })
             
-            
+            document.getElementById("radioForm").innerHTML = formHTML;
+            //                 for (layer in ListOfLayers){
+            //     formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\"theatre\">" +
+            //     "<label for=\"theatre\">Theatre</label>"
+            // }
+
             console.log("after for loop");
             console.log(city + ": " + cityURL,typeof(cityURL));
 
