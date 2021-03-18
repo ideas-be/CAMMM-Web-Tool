@@ -12,8 +12,8 @@
             "DensityPersonSqKm":4115,
             "DirectStyleURL": "mapbox://styles/carmela-cucuzzella/ckmdts11g14q417pe6b2r7ytx",
             "NodeStyleURL": "mapbox://styles/carmela-cucuzzella/ckmduljdi15jd17pdh44qtoh8",
-            "DirectLayers": ["montreal_D_CL","montreal_D_CD"],
-            "NodeLayers": ["montreal_N_WE","montreal_N_CD","montreal_N_CL","montreal_N_EV"]
+            "DirectLayers": ["montreal_D_CD","montreal_D_CL"],
+            "NodeLayers": ["montreal_N_CD","montreal_N_CL","montreal_N_EV","montreal_N_WE"]
         },
         "Vienna":{
             "name": "Vienna",
@@ -28,7 +28,7 @@
             "DirectStyleURL": "mapbox://styles/carmela-cucuzzella/ckmdv9k6p0y6617qwpyikvpms",
             "NodeStyleURL": "mapbox://styles/carmela-cucuzzella/ckmdvdgrv16cx17pljoyexm36",
             "DirectLayers": ["vienna_D_CD",	"vienna_D_CL"],
-            "NodeLayers": ["vienna_N_WE","vienna_N_CD","vienna_N_CL","vienna_N_EV"]
+            "NodeLayers": ["vienna_N_CD","vienna_N_CL","vienna_N_EV","vienna_N_WE"]
         },
         "Barcelona":{
             "name": "Barcelona",
@@ -43,7 +43,7 @@
             "DirectStyleURL": "mapbox://styles/carmela-cucuzzella/ckmdvikhj16k118rv36unif4h",
             "NodeStyleURL": "mapbox://styles/carmela-cucuzzella/ckmdvr9px0yne17qw1abv6rqx",
             "DirectLayers": ["barcelona_D_CD","barcelona_D_CL","barcelona_D_EV"],
-            "NodeLayers": ["barcelona_N_WE","barcelona_N_CD","barcelona_N_CL","barcelona_N_EV"]
+            "NodeLayers": ["barcelona_N_CD","barcelona_N_CL","barcelona_N_EV","barcelona_N_WE"]
         },
         "Budapest":{
             "name": "Budapest",
@@ -57,10 +57,8 @@
             "DensityPersonSqKm":3388,
             "DirectStyleURL": "mapbox://styles/carmela-cucuzzella/ckmdvy9vn0yud17qwen6l9jj8",
             "NodeStyleURL": "mapbox://styles/carmela-cucuzzella/ckmdw5kz7171117pddh6zl0bj",
-            "DirectLayers": ["budapest_D_CD","budapest_D_CL"
-                            ],
-            "NodeLayers": ["budapest_N_WE","budapest_N_CD","budapest_N_CL","budapest_N_EV"
-                           ]            
+            "DirectLayers": ["budapest_D_CD","budapest_D_CL"],
+            "NodeLayers": ["budapest_N_CD","budapest_N_CL","budapest_N_EV","budapest_N_WE"]            
         },
         "Quebec":{
             "name": "Quebec",
@@ -75,7 +73,7 @@
             "DirectStyleURL":"mapbox://styles/carmela-cucuzzella/ckmdwizn553xs17naq3j69fy6",
             "NodeStyleURL":"mapbox://styles/carmela-cucuzzella/ckmdwsyti17nu17pdw6orgej8",
             "DirectLayers":["quebec_D_CD","quebec_D_CL"],
-            "NodeLayers":["quebec_N_WE","quebec_N_CD","quebec_N_CL","quebec_N_EV"]
+            "NodeLayers":["quebec_N_CD","quebec_N_CL","quebec_N_EV","quebec_N_WE"]
         }
     }
 }

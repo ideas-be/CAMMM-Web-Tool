@@ -33,7 +33,7 @@ body { margin: 0; padding: 0; }
 </style>
 <div id="map"></div>
 <nav id="filter-group" class="filter-group">
-    <form name = "sampleForm">
+    <form name = "sampleForm" id="radioForm">
         <input type="radio" name="mapRadios" id="theatre" value="theatre">
         <label for="theatre">Theatre</label>
         <input type="radio"  name="mapRadios" id="gasstation" value="gasstation">
@@ -83,12 +83,23 @@ body { margin: 0; padding: 0; }
     function initJson(jsonObj){  // This creates a function to pull out the json
             myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
             console.log(myJson["City"][city].DirectStyleURL); 
-            console.log("before for loop");
-            for(key in myJson["City"]){                                                       // Loop with the data
-                if(key == city){
-                    cityURL = myJson["City"][key].DirectStyleURL 
-                }
+            cityURL = myJson["City"][city].DirectStyleURL;
+            var ListOfLayers = myJson["City"][city].DirectLayers;
+            console.log(ListOfLayers);
+            // for(key in myJson["City"]){                                                       // Loop with the data
+            //     if(key == city){
+            //         cityURL = myJson["City"][key].DirectStyleURL 
+            //     }
+            // }
+            var formHTML ="";
+            var NameOfQueries = ["Centrality Degree", "Closeness"];
+            // "Eigen Vector","Weight"
+                        for (layer in ListOfLayers){
+                formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\"theatre\">" +
+                "<label for=\"theatre\">Theatre</label>"
             }
+            
+            
             console.log("after for loop");
             console.log(city + ": " + cityURL);
             }
@@ -100,7 +111,7 @@ body { margin: 0; padding: 0; }
     var filterGroup = document.getElementById('filter-group');
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/carmela-cucuzzella/ckmdwizn553xs17naq3j69fy6',
+        style: cityURL,
         center: [-71.26, 46.78],
         zoom: 10.0
     });
