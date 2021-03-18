@@ -94,7 +94,7 @@ body { margin: 0; padding: 0; }
             var formHTML ="";
             var NameOfQueries = ["Centrality Degree", "Closeness"];
             // "Eigen Vector","Weight"
-                        for (layer in ListOfLayers){
+                for (layer in ListOfLayers){
                 formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\"theatre\">" +
                 "<label for=\"theatre\">Theatre</label>"
             }
@@ -106,7 +106,10 @@ body { margin: 0; padding: 0; }
             
 
 
-                    
+    if (cityURL=="mapbox://styles/carmela-cucuzzella/ckmdwizn553xs17naq3j69fy6") {
+        console.log("it is equal")
+        console.log(typeof(cityURL)+typeof("mapbox://styles/carmela-cucuzzella/ckmdwizn553xs17naq3j69fy6"))
+                }            
     
     var filterGroup = document.getElementById('filter-group');
     var map = new mapboxgl.Map({
