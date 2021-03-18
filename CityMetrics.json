@@ -70,7 +70,7 @@
             "AreaSqKm":234.5 ,
             "PopulationMillion":0.57,
             "DensityPersonSqKm":1648,
-            "DirectStyleURL":"mapbox://styles/carmela-cucuzzella/ckmdwizn553xs17naq3j69fy6",
+            "DirectStyleURL":"ckmdwizn553xs17naq3j69fy6",
             "NodeStyleURL":"mapbox://styles/carmela-cucuzzella/ckmdwsyti17nu17pdw6orgej8",
             "DirectLayers":["quebec_D_CD","quebec_D_CL"],
             "NodeLayers":["quebec_N_CD","quebec_N_CL","quebec_N_EV","quebec_N_WE"]
