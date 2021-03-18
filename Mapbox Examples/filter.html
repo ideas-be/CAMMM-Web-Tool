@@ -187,7 +187,8 @@ body { margin: 0; padding: 0; }
                 var obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
                 initJson(obj);
                 // console.log(obj);   // TADAAAAAAA
-                
+        }
+    }
                 
             
     function initJson(jsonObj){  // This creates a function to pull out the json
@@ -195,11 +196,11 @@ body { margin: 0; padding: 0; }
                 ole.log("Using the Var outside");   //Testing
                 ole.log(myJson["City"] + typeof(myJson["City"]) );                    //Testing
         console.log("Using the Var outside 14.48");   //Testing
-                key in myJson["City"]){                                                       // Loop with the data
+               for(key in myJson["City"]){                                                       // Loop with the data
                 myContainer+= myJson["City"][key].name +"<br>"           // loopy actions in the data to display them in the HTML
+               }
+            }
                     
-                        
-                        ElementById("output").innerHTML = myContainer;                          // The looped data is integrated into the HTML
     
     var filterGroup = document.getElementById('filter-group');
     var map = new mapboxgl.Map({
