@@ -13,7 +13,7 @@
             "DirectStyleURL": "ckmdts11g14q417pe6b2r7ytx",
             "NodeStyleURL": "ckmduljdi15jd17pdh44qtoh8",
             "DirectLayers": ["montreal_D_CD","montreal_D_CL"],
-            "NodeLayers": ["montreal_N_CD","montreal_N_CL","montreal_N_EV","montreal_N_WE"]
+            "NodeLayers": ["montreal_N_CD","montreal_N_CL"]  
         },
         "Vienna":{
             "name": "Vienna",
@@ -28,7 +28,7 @@
             "DirectStyleURL": "ckmdv9k6p0y6617qwpyikvpms",
             "NodeStyleURL": "ckmdvdgrv16cx17pljoyexm36",
             "DirectLayers": ["vienna_D_CD",	"vienna_D_CL"],
-            "NodeLayers": ["vienna_N_CD","vienna_N_CL","vienna_N_EV","vienna_N_WE"]
+            "NodeLayers": ["vienna_N_CD","vienna_N_CL"]
         },
         "Barcelona":{
             "name": "Barcelona",
@@ -43,7 +43,7 @@
             "DirectStyleURL": "ckmdvikhj16k118rv36unif4h",
             "NodeStyleURL": "ckmdvr9px0yne17qw1abv6rqx",
             "DirectLayers": ["barcelona_D_CD","barcelona_D_CL","barcelona_D_EV"],
-            "NodeLayers": ["barcelona_N_CD","barcelona_N_CL","barcelona_N_EV","barcelona_N_WE"]
+            "NodeLayers": ["barcelona_N_CD","barcelona_N_CL","barcelona_N_EV",]
         },
         "Budapest":{
             "name": "Budapest",
@@ -58,7 +58,7 @@
             "DirectStyleURL": "ckmdvy9vn0yud17qwen6l9jj8",
             "NodeStyleURL": "ckmdw5kz7171117pddh6zl0bj",
             "DirectLayers": ["budapest_D_CD","budapest_D_CL"],
-            "NodeLayers": ["budapest_N_CD","budapest_N_CL","budapest_N_EV","budapest_N_WE"]            
+            "NodeLayers": ["budapest_N_CD","budapest_N_CL"]            
         },
         "Quebec":{
             "name": "Quebec",
@@ -73,7 +73,7 @@
             "DirectStyleURL":"ckmdwizn553xs17naq3j69fy6",
             "NodeStyleURL":"ckmdwsyti17nu17pdw6orgej8",
             "DirectLayers":["quebec_D_CD","quebec_D_CL"],
-            "NodeLayers":["quebec_N_CD","quebec_N_CL","quebec_N_EV","quebec_N_WE"]
+            "NodeLayers":["quebec_N_CD","quebec_N_CL"]
         }
     }
 }
