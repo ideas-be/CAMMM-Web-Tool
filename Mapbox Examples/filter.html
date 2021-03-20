@@ -34,15 +34,18 @@ body { margin: 0; padding: 0; }
 <div id="map"></div>
 <nav id="filter-group" class="filter-group">
     <form name = "sampleForm" id="radioForm">
-        <!-- <input type="radio" name="mapRadios" id="theatre" value="theatre">
-        <label for="theatre">Theatre</label>
-        <input type="radio"  name="mapRadios" id="gasstation" value="gasstation">
-        <label for="gasstation">Gas Station</label>
-        <input type="radio"  name="mapRadios" id="concert" value="concert">
-        <label for="concert">Concert</label>
-        <input type="radio"  name="mapRadios" id="restaurant" value="restaurant">
-        <label for="restaurant">Restaurant</label> -->
     </form>
+    <!-- START OF DIRECT/NODE TOGGLE 1 -->
+	<div>
+        <p class="toggleText">Direct     
+            <label class="switch">
+            <input type="checkbox" id="toggBtn1" onclick="getToggle1Value();">
+            <span class="slider round"></span>
+            </label>     Node
+        </p>
+    </div>
+	
+	<!-- END OF DIRECT/NODE TOGGLE 1 -->
 </nav>
 
 <script>
@@ -60,10 +63,16 @@ body { margin: 0; padding: 0; }
     //         console.log(this.value)
     //     });
     // }
+    var selFormAnalysis1;
 
+    function getToggle1Value(){
+        selFormAnalysis1 = document.getElementById('toggBtn1').checked;
+	}
+		getToggle1Value();
+        
 	mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 
-    var city = "Budapest";
+    var city = "Quebec";
     var cityURL = "";
     var myJson;
             
@@ -82,9 +91,19 @@ body { margin: 0; padding: 0; }
             
     function initJson(jsonObj){  // This creates a function to pull out the json
             myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
-            console.log(myJson["City"][city].DirectStyleURL); 
-            cityURL = myJson["City"][city].DirectStyleURL;
-            var ListOfLayers = myJson["City"][city].DirectLayers;
+            // console.log(myJson["City"][city].DirectStyleURL); 
+            var ListOfLayers = [];
+            if(selFormAnalysis1){   //get node map and layers
+                console.log("Form of Analysis: Node");
+                cityURL = myJson["City"][city].NodeStyleURL;
+                ListOfLayers = myJson["City"][city].NodeLayers;
+            }else{     //get direct map and layers
+                console.log("Form of Analysis: Node");
+                cityURL = myJson["City"][city].DirectStyleURL;
+                ListOfLayers = myJson["City"][city].DirectLayers;
+            }
+            
+            
             console.log(ListOfLayers);
             // for(key in myJson["City"]){                                                       // Loop with the data
             //     if(key == city){
