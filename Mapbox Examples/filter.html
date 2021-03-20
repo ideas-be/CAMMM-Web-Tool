@@ -93,13 +93,19 @@ body { margin: 0; padding: 0; }
             // }
             var formHTML ="";
             var NameOfQueries = ["Centrality Degree", "Closeness"];
-            // "Eigen Vector","Weight"
-            ListOfLayers.forEach(function (value,layer) {
-                formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\""+ layer + "\">" +
-                "<label for=\""+ layer+"\">" + NameOfQueries[value] +"</label>"
-                console.log("value"+value+NameOfQueries[value]);
-                console.log("layer"+layer);
-                                                                            })
+            for (const [i, value] of ListOfLayers.entries()) {
+                console.log("---------------",i, value, NameOfQueries[i])
+                formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\">" +
+                    "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
+            }
+
+            // // "Eigen Vector","Weight"
+            // ListOfLayers.forEach(function (value,layer) {
+            //     formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\""+ layer + "\">" +
+            //     "<label for=\""+ layer+"\">" + NameOfQueries[value] +"</label>"
+            //     console.log("value"+value+NameOfQueries[value]);
+            //     console.log("layer"+layer);
+            //                                                                 })
             
             document.getElementById("radioForm").innerHTML = formHTML;
             //                 for (layer in ListOfLayers){
