@@ -30,19 +30,91 @@ body { margin: 0; padding: 0; }
         text-transform: capitalize;
     }
 
+    /* START OF DIRECT/NODE TOGGLE STYLE*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #d81b60;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #d81b60;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.toggleText{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/* END OF DIRECT/NODE TOGGLE STYLE*/
+
+
 </style>
 <div id="map"></div>
 <nav id="filter-group" class="filter-group">
     <form name = "sampleForm" id="radioForm">
-        <!-- <input type="radio" name="mapRadios" id="theatre" value="theatre">
-        <label for="theatre">Theatre</label>
-        <input type="radio"  name="mapRadios" id="gasstation" value="gasstation">
-        <label for="gasstation">Gas Station</label>
-        <input type="radio"  name="mapRadios" id="concert" value="concert">
-        <label for="concert">Concert</label>
-        <input type="radio"  name="mapRadios" id="restaurant" value="restaurant">
-        <label for="restaurant">Restaurant</label> -->
     </form>
+    <!-- START OF DIRECT/NODE TOGGLE 1 -->
+	<div>
+        <p class="toggleText">Direct     
+            <label class="switch">
+            <input type="checkbox" id="toggBtn1" onclick="getToggle1Value();">
+            <span class="slider round"></span>
+            </label>     Node
+        </p>
+    </div>
+	
+	<!-- END OF DIRECT/NODE TOGGLE 1 -->
 </nav>
 
 <script>
@@ -60,7 +132,13 @@ body { margin: 0; padding: 0; }
     //         console.log(this.value)
     //     });
     // }
+    var selFormAnalysis1;
 
+    function getToggle1Value(){
+        selFormAnalysis1 = document.getElementById('toggBtn1').checked;
+	}
+		// getToggle1Value();
+        
 	mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 
     var city = "Quebec";
@@ -82,9 +160,19 @@ body { margin: 0; padding: 0; }
             
     function initJson(jsonObj){  // This creates a function to pull out the json
             myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
-            console.log(myJson["City"][city].DirectStyleURL); 
-            cityURL = myJson["City"][city].DirectStyleURL;
-            var ListOfLayers = myJson["City"][city].DirectLayers;
+            // console.log(myJson["City"][city].DirectStyleURL); 
+            var ListOfLayers = [];
+            if(selFormAnalysis1){   //get node map and layers
+                console.log("Form of Analysis: Node");
+                cityURL = myJson["City"][city].NodeStyleURL;
+                ListOfLayers = myJson["City"][city].NodeLayers;
+            }else{     //get direct map and layers
+                console.log("Form of Analysis: Direct");
+                cityURL = myJson["City"][city].DirectStyleURL;
+                ListOfLayers = myJson["City"][city].DirectLayers;
+            }
+            
+            
             console.log(ListOfLayers);
             // for(key in myJson["City"]){                                                       // Loop with the data
             //     if(key == city){
