@@ -136,6 +136,8 @@ input:checked + .slider:before {
 
     function getToggle1Value(){
         selFormAnalysis1 = document.getElementById('toggBtn1').checked;
+        console.log(selFormAnalysis1);
+        loadMap();
 	}
 		// getToggle1Value();
         
@@ -159,65 +161,59 @@ input:checked + .slider:before {
                 
             
     function initJson(jsonObj){  // This creates a function to pull out the json
-            myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
-            // console.log(myJson["City"][city].DirectStyleURL); 
-            var ListOfLayers = [];
-            if(selFormAnalysis1){   //get node map and layers
-                console.log("Form of Analysis: Node");
-                cityURL = myJson["City"][city].NodeStyleURL;
-                ListOfLayers = myJson["City"][city].NodeLayers;
-            }else{     //get direct map and layers
-                console.log("Form of Analysis: Direct");
-                cityURL = myJson["City"][city].DirectStyleURL;
-                ListOfLayers = myJson["City"][city].DirectLayers;
+      myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
+      // console.log(myJson["City"][city].DirectStyleURL); 
+      var ListOfLayers = [];
+      if(selFormAnalysis1){   //get node map and layers
+          console.log("Form of Analysis: Node");
+          cityURL = myJson["City"][city].NodeStyleURL;
+          ListOfLayers = myJson["City"][city].NodeLayers;
+      }else{     //get direct map and layers
+          console.log("Form of Analysis: Direct");
+          cityURL = myJson["City"][city].DirectStyleURL;
+          ListOfLayers = myJson["City"][city].DirectLayers;
+      }
+      
+      
+      console.log(ListOfLayers);
+      // for(key in myJson["City"]){                                                       // Loop with the data
+      //     if(key == city){
+      //         cityURL = myJson["City"][key].DirectStyleURL 
+      //     }
+      // }
+      var formHTML ="";
+      var NameOfQueries = ["Centrality Degree", "Closeness"];
+      for (const [i, value] of ListOfLayers.entries()) {
+          console.log("---------------",i, value, NameOfQueries[i])
+          formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\">" +
+              "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
             }
-            
-            
-            console.log(ListOfLayers);
-            // for(key in myJson["City"]){                                                       // Loop with the data
-            //     if(key == city){
-            //         cityURL = myJson["City"][key].DirectStyleURL 
-            //     }
-            // }
-            var formHTML ="";
-            var NameOfQueries = ["Centrality Degree", "Closeness"];
-            for (const [i, value] of ListOfLayers.entries()) {
-                console.log("---------------",i, value, NameOfQueries[i])
-                formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\">" +
-                    "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
-            }
 
-            // // "Eigen Vector","Weight"
-            // ListOfLayers.forEach(function (value,layer) {
-            //     formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\""+ layer + "\">" +
-            //     "<label for=\""+ layer+"\">" + NameOfQueries[value] +"</label>"
-            //     console.log("value"+value+NameOfQueries[value]);
-            //     console.log("layer"+layer);
-            //                                                                 })
-            
-            document.getElementById("radioForm").innerHTML = formHTML;
-            //                 for (layer in ListOfLayers){
-            //     formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\"theatre\">" +
-            //     "<label for=\"theatre\">Theatre</label>"
-            // }
+      // // "Eigen Vector","Weight"
+      // ListOfLayers.forEach(function (value,layer) {
+      //     formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\""+ layer + "\">" +
+      //     "<label for=\""+ layer+"\">" + NameOfQueries[value] +"</label>"
+      //     console.log("value"+value+NameOfQueries[value]);
+      //     console.log("layer"+layer);
+      //                                                                 })
+      
+      document.getElementById("radioForm").innerHTML = formHTML;
+      //                 for (layer in ListOfLayers){
+      //     formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\"theatre\">" +
+      //     "<label for=\"theatre\">Theatre</label>"
+      // }
+      console.log(city + ": " + cityURL);
+    }
 
-            console.log("after for loop");
-            console.log(city + ": " + cityURL,typeof(cityURL));
-
-            var map = new mapboxgl.Map({
-        container: 'map',
-        style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
-        center: [-71.26, 46.78],
-        zoom: 10.0
-    });
-                        }
-            
-
-
-    // if (cityURL=="mapbox://styles/carmela-cucuzzella/ckmdwizn553xs17naq3j69fy6") {
-    //     console.log("it is equal")
-    //     console.log(typeof(cityURL)+typeof("mapbox://styles/carmela-cucuzzella/ckmdwizn553xs17naq3j69fy6"))
-    //             }         
+    function loadMap(){
+      var map = new mapboxgl.Map({
+      container: 'map',
+      style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
+      center: [-71.26, 46.78],
+      zoom: 10.0
+      });
+    }
+                   
     console.log("cityURL"+cityURL);
     cityURL="ckmdwizn553xs17naq3j69fy6";
     console.log(cityURL + "GAAAAAAH");
