@@ -119,7 +119,6 @@
 	<div class="emptyspace-table"></div>
 	
 <!-- START OF CITY METRICS AREA	-->
-	<div id="output" class="oput">Nothing</div>
 	<div id="city1table" class="oput">City 1</div>
 	<div id="city2table" class="oput">City 2</div>
 		<!-- <div class = "left-metrics">
@@ -203,7 +202,6 @@
 
 <!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
 <script>
-    var myContainer = "";
 	var cityContainer = "";
     var myJson;
 
@@ -220,14 +218,7 @@
     
     function initJson(jsonObj){  // This creates a function to pull out the json
         myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
-        console.log("Using the Var outside");   //Testing
-        console.log(myJson["City"] + typeof(myJson["City"]) );                    //Testing
-        console.log("Using the Var outside 14.48");   //Testing
-        for(key in myJson["City"]){                                                       // Loop with the data
-            myContainer+= myJson["City"][key].name +"<br>"           // loopy actions in the data to display them in the HTML
-        }
-		
-        document.getElementById("output").innerHTML = myContainer;                          // The looped data is integrated into the HTML
+        console.log(myJson["City"]);
     }
 
 	function CityDataDisplay(selCity, cityNum){
