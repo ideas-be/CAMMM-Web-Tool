@@ -6,6 +6,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+<script src='script.js'></script>
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -161,41 +162,7 @@ input:checked + .slider:before {
         console.log(a);
                 
             
-    function initJson(jsonObj){  // This creates a function to pull out the json
-      myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident 
-      var ListOfLayers = [];
-      if(selFormAnalysis1){   //get node map and layers
-          console.log("Form of Analysis: Node");
-          cityURL = myJson["City"][city].NodeStyleURL;
-          ListOfLayers = myJson["City"][city].NodeLayers;
-      }else{     //get direct map and layers
-          console.log("Form of Analysis: Direct");
-          cityURL = myJson["City"][city].DirectStyleURL;
-          ListOfLayers = myJson["City"][city].DirectLayers;
-      }
 
-      var formHTML ="";
-      var NameOfQueries = ["Centrality Degree", "Closeness"];
-      for (const [i, value] of ListOfLayers.entries()) {
-          console.log("---------------",i, value, NameOfQueries[i])
-          formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\">" +
-              "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
-            }
-      
-      document.getElementById("radioForm").innerHTML = formHTML;
-
-      console.log(city + ": " + cityURL);
-      loadMap();
-    }
-
-    function loadMap(){
-      var map = new mapboxgl.Map({
-      container: 'map',
-      style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
-      center: [-71.26, 46.78],
-      zoom: 10.0
-      });
-    }
 
     a.send();        // Closes the XMLHttpRequest
 
