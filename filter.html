@@ -121,17 +121,18 @@ input:checked + .slider:before {
 	// TO MAKE THE MAP APPEAR YOU MUST
 	// ADD YOUR ACCESS TOKEN FROM
 	// https://account.mapbox.com
-    // var rad = document.sampleForm.mapRadios;
-    // var prev = null;
-    // for (var i = 0; i < rad.length; i++) {
-    //     rad[i].addEventListener('change', function() {
-    //         // (prev) ? console.log(prev.value): null;
-    //         if (this !== prev) {
-    //             prev = this;
-    //         }
-    //         console.log(this.value)
-    //     });
-    // }
+    var rad = document.sampleForm.mapRadios;
+    var prev = null;
+    for (var i = 0; i < rad.length; i++) {
+        rad[i].addEventListener('change', function() {
+            // (prev) ? console.log(prev.value): null;
+            if (this !== prev) {
+                prev = this;
+            }
+            console.log(this.value)
+        });
+    }
+    
     var selFormAnalysis1;
 
     function getToggle1Value(){
@@ -154,15 +155,13 @@ input:checked + .slider:before {
         if(this.readyState == 4){     //When the file is read, code 4, this IF is True
                 var obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
                 initJson(obj);
-                console.log("TADAAAAAAA"+obj);   // TADAAAAAAA
             }
         }
         console.log(a);
                 
             
     function initJson(jsonObj){  // This creates a function to pull out the json
-      myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
-      // console.log(myJson["City"][city].DirectStyleURL); 
+      myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident 
       var ListOfLayers = [];
       if(selFormAnalysis1){   //get node map and layers
           console.log("Form of Analysis: Node");
@@ -173,14 +172,7 @@ input:checked + .slider:before {
           cityURL = myJson["City"][city].DirectStyleURL;
           ListOfLayers = myJson["City"][city].DirectLayers;
       }
-      
-      
-      console.log(ListOfLayers);
-      // for(key in myJson["City"]){                                                       // Loop with the data
-      //     if(key == city){
-      //         cityURL = myJson["City"][key].DirectStyleURL 
-      //     }
-      // }
+
       var formHTML ="";
       var NameOfQueries = ["Centrality Degree", "Closeness"];
       for (const [i, value] of ListOfLayers.entries()) {
@@ -188,20 +180,9 @@ input:checked + .slider:before {
           formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\">" +
               "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
             }
-
-      // // "Eigen Vector","Weight"
-      // ListOfLayers.forEach(function (value,layer) {
-      //     formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\""+ layer + "\">" +
-      //     "<label for=\""+ layer+"\">" + NameOfQueries[value] +"</label>"
-      //     console.log("value"+value+NameOfQueries[value]);
-      //     console.log("layer"+layer);
-      //                                                                 })
       
       document.getElementById("radioForm").innerHTML = formHTML;
-      //                 for (layer in ListOfLayers){
-      //     formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\""+ layer +"\" value=\"theatre\">" +
-      //     "<label for=\"theatre\">Theatre</label>"
-      // }
+
       console.log(city + ": " + cityURL);
       loadMap();
     }
@@ -214,31 +195,8 @@ input:checked + .slider:before {
       zoom: 10.0
       });
     }
-                   
-        var filterGroup = document.getElementById('filter-group');
-    
 
-                // // Add checkbox and label elements for the layer.
-                // var input = document.createElement('input');
-                // input.type = 'checkbox';
-                // input.id = layerID;
-                // input.checked = true;
-                // filterGroup.appendChild(input);
-
-                // var label = document.createElement('label');
-                // label.setAttribute('for', layerID);
-                // label.textContent = symbol;
-                // filterGroup.appendChild(label);
-
-                // When the checkbox changes, update the visibility of the layer.
-                // input.addEventListener('change', function (e) {
-                //     map.setLayoutProperty(
-                //         layerID,
-                //         'visibility',
-                //         e.target.checked ? 'visible' : 'none'
-                //     );
-                // });
-                a.send();        // Closes the XMLHttpRequest
+    a.send();        // Closes the XMLHttpRequest
 
 </script>
 
