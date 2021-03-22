@@ -5,7 +5,9 @@ var selAnalysis2 = "";
 var shortURL = 'mapbox://styles/carmela-cucuzzella/';
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 
-
+var city = "Quebec";
+var cityURL = "";
+var myJson;
 
 // MAP 1 FUNCTIONS
 //Function to Update Map 1 Key with City 1 Value
@@ -66,7 +68,9 @@ function loadMap(){
 	var map = new mapboxgl.Map({
 	container: 'map',
 	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
-	center: [-71.26, 46.78],
-	zoom: 10.0
+	center: myJson["City"][city].Coords,
+	// center: [-71.26, 46.78],
+	zoom: myJson["City"][city].Zoom,
+	// zoom: 10.0
 	});
 }
