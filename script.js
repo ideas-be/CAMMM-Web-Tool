@@ -125,5 +125,4 @@ function turnOffLayers(){
 	// 	layer is turned offf
 	}
 
-}
 
