@@ -4,6 +4,7 @@ var selAnalysis1 = "";
 var selAnalysis2 = "";
 var shortURL = 'mapbox://styles/carmela-cucuzzella/';
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
+var map;
 
 var city = "Quebec";
 var cityURL = "";
@@ -54,7 +55,7 @@ function initJson(jsonObj){  // This creates a function to pull out the json
 	var NameOfQueries = ["Centrality Degree", "Closeness"];
 	for (const [i, value] of ListOfLayers.entries()) {
 		console.log("---------------",i, value, NameOfQueries[i])
-		formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "console.log(value);" + "\">" +
+		formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "loadLayer(value);" + "\">" +
 			"<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
 		}
 	
@@ -64,8 +65,37 @@ function initJson(jsonObj){  // This creates a function to pull out the json
 	loadMap();
 }
 
+var prevLayer ="dummy-layer";
+function loadLayer(currentLayer){
+// MAPBOX EXAMPLE STARTS
+// set up the corresponding toggle button for each layer
+	console.log(prevLayer, currentLayer);
+
+	var visibility = map.getLayoutProperty(currentLayer, 'visibility');
+
+	console.log(visibility);
+ 
+// toggle layer visibility by changing the layout object's visibility property
+	if (visibility === 'visible') {
+		map.setLayoutProperty(currentLayer, 'visibility', 'none');
+		console.log("Current layer turned off");
+		map.setLayoutProperty(prevLayer, 'visibility', 'visible');
+		} else {
+		map.setLayoutProperty(currentLayer, 'visibility', 'visible');
+		console.log("Current layer turned on");
+		map.setLayoutProperty(prevLayer, 'visibility', 'none');
+		}
+
+		prevLayer = currentLayer;
+
+		console.log(prevLayer, currentLayer);
+// MAPBOX EXAMPLE ENDS
+// map.setLayoutProperty('my-layer', 'visibility', 'none');
+
+}
+
 function loadMap(){
-	var map = new mapboxgl.Map({
+	map = new mapboxgl.Map({
 	container: 'map',
 	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
 	center: myJson["City"][city].Coords,
@@ -73,4 +103,12 @@ function loadMap(){
 	zoom: myJson["City"][city].Zoom,
 	// zoom: 10.0
 	});
+
+	turnOffLayers();
 }
+
+function turnOffLayers(){
+	console.log(map.getstyle().layers);
+
+}
+
