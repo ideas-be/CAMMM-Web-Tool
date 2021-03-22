@@ -108,7 +108,7 @@ function loadMap(){
 }
 
 function turnOffLayers(){
-	console.log(map.getstyle().layers);
+	console.log(map.getStyle().layers);
 
 }
 
