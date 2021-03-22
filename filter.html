@@ -121,7 +121,7 @@ input:checked + .slider:before {
 	// TO MAKE THE MAP APPEAR YOU MUST
 	// ADD YOUR ACCESS TOKEN FROM
 	// https://account.mapbox.com
-    var rad = document.sampleForm.mapRadios;
+    var rad = document.getElementsByName("mapRadios");
     var prev = null;
     for (var i = 0; i < rad.length; i++) {
         rad[i].addEventListener('change', function() {
@@ -132,7 +132,7 @@ input:checked + .slider:before {
             console.log(this.value)
         });
     }
-    
+
     var selFormAnalysis1;
 
     function getToggle1Value(){
