@@ -37,10 +37,11 @@ function AnalysisUpdater2(selAnalysis){
 	console.log(selAnalysis2);
 }
 
+var ListOfLayers = [];
 
 function initJson(jsonObj){  // This creates a function to pull out the json
 	myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident 
-	var ListOfLayers = [];
+
 	if(selFormAnalysis1){   //get node map and layers
 		console.log("Form of Analysis: Node");
 		cityURL = myJson["City"][city].NodeStyleURL;
@@ -103,12 +104,26 @@ function loadMap(){
 	zoom: myJson["City"][city].Zoom,
 	// zoom: 10.0
 	});
+	
+	console.log(map.getStyle().layers);
 
 	turnOffLayers();
 }
 
 function turnOffLayers(){
-	console.log(map.getStyle().layers);
+
+	var MapLayers = map.getStyle().layers;
+	console.log(MapLayers);
+	
+	for (const [index, layer] of MapLayers.entries()){
+		if(ListOfLayers.includes(layer.id)){
+			
+			console.log(layer.id +"Will be shut down")
+		}
+	}
+	// if myJson["City"][city].DirectLayers.includes(layer) or myJson["City"][city].NodeLayers.includes(layer){
+	// 	layer is turned offf
+	}
 
 }
 
