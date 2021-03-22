@@ -137,7 +137,7 @@ input:checked + .slider:before {
     function getToggle1Value(){
         selFormAnalysis1 = document.getElementById('toggBtn1').checked;
         console.log(selFormAnalysis1);
-        loadMap();
+        initJson(myJson);
 	}
 		// getToggle1Value();
         
@@ -203,6 +203,7 @@ input:checked + .slider:before {
       //     "<label for=\"theatre\">Theatre</label>"
       // }
       console.log(city + ": " + cityURL);
+      loadMap();
     }
 
     function loadMap(){
@@ -214,9 +215,6 @@ input:checked + .slider:before {
       });
     }
                    
-    console.log("cityURL"+cityURL);
-    cityURL="ckmdwizn553xs17naq3j69fy6";
-    console.log(cityURL + "GAAAAAAH");
         var filterGroup = document.getElementById('filter-group');
     
 
