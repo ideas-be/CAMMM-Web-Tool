@@ -50,7 +50,7 @@
             "DirectStyleURL": "ckmdvikhj16k118rv36unif4h",
             "NodeStyleURL": "ckmdvr9px0yne17qw1abv6rqx",
             "DirectLayers": ["barcelona_D_CD","barcelona_D_CL","barcelona_D_EV"],
-            "NodeLayers": ["barcelona_N_CD","barcelona_N_CL","barcelona_N_EV",],
+            "NodeLayers": ["barcelona_N_CD","barcelona_N_CL","barcelona_N_EV"],
             "Coords": [
                 2.13,
                 41.38

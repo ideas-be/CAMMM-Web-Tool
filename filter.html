@@ -146,7 +146,7 @@ input:checked + .slider:before {
     var myJson;
             
         var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-        a.open('GET',"../CityMetrics.json", true); // This is reading the JSON FILE 
+        a.open('GET',"CityMetrics.json", true); // This is reading the JSON FILE 
         a.onreadystatechange = function(){  //When the JSON file is open it starts a function 
             
         if(this.readyState == 4){     //When the file is read, code 4, this IF is True
