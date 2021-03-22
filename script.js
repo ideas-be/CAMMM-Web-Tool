@@ -54,7 +54,7 @@ function initJson(jsonObj){  // This creates a function to pull out the json
 	var NameOfQueries = ["Centrality Degree", "Closeness"];
 	for (const [i, value] of ListOfLayers.entries()) {
 		console.log("---------------",i, value, NameOfQueries[i])
-		formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\">" +
+		formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "console.log(value);" + "\">" +
 			"<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
 		}
 	
