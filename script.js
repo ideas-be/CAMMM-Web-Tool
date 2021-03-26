@@ -105,8 +105,10 @@ function loadMap(){
 	// zoom: 10.0
 	});
 	
+	console.log("Printing map layers before");
 	console.log(map.getStyle().layers);
-
+	console.log("Printing map layers after");
+	
 	turnOffLayers();
 }
 
