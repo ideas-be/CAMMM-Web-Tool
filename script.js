@@ -107,24 +107,20 @@ function loadMap(){
 	
 	console.log("Printing map layers before");
 	console.log("Printing map layers after");
-	console.log(map);
-	var MapLayers = map.getStyle().layers;
-	console.log(MapLayers);
-	turnOffLayers(map);
+	// console.log(map);
+
+	turnOffLayers();
 }
 
-function turnOffLayers(MapVar){
+function turnOffLayers(){
 	console.log("Hello from turn off layers");
-	console.log(MapVar.getStyle());
 	console.log(map);
-	
-	var MapLayers = MapVar.getStyle().layers;
-	console.log(MapLayers);
-	
-	for (const [index, layer] of MapLayers.entries()){
+		
+	for (const [index, layer] of ListOfLayers.entries()){
 		if(ListOfLayers.includes(layer.id)){
 			
-			console.log(layer.id +"Will be shut down")
+			console.log(layer.id +"Will be shut down");
+			map.setLayoutProperty(layer.id, 'visibility', 'none');
 		}
 	}
 	// if myJson["City"][city].DirectLayers.includes(layer) or myJson["City"][city].NodeLayers.includes(layer){
