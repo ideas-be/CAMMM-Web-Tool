@@ -112,7 +112,7 @@ function loadMap(){
 }
 
 function turnOffLayers(MapVar){
-
+	console.log("Hello from turn off layers");
 	var MapLayers = MapVar.getStyle().layers;
 	console.log(MapLayers);
 	
