@@ -114,7 +114,7 @@ function loadMap(){
 
 function turnOffLayers(){
 	console.log("Hello from turn off layers");
-	console.log(ListOfLayers.length());
+	console.log(ListOfLayers.length);
 
 	for (const [index, layer] of ListOfLayers.entries()){
 		if(ListOfLayers.includes(layer.id)){
