@@ -73,13 +73,18 @@ function loadLayer(currentLayer){
 	var visibility = map.getLayoutProperty(currentLayer, 'visibility');
  
 // toggle layer visibility by changing the layout object's visibility property
-	if (visibility === 'none') {
+if (visibility === 'visible') {
+	map.setLayoutProperty(currentLayer, 'visibility', 'none');
+	console.log(currentLayer+ " turned off");
+	map.setLayoutProperty(prevLayer, 'visibility', 'visible');
+	} else {
 		map.setLayoutProperty(currentLayer, 'visibility', 'visible');
 		console.log(currentLayer+" turned on");
 		map.setLayoutProperty(prevLayer, 'visibility', 'none');
 		}
 
 		prevLayer = currentLayer;
+		console.log(currentLayer, prevLayer);
 
 }
 
