@@ -89,7 +89,7 @@ if (visibility === 'visible') {
 
 function loadMap(){
 	map = new mapboxgl.Map({
-	container: 'map',
+	container: 'map1',
 	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
 	center: myJson["City"][city].Coords,
 	// center: [-71.26, 46.78],

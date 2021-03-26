@@ -11,6 +11,7 @@
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' >
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="mapUI.css">
 </head>
 <body>
 
@@ -101,7 +102,20 @@
 		id="map1div" 
 	>
 		  <div class='maplabel'>Map 1</div>
-  		<div id='map1'></div>
+  		<div id='map1'>
+			<nav id="filter-group" class="filter-group">
+				<form name = "sampleForm" id="radioForm">
+				</form>
+				<!-- START OF DIRECT/NODE TOGGLE 1 -->
+				<div>
+					<p class="toggleText">Direct     
+						<label class="switch">
+						<input type="checkbox" id="toggBtn1" onchange="getToggle1Value();">
+						<span class="slider round"></span>
+						</label>     Node
+					</p>
+				</div>
+		  </div>
 	</div>
 	<div 
 		class="mapbox2" 
