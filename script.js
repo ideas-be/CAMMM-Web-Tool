@@ -117,12 +117,12 @@ function turnOffLayers(){
 	console.log(ListOfLayers.length);
 	var j ;
 	for(j=0; j<ListOfLayers.length; j++ ){
-		console.log(ListOfLayers[j]);
 		console.log(ListOfLayers[j] +"Will be shut down");
+		map.setLayoutProperty(ListOfLayers[j], 'visibility', 'none');
 		// if(ListOfLayers.includes(layer.id)){
 			
 		// 	console.log(layer.id +"Will be shut down");
-		// 	map.setLayoutProperty(layer.id, 'visibility', 'none');
+		// 	
 		// }
 	}
 	// if myJson["City"][city].DirectLayers.includes(layer) or myJson["City"][city].NodeLayers.includes(layer){
