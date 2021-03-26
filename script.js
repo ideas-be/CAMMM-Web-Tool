@@ -84,7 +84,6 @@ if (visibility === 'visible') {
 		}
 
 		prevLayer = currentLayer;
-		console.log(currentLayer, prevLayer);
 
 }
 
