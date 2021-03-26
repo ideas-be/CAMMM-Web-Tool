@@ -107,7 +107,9 @@ function loadMap(){
 	
 	console.log("Printing map layers before");
 	console.log("Printing map layers after");
-
+	console.log(map);
+	var MapLayers = MapVar.getStyle().layers;
+	console.log(MapLayers);
 	turnOffLayers(map);
 }
 
