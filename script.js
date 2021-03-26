@@ -106,15 +106,14 @@ function loadMap(){
 	});
 	
 	console.log("Printing map layers before");
-	// console.log(map.getStyle().layers);
 	console.log("Printing map layers after");
 
-	turnOffLayers();
+	turnOffLayers(map);
 }
 
-function turnOffLayers(){
+function turnOffLayers(MapVar){
 
-	var MapLayers = map.getStyle().layers;
+	var MapLayers = MapVar.getStyle().layers;
 	console.log(MapLayers);
 	
 	for (const [index, layer] of MapLayers.entries()){
