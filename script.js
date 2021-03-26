@@ -108,27 +108,27 @@ function loadMap(){
 	console.log("Printing map layers before");
 	console.log("Printing map layers after");
 	// console.log(map);
-	setTimeout(() => { console.log("World!"); }, 500);	
-	turnOffLayers();
+	// setTimeout(() => { console.log("World!"); }, 500);	
+	// turnOffLayers();
 }
 
-function turnOffLayers(){
-	console.log("Hello from turn off layers");
-	console.log(ListOfLayers);
-	console.log(ListOfLayers.length);
-	var j ;
-	for(j=0; j<ListOfLayers.length; j++ ){
-		console.log(ListOfLayers[j] + " Will be shut down -" + j);
-		map.setLayoutProperty(ListOfLayers[j], 'visibility', 'none');
-		console.log("End of "+ j);
-		// if(ListOfLayers.includes(layer.id)){
+// function turnOffLayers(){
+// 	console.log("Hello from turn off layers");
+// 	console.log(ListOfLayers);
+// 	console.log(ListOfLayers.length);
+// 	var j ;
+// 	for(j=0; j<ListOfLayers.length; j++ ){
+// 		console.log(ListOfLayers[j] + " Will be shut down -" + j);
+// 		map.setLayoutProperty(ListOfLayers[j], 'visibility', 'none');
+// 		console.log("End of "+ j);
+// 		// if(ListOfLayers.includes(layer.id)){
 			
-		// 	console.log(layer.id +"Will be shut down");
-		// 	
-		// }
-	}
-	// if myJson["City"][city].DirectLayers.includes(layer) or myJson["City"][city].NodeLayers.includes(layer){
-	// 	layer is turned offf
-	}
+// 		// 	console.log(layer.id +"Will be shut down");
+// 		// 	
+// 		// }
+// 	}
+// 	// if myJson["City"][city].DirectLayers.includes(layer) or myJson["City"][city].NodeLayers.includes(layer){
+// 	// 	layer is turned offf
+// 	}
 
 
