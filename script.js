@@ -106,9 +106,9 @@ function loadMap(){
 	});
 	
 	console.log("Printing map layers before");
-	console.log(map.getStyle().layers);
+	// console.log(map.getStyle().layers);
 	console.log("Printing map layers after");
-	
+
 	turnOffLayers();
 }
 
