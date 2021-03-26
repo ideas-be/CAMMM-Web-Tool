@@ -115,13 +115,15 @@ function loadMap(){
 function turnOffLayers(){
 	console.log("Hello from turn off layers");
 	console.log(ListOfLayers.length);
-
-	for (const [index, layer] of ListOfLayers.entries()){
-		if(ListOfLayers.includes(layer.id)){
+	var j ;
+	for(j=0; j<ListOfLayers.length; j++ ){
+		console.log(ListOfLayers[j]);
+		console.log(ListOfLayers[j] +"Will be shut down");
+		// if(ListOfLayers.includes(layer.id)){
 			
-			console.log(layer.id +"Will be shut down");
-			map.setLayoutProperty(layer.id, 'visibility', 'none');
-		}
+		// 	console.log(layer.id +"Will be shut down");
+		// 	map.setLayoutProperty(layer.id, 'visibility', 'none');
+		// }
 	}
 	// if myJson["City"][city].DirectLayers.includes(layer) or myJson["City"][city].NodeLayers.includes(layer){
 	// 	layer is turned offf
