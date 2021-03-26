@@ -68,30 +68,18 @@ function initJson(jsonObj){  // This creates a function to pull out the json
 
 var prevLayer ="dummy-layer";
 function loadLayer(currentLayer){
-// MAPBOX EXAMPLE STARTS
 // set up the corresponding toggle button for each layer
-	console.log(prevLayer, currentLayer);
 
 	var visibility = map.getLayoutProperty(currentLayer, 'visibility');
-
-	console.log(visibility);
  
 // toggle layer visibility by changing the layout object's visibility property
-	if (visibility === 'visible') {
-		map.setLayoutProperty(currentLayer, 'visibility', 'none');
-		console.log("Current layer turned off");
-		map.setLayoutProperty(prevLayer, 'visibility', 'visible');
-		} else {
+	if (visibility === 'none') {
 		map.setLayoutProperty(currentLayer, 'visibility', 'visible');
-		console.log("Current layer turned on");
+		console.log(currentLayer+" turned on");
 		map.setLayoutProperty(prevLayer, 'visibility', 'none');
 		}
 
 		prevLayer = currentLayer;
-
-		console.log(prevLayer, currentLayer);
-// MAPBOX EXAMPLE ENDS
-// map.setLayoutProperty('my-layer', 'visibility', 'none');
 
 }
 
@@ -104,31 +92,8 @@ function loadMap(){
 	zoom: myJson["City"][city].Zoom,
 	// zoom: 10.0
 	});
-	
-	console.log("Printing map layers before");
-	console.log("Printing map layers after");
-	// console.log(map);
-	// setTimeout(() => { console.log("World!"); }, 500);	
-	// turnOffLayers();
+
 }
 
-// function turnOffLayers(){
-// 	console.log("Hello from turn off layers");
-// 	console.log(ListOfLayers);
-// 	console.log(ListOfLayers.length);
-// 	var j ;
-// 	for(j=0; j<ListOfLayers.length; j++ ){
-// 		console.log(ListOfLayers[j] + " Will be shut down -" + j);
-// 		map.setLayoutProperty(ListOfLayers[j], 'visibility', 'none');
-// 		console.log("End of "+ j);
-// 		// if(ListOfLayers.includes(layer.id)){
-			
-// 		// 	console.log(layer.id +"Will be shut down");
-// 		// 	
-// 		// }
-// 	}
-// 	// if myJson["City"][city].DirectLayers.includes(layer) or myJson["City"][city].NodeLayers.includes(layer){
-// 	// 	layer is turned offf
-// 	}
 
 
