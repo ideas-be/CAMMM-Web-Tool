@@ -108,7 +108,7 @@ function loadMap(){
 	console.log("Printing map layers before");
 	console.log("Printing map layers after");
 	// console.log(map);
-
+	setTimeout(() => { console.log("World!"); }, 500);	
 	turnOffLayers();
 }
 
