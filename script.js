@@ -114,11 +114,13 @@ function loadMap(){
 
 function turnOffLayers(){
 	console.log("Hello from turn off layers");
+	console.log(ListOfLayers);
 	console.log(ListOfLayers.length);
 	var j ;
 	for(j=0; j<ListOfLayers.length; j++ ){
-		console.log(ListOfLayers[j] +"Will be shut down");
+		console.log(ListOfLayers[j] + " Will be shut down -" + j);
 		map.setLayoutProperty(ListOfLayers[j], 'visibility', 'none');
+		console.log("End of "+ j);
 		// if(ListOfLayers.includes(layer.id)){
 			
 		// 	console.log(layer.id +"Will be shut down");
