@@ -102,7 +102,7 @@
 		id="map1div" 
 	>
 		  <div class='maplabel'>Map 1</div>
-  		<div id='map1'>
+  		<div id='map'>
 			<nav id="filter-group" class="filter-group">
 				<form name = "sampleForm" id="radioForm">
 				</form>
@@ -171,7 +171,9 @@
 	<script>
 	function getToggle1Value(){
 		var selFormAnalysis1 = document.getElementById('toggBtn1').checked;
-		AnalysisUpdater1(selFormAnalysis1);
+		console.log(selFormAnalysis1);
+        initJson(myJson, selFormAnalysis1);
+		// AnalysisUpdater1(selFormAnalysis1);
 	}
 		getToggle1Value();
 	</script>
@@ -224,11 +226,6 @@
             initJson(obj);
             // console.log(obj);   // TADAAAAAAA
         }
-    }
-    
-    function initJson(jsonObj){  // This creates a function to pull out the json
-        myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
-        console.log(myJson["City"]);
     }
 
 	function CityDataDisplay(selCity, cityNum){

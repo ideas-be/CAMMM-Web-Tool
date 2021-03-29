@@ -18,11 +18,6 @@ function CityUpdater1(selCity){
 	console.log(selCity1);
 }
 
-//Function to Update Map 1 Key with Analysis 1 Value
-function AnalysisUpdater1(selAnalysis){
-	selAnalysis1=selAnalysis;
-	console.log(selAnalysis1);
-}
 
 // MAP 2 FUNCTIONS
 //Function to Update Map 2 Key with City 2 Value
@@ -31,18 +26,13 @@ function CityUpdater2(selCity){
 	console.log(selCity2);
 }
 
-//Function to Update Map 2 Key with Analysis 2 Value
-function AnalysisUpdater2(selAnalysis){
-	selAnalysis2=selAnalysis;
-	console.log(selAnalysis2);
-}
 
 var ListOfLayers = [];
 
-function initJson(jsonObj){  // This creates a function to pull out the json
+function initJson(jsonObj, selAnalysis){  // This creates a function to pull out the json
 	myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident 
 
-	if(selFormAnalysis1){   //get node map and layers
+	if(selAnalysis){   //get node map and layers
 		console.log("Form of Analysis: Node");
 		cityURL = myJson["City"][city].NodeStyleURL;
 		ListOfLayers = myJson["City"][city].NodeLayers;
@@ -89,7 +79,7 @@ if (visibility === 'visible') {
 
 function loadMap(){
 	map = new mapboxgl.Map({
-	container: 'map1',
+	container: 'map',
 	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
 	center: myJson["City"][city].Coords,
 	// center: [-71.26, 46.78],
