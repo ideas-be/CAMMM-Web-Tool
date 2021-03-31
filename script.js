@@ -41,7 +41,14 @@ function initJson(jsonObj, selAnalysis){  // This creates a function to pull out
 		cityURL = myJson["City"][city].DirectStyleURL;
 		ListOfLayers = myJson["City"][city].DirectLayers;
 	}
+	
+	radioButtons();
 
+	console.log(city + ": " + cityURL);
+	loadMap();
+}
+
+function radioButtons(){
 	var formHTML ="";
 	var NameOfQueries = ["Centrality Degree", "Closeness"];
 	for (const [i, value] of ListOfLayers.entries()) {
@@ -51,9 +58,6 @@ function initJson(jsonObj, selAnalysis){  // This creates a function to pull out
 		}
 	
 	document.getElementById("radioForm").innerHTML = formHTML;
-
-	console.log(city + ": " + cityURL);
-	loadMap();
 }
 
 var prevLayer ="dummy-layer";
