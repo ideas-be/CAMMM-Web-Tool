@@ -52,16 +52,15 @@ function initJson(jsonObj, selAnalysis){  // This creates a function to pull out
 
 function dropdownCities(){
 	var cityHTML = "<option disabled selected>Select City</option>";
-	console.log(typeof (myJson["City"]));
-	console.log( myJson["City"]);
+	// console.log(typeof (myJson["City"]));
+	// console.log( myJson["City"]);
 
 	for(key in myJson["City"]){
-		console.log("City: " + key + "  Name: " + myJson["City"][key].name);
+		cityHTML += "<option value=\"" + key + "\">"+myJson["City"][key].name+"</option>";
+		// console.log("City: " + key + "  Name: " + myJson["City"][key].name);
 	}
 
-	// for (const [i, value] of myJson["City"].entries()) {
-	// 	console.log("i:", i, "value:", value);
-	// }
+	document.getElementById("cityList").innerHTML = cityHTML;
 
 }
 
