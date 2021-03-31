@@ -60,7 +60,8 @@ function dropdownCities(){
 		// console.log("City: " + key + "  Name: " + myJson["City"][key].name);
 	}
 
-	document.getElementById("cityList").innerHTML = cityHTML;
+	document.getElementById("cityList1").innerHTML = cityHTML;
+	document.getElementById("cityList2").innerHTML = cityHTML;
 
 }
 
