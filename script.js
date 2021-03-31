@@ -17,21 +17,36 @@ function initJson(jsonObj){ // This creates a function to pull out the json
 	dropdownCities(); //initialize city dropdown on load
 }
 
-function readCityJson(city, selAnalysis){  // This creates a function to read the json for each city
-
+function readCityJson(selCity, selAnalysis){  // This creates a function to read the json for each city
+	city=selCity;
+	
 	if(selAnalysis){   //get node map and layers
 		console.log("Form of Analysis: Node");
-		cityURL = myJson["City"][city].NodeStyleURL;
-		ListOfLayers = myJson["City"][city].NodeLayers;
+		cityURL = myJson["City"][selCity].NodeStyleURL;
+		ListOfLayers = myJson["City"][selCity].NodeLayers;
 	}else{     //get direct map and layers
 		console.log("Form of Analysis: Direct");
-		cityURL = myJson["City"][city].DirectStyleURL;
-		ListOfLayers = myJson["City"][city].DirectLayers;
+		cityURL = myJson["City"][selCity].DirectStyleURL;
+		ListOfLayers = myJson["City"][selCity].DirectLayers;
 	}
 	
 	console.log(city + ": " + cityURL);
 	loadMap();
 	radioButtons(); //display the radio buttons
+}
+
+function loadMap(){
+	console.log("City: "+city);
+
+	map = new mapboxgl.Map({
+	container: 'map',
+	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
+	center: myJson["City"][city].Coords,
+	// center: [-71.26, 46.78],
+	zoom: myJson["City"][city].Zoom,
+	// zoom: 10.0
+	});
+
 }
 
 function dropdownCities(){
@@ -82,19 +97,7 @@ if (visibility === 'visible') {
 
 }
 
-function loadMap(){
-	console.log("City: "+city);
 
-	map = new mapboxgl.Map({
-	container: 'map',
-	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
-	center: myJson["City"][city].Coords,
-	// center: [-71.26, 46.78],
-	zoom: myJson["City"][city].Zoom,
-	// zoom: 10.0
-	});
-
-}
 
 var cityContainer = "";
 
