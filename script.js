@@ -55,6 +55,10 @@ function dropdownCities(){
 	console.log(typeof (myJson["City"]));
 	console.log( myJson["City"]);
 
+	for(key in myJson["City"]){
+		console.log("City: " + key);
+	}
+
 	// for (const [i, value] of myJson["City"].entries()) {
 	// 	console.log("i:", i, "value:", value);
 	// }
