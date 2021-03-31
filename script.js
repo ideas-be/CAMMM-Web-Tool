@@ -41,7 +41,7 @@ function loadMap(){
 	map = new mapboxgl.Map({
 	container: 'map',
 	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
-	center: myJson["City"][city].Coords,
+	center: myJson["City"][city].Coords, //need to make global
 	// center: [-71.26, 46.78],
 	zoom: myJson["City"][city].Zoom,
 	// zoom: 10.0
