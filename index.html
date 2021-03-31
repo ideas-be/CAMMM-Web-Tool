@@ -33,12 +33,6 @@
 		<!-- START OF CITY 1 LIST -->
 	<div class="atlas-city1">
 		<select id="cityList1" onchange="getSelectedCity1();">
-        <!-- <option disabled selected>Select City</option> -->
-        <!-- <option value="Montréal">Montréal</option>
-        <option value="Vienna">Vienna</option>
-        <option value="Barcelona">Barcelona</option>
-			<option value="Budapest">Budapest</option>
-			<option value="Quebec">Quebec</option> -->
       </select>
 	</div>
 	<div class="emptyspace"></div>
@@ -62,12 +56,6 @@
 		<!-- START OF CITY 2 LIST -->
 	<div class="atlas-city2">
 		<select id="cityList2" onchange="getSelectedCity2();">
-        <!-- <option disabled selected>Select City 2</option>
-        <option value="Montréal">Montréal</option>
-        <option value="Vienna">Vienna</option>
-        <option value="Barcelona">Barcelona</option>
-			<option value="Budapest">Budapest</option>
-			<option value="Quebec">Quebec</option> -->
       </select>
 	</div>
 	<div class="emptyspace"></div>
@@ -148,7 +136,7 @@
 			
 			var selectedCity = document.getElementById("city1List").value;
 
-			if(selectedCity != "Select City 1"){
+			if(selectedCity != "Select City"){
 				
 				CityUpdater1(selectedCity);
 				CityDataDisplay(selectedCity, 1);
@@ -184,7 +172,7 @@
 		function getSelectedCity2(){
 			var selectedCity = document.getElementById("city2List").value;
 
-			if(selectedCity != "Select City 2"){
+			if(selectedCity != "Select City"){
 
 				CityUpdater2(selectedCity);
 				CityDataDisplay(selectedCity, 2);
