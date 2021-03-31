@@ -6,6 +6,7 @@ var shortURL = 'mapbox://styles/carmela-cucuzzella/';
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 var map;
 
+var city="";
 var cityURL = "";
 var myJson;
 
@@ -82,6 +83,8 @@ if (visibility === 'visible') {
 }
 
 function loadMap(){
+	console.log("City: "+city);
+
 	map = new mapboxgl.Map({
 	container: 'map',
 	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
