@@ -56,7 +56,7 @@ function dropdownCities(){
 	// console.log( myJson["City"]);
 
 	for(key in myJson["City"]){
-		cityHTML += "<option value=\"" + key + "\">"+myJson["City"][key].name+"</option>";
+		cityHTML += "<option value=\"" + myJson["City"][key].name + "\">"+myJson["City"][key].name +"</option>";
 		// console.log("City: " + key + "  Name: " + myJson["City"][key].name);
 	}
 
