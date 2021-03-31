@@ -32,6 +32,8 @@ var ListOfLayers = [];
 function initJson(jsonObj, selAnalysis){  // This creates a function to pull out the json
 	myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident 
 
+	dropdownCities();
+
 	if(selAnalysis){   //get node map and layers
 		console.log("Form of Analysis: Node");
 		cityURL = myJson["City"][city].NodeStyleURL;
@@ -48,7 +50,15 @@ function initJson(jsonObj, selAnalysis){  // This creates a function to pull out
 	loadMap();
 }
 
-function radioButtons(){
+function dropdownCities(){
+	var cityHTML = "<option disabled selected>Select City</option>";
+	for (const [i, value] of myJson["City"].entries()) {
+		console.log("i:", i, "value:", value);
+	}
+
+}
+
+function radioButtons() {
 	var formHTML ="";
 	var NameOfQueries = ["Centrality Degree", "Closeness"];
 	for (const [i, value] of ListOfLayers.entries()) {
