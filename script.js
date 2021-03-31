@@ -6,33 +6,17 @@ var shortURL = 'mapbox://styles/carmela-cucuzzella/';
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 var map;
 
-var city = "Quebec";
 var cityURL = "";
 var myJson;
 
-// MAP 1 FUNCTIONS
-//Function to Update Map 1 Key with City 1 Value
-
-function CityUpdater1(selCity){
-	selCity1=selCity;
-	console.log(selCity1);
-}
-
-
-// MAP 2 FUNCTIONS
-//Function to Update Map 2 Key with City 2 Value
-function CityUpdater2(selCity){
-	selCity2=selCity;
-	console.log(selCity2);
-}
-
-
 var ListOfLayers = [];
 
-function initJson(jsonObj, selAnalysis){  // This creates a function to pull out the json
-	myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident 
+function initJson(jsonObj){ // This creates a function to pull out the json
+	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident 
+	dropdownCities(); //initialize city dropdown on load
+}
 
-	dropdownCities();
+function readCityJson(city, selAnalysis){  // This creates a function to read the json for each city
 
 	if(selAnalysis){   //get node map and layers
 		console.log("Form of Analysis: Node");
@@ -44,10 +28,9 @@ function initJson(jsonObj, selAnalysis){  // This creates a function to pull out
 		ListOfLayers = myJson["City"][city].DirectLayers;
 	}
 	
-	radioButtons();
-
 	console.log(city + ": " + cityURL);
 	loadMap();
+	radioButtons(); //display the radio buttons
 }
 
 function dropdownCities(){
@@ -110,5 +93,29 @@ function loadMap(){
 
 }
 
+var cityContainer = "";
+
+function CityDataDisplay(selCity, cityNum){
+	for(key in myJson["City"]){
+		if (myJson["City"][key].name == selCity) {
+			cityContainer+=
+			"City "+ cityNum + ": " + myJson["City"][key].name + "<br>" +
+			"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" + 
+			"Number of Bus Stops: " + myJson["City"][key].NumBusStops + "<br>"+ 
+			"Number of Rail Stops: " + myJson["City"][key].NumTransportSystem + "<br>" + 
+			"Number Metro Stations: " + myJson["City"][key].NumMetroStations + "<br>" + 
+			"Number Boroughs: " + myJson["City"][key].NumBoroughs + "<br>" + 
+			"Area in sq. km.: " + myJson["City"][key].AreaSqKm + "<br>" + 
+			"Population in million: " + myJson["City"][key].PopulationMillion + "<br>" + 
+			"Density per sq. km.: " + myJson["City"][key].DensityPersonSqKm + "<br>";		
+		}
+	  }
+	if(cityNum == 1){
+		document.getElementById("city1table").innerHTML = cityContainer;
+	}else if(cityNum == 2){
+		document.getElementById("city2table").innerHTML = cityContainer;
+	}
+	cityContainer="";
+}
 
 

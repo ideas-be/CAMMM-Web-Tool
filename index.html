@@ -139,7 +139,7 @@
 
 			if(selectedCity != "Select City"){
 				
-				CityUpdater1(selectedCity);
+				readCityJson(selectedCity, false);
 				CityDataDisplay(selectedCity, 1);
 				
 				var map1div = document.getElementById('map1div');
@@ -176,7 +176,7 @@
 
 			if(selectedCity != "Select City"){
 
-				CityUpdater2(selectedCity);
+				readCityJson(selectedCity, false);
 				CityDataDisplay(selectedCity, 2);
 
 				var map2div = document.getElementById('map2div');
@@ -204,8 +204,6 @@
 
 <!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
 <script>
-	var cityContainer = "";
-    var myJson;
 
     var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
     a.open('GET',"CityMetrics.json", true); // This is reading the JSON FILE 
@@ -217,29 +215,6 @@
             // console.log(obj);   // TADAAAAAAA
         }
     }
-
-	function CityDataDisplay(selCity, cityNum){
-		for(key in myJson["City"]){
-			if (myJson["City"][key].name == selCity) {
-				cityContainer+=
-				"City "+ cityNum + ": " + myJson["City"][key].name + "<br>" +
-				"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" + 
-				"Number of Bus Stops: " + myJson["City"][key].NumBusStops + "<br>"+ 
-				"Number of Rail Stops: " + myJson["City"][key].NumTransportSystem + "<br>" + 
-				"Number Metro Stations: " + myJson["City"][key].NumMetroStations + "<br>" + 
-				"Number Boroughs: " + myJson["City"][key].NumBoroughs + "<br>" + 
-				"Area in sq. km.: " + myJson["City"][key].AreaSqKm + "<br>" + 
-				"Population in million: " + myJson["City"][key].PopulationMillion + "<br>" + 
-				"Density per sq. km.: " + myJson["City"][key].DensityPersonSqKm + "<br>";		
-			}
-		  }
-		if(cityNum == 1){
-			document.getElementById("city1table").innerHTML = cityContainer;
-		}else if(cityNum == 2){
-			document.getElementById("city2table").innerHTML = cityContainer;
-		}
-		cityContainer="";
-	}
 
     a.send();        // Closes the XMLHttpRequest                                         
 </script>
