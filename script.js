@@ -105,7 +105,7 @@ function radioButtons() {
 			"<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
 		}
 	
-	document.getElementById("radioForm").innerHTML = formHTML;
+	document.getElementById("radioForm"+toString(cityNum)).innerHTML = formHTML;
 }
 
 function loadLayer(currentLayer){
