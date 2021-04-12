@@ -12,7 +12,7 @@ var myJson;
 var cityCoords = [];
 var cityZoom = 10.0;
 
-var cityNum;
+var cityNum = 0;
 var mapContainer = "";
 var cityContainer = "";
 
