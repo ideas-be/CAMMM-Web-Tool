@@ -168,7 +168,7 @@ display: table;
 }
 /* END OF MAP CONTROLS AREA STYLE */
 
-/* START OF COMPARE BUTTON STYLE*/
+/* START OF COMPARE BUTTON STYLE
 .compare-btn{
 	text-align: center;
 }
@@ -185,4 +185,4 @@ display: table;
   margin: 4px 2px;
   cursor: pointer;
 }
-/* END OF COMPARE BUTTON STYLE*/
+END OF COMPARE BUTTON STYLE */
