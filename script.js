@@ -53,7 +53,7 @@ function checkMapContainer(){
 	}else if(cityNum == 2){
 		mapContainer="map2";
 	}
-	mapContainer="";
+	// mapContainer="";
 }
 
 function loadMap(){
