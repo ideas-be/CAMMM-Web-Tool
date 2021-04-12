@@ -122,7 +122,7 @@
 			console.log(selectedCity);
 
 			if(selectedCity != "Select City"){
-				
+
 				readCityJson(selectedCity, 1);
 				CityDataDisplay(selectedCity);
 				
@@ -142,13 +142,7 @@
 	
 	<!-- START OF FUNCTION FOR TOGGLE 1 SELECTION  -->
 	<script>
-	function getToggle1Value(){
-		var selFormAnalysis1 = document.getElementById('toggBtn1').checked;
-		console.log("selFormAnalysis1 "+selFormAnalysis1);
-        // initJson(myJson, selFormAnalysis1);
-		// AnalysisUpdater1(selFormAnalysis1);
-	}
-		getToggle1Value();
+
 	</script>
 <!-- END OF FUNCTION FOR TOGGLE 1 SELECTION  -->
 	
@@ -159,7 +153,7 @@
 			console.log("selectedCity" + selectedCity);
 
 			if(selectedCity != "Select City"){
-
+				
 				readCityJson(selectedCity, 2);
 				CityDataDisplay(selectedCity);
 
@@ -189,16 +183,24 @@
 <!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
 <script>
 
+	var obj;
     var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
     a.open('GET',"CityMetrics.json", true); // This is reading the JSON FILE 
     a.onreadystatechange = function(){  //When the JSON file is open it starts a function 
         
         if(this.readyState == 4){     //When the file is read, code 4, this IF is True
-            var obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
-            initJson(obj, false);
+            obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+            initJson(obj, false, "InitJson is called when the JSON is read");
             // console.log(obj);   // TADAAAAAAA
         }
     }
+
+	function getToggle1Value(){
+		var selFormAnalysis1 = document.getElementById('toggBtn1').checked;
+		console.log("selFormAnalysis1 "+selFormAnalysis1);
+        initJson(obj, selFormAnalysis1," InitJson is called inside of selFormAnalysis1");
+						// AnalysisUpdater1(selFormAnalysis1);
+	}
 
     a.send();        // Closes the XMLHttpRequest                                         
 </script>

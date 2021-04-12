@@ -21,7 +21,8 @@ var cityContainer = "";
 var ListOfLayers = [];
 var prevLayer ="dummy-layer";
 
-function initJson(jsonObj, analysisVal){ // This creates a function to pull out the json
+function initJson(jsonObj, analysisVal, consoleText){ // This creates a function to pull out the json
+	console.log(consoleText);
 	selAnalysis=analysisVal;
 	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident 
 	dropdownCities(); //initialize city dropdown on load
