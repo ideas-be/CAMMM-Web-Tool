@@ -6,6 +6,8 @@ var shortURL = 'mapbox://styles/carmela-cucuzzella/';
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 var map;
 
+var selAnalysis=false;
+
 var city="";
 var cityURL = "";
 var myJson;
@@ -19,12 +21,13 @@ var cityContainer = "";
 var ListOfLayers = [];
 var prevLayer ="dummy-layer";
 
-function initJson(jsonObj){ // This creates a function to pull out the json
+function initJson(jsonObj, analysisVal){ // This creates a function to pull out the json
+	selAnalysis=analysisVal;
 	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident 
 	dropdownCities(); //initialize city dropdown on load
 }
 
-function readCityJson(selCity, selAnalysis, num){  // This creates a function to read the json for each city
+function readCityJson(selCity, num){  // This creates a function to read the json for each city
 	cityNum=num;
 	city=selCity;
 	cityCoords=myJson["City"][city].Coords;
