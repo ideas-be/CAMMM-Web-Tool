@@ -12,14 +12,20 @@ var myJson;
 var cityCoords = [];
 var cityZoom = 10.0;
 
+var cityNum;
+var mapContainer = "";
+var cityContainer = "";
+
 var ListOfLayers = [];
+var prevLayer ="dummy-layer";
 
 function initJson(jsonObj){ // This creates a function to pull out the json
 	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident 
 	dropdownCities(); //initialize city dropdown on load
 }
 
-function readCityJson(selCity, selAnalysis){  // This creates a function to read the json for each city
+function readCityJson(selCity, selAnalysis, num){  // This creates a function to read the json for each city
+	cityNum=num;
 	city=selCity;
 	cityCoords=myJson["City"][city].Coords;
 	cityZoom=myJson["City"][city].Zoom;
@@ -35,15 +41,26 @@ function readCityJson(selCity, selAnalysis){  // This creates a function to read
 	}
 	
 	console.log(city + ": " + cityURL);
+	checkMapContainer();
 	loadMap();
 	radioButtons(); //display the radio buttons
+}
+
+
+function checkMapContainer(){
+	if(cityNum == 1){
+		mapContainer="map1";
+	}else if(cityNum == 2){
+		mapContainer="map2";
+	}
+	mapContainer="";
 }
 
 function loadMap(){
 	console.log("City: "+city);
 
 	map = new mapboxgl.Map({
-	container: 'map',
+	container: mapContainer,
 	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
 	center: cityCoords, //need to make global
 	// center: [-71.26, 46.78],
@@ -80,7 +97,6 @@ function radioButtons() {
 	document.getElementById("radioForm").innerHTML = formHTML;
 }
 
-var prevLayer ="dummy-layer";
 function loadLayer(currentLayer){
 // set up the corresponding toggle button for each layer
 
@@ -102,10 +118,7 @@ if (visibility === 'visible') {
 }
 
 
-
-var cityContainer = "";
-
-function CityDataDisplay(selCity, cityNum){
+function CityDataDisplay(selCity){
 	for(key in myJson["City"]){
 		if (myJson["City"][key].name == selCity) {
 			cityContainer+=
