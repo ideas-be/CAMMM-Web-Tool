@@ -144,8 +144,8 @@
 	<script>
 	function getToggle1Value(){
 		var selFormAnalysis1 = document.getElementById('toggBtn1').checked;
-		console.log(selFormAnalysis1);
-        initJson(myJson, selFormAnalysis1);
+		console.log("selFormAnalysis1 "+selFormAnalysis1);
+        // initJson(myJson, selFormAnalysis1);
 		// AnalysisUpdater1(selFormAnalysis1);
 	}
 		getToggle1Value();
@@ -156,7 +156,7 @@
 	<script> 
 		function getSelectedCity2(){
 			var selectedCity = document.getElementById("cityList2").value;
-			console.log(selectedCity);
+			console.log("selectedCity" + selectedCity);
 
 			if(selectedCity != "Select City"){
 
