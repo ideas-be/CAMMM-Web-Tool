@@ -9,6 +9,8 @@ var map;
 var city="";
 var cityURL = "";
 var myJson;
+var cityCoords = [];
+var cityZoom = 10.0;
 
 var ListOfLayers = [];
 
@@ -19,6 +21,8 @@ function initJson(jsonObj){ // This creates a function to pull out the json
 
 function readCityJson(selCity, selAnalysis){  // This creates a function to read the json for each city
 	city=selCity;
+	cityCoords=myJson["City"][city].Coords;
+	cityZoom=myJson["City"][city].Zoom;
 	
 	if(selAnalysis){   //get node map and layers
 		console.log("Form of Analysis: Node");
@@ -41,9 +45,9 @@ function loadMap(){
 	map = new mapboxgl.Map({
 	container: 'map',
 	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
-	center: myJson["City"][city].Coords, //need to make global
+	center: cityCoords, //need to make global
 	// center: [-71.26, 46.78],
-	zoom: myJson["City"][city].Zoom,
+	zoom: cityZoom,
 	// zoom: 10.0
 	});
 
