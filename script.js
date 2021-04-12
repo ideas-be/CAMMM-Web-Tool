@@ -133,6 +133,7 @@ function CityDataDisplay(selCity){
 			"Density per sq. km.: " + myJson["City"][key].DensityPersonSqKm + "<br>";		
 		}
 	  }
+	console.log("cityNum " + cityNum)
 	if(cityNum == 1){
 		document.getElementById("city1table").innerHTML = cityContainer;
 	}else if(cityNum == 2){
