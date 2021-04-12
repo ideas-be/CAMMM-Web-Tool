@@ -56,13 +56,10 @@
 <!-- 	::after -->
 	</div> <!--END OF MAP CONTROLS AREA -->
 	
-	<!-- START OF MAPBOX -->
-	<div 
-		class="mapbox1" 
-		id="map1div" 
-	>
-		  <div class='maplabel'>Map 1</div>
-  		<div id='map'>
+	<!-- START OF MAP1 -->
+	<div class="mapbox1" id="map1div">
+		<div class='maplabel'>Map 1</div>
+  		<div id='map1'>
 			<nav id="filter-group" class="filter-group">
 				<form name = "sampleForm" id="radioForm">
 				</form>
@@ -75,15 +72,30 @@
 						</label>     Node
 					</p>
 				</div>
-		  </div>
+		</div>
 	</div>
-	<div 
-		class="mapbox2" 
-		id= "map2div" 
-	>
+	<!-- END OF MAP1 -->	
+
+	<!-- START OF MAP2 -->	
+	<div class="mapbox2" id= "map2div" >
 		<div class='maplabel map2'>Map 2</div>
-  	<div id='map2'></div>
+  		<div id='map2'>
+			<nav id="filter-group" class="filter-group">
+				<form name = "sampleForm" id="radioForm">
+				</form>
+				<!-- START OF DIRECT/NODE TOGGLE 2 -->
+				<div>
+					<p class="toggleText">Direct     
+						<label class="switch">
+						<input type="checkbox" id="toggBtn1" onchange="getToggle1Value();">
+						<span class="slider round"></span>
+						</label>     Node
+					</p>
+				</div>
+	  	</div>
 	</div>
+	<!-- END OF MAP2 -->
+
 	<!-- END OF MAPBOX -->
 	
 	<div class="emptyspace-table"></div>
@@ -111,8 +123,8 @@
 
 			if(selectedCity != "Select City"){
 				
-				readCityJson(selectedCity, false);
-				CityDataDisplay(selectedCity, 1);
+				readCityJson(selectedCity, false, 1);
+				CityDataDisplay(selectedCity);
 				
 				var map1div = document.getElementById('map1div');
 
@@ -165,13 +177,13 @@
 	<!-- END OF FUNCTION FOR CITY 2 SELECTION  -->
 	
 	<!-- START OF FUNCTION FOR TOGGLE 2 SELECTION  -->
-	<script>
+	<!-- <script>
 	function getToggle2Value(){
 		var selFormAnalysis2 = document.getElementById('toggBtn2').checked;
 		AnalysisUpdater2(selFormAnalysis2);
 	}
 		getToggle2Value();
-	</script>
+	</script> -->
 <!-- END OF FUNCTION FOR TOGGLE 2 SELECTION  -->
 
 <!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
