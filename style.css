@@ -26,10 +26,10 @@
   padding: 10px;
 }
 
-.map1-metric { 
+/* .map1-metric { 
 	display: block; position: absolute; top:0; bottom:0; left: 0; width:50%; height: 400px; }
 .map2-metric { 
-	display: block; position: absolute; top:0; bottom:0; right: 0; width:50%; height: 400px; }
+	display: block; position: absolute; top:0; bottom:0; right: 0; width:50%; height: 400px; } */
 
 .left-metrics{
 	position: relative;
