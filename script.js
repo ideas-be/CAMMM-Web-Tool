@@ -21,10 +21,16 @@ var cityContainer = "";
 var ListOfLayers = [];
 var prevLayer ="dummy-layer";
 
+var readCount = 0;
+
 function initJson(jsonObj, analysisVal, consoleText){ // This creates a function to pull out the json
 	console.log(consoleText);
 	selAnalysis=analysisVal;
-	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident 
+	console.log("Init Json selAnalysis:" + selAnalysis);
+	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident
+	if(readCount>0){
+		readCityJson(city, cityNum);
+	}
 	dropdownCities(); //initialize city dropdown on load
 }
 
@@ -48,6 +54,7 @@ function readCityJson(selCity, num){  // This creates a function to read the jso
 	checkMapContainer();
 	loadMap();
 	radioButtons(); //display the radio buttons
+	readCount++;
 }
 
 
