@@ -11,6 +11,7 @@
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' >
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="mapUI.css">
 </head>
 <body>
 
@@ -19,10 +20,7 @@
 		<h2>
 			CAMMM Web Atlas
 		</h2>
-		<!-- <a href="MapBoxExample.html">MapBox Example</a>
-		<a href="SampleCityTable.html">Table Experiment</a>
-		<a href="JsonTable.html">Jason Table Experiment</a>
-		<a href="jsontestTable.html">Updated Jason Table Test</a> -->
+		<a href="filter.html">Filter Example</a>
 	</div>
 	
 	
@@ -34,13 +32,7 @@
 	
 		<!-- START OF CITY 1 LIST -->
 	<div class="atlas-city1">
-		<select id="city1List" onchange="getSelectedCity1();">
-        <option disabled selected>Select City 1</option>
-        <option value="Montréal">Montréal</option>
-        <option value="Vienna">Vienna</option>
-        <option value="Barcelona">Barcelona</option>
-			<option value="Budapest">Budapest</option>
-			<option value="Quebec">Quebec</option>
+		<select id="cityList1" onchange="getSelectedCity1();">
       </select>
 	</div>
 	<div class="emptyspace"></div>
@@ -51,7 +43,7 @@
 		<label class="switch">
   <input type="checkbox" id="toggBtn1" onclick="getToggle1Value();">
   <span class="slider round"></span>
-</label>     Node
+	</label>     Node
 	</p>
 	
 	<!-- END OF DIRECT/NODE TOGGLE 1 -->
@@ -63,13 +55,7 @@
 	
 		<!-- START OF CITY 2 LIST -->
 	<div class="atlas-city2">
-		<select id="city2List" onchange="getSelectedCity2();">
-        <option disabled selected>Select City 2</option>
-        <option value="Montréal">Montréal</option>
-        <option value="Vienna">Vienna</option>
-        <option value="Barcelona">Barcelona</option>
-			<option value="Budapest">Budapest</option>
-			<option value="Quebec">Quebec</option>
+		<select id="cityList2" onchange="getSelectedCity2();">
       </select>
 	</div>
 	<div class="emptyspace"></div>
@@ -104,7 +90,20 @@
 		id="map1div" 
 	>
 		  <div class='maplabel'>Map 1</div>
-  		<div id='map1'></div>
+  		<div id='map'>
+			<nav id="filter-group" class="filter-group">
+				<form name = "sampleForm" id="radioForm">
+				</form>
+				<!-- START OF DIRECT/NODE TOGGLE 1 -->
+				<div>
+					<p class="toggleText">Direct     
+						<label class="switch">
+						<input type="checkbox" id="toggBtn1" onchange="getToggle1Value();">
+						<span class="slider round"></span>
+						</label>     Node
+					</p>
+				</div>
+		  </div>
 	</div>
 	<div 
 		class="mapbox2" 
@@ -118,7 +117,6 @@
 	<div class="emptyspace-table"></div>
 	
 <!-- START OF CITY METRICS AREA	-->
-	<div id="output" class="oput">Nothing</div>
 	<div id="city1table" class="oput">City 1</div>
 	<div id="city2table" class="oput">City 2</div>
 		<!-- <div class = "left-metrics">
@@ -136,11 +134,12 @@
 	<script> 
 		function getSelectedCity1(){
 			
-			var selectedCity = document.getElementById("city1List").value;
+			var selectedCity = document.getElementById("cityList1").value;
+			console.log(selectedCity);
 
-			if(selectedCity != "Select City 1"){
+			if(selectedCity != "Select City"){
 				
-				CityUpdater1(selectedCity);
+				readCityJson(selectedCity, false);
 				CityDataDisplay(selectedCity, 1);
 				
 				var map1div = document.getElementById('map1div');
@@ -161,7 +160,9 @@
 	<script>
 	function getToggle1Value(){
 		var selFormAnalysis1 = document.getElementById('toggBtn1').checked;
-		AnalysisUpdater1(selFormAnalysis1);
+		console.log(selFormAnalysis1);
+        initJson(myJson, selFormAnalysis1);
+		// AnalysisUpdater1(selFormAnalysis1);
 	}
 		getToggle1Value();
 	</script>
@@ -170,11 +171,12 @@
 	<!-- START OF FUNCTION FOR CITY 2 SELECTION  -->
 	<script> 
 		function getSelectedCity2(){
-			var selectedCity = document.getElementById("city2List").value;
+			var selectedCity = document.getElementById("cityList2").value;
+			console.log(selectedCity);
 
-			if(selectedCity != "Select City 2"){
+			if(selectedCity != "Select City"){
 
-				CityUpdater2(selectedCity);
+				readCityJson(selectedCity, false);
 				CityDataDisplay(selectedCity, 2);
 
 				var map2div = document.getElementById('map2div');
@@ -202,9 +204,6 @@
 
 <!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
 <script>
-    var myContainer = "";
-	var cityContainer = "";
-    var myJson;
 
     var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
     a.open('GET',"CityMetrics.json", true); // This is reading the JSON FILE 
@@ -216,41 +215,6 @@
             // console.log(obj);   // TADAAAAAAA
         }
     }
-    
-    function initJson(jsonObj){  // This creates a function to pull out the json
-        myJson = jsonObj;          // The Data is asigned to an internal variable, so we don't destroy it by accident
-        console.log("Using the Var outside");   //Testing
-        console.log(myJson["City"] + typeof(myJson["City"]) );                    //Testing
-        console.log("Using the Var outside 14.48");   //Testing
-        for(key in myJson["City"]){                                                       // Loop with the data
-            myContainer+= myJson["City"][key].name +"<br>"           // loopy actions in the data to display them in the HTML
-        }
-		
-        document.getElementById("output").innerHTML = myContainer;                          // The looped data is integrated into the HTML
-    }
-
-	function CityDataDisplay(selCity, cityNum){
-		for(key in myJson["City"]){
-			if (myJson["City"][key].name == selCity) {
-				cityContainer+=
-				"City "+ cityNum + ": " + myJson["City"][key].name + "<br>" +
-				"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" + 
-				"Number of Bus Stops: " + myJson["City"][key].NumBusStops + "<br>"+ 
-				"Number of Rail Stops: " + myJson["City"][key].NumTransportSystem + "<br>" + 
-				"Number Metro Stations: " + myJson["City"][key].NumMetroStations + "<br>" + 
-				"Number Boroughs: " + myJson["City"][key].NumBoroughs + "<br>" + 
-				"Area in sq. km.: " + myJson["City"][key].AreaSqKm + "<br>" + 
-				"Population in million: " + myJson["City"][key].PopulationMillion + "<br>" + 
-				"Density per sq. km.: " + myJson["City"][key].DensityPersonSqKm + "<br>";		
-			}
-		  }
-		if(cityNum == 1){
-			document.getElementById("city1table").innerHTML = cityContainer;
-		}else if(cityNum == 2){
-			document.getElementById("city2table").innerHTML = cityContainer;
-		}
-		cityContainer="";
-	}
 
     a.send();        // Closes the XMLHttpRequest                                         
 </script>

@@ -1,125 +1,131 @@
-var long = -73.6825;
-var lat = 45.559;
-var long2 = 19.125;
-var lat2 = 47.408;
-var zoom = 12;
-var map1url = 'cki1wtg7h54mm19pjbvydycxd';
-var map2url = 'cki3o047r4ues19o6n13z7p5e';
-var map1key = "";
-var map2key = "";
-var selQuery = "";
 var selCity1 = "";
 var selCity2 = "";
 var selAnalysis1 = "";
 var selAnalysis2 = "";
 var shortURL = 'mapbox://styles/carmela-cucuzzella/';
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
+var map;
 
+var city="";
+var cityURL = "";
+var myJson;
+var cityCoords = [];
+var cityZoom = 10.0;
 
-// Map 1
-var map1 = new mapboxgl.Map({
-container: 'map1', // container id
-style: shortURL+ map1url, // stylesheet location
-center: [long, lat], // starting position [long, lat]
-zoom: zoom // starting zoom
-});
-  
+var ListOfLayers = [];
 
-// Map 2
-var map2 = new mapboxgl.Map({
-container: 'map2', // container id
-style: shortURL+ map2url, // stylesheet location
-center: [long2, lat2], // starting position [long, lat]
-zoom: 10 // starting zoom
-});
-
-
-//Function to Update Map Keys with Query Value
-function QueryUpdater(selVal){
-	selQuery=selVal;
-	console.log(selQuery);
-}
-// MAP 1 FUNCTIONS
-//Function to Update Map 1 Key with City 1 Value
-
-function CityUpdater1(selCity){
-	selCity1=selCity;
-	console.log(selCity1);
+function initJson(jsonObj){ // This creates a function to pull out the json
+	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident 
+	dropdownCities(); //initialize city dropdown on load
 }
 
-//Function to Update Map 1 Key with Analysis 1 Value
-function AnalysisUpdater1(selAnalysis){
-	selAnalysis1=selAnalysis;
-	console.log(selAnalysis1);
-}
-
-// MAP 2 FUNCTIONS
-//Function to Update Map 2 Key with City 2 Value
-function CityUpdater2(selCity){
-	selCity2=selCity;
-	console.log(selCity2);
-}
-
-//Function to Update Map 2 Key with Analysis 2 Value
-function AnalysisUpdater2(selAnalysis){
-	selAnalysis2=selAnalysis;
-	console.log(selAnalysis2);
-}
-
-//Functions to Update City Metrics
-function City1Metric(){
-	switch(selCity1)
-		{
-			case "Montreal": return 1;
-				break;
-			case "Budapest": return 2;
-				break;
-			default: return null;
-		}
-}
-
-function City2Metric(){
-	switch(selCity2)
-		{
-			case "Montreal": return 1;
-				break;
-			case "Budapest": return 2;
-				break;
-			default: return null;
-		}
-}
-
-//Main Function to Update and Compare Maps + Reset Map Key Values
-function MapUpdater(){
+function readCityJson(selCity, selAnalysis){  // This creates a function to read the json for each city
+	city=selCity;
+	cityCoords=myJson["City"][city].Coords;
+	cityZoom=myJson["City"][city].Zoom;
 	
-	console.log("Comparing Maps...");
-
-// Updating Query Value to Map Key Variables
-	map1key+=selQuery;
-	map2key+=selQuery;
-	
-// Updating City Values to Map Key Variables
-	map1key+="-"+selCity1;
-	map2key+="-"+selCity2;
-
-// 	Updating Analysis Form Values to Map Key Variables
-	if(selAnalysis1){
-		map1key+="-Node";
-	}else{
-		map1key+="-Direct";
+	if(selAnalysis){   //get node map and layers
+		console.log("Form of Analysis: Node");
+		cityURL = myJson["City"][selCity].NodeStyleURL;
+		ListOfLayers = myJson["City"][selCity].NodeLayers;
+	}else{     //get direct map and layers
+		console.log("Form of Analysis: Direct");
+		cityURL = myJson["City"][selCity].DirectStyleURL;
+		ListOfLayers = myJson["City"][selCity].DirectLayers;
 	}
 	
-	if(selAnalysis2){
-		map2key+="-Node";
-	}else{
-		map2key+="-Direct";
-	}
-	
-// Printing Map Key Variables on Compare
-	console.log("Map 1 Key: " + map1key);
-	console.log("Map 2 Key: " + map2key);
-	
-////Resetting the Map Key Variables
-	map1key="";
-	map2key="";
+	console.log(city + ": " + cityURL);
+	loadMap();
+	radioButtons(); //display the radio buttons
 }
+
+function loadMap(){
+	console.log("City: "+city);
+
+	map = new mapboxgl.Map({
+	container: 'map',
+	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
+	center: cityCoords, //need to make global
+	// center: [-71.26, 46.78],
+	zoom: cityZoom,
+	// zoom: 10.0
+	});
+
+}
+
+function dropdownCities(){
+	var cityHTML = "<option disabled selected>Select City</option>";
+	// console.log(typeof (myJson["City"]));
+	// console.log( myJson["City"]);
+
+	for(key in myJson["City"]){
+		cityHTML += "<option value=\"" + myJson["City"][key].name + "\">"+myJson["City"][key].name +"</option>";
+		// console.log("City: " + key + "  Name: " + myJson["City"][key].name);
+	}
+
+	document.getElementById("cityList1").innerHTML = cityHTML;
+	document.getElementById("cityList2").innerHTML = cityHTML;
+
+}
+
+function radioButtons() {
+	var formHTML ="";
+	var NameOfQueries = ["Centrality Degree", "Closeness"];
+	for (const [i, value] of ListOfLayers.entries()) {
+		console.log("---------------",i, value, NameOfQueries[i])
+		formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "loadLayer(value);" + "\">" +
+			"<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
+		}
+	
+	document.getElementById("radioForm").innerHTML = formHTML;
+}
+
+var prevLayer ="dummy-layer";
+function loadLayer(currentLayer){
+// set up the corresponding toggle button for each layer
+
+	var visibility = map.getLayoutProperty(currentLayer, 'visibility');
+ 
+// toggle layer visibility by changing the layout object's visibility property
+if (visibility === 'visible') {
+	map.setLayoutProperty(currentLayer, 'visibility', 'none');
+	console.log(currentLayer+ " turned off");
+	map.setLayoutProperty(prevLayer, 'visibility', 'visible');
+	} else {
+		map.setLayoutProperty(currentLayer, 'visibility', 'visible');
+		console.log(currentLayer+" turned on");
+		map.setLayoutProperty(prevLayer, 'visibility', 'none');
+		}
+
+		prevLayer = currentLayer;
+
+}
+
+
+
+var cityContainer = "";
+
+function CityDataDisplay(selCity, cityNum){
+	for(key in myJson["City"]){
+		if (myJson["City"][key].name == selCity) {
+			cityContainer+=
+			"City "+ cityNum + ": " + myJson["City"][key].name + "<br>" +
+			"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" + 
+			"Number of Bus Stops: " + myJson["City"][key].NumBusStops + "<br>"+ 
+			"Number of Rail Stops: " + myJson["City"][key].NumTransportSystem + "<br>" + 
+			"Number Metro Stations: " + myJson["City"][key].NumMetroStations + "<br>" + 
+			"Number Boroughs: " + myJson["City"][key].NumBoroughs + "<br>" + 
+			"Area in sq. km.: " + myJson["City"][key].AreaSqKm + "<br>" + 
+			"Population in million: " + myJson["City"][key].PopulationMillion + "<br>" + 
+			"Density per sq. km.: " + myJson["City"][key].DensityPersonSqKm + "<br>";		
+		}
+	  }
+	if(cityNum == 1){
+		document.getElementById("city1table").innerHTML = cityContainer;
+	}else if(cityNum == 2){
+		document.getElementById("city2table").innerHTML = cityContainer;
+	}
+	cityContainer="";
+}
+
+
