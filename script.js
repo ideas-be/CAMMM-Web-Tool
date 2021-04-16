@@ -133,7 +133,7 @@ function CityDataDisplay(selCity){
 	for(key in myJson["City"]){
 		if (myJson["City"][key].name == selCity) {
 			cityContainer+=
-				"<table>"+
+				"<table class = \"table-contents\">"+
 					"<tr>"+
 						"<td>City "+ cityNum + "</td>"+
 						"<td>:</td>"+
