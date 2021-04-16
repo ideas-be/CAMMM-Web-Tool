@@ -132,16 +132,31 @@ if (visibility === 'visible') {
 function CityDataDisplay(selCity){
 	for(key in myJson["City"]){
 		if (myJson["City"][key].name == selCity) {
-			cityContainer+=
-			"City "+ cityNum + ": " + myJson["City"][key].name + "<br>" +
-			"Number of Transport Systems: " + myJson["City"][key].NumTransportSystem + "<br>" + 
-			"Number of Bus Stops: " + myJson["City"][key].NumBusStops + "<br>"+ 
-			"Number of Rail Stops: " + myJson["City"][key].NumTransportSystem + "<br>" + 
-			"Number Metro Stations: " + myJson["City"][key].NumMetroStations + "<br>" + 
-			"Number Boroughs: " + myJson["City"][key].NumBoroughs + "<br>" + 
-			"Area in sq. km.: " + myJson["City"][key].AreaSqKm + "<br>" + 
-			"Population in million: " + myJson["City"][key].PopulationMillion + "<br>" + 
-			"Density per sq. km.: " + myJson["City"][key].DensityPersonSqKm + "<br>";		
+			cityContainer+="<table id=>"+
+			"<td>"+
+				"<tr>City "+ cityNum + ": </tr>"+
+				"<tr>Number of Transport Systems:</tr>"+
+				"<tr>Number of Bus Stops:</tr>"+
+				"<tr>Number of Rail Stops:</tr>"+
+				"<tr>Number Metro Stations:</tr>"+
+				"<tr>Number Boroughs:</tr>"+
+				"<tr>Area in sq. km.:</tr>"+
+				"<tr>Population in million:</tr>"+
+				"<tr>Density per sq. km.:</tr>"+
+			"</td>"+
+
+			"<td>" +
+				"<tr>" + myJson["City"][key].name + "</tr>"+
+				"<tr>" + myJson["City"][key].NumTransportSystem + "</tr>"+
+				"<tr>" + myJson["City"][key].NumBusStops + "</tr>"+
+				"<tr>" + myJson["City"][key].NumRailStations + "</tr>"+
+				"<tr>" + myJson["City"][key].NumMetroStations + "</tr>"+
+				"<tr>"+ myJson["City"][key].NumBoroughs + "</tr>"+
+				"<tr>" + myJson["City"][key].AreaSqKm + "</tr>"+
+				"<tr>" + myJson["City"][key].PopulationMillion + "</tr>"+
+				"<tr>" + myJson["City"][key].DensityPersonSqKm + "</tr>"+
+			"</td>"+"</table>";
+	
 		}
 	  }
 	console.log("cityNum " + cityNum)
