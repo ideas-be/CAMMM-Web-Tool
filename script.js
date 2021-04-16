@@ -132,30 +132,54 @@ if (visibility === 'visible') {
 function CityDataDisplay(selCity){
 	for(key in myJson["City"]){
 		if (myJson["City"][key].name == selCity) {
-			cityContainer+="<table>"+
-			"<td>"+
-				"<tr>City "+ cityNum + ": </tr>"+
-				"<tr>Number of Transport Systems:</tr>"+
-				"<tr>Number of Bus Stops:</tr>"+
-				"<tr>Number of Rail Stops:</tr>"+
-				"<tr>Number Metro Stations:</tr>"+
-				"<tr>Number Boroughs:</tr>"+
-				"<tr>Area in sq. km.:</tr>"+
-				"<tr>Population in million:</tr>"+
-				"<tr>Density per sq. km.:</tr>"+
-			"</td>"+
-
-			"<td>" +
-				"<tr>" + myJson["City"][key].name + "</tr>"+
-				"<tr>" + myJson["City"][key].NumTransportSystem + "</tr>"+
-				"<tr>" + myJson["City"][key].NumBusStops + "</tr>"+
-				"<tr>" + myJson["City"][key].NumRailStations + "</tr>"+
-				"<tr>" + myJson["City"][key].NumMetroStations + "</tr>"+
-				"<tr>"+ myJson["City"][key].NumBoroughs + "</tr>"+
-				"<tr>" + myJson["City"][key].AreaSqKm + "</tr>"+
-				"<tr>" + myJson["City"][key].PopulationMillion + "</tr>"+
-				"<tr>" + myJson["City"][key].DensityPersonSqKm + "</tr>"+
-			"</td>"+"</table>";
+			cityContainer+=
+				"<table>"+
+					"<tr>"+
+						"<td>City "+ cityNum + "</td>"+
+						"<td>:</td>"+
+						"<td>"+ myJson["City"][key].name + "</td>"+
+					"</tr>"+
+					"<tr>"+
+						"<td>Number of Transport Systems</td>"+
+						"<td>:</td>"+
+						"<td>"+ myJson["City"][key].NumTransportSystem + "</td>"+
+					"</tr>"+
+					"<tr>"+
+						"<td>Number of Bus Stops</td>"+
+						"<td>:</td>"+
+						"<td>"+ myJson["City"][key].NumBusStops + "</td>"+
+					"</tr>"+
+					"<tr>"+
+						"<td>Number of Rail Stations</td>"+
+						"<td>:</td>"+
+						"<td>"+ myJson["City"][key].NumRailStations + "</td>"+
+					"</tr>"+
+					"<tr>"+
+						"<td>Number of Metro Stations</td>"+
+						"<td>:</td>"+
+						"<td>"+ myJson["City"][key].NumMetroStations + "</td>"+
+					"</tr>"+
+					"<tr>"+
+						"<td>Number of Boroughs</td>"+
+						"<td>:</td>"+
+						"<td>"+ myJson["City"][key].NumBoroughs + "</td>"+
+					"</tr>"+
+					"<tr>"+
+						"<td>Area in sq. km.</td>"+
+						"<td>:</td>"+
+						"<td>"+ myJson["City"][key].AreaSqKm + "</td>"+
+					"</tr>"+
+					"<tr>"+
+						"<td>Population in million</td>"+
+						"<td>:</td>"+
+						"<td>"+ myJson["City"][key].PopulationMillion + "</td>"+
+					"</tr>"+
+					"<tr>"+
+						"<td>Density per sq. km.</td>"+
+						"<td>:</td>"+
+						"<td>"+ myJson["City"][key].DensityPersonSqKm + "</td>"+
+					"</tr>"+
+				"</table>";
 	
 		}
 	  }
