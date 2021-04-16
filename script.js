@@ -104,8 +104,9 @@ function radioButtons() {
 		formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "loadLayer(value);" + "\">" +
 			"<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
 		}
-	
-	document.getElementById("radioForm").innerHTML = formHTML;
+		
+	var containerId = "radioForm"+cityNum;	
+	document.getElementById(containerId).innerHTML = formHTML;
 }
 
 function loadLayer(currentLayer){
