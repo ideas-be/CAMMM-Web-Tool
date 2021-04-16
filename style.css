@@ -47,6 +47,7 @@
 /* START OF LEFT CONTROLS STYLE */
 .left-map-controls{
 	float: left;
+  align-content: center;
 }
 /* END OF LEFT CONTROLS STYLE */
 
@@ -138,6 +139,7 @@ input:checked + .slider:before {
 /* START OF RIGHT CONTROLS STYLE */
 .right-map-controls{
 	float: right;
+  align-content: center;
 }
 /* END OF RIGHT CONTROLS STYLE */
 
