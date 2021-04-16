@@ -48,6 +48,7 @@
 .left-map-controls{
 	float: left;
   align-content: center;
+  width: 50%;
 }
 /* END OF LEFT CONTROLS STYLE */
 
@@ -140,6 +141,7 @@ input:checked + .slider:before {
 .right-map-controls{
 	float: right;
   align-content: center;
+  width: 50%;
 }
 /* END OF RIGHT CONTROLS STYLE */
 
