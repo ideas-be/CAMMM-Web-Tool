@@ -1,4 +1,4 @@
-/*body { margin:0; padding:0;}*/
+body { padding: 30px;}
 #map1 { 
 	display: block;
 	position:absolute; 
@@ -19,12 +19,14 @@
 
 #city1table{
   display: block;
+  text-align: center;
 	position:absolute; 
   left: 0; width:50%;
 }
 
 #city2table{
 	display: block;
+  text-align: center;
 	position:absolute; 
   right: 0; width:50%;
 }
