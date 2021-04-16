@@ -20,13 +20,13 @@
 #city1table{
   display: block;
 	position:absolute; 
-	top:0; bottom:0; left: 0; width:50%;
+  left: 0; width:50%;
 }
 
 #city2table{
 	display: block;
 	position:absolute; 
-	top:0; bottom:0; right: 0; width:50%;
+  right: 0; width:50%;
 }
 
 .atlas-title h2{
