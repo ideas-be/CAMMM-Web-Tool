@@ -132,7 +132,7 @@ if (visibility === 'visible') {
 function CityDataDisplay(selCity){
 	for(key in myJson["City"]){
 		if (myJson["City"][key].name == selCity) {
-			cityContainer+="<table id=>"+
+			cityContainer+="<table>"+
 			"<td>"+
 				"<tr>City "+ cityNum + ": </tr>"+
 				"<tr>Number of Transport Systems:</tr>"+
