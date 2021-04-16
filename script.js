@@ -134,6 +134,7 @@ function CityDataDisplay(selCity){
 		if (myJson["City"][key].name == selCity) {
 			cityContainer+=
 				"<table class = \"table-contents\">"+
+				"<tbody class = \"table-body\">"+
 					"<tr>"+
 						"<td>City "+ cityNum + "</td>"+
 						"<td>:</td>"+
@@ -179,6 +180,7 @@ function CityDataDisplay(selCity){
 						"<td>:</td>"+
 						"<td>"+ myJson["City"][key].DensityPersonSqKm + "</td>"+
 					"</tr>"+
+				"</tbody>" +
 				"</table>";
 	
 		}
