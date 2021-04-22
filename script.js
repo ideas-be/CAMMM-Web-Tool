@@ -28,7 +28,7 @@ function initJson(jsonObj, analysisVal, consoleText){ // This creates a function
 	selAnalysis=analysisVal;
 	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident
 	if(readCount>0){
-		readCityJson(city, cityNum);
+		readCityJson(city, cityNum); //reading and reloading map on toggle
 	}
 	dropdownCities(); //initialize city dropdown on load
 }
@@ -90,7 +90,6 @@ function loadMap(){
 	}else{
 		mapNodeVar={    //storing map in the variable that loads Node analysis
 			id: cityNum,
-			mode: selAnalysis,
 			storeMap: map
 		};
 	
@@ -199,7 +198,7 @@ function CityDataDisplay(selCity){
 	
 		}
 	  }
-	console.log("cityNum " + cityNum)
+
 	if(cityNum == 1){
 		document.getElementById("city1table").innerHTML = cityContainer;
 	}else if(cityNum == 2){

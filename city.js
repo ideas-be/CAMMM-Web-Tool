@@ -1,13 +1,21 @@
 class City{
-    constructor(name, NumTransportSystem, NumBusStops, NumRailStations, NumMetroStations, NumBoroughs, AreaSqKm, PopulationMillion, DensityPersonSqKm){
-        this.name=name;
-        this.NumTransportSystem=NumTransportSystem;
-        this.NumBusStops=NumBusStops;
-        this.NumRailStations=NumRailStations;
-        this.NumMetroStations=NumMetroStations;
-        this.NumBoroughs=NumBoroughs;
-        this.AreaSqKm=AreaSqKm;
-        this.PopulationMillion=PopulationMillion;
-        this.DensityPersonSqKm=DensityPersonSqKm;
+    constructor(num){
+        var city="";
+        var cityURL = "";
+        var myJson;
+        var cityCoords = [];
+        var cityZoom = 10.0;
+        
+        var cityNum = num;
+        var mapContainer = "";
+        var cityContainer = "";
+        
+        var ListOfLayers = [];
     }
 }
+
+let City1 = new City(1);
+
+City1.readCityJson();
+
+console.log(City1.cityNum);
