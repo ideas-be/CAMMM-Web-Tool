@@ -67,6 +67,8 @@ function checkMapContainer(){
 	// mapContainer="";
 }
 
+var mapDirVar, mapNodeVar;
+
 function loadMap(){
 	console.log("City: "+city);
 
@@ -79,7 +81,23 @@ function loadMap(){
 	// zoom: 10.0
 	});
 	
-	console.log("Map variable type:", typeof (map));
+	if(selAnalysis){
+		mapDirVar={    //storing map in the variable that loads Direct analysis
+			id: cityNum,
+			storeMap: map
+		};
+	
+		console.log("Loading"+ selAnalysis+ " Map of city" + cityNum+ " in Variable..." + mapDirVar);
+	}else{
+		mapNodeVar={    //storing map in the variable that loads Node analysis
+			id: cityNum,
+			mode: selAnalysis,
+			storeMap: map
+		};
+	
+		console.log("Loading" + selAnalysis + " Map of city" + cityNum+ " in Variable..." + mapNodeVar);
+	}
+	
 }
 
 function dropdownCities(){
