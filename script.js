@@ -87,7 +87,8 @@ function loadMap(){
 			storeMap: map
 		};
 	
-		console.log("Loading"+ selAnalysis+ " Map of city" + cityNum+ " in Variable..." + mapDirVar);
+		console.log("Loading Direct Map of city" + cityNum+ " in Variable...");
+		console.log(mapDirVar);
 	}else{
 		mapNodeVar={    //storing map in the variable that loads Node analysis
 			id: cityNum,
@@ -95,7 +96,8 @@ function loadMap(){
 			storeMap: map
 		};
 	
-		console.log("Loading" + selAnalysis + " Map of city" + cityNum+ " in Variable..." + mapNodeVar);
+		console.log("Loading Node Map of city" + cityNum+ " in Variable..." + mapNodeVar);
+		console.log(mapNodeVar);
 	}
 	
 }
