@@ -81,7 +81,7 @@ function loadMap(){
 	// zoom: 10.0
 	});
 	
-	if(selAnalysis){
+	if(!selAnalysis){
 		mapDirVar={    //storing map in the variable that loads Direct analysis
 			id: cityNum,
 			storeMap: map
@@ -96,7 +96,7 @@ function loadMap(){
 			storeMap: map
 		};
 	
-		console.log("Loading Node Map of city" + cityNum+ " in Variable..." + mapNodeVar);
+		console.log("Loading Node Map of city" + cityNum+ " in Variable...");
 		console.log(mapNodeVar);
 	}
 	
