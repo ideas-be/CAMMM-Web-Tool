@@ -26,7 +26,6 @@ var readCount = 0;
 function initJson(jsonObj, analysisVal, consoleText){ // This creates a function to pull out the json
 	console.log(consoleText);
 	selAnalysis=analysisVal;
-	console.log("Init Json selAnalysis:" + selAnalysis);
 	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident
 	if(readCount>0){
 		readCityJson(city, cityNum);
@@ -50,7 +49,6 @@ function readCityJson(selCity, num){  // This creates a function to read the jso
 		ListOfLayers = myJson["City"][selCity].DirectLayers;
 	}
 	
-	console.log(city + ": " + cityURL);
 	checkMapContainer();
 	loadMap();
 	radioButtons(); //display the radio buttons
@@ -104,12 +102,9 @@ function loadMap(){
 
 function dropdownCities(){
 	var cityHTML = "<option disabled selected>Select City</option>";
-	// console.log(typeof (myJson["City"]));
-	// console.log( myJson["City"]);
 
 	for(key in myJson["City"]){
 		cityHTML += "<option value=\"" + myJson["City"][key].name + "\">"+myJson["City"][key].name +"</option>";
-		// console.log("City: " + key + "  Name: " + myJson["City"][key].name);
 	}
 
 	document.getElementById("cityList1").innerHTML = cityHTML;
@@ -121,7 +116,6 @@ function radioButtons() {
 	var formHTML ="";
 	var NameOfQueries = ["Centrality Degree", "Closeness"];
 	for (const [i, value] of ListOfLayers.entries()) {
-		console.log("---------------",i, value, NameOfQueries[i])
 		formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "loadLayer(value);" + "\">" +
 			"<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
 		}

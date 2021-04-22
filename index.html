@@ -69,7 +69,7 @@
 				<div>
 					<p class="toggleText">Direct     
 						<label class="switch">
-						<input type="checkbox" id="toggBtn1" onchange="getToggle1Value();">
+						<input type="checkbox" id="toggBtn1" onchange="getToggleValue(1);">
 						<span class="slider round"></span>
 						</label>     Node
 					</p>
@@ -90,7 +90,7 @@
 				<div>
 					<p class="toggleText">Direct     
 						<label class="switch">
-						<input type="checkbox" id="toggBtn1" onchange="getToggle1Value();">
+						<input type="checkbox" id="toggBtn2" onchange="getToggleValue(2);">
 						<span class="slider round"></span>
 						</label>     Node
 					</p>
@@ -178,11 +178,12 @@
         }
     }
 
-	function getToggle1Value(){
-		var selFormAnalysis1 = document.getElementById('toggBtn1').checked;
-		console.log("selFormAnalysis1 "+selFormAnalysis1);
-        initJson(obj, selFormAnalysis1," InitJson is called inside of selFormAnalysis1");
-						// AnalysisUpdater1(selFormAnalysis1);
+	function getToggleValue(toggNum){
+		var toggleID = "toggBtn"+toggNum;
+		var selFormAnalysis = document.getElementById(toggleID).checked;
+		console.log("selFormAnalysis "+selFormAnalysis);
+        initJson(obj, selFormAnalysis,"InitJson is called inside of get toggle function");
+						// AnalysisUpdater1(selFormAnalysis);
 	}
 
     a.send();        // Closes the XMLHttpRequest                                         
