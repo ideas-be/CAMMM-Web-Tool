@@ -78,7 +78,8 @@ function loadMap(){
 	zoom: cityZoom,
 	// zoom: 10.0
 	});
-
+	
+	console.log("Map variable type:", typeof (map));
 }
 
 function dropdownCities(){
