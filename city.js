@@ -6,7 +6,7 @@ class City{
     }
     readCityJson(){
         const {city, cityNum} = this;
-        return '${city}, ${cityNum}';
+        return `${city}, ${cityNum}`;
     }
 }
 
