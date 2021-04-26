@@ -1,21 +1,28 @@
 class City{
-    constructor(num){
-        var city="";
-        var cityURL = "";
-        var myJson;
-        var cityCoords = [];
-        var cityZoom = 10.0;
-        
-        var cityNum = num;
-        var mapContainer = "";
-        var cityContainer = "";
-        
-        var ListOfLayers = [];
+    constructor(city, cityNum){
+        this.city = city;
+        this.cityNum = cityNum;
+
+    }
+    readCityJson(){
+        const {city, cityNum} = this;
+        return '${city}, ${cityNum}';
     }
 }
 
-let City1 = new City(1);
+// let City1 = new City(1);
 
-City1.readCityJson();
+// City1.readCityJson();
 
-console.log(City1.cityNum);
+// console.log(City1.cityNum);
+
+// var cityURL = "";
+// var myJson;
+// var cityCoords = [];
+// var cityZoom = 10.0;
+
+
+// var mapContainer = "";
+// var cityContainer = "";
+
+// var ListOfLayers = [];
