@@ -10,7 +10,7 @@ class City{
         this.city = city;
         this.cityNum = cityNum;
         this.readCityJson();
-        this.injectToggleTest();
+        // this.injectToggleTest();
     }
     readCityJson(){
         const {city, cityNum} = this;
@@ -23,11 +23,11 @@ class City{
         this.cityZoom = cityZoom;
         console.log("cityCoords", cityCoords,"cityZoom",cityZoom);
     }
-    injectToggleTest(){
-        console.log("Injecting toggle in HTML");
-        toggleHTML="<input type=\"checkbox\" id=\"toggBtntest\" onchange=\"City1.getToggleTest();\">"+"<span class=\"slider round\"></span>";
-        document.getElementById("toggleTest").innerHTML = toggleHTML;
-    }
+    // injectToggleTest(){
+    //     console.log("Injecting toggle in HTML");
+    //     toggleHTML="<input type=\"checkbox\" id=\"toggBtntest\" onchange=\"City1.getToggleTest();\">"+"<span class=\"slider round\"></span>";
+    //     document.getElementById("toggleTest").innerHTML = toggleHTML;
+    // }
     getToggleTest(){
 		selToggle = document.getElementById(toggBtntest).checked;
         if(selToggle){
