@@ -22,6 +22,14 @@ class City{
         this.cityZoom = cityZoom;
         console.log("cityCoords", cityCoords,"cityZoom",cityZoom);
     }
+    getToggleTest(){
+		selToggle = document.getElementById(toggBtntest).checked;
+        if(selToggle){
+            console.log("Bye");
+        }else{
+            console.log("Hi");
+        }
+    }
 }
 
 

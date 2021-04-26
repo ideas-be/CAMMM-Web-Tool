@@ -1,7 +1,7 @@
-var selCity1 = "";
-var selCity2 = "";
-var selAnalysis1 = "";
-var selAnalysis2 = "";
+// var selCity1 = "";
+// var selCity2 = "";
+// var selAnalysis1 = "";
+// var selAnalysis2 = "";
 var shortURL = 'mapbox://styles/carmela-cucuzzella/';
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 var map;
@@ -72,7 +72,7 @@ function loadMap(){
 
 	map = new mapboxgl.Map({
 	container: mapContainer,
-	style: "mapbox://styles/carmela-cucuzzella/"+ cityURL,
+	style: shortURL+ cityURL,
 	center: cityCoords, //need to make global
 	// center: [-71.26, 46.78],
 	zoom: cityZoom,
