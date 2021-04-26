@@ -50,5 +50,5 @@ class City{
 
 // var ListOfLayers = [];
 
-let City1 = new City('Montreal',1);
-let City2 = new City('Vienna',2);
+const City1 = new City('Montreal',1);
+const City2 = new City('Vienna',2);
