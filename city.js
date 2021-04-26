@@ -28,14 +28,14 @@ class City{
     //     toggleHTML="<input type=\"checkbox\" id=\"toggBtntest\" onchange=\"City1.getToggleTest();\">"+"<span class=\"slider round\"></span>";
     //     document.getElementById("toggleTest").innerHTML = toggleHTML;
     // }
-    getToggleTest(){
-		selToggle = document.getElementById(toggBtntest).checked;
-        if(selToggle){
-            console.log("Bye");
-        }else{
-            console.log("Hi");
-        }
-    }
+    // getToggleTest(){
+    //     selToggle = document.getElementById(toggBtntest).checked;
+    //     if(selToggle){
+    //         console.log("Bye");
+    //     }else{
+    //         console.log("Hi");
+    //     }
+    // }
 }
 
 

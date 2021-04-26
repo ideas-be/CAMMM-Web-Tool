@@ -28,7 +28,7 @@
 	<div>
 		<p class="toggleText">Hi     
 			<label class="switch" id ="toggleTest">
-				<input type="checkbox" id="toggBtntest" onchange="City1.getToggleTest();">
+				<input type="checkbox" id="toggBtntest" onchange="getToggleTest();">
 				<span class="slider round"></span>
 			</label>     Bye
 		</p>
@@ -194,6 +194,15 @@
         initJson(obj, selFormAnalysis,"InitJson is called inside of get toggle function");
 						// AnalysisUpdater1(selFormAnalysis);
 	}
+
+	function getToggleTest(){
+        var selToggle = document.getElementById(toggBtntest).checked;
+        if(selToggle){
+            console.log("Bye");
+        }else{
+            console.log("Hi");
+        }
+    }
 
     a.send();        // Closes the XMLHttpRequest                                         
 </script>
