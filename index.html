@@ -24,15 +24,16 @@
 		<!-- <a href="filter.html">Filter Example</a> -->
 	</div>
 	
-	<!-- START OF DIRECT/NODE TOGGLE 1 -->
+	<!-- START OF TEST TOGGLE -->
 	<div>
 		<p class="toggleText">Hi     
-			<label class="switch" id ="toggleTest">
+			<label class="switch">
 				<input type="checkbox" id="toggBtntest" onchange="getToggleTest();">
 				<span class="slider round"></span>
 			</label>     Bye
 		</p>
 	</div>
+	<!-- END OF TEST TOGGLE -->
 	
 	<!-- START OF MAP CONTROLS AREA -->
 	<div class="map-controls-area group">
@@ -197,6 +198,7 @@
 
 	function getToggleTest(){
         var selToggle = document.getElementById(toggBtntest).checked;
+		console.log("selToggle:", selToggle);
         if(selToggle){
             console.log("Bye");
         }else{
