@@ -38,7 +38,9 @@ class City{
     }
 
     getToggleTest(){
-        var selAnalysis = document.getElementById("toggBtntest").checked;
+        const { cityNum } = this;
+        var toggleID = "toggBtn" + cityNum;
+        var selAnalysis = document.getElementById(toggleID).checked;
 		console.log("selToggle:", selAnalysis);
         if(selAnalysis){
             console.log("Loading map type: Node");
