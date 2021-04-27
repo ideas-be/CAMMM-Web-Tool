@@ -24,10 +24,7 @@
 		<a href="toggle.html">Toggle Example</a>
 	</div>
 	
-	<!-- START OF TEST TOGGLE -->
-	<div id="toggleTest">
-	</div>
-	<!-- END OF TEST TOGGLE -->
+
 	
 	<!-- START OF MAP CONTROLS AREA -->
 	<div class="map-controls-area group">
@@ -71,13 +68,7 @@
 				<form name = "sampleForm" id="radioForm1">
 				</form>
 				<!-- START OF DIRECT/NODE TOGGLE 1 -->
-				<div>
-					<p class="toggleText">Direct     
-						<label class="switch">
-						<input type="checkbox" id="toggBtn1" onchange="getToggleValue(1);">
-						<span class="slider round"></span>
-						</label>     Node
-					</p>
+				<div id = "toggleCity1">
 				</div>
 		</div>
 		
@@ -92,13 +83,7 @@
 				<form name = "sampleForm" id="radioForm2">
 				</form>
 				<!-- START OF DIRECT/NODE TOGGLE 2 -->
-				<div>
-					<p class="toggleText">Direct     
-						<label class="switch">
-						<input type="checkbox" id="toggBtn2" onchange="getToggleValue(2);">
-						<span class="slider round"></span>
-						</label>     Node
-					</p>
+				<div id = "toggleCity2">
 				</div>
 	  	</div>
 	</div>
@@ -181,14 +166,6 @@
             // console.log(obj);   // TADAAAAAAA
         }
     }
-
-	function getToggleValue(toggNum){
-		var toggleID = "toggBtn"+toggNum;
-		var selFormAnalysis = document.getElementById(toggleID).checked;
-		console.log("selFormAnalysis "+selFormAnalysis);
-        initJson(obj, selFormAnalysis,"InitJson is called inside of get toggle function");
-						// AnalysisUpdater1(selFormAnalysis);
-	}
 
     a.send();        // Closes the XMLHttpRequest                                         
 </script>

@@ -25,15 +25,16 @@ class City{
         console.log("cityCoords", cityCoords,"cityZoom",cityZoom);
     }
     injectToggleHTML(){
+        const { cityNum } = this;
         console.log("Injecting toggle in HTML");
         var toggleHTML="<p class=\"toggleText\">Direct"+
 			"<label class=\"switch\" >"+
-                    "<input type=\"checkbox\" id=\"toggBtntest\" onchange=\"City"+this.cityNum+".getToggleTest();\">"+
+            "<input type=\"checkbox\" id=\"toggBtn" + cityNum+"\" onchange=\"City"+cityNum+".getToggleTest();\">"+
                         "<span class=\"slider round\"></span>"+
 			"</label>     Node"+
 		"</p>";
-
-        document.getElementById("toggleTest").innerHTML = toggleHTML;
+        var toggleID = "toggleCity" + cityNum;
+        document.getElementById(toggleID).innerHTML = toggleHTML;
     }
 
     getToggleTest(){
