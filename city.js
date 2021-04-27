@@ -23,6 +23,7 @@ class City{
         this.cityZoom = cityZoom;
         console.log("cityCoords", cityCoords,"cityZoom",cityZoom);
     }
+    // TODO: work here on the thing that is like this
     // injectToggleTest(){
     //     console.log("Injecting toggle in HTML");
     //     toggleHTML="<input type=\"checkbox\" id=\"toggBtntest\" onchange=\"City1.getToggleTest();\">"+"<span class=\"slider round\"></span>";
