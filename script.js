@@ -2,15 +2,13 @@
 // var selCity2 = "";
 // var selAnalysis1 = "";
 // var selAnalysis2 = "";
-var shortURL = 'mapbox://styles/carmela-cucuzzella/';
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 // var map;
 
 // var selAnalysis=false;
 
 // var city="";
 // var cityURL = "";
-var myJson;
+// var myJson;
 // var cityCoords = [];
 // var cityZoom = 10.0;
 
@@ -97,18 +95,6 @@ var myJson;
 // 	}
 	
 // }
-
-function dropdownCities(){
-	var cityHTML = "<option disabled selected>Select City</option>";
-
-	for(key in myJson["City"]){
-		cityHTML += "<option value=\"" + myJson["City"][key].name + "\">"+myJson["City"][key].name +"</option>";
-	}
-
-	document.getElementById("cityList1").innerHTML = cityHTML;
-	document.getElementById("cityList2").innerHTML = cityHTML;
-
-}
 
 function radioButtons() {
 	var formHTML ="";

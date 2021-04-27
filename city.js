@@ -1,10 +1,24 @@
 var myJson;
 var map;
+var shortURL = 'mapbox://styles/carmela-cucuzzella/';
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 
 function newJson(obj){
     myJson=obj;
     console.log("Initializing new Json obj");
     dropdownCities();
+}
+
+function dropdownCities(){
+	var cityHTML = "<option disabled selected>Select City</option>";
+
+	for(key in myJson["City"]){
+		cityHTML += "<option value=\"" + myJson["City"][key].name + "\">"+myJson["City"][key].name +"</option>";
+	}
+
+	document.getElementById("cityList1").innerHTML = cityHTML;
+	document.getElementById("cityList2").innerHTML = cityHTML;
+
 }
 
 class City{
