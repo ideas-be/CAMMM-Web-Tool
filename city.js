@@ -1,8 +1,10 @@
 var myJson;
+var map;
 
 function newJson(obj){
     myJson=obj;
     console.log("Initializing new Json obj");
+    dropdownCities();
 }
 
 class City{
@@ -38,51 +40,38 @@ class City{
     }
 
     getToggleTest(){
-        const { cityNum } = this;
+        const { city,cityNum } = this;
         var toggleID = "toggBtn" + cityNum;
         var selAnalysis = document.getElementById(toggleID).checked;
 		console.log("selToggle:", selAnalysis);
         if(selAnalysis){
             console.log("Loading map type: Node");
-            // here we call map direct
+            cityURL = myJson["City"][city].NodeStyleURL;
+            ListOfLayers = myJson["City"][city].NodeLayers;
+            // TODO Load radio buttons
         }else{
             console.log("Loading map type: Direct");
+            cityURL = myJson["City"][city].DirectStyleURL;
+            ListOfLayers = myJson["City"][city].DirectLayers;
         }
         this.selAnalysis = selAnalysis;
+        this.cityURL = cityURL;
+        this.ListOfLayers = ListOfLayers;
+        this.loadMap();
     }
-    // TODO: work here on the thing that is like this
-    // injectToggleTest(){
-    //     console.log("Injecting toggle in HTML");
-    //     toggleHTML="<input type=\"checkbox\" id=\"toggBtntest\" onchange=\"City1.getToggleTest();\">"+"<span class=\"slider round\"></span>";
-    //     document.getElementById("toggleTest").innerHTML = toggleHTML;
-    // }
-    // getToggleTest(){
-    //     selToggle = document.getElementById(toggBtntest).checked;
-    //     if(selToggle){
-    //         console.log("Bye");
-    //     }else{
-    //         console.log("Hi");
-    //     }
-    // }
+
+    loadMap() {
+        const { cityNum } = this;
+        var mapContainer="map"+cityNum
+        map = new mapboxgl.Map({
+            container: mapContainer,
+            style: shortURL + cityURL,
+            center: cityCoords, //need to make global
+            // center: [-71.26, 46.78],
+            zoom: cityZoom,
+            // zoom: 10.0
+        });
+
+    }
+
 }
-
-
-// let City1 = new City(1);
-
-// City1.readCityJson();
-
-// console.log(City1.cityNum);
-
-// var cityURL = "";
-// var myJson;
-// var cityCoords = [];
-// var cityZoom = 10.0;
-
-
-// var mapContainer = "";
-// var cityContainer = "";
-
-// var ListOfLayers = [];
-
-// const City1 = new City('Montreal',1);
-// const City2 = new City('Vienna',2);

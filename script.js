@@ -4,100 +4,99 @@
 // var selAnalysis2 = "";
 var shortURL = 'mapbox://styles/carmela-cucuzzella/';
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
-var map;
+// var map;
 
-var selAnalysis=false;
+// var selAnalysis=false;
 
-var city="";
-var cityURL = "";
-var myJson;
-var cityCoords = [];
-var cityZoom = 10.0;
+// var city="";
+// var cityURL = "";
+// var myJson;
+// var cityCoords = [];
+// var cityZoom = 10.0;
 
-var cityNum = 0;
-var mapContainer = "";
-var cityContainer = "";
+// var cityNum = 0;
+// var mapContainer = "";
+// var cityContainer = "";
 
-var ListOfLayers = [];
-var prevLayer ="dummy-layer";
+// var ListOfLayers = [];
+// var prevLayer ="dummy-layer";
 
-var readCount = 0;
 
-function initJson(jsonObj, analysisVal, consoleText){ // This creates a function to pull out the json
-	console.log(consoleText);
-	selAnalysis=analysisVal;
-	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident
-	if(readCount>0){
-		readCityJson(city, cityNum); //reading and reloading map on toggle
-	}
-	dropdownCities(); //initialize city dropdown on load
+// function initJson(jsonObj, analysisVal, consoleText){ // This creates a function to pull out the json
+// 	console.log(consoleText);
+// 	selAnalysis=analysisVal;
+// 	myJson = jsonObj; // The Data is asigned to an internal variable, so we don't destroy it by accident
+// 	if(readCount>0){
+// 		readCityJson(city, cityNum); //reading and reloading map on toggle
+// 	}
+// 	dropdownCities(); //initialize city dropdown on load
 }
 
-function readCityJson(selCity, num){  // This creates a function to read the json for each city
-	cityNum=num;
-	city=selCity;
-	cityCoords=myJson["City"][city].Coords;
-	cityZoom=myJson["City"][city].Zoom;
+// function readCityJson(selCity, num){  // This creates a function to read the json for each city
+// 	cityNum=num;
+// 	city=selCity;
+// 	cityCoords=myJson["City"][city].Coords;
+// 	cityZoom=myJson["City"][city].Zoom;
 	
-	if(selAnalysis){   //get node map and layers
-		console.log("Form of Analysis: Node");
-		cityURL = myJson["City"][selCity].NodeStyleURL;
-		ListOfLayers = myJson["City"][selCity].NodeLayers;
-	}else{     //get direct map and layers
-		console.log("Form of Analysis: Direct");
-		cityURL = myJson["City"][selCity].DirectStyleURL;
-		ListOfLayers = myJson["City"][selCity].DirectLayers;
-	}
+// 	if(selAnalysis){   //get node map and layers
+// 		console.log("Form of Analysis: Node");
+// 		cityURL = myJson["City"][selCity].NodeStyleURL;
+// 		ListOfLayers = myJson["City"][selCity].NodeLayers;
+// 	}else{     //get direct map and layers
+// 		console.log("Form of Analysis: Direct");
+// 		cityURL = myJson["City"][selCity].DirectStyleURL;
+// 		ListOfLayers = myJson["City"][selCity].DirectLayers;
+// 	}
 	
-	checkMapContainer();
-	loadMap();
-	radioButtons(); //display the radio buttons
-	readCount++;
-}
+// 	checkMapContainer();
+// 	loadMap();
+// 	radioButtons(); //display the radio buttons
+// 	readCount++;
+// }
 
 
-function checkMapContainer(){
-	if(cityNum == 1){
-		mapContainer="map1";
-	}else if(cityNum == 2){
-		mapContainer="map2";
-	}
-	// mapContainer="";
-}
+// function checkMapContainer(){
+// 	if(cityNum == 1){
+// 		mapContainer="map1";
+// 	}else if(cityNum == 2){
+// 		mapContainer="map2";
+// 	}
+// 	// mapContainer="";
+// }
 
-var mapDirVar, mapNodeVar;
+// var mapDirVar, mapNodeVar;
 
-function loadMap(){
-	console.log("City: "+city);
+// function loadMap(){
+// 	console.log("City: "+city);
 
-	map = new mapboxgl.Map({
-	container: mapContainer,
-	style: shortURL+ cityURL,
-	center: cityCoords, //need to make global
-	// center: [-71.26, 46.78],
-	zoom: cityZoom,
-	// zoom: 10.0
-	});
+// 	map = new mapboxgl.Map({
+// 	container: mapContainer,
+// 	style: shortURL+ cityURL,
+// 	center: cityCoords, //need to make global
+// 	// center: [-71.26, 46.78],
+// 	zoom: cityZoom,
+// 	// zoom: 10.0
+// 	});
 	
-	if(!selAnalysis){
-		mapDirVar={    //storing map in the variable that loads Direct analysis
-			id: cityNum,
-			storeMap: map
-		};
+// 	if(!selAnalysis){
+// 		mapDirVar={    //storing map in the variable that loads Direct analysis
+// 			id: cityNum,
+// 			storeMap: map
+// 		};
 	
-		console.log("Loading Direct Map of city" + cityNum+ " in Variable...");
-		console.log(mapDirVar);
-	}else{
-		mapNodeVar={    //storing map in the variable that loads Node analysis
-			id: cityNum,
-			storeMap: map
-		};
+// 		console.log("Loading Direct Map of city" + cityNum+ " in Variable...");
+// 		console.log(mapDirVar);
+// 	}else{
+// 		mapNodeVar={    //storing map in the variable that loads Node analysis
+// 			id: cityNum,
+// 			storeMap: map
+// 		};
 	
-		console.log("Loading Node Map of city" + cityNum+ " in Variable...");
-		console.log(mapNodeVar);
-	}
+// 		console.log("Loading Node Map of city" + cityNum+ " in Variable...");
+// 		console.log(mapNodeVar);
+// 	}
 	
-}
+// }
 
 function dropdownCities(){
 	var cityHTML = "<option disabled selected>Select City</option>";
