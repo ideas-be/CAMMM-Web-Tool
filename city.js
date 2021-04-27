@@ -10,8 +10,8 @@ class City{
         this.city = city;
         this.cityNum = cityNum;
         this.readCityJson();
-        // this.injectToggleHTML();
-        // this.injectToggleTest();
+        this.injectToggleHTML();
+        this.getToggleTest();
     }
     readCityJson(){
         const {city, cityNum} = this;
@@ -40,9 +40,10 @@ class City{
         var selAnalysis = document.getElementById("toggBtntest").checked;
 		console.log("selToggle:", selAnalysis);
         if(selAnalysis){
-            console.log("Node");
+            console.log("Loading map type: Node");
+            // here we call map direct
         }else{
-            console.log("Direct");
+            console.log("Loading map type: Direct");
         }
         this.selAnalysis = selAnalysis;
     }
