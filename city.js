@@ -10,6 +10,7 @@ class City{
         this.city = city;
         this.cityNum = cityNum;
         this.readCityJson();
+        this.injectToggleHTML();
         // this.injectToggleTest();
     }
     readCityJson(){
@@ -22,6 +23,27 @@ class City{
         this.cityCoords = cityCoords;
         this.cityZoom = cityZoom;
         console.log("cityCoords", cityCoords,"cityZoom",cityZoom);
+    }
+    injectToggleHTML(){
+        console.log("Injecting toggle in HTML");
+        toggleHTML="<p class=\"toggleText\">Hi"+
+			"<label class=\"switch\" >"+
+                    "<input type=\"checkbox\" id=\"toggBtntest\" onchange=\"this.getToggleTest();\">"+
+                        "<span class=\"slider round\"></span>"+
+			"</label>     Bye"+
+		"</p>";
+
+        document.getElementById("toggleTest").innerHTML = toggleHTML;
+    }
+    getToggleTest(){
+        var selAnalysis = document.getElementById("toggBtntest").checked;
+		console.log("selToggle:", selAnalysis);
+        if(selAnalysis){
+            console.log("Node");
+        }else{
+            console.log("Direct");
+        }
+        this.selAnalysis = selAnalysis;
     }
     // TODO: work here on the thing that is like this
     // injectToggleTest(){
