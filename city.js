@@ -32,6 +32,7 @@ class City{
     readCityJson(){
         const {city, cityNum} = this;
         console.log("city", city,"cityNum",cityNum);
+        console.log(myJson);
 
         cityCoords=myJson["City"][city].Coords;
 	    cityZoom=myJson["City"][city].Zoom;

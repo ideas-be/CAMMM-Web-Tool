@@ -14,7 +14,7 @@
 
 // var cityNum = 0;
 // var mapContainer = "";
-// var cityContainer = "";
+var cityContainer = "";
 
 // var ListOfLayers = [];
 // var prevLayer ="dummy-layer";
