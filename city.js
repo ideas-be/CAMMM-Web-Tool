@@ -10,7 +10,7 @@ class City{
         this.city = city;
         this.cityNum = cityNum;
         this.readCityJson();
-        this.injectToggleHTML();
+        // this.injectToggleHTML();
         // this.injectToggleTest();
     }
     readCityJson(){
@@ -26,15 +26,16 @@ class City{
     }
     injectToggleHTML(){
         console.log("Injecting toggle in HTML");
-        toggleHTML="<p class=\"toggleText\">Direct"+
+        var toggleHTML="<p class=\"toggleText\">Direct"+
 			"<label class=\"switch\" >"+
-                    "<input type=\"checkbox\" id=\"toggBtntest\" onchange=\"this.getToggleTest();\">"+
+                    "<input type=\"checkbox\" id=\"toggBtntest\" onchange=\"getToggleTest();\">"+
                         "<span class=\"slider round\"></span>"+
 			"</label>     Node"+
 		"</p>";
 
         document.getElementById("toggleTest").innerHTML = toggleHTML;
     }
+
     getToggleTest(){
         var selAnalysis = document.getElementById("toggBtntest").checked;
 		console.log("selToggle:", selAnalysis);
