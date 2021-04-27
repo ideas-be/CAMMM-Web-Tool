@@ -48,6 +48,7 @@ class City{
             console.log("Loading map type: Node");
             cityURL = myJson["City"][city].NodeStyleURL;
             ListOfLayers = myJson["City"][city].NodeLayers;
+
             // TODO Load radio buttons
         }else{
             console.log("Loading map type: Direct");
@@ -61,7 +62,7 @@ class City{
     }
 
     loadMap() {
-        const { cityNum } = this;
+        const { cityNum, cityCoords, cityZoom } = this;
         var mapContainer="map"+cityNum
         map = new mapboxgl.Map({
             container: mapContainer,
