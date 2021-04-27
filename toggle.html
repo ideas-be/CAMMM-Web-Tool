@@ -12,7 +12,7 @@
 
 </head>
 <body>
-
+<!-- 
 <label>
     <input type="checkbox" id="powermail_field_doruovaciaadresa2_1" checked="checked" />
     Show/hide
@@ -27,7 +27,31 @@
         elem.style.display = this.checked ? 'block' : 'none';
     };
     checkBox.onchange();
+</script> -->
+
+<!-- START OF TEST TOGGLE -->
+    <div>
+        <p class="toggleText">Hi     
+            <label class="switch">
+                <input type="checkbox" id="toggBtntest" onchange="getToggleTest();">
+                <span class="slider round"></span>
+            </label>     Bye
+        </p>
+    </div>
+<!-- END OF TEST TOGGLE -->
+
+<script>
+    function getToggleTest(){
+        var selToggle = document.getElementById(toggBtntest).checked;
+		console.log("selToggle:", selToggle);
+        if(selToggle){
+            console.log("Bye");
+        }else{
+            console.log("Hi");
+        }
+    }
 </script>
+
 
 </body>
 </html>
