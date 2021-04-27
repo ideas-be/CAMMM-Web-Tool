@@ -10,7 +10,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2d
 
 // var city="";
 // var cityURL = "";
-// var myJson;
+var myJson;
 // var cityCoords = [];
 // var cityZoom = 10.0;
 
@@ -30,7 +30,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2d
 // 		readCityJson(city, cityNum); //reading and reloading map on toggle
 // 	}
 // 	dropdownCities(); //initialize city dropdown on load
-}
+// }
 
 // function readCityJson(selCity, num){  // This creates a function to read the json for each city
 // 	cityNum=num;
