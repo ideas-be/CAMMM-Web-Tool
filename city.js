@@ -26,11 +26,11 @@ class City{
     }
     injectToggleHTML(){
         console.log("Injecting toggle in HTML");
-        toggleHTML="<p class=\"toggleText\">Hi"+
+        toggleHTML="<p class=\"toggleText\">Direct"+
 			"<label class=\"switch\" >"+
                     "<input type=\"checkbox\" id=\"toggBtntest\" onchange=\"this.getToggleTest();\">"+
                         "<span class=\"slider round\"></span>"+
-			"</label>     Bye"+
+			"</label>     Node"+
 		"</p>";
 
         document.getElementById("toggleTest").innerHTML = toggleHTML;
