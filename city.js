@@ -35,7 +35,7 @@ class City{
         console.log("city", city,"cityNum",cityNum);
         console.log(cityJson);
 
-        let cityCoords = cityJson["Coords"];
+        let cityCoords = cityJson.Coords;
         let cityZoom = cityJson.Zoom;
         
         this.cityCoords = cityCoords;
@@ -60,6 +60,8 @@ class City{
         var toggleID = "toggBtn" + cityNum;
         var selAnalysis = document.getElementById(toggleID).checked;
 		console.log("selToggle:", selAnalysis);
+        let cityURL="";
+        let ListOfLayers = [];
         if(selAnalysis){
             console.log("Loading map type: Node");
             cityURL = cityJson.NodeStyleURL;
@@ -69,7 +71,7 @@ class City{
         }else{
             console.log("Loading map type: Direct");
             cityURL = cityJson.DirectStyleURL;
-            ListOfLayers = cityJsoncityJson.DirectLayers;
+            ListOfLayers = cityJson.DirectLayers;
         }
         this.selAnalysis = selAnalysis;
         this.cityURL = cityURL;
