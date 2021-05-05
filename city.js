@@ -23,6 +23,28 @@ function getCity(city, num){
     }
 }
 
+function getSelectedCity(num){
+    var citylist="cityList"+num;
+    var selectedCity = document.getElementById(citylist).value;
+
+    if(selectedCity != "Select City"){
+        
+        let city = new City(selectedCity, num, myJson["City"][selectedCity]);
+        getCity(city, num);
+        // readCityJson(selectedCity, 2);
+        // CityDataDisplay(selectedCity);
+
+        var mapdivId = "map"+num+"div";
+        var mapdiv = document.getElementById(mapdivId);
+        
+        var mapdisplay = mapdiv.style.display;
+        if(mapdisplay == 'none')
+            {
+                mapdiv.style.display = 'block';
+            }
+    }
+}
+
 function dropdownCities(){
 	var cityHTML = "<option disabled selected>Select City</option>";
 

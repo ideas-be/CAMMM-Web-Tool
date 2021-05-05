@@ -35,7 +35,7 @@
 		<!-- START OF CITY 1 LIST -->
 	<div class="atlas-city1">
 		<h3>City 1</h3>
-		<select id="cityList1" onchange="getSelectedCity1();">
+		<select id="cityList1" onchange="getSelectedCity(1);">
       </select>
 	</div>
 	<div class="emptyspace"></div>
@@ -49,7 +49,7 @@
 		<!-- START OF CITY 2 LIST -->
 	<div class="atlas-city2">
 		<h3>City 2</h3>
-		<select id="cityList2" onchange="getSelectedCity2();">
+		<select id="cityList2" onchange="getSelectedCity(2);">
       </select>
 	</div>
 	<div class="emptyspace"></div>
@@ -98,37 +98,37 @@
 	
 <!-- START OF FUNCTION FOR CITY 1 SELECTION  -->
 	<script> 
-		function getSelectedCity1(){
+		// function getSelectedCity1(){
 			
-			var selectedCity = document.getElementById("cityList1").value;
+		// 	var selectedCity = document.getElementById("cityList1").value;
 
-			if(selectedCity != "Select City"){
+		// 	if(selectedCity != "Select City"){
 				
-				console.log("This is the obj from XML");
-				console.log(obj);
-				let city = new City(selectedCity, 1, myJson["City"][selectedCity]);
-				getCity(city, 1);
+		// 		console.log("This is the obj from XML");
+		// 		console.log(obj);
+		// 		let city = new City(selectedCity, 1, myJson["City"][selectedCity]);
+		// 		getCity(city, 1);
 
-				// let City1 = new City(selectedCity, 1, myJson["City"][selectedCity]);
+		// 		// let City1 = new City(selectedCity, 1, myJson["City"][selectedCity]);
 												
-				// readCityJson(selectedCity, 1);
-				// CityDataDisplay(selectedCity);
+		// 		// readCityJson(selectedCity, 1);
+		// 		// CityDataDisplay(selectedCity);
 				
-				var map1div = document.getElementById('map1div');
+		// 		var map1div = document.getElementById('map1div');
 
-				var map1display = map1div.style.display;
-				if(map1display == 'none')
-					{
-						map1div.style.display = 'block';
-					}
-			}
-			console.log("City 1 is in the function!");
-			console.log(City1);
-			}
-		getSelectedCity1();
+		// 		var map1display = map1div.style.display;
+		// 		if(map1display == 'none')
+		// 			{
+		// 				map1div.style.display = 'block';
+		// 			}
+		// 	}
+		// 	console.log("City 1 is in the function!");
+		// 	console.log(City1);
+		// 	}
+		// getSelectedCity1();
 
-		console.log("City 1 still exists");
-		console.log(City1);
+		// console.log("City 1 still exists");
+		// console.log(City1);
 		
 	</script>
 	<!-- END OF FUNCTION FOR CITY 1 SELECTION  -->
@@ -141,26 +141,26 @@
 	
 	<!-- START OF FUNCTION FOR CITY 2 SELECTION  -->
 	<script> 
-		function getSelectedCity2(){
-			var selectedCity = document.getElementById("cityList2").value;
+		// function getSelectedCity2(){
+		// 	var selectedCity = document.getElementById("cityList2").value;
 
-			if(selectedCity != "Select City"){
+		// 	if(selectedCity != "Select City"){
 				
-				let city = new City(selectedCity, 2, myJson["City"][selectedCity]);
-				getCity(city, 2);
-				// readCityJson(selectedCity, 2);
-				// CityDataDisplay(selectedCity);
+		// 		let city = new City(selectedCity, 2, myJson["City"][selectedCity]);
+		// 		getCity(city, 2);
+		// 		// readCityJson(selectedCity, 2);
+		// 		// CityDataDisplay(selectedCity);
 
-				var map2div = document.getElementById('map2div');
+		// 		var map2div = document.getElementById('map2div');
 				
-				var map2display = map2div.style.display;
-				if(map2display == 'none')
-					{
-						map2div.style.display = 'block';
-					}
-			}
-		}
-		getSelectedCity2();
+		// 		var map2display = map2div.style.display;
+		// 		if(map2display == 'none')
+		// 			{
+		// 				map2div.style.display = 'block';
+		// 			}
+		// 	}
+		// }
+		// getSelectedCity2();
 	</script>
 	<!-- END OF FUNCTION FOR CITY 2 SELECTION  -->
 	
