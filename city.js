@@ -119,7 +119,7 @@ class City{
     loadLayer(){
         const{map, ListOfLayers} =this;
         var radioList = [];
-        for(i=0;i++;i<ListOfLayers.length){
+        for(let i=0;i++;i<ListOfLayers.length){
             var buttonStatus=document.getElementById(ListOfLayers[i]).checked;
             radioList.add(buttonStatus);
         }
