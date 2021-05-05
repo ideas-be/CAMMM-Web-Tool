@@ -22,23 +22,25 @@ function dropdownCities(){
 }
 
 class City{
-    constructor(city, cityNum){
+    constructor(city, cityNum, cityCoords, cityZoom){
         this.city = city;
         this.cityNum = cityNum;
         this.readCityJson();
         this.injectToggleHTML();
         this.getToggleTest();
+        this.cityCoords =cityCoords;
+        this.cityZoom =cityZoom;
     }
-    readCityJson(){
-        const { city, cityZoom, cityCoords,cityNum} = this;
+    readCityJson() {
+        const { city, cityNum, cityCoords, cityZoom} = this;
         console.log("city", city,"cityNum",cityNum);
         console.log(myJson);
 
-        cityCoords=myJson["City"][city].Coords;
-	    cityZoom=myJson["City"][city].Zoom;
+        // cityCoords=myJson["City"][city].Coords;
+	    // cityZoom=myJson["City"][city].Zoom;
         
-        this.cityCoords = cityCoords;
-        this.cityZoom = cityZoom;
+        // this.cityCoords = cityCoords;
+        // this.cityZoom = cityZoom;
         console.log("cityCoords", cityCoords,"cityZoom",cityZoom);
     }
     injectToggleHTML(){

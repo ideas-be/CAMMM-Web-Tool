@@ -104,8 +104,8 @@
 
 			if(selectedCity != "Select City"){
 
-				let City1 = new City(selectedCity, 1);
-				
+				let City1 = new City(selectedCity, 1,myJson["City"][selectedCity]["Coords"],myJson["City"][selectedCity]["Zoom"]);
+												
 				// readCityJson(selectedCity, 1);
 				// CityDataDisplay(selectedCity);
 				
