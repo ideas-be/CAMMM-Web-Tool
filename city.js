@@ -2,7 +2,6 @@
 // let City2 = new City("Vienna", 2, myJson["City"]["Vienna"]);
 var City1, City2;
 var myJson;
-var map;
 var shortURL = 'mapbox://styles/carmela-cucuzzella/';
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 
@@ -59,13 +58,14 @@ function dropdownCities(){
 }
 
 class City{
-    constructor(city, cityNum, cityJson){
+    constructor(city, cityNum, cityJson, map){
         this.city = city;
         this.cityNum = cityNum;
         this.cityJson = cityJson;
         this.readCityJson();
         this.injectToggleHTML();
         this.getToggleTest();
+        this.map=map;
     }
     readCityJson() {
         const { city, cityNum, cityJson} = this;
@@ -118,7 +118,7 @@ class City{
     }
 
     loadLayer(){
-        const{value} =this;
+        const{value, map} =this;
         let currentLayer = value;
         let prevLayer = 0;
         // set up the corresponding toggle button for each layer
@@ -153,7 +153,7 @@ class City{
     }
 
     loadMap() {
-        const { cityNum, cityCoords, cityZoom, cityURL } = this;
+        const { cityNum, cityCoords, cityZoom, cityURL, map } = this;
         var mapContainer="map"+cityNum
         map = new mapboxgl.Map({
             container: mapContainer,
