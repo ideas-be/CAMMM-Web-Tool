@@ -123,7 +123,7 @@ class City{
         var NameOfQueries = ["Centrality Degree", "Closeness"];
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
-            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "loadLayer();" + "\">" +
+            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "this.loadLayer();" + "\">" +
                 "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
         }
         var containerId = "radioForm"+cityNum;	
