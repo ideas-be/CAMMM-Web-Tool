@@ -1,5 +1,6 @@
-let City1 = new City("Montreal", 1, myJson["City"]["Montreal"]);
-let City2 = new City("Vienna", 2, myJson["City"]["Vienna"]);
+// let City1 = new City("Montreal", 1, myJson["City"]["Montreal"]);
+// let City2 = new City("Vienna", 2, myJson["City"]["Vienna"]);
+var City1, City2;
 var myJson;
 var map;
 var shortURL = 'mapbox://styles/carmela-cucuzzella/';
