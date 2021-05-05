@@ -58,14 +58,13 @@ function dropdownCities(){
 }
 
 class City{
-    constructor(city, cityNum, cityJson, map){
+    constructor(city, cityNum, cityJson){
         this.city = city;
         this.cityNum = cityNum;
         this.cityJson = cityJson;
         this.readCityJson();
         this.injectToggleHTML();
         this.getToggleTest();
-        this.map=map;
     }
     readCityJson() {
         const { city, cityNum, cityJson} = this;
@@ -153,9 +152,10 @@ class City{
     }
 
     loadMap() {
-        const { cityNum, cityCoords, cityZoom, cityURL, map } = this;
-        var mapContainer="map"+cityNum
-        map = new mapboxgl.Map({
+        const { cityNum, cityCoords, cityZoom, cityURL } = this;
+
+        var mapContainer="map"+cityNum;
+        let map = new mapboxgl.Map({
             container: mapContainer,
             style: shortURL + cityURL,
             center: cityCoords, //need to make global
@@ -164,6 +164,7 @@ class City{
             // zoom: 10.0
         });
 
+        this.map = map;
     }
 
 }
