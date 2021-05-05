@@ -80,7 +80,7 @@ class City{
     }
 
     loadMap() {
-        const { cityNum, cityCoords, cityZoom } = this;
+        const { cityNum, cityCoords, cityZoom, cityURL } = this;
         var mapContainer="map"+cityNum
         map = new mapboxgl.Map({
             container: mapContainer,
