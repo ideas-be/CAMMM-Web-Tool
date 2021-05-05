@@ -22,27 +22,26 @@ function dropdownCities(){
 }
 
 class City{
-    constructor(city, cityNum, cityCoords, cityZoom){
+    constructor(city, cityNum, cityJson){
         this.city = city;
         this.cityNum = cityNum;
-        // this.readCityJson();
+        this.cityJson = cityJson;
+        this.readCityJson();
         this.injectToggleHTML();
         this.getToggleTest();
-        this.cityCoords =cityCoords;
-        this.cityZoom =cityZoom;
     }
-    // readCityJson() {
-    //     const { city, cityNum, cityCoords, cityZoom} = this;
-    //     console.log("city", city,"cityNum",cityNum);
-    //     console.log(myJson);
+    readCityJson() {
+        const { city, cityNum, cityJson} = this;
+        console.log("city", city,"cityNum",cityNum);
+        console.log(cityJson);
 
-    //     // cityCoords=myJson["City"][city].Coords;
-	//     // cityZoom=myJson["City"][city].Zoom;
+        cityCoords = cityJson.Coords;
+        cityZoom = cityJson.Zoom;
         
-    //     // this.cityCoords = cityCoords;
-    //     // this.cityZoom = cityZoom;
-    //     console.log("cityCoords", cityCoords,"cityZoom",cityZoom);
-    // }
+        this.cityCoords = cityCoords;
+        this.cityZoom = cityZoom;
+        console.log("cityCoords", cityCoords,"cityZoom",cityZoom);
+    }
     injectToggleHTML(){
         const { cityNum } = this;
         console.log("Injecting toggle in HTML");
@@ -57,20 +56,20 @@ class City{
     }
 
     getToggleTest(){
-        const { city,cityNum } = this;
+        const { cityNum, cityJson} = this;
         var toggleID = "toggBtn" + cityNum;
         var selAnalysis = document.getElementById(toggleID).checked;
 		console.log("selToggle:", selAnalysis);
         if(selAnalysis){
             console.log("Loading map type: Node");
-            cityURL = myJson["City"][city].NodeStyleURL;
-            ListOfLayers = myJson["City"][city].NodeLayers;
+            cityURL = cityJson.NodeStyleURL;
+            ListOfLayers = cityJson.NodeLayers;
 
             // TODO Load radio buttons
         }else{
             console.log("Loading map type: Direct");
-            cityURL = myJson["City"][city].DirectStyleURL;
-            ListOfLayers = myJson["City"][city].DirectLayers;
+            cityURL = cityJson.DirectStyleURL;
+            ListOfLayers = cityJsoncityJson.DirectLayers;
         }
         this.selAnalysis = selAnalysis;
         this.cityURL = cityURL;

@@ -103,8 +103,11 @@
 			var selectedCity = document.getElementById("cityList1").value;
 
 			if(selectedCity != "Select City"){
+				
+				console.log("This is the obj from XML");
+				console.log(obj);
 
-				let City1 = new City(selectedCity, 1,myJson["City"][selectedCity]["Coords"],myJson["City"][selectedCity]["Zoom"]);
+				let City1 = new City(selectedCity, 1, myJson["City"][selectedCity]);
 												
 				// readCityJson(selectedCity, 1);
 				// CityDataDisplay(selectedCity);
