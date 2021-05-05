@@ -25,24 +25,24 @@ class City{
     constructor(city, cityNum, cityCoords, cityZoom){
         this.city = city;
         this.cityNum = cityNum;
-        this.readCityJson();
+        // this.readCityJson();
         this.injectToggleHTML();
         this.getToggleTest();
         this.cityCoords =cityCoords;
         this.cityZoom =cityZoom;
     }
-    readCityJson() {
-        const { city, cityNum, cityCoords, cityZoom} = this;
-        console.log("city", city,"cityNum",cityNum);
-        console.log(myJson);
+    // readCityJson() {
+    //     const { city, cityNum, cityCoords, cityZoom} = this;
+    //     console.log("city", city,"cityNum",cityNum);
+    //     console.log(myJson);
 
-        // cityCoords=myJson["City"][city].Coords;
-	    // cityZoom=myJson["City"][city].Zoom;
+    //     // cityCoords=myJson["City"][city].Coords;
+	//     // cityZoom=myJson["City"][city].Zoom;
         
-        // this.cityCoords = cityCoords;
-        // this.cityZoom = cityZoom;
-        console.log("cityCoords", cityCoords,"cityZoom",cityZoom);
-    }
+    //     // this.cityCoords = cityCoords;
+    //     // this.cityZoom = cityZoom;
+    //     console.log("cityCoords", cityCoords,"cityZoom",cityZoom);
+    // }
     injectToggleHTML(){
         const { cityNum } = this;
         console.log("Injecting toggle in HTML");
