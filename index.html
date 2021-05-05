@@ -104,6 +104,8 @@
 
 			if(selectedCity != "Select City"){
 
+				let City1 = new City(selectedCity, 1);
+				
 				// readCityJson(selectedCity, 1);
 				// CityDataDisplay(selectedCity);
 				
@@ -115,9 +117,14 @@
 						map1div.style.display = 'block';
 					}
 			}
-			
+			console.log("City 1 is in the function!");
+			console.log(City1);
 			}
 		getSelectedCity1();
+
+		console.log("City 1 still exists");
+		console.log(City1);
+		
 	</script>
 	<!-- END OF FUNCTION FOR CITY 1 SELECTION  -->
 	
