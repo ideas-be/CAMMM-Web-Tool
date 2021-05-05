@@ -117,25 +117,15 @@ class City{
     }
 
     loadLayer(){
-        const{value, map} =this;
-        let currentLayer = value;
-        let prevLayer = 0;
-        // set up the corresponding toggle button for each layer
-        
-        var visibility = map.getLayoutProperty(currentLayer, 'visibility');
-         
-        // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-            map.setLayoutProperty(currentLayer, 'visibility', 'none');
-            console.log(currentLayer+ " turned off");
-            map.setLayoutProperty(prevLayer, 'visibility', 'visible');
-            } else {
-                map.setLayoutProperty(currentLayer, 'visibility', 'visible');
-                console.log(currentLayer+" turned on");
-                map.setLayoutProperty(prevLayer, 'visibility', 'none');
-                }
-        
-        prevLayer = currentLayer;
+        const{map, ListOfLayers} =this;
+        var radioList = [];
+        for(i=0;i++;i<ListOfLayers.length){
+            var buttonStatus=document.getElementById(ListOfLayers[i]).checked;
+            radioList.add(buttonStatus);
+        }
+        this.radioList=radioList;
+        console.log("This is all the radio buttons");
+        console.log(this.radioList);
     }
 
     radioButtons() {
@@ -169,10 +159,14 @@ class City{
 
 }
 
-// function loadLayer(currentLayer){
+
+// loadLayer(){
+//     const{value, map} =this;
+//     let currentButton = document.getElementById(value).checked;
+//     let prevLayer = currentLayer;
 //     // set up the corresponding toggle button for each layer
     
-//         var visibility = map.getLayoutProperty(currentLayer, 'visibility');
+//     var visibility = map.getLayoutProperty(currentLayer, 'visibility');
      
 //     // toggle layer visibility by changing the layout object's visibility property
 //     if (visibility === 'visible') {
@@ -185,5 +179,6 @@ class City{
 //             map.setLayoutProperty(prevLayer, 'visibility', 'none');
 //             }
     
-//             prevLayer = currentLayer;
+//     prevLayer = currentLayer;
+    
 // }
