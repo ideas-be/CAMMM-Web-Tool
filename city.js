@@ -35,8 +35,8 @@ class City{
         console.log("city", city,"cityNum",cityNum);
         console.log(cityJson);
 
-        cityCoords = cityJson.Coords;
-        cityZoom = cityJson.Zoom;
+        cityCoords = cityJson["Coords"];
+        let cityZoom = cityJson.Zoom;
         
         this.cityCoords = cityCoords;
         this.cityZoom = cityZoom;
