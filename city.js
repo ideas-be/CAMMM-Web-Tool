@@ -30,7 +30,7 @@ class City{
         this.getToggleTest();
     }
     readCityJson(){
-        const {city, cityNum} = this;
+        const { city, cityZoom, cityCoords,cityNum} = this;
         console.log("city", city,"cityNum",cityNum);
         console.log(myJson);
 
