@@ -117,19 +117,6 @@ class City{
         this.radioButtons();
     }
 
-    radioButtons() {
-        const { cityNum, ListOfLayers } = this;
-        var formHTML ="";
-        var NameOfQueries = ["Centrality Degree", "Closeness"];
-        for (const [i, value] of ListOfLayers.entries()) {
-            this.value = value;
-            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "this.loadLayer();" + "\">" +
-                "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
-        }
-        var containerId = "radioForm"+cityNum;	
-        document.getElementById(containerId).innerHTML = formHTML;
-    }
-
     loadLayer(){
         const{value} =this;
         let currentLayer = value;
@@ -149,6 +136,19 @@ class City{
                 }
         
         let prevLayer = currentLayer;
+    }
+    
+    radioButtons() {
+        const { cityNum, ListOfLayers } = this;
+        var formHTML ="";
+        var NameOfQueries = ["Centrality Degree", "Closeness"];
+        for (const [i, value] of ListOfLayers.entries()) {
+            this.value = value;
+            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "this.loadLayer();" + "\">" +
+                "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
+        }
+        var containerId = "radioForm"+cityNum;	
+        document.getElementById(containerId).innerHTML = formHTML;
     }
 
     loadMap() {
