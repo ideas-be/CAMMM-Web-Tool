@@ -114,6 +114,20 @@ class City{
         this.cityURL = cityURL;
         this.ListOfLayers = ListOfLayers;
         this.loadMap();
+        this.radioButtons();
+    }
+
+    radioButtons() {
+        const { ListOfLayers } = this;
+        var formHTML ="";
+        var NameOfQueries = ["Centrality Degree", "Closeness"];
+        for (const [i, value] of ListOfLayers.entries()) {
+            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "loadLayer(value);" + "\">" +
+                "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
+            }
+            
+        var containerId = "radioForm"+cityNum;	
+        document.getElementById(containerId).innerHTML = formHTML;
     }
 
     loadMap() {
@@ -132,4 +146,21 @@ class City{
 
 }
 
-
+function loadLayer(currentLayer){
+    // set up the corresponding toggle button for each layer
+    
+        var visibility = map.getLayoutProperty(currentLayer, 'visibility');
+     
+    // toggle layer visibility by changing the layout object's visibility property
+    if (visibility === 'visible') {
+        map.setLayoutProperty(currentLayer, 'visibility', 'none');
+        console.log(currentLayer+ " turned off");
+        map.setLayoutProperty(prevLayer, 'visibility', 'visible');
+        } else {
+            map.setLayoutProperty(currentLayer, 'visibility', 'visible');
+            console.log(currentLayer+" turned on");
+            map.setLayoutProperty(prevLayer, 'visibility', 'none');
+            }
+    
+            prevLayer = currentLayer;
+}
