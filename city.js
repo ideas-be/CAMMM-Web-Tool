@@ -125,6 +125,7 @@ class City{
             var buttonStatus=document.getElementById(value).checked;
             console.log("buttonStatus", buttonStatus);
             radioList.push(buttonStatus);
+        // TODO Make this for loop work properly BEGIN HERE NEXT SESSION !!!!!
         }
         this.radioList=radioList;
         console.log("This is all the radio buttons");
