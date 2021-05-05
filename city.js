@@ -1,3 +1,4 @@
+var City1, City2;
 var myJson;
 var map;
 var shortURL = 'mapbox://styles/carmela-cucuzzella/';
@@ -7,6 +8,18 @@ function newJson(obj){
     myJson=obj;
     console.log("Initializing new Json obj");
     dropdownCities();
+}
+
+function getCity(city, num){
+    if(num==1){
+        City1 = city;
+        console.log("This is City 1");
+        console.log(City1);
+    }else if(num==2){
+        City2 = city;
+        console.log("This is City 2");
+        console.log(City2);
+    }
 }
 
 function dropdownCities(){

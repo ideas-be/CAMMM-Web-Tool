@@ -106,8 +106,10 @@
 				
 				console.log("This is the obj from XML");
 				console.log(obj);
+				let city = new City(selectedCity, 1, myJson["City"][selectedCity]);
+				getCity(selectedCity, 1);
 
-				let City1 = new City(selectedCity, 1, myJson["City"][selectedCity]);
+				// let City1 = new City(selectedCity, 1, myJson["City"][selectedCity]);
 												
 				// readCityJson(selectedCity, 1);
 				// CityDataDisplay(selectedCity);
@@ -144,6 +146,8 @@
 
 			if(selectedCity != "Select City"){
 				
+				let city = new City(selectedCity, 2, myJson["City"][selectedCity]);
+				getCity(selectedCity, 2);
 				// readCityJson(selectedCity, 2);
 				// CityDataDisplay(selectedCity);
 
