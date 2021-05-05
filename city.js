@@ -122,12 +122,33 @@ class City{
         var formHTML ="";
         var NameOfQueries = ["Centrality Degree", "Closeness"];
         for (const [i, value] of ListOfLayers.entries()) {
-            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "loadLayer(value);" + "\">" +
+            this.value = value;
+            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "loadLayer();" + "\">" +
                 "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
-            }
-            
+        }
         var containerId = "radioForm"+cityNum;	
         document.getElementById(containerId).innerHTML = formHTML;
+    }
+
+    loadLayer(){
+        const{value} =this;
+        let currentLayer = value;
+        // set up the corresponding toggle button for each layer
+        
+        var visibility = map.getLayoutProperty(currentLayer, 'visibility');
+         
+        // toggle layer visibility by changing the layout object's visibility property
+        if (visibility === 'visible') {
+            map.setLayoutProperty(currentLayer, 'visibility', 'none');
+            console.log(currentLayer+ " turned off");
+            map.setLayoutProperty(prevLayer, 'visibility', 'visible');
+            } else {
+                map.setLayoutProperty(currentLayer, 'visibility', 'visible');
+                console.log(currentLayer+" turned on");
+                map.setLayoutProperty(prevLayer, 'visibility', 'none');
+                }
+        
+        let prevLayer = currentLayer;
     }
 
     loadMap() {
