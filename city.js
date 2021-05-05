@@ -118,7 +118,7 @@ class City{
     }
 
     radioButtons() {
-        const { ListOfLayers } = this;
+        const { cityNum, ListOfLayers } = this;
         var formHTML ="";
         var NameOfQueries = ["Centrality Degree", "Closeness"];
         for (const [i, value] of ListOfLayers.entries()) {
