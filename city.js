@@ -128,6 +128,19 @@ class City {
         this.radioList = radioList;
         console.log("This is all the radio buttons");
         console.log(this.radioList);
+
+        for(let i=0; i<this.radioList.length; i++)
+        {
+            if(this.radioList[i]){
+
+                map.setLayoutProperty(ListOfLayers[i], 'visibility', 'visible');
+                console.log("Turning on: ", ListOfLayers[i]);
+            }
+            else{
+                map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
+                console.log("Turning off: ", ListOfLayers[i]);
+            }
+        }
     }
 
     radioButtons() {
