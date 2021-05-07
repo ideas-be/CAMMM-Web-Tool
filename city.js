@@ -118,10 +118,10 @@ class City {
         const { map, ListOfLayers } = this;
         var radioList = [];
         // console.log("ListOfLayers.length", ListOfLayers.length);
-        for (const value of ListOfLayers.entries()) {
+        for (const [i, val] of ListOfLayers.entries()) {
             // for(let i=0;i++;i<ListOfLayers.length){
-            var buttonStatus = document.getElementById(value).checked;
-            console.log("buttonStatus", buttonStatus);
+            var buttonStatus = document.getElementById(val).checked;
+            console.log("buttonStatus", i, buttonStatus);
             radioList.push(buttonStatus);
             // TODO Make this for loop work properly BEGIN HERE NEXT SESSION !!!!!
         }
