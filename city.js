@@ -162,38 +162,9 @@ class City {
         var containerId = "radioForm" + cityNum;
         document.getElementById(containerId).innerHTML = formHTML;
     }
-
-    loadMap() {
-        const { cityNum, cityCoords, cityZoom, cityURL, ListOfLayers } = this;
-
-        var mapContainer = "map" + cityNum;
-        let map = new mapboxgl.Map({
-            container: mapContainer,
-            style: shortURL + cityURL,
-            center: cityCoords, //need to make global
-            // center: [-71.26, 46.78],
-            zoom: cityZoom,
-            // zoom: 10.0
-        });
-        this.map = map;
-
-        this.map.on('load', function () {
-            var layers = map.getStyle().layers;
-            console.log("Layers on load", layers);
-            // // Find the index of the first symbol layer in the map style
-            // var firstSymbolId;
-            for (var i = 0; i < ListOfLayers.length; i++) {
-                map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
-            }
-            this.CityDataDisplay();
-        }
-
-        )
-    }
-
     CityDataDisplay() {
         const { city, cityNum } = this;
-        var cityContainer = "";
+        let cityContainer = "";
         cityContainer =
             "<table class = \"table-contents\">" +
             "<tr>" +
@@ -246,6 +217,35 @@ class City {
         document.getElementById(citydatadivID).innerHTML = cityContainer;
 
     }
+    loadMap() {
+        const { cityNum, cityCoords, cityZoom, cityURL, ListOfLayers } = this;
+
+        var mapContainer = "map" + cityNum;
+        let map = new mapboxgl.Map({
+            container: mapContainer,
+            style: shortURL + cityURL,
+            center: cityCoords, //need to make global
+            // center: [-71.26, 46.78],
+            zoom: cityZoom,
+            // zoom: 10.0
+        });
+        this.map = map;
+
+        this.map.on('load', function () {
+            var layers = map.getStyle().layers;
+            console.log("Layers on load", layers);
+            // // Find the index of the first symbol layer in the map style
+            // var firstSymbolId;
+            for (var i = 0; i < ListOfLayers.length; i++) {
+                map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
+            }
+            this.CityDataDisplay();
+        }
+
+        )
+    }
+
+
 }
 
 
