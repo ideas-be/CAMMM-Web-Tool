@@ -10,11 +10,10 @@ body { margin: 0; padding: 0; }
     z-index: 1;
     border-radius: 3px;
     width: 120px;
-    color: #fff;
+    color: black;
 }
 
 .filter-group label {
-    background-color:  #3386c0;
     text-transform: capitalize;
 }
 
@@ -87,9 +86,10 @@ font-weight: bold;
 /* END OF DIRECT/NODE TOGGLE STYLE*/
 
 /* START OF MAP LEGEND STYLE */
-#mapLegend1, #mapLegend2{
+.mapControls{
     background-color: rgba(255,255,255,0.5);
     padding: 10px;
+    border-radius: 4px;
 }
 #mapLegend1 i, #mapLegend2 i{
     color: red;
