@@ -8,9 +8,12 @@ body { margin: 0; padding: 0; }
     top: 10px;
     right: 10px;
     z-index: 1;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     width: 120px;
     color: black;
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px;
+    border-radius: 4px;
 }
 
 .filter-group label {
@@ -86,14 +89,20 @@ font-weight: bold;
 /* END OF DIRECT/NODE TOGGLE STYLE*/
 
 /* START OF MAP LEGEND STYLE */
-.mapControls{
-    height: 50px;
+#mapLegend1, #mapLegend2{
     background-color: rgba(255,255,255,0.5);
     padding: 10px;
     border-radius: 4px;
 }
+
 #mapLegend1 i, #mapLegend2 i{
     color: red;
+}
+
+#radioForm1, #radioForm2{
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px;
+    border-radius: 4px;
 }
 
 /* END OF MAP LEGEND STYLE */
