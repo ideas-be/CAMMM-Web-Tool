@@ -89,20 +89,20 @@ font-weight: bold;
 /* END OF DIRECT/NODE TOGGLE STYLE*/
 
 /* START OF MAP LEGEND STYLE */
-#mapLegend1, #mapLegend2{
+/* #mapLegend1, #mapLegend2{
     background-color: rgba(255,255,255,0.5);
     padding: 10px;
     border-radius: 4px;
-}
+} */
 
 #mapLegend1 i, #mapLegend2 i{
     color: red;
 }
 
-#radioForm1, #radioForm2{
+/* #radioForm1, #radioForm2{
     background-color: rgba(255,255,255,0.5);
     padding: 10px;
     border-radius: 4px;
-}
+} */
 
 /* END OF MAP LEGEND STYLE */
