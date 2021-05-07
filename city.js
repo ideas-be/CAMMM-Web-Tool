@@ -163,7 +163,7 @@ class City {
         document.getElementById(containerId).innerHTML = formHTML;
     }
     cityDataDisplay() {
-        const { city, cityNum } = this;
+        const { city, cityNum, cityJson } = this;
         let cityContainer = "";
         cityContainer =
             "<table class = \"table-contents\">" +
@@ -175,42 +175,42 @@ class City {
             "<tr>" +
             "<td>Number of Transport Systems</td>" +
             "<td>:</td>" +
-            "<td>" + myJson["City"][city].NumTransportSystem + "</td>" +
+            "<td>" + cityJson.NumTransportSystem + "</td>" +
             "</tr>" +
             "<tr>" +
             "<td>Number of Bus Stops</td>" +
             "<td>:</td>" +
-            "<td>" + myJson["City"][city].NumBusStops + "</td>" +
+            "<td>" + cityJson.NumBusStops + "</td>" +
             "</tr>" +
             "<tr>" +
             "<td>Number of Rail Stations</td>" +
             "<td>:</td>" +
-            "<td>" + myJson["City"][city].NumRailStations + "</td>" +
+            "<td>" + cityJson.NumRailStations + "</td>" +
             "</tr>" +
             "<tr>" +
             "<td>Number of Metro Stations</td>" +
             "<td>:</td>" +
-            "<td>" + myJson["City"][city].NumMetroStations + "</td>" +
+            "<td>" + cityJson.NumMetroStations + "</td>" +
             "</tr>" +
             "<tr>" +
             "<td>Number of Boroughs</td>" +
             "<td>:</td>" +
-            "<td>" + myJson["City"][city].NumBoroughs + "</td>" +
+            "<td>" + cityJson.NumBoroughs + "</td>" +
             "</tr>" +
             "<tr>" +
             "<td>Area in sq. km.</td>" +
             "<td>:</td>" +
-            "<td>" + myJson["City"][city].AreaSqKm + "</td>" +
+            "<td>" + cityJson.AreaSqKm + "</td>" +
             "</tr>" +
             "<tr>" +
             "<td>Population in million</td>" +
             "<td>:</td>" +
-            "<td>" + myJson["City"][city].PopulationMillion + "</td>" +
+            "<td>" + cityJson.PopulationMillion + "</td>" +
             "</tr>" +
             "<tr>" +
             "<td>Density per sq. km.</td>" +
             "<td>:</td>" +
-            "<td>" + myJson["City"][city].DensityPersonSqKm + "</td>" +
+            "<td>" + cityJson.DensityPersonSqKm + "</td>" +
             "</tr>" +
             "</table>";
         var citydatadivID = "city" + cityNum + "table";
@@ -233,7 +233,7 @@ class City {
 
         this.map.on('load', function () {
             var layers = map.getStyle().layers;
-            console.log("Layers on load", layers);
+            // console.log("Layers on load", layers);
             // // Find the index of the first symbol layer in the map style
             // var firstSymbolId;
             for (var i = 0; i < ListOfLayers.length; i++) {
