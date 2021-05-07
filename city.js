@@ -247,7 +247,10 @@ class City {
     }
 
     mapLegend() {
+        const { cityNum } = this;
         console.log("This function loads the map legend");
+        var legendHTML = "";
+        legendHTML = 
     }
 
 }
