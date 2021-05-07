@@ -175,15 +175,23 @@ class City {
             zoom: cityZoom,
             // zoom: 10.0
         });
-        sleep(3000);
-        for (let i = 0; i < this.ListOfLayers.length; i++) {
-            map.setLayoutProperty(this.ListOfLayers[i], 'visibility', 'none');
-            console.log("Turning off ALL LAYERS: ", this.ListOfLayers[i]);
+        this.map = map;
+
+        this.map.on('load', function () {
+            var layers = map.getStyle().layers;
+            console.log("Layers on load", layers);
+            // // Find the index of the first symbol layer in the map style
+            // var firstSymbolId;
+            // for (var i = 0; i < layers.length; i++) {
+            //     if (layers[i].type === 'symbol') {
+            //         firstSymbolId = layers[i].id;
+            //         break;
+            //     }
+            // }
         }
 
 
-        this.map = map;
-
+        )
     }
 
 }
