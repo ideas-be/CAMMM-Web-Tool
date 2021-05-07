@@ -192,7 +192,7 @@ class City {
     }
 
     CityDataDisplay() {
-        const { city, cityNum }
+        const { city, cityNum } = this;
         var cityContainer = "";
         cityContainer =
             "<table class = \"table-contents\">" +
