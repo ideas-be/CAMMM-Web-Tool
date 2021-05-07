@@ -167,8 +167,8 @@ class City {
             // zoom: 10.0
         });
         for (let i = 0; i < this.ListOfLayers.length; i++) {
-            map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
-            console.log("Turning off ALL LAYERS: ", ListOfLayers[i]);
+            map.setLayoutProperty(this.ListOfLayers[i], 'visibility', 'none');
+            console.log("Turning off ALL LAYERS: ", this.ListOfLayers[i]);
         }
 
 
