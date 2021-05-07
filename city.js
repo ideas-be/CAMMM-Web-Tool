@@ -143,6 +143,7 @@ class City {
             if (this.radioList[i]) {
                 map.setLayoutProperty(ListOfLayers[i], 'visibility', 'visible');
                 console.log("Turning on: ", ListOfLayers[i]);
+                this.mapLegend();
             }
             else {
                 map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
@@ -245,6 +246,9 @@ class City {
         )
     }
 
+    mapLegend() {
+        console.log("This function loads the map legend");
+    }
 
 }
 
