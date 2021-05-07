@@ -73,6 +73,7 @@ class City {
         this.readCityJson();
         this.injectToggleHTML();
         this.getToggleTest();
+        this.cityData();
     }
     readCityJson() {
         const { city, cityNum, cityJson } = this;
@@ -162,9 +163,9 @@ class City {
         var containerId = "radioForm" + cityNum;
         document.getElementById(containerId).innerHTML = formHTML;
     }
-    cityDataDisplay() {
+    cityData() {
         const { city, cityNum, cityJson } = this;
-        let cityContainer = "";
+        var cityContainer = "";
         cityContainer =
             "<table class = \"table-contents\">" +
             "<tr>" +
@@ -239,7 +240,6 @@ class City {
             for (var i = 0; i < ListOfLayers.length; i++) {
                 map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
             }
-            this.cityDataDisplay();
         }
 
         )
