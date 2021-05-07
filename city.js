@@ -185,11 +185,67 @@ class City {
             for (var i = 0; i < ListOfLayers.length; i++) {
                 map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
             }
+            this.CityDataDisplay();
         }
 
         )
     }
 
+    CityDataDisplay() {
+        const { city, cityNum }
+        var cityContainer = "";
+        cityContainer =
+            "<table class = \"table-contents\">" +
+            "<tr>" +
+            "<td>City " + cityNum + "</td>" +
+            "<td>:</td>" +
+            "<td>" + city + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>Number of Transport Systems</td>" +
+            "<td>:</td>" +
+            "<td>" + myJson["City"][city].NumTransportSystem + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>Number of Bus Stops</td>" +
+            "<td>:</td>" +
+            "<td>" + myJson["City"][city].NumBusStops + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>Number of Rail Stations</td>" +
+            "<td>:</td>" +
+            "<td>" + myJson["City"][city].NumRailStations + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>Number of Metro Stations</td>" +
+            "<td>:</td>" +
+            "<td>" + myJson["City"][city].NumMetroStations + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>Number of Boroughs</td>" +
+            "<td>:</td>" +
+            "<td>" + myJson["City"][city].NumBoroughs + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>Area in sq. km.</td>" +
+            "<td>:</td>" +
+            "<td>" + myJson["City"][city].AreaSqKm + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>Population in million</td>" +
+            "<td>:</td>" +
+            "<td>" + myJson["City"][city].PopulationMillion + "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>Density per sq. km.</td>" +
+            "<td>:</td>" +
+            "<td>" + myJson["City"][city].DensityPersonSqKm + "</td>" +
+            "</tr>" +
+            "</table>";
+        var citydatadivID = "city" + cityNum + "table";
+        document.getElementById(citydatadivID).innerHTML = cityContainer;
+
+    }
 }
 
 
