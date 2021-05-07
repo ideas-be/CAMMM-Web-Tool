@@ -162,7 +162,7 @@ class City {
         var containerId = "radioForm" + cityNum;
         document.getElementById(containerId).innerHTML = formHTML;
     }
-    CityDataDisplay() {
+    cityDataDisplay() {
         const { city, cityNum } = this;
         let cityContainer = "";
         cityContainer =
@@ -239,7 +239,7 @@ class City {
             for (var i = 0; i < ListOfLayers.length; i++) {
                 map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
             }
-            this.CityDataDisplay();
+            this.cityDataDisplay();
         }
 
         )
