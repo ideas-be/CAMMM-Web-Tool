@@ -49,6 +49,7 @@
     background-color: #ccc;
 }
 .trigger__info_popup {
+    text-align: center;
     cursor: pointer;
     font-size: 20px;
     margin: 20px;
