@@ -15,6 +15,7 @@ function show_popup() {
 
     // infoPopUp.classList.toggle("show");
     var popupDisplay = infoPopUp.style.display;
+    console.log("popupDisplay", popupDisplay);
     if (popupDisplay == 'none') {
         infoPopUp.style.display = 'block';
         console.log("Turning on popup div");
