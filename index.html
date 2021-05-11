@@ -8,12 +8,14 @@
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 	<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 	<script src='city.js'></script>
+	<script src='info_popup.js'></script>
 	<script src="https://kit.fontawesome.com/7abfd05b6d.js" crossorigin="anonymous"></script>
 
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'>
 
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="mapUI.css">
+	<link rel="stylesheet" href="info_popup.css">
 </head>
 
 <body>
@@ -25,6 +27,17 @@
 		</h2>
 	</div>
 
+	<!-- START OF INFO AREA -->
+	<button class="trigger_info_popup">?</button>
+
+	<div class="hover_info_popup">
+		<span class="helper"></span>
+		<div>
+			<div class="popupCloseButton">&times;</div>
+			<p>Add any HTML content<br />inside the popup box!</p>
+		</div>
+	</div>
+	<!-- END OF INFO AREA -->
 
 
 	<!-- START OF MAP CONTROLS AREA -->
