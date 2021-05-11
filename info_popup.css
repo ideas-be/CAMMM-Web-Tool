@@ -1,4 +1,8 @@
 /* Popup box BEGIN */
+.info_popup_area{
+    text-align: center;
+}
+
 .hover_info_popup{
     background:rgba(0,0,0,.4);
     cursor:pointer;
@@ -49,7 +53,7 @@
     background-color: #ccc;
 }
 .trigger__info_popup {
-    text-align: center;
+    /* text-align: center; */
     cursor: pointer;
     font-size: 20px;
     margin: 20px;
