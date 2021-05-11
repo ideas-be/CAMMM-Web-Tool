@@ -9,12 +9,14 @@
 //         $('.hover_info_popup').hide();
 //     });
 // });
-var infoPopUp = document.getElementById("hover_info_popup");
-var popupDisplay = infoPopUp.style.display;
+
 
 console.log("popupDisplay", popupDisplay);
 
 function show_popup() {
+
+    var infoPopUp = document.getElementById("hover_info_popup");
+    var popupDisplay = infoPopUp.style.display;
 
     if (popupDisplay == 'none') {
         infoPopUp.style.display = 'block';
@@ -28,6 +30,9 @@ function show_popup() {
 }
 
 function hide_popup() {
+
+    var infoPopUp = document.getElementById("hover_info_popup");
+    var popupDisplay = infoPopUp.style.display;
 
     if (popupDisplay == 'block') {
         infoPopUp.style.display = 'none';
