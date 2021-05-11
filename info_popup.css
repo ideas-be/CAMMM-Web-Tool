@@ -4,7 +4,7 @@
 }
 
 #popup_field{
-    display: none;
+    /* display: none; */
     font-size: 20px;
     color: blue;
     height: 100px;
