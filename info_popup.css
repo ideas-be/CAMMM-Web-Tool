@@ -3,18 +3,18 @@
     text-align: center;
 }
 
-#popup_field{
-    /* display: none; */
+/* #popup_field{
+    display: none;
     font-size: 20px;
     color: blue;
     height: 100px;
     background-color: burlywood;
-}
+} */ 
 
-/* .hover_info_popup{
+.hover_info_popup{
     background:rgba(0,0,0,.4);
     cursor:pointer;
-    display:none;
+    /* display:none; */
     height:100%;
     position:fixed;
     text-align:center;
@@ -59,7 +59,7 @@
 }
 .popupCloseButton:hover {
     background-color: #ccc;
-} */
+}
 .trigger__info_popup {
     /* text-align: center; */
     cursor: pointer;
