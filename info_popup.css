@@ -60,7 +60,7 @@
 .popupCloseButton:hover {
     background-color: #ccc;
 }
-.trigger__info_popup {
+.trigger__info_popup button{
     /* text-align: center; */
     cursor: pointer;
     font-size: 20px;
