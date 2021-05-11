@@ -13,4 +13,5 @@
 function show_popup() {
     var infoPopUp = document.getElementsByClassName("hover_info_popup");
     infoPopUp.classList.toggle("show");
+    console.log("This is the showpopup function");
 }
