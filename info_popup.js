@@ -17,8 +17,10 @@ function show_popup() {
     var popupDisplay = infoPopUp.style.display;
     if (popupDisplay == 'none') {
         infoPopUp.style.display = 'block';
+        console.log("Turning on popup div");
     } else if (popupDisplay == 'block') {
         infoPopUp.style.display = 'none';
+        console.log("Turning off popup div");
     }
     console.log("This is the showpopup function");
 }
