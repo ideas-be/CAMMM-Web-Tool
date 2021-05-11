@@ -67,5 +67,6 @@
     margin: 20px;
     display: inline-block;
     font-weight: bold;
+    border-radius: 10px;
 }
 /* Popup box END */
