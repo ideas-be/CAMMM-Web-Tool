@@ -3,7 +3,15 @@
     text-align: center;
 }
 
-.hover_info_popup{
+#popup_field{
+    display: none;
+    font-size: 20px;
+    color: blue;
+    height: 100px;
+    background-color: burlywood;
+}
+
+/* .hover_info_popup{
     background:rgba(0,0,0,.4);
     cursor:pointer;
     display:none;
@@ -51,7 +59,7 @@
 }
 .popupCloseButton:hover {
     background-color: #ccc;
-}
+} */
 .trigger__info_popup {
     /* text-align: center; */
     cursor: pointer;

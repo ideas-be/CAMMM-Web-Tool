@@ -11,7 +11,7 @@
 // });
 
 function show_popup() {
-    var infoPopUp = document.getElementById("hover_info_popup");
+    var infoPopUp = document.getElementById("popup_field");
 
     // infoPopUp.classList.toggle("show");
     var popupDisplay = infoPopUp.style.display;
