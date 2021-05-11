@@ -35,10 +35,12 @@ body { padding: 10px;}
 }
 
 .atlas-title p{
+  display:inline-block;
 	font-size: 180%;
 	font-weight: bold;
 	text-align: center;
 }
+
 .atlas-query{
 	text-align: center;
 }
