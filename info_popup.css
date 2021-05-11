@@ -65,7 +65,7 @@
     cursor: pointer;
     font-size: 20px;
     margin: 20px;
-    display: inline-block;
+    /* display: inline-block; */
     font-weight: bold;
     border-radius: 10px;
 }
