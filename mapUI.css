@@ -2,7 +2,7 @@ body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
 
 .filter-group {
-    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font: 10px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 600;
     position: absolute;
     top: 10px;
@@ -82,22 +82,13 @@ border-radius: 50%;
 }
 
 .toggleText{
-font-size: 12px;
+font-size: 10px;
 font-weight: bold;
 }
 
 /* END OF DIRECT/NODE TOGGLE STYLE*/
 
 /* START OF MAP LEGEND STYLE */
-/* #mapLegend1, #mapLegend2{
-    background-color: rgba(255,255,255,0.5);
-    padding: 10px;
-    border-radius: 4px;
-} */
-
-#mapLegend1 i, #mapLegend2 i{
-    color: red;
-}
 
 #centrality_legend{
     width: 100%;
@@ -114,11 +105,5 @@ font-weight: bold;
     border: 2px solid white;
     background-image: linear-gradient(to right, #261C43, #742287);
 }
-
-/* #radioForm1, #radioForm2{
-    background-color: rgba(255,255,255,0.5);
-    padding: 10px;
-    border-radius: 4px;
-} */
 
 /* END OF MAP LEGEND STYLE */

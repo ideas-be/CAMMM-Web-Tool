@@ -252,7 +252,7 @@ class City {
                 break;
             default: console.log("undefined legend item");
         }
-        legendHTML += "<p style=\"word-spacing:50px; font-size:10px;\">Less More</p>";
+        legendHTML += "<p style=\"word-spacing:70px; font-size:10px;\">Less More</p>";
         // legendHTML = "<div id=\"centrality_legend\"></div>";
         var legendivID = "mapLegend" + cityNum;
         document.getElementById(legendivID).innerHTML = legendHTML;
