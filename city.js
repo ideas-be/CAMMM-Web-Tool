@@ -247,10 +247,18 @@ class City {
     }
 
     mapLegend() {
-        const { cityNum } = this;
+        const { cityNum, radioList } = this;
         console.log("This function loads the map legend");
         var legendHTML = "";
-        legendHTML = "<div id=\"centrality_legend\"></div>";
+        switch (radioList.indexOf("true")) {
+            case 0: legendHTML = "<div id=\"centrality_legend\"></div>";
+                break;
+            case 1: legendHTML = "<div id=\"closeness_legend\"></div>";
+                break;
+            default: console.log("undefined legend item");
+        }
+
+        // legendHTML = "<div id=\"centrality_legend\"></div>";
         var legendivID = "mapLegend" + cityNum;
         document.getElementById(legendivID).innerHTML = legendHTML;
     }
