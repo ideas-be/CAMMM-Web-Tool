@@ -250,7 +250,7 @@ class City {
         const { cityNum } = this;
         console.log("This function loads the map legend");
         var legendHTML = "";
-        legendHTML = "<i class=\"fas fa-circle\"></i>";
+        legendHTML = "<div style=\"width: 50px; height:6px; background-image: linear-gradient(to right, #9ECAA3, #006127;\"></div>";
         var legendivID = "mapLegend" + cityNum;
         document.getElementById(legendivID).innerHTML = legendHTML;
     }
