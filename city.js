@@ -250,7 +250,7 @@ class City {
         const { cityNum, radioList } = this;
         console.log("This function loads the map legend");
         var legendHTML = "";
-        switch (radioList.indexOf("true")) {
+        switch (radioList.indexOf(true)) {
             case 0: legendHTML = "<div id=\"centrality_legend\"></div>";
                 break;
             case 1: legendHTML = "<div id=\"closeness_legend\"></div>";
