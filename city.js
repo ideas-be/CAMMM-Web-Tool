@@ -159,7 +159,7 @@ class City {
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
             formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "City" + cityNum + ".loadLayer();" + "\">" +
-                "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label>"
+                "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
         }
         var containerId = "radioForm" + cityNum;
         document.getElementById(containerId).innerHTML = formHTML;
@@ -226,18 +226,13 @@ class City {
         let map = new mapboxgl.Map({
             container: mapContainer,
             style: shortURL + cityURL,
-            center: cityCoords, //need to make global
-            // center: [-71.26, 46.78],
+            center: cityCoords,
             zoom: cityZoom,
-            // zoom: 10.0
         });
         this.map = map;
 
         this.map.on('load', function () {
             var layers = map.getStyle().layers;
-            // console.log("Layers on load", layers);
-            // // Find the index of the first symbol layer in the map style
-            // var firstSymbolId;
             for (var i = 0; i < ListOfLayers.length; i++) {
                 map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
             }
@@ -257,7 +252,7 @@ class City {
                 break;
             default: console.log("undefined legend item");
         }
-
+        legendHTML += "<p style=\"word-spacing:50px; font-size:10px;\">Less More</p>";
         // legendHTML = "<div id=\"centrality_legend\"></div>";
         var legendivID = "mapLegend" + cityNum;
         document.getElementById(legendivID).innerHTML = legendHTML;
