@@ -238,6 +238,12 @@ class City {
         }
 
         )
+        legendHTML = "";
+        var legendivID = "mapLegend" + cityNum;
+        document.getElementById(legendivID).innerHTML = legendHTML;
+        console.log("undefined radio list and legend item");
+
+
     }
 
     mapLegend() {
@@ -258,10 +264,10 @@ class City {
                     break;
             }
         }
-        else {
-            legendHTML = "";
-            console.log("undefined radio list and legend item");
-        }
+        // else {
+        //     legendHTML = "";
+        //     console.log("undefined radio list and legend item");
+        // }
 
         var legendivID = "mapLegend" + cityNum;
         document.getElementById(legendivID).innerHTML = legendHTML;
