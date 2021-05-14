@@ -244,17 +244,23 @@ class City {
         const { cityNum, radioList } = this;
         console.log("This function loads the map legend");
         var legendHTML = "";
-        switch (radioList.indexOf(true)) {
-            case 0:
-                legendHTML = "<div id=\"centrality_legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px;\">Less More</p>";
-                break;
-            case 1:
-                legendHTML = "<div id=\"closeness_legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px;\">Less More</p>";
-                break;
-            default:
-                legendHTML = "";
-                console.log("undefined legend item");
-                break;
+        if (typeof (radioList) != "undefined") {
+            switch (radioList.indexOf(true)) {
+                case 0:
+                    legendHTML = "<div id=\"centrality_legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px;\">Less More</p>";
+                    break;
+                case 1:
+                    legendHTML = "<div id=\"closeness_legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px;\">Less More</p>";
+                    break;
+                default:
+                    legendHTML = "";
+                    console.log("undefined legend item");
+                    break;
+            }
+        }
+        else {
+            legendHTML = "";
+            console.log("undefined radio list and legend item");
         }
 
         var legendivID = "mapLegend" + cityNum;
