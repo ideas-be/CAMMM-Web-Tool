@@ -5,7 +5,7 @@ https://spatialretrace.github.io/CAMMM-Web-Tool/
 ![CAMMM Web Atlas](screenshots/00_May11.png)
 
 ### User scale Flowchart:
-![CAMMM Web Atlas](screenshots/Flowchart_CAMMM Web Atlas.jpg)
+![CAMMM Web Atlas](screenshots/Flowchart_CAMMM_Web_Atlas.jpg)
 
 Style URL example
 mapbox://styles/carmela-cucuzzella/ckguxoar50i7w19qyf3c6qsdg
