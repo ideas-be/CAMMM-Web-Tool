@@ -1,5 +1,3 @@
-// let City1 = new City("Montreal", 1, myJson["City"]["Montreal"]);
-// let City2 = new City("Vienna", 2, myJson["City"]["Vienna"]);
 var City1, City2;
 var myJson;
 var shortURL = 'mapbox://styles/carmela-cucuzzella/';
@@ -40,8 +38,6 @@ function getSelectedCity(num) {
 
         let city = new City(selectedCity, num, myJson["City"][selectedCity]);
         getCity(city, num);
-        // readCityJson(selectedCity, 2);
-        // CityDataDisplay(selectedCity);
 
         var mapdivId = "map" + num + "div";
         var mapdiv = document.getElementById(mapdivId);
