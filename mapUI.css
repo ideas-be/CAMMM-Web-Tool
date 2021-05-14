@@ -21,6 +21,11 @@ body { margin: 0; padding: 0; }
 }
 
 /* START OF DIRECT/NODE TOGGLE STYLE*/
+
+#toggleCity1, #toggleCity2{
+    text-align: center;
+}
+
 .switch {
 position: relative;
 display: inline-block;

@@ -4,8 +4,6 @@ https://spatialretrace.github.io/CAMMM-Web-Tool/
 ### Preview:
 ![CAMMM Web Atlas](screenshots/00_May11.png)
 
-Collab link: https://prod.liveshare.vsengsaas.visualstudio.com/join?65DCE8A763789D7A34CA810F56ED2EA52517
-
 
 <!-- style = "display: none;" -->
 

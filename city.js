@@ -127,13 +127,10 @@ class City {
     loadLayer() {
         const { map, ListOfLayers } = this;
         var radioList = [];
-        // console.log("ListOfLayers.length", ListOfLayers.length);
         for (const [i, val] of ListOfLayers.entries()) {
-            // for(let i=0;i++;i<ListOfLayers.length){
             var buttonStatus = document.getElementById(val).checked;
             console.log("buttonStatus", i, buttonStatus);
             radioList.push(buttonStatus);
-            // TODO Make this for loop work properly BEGIN HERE NEXT SESSION !!!!!
         }
         this.radioList = radioList;
         console.log("This is all the radio buttons");
@@ -164,6 +161,7 @@ class City {
         var containerId = "radioForm" + cityNum;
         document.getElementById(containerId).innerHTML = formHTML;
     }
+
     cityData() {
         const { city, cityNum, cityJson } = this;
         var cityContainer = "";
@@ -219,6 +217,7 @@ class City {
         document.getElementById(citydatadivID).innerHTML = cityContainer;
 
     }
+
     loadMap() {
         const { cityNum, cityCoords, cityZoom, cityURL, ListOfLayers } = this;
 
@@ -246,40 +245,20 @@ class City {
         console.log("This function loads the map legend");
         var legendHTML = "";
         switch (radioList.indexOf(true)) {
-            case 0: legendHTML = "<div id=\"centrality_legend\"></div>";
+            case 0:
+                legendHTML = "<div id=\"centrality_legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px;\">Less More</p>";
                 break;
-            case 1: legendHTML = "<div id=\"closeness_legend\"></div>";
+            case 1:
+                legendHTML = "<div id=\"closeness_legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px;\">Less More</p>";
                 break;
-            default: console.log("undefined legend item");
+            default:
+                legendHTML = "";
+                console.log("undefined legend item");
+                break;
         }
-        legendHTML += "<p style=\"word-spacing:70px; font-size:10px;\">Less More</p>";
-        // legendHTML = "<div id=\"centrality_legend\"></div>";
+
         var legendivID = "mapLegend" + cityNum;
         document.getElementById(legendivID).innerHTML = legendHTML;
     }
 
 }
-
-
-// loadLayer(){
-//     const{value, map} =this;
-//     let currentButton = document.getElementById(value).checked;
-//     let prevLayer = currentLayer;
-//     // set up the corresponding toggle button for each layer
-
-//     var visibility = map.getLayoutProperty(currentLayer, 'visibility');
-
-//     // toggle layer visibility by changing the layout object's visibility property
-//     if (visibility === 'visible') {
-//         map.setLayoutProperty(currentLayer, 'visibility', 'none');
-//         console.log(currentLayer+ " turned off");
-//         map.setLayoutProperty(prevLayer, 'visibility', 'visible');
-//         } else {
-//             map.setLayoutProperty(currentLayer, 'visibility', 'visible');
-//             console.log(currentLayer+" turned on");
-//             map.setLayoutProperty(prevLayer, 'visibility', 'none');
-//             }
-
-//     prevLayer = currentLayer;
-
-// }
