@@ -238,7 +238,7 @@ class City {
         }
 
         )
-        legendHTML = "";
+        var legendHTML = "";
         var legendivID = "mapLegend" + cityNum;
         document.getElementById(legendivID).innerHTML = legendHTML;
         console.log("undefined radio list and legend item");
