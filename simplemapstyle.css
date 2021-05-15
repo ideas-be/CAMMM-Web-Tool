@@ -1,0 +1,29 @@
+/* body {
+            margin: 0;
+            padding: 0;
+        } */
+
+.maplabel {
+    position: top;
+    text-align: left;
+    background: white;
+    z-index: 1000;
+    font-size: 14px;
+    font-family: sans-serif;
+    padding: 10px;
+}
+#map {
+    
+    display: block;
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    height: 600px;
+    width: 100%;
+}
+.mapbox1{
+    position: relative;
+    margin-right: 10px;
+    width: 50%;
+}

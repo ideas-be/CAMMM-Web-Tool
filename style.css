@@ -1,4 +1,4 @@
-/*body { margin:0; padding:0;}*/
+body { padding: 10px;}
 #map1 { 
 	display: block;
 	position:absolute; 
@@ -16,41 +16,39 @@
 	position: relative;
 	margin-left: 10px;
 }
-.maplabel {
-  position: top;
-	text-align: center;
-  background: white;
-  z-index: 1000;
-  font-size: 14px;
-	font-family: sans-serif;
-  padding: 10px;
+
+#city1table{
+  display: block;
+	position:absolute; 
+  left: 0px; width:50%;
 }
 
-#map1-metric { 
-	display: block; position: absolute; top:0; bottom:0; left: 0; width:50%; height: 400px; }
-#map2-metric { 
-	display: block; position: absolute; top:0; bottom:0; right: 0; width:50%; height: 400px; }
-
-.left-metrics{
-	position: relative;
-	margin-right: 10px;
+#city2table{
+	display: block;
+	position:absolute; 
+  right: 0; width:50%;
 }
 
-.right-metrics{
-	position: relative;
-	margin-left: 10px;
+.table-contents{
+  margin-left: auto;
+  margin-right: auto;
+}
+.atlas-title{
+  text-align: center;
 }
 
-.atlas-title h2{
+.atlas-title p{
+  display:inline-block;
 	font-size: 180%;
 	font-weight: bold;
-	text-align: center;
+	/* text-align: center; */
 }
+
 .atlas-query{
 	text-align: center;
 }
 .emptyspace{
-	height: 20px;
+	height: 50px;
 }
 .emptyspace-table{
 	height: 430px;
@@ -59,6 +57,8 @@
 /* START OF LEFT CONTROLS STYLE */
 .left-map-controls{
 	float: left;
+  text-align: center;
+  width: 50%;
 }
 /* END OF LEFT CONTROLS STYLE */
 
@@ -150,6 +150,8 @@ input:checked + .slider:before {
 /* START OF RIGHT CONTROLS STYLE */
 .right-map-controls{
 	float: right;
+  text-align: center;
+  width: 50%;
 }
 /* END OF RIGHT CONTROLS STYLE */
 
@@ -168,7 +170,7 @@ display: table;
 }
 /* END OF MAP CONTROLS AREA STYLE */
 
-/* START OF COMPARE BUTTON STYLE*/
+/* START OF COMPARE BUTTON STYLE
 .compare-btn{
 	text-align: center;
 }
@@ -185,4 +187,4 @@ display: table;
   margin: 4px 2px;
   cursor: pointer;
 }
-/* END OF COMPARE BUTTON STYLE*/
+END OF COMPARE BUTTON STYLE */
