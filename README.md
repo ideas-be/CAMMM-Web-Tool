@@ -9,6 +9,7 @@ https://spatialretrace.github.io/CAMMM-Web-Tool/
 
 ### City Catalogue Update Flowchart:
 ![CAMMM City Catalogue](screenshots/Flowchart_City_Catalog.jpg)
+
 ![CAMMM City Catalogue](screenshots/Flowchart_CityCatalogue.jpg)
 
 Style URL example
