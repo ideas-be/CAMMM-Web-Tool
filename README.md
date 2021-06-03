@@ -10,6 +10,9 @@ https://spatialretrace.github.io/CAMMM-Web-Tool/
 ### City Catalogue Update Flowchart:
 ![CAMMM City Catalogue](screenshots/Flowchart_City_Catalog.jpg)
 
+### CAMMM Atlas Info Pop-Ups:
+![CAMMM Atlas Popups](screenshots/PopUps.png)
+
 
 Style URL example
 mapbox://styles/carmela-cucuzzella/ckguxoar50i7w19qyf3c6qsdg
