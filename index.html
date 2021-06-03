@@ -23,7 +23,7 @@
 	<!-- START OF WEB ATLAS -->
 	<div class="atlas-title">
 		<p>
-			CAMMM Web Atlas
+			CAMMM Web Atlas Prototype
 		</p>
 		<span style="font-size: 1em; color: #d81b60;">
 			<i class="fas fa-info-circle" onclick="show_popup();"></i>
@@ -57,6 +57,9 @@
 				<h3>City 1</h3>
 				<select id="cityList1" onchange="getSelectedCity(1);">
 				</select>
+				<span style="font-size: 1em; color: #d81b60;">
+					<i class="fas fa-info-circle" onclick="show_popup();"></i>
+				</span>
 			</div>
 			<div class="emptyspace"></div>
 			<!-- END OF CITY 1 LIST -->
@@ -72,6 +75,9 @@
 				<h3>City 2</h3>
 				<select id="cityList2" onchange="getSelectedCity(2);">
 				</select>
+				<span style="font-size: 1em; color: #d81b60;">
+					<i class="fas fa-info-circle" onclick="show_popup();"></i>
+				</span>
 			</div>
 			<div class="emptyspace"></div>
 			<!-- END OF CITY 2 LIST -->
@@ -87,6 +93,9 @@
 	<div class="mapbox1" id="map1div">
 		<div id='map1'>
 			<nav id="filter-group" class="filter-group">
+				<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
+					<i class="fas fa-info-circle" onclick="show_popup();"></i>
+				</span>
 				<form name="sampleForm" id="radioForm1">
 				</form>
 				<!-- START OF DIRECT/NODE TOGGLE 1 -->
@@ -102,6 +111,9 @@
 	<div class="mapbox2" id="map2div">
 		<div id='map2'>
 			<nav id="filter-group" class="filter-group">
+				<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
+					<i class="fas fa-info-circle" onclick="show_popup();"></i>
+				</span>
 				<form name="sampleForm" id="radioForm2">
 				</form>
 				<!-- START OF DIRECT/NODE TOGGLE 2 -->
@@ -116,6 +128,7 @@
 
 	<div class="emptyspace-table"></div>
 	<div id="city1table" class="oput"></div>
+
 	<div id="city2table" class="oput"></div>
 
 

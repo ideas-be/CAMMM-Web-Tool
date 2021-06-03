@@ -46,6 +46,18 @@ function getSelectedCity(num) {
         if (mapdisplay == 'none') {
             mapdiv.style.display = 'block';
         }
+
+        var popUp3div = document.getElementsByClassName("popUp3");
+        var popUp3display = popUp3div[num-1].style.display;
+
+        var popUp4div = document.getElementsByClassName("popUp4");
+
+            if (popUp3display == 'none'){
+                popUp3div[num - 1].style.display = 'block';
+                popUp4div[num - 1].style.display = 'block';
+            }
+
+        
     }
 }
 
@@ -164,6 +176,9 @@ class City {
         cityContainer =
             "<table class = \"table-contents\">" +
             "<tr>" +
+
+            "<span class=\"popUp4\" style=\"font-size: 1em; color: #d81b60; display: none;\"><i class=\"fas fa-info-circle\" onclick=\"show_popup();\"></i></span>"
+        +
             "<td>City " + cityNum + "</td>" +
             "<td>:</td>" +
             "<td>" + city + "</td>" +
