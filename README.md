@@ -4,6 +4,9 @@ https://spatialretrace.github.io/CAMMM-Web-Tool/
 ### Preview:
 ![CAMMM Web Atlas](screenshots/01_June03.png)
 
+### CAMMM Atlas Gantt Chart Summer 2021:
+![CAMMM Web Atlas](screenshots/GanttChartSummer2021.PNG)
+
 ### User scale Flowchart:
 ![CAMMM Web Atlas](screenshots/Flowchart_CAMMM_Web_Atlas.jpg)
 
