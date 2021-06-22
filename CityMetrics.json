@@ -148,10 +148,12 @@
                 "quebec_D_CD",
                 "quebec_D_CL"
             ],
+            "FrequencyQueryDirect":[[54,21186,3268,2268,1585],[14856,1658,123,789,45]],
             "NodeLayers": [
                 "quebec_N_CD",
                 "quebec_N_CL"
             ],
+            "FrequencyQueryNode": [[54,21186,3268,2268,1585],[14856,1658,123,789,45]],
             "Coords": [
                 -71.26,
                 46.78

@@ -36,7 +36,7 @@ function getSelectedCity(num) {
 
     if (selectedCity != "Select City") {
 
-        let city = new City(selectedCity, num, myJson["City"][selectedCity]);
+        let city = new City(selectedCity, num, myJson["City"][selectedCity], true);
         getCity(city, num);
 
         var mapdivId = "map" + num + "div";
@@ -74,10 +74,11 @@ function dropdownCities() {
 }
 
 class City {
-    constructor(city, cityNum, cityJson) {
+    constructor(city, cityNum, cityJson, showAllCheckFlag) {
         this.city = city;
         this.cityNum = cityNum;
         this.cityJson = cityJson;
+        this.showAllCheckFlag = showAllCheckFlag;
         this.readCityJson();
         this.injectToggleHTML();
         this.getToggleTest();
@@ -132,8 +133,50 @@ class City {
         this.radioButtons();
     }
 
-    loadLayer() {
-        const { map, ListOfLayers } = this;
+
+    loadOneLayer(){
+        const {sliderValue, ListOfLayers, radioList, map} =this;
+        for (let i = 0; i < radioList.length; i++) {
+            var LayerInLoop="";
+            if (radioList[i]) {
+                for (var j = 1; j < 6; j++){
+                    LayerInLoop =ListOfLayers[i]+"_"+j.toString();
+                    if (j ==sliderValue) { 
+                        console.log("Turning on: ", LayerInLoop);
+                        map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                        } 
+                    else{ 
+                        console.log("Turning off: ", LayerInLoop);
+                        map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
+                        }
+                    
+                 }
+            }
+        }
+    }
+
+    toggleSlider(){
+        const { showAllCheckFlag, ListOfLayers, radioList, map} =this;
+        console.log("Inside our toggle layer the value for showAllCheckFlag is:");
+        console.log(showAllCheckFlag);
+        var sliderValue=1;
+        this.sliderValue =sliderValue;
+        if(!showAllCheckFlag){
+            console.log("We are going to slide!!!!");
+            this.loadOneLayer();
+            }
+        else{
+            this.loadAllLayers();
+            console.log("Back to 5 categories");
+            // we go back to all 5 categories
+        }
+
+        
+
+    }
+
+    loadAllLayers() {
+        const { cityNum ,map, ListOfLayers, showAllCheckFlag } = this;
         var radioList = [];
         for (const [i, val] of ListOfLayers.entries()) {
             var buttonStatus = document.getElementById(val).checked;
@@ -144,26 +187,47 @@ class City {
         console.log("This is all the radio buttons");
         console.log(this.radioList);
 
+        var showAllDivName = "showAll" + cityNum + "Div";
+        var showAllDiv = document.getElementById(showAllDivName);
+        var showAllDivStyle = showAllDiv.style.display;
+  
+        var showAllCheckHTML = "<input type=\"checkbox\" id=\"showAll" + cityNum + "\" name=\"showAll" + cityNum + "\" checked onchange=\"{City" + cityNum + ".showAllCheckFlag = this.checked; City" + cityNum +".toggleSlider();}\"><label for=\"showAll"+cityNum+"\">Show All</label>";
+        showAllDiv.innerHTML = showAllCheckHTML;
+
+        if(showAllDivStyle == "none")
+        {
+            console.log("Making Show All Checkbox Visible");
+            showAllDiv.style.display = "block";
+        }
+
         for (let i = 0; i < this.radioList.length; i++) {
-            if (this.radioList[i]) {
-                map.setLayoutProperty(ListOfLayers[i], 'visibility', 'visible');
-                console.log("Turning on: ", ListOfLayers[i]);
+            var LayerInLoop="";
+            if ((this.radioList[i])&&(showAllCheckFlag)) {
+                for (var j = 1; j < 6; j++){
+                    LayerInLoop =ListOfLayers[i]+"_"+j.toString();
+                    console.log("Turning on: ", LayerInLoop);
+                    map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                }
+
                 this.mapLegend();
             }
             else {
-                map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
-                console.log("Turning off: ", ListOfLayers[i]);
+                for (var j = 1; j < 6; j++) {
+                    LayerInLoop = ListOfLayers[i] + "_" + j.toString();
+                    console.log("Turning off: ", LayerInLoop);
+                    map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
+                }
             }
         }
     }
-
+    
     radioButtons() {
         const { cityNum, ListOfLayers } = this;
         var formHTML = "";
         var NameOfQueries = ["Centrality Degree", "Closeness"];
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
-            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"" + "City" + cityNum + ".loadLayer();" + "\">" +
+            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"{" + "City" + cityNum + ".loadAllLayers();}\">" +
                 "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
         }
         var containerId = "radioForm" + cityNum;

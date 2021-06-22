@@ -96,6 +96,8 @@ font-weight: bold;
 /* START OF MAP LEGEND STYLE */
 
 #centrality_legend{
+    margin-top: 5px;
+    margin-bottom: 5px;
     width: 100%;
     height: 10px;
     border-radius: 10px;
@@ -104,6 +106,8 @@ font-weight: bold;
 }
 
 #closeness_legend{
+    margin-top: 5px;
+    margin-bottom: 5px;
     width: 100%;
     height: 10px;
     border-radius: 10px;
