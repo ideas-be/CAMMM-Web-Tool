@@ -136,6 +136,9 @@ class City {
 
     loadOneLayer(){
         const {sliderValue, ListOfLayers, radioList, map} =this;
+
+        console.log("Showing the value of sliderValue: ");
+        console.log(sliderValue);
         for (let i = 0; i < radioList.length; i++) {
             var LayerInLoop="";
             if (radioList[i]) {
@@ -156,13 +159,29 @@ class City {
     }
 
     toggleSlider(){
-        const { showAllCheckFlag, ListOfLayers, radioList, map} =this;
+        const { showAllCheckFlag, cityNum, ListOfLayers, radioList, map} =this;
         console.log("Inside our toggle layer the value for showAllCheckFlag is:");
         console.log(showAllCheckFlag);
         var sliderValue=1;
         this.sliderValue =sliderValue;
+
+        var queryNum = 0;
+
+        for (let i = 0; i < this.radioList.length; i++) {
+            if(radioList[i]){
+                queryNum = i+1;
+            }
+        }
+
+        var mapLegendID = "mapLegend"+cityNum;
+        var legendHTML = "";
+
         if(!showAllCheckFlag){
             console.log("We are going to slide!!!!");
+
+            legendHTML = "<input id=\"slider"+cityNum+"\" type=\"range\" min=\"1\" max=\"5\" value=\"1\" step=\"1\" onchange =\"{City"+cityNum+".sliderValue=this.value; City"+cityNum+".loadOneLayer();}\">"+"<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+            document.getElementById(mapLegendID).innerHTML = legendHTML;
+
             this.loadOneLayer();
             }
         else{
@@ -328,10 +347,10 @@ class City {
         if (typeof (radioList) != "undefined") {
             switch (radioList.indexOf(true)) {
                 case 0:
-                    legendHTML = "<div id=\"centrality_legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px;\">Less More</p>";
+                    legendHTML = "<div id=\"query1Legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
                     break;
                 case 1:
-                    legendHTML = "<div id=\"closeness_legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px;\">Less More</p>";
+                    legendHTML = "<div id=\"query2Legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
                     break;
                 default:
                     legendHTML = "";
@@ -339,10 +358,6 @@ class City {
                     break;
             }
         }
-        // else {
-        //     legendHTML = "";
-        //     console.log("undefined radio list and legend item");
-        // }
 
         var legendivID = "mapLegend" + cityNum;
         document.getElementById(legendivID).innerHTML = legendHTML;

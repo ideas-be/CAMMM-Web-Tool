@@ -95,7 +95,7 @@ font-weight: bold;
 
 /* START OF MAP LEGEND STYLE */
 
-#centrality_legend{
+#query1Legend{
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
@@ -105,7 +105,7 @@ font-weight: bold;
     background-image: linear-gradient(to right, #D1ECCB, #006127);
 }
 
-#closeness_legend{
+#query2Legend{
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
