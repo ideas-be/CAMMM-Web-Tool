@@ -95,6 +95,17 @@ font-weight: bold;
 
 /* START OF MAP LEGEND STYLE */
 
+#slider1{
+    -webkit-appearance: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: linear-gradient(to right, #D1ECCB, #006127);
+}
+
 #query1Legend{
     margin-top: 5px;
     margin-bottom: 5px;
@@ -103,6 +114,17 @@ font-weight: bold;
     border-radius: 10px;
     border: 2px solid white;
     background-image: linear-gradient(to right, #D1ECCB, #006127);
+}
+
+#slider2{
+    -webkit-appearance: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: linear-gradient(to right, #261C43, #742287);
 }
 
 #query2Legend{

@@ -179,7 +179,7 @@ class City {
         if(!showAllCheckFlag){
             console.log("We are going to slide!!!!");
 
-            legendHTML = "<input id=\"slider"+cityNum+"\" type=\"range\" min=\"1\" max=\"5\" value=\"1\" step=\"1\" onchange =\"{City"+cityNum+".sliderValue=this.value; City"+cityNum+".loadOneLayer();}\">"+"<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+            legendHTML = "<input id=\"slider"+queryNum+"\" type=\"range\" min=\"1\" max=\"5\" value=\"1\" step=\"1\" onchange =\"{City"+cityNum+".sliderValue=this.value; City"+cityNum+".loadOneLayer();}\">"+"<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
             document.getElementById(mapLegendID).innerHTML = legendHTML;
 
             this.loadOneLayer();
@@ -190,15 +190,13 @@ class City {
             // we go back to all 5 categories
         }
 
-        
-
     }
 
     loadAllLayers() {
         const { cityNum ,map, ListOfLayers, showAllCheckFlag } = this;
         var radioList = [];
         for (const [i, val] of ListOfLayers.entries()) {
-            var buttonStatus = document.getElementById(val).checked;
+            var buttonStatus = document.getElementById(val+"_"+cityNum).checked;
             console.log("buttonStatus", i, buttonStatus);
             radioList.push(buttonStatus);
         }
@@ -246,7 +244,7 @@ class City {
         var NameOfQueries = ["Centrality Degree", "Closeness"];
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
-            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value + "\" onclick=\"{" + "City" + cityNum + ".loadAllLayers();}\">" +
+            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_"+cityNum+"\" value=\"" + value + "\" onclick=\"{" + "City" + cityNum + ".loadAllLayers();}\">" +
                 "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
         }
         var containerId = "radioForm" + cityNum;
