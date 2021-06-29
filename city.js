@@ -73,6 +73,17 @@ function dropdownCities() {
 
 }
 
+function resetCity(num){
+    // console.log("BUTTON IS PRESSED!! CITY HAS BEEN RESET!!");
+    // console.log(num);
+    var mapdivId = "map" + num + "div";
+    var dropdownID = "cityList" + num;
+    // console.log(dropdownID)
+    
+    document.getElementById(mapdivId).style.display = "none";
+    document.getElementById(dropdownID).selectedIndex = 0;
+}
+
 class City {
     constructor(city, cityNum, cityJson, showAllCheckFlag) {
         this.city = city;
@@ -257,9 +268,7 @@ class City {
         cityContainer =
             "<table class = \"table-contents\">" +
             "<tr>" +
-
-            "<span class=\"popUp4\" style=\"font-size: 1em; color: #d81b60; display: none;\"><i class=\"fas fa-info-circle\" onclick=\"show_popup();\"></i></span>"
-        +
+            "<span class=\"popUp4\" style=\"font-size: 1em; color: #d81b60; display: none;\"><i class=\"fas fa-info-circle\" onclick=\"show_popup();\"></i></span>"+
             "<td>City " + cityNum + "</td>" +
             "<td>:</td>" +
             "<td>" + city + "</td>" +
