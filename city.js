@@ -31,7 +31,6 @@ function getCity(city, num) {
 }
 
 function getSelectedCity(num) {
-    var citylist = "cityList" + num;
     var selectedCity = document.getElementById(citylist).value;
 
     if (selectedCity != "Select City") {
@@ -45,6 +44,14 @@ function getSelectedCity(num) {
         var mapdisplay = mapdiv.style.display;
         if (mapdisplay == 'none') {
             mapdiv.style.display = 'block';
+        }
+
+        var metricsDivId = "city" + num + "table";
+        var metricsDiv = document.getElementById(metricsDivId);
+
+        var metricsDisplay = metricsDiv.style.display;
+        if (metricsDisplay == 'none') {
+            metricsDiv.style.display = 'block';
         }
 
         var popUp3div = document.getElementsByClassName("popUp3");
@@ -77,10 +84,12 @@ function resetCity(num){
     // console.log("BUTTON IS PRESSED!! CITY HAS BEEN RESET!!");
     // console.log(num);
     var mapdivId = "map" + num + "div";
+    var metricsDivId = "city" + num + "table";
     var dropdownID = "cityList" + num;
     // console.log(dropdownID)
     
     document.getElementById(mapdivId).style.display = "none";
+    document.getElementById(metricsDivId).style.display = "none";
     document.getElementById(dropdownID).selectedIndex = 0;
 }
 
