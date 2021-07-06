@@ -31,6 +31,7 @@ function getCity(city, num) {
 }
 
 function getSelectedCity(num) {
+    var citylist = "cityList" + num;
     var selectedCity = document.getElementById(citylist).value;
 
     if (selectedCity != "Select City") {
