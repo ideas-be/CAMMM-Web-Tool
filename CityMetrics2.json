@@ -2,14 +2,43 @@
     "City": {
         "Montreal": {
             "name": "Montreal",
-            "NumTransportSystem": 3,
-            "NumBusStops": 65666,
-            "NumRailStations": 123,
-            "NumMetroStations": 50,
-            "NumBoroughs": 19,
             "AreaSqKm": 431.5,
             "PopulationMillion": 1.78,
             "DensityPersonSqKm": 4115,
+            "NumBoroughs": 19,
+            "NumTransitSystems": 3,
+            "TransitSystems":[
+                {
+                    "Type": "Bus",
+                    "NumStops": 65666,
+                    "NumLines": 200,
+                    "AvgDisStops": 350.20
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 69,
+                    "NumLines": 5,
+                    "AvgDisStops": 350.20
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
             "DirectStyleURL": "ckqr1dabb3x1i18nwv4qgyeoc",
             "NodeStyleURL": "ckqqyte800ogu18ljw7yybo7m",
             "DirectLayers": [
@@ -122,12 +151,42 @@
                 "quebec_D_CD",
                 "quebec_D_CL"
             ],
-            "FrequencyQueryDirect":[[54,21186,3268,2268,1585],[14856,1658,123,789,45]],
+            "FrequencyQueryDirect": [
+                [
+                    54,
+                    21186,
+                    3268,
+                    2268,
+                    1585
+                ],
+                [
+                    14856,
+                    1658,
+                    123,
+                    789,
+                    45
+                ]
+            ],
             "NodeLayers": [
                 "quebec_N_CD",
                 "quebec_N_CL"
             ],
-            "FrequencyQueryNode": [[54,21186,3268,2268,1585],[14856,1658,123,789,45]],
+            "FrequencyQueryNode": [
+                [
+                    54,
+                    21186,
+                    3268,
+                    2268,
+                    1585
+                ],
+                [
+                    14856,
+                    1658,
+                    123,
+                    789,
+                    45
+                ]
+            ],
             "Coords": [
                 -71.26,
                 46.78
