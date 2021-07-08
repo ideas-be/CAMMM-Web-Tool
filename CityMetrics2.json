@@ -57,14 +57,43 @@
         },
         "Vienna": {
             "name": "Vienna",
-            "NumTransportSystem": 6,
-            "NumBusStops": 78888,
-            "NumRailStations": 456,
-            "NumMetroStations": 35,
-            "NumBoroughs": 20,
             "AreaSqKm": 414.6,
             "PopulationMillion": 1.8,
             "DensityPersonSqKm": 4341,
+            "NumBoroughs": 20,
+            "NumTransitSystems": 3,
+            "TransitSystems":[
+                {
+                    "Type": "Bus",
+                    "NumStops": 65666,
+                    "NumLines": 200,
+                    "AvgDisStops": 350.20
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 250,
+                    "NumLines": 30,
+                    "AvgDisStops": 255.02
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 69,
+                    "NumLines": 5,
+                    "AvgDisStops": 350.20
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
             "DirectStyleURL": "ckmdv9k6p0y6617qwpyikvpms",
             "NodeStyleURL": "ckmdvdgrv16cx17pljoyexm36",
             "DirectLayers": [
@@ -83,14 +112,43 @@
         },
         "Barcelona": {
             "name": "Barcelona",
-            "NumTransportSystem": 6,
-            "NumBusStops": 44444,
-            "NumRailStations": 36,
-            "NumMetroStations": 135,
-            "NumBoroughs": 1,
             "AreaSqKm": 101.9,
             "PopulationMillion": 5.575,
             "DensityPersonSqKm": 54710,
+            "NumBoroughs": 15,
+            "NumTransitSystems": 4,
+            "TransitSystems":[
+                {
+                    "Type": "Bus",
+                    "NumStops": 65666,
+                    "NumLines": 200,
+                    "AvgDisStops": 350.20
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 250,
+                    "NumLines": 30,
+                    "AvgDisStops": 255.02
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 69,
+                    "NumLines": 5,
+                    "AvgDisStops": 350.20
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
             "DirectStyleURL": "ckmdvikhj16k118rv36unif4h",
             "NodeStyleURL": "ckmdvr9px0yne17qw1abv6rqx",
             "DirectLayers": [
@@ -111,14 +169,43 @@
         },
         "Budapest": {
             "name": "Budapest",
-            "NumTransportSystem": 2,
-            "NumBusStops": 3333333,
-            "NumRailStations": 66,
-            "NumMetroStations": 222,
-            "NumBoroughs": 15,
             "AreaSqKm": 525.2,
             "PopulationMillion": 1.75,
             "DensityPersonSqKm": 3388,
+            "NumBoroughs": 33,
+            "NumTransitSystems": 4,
+            "TransitSystems":[
+                {
+                    "Type": "Bus",
+                    "NumStops": 65666,
+                    "NumLines": 200,
+                    "AvgDisStops": 350.20
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 250,
+                    "NumLines": 30,
+                    "AvgDisStops": 255.02
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 1586,
+                    "NumLines": 199,
+                    "AvgDisStops": 500
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 69,
+                    "NumLines": 5,
+                    "AvgDisStops": 350.20
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
             "DirectStyleURL": "ckmdvy9vn0yud17qwen6l9jj8",
             "NodeStyleURL": "ckmdw5kz7171117pddh6zl0bj",
             "DirectLayers": [
@@ -137,14 +224,44 @@
         },
         "Quebec": {
             "name": "Quebec",
-            "NumTransportSystem": 4,
-            "NumBusStops": 777777,
-            "NumRailStations": 0,
-            "NumMetroStations": 0,
-            "NumBoroughs": 10,
-            "AreaSqKm": 234.5,
+           "AreaSqKm": 234.5,
             "PopulationMillion": 0.57,
             "DensityPersonSqKm": 1648,
+            "NumBoroughs": 11,
+            "NumTransitSystems": 1,
+            "TransitSystems":[
+                {
+                    "Type": "Bus",
+                    "NumStops": 65666,
+                    "NumLines": 200,
+                    "AvgDisStops": 350.20
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 0,
+                    "NumLines":0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+
             "DirectStyleURL": "ckqr0ljp50tnz17k8s2tm4rsh",
             "NodeStyleURL": "ckpwzbcwp51pt17njpumzg0hq",
             "DirectLayers": [

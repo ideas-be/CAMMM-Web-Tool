@@ -58,11 +58,11 @@ function getSelectedCity(num) {
         var popUp3div = document.getElementsByClassName("popUp3");
         var popUp3display = popUp3div[num-1].style.display;
 
-        var popUp4div = document.getElementsByClassName("popUp4");
+        // var popUp4div = document.getElementsByClassName("popUp4");
 
             if (popUp3display == 'none'){
                 popUp3div[num - 1].style.display = 'block';
-                popUp4div[num - 1].style.display = 'block';
+                // popUp4div[num - 1].style.display = 'block';
             }
 
         
@@ -332,107 +332,57 @@ class City {
     cityData2() {
         const { city, cityNum, cityJson } = this;
         var IconList =  ["fas fa-bus", "fas fa-train", "fas fa-tram","fas fa-subway", "fas fa-taxi"];
-        var StopType = ["Bus Stops","Train Stations" ,"Tram Stops", "Metro Stations", "Other Stops" ]
-        for(var i=0; i<5;i++){
-            if(cityJson[TransitSystems][i].NumStops>0){
-                Table += "<tr >"+IconList[i]+"</tr>"
-            }
-        }
+        var StopType = ["Bus Stops","Train Stations" ,"Tram Stops", "Metro Stations", "Other Stops" ];
         //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
-        // rowA
-        //     column1
-        //         // icon
-        //     /column1
-        //     column2
-        //         row1
-        //             column11
-        //                 // itemName    | Number of  Stops
-        //             /column11
-        //                 // colon       | :
-        //             column12
-        //             /column12
-        //             column13
-        //                 // itemVal      | XXXXXX
-        //             /column13
-        //         /row1
-        //         row2
-        //             column11
-        //                 //itemName      | Number of  Lines 
-        //             /column11
-        //                 //colon         | :
-        //             column12
-        //             /column12
-        //             column13
-        //                 //itemVal       | XXXXXX
-        //             /column13
-        //         /row2
-        //         row3
-        //             column11
-        //                 //itemName      | 
-        //             /column11
-        //                 //colon
-        //             column12
-        //             /column12
-        //             column13
-        //                 //itemVal
-        //             /column13
-        //         /row3
-        //     /column2
-        // / rowA
-
-
-        // var cityContainer = "";
-        // cityContainer =
-        //     "<table class = \"table-contents\">" +
-        //     "<tr>" +
-        //     "<span class=\"popUp4\" style=\"font-size: 1em; color: #d81b60; display: none;\"><i class=\"fas fa-info-circle\" onclick=\"show_popup();\"></i></span>"+
-        //     "<td>City " + cityNum + "</td>" +
-        //     "<td>:</td>" +
-        //     "<td>" + city + "</td>" +
-        //     "</tr>" +
-        //     "<tr>" +
-        //     "<td>Number of Transport Systems</td>" +
-        //     "<td>:</td>" +
-        //     "<td>" + cityJson.NumTransportSystem + "</td>" +
-        //     "</tr>" +
-        //     "<tr>" +
-        //     "<td>Number of Bus Stops</td>" +
-        //     "<td>:</td>" +
-        //     "<td>" + cityJson.NumBusStops + "</td>" +
-        //     "</tr>" +
-        //     "<tr>" +
-        //     "<td>Number of Rail Stations</td>" +
-        //     "<td>:</td>" +
-        //     "<td>" + cityJson.NumRailStations + "</td>" +
-        //     "</tr>" +
-        //     "<tr>" +
-        //     "<td>Number of Metro Stations</td>" +
-        //     "<td>:</td>" +
-        //     "<td>" + cityJson.NumMetroStations + "</td>" +
-        //     "</tr>" +
-        //     "<tr>" +
-        //     "<td>Number of Boroughs</td>" +
-        //     "<td>:</td>" +
-        //     "<td>" + cityJson.NumBoroughs + "</td>" +
-        //     "</tr>" +
-        //     "<tr>" +
-        //     "<td>Area in sq. km.</td>" +
-        //     "<td>:</td>" +
-        //     "<td>" + cityJson.AreaSqKm + "</td>" +
-        //     "</tr>" +
-        //     "<tr>" +
-        //     "<td>Population in million</td>" +
-        //     "<td>:</td>" +
-        //     "<td>" + cityJson.PopulationMillion + "</td>" +
-        //     "</tr>" +
-        //     "<tr>" +
-        //     "<td>Density per sq. km.</td>" +
-        //     "<td>:</td>" +
-        //     "<td>" + cityJson.DensityPersonSqKm + "</td>" +
-        //     "</tr>" +
-        //     "</table>";
-        // var citydatadivID = "city" + cityNum + "table";
-        // document.getElementById(citydatadivID).innerHTML = cityContainer;
+        var cityTable ="<table class = \"table-contents\">";
+        for (var i = 0; i < 5; i++) {
+            if (cityJson["TransitSystems"][i].NumStops > 0) {
+                cityTable += "<tr class=\"rowA\">" +
+                    "<td class=\"columnA\">"+
+                    "<i class=\"" + IconList[i] +"\"></i>"+ // icon
+                    "</td>"+ //columnA
+                    "<td class=\"columnB\">"+ //Metrics Are Displayed
+                        "<tr class=\"row1\">"+
+                            "<td class=\"column1a\">"+
+                                "Number of " + StopType[i]+
+                            "</td>"+ //column1a
+                            "<td class=\"column1b\">"+
+                                ":"+
+                            "</td>"+ //column1b
+                            "<td class=\"column1c\">"+
+                                cityJson["TransitSystems"][i].NumStops+  // ADD VARIABLE HERE
+                            "</td>"+ //column1c
+                        "</tr>"+ //row1
+                        "<tr class=\"row2\">"+
+                            "<td class= \"column2a\">"+
+                                "Number of Lines"+
+                            "</td>"+ //column2a
+                            "<td class= \"column2b\">"+
+                                ":"+
+                            "</td>"+  //column2b
+                            "<td class=\"column2c\">"+
+                                cityJson["TransitSystems"][i].NumLines+ // ADD VARIABLE HERE
+                            "</td>"+  //column2c
+                        "</tr>"+ //row2
+                        "<tr class=\"row3\">"+
+                            "<td class=\"column3a\">"+
+                                "Average distance between "+ StopType[i] +
+                            "</td>"+   //column3a
+                            "<td class= \"column3b\">"+
+                                ":"+
+                            "</td>"+ //column3b
+                            "<td class=\"column3c\">"+
+                                cityJson["TransitSystems"][i].AvgDisStops+ // ADD VARIABLE HERE
+                            "</td>"+ //column3c
+                        "</tr>"+ //row3
+                    "</td>"+ //columnB
+                "</tr>"; //rowA
+            }    // Closing the if
+        }            // Clossing the loop
+        cityTable += " </table>";
+        console.log("cityTable: ", cityTable);
+        var citydatadivID = "city" + cityNum + "table";
+        document.getElementById(citydatadivID).innerHTML = cityTable;
 
     }
 
