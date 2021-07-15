@@ -1,4 +1,15 @@
 body { padding: 10px;}
+
+/* START OF PRINT BUTTON STYLE */
+#printButton{
+  height: 20;
+  width: 120;
+  text-align: center;
+  background-color: #d81b60;
+  color: white;
+  border-style: none;
+}
+/* END OF PRINT BUTTON STYLE */
 #map1 { 
 	display: block;
 	position:absolute; 

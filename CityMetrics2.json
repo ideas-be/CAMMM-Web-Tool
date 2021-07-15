@@ -120,9 +120,9 @@
             "TransitSystems":[
                 {
                     "Type": "Bus",
-                    "NumStops": 65666,
-                    "NumLines": 200,
-                    "AvgDisStops": 350.20
+                    "NumStops": 75369,
+                    "NumLines": 250,
+                    "AvgDisStops": 35.20
                 },
                 {
                     "Type": "Train",
@@ -153,13 +153,11 @@
             "NodeStyleURL": "ckmdvr9px0yne17qw1abv6rqx",
             "DirectLayers": [
                 "barcelona_D_CD",
-                "barcelona_D_CL",
-                "barcelona_D_EV"
+                "barcelona_D_CL"
             ],
             "NodeLayers": [
                 "barcelona_N_CD",
-                "barcelona_N_CL",
-                "barcelona_N_EV"
+                "barcelona_N_CL"
             ],
             "Coords": [
                 2.13,

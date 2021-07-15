@@ -30,6 +30,7 @@
 		</span>
 
 	</div>
+	<button id="printButton" onclick="window.print();">Print</button>
 
 	<!-- START OF INFO AREA -->
 	<div class="info_popup_area">
@@ -159,7 +160,7 @@
 
 		var obj;
 		var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-		a.open('GET', "CityMetrics2.json", true); // This is reading the JSON FILE 
+		a.open('GET', "https://spatialretrace.github.io/CAMMM-Web-Tool/CityMetrics2.json", true); // This is reading the JSON FILE 
 		a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
 
 			if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
