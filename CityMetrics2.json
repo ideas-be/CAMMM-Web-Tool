@@ -71,7 +71,7 @@
                 },
                 {
                     "Type": "Train",
-                    "NumStops": 250,
+                    "NumStops": 251,
                     "NumLines": 30,
                     "AvgDisStops": 255.02
                 },
@@ -94,8 +94,8 @@
                     "AvgDisStops": 0
                 }
             ],
-            "DirectStyleURL": "ckmdv9k6p0y6617qwpyikvpms",
-            "NodeStyleURL": "ckmdvdgrv16cx17pljoyexm36",
+            "DirectStyleURL": "ckqtuan550oah17ofvsk91mkt",
+            "NodeStyleURL": "ckqtuaktz0c3317mopggbopa1",
             "DirectLayers": [
                 "vienna_D_CD",
                 "vienna_D_CL"
@@ -149,8 +149,8 @@
                     "AvgDisStops": 0
                 }
             ],
-            "DirectStyleURL": "ckmdvikhj16k118rv36unif4h",
-            "NodeStyleURL": "ckmdvr9px0yne17qw1abv6rqx",
+            "DirectStyleURL": "ckqtvgc0m18j817mdhbybg80n",
+            "NodeStyleURL": "ckqtvga970j6v17o1nvbue3yz",
             "DirectLayers": [
                 "barcelona_D_CD",
                 "barcelona_D_CL"
@@ -204,8 +204,8 @@
                     "AvgDisStops": 0
                 }
             ],
-            "DirectStyleURL": "ckmdvy9vn0yud17qwen6l9jj8",
-            "NodeStyleURL": "ckmdw5kz7171117pddh6zl0bj",
+            "DirectStyleURL": "ckqttwkz60fv718pxigcal4id",
+            "NodeStyleURL": "ckqr2e1kd3egl17moxoz5t0r6",
             "DirectLayers": [
                 "budapest_D_CD",
                 "budapest_D_CL"
