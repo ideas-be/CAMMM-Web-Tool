@@ -27,3 +27,15 @@ https://api.mapbox.com/styles/v1/carmela-cucuzzella/ckguxoar50i7w19qyf3c6qsdg.ht
 
 Live Sessions
 vscode://vscode.github-authentication/did-authenticate?windowid=1&code=b87a0d598540f66dc6a0&state=72a208f8-8603-4f6f-8e12-5f68fe576911
+
+
+
+TODO
+·Add the cumulative slider under the existing slider
+·Make the text in the box larger
+·Do content sentitive graduations 
+·Move controls to the lower part 
+·Remove the titles of City 1 and City 2
+·Put the Iicon at the end of the described objects
+·Clear the city metrics
+· Next meeting on the 27th of August
