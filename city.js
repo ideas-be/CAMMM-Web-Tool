@@ -36,7 +36,7 @@ function getSelectedCity(num) {
 
     if (selectedCity != "Select City") {
 
-        let city = new City(selectedCity, num, myJson["City"][selectedCity], true, false);
+        let city = new City(selectedCity, num, myJson["City"][selectedCity]);
         getCity(city, num);
 
         var mapdivId = "map" + num + "div";
@@ -95,14 +95,13 @@ function resetCity(num){
 }
 
 class City {
-    constructor(city, cityNum, cityJson, showAllCheckFlag, cumulativeCheckFlag) {
+    constructor(city, cityNum, cityJson) {
         this.city = city;
         this.cityNum = cityNum;
         this.cityJson = cityJson;
-        this.showAllCheckFlag = showAllCheckFlag;
-        this.cumulativeCheckFlag = cumulativeCheckFlag;
         this.readCityJson();
         this.injectToggleHTML();
+        this.injectCategoryCumulativeToggleHTML();
         this.getToggleTest();
         // this.cityData();
         this.cityData();
@@ -156,101 +155,21 @@ class City {
         this.radioButtons();
     }
 
-
-    loadOneLayer(){
-        const {sliderValue, ListOfLayers, radioList, map} =this;
-
-        console.log("Showing the value of sliderValue: ");
-        console.log(sliderValue);
-        for (let i = 0; i < radioList.length; i++) {
-            var LayerInLoop="";
-            if (radioList[i]) {
-                for (var j = 1; j < 6; j++){
-                    LayerInLoop =ListOfLayers[i]+"_"+j.toString();
-                    if (j ==sliderValue) { 
-                        console.log("Turning on: ", LayerInLoop);
-                        map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
-                        } 
-                    else{ 
-                        console.log("Turning off: ", LayerInLoop);
-                        map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
-                        }
-                    
-                 }
-            }
-        }
+    injectCategoryCumulativeToggleHTML() {
+        const { cityNum } = this;
+        console.log("Injecting category/cumulative toggle in HTML");
+        var toggleHTML = "<p class=\"toggleText\">Category" +
+            "<label class=\"switch\" >" +
+            "<input type=\"checkbox\" id=\"toggCatCumulBtn" + cityNum + "\" onchange=\"console.log(\"Category/Cumulative Toggle is being used!!!\");\">" +
+            "<span class=\"slider round\"></span>" +
+            "</label>     Cumulative" +
+            "</p>";
+        var toggleID = "toggleCategoryCumulative" + cityNum;
+        document.getElementById(toggleID).innerHTML = toggleHTML;
     }
 
-    toggleCategorySlider(){
-        const { showAllCheckFlag, cityNum, radioList} =this;
-        console.log("Inside our toggle layer the value for showAllCheckFlag is:");
-        console.log(showAllCheckFlag);
-        var sliderValue=1;
-        this.sliderValue =sliderValue;
-
-        var queryNum = 0;
-
-        for (let i = 0; i < this.radioList.length; i++) {
-            if(radioList[i]){
-                queryNum = i+1;
-            }
-        }
-
-        var mapLegendID = "mapLegend"+cityNum;
-        var legendHTML = "";
-
-        if(!showAllCheckFlag){
-            console.log("We are going to slide!!!!");
-
-            legendHTML = "<input id=\"slider"+queryNum+"\" type=\"range\" min=\"1\" max=\"5\" value=\"1\" step=\"1\" onchange =\"{City"+cityNum+".sliderValue=this.value; City"+cityNum+".loadOneLayer();}\">"+"<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
-            document.getElementById(mapLegendID).innerHTML = legendHTML;
-
-            this.loadOneLayer();
-            }
-        else{
-            this.loadAllLayers();
-            console.log("Back to 5 categories");
-            // we go back to all 5 categories
-        }
-
-    }
-
-    toggleCumulativeSlider(){
-        const { cumulativeCheckFlag, cityNum, ListOfLayers, radioList} =this;
-        console.log("Inside our toggle layer the value for showAllCheckFlag is:");
-        console.log(cumulativeCheckFlag);
-        var sliderValue=1;
-        this.sliderValue =sliderValue;
-
-        var queryNum = 0;
-
-        for (let i = 0; i < this.radioList.length; i++) {
-            if(radioList[i]){
-                queryNum = i+1;
-            }
-        }
-
-        var mapLegendID = "mapLegend"+cityNum;
-        var legendHTML = "";
-
-        if(!cumulativeCheckFlag){
-            console.log("We are going to cumulatively slide!!!!");
-
-            legendHTML = "<input id=\"slider"+queryNum+"\" type=\"range\" min=\"1\" max=\"5\" value=\"1\" step=\"1\" onchange =\"{City"+cityNum+".sliderValue=this.value; City"+cityNum+".loadCumulativeLayers();}\">"+"<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
-            document.getElementById(mapLegendID).innerHTML = legendHTML;
-
-            this.loadCumulativeLayers();
-            }
-        else{
-            this.loadAllLayers();
-            console.log("Back to 5 categories");
-            // we go back to all 5 categories
-        }
-
-    }
-
-    loadAllLayers() {
-        const { cityNum ,map, ListOfLayers, showAllCheckFlag } = this;
+    loadCumulativeLayers() {
+        const { cityNum ,map, ListOfLayers } = this;
         var radioList = [];
         for (const [i, val] of ListOfLayers.entries()) {
             var buttonStatus = document.getElementById(val+"_"+cityNum).checked;
@@ -261,22 +180,9 @@ class City {
         console.log("This is all the radio buttons");
         console.log(this.radioList);
 
-        var showAllDivName = "showAll" + cityNum + "Div";
-        var showAllDiv = document.getElementById(showAllDivName);
-        var showAllDivStyle = showAllDiv.style.display;
-  
-        var showAllCheckHTML = "<input type=\"checkbox\" id=\"showAll" + cityNum + "\" name=\"showAll" + cityNum + "\" checked onchange=\"{City" + cityNum + ".showAllCheckFlag = this.checked; City" + cityNum +".toggleCategorySlider();}\"><label for=\"showAll"+cityNum+"\">Show All</label>";
-        showAllDiv.innerHTML = showAllCheckHTML;
-
-        if(showAllDivStyle == "none")
-        {
-            console.log("Making Show All Checkbox Visible");
-            showAllDiv.style.display = "block";
-        }
-
         for (let i = 0; i < this.radioList.length; i++) {
             var LayerInLoop="";
-            if ((this.radioList[i])&&(showAllCheckFlag)) {
+            if (this.radioList[i]) {
                 for (var j = 1; j < 6; j++){
                     LayerInLoop =ListOfLayers[i]+"_"+j.toString();
                     console.log("Turning on: ", LayerInLoop);
@@ -295,49 +201,13 @@ class City {
         }
     }
 
-    loadCumulativeLayers(){
-        const { cityNum ,map, ListOfLayers, cumulativeCheckFlag } = this;  
-        var cumulativeDivName = "cumulative" + cityNum + "Div";
-        var cumulativeDiv = document.getElementById(cumulativeDivName);
-        var cumulativeDivStyle = cumulativeDiv.style.display;
-  
-        var cumulativeCheckHTML = "<input type=\"checkbox\" id=\"cumulative" + cityNum + "\" name=\"cumulative" + cityNum + "\" checked onchange=\"{City" + cityNum + ".cumulativeCheckFlag = this.checked; City" + cityNum +".toggleCumulativeSlider();}\"><label for=\"cumulative"+cityNum+"\">Cumulative</label>";
-        cumulativeDiv.innerHTML = cumulativeCheckHTML;
-
-        if(cumulativeDivStyle == "none")
-        {
-            console.log("Making Cumulative Checkbox Visible");
-            cumulativeDiv.style.display = "block";
-        }
-
-        for (let i = 0; i < this.radioList.length; i++) {
-            var LayerInLoop="";
-            if ((this.radioList[i])&&(cumulativeCheckFlag)) {
-                for (var j = 1; j < 6; j++){
-                    LayerInLoop =ListOfLayers[i]+"_"+j.toString();
-                    console.log("Turning on: ", LayerInLoop);
-                    map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
-                }
-
-                this.mapLegend();
-            }
-            else {
-                for (var j = 1; j < 6; j++) {
-                    LayerInLoop = ListOfLayers[i] + "_" + j.toString();
-                    console.log("Turning off: ", LayerInLoop);
-                    map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
-                }
-            }
-        }
-    }
-    
     radioButtons() {
         const { cityNum, ListOfLayers } = this;
         var formHTML = "";
         var NameOfQueries = ["Centrality Degree", "Closeness"];
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
-            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_"+cityNum+"\" value=\"" + value + "\" onclick=\"{" + "City" + cityNum + ".loadAllLayers();}\">" +
+            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_"+cityNum+"\" value=\"" + value + "\" onclick=\"{" + "City" + cityNum + ".loadCumulativeLayers();}\">" +
                 "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
         }
         var containerId = "radioForm" + cityNum;
@@ -412,14 +282,14 @@ class City {
         });
         this.map = map;
 
-        this.map.on('load', function () {
-            var layers = map.getStyle().layers;
-            for (var i = 0; i < ListOfLayers.length; i++) {
-                map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
-            }
-        }
+        // this.map.on('load', function () {
+        //     var layers = map.getStyle().layers;
+        //     for (var i = 0; i < ListOfLayers.length; i++) {
+        //         map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
+        //     }
+        // }
 
-        )
+        // )
         var legendHTML = "";
         var legendivID = "mapLegend" + cityNum;
         document.getElementById(legendivID).innerHTML = legendHTML;
