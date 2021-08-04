@@ -30,12 +30,12 @@ vscode://vscode.github-authentication/did-authenticate?windowid=1&code=b87a0d598
 
 
 
-TODO
-·Add the cumulative slider under the existing slider
-·Make the text in the box larger
-·Do content sentitive graduations 
-·Move controls to the lower part 
-·Remove the titles of City 1 and City 2
-·Put the Iicon at the end of the described objects
-·Clear the city metrics
+#TODO
+· Add the cumulative slider under the existing slider
+· Make the text in the box larger
+· Do content sentitive graduations [for the scale]
+· Move controls to the lower part 
+· Remove the titles of City 1 and City 2
+· Put the Iicon at the end of the described objects
+· Clear the city metrics
 · Next meeting on the 27th of August

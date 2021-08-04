@@ -36,7 +36,7 @@ function getSelectedCity(num) {
 
     if (selectedCity != "Select City") {
 
-        let city = new City(selectedCity, num, myJson["City"][selectedCity], true);
+        let city = new City(selectedCity, num, myJson["City"][selectedCity], true, false);
         getCity(city, num);
 
         var mapdivId = "map" + num + "div";
@@ -95,16 +95,17 @@ function resetCity(num){
 }
 
 class City {
-    constructor(city, cityNum, cityJson, showAllCheckFlag) {
+    constructor(city, cityNum, cityJson, showAllCheckFlag, cumulativeCheckFlag) {
         this.city = city;
         this.cityNum = cityNum;
         this.cityJson = cityJson;
         this.showAllCheckFlag = showAllCheckFlag;
+        this.cumulativeCheckFlag = cumulativeCheckFlag;
         this.readCityJson();
         this.injectToggleHTML();
         this.getToggleTest();
         // this.cityData();
-        this.cityData2();
+        this.cityData();
     }
     readCityJson() {
         const { city, cityNum, cityJson } = this;
@@ -180,8 +181,8 @@ class City {
         }
     }
 
-    toggleSlider(){
-        const { showAllCheckFlag, cityNum, ListOfLayers, radioList, map} =this;
+    toggleCategorySlider(){
+        const { showAllCheckFlag, cityNum, radioList} =this;
         console.log("Inside our toggle layer the value for showAllCheckFlag is:");
         console.log(showAllCheckFlag);
         var sliderValue=1;
@@ -214,6 +215,40 @@ class City {
 
     }
 
+    toggleCumulativeSlider(){
+        const { cumulativeCheckFlag, cityNum, ListOfLayers, radioList} =this;
+        console.log("Inside our toggle layer the value for showAllCheckFlag is:");
+        console.log(cumulativeCheckFlag);
+        var sliderValue=1;
+        this.sliderValue =sliderValue;
+
+        var queryNum = 0;
+
+        for (let i = 0; i < this.radioList.length; i++) {
+            if(radioList[i]){
+                queryNum = i+1;
+            }
+        }
+
+        var mapLegendID = "mapLegend"+cityNum;
+        var legendHTML = "";
+
+        if(!cumulativeCheckFlag){
+            console.log("We are going to cumulatively slide!!!!");
+
+            legendHTML = "<input id=\"slider"+queryNum+"\" type=\"range\" min=\"1\" max=\"5\" value=\"1\" step=\"1\" onchange =\"{City"+cityNum+".sliderValue=this.value; City"+cityNum+".loadCumulativeLayers();}\">"+"<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+            document.getElementById(mapLegendID).innerHTML = legendHTML;
+
+            this.loadCumulativeLayers();
+            }
+        else{
+            this.loadAllLayers();
+            console.log("Back to 5 categories");
+            // we go back to all 5 categories
+        }
+
+    }
+
     loadAllLayers() {
         const { cityNum ,map, ListOfLayers, showAllCheckFlag } = this;
         var radioList = [];
@@ -230,7 +265,7 @@ class City {
         var showAllDiv = document.getElementById(showAllDivName);
         var showAllDivStyle = showAllDiv.style.display;
   
-        var showAllCheckHTML = "<input type=\"checkbox\" id=\"showAll" + cityNum + "\" name=\"showAll" + cityNum + "\" checked onchange=\"{City" + cityNum + ".showAllCheckFlag = this.checked; City" + cityNum +".toggleSlider();}\"><label for=\"showAll"+cityNum+"\">Show All</label>";
+        var showAllCheckHTML = "<input type=\"checkbox\" id=\"showAll" + cityNum + "\" name=\"showAll" + cityNum + "\" checked onchange=\"{City" + cityNum + ".showAllCheckFlag = this.checked; City" + cityNum +".toggleCategorySlider();}\"><label for=\"showAll"+cityNum+"\">Show All</label>";
         showAllDiv.innerHTML = showAllCheckHTML;
 
         if(showAllDivStyle == "none")
@@ -242,6 +277,42 @@ class City {
         for (let i = 0; i < this.radioList.length; i++) {
             var LayerInLoop="";
             if ((this.radioList[i])&&(showAllCheckFlag)) {
+                for (var j = 1; j < 6; j++){
+                    LayerInLoop =ListOfLayers[i]+"_"+j.toString();
+                    console.log("Turning on: ", LayerInLoop);
+                    map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                }
+
+                this.mapLegend();
+            }
+            else {
+                for (var j = 1; j < 6; j++) {
+                    LayerInLoop = ListOfLayers[i] + "_" + j.toString();
+                    console.log("Turning off: ", LayerInLoop);
+                    map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
+                }
+            }
+        }
+    }
+
+    loadCumulativeLayers(){
+        const { cityNum ,map, ListOfLayers, cumulativeCheckFlag } = this;  
+        var cumulativeDivName = "cumulative" + cityNum + "Div";
+        var cumulativeDiv = document.getElementById(cumulativeDivName);
+        var cumulativeDivStyle = cumulativeDiv.style.display;
+  
+        var cumulativeCheckHTML = "<input type=\"checkbox\" id=\"cumulative" + cityNum + "\" name=\"cumulative" + cityNum + "\" checked onchange=\"{City" + cityNum + ".cumulativeCheckFlag = this.checked; City" + cityNum +".toggleCumulativeSlider();}\"><label for=\"cumulative"+cityNum+"\">Cumulative</label>";
+        cumulativeDiv.innerHTML = cumulativeCheckHTML;
+
+        if(cumulativeDivStyle == "none")
+        {
+            console.log("Making Cumulative Checkbox Visible");
+            cumulativeDiv.style.display = "block";
+        }
+
+        for (let i = 0; i < this.radioList.length; i++) {
+            var LayerInLoop="";
+            if ((this.radioList[i])&&(cumulativeCheckFlag)) {
                 for (var j = 1; j < 6; j++){
                     LayerInLoop =ListOfLayers[i]+"_"+j.toString();
                     console.log("Turning on: ", LayerInLoop);
@@ -272,64 +343,7 @@ class City {
         var containerId = "radioForm" + cityNum;
         document.getElementById(containerId).innerHTML = formHTML;
     }
-
-    // cityData() {
-    //     const { city, cityNum, cityJson } = this;
-    //     var cityContainer = "";
-    //     cityContainer =
-    //         "<table class = \"table-contents\">" +
-    //         "<tr>" +
-    //         "<span class=\"popUp4\" style=\"font-size: 1em; color: #d81b60; display: none;\"><i class=\"fas fa-info-circle\" onclick=\"show_popup();\"></i></span>"+
-    //         "<td>City " + cityNum + "</td>" +
-    //         "<td>:</td>" +
-    //         "<td>" + city + "</td>" +
-    //         "</tr>" +
-    //         "<tr>" +
-    //         "<td>Number of Transport Systems</td>" +
-    //         "<td>:</td>" +
-    //         "<td>" + cityJson.NumTransportSystem + "</td>" +
-    //         "</tr>" +
-    //         "<tr>" +
-    //         "<td>Number of Bus Stops</td>" +
-    //         "<td>:</td>" +
-    //         "<td>" + cityJson.NumBusStops + "</td>" +
-    //         "</tr>" +
-    //         "<tr>" +
-    //         "<td>Number of Rail Stations</td>" +
-    //         "<td>:</td>" +
-    //         "<td>" + cityJson.NumRailStations + "</td>" +
-    //         "</tr>" +
-    //         "<tr>" +
-    //         "<td>Number of Metro Stations</td>" +
-    //         "<td>:</td>" +
-    //         "<td>" + cityJson.NumMetroStations + "</td>" +
-    //         "</tr>" +
-    //         "<tr>" +
-    //         "<td>Number of Boroughs</td>" +
-    //         "<td>:</td>" +
-    //         "<td>" + cityJson.NumBoroughs + "</td>" +
-    //         "</tr>" +
-    //         "<tr>" +
-    //         "<td>Area in sq. km.</td>" +
-    //         "<td>:</td>" +
-    //         "<td>" + cityJson.AreaSqKm + "</td>" +
-    //         "</tr>" +
-    //         "<tr>" +
-    //         "<td>Population in million</td>" +
-    //         "<td>:</td>" +
-    //         "<td>" + cityJson.PopulationMillion + "</td>" +
-    //         "</tr>" +
-    //         "<tr>" +
-    //         "<td>Density per sq. km.</td>" +
-    //         "<td>:</td>" +
-    //         "<td>" + cityJson.DensityPersonSqKm + "</td>" +
-    //         "</tr>" +
-    //         "</table>";
-    //     var citydatadivID = "city" + cityNum + "table";
-    //     document.getElementById(citydatadivID).innerHTML = cityContainer;
-
-    // }
-    cityData2() {
+    cityData() {
         const { city, cityNum, cityJson } = this;
         var IconList =  ["fas fa-bus", "fas fa-train", "fas fa-tram","fas fa-subway", "fas fa-taxi"];
         var StopType = ["Bus Stops","Train Stations" ,"Tram Stops", "Metro Stations", "Other Stops" ];
