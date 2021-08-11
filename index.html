@@ -177,6 +177,7 @@
 
 		var obj;
 		var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+		window.setTimeout(a, 700);
 		a.open('GET', "https://spatialretrace.github.io/CAMMM-Web-Tool/CityMetrics2.json", true); // This is reading the JSON FILE 
 		a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
 
