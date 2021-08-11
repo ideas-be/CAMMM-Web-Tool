@@ -58,10 +58,10 @@
 				<h3>City 1</h3>
 				<select id="cityList1" onchange="getSelectedCity(1);">
 				</select>
+				<button id ="city1Reset" onclick="resetCity(1);">Reset</button>
 				<span style="font-size: 1em; color: #d81b60;">
 					<i class="fas fa-info-circle" onclick="show_popup();"></i>
 				</span>
-				<button id ="city1Reset" onclick="resetCity(1);">Reset</button>
 			</div>
 			<div class="emptyspace"></div>
 			<!-- END OF CITY 1 LIST -->
@@ -77,10 +77,10 @@
 				<h3>City 2</h3>
 				<select id="cityList2" onchange="getSelectedCity(2);">
 				</select>
+				<button id ="city2Reset" onclick="resetCity(2);">Reset</button>
 				<span style="font-size: 1em; color: #d81b60;">
 					<i class="fas fa-info-circle" onclick="show_popup();"></i>
 				</span>
-				<button id ="city2Reset" onclick="resetCity(2);">Reset</button>
 			</div>
 			<div class="emptyspace"></div>
 			<!-- END OF CITY 2 LIST -->
@@ -95,7 +95,7 @@
 	<!-- START OF MAP1 -->
 	<div style="width: 506px;">
 		<nav id="filter-group" class="filter-group">
-				<table>
+				<table id="map1controls">
 					<tr>
 						<td>
 							<!-- START OF DIRECT/NODE TOGGLE 1 -->
