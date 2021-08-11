@@ -4,15 +4,15 @@ body { margin: 0; padding: 0; }
 .filter-group {
     font: 10px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 600;
-    position: absolute;
+    /* position: absolute; */
     top: 10px;
     right: 10px;
     z-index: 1;
     /* border-radius: 3px; */
-    width: 120px;
+    width: 506px;
     color: black;
     background-color: rgba(255,255,255,0.5);
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 8px;
 }
 
@@ -20,10 +20,15 @@ body { margin: 0; padding: 0; }
     text-transform: capitalize;
 }
 
+.radioform1, .radioform2{
+    display: inline;
+}
+
 /* START OF DIRECT/NODE TOGGLE STYLE*/
 
 #toggleCity1, #toggleCity2{
     text-align: center;
+    display: inline;
 }
 
 .switch {
