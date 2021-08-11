@@ -15,7 +15,7 @@ function sleep(milliseconds) {
 function newJson(obj) {
     myJson = obj;
     console.log("Initializing new Json obj");
-    dropdownCities();
+    window.setTimeout(dropdownCities, 500);
 }
 
 function getCity(city, num) {
