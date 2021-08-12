@@ -100,9 +100,10 @@ class City {
         this.cityNum = cityNum;
         this.cityJson = cityJson;
         this.readCityJson();
-        this.injectToggleHTML();
+        this.injectDirectNodeToggleHTML();
         this.injectCategoryCumulativeToggleHTML();
-        this.getToggleTest();
+        this.getDirectNodeToggle();
+        // this.injectSlider();
         // this.cityData();
         this.cityData();
     }
@@ -113,25 +114,26 @@ class City {
 
         let cityCoords = cityJson.Coords;
         let cityZoom = cityJson.Zoom;
-
+        
         this.cityCoords = cityCoords;
         this.cityZoom = cityZoom;
         console.log("cityCoords", cityCoords, "cityZoom", cityZoom);
     }
-    injectToggleHTML() {
+    
+    injectDirectNodeToggleHTML() {
         const { cityNum } = this;
         console.log("Injecting toggle in HTML");
         var toggleHTML = "<p class=\"toggleText\">Direct" +
-            "<label class=\"switch\" >" +
-            "<input type=\"checkbox\" id=\"toggBtn" + cityNum + "\" onchange=\"City" + cityNum + ".getToggleTest();\">" +
-            "<span class=\"slider round\"></span>" +
-            "</label>     Node" +
-            "</p>";
+        "<label class=\"switch\" >" +
+        "<input type=\"checkbox\" id=\"toggBtn" + cityNum + "\" onchange=\"City" + cityNum + ".getDirectNodeToggle();\">" +
+        "<span class=\"slider round\"></span>" +
+        "</label>     Node" +
+        "</p>";
         var toggleID = "toggleCity" + cityNum;
         document.getElementById(toggleID).innerHTML = toggleHTML;
     }
 
-    getToggleTest() {
+    getDirectNodeToggle() {
         const { cityNum, cityJson } = this;
         var toggleID = "toggBtn" + cityNum;
         var selAnalysis = document.getElementById(toggleID).checked;
@@ -155,21 +157,9 @@ class City {
         this.radioButtons();
     }
 
-    injectCategoryCumulativeToggleHTML() {
+    getRadioStatus(){
         const { cityNum } = this;
-        console.log("Injecting category/cumulative toggle in HTML");
-        var toggleHTML = "<p class=\"toggleText\">Category" +
-            "<label class=\"switch\" >" +
-            "<input type=\"checkbox\" id=\"toggCatCumulBtn" + cityNum + "\" onchange=\"console.log(\"Category/Cumulative Toggle is being used!!!\");\">" +
-            "<span class=\"slider round\"></span>" +
-            "</label>     Cumulative" +
-            "</p>";
-        var toggleID = "toggleCategoryCumulative" + cityNum;
-        document.getElementById(toggleID).innerHTML = toggleHTML;
-    }
 
-    loadCumulativeLayers() {
-        const { cityNum ,map, ListOfLayers } = this;
         var radioList = [];
         for (const [i, val] of ListOfLayers.entries()) {
             var buttonStatus = document.getElementById(val+"_"+cityNum).checked;
@@ -179,6 +169,62 @@ class City {
         this.radioList = radioList;
         console.log("This is all the radio buttons");
         console.log(this.radioList);
+        
+    }
+
+    injectSlider(){ // NEED TO FIX THIS!!!
+        const { cityNum, radioList } = this;
+
+      var queryNum = 0;
+
+        for (let i = 0; i < radioList.length; i++) {
+            if(radioList[i]){
+                queryNum = i+1;
+            }
+        }
+
+        var mapLegendID = "mapLegend" + cityNum;
+        var legendHTML = "";
+        legendHTML = "<input id=\"slider" + queryNum + "\" type=\"range\" min=\"1\" max=\"5\" value=\"1\" step=\"1\" onchange =\"{City" + cityNum + ".sliderValue=this.value; City" + cityNum + ".loadOneLayer();}\">" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+        console.log("Injecting the Slider",legendHTML);
+        document.getElementById(mapLegendID).innerHTML = legendHTML;
+    }
+
+
+
+    injectCategoryCumulativeToggleHTML() {
+        const { cityNum } = this;
+        console.log("Injecting category/cumulative toggle in HTML");
+        var toggleHTML = "<p class=\"toggleText\">Cumulative" +
+            "<label class=\"switch\" >" +
+            "<input type=\"checkbox\" id=\"toggCatCumulBtn" + cityNum + "\" onchange= \"City" + cityNum + ".getCatCumulToggle();\">"+
+            "<span class=\"slider round\"></span>" +
+            "</label>     Category" +
+            "</p>";
+        var toggleID = "toggleCategoryCumulative" + cityNum;
+        document.getElementById(toggleID).innerHTML = toggleHTML;
+    }
+
+    getCatCumulToggle(){
+        const { cityNum, cityJson } = this;
+        var toggleID = "toggCatCumulBtn" + cityNum;
+        var selSlider = document.getElementById(toggleID).checked;
+        console.log("Selected slider for Category/Cumulative: ",selSlider);
+        if(selSlider){
+            this.loadCategoryLayer();
+            // Switch Slider Function to Cumulative
+        }
+        else{
+            // Switch Slider Function to Category
+            this.loadCumulativeLayers();
+        }
+        this.catCumulValue = catCumulValue;
+    }
+
+    //DEFAULT: For Cumul Slider, the head of the slider will be at the extreme right (highest value) to display all layers on map
+
+    loadCumulativeLayers() {
+        const { cityNum ,map, ListOfLayers } = this;
 
         for (let i = 0; i < this.radioList.length; i++) {
             var LayerInLoop="";
@@ -188,8 +234,9 @@ class City {
                     console.log("Turning on: ", LayerInLoop);
                     map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
                 }
-
-                this.mapLegend();
+                console.log("Checking twhen the radio button is pressed before calling InjectSlider");
+                this.injectSlider;
+                // this.mapLegend();
             }
             else {
                 for (var j = 1; j < 6; j++) {
@@ -201,13 +248,63 @@ class City {
         }
     }
 
+
+        loadCategoryLayer() {
+        const { sliderValue, ListOfLayers, radioList, map } = this;
+
+        console.log("Showing the value of sliderValue: ");
+        console.log(sliderValue);
+        for (let i = 0; i < radioList.length; i++) { // TODO: Fix length not defined error
+            var LayerInLoop = "";
+            if (radioList[i]) {
+                for (var j = 1; j < 6; j++) {
+                    LayerInLoop = ListOfLayers[i] + "_" + j.toString();
+                    if (j == sliderValue) {
+                        console.log("Turning on: ", LayerInLoop);
+                        map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                    }
+                    else {
+                        console.log("Turning off: ", LayerInLoop);
+                        map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
+                    }
+
+                }
+            }
+        }
+    }
+
+    // mapLegend() {
+    //     const { cityNum, radioList } = this;
+    //     console.log("This function loads the map legend");
+    //     var legendHTML = "";
+    //     if (typeof (radioList) != "undefined") {
+    //         switch (radioList.indexOf(true)) {
+    //             case 0:
+    //                 legendHTML = "<div id=\"query1Legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+    //                 break;
+    //             case 1:
+    //                 legendHTML = "<div id=\"query2Legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+    //                 break;
+    //             default:
+    //                 legendHTML = "";
+    //                 console.log("undefined legend item");
+    //                 break;
+    //         }
+    //     }
+
+    //     var legendivID = "mapLegend" + cityNum;
+    //     document.getElementById(legendivID).innerHTML = legendHTML;
+    // }
+
     radioButtons() {
         const { cityNum, ListOfLayers } = this;
         var formHTML = "";
         var NameOfQueries = ["Centrality Degree", "Closeness"];
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
-            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_"+cityNum+"\" value=\"" + value + "\" onclick=\"{" + "City" + cityNum + ".loadCumulativeLayers();}\">" +
+            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_" + cityNum + "\" value=\"" + value + "\" onclick=\"{City" + cityNum + ".getRadioStatus(); City" + cityNum + ".getCatCumulToggle(); \">" 
+            // "City" + cityNum + ".loadCumulativeLayers();}\">" 
+            +
                 "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
         }
         var containerId = "radioForm" + cityNum;
@@ -296,29 +393,6 @@ class City {
         console.log("undefined radio list and legend item");
 
 
-    }
-
-    mapLegend() {
-        const { cityNum, radioList } = this;
-        console.log("This function loads the map legend");
-        var legendHTML = "";
-        if (typeof (radioList) != "undefined") {
-            switch (radioList.indexOf(true)) {
-                case 0:
-                    legendHTML = "<div id=\"query1Legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
-                    break;
-                case 1:
-                    legendHTML = "<div id=\"query2Legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
-                    break;
-                default:
-                    legendHTML = "";
-                    console.log("undefined legend item");
-                    break;
-            }
-        }
-
-        var legendivID = "mapLegend" + cityNum;
-        document.getElementById(legendivID).innerHTML = legendHTML;
     }
 
 }
