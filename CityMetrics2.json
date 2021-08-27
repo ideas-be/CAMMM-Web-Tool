@@ -10,9 +10,9 @@
             "TransitSystems":[
                 {
                     "Type": "Bus",
-                    "NumStops": 65666,
-                    "NumLines": 200,
-                    "AvgDisStops": 350.20
+                    "NumStops": 11355,
+                    "NumLines": 217,
+                    "AvgDisStops": 318.52
                 },
                 {
                     "Type": "Train",
@@ -21,16 +21,16 @@
                     "AvgDisStops": 0
                 },
                 {
+                    "Type": "Metro",
+                    "NumStops": 69,
+                    "NumLines": 4,
+                    "AvgDisStops": 2787
+                },
+                {
                     "Type": "Tram",
                     "NumStops": 0,
                     "NumLines": 0,
                     "AvgDisStops": 0
-                },
-                {
-                    "Type": "Metro",
-                    "NumStops": 69,
-                    "NumLines": 5,
-                    "AvgDisStops": 350.20
                 },
                 {
                     "Type": "Others",
@@ -65,27 +65,27 @@
             "TransitSystems":[
                 {
                     "Type": "Bus",
-                    "NumStops": 65666,
-                    "NumLines": 200,
-                    "AvgDisStops": 350.20
+                    "NumStops": 9653,
+                    "NumLines": 451,
+                    "AvgDisStops": 331
                 },
                 {
                     "Type": "Train",
-                    "NumStops": 251,
-                    "NumLines": 30,
-                    "AvgDisStops": 255.02
-                },
-                {
-                    "Type": "Tram",
                     "NumStops": 0,
                     "NumLines": 0,
                     "AvgDisStops": 0
                 },
                 {
                     "Type": "Metro",
-                    "NumStops": 69,
-                    "NumLines": 5,
-                    "AvgDisStops": 350.20
+                    "NumStops": 768,
+                    "NumLines": 37,
+                    "AvgDisStops": 655
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 3360,
+                    "NumLines": 135,
+                    "AvgDisStops": 346
                 },
                 {
                     "Type": "Others",
@@ -120,27 +120,27 @@
             "TransitSystems":[
                 {
                     "Type": "Bus",
-                    "NumStops": 75369,
-                    "NumLines": 250,
-                    "AvgDisStops": 35.20
+                    "NumStops": 4067,
+                    "NumLines": 277,
+                    "AvgDisStops": 277
                 },
                 {
                     "Type": "Train",
-                    "NumStops": 250,
-                    "NumLines": 30,
-                    "AvgDisStops": 255.02
-                },
-                {
-                    "Type": "Tram",
                     "NumStops": 0,
                     "NumLines": 0,
                     "AvgDisStops": 0
                 },
                 {
                     "Type": "Metro",
-                    "NumStops": 69,
-                    "NumLines": 5,
-                    "AvgDisStops": 350.20
+                    "NumStops": 155,
+                    "NumLines": 10,
+                    "AvgDisStops": 2669
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
                 },
                 {
                     "Type": "Others",
@@ -175,27 +175,27 @@
             "TransitSystems":[
                 {
                     "Type": "Bus",
-                    "NumStops": 65666,
-                    "NumLines": 200,
-                    "AvgDisStops": 350.20
+                    "NumStops": 10745,
+                    "NumLines": 298,
+                    "AvgDisStops": 449
                 },
                 {
                     "Type": "Train",
-                    "NumStops": 250,
-                    "NumLines": 30,
-                    "AvgDisStops": 255.02
-                },
-                {
-                    "Type": "Tram",
-                    "NumStops": 1586,
-                    "NumLines": 199,
-                    "AvgDisStops": 500
+                    "NumStops": 170,
+                    "NumLines": 109,
+                    "AvgDisStops": 1056
                 },
                 {
                     "Type": "Metro",
-                    "NumStops": 69,
+                    "NumStops": 73,
                     "NumLines": 5,
-                    "AvgDisStops": 350.20
+                    "AvgDisStops": 1121
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 851,
+                    "NumLines": 37,
+                    "AvgDisStops": 417
                 },
                 {
                     "Type": "Others",
@@ -230,9 +230,9 @@
             "TransitSystems":[
                 {
                     "Type": "Bus",
-                    "NumStops": 65666,
-                    "NumLines": 200,
-                    "AvgDisStops": 350.20
+                    "NumStops": 17368,
+                    "NumLines": 318,
+                    "AvgDisStops": 338
                 },
                 {
                     "Type": "Train",
@@ -241,15 +241,15 @@
                     "AvgDisStops": 0
                 },
                 {
-                    "Type": "Tram",
-                    "NumStops": 0,
-                    "NumLines": 0,
-                    "AvgDisStops": 0
-                },
-                {
                     "Type": "Metro",
                     "NumStops": 0,
                     "NumLines":0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
                     "AvgDisStops": 0
                 },
                 {

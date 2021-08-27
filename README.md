@@ -25,11 +25,21 @@ mapbox://styles/carmela-cucuzzella/ckguxoar50i7w19qyf3c6qsdg
 
 
 #TODO
-· Add the cumulative slider under the existing slider
-· Do content sentitive graduations [for the scale]
-· For the radio buttuons font size 10 and bold
-· Make the text in the box larger
+· CHECK FILE City.js LINE 306!!!!!!!
+· ROLL BACK THE CHANGE TO THE CITYMETRICS JS back to github
+· Add the cumulative and category sliders
+· Do content sensitive graduations [for the scale]
 
 ## For next session 
 Look at line 175 for inject slider function
-Check the CITY.JS on line 257, good luck from FN and OOM from the past
+Check the CITY.JS on line 257, good luck from FN and OOM from the pastb
+
+
+#Flow of functions inside **City.JS**
+
+1. **load cumulative layers function**
+    1.  loops the radio list with the status of the radio buttons, 
+    2.  if radio button is true, it loops through the list of corresponding layers and truns them on until the current slider value
+    3.  
+    
+   
