@@ -35,24 +35,24 @@ mapbox://styles/carmela-cucuzzella/ckguxoar50i7w19qyf3c6qsdg
 ---
 ORDER of functions inside City object
 ---
-0. constructor
-1. readCityJson
-2. loadMap
-3. injectDirectNodeToggleHTML
-4. getDirectNodeToggle
-5. injectRadioButtons
-6. getRadioStatus
-7. injectCatCumulToggleHTML
-8. getCatCumulToggle
-9. injectCumulSlider
-10. injectCatSlider
-11. turnOffAllLayers
-12. loadCumulativeLayers
-13. loadCategoryLayer
-14. displayCityMetrics
+0. (98)constructor - Called when -the city object is created- where -inside the city object-
+1. (111)readCityJson
+2. (124)loadMap
+3. (143)injectDirectNodeToggleHTML
+4. (156)getDirectNodeToggle
+5. (180)injectRadioButtons
+6. (194)getRadioStatus
+7. (208)injectCatCumulToggleHTML
+8. (224)getCatCumulToggle
+9. (245)injectCumulSlider
+10. (269)injectCatSlider
+11. ()turnOffAllLayers
+12. ()loadCumulativeLayers
+13. ()loadCategoryLayer
+14. ()displayCityMetrics
 ---
 
-
+**MAPBOX NOTE**: Changed Radius range: 1px to 4px
 
 ---
 #Flow of functions inside **City.JS**

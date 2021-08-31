@@ -101,7 +101,7 @@ class City {
         this.cityJson = cityJson;
         this.readCityJson();
         this.injectDirectNodeToggleHTML();
-        this.injectCatCumulToggleHTML();
+        // this.injectCatCumulToggleHTML();
         this.getDirectNodeToggle();
         this.sliderValue = sliderValue;
         // this.injectCumulSlider();
@@ -177,22 +177,22 @@ class City {
         this.injectRadioButtons();
     }
 
-    injectRadioButtons() { //TODO: Check this function for breakage
+    injectRadioButtons() {
         const { cityNum, ListOfLayers } = this;
         var formHTML = "";
         var NameOfQueries = ["Centrality Degree", "Closeness"];
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
-            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_" + cityNum + "\" value=\"" + value + "\" onclick=\"{City" + cityNum + ".getRadioStatus(); City" + cityNum + ".injectCatCumulToggleHTML(); \">" 
-            +
-                "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
+            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_" + cityNum + "\" value=\"" + value 
+            +"\" onclick=\"{City" + cityNum + ".getRadioStatus(); City" + cityNum + ".turnOffAllLayers(); City" + cityNum + ".injectCatCumulToggleHTML(); City" + cityNum + ".injectCumulSlider(); City" + cityNum + ".loadCumulativeLayers();}\">" 
+            +"<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
         }
         var containerId = "radioForm" + cityNum;
         document.getElementById(containerId).innerHTML = formHTML;
     }
 
     getRadioStatus(){
-        const { cityNum } = this;
+        const { cityNum, ListOfLayers } = this;
 
         var radioList = [];
         for (const [i, val] of ListOfLayers.entries()) {
@@ -203,7 +203,6 @@ class City {
         this.radioList = radioList;
         console.log("This is all the radio buttons");
         console.log(this.radioList);
-        
     }
 
     injectCatCumulToggleHTML() {
@@ -231,6 +230,10 @@ class City {
 
         if(selSlider){
             // Switch Slider Function to Category
+            this.turnOffAllLayers();
+            console.log("Checking when the toggle is changed before calling injectCatSlider");
+            this.injectCatSlider();
+            console.log("Calling LoadCatLayers function");
             this.loadCategoryLayer();
         }
         else{
@@ -260,12 +263,28 @@ class City {
         var mapLegendID = "mapLegend" + cityNum;
         var sliderHTML = "";
         sliderHTML = "<input id=\"slider" + queryNum + "\" type=\"range\" min=\"1\" max=\"5\" value=\"5\" step=\"1\" onchange =\"{City" + cityNum + ".sliderValue=this.value; City" + cityNum + ".turnOffAllLayers(); City" + cityNum +".loadCumulativeLayers();}\">" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
-        console.log("Injecting the Slider",sliderHTML);
+        console.log("Injecting the Cumulative Slider ",sliderHTML);
         document.getElementById(mapLegendID).innerHTML = sliderHTML;
     }
 
     injectCatSlider(){
         //refer to injectCumulSlider to make corresponding slider functionality for category layers
+
+        const { cityNum, radioList } = this;
+
+        var queryNum = 0;
+
+        for (let i = 0; i < radioList.length; i++) {
+            if(radioList[i]){
+                queryNum = i+1;
+            }
+        }
+
+        var mapLegendID = "mapLegend" + cityNum;
+        var sliderHTML = "";
+        sliderHTML = "<input id=\"slider" + queryNum + "\" type=\"range\" min=\"1\" max=\"5\" value=\"5\" step=\"1\" onchange =\"{City" + cityNum + ".sliderValue=this.value; City" + cityNum + ".turnOffAllLayers(); City" + cityNum +".loadCategoryLayer();}\">" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+        console.log("Injecting the Category Slider",sliderHTML);
+        document.getElementById(mapLegendID).innerHTML = sliderHTML;
     }
 
     turnOffAllLayers(){
@@ -316,8 +335,8 @@ class City {
     
     displayCityMetrics() {
         const { city, cityNum, cityJson } = this;
-        var IconList =  ["fas fa-bus", "fas fa-train", "fas fa-tram","fas fa-subway", "fas fa-taxi"];
-        var StopType = ["Bus Stops","Train Stations" ,"Tram Stops", "Metro Stations", "Other Stops" ];
+        var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-tram", "fas fa-taxi"];
+        var StopType = ["Bus Stops", "Train Stations", "Metro Stations","Tram Stops",  "Other Stops" ];
         //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
         var cityTable ="<table class = \"table-contents\">";
         for (var i = 0; i < 5; i++) {

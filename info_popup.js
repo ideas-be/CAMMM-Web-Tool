@@ -1,4 +1,15 @@
+function show_citation(){
+    var citationTextDiv= document.getElementById('citationText');
+    var citationDisplay = citationTextDiv.style.display;
 
+    if (citationDisplay == 'none') {
+        citationTextDiv.style.display = 'block';
+        console.log("Turning on citation text div");
+    }else{
+        citationTextDiv.style.display = 'none';
+        console.log("Turning off citation text div");
+    }
+}
 
 function show_popup() {
 

@@ -31,6 +31,14 @@
 
 	</div>
 	<button id="printButton" onclick="window.print();">Print</button>
+	<!-- <input type="button" id="exportCitation" onclick="location.href='https://google.com';" value="Go to Google" /> -->
+	<button id="exportCitation" onclick="{location.href='Reference.ris'; show_citation();}">Export Citation</button>
+	<div id="citationText" style="display: none;">
+		<div><p>APA: Cucuzzella, C., Gauthier, P., Nizar, F., & Ortiz Meraz, O. (2021). CAMMM Web Atlas 0.3. CAMMM Web Atlas 0.3.</p></div>
+		<div><p>MLA: Cucuzzella, Carmela, et al. “CAMMM Web Atlas 0.3.” CAMMM Web Atlas 0.3, 2021.</p></div>
+		<div><p>CHICAGO: Cucuzzella, Carmela, Pierre Gauthier, Firdous Nizar, and Omar Ortiz Meraz. 2021. “CAMMM Web Atlas 0.3.” CAMMM Web Atlas 0.3. 2021.</p></div>	
+	</div>
+
 
 	<!-- START OF INFO AREA -->
 	<div class="info_popup_area">
@@ -91,7 +99,7 @@
 	<!--END OF MAP CONTROLS AREA -->
 
 	<!-- START OF MAP1 -->
-	<div style="width: 506px;">
+	<div>
 		<nav id="filter-group" class="filter-group">
 				<table id="map1controls">
 					<tr>
@@ -136,7 +144,7 @@
 
 	<!-- START OF MAP2 -->
 	<!-- START OF QUERY BUTTONS 2 -->
-	<div style="width: 506px;">
+	<div>
 		<nav id="filter-group" class="filter-group">
 			<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
 				<i class="fas fa-info-circle" onclick="show_popup();"></i>
@@ -190,7 +198,7 @@
 
 			a.send();        // Closes the XMLHttpRequest   
 		}
-		setTimeout(readMetrics, 3000);
+		setTimeout(readMetrics, 700);
 		 
 		                                      
 	</script>
