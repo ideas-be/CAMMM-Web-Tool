@@ -1,4 +1,4 @@
-**Next meeting** on the 27th of August
+**Next meeting** on the 4th of October
 
 **Here is the link to see the website proper:**
 https://spatialretrace.github.io/CAMMM-Web-Tool/
