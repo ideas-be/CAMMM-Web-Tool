@@ -32,6 +32,24 @@ mapbox://styles/carmela-cucuzzella/ckguxoar50i7w19qyf3c6qsdg
 
 ## For next session 
 
+CAMMM Web Atlas Updates
+-------------------------------
+
+   · align mapboxes and menu items of both cities
+   · make interactive wireframe with named menu items
+   · move print and export citation buttons at top right corner, one below the other
+   · test a collapsable text box for citations
+   · short description on WP project page
+   · more documentation for the entire process so far
+   · menu items: increase font and space them out
+   · piecharts for distribution of stops, line and dist. between stops for each transit system
+
+## For next month:
+   · figure out graphical representation of city metrics
+   · density grid analysis to be added in queries
+   · add button to download excel of metrics (tbd)
+   · integrating businesses data points for each city and adding them to metrics
+
 ---
 ORDER of functions inside City object
 ---
