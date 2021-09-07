@@ -1,7 +1,17 @@
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
 
-.filter-group {
+.filter-group1{
+    position: relative;
+	margin-right: 10px;
+}
+
+.filter-group2{
+    position: relative;
+	margin-left: 10px;
+}
+
+.filter-group1, .filter-group2  {
     font: 10px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 600;
     top: 10px;
@@ -24,7 +34,7 @@ body { margin: 0; padding: 0; }
     border-color: grey;
 }
 
-.filter-group label {
+.filter-group1, .filter-group2 label {
     text-transform: capitalize;
     font-size: 10px;
     font-weight: bold;
