@@ -61,7 +61,7 @@
 	<div class="map-controls-area group">
 		<!-- 	::before -->
 		<!-- START OF LEFT CONTROLS -->
-		<div class="left-map-controls">
+		<div class="dropDown1">
 
 			<!-- START OF CITY 1 LIST -->
 			<div class="atlas-city1">
@@ -79,7 +79,7 @@
 		<!--END OF LEFT CONTROLS -->
 
 		<!-- START OF RIGHT CONTROLS -->
-		<div class="right-map-controls">
+		<div class="dropDown2">
 
 			<!-- START OF CITY 2 LIST -->
 			<div class="atlas-city2">
@@ -100,85 +100,103 @@
 	</div>
 	<!--END OF MAP CONTROLS AREA -->
 
-	<!-- START OF MAP1 -->
-	<div>
-		<nav id="filter-group1" class="filter-group">
-				<table id="map1controls">
-					<tr>
-						<td>
-							<!-- START OF DIRECT/NODE TOGGLE 1 -->
-							<div id="toggleCity1">
-							</div>
-							<!-- END OF DIRECT/NODE TOGGLE 1 -->
-						</td>
-						<td>
-							<!-- START OF QUERY BUTTONS 1 -->
-							<form name="sampleForm" id="radioForm1">
-							</form>
-							<!-- END OF QUERY BUTTONS 1 -->
-						</td>
-						<td>
-							<!-- START OF CATEGORY/CUMULATIVE TOGGLE 1 -->
-							<div id="toggleCategoryCumulative1">
-							</div>
-							<!-- END OF CATEGORY/CUMULATIVE TOGGLE 1 -->
-						</td>
-						<td>
-							<!-- START OF MAP LEGEND AND SLIDER 1 -->			  
-							<div id="mapLegend1">
-							</div>
-							<!-- END OF MAP LEGEND AND SLIDER 1 -->	
-						</td>
-						<td>
-							<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
-								<i class="fas fa-info-circle" onclick="show_popup();"></i>
-							</span>
-						</td>
-					</tr>
-				</table>
+	<!-- START OF MAP 1 CONTROLS TABLE -->
+	<div id="filter-group1" class="filter-group">
+		<table id="map1controls">
+			<tr>
+				<td class="mapCellsType1">
+					<!-- START OF DIRECT/NODE TOGGLE 1 -->
+					<div id="toggleCity1">
+					</div>
+					<!-- END OF DIRECT/NODE TOGGLE 1 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF QUERY BUTTONS 1 -->
+					<form name="sampleForm" id="radioForm1">
+					</form>
+					<!-- END OF QUERY BUTTONS 1 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF CATEGORY/CUMULATIVE TOGGLE 1 -->
+					<div id="toggleCategoryCumulative1">
+					</div>
+					<!-- END OF CATEGORY/CUMULATIVE TOGGLE 1 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF MAP LEGEND AND SLIDER 1 -->			  
+					<div id="mapLegend1">
+					</div>
+					<!-- END OF MAP LEGEND AND SLIDER 1 -->	
+				</td>
+				<td class="mapCellsType2">
+					<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
+						<i class="fas fa-info-circle" onclick="show_popup();"></i>
+					</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<!-- END OF MAP 1 CONTROLS TABLE -->
+	<!-- START OF MAP 2 CONTROLS TABLE -->
+	<div id="filter-group2" class="filter-group">
+		<table id="map2controls">
+			<tr>
+				<td class="mapCellsType1">
+					<!-- START OF DIRECT/NODE TOGGLE 2 -->
+					<div id="toggleCity2">
+					</div>
+					<!-- END OF DIRECT/NODE TOGGLE 2 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF QUERY BUTTONS 2 -->
+					<form name="sampleForm" id="radioForm2">
+					</form>
+					<!-- END OF QUERY BUTTONS 2 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF CATEGORY/CUMULATIVE TOGGLE 2 -->
+					<div id="toggleCategoryCumulative2">
+					</div>
+					<!-- END OF CATEGORY/CUMULATIVE TOGGLE 2 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF MAP LEGEND AND SLIDER 2 -->			  
+					<div id="mapLegend2">
+					</div>
+					<!-- END OF MAP LEGEND AND SLIDER 2 -->	
+				</td>
+				<td class="mapCellsType2">
+					<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
+						<i class="fas fa-info-circle" onclick="show_popup();"></i>
+					</span>
+				</td>
+			</tr>
+		</table>
+	<!-- END OF MAP 2 CONTROLS TABLE -->
+	<!-- START OF MAP 1 BOX-->	
 	</div>
 	<div class="mapbox1" id="map1div">
 		<div id='map1'>
 		</div>
 	</div>
-	<!-- END OF MAP1 -->
+	<!-- END OF MAP 1 BOX-->
 
-	<!-- START OF MAP2 -->
-	<!-- START OF QUERY BUTTONS 2 -->
-	<div>
-		<nav id="filter-group2" class="filter-group">
-			<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
-				<i class="fas fa-info-circle" onclick="show_popup();"></i>
-			</span>
-			<!-- START OF DIRECT/NODE TOGGLE 2 -->
-			<div id="toggleCity2">
-			</div>
-			<!-- END OF DIRECT/NODE TOGGLE 2 -->
-			<form name="sampleForm" id="radioForm2">
-			</form>
-		<!-- END OF QUERY BUTTONS 2 -->
-		<!-- START OF CATEGORY/CUMULATIVE TOGGLE 2 -->
-		<div id="toggleCategoryCumulative2">
-		</div>
-		<!-- END OF CATEGORY/CUMULATIVE TOGGLE 2 -->
-		<!-- START OF MAP LEGEND AND SLIDER 2 -->	
-		<div id="mapLegend2"></div>
-		<!-- END OF MAP LEGEND AND SLIDER 2 -->
-	</div>
+	<!-- START OF MAP 2 BOX-->
 
 	<div class="mapbox2" id="map2div">
 		<div id='map2'>
 		</div>
 	</div>
-	<!-- END OF MAP2 -->
+	<!-- END OF MAP 2 BOX -->
 
-	<!-- END OF MAPBOX -->
+	<!-- START OF CITY METRICS TABLES -->
 
 	<div class="emptyspace-table"></div>
 	<div id="city1table" class="oput"></div>
 
 	<div id="city2table" class="oput"></div>
 
+	<!-- END OF CITY METRICS TABLES -->
 
 	<!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
 	<script>

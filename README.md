@@ -35,13 +35,13 @@ mapbox://styles/carmela-cucuzzella/ckguxoar50i7w19qyf3c6qsdg
 CAMMM Web Atlas Updates
 -------------------------------
 
-   · align mapboxes and menu items of both cities
-   · make interactive wireframe with named menu items
+   · ~~align mapboxes and menu items of both cities~~
+   · ~~make wireframe with named menu items~~
    · move print and export citation buttons at top right corner, one below the other
    · test a collapsable text box for citations
    · short description on WP project page
    · more documentation for the entire process so far
-   · menu items: increase font and space them out
+   · ~~menu items: increase font and space them out~~
    · piecharts for distribution of stops, line and dist. between stops for each transit system
 
 ## For next month:
@@ -137,3 +137,8 @@ ORDER of functions inside City object
     2. inject html for citymetricTable, it contains the number of stops, the number of lines, and the average distance between stops
 
 
+Cumulative
+Stacked
+
+Category
+Single

@@ -211,11 +211,11 @@ class City {
 
         const { cityNum } = this;
         console.log("Injecting category/cumulative toggle in HTML");
-        var toggleHTML = "<p class=\"toggleText\">Cumulative" +
+        var toggleHTML = "<p class=\"toggleText\">Stacked" +
             "<label class=\"switch\" >" +
             "<input type=\"checkbox\" id=\"toggCatCumulBtn" + cityNum + "\" onchange= \"City" + cityNum + ".getCatCumulToggle();\">"+
             "<span class=\"slider round\"></span>" +
-            "</label>     Category" +
+            "</label>     Single" +
             "</p>";
         var toggleID = "toggleCategoryCumulative" + cityNum;
         document.getElementById(toggleID).innerHTML = toggleHTML;

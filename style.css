@@ -1,4 +1,20 @@
-body { padding: 10px;}
+/* body { padding: 10px;} */
+/* START OF TITLE STYLE */
+.atlas-title{
+  text-align: center;
+}
+
+.atlas-title p{
+  display:inline-block;
+	font-size: 180%;
+	font-weight: bold;
+	/* text-align: center; */
+}
+
+.emptyspace{
+	height: 50px;
+}
+/* END OF TITLE STYLE */
 
 /* START OF PRINT BUTTON STYLE */
 #printButton, #exportCitation{
@@ -10,24 +26,47 @@ body { padding: 10px;}
   border-style: none;
 }
 /* END OF PRINT BUTTON STYLE */
-#map1 { 
+
+/* START OF DROPDOWN STYLE */
+.dropDown1{
+	float: left;
+  text-align: center;
+  width: 50%;
+}
+
+.atlas-city1 select{
+	width: 142px;
+}
+
+.dropDown2{
+	float: right;
+  text-align: center;
+  width: 50%;
+}
+
+.atlas-city2 select{
+	width: 142px;
+}
+/* END OF DROPDOWN STYLE */
+
+/* START OF MAPBOX STYLE */
+ #map1 { 
 	display: block;
-	position:absolute; 
-	top:0; bottom:0; left: 0; width:50%; height: 400px; }
+  float: left;
+  width:45%; 
+  height: 400px; 
+  margin: 20px 0 0 20px;}
+
+
 #map2 { 
 	display: block;
-	position:absolute; 
-	top:0; bottom:0; right: 0; width:50%; height: 400px; }
+  float: right;
+	width:45%; 
+  height: 400px; 
+  margin: 20px 20px 0 0;}
+/* END OF MAPBOX STYLE */
 
-.mapbox1{
-	position: relative;
-	margin-right: 10px;
-}
-.mapbox2{
-	position: relative;
-	margin-left: 10px;
-}
-
+/* START OF METRICS TABLES STYLE */
 #city1table{
   display: block;
 	position:absolute; 
@@ -40,62 +79,17 @@ body { padding: 10px;}
   right: 0; width:50%;
 }
 
-.table-contents{
-  margin-left: auto;
-  margin-right: auto;
-}
-.atlas-title{
-  text-align: center;
-}
-
-.atlas-title p{
-  display:inline-block;
-	font-size: 180%;
-	font-weight: bold;
-	/* text-align: center; */
-}
-
-.atlas-query{
-	text-align: center;
-}
-.emptyspace{
-	height: 50px;
-}
 .emptyspace-table{
-	height: 430px;
+	height: 550px;
 }
-
-/* START OF LEFT CONTROLS STYLE */
-.left-map-controls{
-	float: left;
-  text-align: center;
-  width: 50%;
-}
-/* END OF LEFT CONTROLS STYLE */
-
-
-/* START OF CITY 1 DROPDOWN STYLE*/
-
-.atlas-city1 select{
-	width: 142px;
-}
-
-/* END OF CITY 1 DROPDOWN STYLE*/
-
-/* START OF CITY 2 DROPDOWN STYLE*/
-
-.atlas-city2 select{
-	width: 142px;
-}
-
-/* END OF CITY 2 DROPDOWN STYLE*/
+/* END OF METRICS TABLES STYLE */
 
 /* START OF DIRECT/NODE TOGGLE STYLE*/
 .switch {
   position: relative;
   display: inline-block;
-  width: 46px;
-  height: 24px;
+  width: 40px;
+  height: 20px;
 }
 
 .switch input { 
@@ -119,8 +113,8 @@ body { padding: 10px;}
 .slider:before {
   position: absolute;
   content: "";
-  height: 18px;
-  width: 18px;
+  height: 14px;
+  width: 14px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -152,19 +146,11 @@ input:checked + .slider:before {
 }
 
 .toggleText{
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: bold;
 }
 
 /* END OF DIRECT/NODE TOGGLE STYLE*/
-
-/* START OF RIGHT CONTROLS STYLE */
-.right-map-controls{
-	float: right;
-  text-align: center;
-  width: 50%;
-}
-/* END OF RIGHT CONTROLS STYLE */
 
 /* START OF MAP CONTROLS AREA STYLE */
 .group:before, .group:after{
@@ -180,22 +166,3 @@ display: table;
 	zoom: 1;
 }
 /* END OF MAP CONTROLS AREA STYLE */
-
-/* START OF COMPARE BUTTON STYLE
-.compare-btn{
-	text-align: center;
-}
-
-.compare-btn .button{
-	background-color: #d81b60;
-  border: none;
-  color: white;
-  padding: 6px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-END OF COMPARE BUTTON STYLE */

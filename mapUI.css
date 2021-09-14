@@ -1,127 +1,47 @@
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-
-.filter-group1{
-    position: relative;
-	margin-right: 10px;
+/* START OF MAP CONTROLS TABLE STYLE */
+#filter-group1{
+    width: 45%; 
+    height: 75px; 
+    text-align: center; 
+    float: left; 
+    margin: 20px 0 0 20px;
 }
 
-.filter-group2{
-    position: relative;
-	margin-left: 10px;
+#map1controls{
+    width:100%; 
+    height: 100%; 
+    /* border: 2px solid lightgrey; */
 }
 
-.filter-group1, .filter-group2  {
-    font: 10px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    top: 10px;
-    right: 10px;
-    z-index: 1;
-    width: 50%;
-    color: black;
-    background-color: rgba(255,255,255,0.5);
-    border-radius: 8px;
+#filter-group2{
+    width: 45%; 
+    height: 75px; 
+    text-align: center; 
+    float: right; 
+    margin: 20px 20px 0 0;
 }
 
-.map1controls table{
-    column-width: 250px;
-    background: none;
-    border-spacing: 10;
-    padding: 10;
-    height: 50px;
-    border: grey;
-    border-width: 2px;
-    border-color: grey;
+#map2controls{
+    width:100%; 
+    height: 100%; 
+    /* border: 2px solid lightgrey; */
 }
 
-.filter-group1, .filter-group2 label {
-    text-transform: capitalize;
-    font-size: 10px;
+.mapCellsType1{
+    width: 15%;
+    box-sizing: content-box;
+    padding: 2px;
+    font-size: 11px;
     font-weight: bold;
+    border-right: 2px solid lightgrey;
 }
 
-.radioform1, .radioform2{
-    display: inline;
+.mapCellsType2{
+    width: 5%;
+    box-sizing: content-box;
+    padding: 2px;
+    font-size: 16px;
 }
-
-.radioform1, .radioform2 label{
-    font-size: 10px;
-    font-weight: bold;
-}
-
-/* START OF DIRECT/NODE TOGGLE STYLE*/
-
-#toggleCity1, #toggleCity2{
-    text-align: center;
-    display: inline;
-}
-
-.switch {
-position: relative;
-display: inline-block;
-width: 46px;
-height: 24px;
-}
-
-.switch input { 
-opacity: 0;
-width: 0;
-height: 0;
-}
-
-.slider {
-position: absolute;
-cursor: pointer;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #ccc;
--webkit-transition: .4s;
-transition: .4s;
-}
-
-.slider:before {
-position: absolute;
-content: "";
-height: 18px;
-width: 18px;
-left: 4px;
-bottom: 4px;
-background-color: white;
--webkit-transition: .4s;
-transition: .4s;
-}
-
-input:checked + .slider {
-background-color: #d81b60;
-}
-
-input:focus + .slider {
-box-shadow: 0 0 1px #d81b60;
-}
-
-input:checked + .slider:before {
--webkit-transform: translateX(20px);
--ms-transform: translateX(20px);
-transform: translateX(20px);
-}
-
-/* Rounded sliders */
-.slider.round {
-border-radius: 34px;
-}
-
-.slider.round:before {
-border-radius: 50%;
-}
-
-.toggleText{
-font-size: 10px;
-font-weight: bold;
-}
-
-/* END OF DIRECT/NODE TOGGLE STYLE*/
 
 /* START OF MAP LEGEND STYLE */
 
@@ -129,42 +49,22 @@ font-weight: bold;
     -webkit-appearance: none;
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 100%;
+    width: 80%;
     height: 10px;
     border-radius: 10px;
     border: 2px solid white;
     background: linear-gradient(to right, #D1ECCB, #006127);
 }
 
-#query1Legend{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
-    height: 10px;
-    border-radius: 10px;
-    border: 2px solid white;
-    background-image: linear-gradient(to right, #D1ECCB, #006127);
-}
-
 #slider2{
     -webkit-appearance: none;
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 100%;
+    width: 80%;
     height: 10px;
     border-radius: 10px;
     border: 2px solid white;
     background: linear-gradient(to right, #261C43, #742287);
-}
-
-#query2Legend{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
-    height: 10px;
-    border-radius: 10px;
-    border: 2px solid white;
-    background-image: linear-gradient(to right, #261C43, #742287);
 }
 
 /* END OF MAP LEGEND STYLE */
