@@ -1,13 +1,77 @@
-**Next meeting** on the 4th of October
+## CAMMM Web Atlas Tool
 
 **Here is the link to see the website proper:**
-https://spatialretrace.github.io/CAMMM-Web-Tool/
-
+https://ideas-be.github.io/CAMMM-Web-Tool/
 **Here is the link to the Miro board:**
 https://miro.com/app/board/o9J_kgmIpbw=/
-
 ### Preview:
 ![CAMMM Web Atlas](screenshots/01_June03.png)
+
+### Documentation:
+<!-- TABLE OF CONTENTS (WIP) -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About</a>
+      <ul>
+        <li><a href="#ideas-be">IDEAS-BE</a></li>
+        <li><a href="#cammm-project-web-atlas">CAMMM Project & Web Atlas</a></li>
+        <li><a href="#contributors">Contributors</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Section 1 - Getting Started</a>
+      <ul>
+        <li><a href="#software-requirements">Software Requirements</a></li>
+        <li><a href="#useful-links">Useful Links</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#develop-processing-tool">Section 2 - Developing the Processing Tool</a>
+      <ul>
+        <li><a href="#data-collection">Data Collection</a></li>
+        <li><a href="#key-functions">Key Functions</a></li>
+        <li><a href="#processed-data-mapbox">Processed Data for Mapbox</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#using-mapbox">Section 3 - Using Mapbox</a>
+      <ul>
+        <li><a href="#create-city-map">Creating a City Map</a></li>
+        <li><a href="#integrate-web-atlas">Integrating to Web Atlas</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#model-city-object">Section 4 - Modelling City Object</a>
+      <ul>
+        <li><a href="#city-metrics-data">City Metrics Data</a></li>
+        <li><a href="#city-object-parameters">Parameters</a></li>
+        <li><a href="#city-object-functions">Functions</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#develop-atlas-ui">Section 5 - Developing the Web Atlas UI</a>
+      <ul>
+        <li><a href="#ui-layout-html">UI Layout in HTML</a></li>
+        <li><a href="#script-web-atlas">Scripting the Web Atlas</a></li>
+        <li><a href="#styling-manual">Styling Manual</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#appendix">Appendix</a>
+      <ul>
+        <li><a href="#appendix-a">Appendix A - Maintaining GitHub Repo & Page</a></li>
+        <li><a href="#appendix-b">Appendix B - Managing Development Workflow</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>
+
+----------------------------------------------------------------------
+
+
+**Next meeting** on the 4th of October
 
 <!-- ### CAMMM Atlas Gantt Chart Summer 2021: -->
 ### User scale Flowchart:
@@ -35,20 +99,20 @@ mapbox://styles/carmela-cucuzzella/ckguxoar50i7w19qyf3c6qsdg
 CAMMM Web Atlas Updates
 -------------------------------
 
-   · ~~align mapboxes and menu items of both cities~~
-   · ~~make wireframe with named menu items~~
-   · move print and export citation buttons at top right corner, one below the other
-   · test a collapsable text box for citations
-   · short description on WP project page
-   · more documentation for the entire process so far
-   · ~~menu items: increase font and space them out~~
-   · piecharts for distribution of stops, line and dist. between stops for each transit system
+   - ~~align mapboxes and menu items of both cities~~
+   - ~~make wireframe with named menu items~~
+   - move print and export citation buttons at top right corner, one below the other
+   - test a collapsable text box for citations
+   - short description on WP project page
+   - more documentation for the entire process so far
+   - ~~menu items: increase font and space them out~~
+   - piecharts for distribution of stops, line and dist. between stops for each transit system
 
 ## For next month:
-   · figure out graphical representation of city metrics
-   · density grid analysis to be added in queries
-   · add button to download excel of metrics (tbd)
-   · integrating businesses data points for each city and adding them to metrics
+   - figure out graphical representation of city metrics
+   - density grid analysis to be added in queries
+   - add button to download excel of metrics (tbd)
+   - integrating businesses data points for each city and adding them to metrics
 
 ---
 ORDER of functions inside City object
