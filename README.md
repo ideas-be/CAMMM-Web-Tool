@@ -31,8 +31,8 @@ https://miro.com/app/board/o9J_kgmIpbw=/
       <a href="#develop-processing-tool">Section 2 - Developing the Processing Tool</a>
       <ul>
         <li><a href="#data-collection">Data Collection</a></li>
-        <li><a href="#key-functions">Key Functions</a></li>
-        <li><a href="#processed-data-mapbox">Processed Data for Mapbox</a></li>
+        <li><a href="#key-functions">Analysis Functions</a></li>
+        <li><a href="#processed-data-mapbox">Processed Data for Mapbox & City Metrics</a></li>
       </ul>
     </li>
     <li>
@@ -43,7 +43,7 @@ https://miro.com/app/board/o9J_kgmIpbw=/
       </ul>
     </li>
     <li>
-      <a href="#model-city-object">Section 4 - Modelling City Object</a>
+      <a href="#model-city-object">Section 4 - Modelling City Object(JS)</a>
       <ul>
         <li><a href="#city-metrics-data">City Metrics Data</a></li>
         <li><a href="#city-object-parameters">Parameters</a></li>

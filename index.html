@@ -26,7 +26,7 @@
 			CAMMM Web Atlas Prototype
 		</p>
 		<span style="font-size: 1em; color: #d81b60;">
-			<i class="fas fa-info-circle" onclick="show_popup();"></i>
+			<i class="fas fa-info-circle" onclick="show_popup(1);"></i>
 		</span>
 	</div>
 	<div>
@@ -45,7 +45,7 @@
 	<!-- START OF INFO AREA -->
 	<div class="info_popup_area">
 
-		<div class="hover_info_popup" id="hover_info_popup" style="display: none;">
+		<div class="hover_info_popup" id="hover_info_popup1" style="display: none;">
 			<span class="helper"></span>
 			<div>
 				<div class="popupCloseButton" onclick="hide_popup();">&times;</div>
@@ -69,7 +69,7 @@
 				</select>
 				<button id ="city1Reset" onclick="resetCity(1);">Reset</button>
 				<span style="font-size: 1em; color: #d81b60;">
-					<i class="fas fa-info-circle" onclick="show_popup();"></i>
+					<i class="fas fa-info-circle" onclick="show_popup(2);"></i>
 				</span>
 			</div>
 			<div class="emptyspace"></div>
@@ -87,7 +87,7 @@
 				</select>
 				<button id ="city2Reset" onclick="resetCity(2);">Reset</button>
 				<span style="font-size: 1em; color: #d81b60;">
-					<i class="fas fa-info-circle" onclick="show_popup();"></i>
+					<i class="fas fa-info-circle" onclick="show_popup(2);"></i>
 				</span>
 			</div>
 			<div class="emptyspace"></div>
@@ -130,7 +130,7 @@
 				</td>
 				<td class="mapCellsType2">
 					<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
-						<i class="fas fa-info-circle" onclick="show_popup();"></i>
+						<i class="fas fa-info-circle" onclick="show_popup(3);"></i>
 					</span>
 				</td>
 			</tr>
@@ -167,7 +167,7 @@
 				</td>
 				<td class="mapCellsType2">
 					<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
-						<i class="fas fa-info-circle" onclick="show_popup();"></i>
+						<i class="fas fa-info-circle" onclick="show_popup(3);"></i>
 					</span>
 				</td>
 			</tr>
@@ -193,8 +193,14 @@
 
 	<div class="emptyspace-table"></div>
 	<div id="city1table" class="oput"></div>
+	<!-- <span class="popUp4" style="font-size: 1em; color: #d81b60; display: none;">
+		<i class="fas fa-info-circle" onclick="show_popup();"></i>
+	</span> -->
 
 	<div id="city2table" class="oput"></div>
+	<!-- <span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
+		<i class="fas fa-info-circle" onclick="show_popup();"></i>
+	</span> -->
 
 	<!-- END OF CITY METRICS TABLES -->
 

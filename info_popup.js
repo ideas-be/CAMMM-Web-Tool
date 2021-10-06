@@ -11,9 +11,10 @@ function show_citation(){
     }
 }
 
-function show_popup() {
+function show_popup(popUpNum) {
+    var popUpID = "hover_info_popup"+popUpNum;
 
-    var infoPopUp = document.getElementById("hover_info_popup");
+    var infoPopUp = document.getElementById(popUpID);
     var popupDisplay = infoPopUp.style.display;
 
     if (popupDisplay == 'none') {
@@ -24,7 +25,7 @@ function show_popup() {
 }
 
 function hide_popup() {
-
+    var popUpID = "hover_info_popup"+popUpNum;
     var infoPopUp = document.getElementById("hover_info_popup");
     var popupDisplay = infoPopUp.style.display;
 
