@@ -337,53 +337,75 @@ class City {
         const { city, cityNum, cityJson } = this;
         var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-tram", "fas fa-taxi"];
         var StopType = ["Bus Stops", "Train Stations", "Metro Stations","Tram Stops",  "Other Stops" ];
+        var TransitColor = ["orange", "hotpink", "teal","red", "violet" ];
         //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
-        var cityTable ="<table class = \"table-contents\">";
+        var cityTable ="<table class = \"table-contents\"><tbody style=\"width:800px; height:150px; background-color: coral;\">";
         for (var i = 0; i < 5; i++) {
             if (cityJson["TransitSystems"][i].NumStops > 0) {
-                cityTable += "<tr class=\"rowA\">" +
-                    "<td class=\"columnA\">"+
-                    "<i class=\"" + IconList[i] +"\"></i>"+ // icon
-                    "</td>"+ //columnA
-                    "<td class=\"columnB\">"+ //Metrics Are Displayed
-                        "<tr class=\"row1\">"+
-                            "<td class=\"column1a\">"+
-                                "Number of " + StopType[i]+
-                            "</td>"+ //column1a
-                            "<td class=\"column1b\">"+
-                                ":"+
-                            "</td>"+ //column1b
-                            "<td class=\"column1c\">"+
-                                cityJson["TransitSystems"][i].NumStops+  // ADD VARIABLE HERE
-                            "</td>"+ //column1c
-                        "</tr>"+ //row1
-                        "<tr class=\"row2\">"+
-                            "<td class= \"column2a\">"+
-                                "Number of Lines"+
-                            "</td>"+ //column2a
-                            "<td class= \"column2b\">"+
-                                ":"+
-                            "</td>"+  //column2b
-                            "<td class=\"column2c\">"+
-                                cityJson["TransitSystems"][i].NumLines+ // ADD VARIABLE HERE
-                            "</td>"+  //column2c
-                        "</tr>"+ //row2
-                        "<tr class=\"row3\">"+
-                            "<td class=\"column3a\">"+
-                                "Average distance between "+ StopType[i] +
-                            "</td>"+   //column3a
-                            "<td class= \"column3b\">"+
-                                ":"+
-                            "</td>"+ //column3b
-                            "<td class=\"column3c\">"+
-                                cityJson["TransitSystems"][i].AvgDisStops+ // ADD VARIABLE HERE
-                            "</td>"+ //column3c
-                        "</tr>"+ //row3
-                    "</td>"+ //columnB
-                "</tr>"; //rowA
+        
+            citytable+="<tr>"+
+                            "<td style=\"width: 150px; height:200px; text-align: center; color: white; background-color: blueviolet;\">icon</td>"+
+                            "<td style=\"width: 400px; height:240px; text-align: center; color: white; background-color: blueviolet;\">"+
+                                "<table style=\"width: 400px; height:240px; text-align: center; color: white; background-color: green;\">"+
+                                    "<tr style=\"width:80%; height:80px; text-align: center; color: white; background-color: blue;\">";
+                                        "<td style=\"width: 50%; text-align: center; color: white;\">metrics 1</td>"+
+                                        "<td style=\"width: 10%; text-al ign: center; color: white;\">:</td>"+
+                                        "<td style=\"width: 40%; text-align: center; color: white;\">value 1</td>"+
+                                    "<tr style=\"width:80%; height:80px; text-align: center; color: white; background-color: blue;\">";
+                                        "<td style=\"width: 50%; text-align: center; color: white;\">metrics 2</td>"+
+                                        "<td style=\"width: 10%; text-al ign: center; color: white;\">:</td>"+
+                                        "<td style=\"width: 40%; text-align: center; color: white;\">value 2</td>"+
+                                    "<tr style=\"width:80%; height:80px; text-align: center; color: white; background-color: blue;\">";
+                                        "<td style=\"width: 50%; text-align: center; color: white;\">metrics 3</td>"+
+                                        "<td style=\"width: 10%; text-al ign: center; color: white;\">:</td>"+
+                                        "<td style=\"width: 40%; text-align: center; color: white;\">value 3</td>"+
+                            "</td>"+
+                        "</tr>";
+
+                
+                // cityTable += "<tr class=\"rowA\">" +
+                //     "<td class=\"columnA\">"+
+                //     "<i class=\"" + IconList[i] +"\" style=\"color:"+ TransitColor[i]+"\"></i>"+ // icon
+                //     "</td>"+ //columnA
+                //     "<td class=\"columnB\">"+ //Metrics Are Displayed
+                //         "<tr class=\"row1\">"+
+                //             "<td class=\"column1a\">"+
+                //                 "Number of " + StopType[i]+
+                //             "</td>"+ //column1a
+                //             "<td class=\"column1b\">"+
+                //                 ":"+
+                //             "</td>"+ //column1b
+                //             "<td class=\"column1c\">"+
+                //                 cityJson["TransitSystems"][i].NumStops+  // ADD VARIABLE HERE
+                //             "</td>"+ //column1c
+                //         "</tr>"+ //row1
+                //         "<tr class=\"row2\">"+
+                //             "<td class= \"column2a\">"+
+                //                 "Number of Lines"+
+                //             "</td>"+ //column2a
+                //             "<td class= \"column2b\">"+
+                //                 ":"+
+                //             "</td>"+  //column2b
+                //             "<td class=\"column2c\">"+
+                //                 cityJson["TransitSystems"][i].NumLines+ // ADD VARIABLE HERE
+                //             "</td>"+  //column2c
+                //         "</tr>"+ //row2
+                //         "<tr class=\"row3\">"+
+                //             "<td class=\"column3a\">"+
+                //                 "Average distance between "+ StopType[i] +
+                //             "</td>"+   //column3a
+                //             "<td class= \"column3b\">"+
+                //                 ":"+
+                //             "</td>"+ //column3b
+                //             "<td class=\"column3c\">"+
+                //                 cityJson["TransitSystems"][i].AvgDisStops+ // ADD VARIABLE HERE
+                //             "</td>"+ //column3c
+                //         "</tr>"+ //row3
+                //     "</td>"+ //columnB
+                // "</tr>"; //rowA
             }    // Closing the if
         }            // Clossing the loop
-        cityTable += " </table>";
+        cityTable += "</tbody></table>";
         var displayCityMetricsdivID = "city" + cityNum + "table";
         document.getElementById(displayCityMetricsdivID).innerHTML = cityTable;
     }

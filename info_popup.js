@@ -24,9 +24,9 @@ function show_popup(popUpNum) {
     console.log("This is the showpopup function");
 }
 
-function hide_popup() {
+function hide_popup(popUpNum) {
     var popUpID = "hover_info_popup"+popUpNum;
-    var infoPopUp = document.getElementById("hover_info_popup");
+    var infoPopUp = document.getElementById(popUpID);
     var popupDisplay = infoPopUp.style.display;
 
     if (popupDisplay == 'block') {
