@@ -383,49 +383,11 @@ class City {
                                 "</tr>"+
                             "</tbody>"+
                         "</table>";
-                
-                // cityTable += "<tr class=\"rowA\">" +
-                //     "<td class=\"columnA\">"+
-                //     "<i class=\"" + IconList[i] +"\" style=\"color:"+ TransitColor[i]+"\"></i>"+ // icon
-                //     "</td>"+ //columnA
-                //     "<td class=\"columnB\">"+ //Metrics Are Displayed
-                //         "<tr class=\"row1\">"+
-                //             "<td class=\"column1a\">"+
-                //                 "Number of " + StopType[i]+
-                //             "</td>"+ //column1a
-                //             "<td class=\"column1b\">"+
-                //                 ":"+
-                //             "</td>"+ //column1b
-                //             "<td class=\"column1c\">"+
-                //                 cityJson["TransitSystems"][i].NumStops+  // ADD VARIABLE HERE
-                //             "</td>"+ //column1c
-                //         "</tr>"+ //row1
-                //         "<tr class=\"row2\">"+
-                //             "<td class= \"column2a\">"+
-                //                 "Number of Lines"+
-                //             "</td>"+ //column2a
-                //             "<td class= \"column2b\">"+
-                //                 ":"+
-                //             "</td>"+  //column2b
-                //             "<td class=\"column2c\">"+
-                //                 cityJson["TransitSystems"][i].NumLines+ // ADD VARIABLE HERE
-                //             "</td>"+  //column2c
-                //         "</tr>"+ //row2
-                //         "<tr class=\"row3\">"+
-                //             "<td class=\"column3a\">"+
-                //                 "Average distance between "+ StopType[i] +
-                //             "</td>"+   //column3a
-                //             "<td class= \"column3b\">"+
-                //                 ":"+
-                //             "</td>"+ //column3b
-                //             "<td class=\"column3c\">"+
-                //                 cityJson["TransitSystems"][i].AvgDisStops+ // ADD VARIABLE HERE
-                //             "</td>"+ //column3c
-                //         "</tr>"+ //row3
-                //     "</td>"+ //columnB
-                // "</tr>"; //rowA
             }    // Closing the if
-        }            // Clossing the loop
+        }          // Clossing the loop
+        cityTable+="<span class=\"popUp3\" style=\"font-size: 1em; color: #d81b60; padding-left:10%; padding-bottom: 50px;\">"+
+                        "<i class=\"fas fa-info-circle\" onclick=\"show_popup(4);\"></i>"+
+                    "</span>";
         var displayCityMetricsdivID = "city" + cityNum + "table";
         document.getElementById(displayCityMetricsdivID).innerHTML = cityTable;
     }
