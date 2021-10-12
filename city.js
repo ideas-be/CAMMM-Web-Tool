@@ -337,31 +337,52 @@ class City {
         const { city, cityNum, cityJson } = this;
         var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-tram", "fas fa-taxi"];
         var StopType = ["Bus Stops", "Train Stations", "Metro Stations","Tram Stops",  "Other Stops" ];
-        var TransitColor = ["orange", "hotpink", "teal","red", "violet" ];
+        var cityTable =""
         //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
-        var cityTable ="<table class = \"table-contents\"><tbody style=\"width:800px; height:150px; background-color: coral;\">";
         for (var i = 0; i < 5; i++) {
             if (cityJson["TransitSystems"][i].NumStops > 0) {
-        
-            citytable+="<tr>"+
-                            "<td style=\"width: 150px; height:200px; text-align: center; color: white; background-color: blueviolet;\">icon</td>"+
-                            "<td style=\"width: 400px; height:240px; text-align: center; color: white; background-color: blueviolet;\">"+
-                                "<table style=\"width: 400px; height:240px; text-align: center; color: white; background-color: green;\">"+
-                                    "<tr style=\"width:80%; height:80px; text-align: center; color: white; background-color: blue;\">";
-                                        "<td style=\"width: 50%; text-align: center; color: white;\">metrics 1</td>"+
-                                        "<td style=\"width: 10%; text-al ign: center; color: white;\">:</td>"+
-                                        "<td style=\"width: 40%; text-align: center; color: white;\">value 1</td>"+
-                                    "<tr style=\"width:80%; height:80px; text-align: center; color: white; background-color: blue;\">";
-                                        "<td style=\"width: 50%; text-align: center; color: white;\">metrics 2</td>"+
-                                        "<td style=\"width: 10%; text-al ign: center; color: white;\">:</td>"+
-                                        "<td style=\"width: 40%; text-align: center; color: white;\">value 2</td>"+
-                                    "<tr style=\"width:80%; height:80px; text-align: center; color: white; background-color: blue;\">";
-                                        "<td style=\"width: 50%; text-align: center; color: white;\">metrics 3</td>"+
-                                        "<td style=\"width: 10%; text-al ign: center; color: white;\">:</td>"+
-                                        "<td style=\"width: 40%; text-align: center; color: white;\">value 3</td>"+
-                            "</td>"+
-                        "</tr>";
-
+            cityTable+="<table style=\"padding-bottom: 20px; padding-left:10%;\">"+
+                            "<tbody style=\"width:600px; height:75px;\">"+
+                                "<tr>"+
+                                    "<td style=\"width: 75px; height:75px; text-align: right; color: black;\">"+
+                                        "<i class=\"" + IconList[i] +" fa-3x\"></i>"+
+                                    "</td>"+
+                                    "<td style=\"width: 268px; height:75px; text-align: center; color: black;\">"+
+                                        "<table style=\"width: 268px; height:75px; text-align: center; color: black;\">"+
+                                            "<tbody>"+
+                                                "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">"+
+                                                    "<td style=\"width: 65%; text-align: right; color: black; font-size: 11px;\">"+
+                                                        "Number of " + StopType[i] +
+                                                    "</td>"+
+                                                    "<td style=\"width: 5%; text-align: center; color: black; font-size: 11px;\">:</td>"+
+                                                    "<td style=\"width: 30%; text-align: center; color: black; font-size: 11px;\">"+
+                                                        cityJson["TransitSystems"][i].NumStops+
+                                                    "</td>"+
+                                                "</tr>"+
+                                                "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">"+
+                                                    "<td style=\"width: 65%; text-align: right; color: black; font-size: 11px;\">"+
+                                                        "Number of Lines"+
+                                                    "</td>"+
+                                                    "<td style=\"width: 5%; text-align: center; color: black; font-size: 11px;\">:</td>"+
+                                                    "<td style=\"width: 30%; text-align: center; color: black; font-size: 11px;\">"+
+                                                        cityJson["TransitSystems"][i].NumLines +
+                                                    "</td>"+
+                                                "</tr>"+
+                                                "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">"+
+                                                    "<td style=\"width: 65%; text-align: right; color: black; font-size: 11px;\">"+
+                                                        "Average distance between " + StopType[i] +
+                                                    "</td>"+
+                                                    "<td style=\"width: 5%; text-align: center; color: black; font-size: 11px;\">:</td>"+
+                                                    "<td style=\"width: 30%; text-align: center; color: black; font-size: 11px;\">"+
+                                                        cityJson["TransitSystems"][i].AvgDisStops +
+                                                    "</td>"+
+                                                "</tr>"+
+                                            "</tbody>"+
+                                        "</table>"+
+                                    "</td>"+
+                                "</tr>"+
+                            "</tbody>"+
+                        "</table>";
                 
                 // cityTable += "<tr class=\"rowA\">" +
                 //     "<td class=\"columnA\">"+
@@ -405,7 +426,6 @@ class City {
                 // "</tr>"; //rowA
             }    // Closing the if
         }            // Clossing the loop
-        cityTable += "</tbody></table>";
         var displayCityMetricsdivID = "city" + cityNum + "table";
         document.getElementById(displayCityMetricsdivID).innerHTML = cityTable;
     }
