@@ -289,26 +289,52 @@ class City {
 
     turnOffAllLayers(){
         const { map, ListOfLayers, radioList } = this;
-
         for (let i = 0; i < radioList.length; i++){
-            for (var j = 1; j < 6; j++) {
-                var LayerInLoop = ListOfLayers[i] + "_" + j.toString();
-                console.log("Turning off: ", LayerInLoop);
-                map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
+            if (typeof(ListOfLayers[i])=="string"){
+                for (var j = 1; j < 6; j++) {
+                    var LayerInLoop = ListOfLayers[i] + "_" + j.toString();
+                    console.log("Turning off: ", LayerInLoop);
+                    map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
+                }
             }
+            else{
+                for(var transit in ListOfLayers[i]){
+                        console.log("transit layer", ListOfLayers[i][transit]);
+                        for (var j = 1; j <= 5; j++) {
+                            LayerInLoop = ListOfLayers[i][transit] + "_" + j.toString();
+                            console.log("Turning off: ", LayerInLoop);
+                            map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
+                        }
+                }
+            }
+
         }
     }
 
     loadCumulativeLayers() {
         const { map, ListOfLayers, radioList, sliderValue } = this;
-
         for (let i = 0; i < radioList.length; i++) {
-            var LayerInLoop="";
-            if (radioList[i]) {
-                for (var j = 1; j <= sliderValue; j++){ 
-                    LayerInLoop =ListOfLayers[i]+"_"+j.toString();
-                    console.log("Turning on $LayerInLoop until slider value of $sliderValue"); 
-                    map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+            if (typeof(ListOfLayers[i])=="string"){
+                var LayerInLoop="";
+                if (radioList[i]) {
+                    for (var j = 1; j <= sliderValue; j++){ 
+                        LayerInLoop =ListOfLayers[i]+"_"+j.toString();
+                        console.log("Turning on $LayerInLoop until slider value of $sliderValue"); 
+                        map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                    }
+                }
+            }
+            else{
+                var LayerInLoop="";
+                for(var transit in ListOfLayers[i]){
+                    if (radioList[i]){
+                        console.log("transit layer", ListOfLayers[i][transit]);
+                        for (var j = 1; j <= sliderValue; j++) {
+                            LayerInLoop = ListOfLayers[i][transit] + "_" + j.toString();
+                            console.log("Turning on $LayerInLoop until slider value of $sliderValue");
+                            map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                        }
+                    }
                 }
             }
         }
@@ -319,14 +345,31 @@ class City {
         const { sliderValue, ListOfLayers, radioList, map } = this;
         console.log("Showing the value of sliderValue: ");
         console.log(sliderValue);
-        for (let i = 0; i < radioList.length; i++) { // TODO: Fix length not defined error
-            var LayerInLoop = "";
-            if (radioList[i]) {
-                for (var j = 1; j < 6; j++) {
-                    LayerInLoop = ListOfLayers[i] + "_" + j.toString();
-                    if (j == sliderValue) {
-                        console.log("Turning on: ", LayerInLoop);
-                        map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+        for (let i = 0; i < radioList.length; i++) {
+        if (typeof (ListOfLayers[i]) == "string"){
+
+                var LayerInLoop = "";
+                if (radioList[i]) {
+                    for (var j = 1; j < 6; j++) {
+                        LayerInLoop = ListOfLayers[i] + "_" + j.toString();
+                        if (j == sliderValue) {
+                            console.log("Turning on: ", LayerInLoop);
+                            map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                        }
+                    }
+                }
+            }
+            else{
+                var LayerInLoop = "";
+                for(var transit in ListOfLayers[i]){
+                    if (radioList[i]) {
+                        for (var j = 1; j < 6; j++) {
+                            LayerInLoop = ListOfLayers[i][transit] + "_" + j.toString();
+                            if (j == sliderValue) {
+                                console.log("Turning on: ", LayerInLoop);
+                                map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                            }
+                        }
                     }
                 }
             }
