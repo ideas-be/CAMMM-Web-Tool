@@ -20,10 +20,11 @@
 #printButton, #exportCitation{
   height: 20;
   width: 120;
-  text-align: center;
+  text-align: right;
   background-color: #d81b60;
   color: white;
   border-style: none;
+  float: right;
 }
 /* END OF PRINT BUTTON STYLE */
 
