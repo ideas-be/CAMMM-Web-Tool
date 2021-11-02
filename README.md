@@ -18,6 +18,8 @@ https://miro.com/app/board/o9J_kgmIpbw=/
         <li><a href="#ideas-be">IDEAS-BE</a></li>
         <li><a href="#cammm-project-web-atlas">CAMMM Project & Web Atlas</a></li>
         <li><a href="#contributors">Contributors</a></li>
+        <li><a href="#license-funding">License & Funding</a></li>
+        <li><a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License v3.0</a></li>
       </ul>
     </li>
     <li>
@@ -28,9 +30,11 @@ https://miro.com/app/board/o9J_kgmIpbw=/
       </ul>
     </li>
     <li>
-      <a href="#develop-processing-tool">Section 2 - Developing the Processing Tool</a>
+      <a href="#processing-tool">Section 2 - Processing Tool</a>
       <ul>
+        <li><a href="#use-proc-tool">Use of the Processing Tool</a></li>
         <li><a href="#data-collection">Data Collection</a></li>
+        <li><a href="#op-functions">Operational Functions</a></li>
         <li><a href="#key-functions">Analysis Functions</a></li>
         <li><a href="#processed-data-mapbox">Processed Data for Mapbox & City Metrics</a></li>
       </ul>
@@ -68,8 +72,49 @@ https://miro.com/app/board/o9J_kgmIpbw=/
   </ol>
 </details>
 
+
 ----------------------------------------------------------------------
 
+<!-- ACTUAL DOCUMENTATION -->
+----------------------------------------------------------------------
+## About
+<div id="about-the-project">
+
+</div>
+----------------------------------------------------------------------
+## Section 1 - Getting Started
+<div id="getting-started">
+
+</div>
+----------------------------------------------------------------------
+## Section 2 - Processing Tool
+<div id="processing-tool">
+
+</div>
+----------------------------------------------------------------------
+## Section 3 - Using Mapbox
+<div id="using-mapbox">
+
+</div>
+----------------------------------------------------------------------
+## Section 4 - Modelling City Object(JS)
+<div id="model-city-object">
+
+</div>
+----------------------------------------------------------------------
+## Section 5 - Developing the Web Atlas UI
+<div id="develop-atlas-ui">
+
+</div>
+----------------------------------------------------------------------
+## Appendix
+<div id="appendix">
+
+</div>
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
 
 **Next meeting** on the 4th of October
 
