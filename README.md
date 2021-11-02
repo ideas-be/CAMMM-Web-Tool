@@ -26,7 +26,7 @@ https://miro.com/app/board/o9J_kgmIpbw=/
       <a href="#getting-started">Section 1 - Getting Started</a>
       <ul>
         <li><a href="#software-requirements">Software Requirements</a></li>
-        <li><a href="#how-to-writ-docs"></a>How to write the documentation</li>
+        <li><a href="#how-to-write-docs">How to write the documentation</a></li>
         <li><a href="#useful-links">Useful Links</a></li>
       </ul>
     </li>
@@ -84,6 +84,31 @@ https://miro.com/app/board/o9J_kgmIpbw=/
 
 ## About
 
+  <div id="ideas-be">
+  
+  ### IDEAS-BE
+  
+  </div>
+
+  <div id="cammm-project-web-atlas">
+  
+  ### CAMMM Project & Web Atlas
+  
+  </div>
+
+  <div id="contributors">
+  
+  ### Contributors
+  
+  </div>
+
+  <div id="license-funding">
+
+  ### License & Funding
+
+  <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License v3.0</a>
+
+  </div>
 
 </div>
 ----------------------------------------------------------------------
@@ -92,12 +117,56 @@ https://miro.com/app/board/o9J_kgmIpbw=/
 
 ## Section 1 - Getting Started
 
+  <div id="software-requirements">
+
+  ### Software Requirements
+
+  </div>
+  
+  <div id="how-to-write-docs">
+
+  ### How to write the documentation
+
+  </div>
+  
+  <div id="useful-links">
+  
+  ### Useful Links
+  
+  </div>
+        
+
 </div>
 ----------------------------------------------------------------------
 
 <div id="processing-tool">
 
 ## Section 2 - Processing Tool
+
+  <div id="use-proc-tool">
+  
+  ### Use of the Processing Tool
+  </div>
+  
+  <div id="data-collection">
+  
+  ### Data Collection
+  </div>
+  
+  <div id="op-functions">
+  
+  ### Operational Functions
+  </div>
+  
+  <div id="key-functions">
+  
+  ### Analysis Functions
+  </div>
+  
+  <div id="processed-data-mapbox">
+  
+  ### Processed Data for Mapbox & City Metrics
+  </div>
 
 </div>
 ----------------------------------------------------------------------
@@ -106,12 +175,45 @@ https://miro.com/app/board/o9J_kgmIpbw=/
 
 ## Section 3 - Using Mapbox
 
-</div>
+  <div id ="software-requirements">
+
+  ### Software Requirements
+  </div>
+
+  <div id ="how-to-write-docs">
+
+  ### How to write the documentation
+  
+  </div>
+  <div id ="useful-links">
+
+  ### Useful Links
+  </div>
+
+  </div>
 ----------------------------------------------------------------------
 
 <div id="model-city-object">
 
 ## Section 4 - Modelling City Object(JS)
+
+  <div id="city-metrics-data">
+
+  ### City Metrics Data
+
+  </div>
+
+  <div id="city-object-parameters">
+
+  ### Parameters
+
+  </div>
+
+  <div id="city-object-functions">
+
+  ### Functions
+
+  </div>
 
 </div>
 ----------------------------------------------------------------------
@@ -120,12 +222,42 @@ https://miro.com/app/board/o9J_kgmIpbw=/
 
 ## Section 5 - Developing the Web Atlas UI
 
+  <div id="ui-layout-html">
+
+  UI Layout in HTML
+
+  </div>
+
+  <div id="script-web-atlas">
+
+  Scripting the Web Atlas
+
+  </div>
+
+  <div id=styling-manual">
+
+  Styling Manual
+
+  </div>
+
 </div>
 ----------------------------------------------------------------------
 
 <div id="appendix">
 
 ## Appendix
+
+  <div id="appendix-a">
+
+  Appendix A - Maintaining GitHub Repo & Page
+
+  </div>
+
+  <div id="appendix-b">
+
+  Appendix B - Managing Development Workflow
+
+  </div>
 
 </div>
 ----------------------------------------------------------------------
