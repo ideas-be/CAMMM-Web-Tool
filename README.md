@@ -224,19 +224,19 @@ https://miro.com/app/board/o9J_kgmIpbw=/
 
   <div id="ui-layout-html">
 
-  UI Layout in HTML
+  ### UI Layout in HTML
 
   </div>
 
   <div id="script-web-atlas">
 
-  Scripting the Web Atlas
+  ### Scripting the Web Atlas
 
   </div>
 
   <div id=styling-manual">
 
-  Styling Manual
+  ### Styling Manual
 
   </div>
 
@@ -249,13 +249,13 @@ https://miro.com/app/board/o9J_kgmIpbw=/
 
   <div id="appendix-a">
 
-  Appendix A - Maintaining GitHub Repo & Page
+  ### Appendix A - Maintaining GitHub Repo & Page
 
   </div>
 
   <div id="appendix-b">
 
-  Appendix B - Managing Development Workflow
+  ### Appendix B - Managing Development Workflow
 
   </div>
 
