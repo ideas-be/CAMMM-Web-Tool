@@ -1,5 +1,5 @@
 ## CAMMM Web Atlas Tool
-
+https://github.com/ideas-be/CAMMM-Web-Tool/tree/cumulative-testing
 **Here is the link to see the website proper:**
 https://ideas-be.github.io/CAMMM-Web-Tool/
 **Here is the link to the Miro board:**
@@ -26,6 +26,7 @@ https://miro.com/app/board/o9J_kgmIpbw=/
       <a href="#getting-started">Section 1 - Getting Started</a>
       <ul>
         <li><a href="#software-requirements">Software Requirements</a></li>
+        <li><a href="#how-to-writ-docs"></a>How to write the documentation</li>
         <li><a href="#useful-links">Useful Links</a></li>
       </ul>
     </li>
@@ -77,38 +78,54 @@ https://miro.com/app/board/o9J_kgmIpbw=/
 
 <!-- ACTUAL DOCUMENTATION -->
 ----------------------------------------------------------------------
-## About
+
+
 <div id="about-the-project">
 
+## About
+
+
 </div>
 ----------------------------------------------------------------------
-## Section 1 - Getting Started
+
 <div id="getting-started">
 
+## Section 1 - Getting Started
+
 </div>
 ----------------------------------------------------------------------
-## Section 2 - Processing Tool
+
 <div id="processing-tool">
 
+## Section 2 - Processing Tool
+
 </div>
 ----------------------------------------------------------------------
-## Section 3 - Using Mapbox
+
 <div id="using-mapbox">
 
+## Section 3 - Using Mapbox
+
 </div>
 ----------------------------------------------------------------------
-## Section 4 - Modelling City Object(JS)
+
 <div id="model-city-object">
 
-</div>
-----------------------------------------------------------------------
-## Section 5 - Developing the Web Atlas UI
-<div id="develop-atlas-ui">
+## Section 4 - Modelling City Object(JS)
 
 </div>
 ----------------------------------------------------------------------
-## Appendix
+
+<div id="develop-atlas-ui">
+
+## Section 5 - Developing the Web Atlas UI
+
+</div>
+----------------------------------------------------------------------
+
 <div id="appendix">
+
+## Appendix
 
 </div>
 ----------------------------------------------------------------------
