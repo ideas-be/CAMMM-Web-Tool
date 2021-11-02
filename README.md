@@ -1,3 +1,6 @@
+# Currently working on: 
+Improve city metrics table: add city area, population and year of source
+
 # Documentation:
 
 <!-- TABLE OF CONTENTS (WIP) -->

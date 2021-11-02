@@ -2,11 +2,11 @@
     "City": {
         "Montreal": {
             "name": "Montreal",
-            "AreaSqKm": 431.5,
-            "PopulationMillion": 1.78,
-            "DensityPersonSqKm": 4115,
+            "AreaSqKm": 365.65,
+            "PopulationMillion": 1.7,
+            "DensityPersonSqKm": 4662.1,
             "NumBoroughs": 19,
-            "NumTransitSystems": 3,
+            "NumTransitSystems": 2,
             "TransitSystems":[
                 {
                     "Type": "Bus",
@@ -58,7 +58,7 @@
         "Vienna": {
             "name": "Vienna",
             "AreaSqKm": 414.6,
-            "PopulationMillion": 1.8,
+            "PopulationMillion": 1.9,
             "DensityPersonSqKm": 4341,
             "NumBoroughs": 20,
             "NumTransitSystems": 3,
@@ -112,9 +112,9 @@
         },
         "Barcelona": {
             "name": "Barcelona",
-            "AreaSqKm": 101.9,
-            "PopulationMillion": 5.575,
-            "DensityPersonSqKm": 54710,
+            "AreaSqKm": 101.35,
+            "PopulationMillion": 1.66,
+            "DensityPersonSqKm": 16420.2,
             "NumBoroughs": 15,
             "NumTransitSystems": 4,
             "TransitSystems":[
@@ -222,10 +222,10 @@
         },
         "Quebec": {
             "name": "Quebec",
-           "AreaSqKm": 234.5,
-            "PopulationMillion": 0.57,
-            "DensityPersonSqKm": 1648,
-            "NumBoroughs": 11,
+           "AreaSqKm": 453.38,
+            "PopulationMillion": 0.53,
+            "DensityPersonSqKm": 1173.2,
+            "NumBoroughs": 6,
             "NumTransitSystems": 1,
             "TransitSystems":[
                 {
