@@ -1,5 +1,8 @@
 # Currently working on: 
-Improve city metrics table: add city area, population and year of source
+Snapping zoom and coordinates from one map to the other
+
+### Tips:
+<!-- mapbox.getZoom(); mapbox.getCenter(); FUNCTION TO GET THE ZOOM LEVEL AND CENTRAL COORDINATES VALUES -->
 
 # Documentation:
 
