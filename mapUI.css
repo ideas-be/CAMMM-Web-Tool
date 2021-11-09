@@ -13,6 +13,12 @@
     /* border: 2px solid lightgrey; */
 }
 
+.map-menu-headings{
+    color:#d81d60; 
+    font-family:sans-serif; 
+    font-size: 11px;
+}
+
 #filter-group2{
     width: 45%; 
     height: 75px; 
