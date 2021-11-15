@@ -163,8 +163,8 @@
 			<span class="helper"></span>
 			<div style="overflow-y: scroll; height: 500px;">
 				<div class="popupCloseButton" onclick="hide_popup(3);">&times;</div>
-				<h3>Map Controls</h3>
-				<p>Introduction of how to use these controls: left-to-right, etc. (written in reference to snapshot)
+				<h3>Map Menu</h3>
+				<p>Introduction of how to use these menu items: left-to-right, etc. (written in reference to snapshot)
 					<br>
 					<br><em style="color: lightcoral;">Labelled Snapshot </em>
 					<br>
@@ -254,10 +254,10 @@
 	<!-- END OF INFO AREA -->
 
 
-	<!-- START OF MAP CONTROLS AREA -->
-	<div class="map-controls-area group">
+	<!-- START OF MAP MENU AREA -->
+	<div class="map-menu-area group">
 		<!-- 	::before -->
-		<!-- START OF LEFT CONTROLS -->
+		<!-- START OF LEFT MENU -->
 		<div class="dropDown1">
 
 			<!-- START OF CITY 1 LIST -->
@@ -273,9 +273,9 @@
 			<!-- END OF CITY 1 LIST -->
 
 		</div>
-		<!--END OF LEFT CONTROLS -->
+		<!--END OF LEFT MENU -->
 
-		<!-- START OF RIGHT CONTROLS -->
+		<!-- START OF RIGHT MENU -->
 		<div class="dropDown2">
 
 			<!-- START OF CITY 2 LIST -->
@@ -292,14 +292,14 @@
 
 
 		</div>
-		<!--END OF RIGHT CONTROLS -->
+		<!--END OF RIGHT MENU -->
 		<!-- 	::after -->
 	</div>
-	<!--END OF MAP CONTROLS AREA -->
+	<!--END OF MAP MENU AREA -->
 
-	<!-- START OF MAP 1 CONTROLS TABLE -->
+	<!-- START OF MAP 1 MENU TABLE -->
 	<div id="filter-group1" class="filter-group">
-		<table id="map1controls">
+		<table id="map1menu">
 			<tr class="map-menu-headings">
 				<th>SELECT FORM OF ANALYSIS</th>
 				<th>SELECT QUERY</th>
@@ -339,10 +339,10 @@
 			</tr>
 		</table>
 	</div>
-	<!-- END OF MAP 1 CONTROLS TABLE -->
-	<!-- START OF MAP 2 CONTROLS TABLE -->
+	<!-- END OF MAP 1 MENU TABLE -->
+	<!-- START OF MAP 2 MENU TABLE -->
 	<div id="filter-group2" class="filter-group">
-		<table id="map2controls">
+		<table id="map2menu">
 			<tr class="map-menu-headings">
 				<th>SELECT FORM OF ANALYSIS</th>
 				<th>SELECT QUERY</th>
@@ -381,12 +381,14 @@
 				</td>
 			</tr>
 		</table>
-		<!-- END OF MAP 2 CONTROLS TABLE -->
-		<!-- START OF MAP 1 BOX-->
 	</div>
+	<!-- END OF MAP 2 MENU TABLE -->
+
+	<!-- START OF MAP 1 BOX-->
 	<div class="mapbox1" id="map1div">
 		<div id='map1'>
 		</div>
+		<div id='map1controls'></div>
 	</div>
 	<!-- END OF MAP 1 BOX-->
 
@@ -395,6 +397,7 @@
 	<div class="mapbox2" id="map2div">
 		<div id='map2'>
 		</div>
+		<div id='map2controls'></div>
 	</div>
 	<!-- END OF MAP 2 BOX -->
 

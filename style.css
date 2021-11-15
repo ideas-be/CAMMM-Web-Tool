@@ -153,7 +153,7 @@ input:checked + .slider:before {
 
 /* END OF DIRECT/NODE TOGGLE STYLE*/
 
-/* START OF MAP CONTROLS AREA STYLE */
+/* START OF MAP MENU AREA STYLE */
 .group:before, .group:after{
 content: "";
 display: table;
@@ -166,4 +166,4 @@ display: table;
 .group{
 	zoom: 1;
 }
-/* END OF MAP CONTROLS AREA STYLE */
+/* END OF MAP MENU AREA STYLE */
