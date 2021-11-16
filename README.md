@@ -187,9 +187,6 @@ Snapping zoom and coordinates from one map to the other
 
 ## Section 3 - Using Mapbox
 
-  
-  <!-- intro para: What is mapbox?-->
-  <!-- link to the documentation -->
   <div style="padding: 20px; background-color: grey;"><a href ="https://en.wikipedia.org/wiki/Mapbox">Mapbox</a> is a provider of custom online maps for websites and applications. Inside of Mapbox, it is possible to manage geospatial data and design custom map styles.</div>
   <br/>Mapbox is the creator of, or a significant contributor to, some open source mapping libraries and applications. Mapbox uses anonymised data from geolocation services such as OpenStreetMap, Strava, RunKeeper, etc.
   <br/>
@@ -203,18 +200,54 @@ Snapping zoom and coordinates from one map to the other
     -Create a new style 
   The city maps in MapBox are made by creating a Style and then uploading the corresponding Tileset for the map using drag and drop.
   To make the Tileset, the <a href="#processing-tool">Processing Tool</a> needs to be used.
+  Steps to upload the map:
 
+    - Go to the MapBox studio and go the the Tileset section, there select New Tileset.
+  
+  ![Creating City Map Screenshot 1](screenshots/githubDocs/creatingCityMap1.png)
 
-  Upload the map
+    - Upload the file contating the data you whis to display on the map.
+  
+  ![Creating City Map Screenshot 2](screenshots/githubDocs/creatingCityMap2.png)
+
+  ![Creating City Map Screenshot 3](screenshots/githubDocs/creatingCityMap3.png)
+
+    - The upload will report success on the right lower corner of the website.
+
+  ![Creating City Map Screenshot 4](screenshots/githubDocs/creatingCityMap4.png)
+
+    - Once all the data is in Tileset a new map can be created. Inside of Mapbox, the Styles are the 'maps'.
+    - Click the New Stule button.
+
+  ![Creating City Map Screenshot 5](screenshots/githubDocs/creatingCityMap5.png)
+
+    - Select the appropriate temple, for this project we have used the 'Basic' as is.
+
+  ![Creating City Map Screenshot 6](screenshots/githubDocs/creatingCityMap6.png)
+
+  ![Creating City Map Screenshot 7](screenshots/githubDocs/creatingCityMap7.png)
+
+  ![Creating City Map Screenshot 8](screenshots/githubDocs/creatingCityMap8.png)
+
+  ![Creating City Map Screenshot 9](screenshots/githubDocs/creatingCityMap9.png)
+
+  ![Creating City Map Screenshot 10](screenshots/githubDocs/creatingCityMap10.png)
+
+  ![Creating City Map Screenshot 11](screenshots/githubDocs/creatingCityMap11.png)
+
+  ![Creating City Map Screenshot 12](screenshots/githubDocs/creatingCityMap12.png)
+  
 
   </div>
   
   <div id="integrate-web-atlas">
   
   ### Integrating to Web Atlas
-
-  **Style URL example**
-  mapbox://styles/carmela-cucuzzella/ckguxoar50i7w19qyf3c6qsdg
+ 
+ The MapBox is integrated into the UI of the CAMMM Atlas Web Application as follows:
+ -Ensure that the map created in MapBox Studio has been _published_
+ -Go to the Embed menu and copy the **Style URL** associated with the map
+  Here is a sample syntax of the URL: _mapbox://styles/**user-name**/**style-url**_
 
   </div>
 
