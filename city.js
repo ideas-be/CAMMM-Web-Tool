@@ -160,11 +160,11 @@ class City {
 
     injectMapControls() {
         const { cityNum, cityCoords, cityZoom } = this;
-        var iconZoomPath = ["customIcons/CustomNavigationIcons/TransferZoomRight.png", "customIcons/CustomNavigationIcons/TransferZoomLeft.png"];
-        var iconCordPath = ["customIcons/CustomNavigationIcons/TransferCoordsRight.png", "customIcons/CustomNavigationIcons/TransferCoordsLeft.png"];
+        var iconZoomPath = ["", "customIcons/CustomNavigationIcons/TransferZoomLeft.png", "customIcons/CustomNavigationIcons/TransferZoomRight.png"];
+        var iconCordPath = ["", "customIcons/CustomNavigationIcons/TransferCoordsLeft.png", "customIcons/CustomNavigationIcons/TransferCoordsRight.png"];
         var floatSide = ["right", "left"];
         console.log("Injecting map controls in HTML!!!");
-        var mapControlsHTML = "<nav style=\"width: 40px; height: 180px; background-color: #d81b60; border-radius: 5px; color: white; text-align: center; float: " + floatSide[cityNum] + "; margin: 10px; z-index: 10;\">" +
+        var mapControlsHTML = "<nav style=\"width: 40px; height: 180px; background-color: #d81b60; border-radius: 5px; color: white; text-align: center; float: " + floatSide[cityNum] + "; margin: 10px; z-index: 10; position: relative;\">" +
             "<div style=\"padding: 8px;\">" +
             "<span style=\"font-size: 1.5em; color: white;\">" +
             "<i class=\"fas fa-search-plus\" onclick=\"{City" + cityNum + ".zoomInMap();}\"></i></span></div>" +
@@ -236,8 +236,6 @@ class City {
             City1.map.setCenter(currentCoords);
         }
     }
-
-
 
     injectDirectNodeToggleHTML() {
         const { cityNum } = this;
