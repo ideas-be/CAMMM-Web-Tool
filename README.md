@@ -1,5 +1,6 @@
 # Currently working on: 
 Snapping zoom and coordinates from one map to the other
+Keep working on Documentation - Styling Guide for map layers and Troubleshooting section
 
 ### Tips:
 <!-- mapbox.getZoom(); mapbox.getCenter(); FUNCTION TO GET THE ZOOM LEVEL AND CENTRAL COORDINATES VALUES -->
@@ -43,6 +44,7 @@ Snapping zoom and coordinates from one map to the other
       <a href="#using-mapbox">Section 3 - Using Mapbox</a>
       <ul>
         <li><a href="#create-city-map">Creating a City Map</a></li>
+        <li><a href="#styling-map-layers">Styling Map Layers</a></li>
         <li><a href="#integrate-web-atlas">Integrating to Web Atlas</a></li>
       </ul>
     </li>
@@ -67,6 +69,7 @@ Snapping zoom and coordinates from one map to the other
       <ul>
         <li><a href="#appendix-a">Appendix A - Maintaining GitHub Repo & Page</a></li>
         <li><a href="#appendix-b">Appendix B - Managing Development Workflow</a></li>
+        <li><a href="#appendix-b">Appendix C - Troubleshooting</a></li>
       </ul>
     </li>
   </ol>
@@ -195,24 +198,31 @@ Snapping zoom and coordinates from one map to the other
   <div id="create-city-map">
 
   ### Creating a City Map
-  The mpas that contatin all the processed data for each city are created following these steps:
-    -Upload the necesary .geojson files as tilesets in Mapbox
-    -Create a new style 
-  The city maps in MapBox are made by creating a Style and then uploading the corresponding Tileset for the map using drag and drop.
-  To make the Tileset, the <a href="#processing-tool">Processing Tool</a> needs to be used.
-  Steps to upload the map:
+  The mpas that contatin all the processed data for each city are created following these 2 main steps:
 
-    - Go to the MapBox studio and go the the Tileset section, there select New Tileset.
+    TL//DR
+    - Upload the necessary .geojson files as _Tilesets_ in Mapbox
+
+    - Create a new style 
+    
+  -------------------------------------------------------------
+  
+  The city maps in MapBox are made by creating a Style and then uploading the corresponding Tileset for the map using drag and drop. To make the Tileset, the <a href="#processing-tool">Processing Tool</a> needs to be used.
+  <br/>
+  
+  **Steps to upload the map:**
+
+    - In the MapBox Studio, go to the Tileset section and select New Tileset.
   
   ![Creating City Map Screenshot 1](screenshots/githubDocs/creatingCityMap1.png)
 
-    - Upload the file contating the data you whis to display on the map.
+    - Upload the file containing the data you wish to display on the map.
   
   ![Creating City Map Screenshot 2](screenshots/githubDocs/creatingCityMap2.png)
 
   ![Creating City Map Screenshot 3](screenshots/githubDocs/creatingCityMap3.png)
 
-    - The upload will report success on the right lower corner of the website.
+    - The upload will report success on the bottom right corner of the website. (see Troubleshoot section if the upload fails)
 
   ![Creating City Map Screenshot 4](screenshots/githubDocs/creatingCityMap4.png)
 
@@ -225,13 +235,23 @@ Snapping zoom and coordinates from one map to the other
 
   ![Creating City Map Screenshot 6](screenshots/githubDocs/creatingCityMap6.png)
 
+    - Once you landed on the map, you have to go to the plus icon on the top left side. There you will add the Tileset with the processed data.
+
   ![Creating City Map Screenshot 7](screenshots/githubDocs/creatingCityMap7.png)
 
+    - An alternative list of the tileset already loaded can be seen by changin from Components to Layers in the top left side.
+
   ![Creating City Map Screenshot 8](screenshots/githubDocs/creatingCityMap8.png)
+  
+    - After pressing the plus button (top-left), in the Source section you click on the 'None Selected'.
 
   ![Creating City Map Screenshot 9](screenshots/githubDocs/creatingCityMap9.png)
 
+    - Navigate to the desired Tileset, you may also use the search bar with the name of the Tileset.
+
   ![Creating City Map Screenshot 10](screenshots/githubDocs/creatingCityMap10.png)
+
+    - Change the Type as needed. View style guidelines for layer maps. 
 
   ![Creating City Map Screenshot 11](screenshots/githubDocs/creatingCityMap11.png)
 
