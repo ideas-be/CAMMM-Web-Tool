@@ -261,7 +261,7 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
   
   ### Styling Map Layers
 
-> What is a style?
+> What is a style?<br/>
 > A Mapbox style is a JSON object that defines exactly how a map should be drawn. It defines almost everything related to a map's appearance. Every map depends on a style, so when you change a map style, any map that uses that style will be affected by your changes upon its next load.
 >Style layers give sources a visual appearance by specifying which layout and paint properties Mapbox GL should apply. These properties include colors, fonts, line widths, layer order, and more.
 

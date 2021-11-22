@@ -51,7 +51,7 @@
 /* START OF MAPBOX STYLE */
  #map1 { 
 	display: block;
-  width:100%; 
+  width:95%; 
   height: 400px; 
   margin-left: 20px;
 }
@@ -59,9 +59,9 @@
 
 #map2 { 
 	display: block;
-	width:100%; 
+	width:95%; 
   height: 400px; 
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 
 /* END OF MAPBOX STYLE */
@@ -80,8 +80,9 @@
 }
 
 .emptyspace-table{
-	height: 550px;
+	height: 50px;
 }
+
 /* END OF METRICS TABLES STYLE */
 
 /* START OF DIRECT/NODE TOGGLE STYLE*/

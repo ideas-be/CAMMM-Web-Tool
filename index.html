@@ -401,9 +401,9 @@
 
 			<tr>
 				<!-- THIS ROW IS WHERE THE MAPBOX AREA GOES -->
-				<table>
+				<table style="width: 100%;">
 					<tbody>
-						<td style="width: 50%;">
+						<td style="width: 45%;">
 							<!-- THIS CELL IS WHERE THE LEFT MAPBOX GOES -->
 							<!-- START OF MAP 1 BOX-->
 							<div class="mapbox1" id="map1div">
@@ -420,7 +420,7 @@
 							<!-- THIS CELL IS WHERE THE MAP 2 CONTOLS GOES -->
 							<div id='map2controls'></div>
 						</td>
-						<td style="width: 50%;">
+						<td style="width: 45%;">
 							<!-- THIS CELL IS WHERE THE RIGHT MAPBOX GOES -->
 							<!-- START OF MAP 2 BOX-->
 							<div class="mapbox2" id="map2div">
@@ -432,25 +432,24 @@
 					</tbody>
 				</table>
 			</tr>
+			<tr>
+				<!-- THIS ROW IS WHERE THE CITY METRICS TABLES GO -->
+				<table>
+					<tbody>
+						<!-- START OF CITY METRICS TABLES -->
+						<div class="emptyspace-table"></div>
+						<div id="city1table" class="oput"></div>
+						<div id="city2table" class="oput"></div>
+						<!-- END OF CITY METRICS TABLES -->
+					</tbody>
+				</table>
+			</tr>
 
 		</tbody>
 
 	</table>
 
 	<!-- END OF WEB ATLAS UI TABLE -->
-
-
-
-
-
-	<!-- START OF CITY METRICS TABLES -->
-
-	<div class="emptyspace-table"></div>
-	<div id="city1table" class="oput"></div>
-	<div id="city2table" class="oput"></div>
-
-
-	<!-- END OF CITY METRICS TABLES -->
 
 	<!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
 	<script>

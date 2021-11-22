@@ -477,6 +477,7 @@ class City {
         const { city, cityNum, cityJson } = this;
         var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-tram", "fas fa-taxi"];
         var StopType = ["Bus Stops", "Train Stations", "Metro Stations", "Tram Stops", "Other Stops"];
+        var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
         var cityTable = ""
         //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
         for (var i = 0; i < 5; i++) {
@@ -484,7 +485,7 @@ class City {
                 cityTable += "<table style=\"padding-bottom: 20px; padding-left:10%;\">" +
                     "<tbody style=\"width:600px; height:75px;\">" +
                     "<tr>" +
-                    "<td style=\"width: 75px; height:75px; text-align: right; color: black;\">" +
+                    "<td style=\"width: 75px; height:75px; text-align: right; color: " + TransitColors[i] + ";\">" +
                     "<i class=\"" + IconList[i] + " fa-3x\"></i>" +
                     "</td>" +
                     "<td style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
