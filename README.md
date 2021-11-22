@@ -1,9 +1,5 @@
 # Currently working on: 
-Snapping zoom and coordinates from one map to the other
 Keep working on Documentation - Styling Guide for map layers and Troubleshooting section
-
-### Tips:
-<!-- mapbox.getZoom(); mapbox.getCenter(); FUNCTION TO GET THE ZOOM LEVEL AND CENTRAL COORDINATES VALUES -->
 
 # Documentation:
 
@@ -256,7 +252,29 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
   ![Creating City Map Screenshot 11](screenshots/githubDocs/creatingCityMap11.png)
 
   ![Creating City Map Screenshot 12](screenshots/githubDocs/creatingCityMap12.png)
+
   
+
+  </div>
+
+  <div id="styling-map-layers">
+  
+  ### Styling Map Layers
+
+> What is a style?
+> A Mapbox style is a JSON object that defines exactly how a map should be drawn. It defines almost everything related to a map's appearance. Every map depends on a style, so when you change a map style, any map that uses that style will be affected by your changes upon its next load.
+>Style layers give sources a visual appearance by specifying which layout and paint properties Mapbox GL should apply. These properties include colors, fonts, line widths, layer order, and more.
+
+<br/>For the Mapbox documentation click <a href="https://docs.mapbox.com/help/getting-started/map-design/#what-is-a-style">here</a>.
+
+<br/>The styling of the uploaded layers containg the layers that compose the atlas must follow one of the folloing guides:
+
+ #### Discrete layer (five categories): <br/>
+
+  The following example shows how the layer named *montreal_D_CL* is styled. For the layer to have the functionality in the atlas it needs to be replicated five (5) times, each one of the copies corresponding to one category of the analysis. <br/>
+
+  ![Styling a Layer Screenshot 1](screenshots/githubDocs/stylingLayer1.png)
+
 
   </div>
   
