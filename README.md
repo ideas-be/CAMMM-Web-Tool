@@ -267,9 +267,13 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
 
 <br/>For the Mapbox documentation click <a href="https://docs.mapbox.com/help/getting-started/map-design/#what-is-a-style">here</a>.
 
-<br/>The styling of the uploaded layers containg the layers that compose the atlas must follow one of the folloing guides:
+<br/>The styling of the uploaded layers containing the layers that compose the atlas must follow one of the folloing guides:
 
  #### Discrete layer (five categories): <br/>
+
+  The atlas uses a series of predefined *Icons* for each catergory in each of the five types of transit systems the atlas includes. These are customized versions from the <a href="https://fontawesome.com/v5.15/icons/bus?style=solid">FontAwesome</a>. These are modified using a vector-based software such as InkScape or Adobe Illustrator. Each specific category layer of a transit system displays the corresponding icon in a color gradient that represents the value of that datapoint. The gradient goes from *very low* to *very high*.<br/>
+  
+  For example, the *Bus* transit system in its *low* category is represented with the color #fca9adff <p style="color: #fca9adff; font-weight: bold;"> #fca9adff</p>
 
   The following example shows how the layer named *montreal_D_CL* is styled. For the layer to have the functionality in the atlas it needs to be replicated five (5) times, each one of the copies corresponding to one category of the analysis. <br/>
 
