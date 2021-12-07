@@ -7,7 +7,7 @@
             "DensityPersonSqKm": 4662.1,
             "NumBoroughs": 19,
             "NumTransitSystems": 2,
-            "TransitSystems":[
+            "TransitSystems": [
                 {
                     "Type": "Bus",
                     "NumStops": 11355,
@@ -42,8 +42,14 @@
             "DirectStyleURL": "ckqr1dabb3x1i18nwv4qgyeoc",
             "NodeStyleURL": "ckqqyte800ogu18ljw7yybo7m",
             "DirectLayers": [
-                ["montreal-bus_CD","montreal-metro_CD"],
-                ["montreal-bus_CL","montreal-metro_CL"]
+                [
+                    "montreal-bus_CD",
+                    "montreal-metro_CD"
+                ],
+                [
+                    "montreal-bus_CL",
+                    "montreal-metro_CL"
+                ]
             ],
             "NodeLayers": [
                 "montreal_N_CD",
@@ -62,7 +68,7 @@
             "DensityPersonSqKm": 4341,
             "NumBoroughs": 20,
             "NumTransitSystems": 3,
-            "TransitSystems":[
+            "TransitSystems": [
                 {
                     "Type": "Bus",
                     "NumStops": 9653,
@@ -97,8 +103,16 @@
             "DirectStyleURL": "ckqtuan550oah17ofvsk91mkt",
             "NodeStyleURL": "ckqtuaktz0c3317mopggbopa1",
             "DirectLayers": [
-                ["vienna-bus_CD","vienna-lightrail_CD","vienna-metro_CD"],
-                ["vienna-bus_CL","vienna-lightrail_CL","vienna-metro_CL"]
+                [
+                    "vienna-bus_CD",
+                    "vienna-lightrail_CD",
+                    "vienna-metro_CD"
+                ],
+                [
+                    "vienna-bus_CL",
+                    "vienna-lightrail_CL",
+                    "vienna-metro_CL"
+                ]
             ],
             "NodeLayers": [
                 "vienna_N_CD",
@@ -117,7 +131,7 @@
             "DensityPersonSqKm": 16420.2,
             "NumBoroughs": 15,
             "NumTransitSystems": 4,
-            "TransitSystems":[
+            "TransitSystems": [
                 {
                     "Type": "Bus",
                     "NumStops": 4067,
@@ -152,8 +166,14 @@
             "DirectStyleURL": "ckqtvgc0m18j817mdhbybg80n",
             "NodeStyleURL": "ckqtvga970j6v17o1nvbue3yz",
             "DirectLayers": [
-                ["barcelona-bus_CD","barcelona-metro_CD"],
-                ["barcelona-bus_CL","barcelona-metro_CL"]
+                [
+                    "barcelona-bus_CD",
+                    "barcelona-metro_CD"
+                ],
+                [
+                    "barcelona-bus_CL",
+                    "barcelona-metro_CL"
+                ]
             ],
             "NodeLayers": [
                 "barcelona_N_CD",
@@ -172,7 +192,7 @@
             "DensityPersonSqKm": 3388,
             "NumBoroughs": 33,
             "NumTransitSystems": 4,
-            "TransitSystems":[
+            "TransitSystems": [
                 {
                     "Type": "Bus",
                     "NumStops": 10745,
@@ -207,8 +227,18 @@
             "DirectStyleURL": "ckqttwkz60fv718pxigcal4id",
             "NodeStyleURL": "ckqr2e1kd3egl17moxoz5t0r6",
             "DirectLayers": [
-                ["budapest-bus_CD","budapest-lightrail_CD","budapest-metro_CD","budapest-rail_CD"],
-                ["budapest-bus_CL","budapest-lightrail_CL","budapest-metro_CL","budapest-rail_CL"]
+                [
+                    "budapest-bus_CD",
+                    "budapest-lightrail_CD",
+                    "budapest-metro_CD",
+                    "budapest-rail_CD"
+                ],
+                [
+                    "budapest-bus_CL",
+                    "budapest-lightrail_CL",
+                    "budapest-metro_CL",
+                    "budapest-rail_CL"
+                ]
             ],
             "NodeLayers": [
                 "budapest_N_CD",
@@ -222,12 +252,12 @@
         },
         "Quebec": {
             "name": "Quebec",
-           "AreaSqKm": 453.38,
+            "AreaSqKm": 453.38,
             "PopulationMillion": 0.53,
             "DensityPersonSqKm": 1173.2,
             "NumBoroughs": 6,
             "NumTransitSystems": 1,
-            "TransitSystems":[
+            "TransitSystems": [
                 {
                     "Type": "Bus",
                     "NumStops": 17368,
@@ -243,7 +273,7 @@
                 {
                     "Type": "Metro",
                     "NumStops": 0,
-                    "NumLines":0,
+                    "NumLines": 0,
                     "AvgDisStops": 0
                 },
                 {
@@ -259,12 +289,15 @@
                     "AvgDisStops": 0
                 }
             ],
-
             "DirectStyleURL": "ckqr0ljp50tnz17k8s2tm4rsh",
             "NodeStyleURL": "ckpwzbcwp51pt17njpumzg0hq",
             "DirectLayers": [
-                ["quebec-bus_CD"],
-                ["quebec-bus_CL"]
+                [
+                    "quebec-bus_CD"
+                ],
+                [
+                    "quebec-bus_CL"
+                ]
             ],
             "FrequencyQueryDirect": [
                 [
