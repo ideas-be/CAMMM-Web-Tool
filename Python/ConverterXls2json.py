@@ -3,37 +3,53 @@ from openpyxl import load_workbook
 import openpyxl
 import json
 
+def DirectLayerProcessing(Lists):
+    print("Enter Function")
+    print(Lists)
+    for i in Lists:
+        if i != None:
+            print(i,type(i))
+            for j in i.split(","):
+                print(j)
+    print("End function")
+
+
+
 def ReadFile(path):
     LetterHeaders={   
         "City":"A",
         "name":"B",
         "DirectStyleURL":"C",
         "NodeStyleURL":"D",
-        "DirectLayers":"E",
-        "NodeLayers":"F",
-        "Coords-Lat":"G",
-        "Coords-Lon":"H",
-        "Zoom":"I",
-        "NumTransitSystems":"J",
+        "Coords-Lat":"E",
+        "Coords-Lon":"F",
+        "Zoom":"G",
+        "NumTransitSystems":"H",
+        "NodeLayers":"I",
+        "Bus-DirectLayers":"J",
         "Bus-NumStops":"K",
         "Bus-NumLines":"L",
         "Bus-AvgDisStops":"M",
-        "Train-NumStops":"N",
-        "Train-NumLines":"O",
-        "Train-AvgDisStops":"P",
-        "Metro-NumStops":"Q",
-        "Metro-NumLines":"R",
-        "Metro-AvgDisStops":"S",
-        "Tram-NumStops":"T",
-        "Tram-NumLines":"U",
-        "Tram-AvgDisStops":"V",
-        "Others-NumStops":"W",
-        "Others-NumLines":"X",
-        "Others-AvgDisStops":"Y",
-        "NumBoroughs":"Z",
-        "AreaSqKm":"AA",
-        "PopulationMillion":"AB",
-        "DensityPersonSqKm":"AC",
+        "Train-DirectLayers":"N",
+        "Train-NumStops":"O",
+        "Train-NumLines":"P",
+        "Train-AvgDisStops":"Q",
+        "Metro-DirectLayers":"R",
+        "Metro-NumStops":"S",
+        "Metro-NumLines":"T",
+        "Metro-AvgDisStops":"U",
+        "Tram-DirectLayers":"V",
+        "Tram-NumStops":"W",
+        "Tram-NumLines":"X",
+        "Tram-AvgDisStops":"Y",
+        "Others-DirectLayers":"Z",
+        "Others-NumStops":"AA",
+        "Others-NumLines":"AB",
+        "Others-AvgDisStops":"AC",
+        "NumBoroughs":"AD",
+        "AreaSqKm":"AE",
+        "PopulationMillion":"AF",
+        "DensityPersonSqKm":"AG"
     }
 
     ExitDict={"City": {}}
@@ -62,69 +78,71 @@ def ReadFile(path):
             ExcelCoord=letter+str(Row)
             TransitionDictionary[key]=WorkSheet[ExcelCoord].value
             # print(key,"\t=",WorkSheet[ExcelCoord].value)
-        print("DirectLayers",TransitionDictionary["DirectLayers"],type(TransitionDictionary["DirectLayers"]))
-        var="\'["+TransitionDictionary["DirectLayers"]+"]\'"
-        print(var,type(var))
-        listTest=json.loads(var)
+
+        DirectLayerProcessing([TransitionDictionary["Bus-DirectLayers"],TransitionDictionary["Train-DirectLayers"],TransitionDictionary["Metro-DirectLayers"],TransitionDictionary["Tram-DirectLayers"],TransitionDictionary["Others-DirectLayers"]])
+
+        # ListNode=[]
+        # for i in TransitionDictionary["NodeLayers"].split(","):
+        #    ListNode.append(i)
+        
         # print("listTest",listTest,type(listTest))
-        # ExitDict["City"][CityEnglishName]={
-        #     TransitionDictionary["City"]: {
-        #         "name": TransitionDictionary["name"],
-        #         "AreaSqKm": TransitionDictionary["AreaSqKm"],
-        #         "PopulationMillion": TransitionDictionary["PopulationMillion"],
-        #         "DensityPersonSqKm": TransitionDictionary["DensityPersonSqKm"],
-        #         "NumBoroughs": TransitionDictionary["NumBoroughs"],
-        #         "NumTransitSystems": TransitionDictionary["NumTransitSystems"],
-        #         "TransitSystems":[
-        #             {
-        #                 "Type": "Bus",
-        #                 "NumStops": TransitionDictionary["Bus-NumStops"],
-        #                 "NumLines": TransitionDictionary["Bus-NumLines"],
-        #                 "AvgDisStops": TransitionDictionary["Bus-AvgDisStops"]
-        #             },
-        #             {
-        #                 "Type": "Train",
-        #                 "NumStops": TransitionDictionary["Train-NumStops"],
-        #                 "NumLines": TransitionDictionary["Train-NumLines"],
-        #                 "AvgDisStops": TransitionDictionary["Train-AvgDisStops"]
-        #             },
-        #             {
-        #                 "Type": "Metro",
-        #                 "NumStops": TransitionDictionary["Metro-NumStops"],
-        #                 "NumLines": TransitionDictionary["Metro-NumLines"],
-        #                 "AvgDisStops": TransitionDictionary["Metro-AvgDisStops"]
-        #             },
-        #             {
-        #                 "Type": "Tram",
-        #                 "NumStops": TransitionDictionary["Tram-NumStops"],
-        #                 "NumLines": TransitionDictionary["Tram-NumLines"],
-        #                 "AvgDisStops": TransitionDictionary["Tram-AvgDisStops"]
-        #             },
-        #             {
-        #                 "Type": "Others",
-        #                 "NumStops": TransitionDictionary["Others-NumStops"],
-        #                 "NumLines": TransitionDictionary["Others-NumLines"],
-        #                 "AvgDisStops": TransitionDictionary["Others-AvgDisStops"]
-        #             }
-        #         ],
-        #         "DirectStyleURL": TransitionDictionary["DirectStyleURL"],
-        #         "NodeStyleURL": TransitionDictionary["NodeStyleURL"],
-        #         "DirectLayers": [
-        #             json.loads
-        #             ["montreal-bus_CD","montreal-metro_CD"],
-        #             ["montreal-bus_CL","montreal-metro_CL"]
-        #         ],
-        #         "NodeLayers": [
-        #             "montreal_N_CD",
-        #             "montreal_N_CL"
-        #         ],
-        #         "Coords": [
-        #             TransitionDictionary["Coords-Lat"],
-        #             TransitionDictionary["Coords-Lon"]
-        #         ],
-        #         "Zoom": TransitionDictionary["Zoom"]
-        #     }
-        # }
+        ExitDict["City"][CityEnglishName]={
+            TransitionDictionary["City"]: {
+                "name": TransitionDictionary["name"],
+                "AreaSqKm": TransitionDictionary["AreaSqKm"],
+                "PopulationMillion": TransitionDictionary["PopulationMillion"],
+                "DensityPersonSqKm": TransitionDictionary["DensityPersonSqKm"],
+                "NumBoroughs": TransitionDictionary["NumBoroughs"],
+                "NumTransitSystems": TransitionDictionary["NumTransitSystems"],
+                "TransitSystems":[
+                    {
+                        "Type": "Bus",
+                        "NumStops": TransitionDictionary["Bus-NumStops"],
+                        "NumLines": TransitionDictionary["Bus-NumLines"],
+                        "AvgDisStops": TransitionDictionary["Bus-AvgDisStops"]
+                    },
+                    {
+                        "Type": "Train",
+                        "NumStops": TransitionDictionary["Train-NumStops"],
+                        "NumLines": TransitionDictionary["Train-NumLines"],
+                        "AvgDisStops": TransitionDictionary["Train-AvgDisStops"]
+                    },
+                    {
+                        "Type": "Metro",
+                        "NumStops": TransitionDictionary["Metro-NumStops"],
+                        "NumLines": TransitionDictionary["Metro-NumLines"],
+                        "AvgDisStops": TransitionDictionary["Metro-AvgDisStops"]
+                    },
+                    {
+                        "Type": "Tram",
+                        "NumStops": TransitionDictionary["Tram-NumStops"],
+                        "NumLines": TransitionDictionary["Tram-NumLines"],
+                        "AvgDisStops": TransitionDictionary["Tram-AvgDisStops"]
+                    },
+                    {
+                        "Type": "Others",
+                        "NumStops": TransitionDictionary["Others-NumStops"],
+                        "NumLines": TransitionDictionary["Others-NumLines"],
+                        "AvgDisStops": TransitionDictionary["Others-AvgDisStops"]
+                    }
+                ],
+                "DirectStyleURL": TransitionDictionary["DirectStyleURL"],
+                "NodeStyleURL": TransitionDictionary["NodeStyleURL"],
+                "DirectLayers": [
+                    ["montreal-bus_CD","montreal-metro_CD"],
+                    ["montreal-bus_CL","montreal-metro_CL"]
+                ],
+                "NodeLayers": [
+                    "montreal_N_CD",
+                    "montreal_N_CL"
+                ],
+                "Coords": [
+                    TransitionDictionary["Coords-Lat"],
+                    TransitionDictionary["Coords-Lon"]
+                ],
+                "Zoom": TransitionDictionary["Zoom"]
+            }
+        }
 
     return ExitDict														
 
@@ -132,4 +150,4 @@ def ReadFile(path):
 if __name__ =="__main__":
     PathToTheFile="DatabaseCitys.xlsx"
     Data=ReadFile(path=PathToTheFile)
-    print(Data)
+    # print(Data)
