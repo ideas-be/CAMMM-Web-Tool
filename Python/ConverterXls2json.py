@@ -13,7 +13,10 @@ def DirectLayerProcessing(Lists):
                 print(j)
     print("End function")
 
-
+def writeToFile(Data,ExitPath):
+    f = open(ExitPath, "w")
+    f.write(json.dumps(Data))
+    f.close()
 
 def ReadFile(path):
     LetterHeaders={   
@@ -150,4 +153,10 @@ def ReadFile(path):
 if __name__ =="__main__":
     PathToTheFile="DatabaseCitys.xlsx"
     Data=ReadFile(path=PathToTheFile)
-    # print(Data)
+    print("\n"*10)
+    print(Data)
+    writeToFile(Data=Data,ExitPath="Sample.json")
+    # for CityJs in Data['City']:
+    #     print("\n"*10)
+    #     print("CityJs",CityJs)
+    #     print(Data['City'][CityJs])
