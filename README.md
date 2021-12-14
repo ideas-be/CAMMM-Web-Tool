@@ -283,18 +283,20 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
   -The following example shows how the layer named *montreal_D_CL* is styled. For the layer to have the functionality in the atlas it needs to be replicated five (5) times, each one of the copies corresponding to one category of the analysis. <br/>
 
   ![Styling a Layer Screenshot 1](screenshots/githubDocs/stylingLayer1.png) <br/>
-  -To upload the custom icons you have to select the **Icon** tab under the name of the layer. This tab is located in between the *Text* and *Position* tabs. <br/>
+  
+  <br/>The workflow to add a custom icon requires the user to (1)set the desired variable to be mapped, (2)set the data condition for the category of the variable to be mapped and, (3)uplod the custom icon image file. These are the following steps in the workflow:<br/>
+
+  - First, you have to select the **Icon** tab under the name of the layer. This tab is located in between the *Text* and *Position* tabs. <br/>
   ![Uploading an Icon 1](screenshots/githubDocs/iconUpload1.png) <br/>
 
-  -Once in the Icon tab, you select **Style with data condition**.<br/>
+  - Once in the Icon tab, you select **Style with data condition**.<br/>
   ![Uploading an Icon 2](screenshots/githubDocs/iconUpload2.png)<br/>
   
-  In the pop-up that appears, you select the variable&mdash;in this case, CatClossnes&mdash;to map.<br/>
+  - In the pop-up that appears, you select the variable&mdash;in this case, CatClossnes&mdash;to map. In the following pop-up that appears in the top right, you select the corresponding value that will be listed&mdash;in this case, 3.<br/>
   ![Uploading an Icon 3](screenshots/githubDocs/iconUpload3.png)<br/>
-
-  In the following pop-up that appears in the top right, you select the corresponding value that will be listed&mdash;in this case, 3&mdash;.
   
-   There you select the **Add or remove images**. A new pop-up with the upload button will appeared. </br>
+  - Finally, to upload the custom icon image to this category, you navigate to the *Image* section under the Icon tab and select the **Add or remove images** under *Custom*. A new pop-up with the upload button will appear. </br> 
+  ![Uploading an Icon 4](screenshots/githubDocs/iconUpload4.png)<br/>
 
 <!-- WORK MORE ON STYLING FOR EACH INDIVIDUAL LAYER -->
 
