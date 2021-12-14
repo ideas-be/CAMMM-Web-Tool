@@ -280,9 +280,21 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
   The current icon and color shceme can be found in the Teams folder (see <a href="#software-requirements">Section 1</a>): </br>
   >CAMMMM Web Atlas 0.1 > Production > <a href="https://teams.microsoft.com/_#/school/files/CAMMM%20Web%20Atlas?threadId=19%3A2234b6cfce40493aa81f7ff81b9143cc%40thread.tacv2&ctx=channel&context=Icons&rootfolder=%252Fteams%252FCAMMM%252FShared%2520Documents%252FCAMMM%2520Web%2520Atlas%25200.1%252FProduction%252FIcons">Icons</a>
 
-  The following example shows how the layer named *montreal_D_CL* is styled. For the layer to have the functionality in the atlas it needs to be replicated five (5) times, each one of the copies corresponding to one category of the analysis. <br/>
+  -The following example shows how the layer named *montreal_D_CL* is styled. For the layer to have the functionality in the atlas it needs to be replicated five (5) times, each one of the copies corresponding to one category of the analysis. <br/>
 
-  ![Styling a Layer Screenshot 1](screenshots/githubDocs/stylingLayer1.png)
+  ![Styling a Layer Screenshot 1](screenshots/githubDocs/stylingLayer1.png) <br/>
+  -To upload the custom icons you have to select the **Icon** tab under the name of the layer. This tab is located in between the *Text* and *Position* tabs. <br/>
+  ![Uploading an Icon 1](screenshots/githubDocs/iconUpload1.png) <br/>
+
+  -Once in the Icon tab, you select **Style with data condition**.<br/>
+  ![Uploading an Icon 2](screenshots/githubDocs/iconUpload2.png)<br/>
+  
+  In the pop-up that appears, you select the variable&mdash;in this case, CatClossnes&mdash;to map.<br/>
+  ![Uploading an Icon 3](screenshots/githubDocs/iconUpload3.png)<br/>
+
+  In the following pop-up that appears in the top right, you select the corresponding value that will be listed&mdash;in this case, 3&mdash;.
+  
+   There you select the **Add or remove images**. A new pop-up with the upload button will appeared. </br>
 
 <!-- WORK MORE ON STYLING FOR EACH INDIVIDUAL LAYER -->
 
