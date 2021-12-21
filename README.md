@@ -116,6 +116,8 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
   
   ### Contributors
   
+
+
   **Lead of Project** 
 
   <a href="https://www.concordia.ca/finearts/design/faculty.html?fpid=carmela-cucuzzella">Dr. Carmela Cucuzzella, Ph.D.</a> [Professor, Design and Computation Arts; Concordia University Research Chair in Integrated Design And Sustainability for the Built Environment (IDEAS-BE); Founding Co-Director, Next Generation Cities Institute] 

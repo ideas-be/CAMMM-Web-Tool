@@ -3,19 +3,53 @@ from openpyxl import load_workbook
 import openpyxl
 import json
 
-def DirectLayerProcessing(Lists):
+def NodeLayerProcessing(List):
     print("Enter Function")
-    print(Lists)
+    ExitList=[]
+    print(List,type(List))
+    for layer in List.split(","):
+        layer=layer.replace(" ","")
+        ExitList.append(layer)
+    # for i in List:
+    #     print(i)
+    print("End function")
+    return ExitList
+
+def DirectLayerProcessing(Lists):
+    # print("Enter Function")
+    ExitList=[]
+    QueryDict={}
+    # print(Lists)
     for i in Lists:
         if i != None:
-            print(i,type(i))
+            # print(i,type(i))
             for j in i.split(","):
-                print(j)
-    print("End function")
+                j=j.replace(" ", "")
+                # print("Name:",j)
+                QueryName=j.split("_") # budapest-bus_CL -> list [budapest-bus,CL]
+                # print("QueryName:",QueryName)
+                if QueryName[1] in QueryDict.keys():
+                    QueryDict[QueryName[1]].append(j)
+                    # print("Key:",QueryName[1],"\tList:",QueryDict[QueryName[1]])
+                else:
+                    QueryDict[QueryName[1]]=[]
+                    QueryDict[QueryName[1]].append(j)
+                    # print("Key:",QueryName[1],"\tList:",QueryDict[QueryName[1]])
+    for query in QueryDict.keys():
+        # print(query,QueryDict[query])
+        ExitList.append(QueryDict[query])
+    # print("End function")
+    # ExitList=[
+    #                 ["montreal-bus_CDtest","montreal-metro_CDtest"],
+    #                 ["montreal-bus_CLtest","montreal-metro_CLtest"]
+    return (ExitList)
 
 def writeToFile(Data,ExitPath):
-    f = open(ExitPath, "w")
-    f.write(json.dumps(Data))
+    f = open(ExitPath, "w",encoding='utf-8')
+    var=json.dumps(Data, ensure_ascii=False)
+    # print("var",var)
+    # print("var",type(var))
+    f.write(var)
     f.close()
 
 def ReadFile(path):
@@ -82,7 +116,8 @@ def ReadFile(path):
             TransitionDictionary[key]=WorkSheet[ExcelCoord].value
             # print(key,"\t=",WorkSheet[ExcelCoord].value)
 
-        DirectLayerProcessing([TransitionDictionary["Bus-DirectLayers"],TransitionDictionary["Train-DirectLayers"],TransitionDictionary["Metro-DirectLayers"],TransitionDictionary["Tram-DirectLayers"],TransitionDictionary["Others-DirectLayers"]])
+        DirectList=DirectLayerProcessing([TransitionDictionary["Bus-DirectLayers"],TransitionDictionary["Train-DirectLayers"],TransitionDictionary["Metro-DirectLayers"],TransitionDictionary["Tram-DirectLayers"],TransitionDictionary["Others-DirectLayers"]])
+        NodeList=NodeLayerProcessing(TransitionDictionary["NodeLayers"])
 
         # ListNode=[]
         # for i in TransitionDictionary["NodeLayers"].split(","):
@@ -131,14 +166,8 @@ def ReadFile(path):
                 ],
                 "DirectStyleURL": TransitionDictionary["DirectStyleURL"],
                 "NodeStyleURL": TransitionDictionary["NodeStyleURL"],
-                "DirectLayers": [
-                    ["montreal-bus_CD","montreal-metro_CD"],
-                    ["montreal-bus_CL","montreal-metro_CL"]
-                ],
-                "NodeLayers": [
-                    "montreal_N_CD",
-                    "montreal_N_CL"
-                ],
+                "DirectLayers": DirectList,
+                "NodeLayers": NodeList,
                 "Coords": [
                     TransitionDictionary["Coords-Lat"],
                     TransitionDictionary["Coords-Lon"]
@@ -153,8 +182,8 @@ def ReadFile(path):
 if __name__ =="__main__":
     PathToTheFile="DatabaseCitys.xlsx"
     Data=ReadFile(path=PathToTheFile)
-    print("\n"*10)
-    print(Data)
+    # print("\n"*10)
+    # print(Data)
     writeToFile(Data=Data,ExitPath="Sample.json")
     # for CityJs in Data['City']:
     #     print("\n"*10)
