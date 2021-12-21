@@ -71,6 +71,14 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
   </ol>
 </details>
 
+  #### CAMMM Web Atlas Tool
+  https://github.com/ideas-be/CAMMM-Web-Tool/tree/cumulative-testing
+  **Here is the link to see the website proper:**
+  https://ideas-be.github.io/CAMMM-Web-Tool/
+  **Here is the link to the Miro board:**
+  https://miro.com/app/board/o9J_kgmIpbw=/
+  #### Preview:
+  ![CAMMM Web Atlas](screenshots/01_June03.png)
 
 ----------------------------------------------------------------------
 
@@ -82,15 +90,6 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
 
 ## About
 
-  #### CAMMM Web Atlas Tool
-  https://github.com/ideas-be/CAMMM-Web-Tool/tree/cumulative-testing
-  **Here is the link to see the website proper:**
-  https://ideas-be.github.io/CAMMM-Web-Tool/
-  **Here is the link to the Miro board:**
-  https://miro.com/app/board/o9J_kgmIpbw=/
-  #### Preview:
-  ![CAMMM Web Atlas](screenshots/01_June03.png)
-
   <div id="ideas-be">
   
   ### IDEAS-BE
@@ -100,6 +99,16 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
   <div id="cammm-project-web-atlas">
   
   ### CAMMM Project & Web Atlas
+
+  Welcome to the **CAMMM Atlas Web Application**, developed by **IDEAS-BE** (*Integrated Design and Sustainability for the Built Environment*). This tool is a work-in-progress and part of the research project titled, **CoLLaboratoire for Activating Multi-modal Mobility (CAMMM): One Public Space at a Time**, in order to compare the transit systems between each city and critically reflect on mobility in the city.<br/>
+  
+  #### Abstract:<br/>
+  <br/>The CAMMM Atlas web application contains a comparison atlas of public transit networks between cities. This atlas includes morphological, geographic-topological, and network analysis concepts that enable users to understand the current status and potential of different transit networks. The underlying aim for this application is to facilitate research on the domain of public transit mobility and urban form. The resulting research seeks to encourage discussions and developments of the ways multimodality plays a role in the way citizens move around urban spaces. This abstract offers a methodological description and rationale of the indicators and queries developed for the CAMMM Atlas web application. </br>
+  Currently, the atlas covers a selection of cities that fit a pre-defined list of parameters. This list is intended to grow as more public transit data becomes available. In order to develop an international comparative tool, this research uses public transit data provided by the government websites of each analyzed city in the format of General Transit Feed Specification (GTFS)1. The data extracted from this resource includes transit services, stops, stations, routes, trips in routes, and schedules for the trips; among other variables depending on local conditions.  </br>
+  For the analysis, each metro station, bus/tram stop or other point of access to the transit network is treated as an individual object, i.e., node. The collection of all nodes and their relationships build the entire transit network. This network is the object of our research queries explored in the atlas. </br>
+  Drawing from morphological, geographic, and network analysis studies, the current queries provided by the atlas are: (1) shortest path or betweenness centrality, (2) closeness centrality, (3) Eigen-vector centrality, and (4) average distance to nearest neighbor. (1) Betweenness centrality is associated with how accessible the rest of the network is, with respect to a given node. This means that this query evaluates the ease of a trip from the given node to any other point in the network and vice versa. (2) Closeness centrality measures the desirability of a given node in being included in a particular trip inside the network. A node with a higher value of closeness centrality will imply that it is more frequented during trips inside the network. (3) Eigen-vector centrality describes the relationship of a given node to other parts of the network that are well connected. This query brings to the forefront the nodes that are less frequented but have a high degree of influence in the network. (4) Average distance to nearest neighbor assesses the mean length of a trip between a given node and its immediately neighboring nodes inside the network. In the process of implementation, the Rotated Grid analysis describes the density of bus/tram stops and metro/train stations across the built environment, following the natural angle of the urban fabric. Further queries will be added as they are implemented in the application.</br>
+  The atlas is developed as an analysis tool to be used by a variety of researchers, policymakers, and local authorities.  Policymakers and local authorities could potentially use the atlas to compare implementations of public transit approaches across different cities. Scholars and academics could potentially use the application to evaluate different urban spaces and their approaches to multimodal mobility. The atlas may also enable a better understanding of the relationship between the urban form, nodes of interest, and the public transit network.</br>
+
   
   </div>
 
@@ -107,13 +116,55 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
   
   ### Contributors
   
+  **Lead of Project** 
+
+  <a href="https://www.concordia.ca/finearts/design/faculty.html?fpid=carmela-cucuzzella">Dr. Carmela Cucuzzella, Ph.D.</a> [Professor, Design and Computation Arts; Concordia University Research Chair in Integrated Design And Sustainability for the Built Environment (IDEAS-BE); Founding Co-Director, Next Generation Cities Institute] 
+
+  **Author Information**
+
+  - Carmela Cucuzzella is lead coordinator of the Atlas Web Application and surrounding technical infrastructure.  
+
+  - <a href="https://www.concordia.ca/faculty/pierre-gauthier.html">Pierre Gauthier</a> is advisor on urban morphological aspects of each city represented on the atlas. 
+
+  - <a href="https://ideas-be.ca/student/omar-ortiz-meraz/">Omar Ortiz Meraz</a> is the back end and lead GIS programmer for all queries displayed on the atlas. 
+
+  - <a href="https://ideas-be.ca/student/firdous-nizar-phd/">Firdous Nizar</a> is the lead front end developer for the web application interface. 
+
   </div>
 
   <div id="license-funding">
 
   ### License & Funding
+  CAMMM Atlas Web Application</br>
+  Copyright (C) 2022, Carmela Cucuzzella</br>
+  
+  This program is free software: you can redistribute it and/or modify 
+  it under the terms of the GNU General Public License as published by 
+  the Free Software Foundation, either version 3 of the License, or 
+  (at your option) any later version.</br>
+  
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+  GNU General Public License for more details.</br>
+  
+  You should have received a copy of the GNU General Public License 
+  along with this program. If not, see <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a></br>
 
-  <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License v3.0</a>
+  ##### GTFS Licensing
+
+  DISCLAIMER: The data shown in the atlas reflects the information provided in GTFS format by the transport agencies managing the public transit locally in each city. These files are obtained from the official websites corresponding to each city, or internet aggregators. Therefore, accuracy of the data displayed is out of the scope of this research tool. The authors cannot guarantee the precision of this data. 
+
+  ##### Funding Details
+
+  **Project:** <a href="https://ideas-be.ca/project/collaboratoire-for-activating-multi-modal-mobility-one-public-space-at-a-time/#research-funding">CoLLaboratoire for Activating Multi-Modal Mobility: One Public Space at a Time </a>
+  **Funding:** Social Sciences and Humanities Research Council of Canada (SSHRC) Partnership Development Grant
+
+
+  **List of GTFS Sources and Licenses:**
+
+   - Montreal-Société de transport de Montréal. <a href="https://www.stm.info/en/about/developers/terms-use">License</a>
+   <!-- COMPLETE THIS LIST PLEASE!!! (*/ω\*)-->
 
   </div>
 
