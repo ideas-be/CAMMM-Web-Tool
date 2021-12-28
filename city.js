@@ -69,9 +69,16 @@ function getSelectedCity(num) {
 
 function dropdownCities() {
     var cityHTML = "<option disabled selected>Select City</option>";
+    var nameCity = "";
 
     for (key in myJson["City"]) {
-        cityHTML += "<option value=\"" + myJson["City"][key].name + "\">" + myJson["City"][key].name + "</option>";
+        if (myJson["City"][key].name == key) {
+            nameCity = myJson["City"][key].name;
+        }
+        else {
+            nameCity = key + " - " + myJson["City"][key].name;
+        }
+        cityHTML += "<option value=\"" + key + "\">" + nameCity + "</option>";
     }
 
     document.getElementById("cityList1").innerHTML = cityHTML;

@@ -1,5 +1,6 @@
 # Currently working on: 
 Keep working on Documentation - Styling Guide for map layers and Troubleshooting section
+Complete excel file with data for each city(area, pop, etc.)
 
 # Documentation:
 

@@ -1,10 +1,10 @@
 {
     "City": {
         "Montreal": {
-            "name": "Montreal",
+            "name": "Montréal",
             "AreaSqKm": 365.65,
-            "PopulationMillion": 1.7,
-            "DensityPersonSqKm": 4662.1,
+            "PopulationMillion": 1.78,
+            "DensityPersonSqKm": 4115,
             "NumBoroughs": 19,
             "NumTransitSystems": 2,
             "TransitSystems": [
@@ -12,7 +12,7 @@
                     "Type": "Bus",
                     "NumStops": 11355,
                     "NumLines": 217,
-                    "AvgDisStops": 318.52
+                    "AvgDisStops": 318
                 },
                 {
                     "Type": "Train",
@@ -62,9 +62,9 @@
             "Zoom": 10.45
         },
         "Vienna": {
-            "name": "Vienna",
+            "name": "Wien",
             "AreaSqKm": 414.6,
-            "PopulationMillion": 1.9,
+            "PopulationMillion": 1.8,
             "DensityPersonSqKm": 4341,
             "NumBoroughs": 20,
             "NumTransitSystems": 3,
@@ -105,13 +105,13 @@
             "DirectLayers": [
                 [
                     "vienna-bus_CD",
-                    "vienna-lightrail_CD",
-                    "vienna-metro_CD"
+                    "vienna-metro_CD",
+                    "vienna-lightrail_CD"
                 ],
                 [
                     "vienna-bus_CL",
-                    "vienna-lightrail_CL",
-                    "vienna-metro_CL"
+                    "vienna-metro_CL",
+                    "vienna-lightrail_CL"
                 ]
             ],
             "NodeLayers": [
@@ -120,7 +120,7 @@
             ],
             "Coords": [
                 16.39,
-                48.20
+                48.2
             ],
             "Zoom": 11
         },
@@ -128,9 +128,9 @@
             "name": "Barcelona",
             "AreaSqKm": 101.35,
             "PopulationMillion": 1.66,
-            "DensityPersonSqKm": 16420.2,
+            "DensityPersonSqKm": 16420,
             "NumBoroughs": 15,
-            "NumTransitSystems": 4,
+            "NumTransitSystems": 2,
             "TransitSystems": [
                 {
                     "Type": "Bus",
@@ -229,15 +229,15 @@
             "DirectLayers": [
                 [
                     "budapest-bus_CD",
-                    "budapest-lightrail_CD",
+                    "budapest-rail_CD",
                     "budapest-metro_CD",
-                    "budapest-rail_CD"
+                    "budapest-lightrail_CD"
                 ],
                 [
                     "budapest-bus_CL",
-                    "budapest-lightrail_CL",
+                    "budapest-rail_CL",
                     "budapest-metro_CL",
-                    "budapest-rail_CL"
+                    "budapest-lightrail_CL"
                 ]
             ],
             "NodeLayers": [
@@ -251,10 +251,10 @@
             "Zoom": 10
         },
         "Quebec": {
-            "name": "Quebec",
+            "name": "Québec",
             "AreaSqKm": 453.38,
             "PopulationMillion": 0.53,
-            "DensityPersonSqKm": 1173.2,
+            "DensityPersonSqKm": 1173,
             "NumBoroughs": 6,
             "NumTransitSystems": 1,
             "TransitSystems": [
@@ -289,7 +289,7 @@
                     "AvgDisStops": 0
                 }
             ],
-            "DirectStyleURL": "ckqr0ljp50tnz17k8s2tm4rsh",
+            "DirectStyleURL": "ckv8617pd0n9g14rxpi45ts4u",
             "NodeStyleURL": "ckpwzbcwp51pt17njpumzg0hq",
             "DirectLayers": [
                 [
@@ -299,41 +299,9 @@
                     "quebec-bus_CL"
                 ]
             ],
-            "FrequencyQueryDirect": [
-                [
-                    54,
-                    21186,
-                    3268,
-                    2268,
-                    1585
-                ],
-                [
-                    14856,
-                    1658,
-                    123,
-                    789,
-                    45
-                ]
-            ],
             "NodeLayers": [
                 "quebec_N_CD",
                 "quebec_N_CL"
-            ],
-            "FrequencyQueryNode": [
-                [
-                    54,
-                    21186,
-                    3268,
-                    2268,
-                    1585
-                ],
-                [
-                    14856,
-                    1658,
-                    123,
-                    789,
-                    45
-                ]
             ],
             "Coords": [
                 -71.26,

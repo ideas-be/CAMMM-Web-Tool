@@ -125,7 +125,6 @@ def ReadFile(path):
         
         # print("listTest",listTest,type(listTest))
         ExitDict["City"][CityEnglishName]={
-            TransitionDictionary["City"]: {
                 "name": TransitionDictionary["name"],
                 "AreaSqKm": TransitionDictionary["AreaSqKm"],
                 "PopulationMillion": TransitionDictionary["PopulationMillion"],
@@ -174,7 +173,7 @@ def ReadFile(path):
                 ],
                 "Zoom": TransitionDictionary["Zoom"]
             }
-        }
+        
 
     return ExitDict														
 
@@ -184,7 +183,7 @@ if __name__ =="__main__":
     Data=ReadFile(path=PathToTheFile)
     # print("\n"*10)
     # print(Data)
-    writeToFile(Data=Data,ExitPath="Sample.json")
+    writeToFile(Data=Data,ExitPath="CityMetrics.json")
     # for CityJs in Data['City']:
     #     print("\n"*10)
     #     print("CityJs",CityJs)
