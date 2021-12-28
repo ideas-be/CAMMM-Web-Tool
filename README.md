@@ -94,11 +94,24 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
   
   ### IDEAS-BE
   
+  ![IDEAS-BE Logo](screenshots/githubDocs/ideasbelogo_long_transparent.png)
+
+  #### Mandate</br>
+The **Concordia University** Research Chair in *Integrated Design, Ecology And Sustainability for the Built Environment* (ideas-be)  focuses on the study of design projects and practices for the built environment situated at the crossroads of cultural, social, environmental and economic concerns. It considers sustainability as a paradigm crossing the main disciplines and professions concerned with design for the built environment (urban design, architecture, and landscape). This research program identifies, categorizes and disseminates strategic transformations of sustainable intentions in the design of the urban built environment. Our main objective is to better understand how designers go beyond current injunctions of environmental norms and policies in order to achieve a creative balance between design ethics and aesthetics in their public space projects – a question that has remained largely unaddressed in recent design theory.</br>
+How can current imperatives of responsible and ecological design in the urban built environment engender productive shifts in design theory and practice and in design methods and creativity? ​</br>
+The overarching goal of this CURC research project is to take a leadership role and ensure a central active figure in ongoing discussions and initiatives surrounding the sustainable design of the built environment. The four main scientific and pedagogical objectives are:</br>
+ - Conduct fundamental research on sustainability and design for the urban built environment;
+ - Create new pedagogical programs and courses (at undergraduate and graduate levels);
+ - Build a Living Lab for sustainable urban space ideation and design;
+ -  Develop international and national collaborations.
+
   </div>
 
   <div id="cammm-project-web-atlas">
   
   ### CAMMM Project & Web Atlas
+
+  ![CAMMM Logo](screenshots/githubDocs/CAMMM_logo.png)
 
   Welcome to the **CAMMM Atlas Web Application**, developed by **IDEAS-BE** (*Integrated Design and Sustainability for the Built Environment*). This tool is a work-in-progress and part of the research project titled, **CoLLaboratoire for Activating Multi-modal Mobility (CAMMM): One Public Space at a Time**, in order to compare the transit systems between each city and critically reflect on mobility in the city.<br/>
   
@@ -115,8 +128,6 @@ Keep working on Documentation - Styling Guide for map layers and Troubleshooting
   <div id="contributors">
   
   ### Contributors
-  
-
 
   **Lead of Project** 
 
