@@ -86,7 +86,12 @@ def ReadFile(path):
         "NumBoroughs":"AD",
         "AreaSqKm":"AE",
         "PopulationMillion":"AF",
-        "DensityPersonSqKm":"AG"
+        "DensityPersonSqKm":"AG",
+        "YearOfStats":"AH",
+        "SourceGTFS":"AI",
+        "DateUpdatedGTFS":"AJ"
+	
+
     }
 
     ExitDict={"City": {}}
@@ -131,6 +136,9 @@ def ReadFile(path):
                 "DensityPersonSqKm": TransitionDictionary["DensityPersonSqKm"],
                 "NumBoroughs": TransitionDictionary["NumBoroughs"],
                 "NumTransitSystems": TransitionDictionary["NumTransitSystems"],
+                "YearOfStats":TransitionDictionary["YearOfStats"],
+                "SourceGTFS":TransitionDictionary["SourceGTFS"],
+                "DateUpdatedGTFS":TransitionDictionary["DateUpdatedGTFS"],
                 "TransitSystems":[
                     {
                         "Type": "Bus",

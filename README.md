@@ -1,6 +1,16 @@
+# Present for next meeting:
+- Deploy prototype for main website with Ideasbe Banner 
+- Pre-Mapbox Grid Analysis mapping
+- Mock options for cluster (node and supernode) representation
+- XLS to JSON processing tool (GUI + python)
+- Addition of GTFS source links & year of stats
+- Go through About section of GitDocs
+
 # Currently working on: 
 Keep working on Documentation - Styling Guide for map layers and Troubleshooting section
 Complete excel file with data for each city(area, pop, etc.)
+
+Add this note to the docs: Direct is now Individual and Node is now Cluster.
 
 # Documentation:
 
@@ -175,10 +185,15 @@ The overarching goal of this CURC research project is to take a leadership role 
   **Funding:** Social Sciences and Humanities Research Council of Canada (SSHRC) Partnership Development Grant
 
 
-  **List of GTFS Sources and Licenses:**
+  **List of GTFS Sources:**
 
-   - Montreal-Société de transport de Montréal. <a href="https://www.stm.info/en/about/developers/terms-use">License</a>
-   <!-- COMPLETE THIS LIST PLEASE!!! (*/ω\*)-->
+  DISCLAIMER: The data shown in the atlas reflects the information provided in GTFS format by the transport agencies managing the public transit locally in each city. These files are obtained from the official website corresponding to each city, or internet aggregators. Therefore, accuracy of the data displayed is out of the scope of this research tool. The authors cannot guarantee the precision of this data.</br>
+
+   - Montreal  | Montreal-Société de transport de Montréal. <a href="https://www.stm.info/en/about/developers/terms-use">
+   - Quebec    | Le Réseau de transport de la Capitale (RTC). <a href="https://www.rtcquebec.ca/donnees-ouvertes">
+   - Vienna    | Open Data Österreich. <a href="https://www.data.gv.at/katalog/dataset/wiener-linien-fahrplandaten-gtfs-wien">
+   - Barcelona | Transports Metropolitans de Barcelona. <a href="https://developer.tmb.cat/data">
+   - Budapest  | The Centre for Budapest Transport and open mobility data. <a href="https://data.europa.eu/en/news/centre-budapest-transport-and-open-mobility-data">
 
   </div>
 

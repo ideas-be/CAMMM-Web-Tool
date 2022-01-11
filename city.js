@@ -247,11 +247,11 @@ class City {
     injectDirectNodeToggleHTML() {
         const { cityNum } = this;
         console.log("Injecting toggle in HTML");
-        var toggleHTML = "<p class=\"toggleText\">Direct" +
+        var toggleHTML = "<p class=\"toggleText\">Individual" +
             "<label class=\"switch\" >" +
             "<input type=\"checkbox\" id=\"toggBtn" + cityNum + "\" onchange=\"City" + cityNum + ".getDirectNodeToggle();\">" +
             "<span class=\"slider round\"></span>" +
-            "</label>     Node" +
+            "</label>     Cluster" +
             "</p>";
         var toggleID = "toggleCity" + cityNum;
         document.getElementById(toggleID).innerHTML = toggleHTML;
@@ -485,7 +485,46 @@ class City {
         var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-tram", "fas fa-taxi"];
         var StopType = ["Bus Stops", "Train Stations", "Metro Stations", "Tram Stops", "Other Stops"];
         var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
-        var cityTable = ""
+
+        var rowStyle = "style=\"width:80%; height:25px; text-align: center; color: black;\"";
+        var labelColStyle = "style=\"width: 65%; text-align: right; color: black; font-size: 11px;\"";
+        var colonColStyle = "style=\"width: 5%; text-align: center; color: black; font-size: 11px;\"";
+        var valueColStyle = "style=\"width: 30%; text-align: center; color: black; font-size: 11px;\"";
+
+        var cityTable = "<table style=\"padding-bottom: 20px; padding-left:25%;\">" +
+            "<tbody style=\"width:600px; height:75px;\">" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Area (Sq Km)</td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + cityJson["AreaSqKm"] + "</td>" +
+            "</tr>" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Population (Million)</td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + cityJson["PopulationMillion"] + "</td>" +
+            "</tr>" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Density (Person/SqKm)</td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + cityJson["DensityPersonSqKm"] + "</td>" +
+            "</tr>" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Number of Boroughs </td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + cityJson["NumBoroughs"] + "</td>" +
+            "</tr>" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Statistics last updated</td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + cityJson["YearOfStats"] + "</td>" +
+            "</tr>" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Source of GTFS </td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + "<a href={" + cityJson["SourceGTFS"] + "}>Source</a>" + " (" + cityJson["DateUpdatedGTFS"] + ")" + "</td>" +
+            "</tr>" +
+            "</tbody>" + "</table>";
+
         //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
         for (var i = 0; i < 5; i++) {
             if (cityJson["TransitSystems"][i].NumStops > 0) {

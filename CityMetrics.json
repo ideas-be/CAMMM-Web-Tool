@@ -7,6 +7,9 @@
             "DensityPersonSqKm": 4115,
             "NumBoroughs": 19,
             "NumTransitSystems": 2,
+            "YearOfStats": 2016,
+            "SourceGTFS": "https://www.stm.info/en/about/developers",
+            "DateUpdatedGTFS": 2021,
             "TransitSystems": [
                 {
                     "Type": "Bus",
@@ -68,6 +71,9 @@
             "DensityPersonSqKm": 4341,
             "NumBoroughs": 20,
             "NumTransitSystems": 3,
+            "YearOfStats": 2019,
+            "SourceGTFS": "https://www.data.gv.at/katalog/dataset/wiener-linien-fahrplandaten-gtfs-wien",
+            "DateUpdatedGTFS": 2021,
             "TransitSystems": [
                 {
                     "Type": "Bus",
@@ -131,6 +137,9 @@
             "DensityPersonSqKm": 16420,
             "NumBoroughs": 15,
             "NumTransitSystems": 2,
+            "YearOfStats": 2015,
+            "SourceGTFS": "https://developer.tmb.cat/data",
+            "DateUpdatedGTFS": 2021,
             "TransitSystems": [
                 {
                     "Type": "Bus",
@@ -192,6 +201,9 @@
             "DensityPersonSqKm": 3388,
             "NumBoroughs": 33,
             "NumTransitSystems": 4,
+            "YearOfStats": 2014,
+            "SourceGTFS": "https://data.europa.eu/it/news/centre-budapest-transport-and-open-mobility-data",
+            "DateUpdatedGTFS": 2021,
             "TransitSystems": [
                 {
                     "Type": "Bus",
@@ -257,6 +269,9 @@
             "DensityPersonSqKm": 1173,
             "NumBoroughs": 6,
             "NumTransitSystems": 1,
+            "YearOfStats": 2016,
+            "SourceGTFS": "https://www.rtcquebec.ca/donnees-ouvertes",
+            "DateUpdatedGTFS": 2021,
             "TransitSystems": [
                 {
                     "Type": "Bus",
