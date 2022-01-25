@@ -182,7 +182,7 @@ The overarching goal of this CURC research project is to take a leadership role 
   ##### Funding Details
 
   **Project:** <a href="https://ideas-be.ca/project/collaboratoire-for-activating-multi-modal-mobility-one-public-space-at-a-time/#research-funding">CoLLaboratoire for Activating Multi-Modal Mobility: One Public Space at a Time </a>
-  **Funding:** Social Sciences and Humanities Research Council of Canada (SSHRC) Partnership Development Grant
+  **Funding:** Social Sciences and Humanities Research Council of Canada (SSHRC) Partnership Development Grant [890-2018-0025]
 
 
   **List of GTFS Sources:**
