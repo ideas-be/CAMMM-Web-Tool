@@ -36,7 +36,7 @@ function getSelectedCity(num) {
 
     if (selectedCity != "Select City") {
 
-        let city = new City(selectedCity, num, myJson["City"][selectedCity]);
+        let city = new City(selectedCity, num, myJson["City"][selectedCity], 5);
         getCity(city, num);
 
         var mapdivId = "map" + num + "div";
@@ -56,24 +56,29 @@ function getSelectedCity(num) {
         }
 
         var popUp3div = document.getElementsByClassName("popUp3");
-        var popUp3display = popUp3div[num-1].style.display;
+        var popUp3display = popUp3div[num - 1].style.display;
 
         // var popUp4div = document.getElementsByClassName("popUp4");
 
-            if (popUp3display == 'none'){
-                popUp3div[num - 1].style.display = 'block';
-                // popUp4div[num - 1].style.display = 'block';
-            }
-
-        
+        if (popUp3display == 'none') {
+            popUp3div[num - 1].style.display = 'block';
+            // popUp4div[num - 1].style.display = 'block';
+        }
     }
 }
 
 function dropdownCities() {
     var cityHTML = "<option disabled selected>Select City</option>";
+    var nameCity = "";
 
     for (key in myJson["City"]) {
-        cityHTML += "<option value=\"" + myJson["City"][key].name + "\">" + myJson["City"][key].name + "</option>";
+        if (myJson["City"][key].name == key) {
+            nameCity = myJson["City"][key].name;
+        }
+        else {
+            nameCity = key + " - " + myJson["City"][key].name;
+        }
+        cityHTML += "<option value=\"" + key + "\">" + nameCity + "</option>";
     }
 
     document.getElementById("cityList1").innerHTML = cityHTML;
@@ -81,30 +86,50 @@ function dropdownCities() {
 
 }
 
-function resetCity(num){
+function resetCity(num) {
     // console.log("BUTTON IS PRESSED!! CITY HAS BEEN RESET!!");
     // console.log(num);
     var mapdivId = "map" + num + "div";
     var metricsDivId = "city" + num + "table";
     var dropdownID = "cityList" + num;
     // console.log(dropdownID)
-    
+
     document.getElementById(mapdivId).style.display = "none";
     document.getElementById(metricsDivId).style.display = "none";
     document.getElementById(dropdownID).selectedIndex = 0;
 }
 
+function printmsg(msg) {
+
+    switch (msg) {
+        case 1: console.log("zoom in");
+            break;
+        case 2: console.log("zoom out");
+            break;
+        case 3: console.log("reset orientation");
+            break;
+        case 4: console.log("transfer zoom");
+            break;
+        case 5: console.log("transfer coordinates");
+            break;
+        default: console.log("whatever");
+    }
+
+}
+
 class City {
-    constructor(city, cityNum, cityJson) {
+    constructor(city, cityNum, cityJson, sliderValue) {
         this.city = city;
         this.cityNum = cityNum;
         this.cityJson = cityJson;
         this.readCityJson();
-        this.injectToggleHTML();
-        this.injectCategoryCumulativeToggleHTML();
-        this.getToggleTest();
-        // this.cityData();
-        this.cityData();
+        this.injectDirectNodeToggleHTML();
+        // this.injectCatCumulToggleHTML();
+        this.getDirectNodeToggle();
+        this.sliderValue = sliderValue;
+        // this.injectCumulSlider();
+        // this.displayCityMetrics();
+        this.displayCityMetrics();
     }
     readCityJson() {
         const { city, cityNum, cityJson } = this;
@@ -118,20 +143,121 @@ class City {
         this.cityZoom = cityZoom;
         console.log("cityCoords", cityCoords, "cityZoom", cityZoom);
     }
-    injectToggleHTML() {
+
+    loadMap() {
+        const { cityNum, cityCoords, cityZoom, cityURL, ListOfLayers } = this;
+
+        var mapContainer = "map" + cityNum;
+        let map = new mapboxgl.Map({
+            container: mapContainer,
+            style: shortURL + cityURL,
+            center: cityCoords,
+            zoom: cityZoom,
+        });
+        this.map = map;
+
+        //TODO: Check what this does and maybe move to another function
+        var legendHTML = "";
+        var legendivID = "mapLegend" + cityNum;
+        document.getElementById(legendivID).innerHTML = legendHTML;
+        console.log("undefined radio list and legend item");
+
+        this.injectMapControls(); //CALLING MAP CONTROLS ON LOAD MAP
+    }
+
+    injectMapControls() {
+        const { cityNum, cityCoords, cityZoom } = this;
+        var iconZoomPath = ["", "customIcons/CustomNavigationIcons/TransferZoomLeft.png", "customIcons/CustomNavigationIcons/TransferZoomRight.png"];
+        var iconCordPath = ["", "customIcons/CustomNavigationIcons/TransferCoordsLeft.png", "customIcons/CustomNavigationIcons/TransferCoordsRight.png"];
+        var floatSide = ["right", "left"];
+        console.log("Injecting map controls in HTML!!!");
+        var mapControlsHTML = "<nav style=\"width: 40px; height: 180px; background-color: #d81b60; border-radius: 5px; color: white; text-align: center; float: " + floatSide[cityNum] + "; margin: 10px; z-index: 10; position: relative;\">" +
+            "<div style=\"padding: 8px;\">" +
+            "<span style=\"font-size: 1.5em; color: white;\">" +
+            "<i class=\"fas fa-search-plus\" onclick=\"{City" + cityNum + ".zoomInMap();}\"></i></span></div>" +
+            "<div style=\"padding: 8px;\">" +
+            "<span style=\"font-size: 1.5em; color: white;\">" +
+            "<i class=\"fas fa-search-minus\" onclick=\"{City" + cityNum + ".zoomOutMap();}\"></i></span></div>" +
+            // "<div style=\"padding: 8px;\">" +
+            // "<span style=\"font-size: 1.5em; color: white;\">" +
+            // "<i class=\"fas fa-compass\" onclick=\"printmsg(3);\"></i></span></div>" +
+            "<div style=\"padding: 8px;\">" +
+            "<span style=\"font-size: 1.5em; color: white;\">" +
+            "<img width=\"25\" height=\"28\" src=\"" + iconZoomPath[cityNum] + "\"onclick=\"{City" + cityNum + ".transferMapZoom();}\"></img></span></div>" +
+            "<div style=\"padding: 3px;\">" +
+            "<span style=\"font-size: 1.5em; color: white;\">" +
+            "<img width=\"25\" height=\"28\" src=\"" + iconCordPath[cityNum] + "\"onclick=\"{City" + cityNum + ".transferMapCoords();}\"></img></span>" +
+            "</div></nav>";
+        var mapControlsDivID = "map" + cityNum + "controls";
+        document.getElementById(mapControlsDivID).innerHTML = mapControlsHTML;
+    }
+
+    zoomInMap() {
+        //get current zoom value from the mapbox and increase it by 1
+        const { cityNum, cityZoom, map } = this;
+
+        console.log("Zooming In!!!");
+        map.zoomIn();
+
+    }
+
+    zoomOutMap() {
+        //get current zoom value from the mapbox and decrease it by 1
+        const { cityNum, cityZoom, map } = this;
+
+        console.log("Zooming Out!!!");
+        map.zoomOut();
+
+    }
+
+    // changeMapOrientation(){
+    //     //get current map orientation and reset to North
+    // }
+
+    transferMapZoom() {
+        //get current zoom value for one City object map and move it to the other City object map
+        const { cityNum, map } = this;
+        var currentZoom = map.getZoom();
+        console.log("Transfering Zoom: ", currentZoom);
+        if (cityNum == 1) {
+            console.log("from map 1 to map 2");
+            City2.map.setZoom(currentZoom);
+        }
+        else {
+            console.log("from map 2 to map 1");
+            City1.map.setZoom(currentZoom);
+        }
+    }
+
+    transferMapCoords() {
+        //get current center value for one City object map and move it to the other City object map
+        const { cityNum, cityZoom, map } = this;
+        var currentCoords = map.getCenter();
+        console.log("Center coords: ", currentCoords);
+        if (cityNum == 1) {
+            console.log("from map 1 to map 2");
+            City2.map.setCenter(currentCoords);
+        }
+        else {
+            console.log("from map 2 to map 1");
+            City1.map.setCenter(currentCoords);
+        }
+    }
+
+    injectDirectNodeToggleHTML() {
         const { cityNum } = this;
         console.log("Injecting toggle in HTML");
-        var toggleHTML = "<p class=\"toggleText\">Direct" +
+        var toggleHTML = "<p class=\"toggleText\">Individual" +
             "<label class=\"switch\" >" +
-            "<input type=\"checkbox\" id=\"toggBtn" + cityNum + "\" onchange=\"City" + cityNum + ".getToggleTest();\">" +
+            "<input type=\"checkbox\" id=\"toggBtn" + cityNum + "\" onchange=\"City" + cityNum + ".getDirectNodeToggle();\">" +
             "<span class=\"slider round\"></span>" +
-            "</label>     Node" +
+            "</label>     Cluster" +
             "</p>";
         var toggleID = "toggleCity" + cityNum;
         document.getElementById(toggleID).innerHTML = toggleHTML;
     }
 
-    getToggleTest() {
+    getDirectNodeToggle() {
         const { cityNum, cityJson } = this;
         var toggleID = "toggBtn" + cityNum;
         var selAnalysis = document.getElementById(toggleID).checked;
@@ -152,173 +278,305 @@ class City {
         this.cityURL = cityURL;
         this.ListOfLayers = ListOfLayers;
         this.loadMap();
-        this.radioButtons();
+        this.injectRadioButtons();
     }
 
-    injectCategoryCumulativeToggleHTML() {
-        const { cityNum } = this;
-        console.log("Injecting category/cumulative toggle in HTML");
-        var toggleHTML = "<p class=\"toggleText\">Category" +
-            "<label class=\"switch\" >" +
-            "<input type=\"checkbox\" id=\"toggCatCumulBtn" + cityNum + "\" onchange=\"console.log(\"Category/Cumulative Toggle is being used!!!\");\">" +
-            "<span class=\"slider round\"></span>" +
-            "</label>     Cumulative" +
-            "</p>";
-        var toggleID = "toggleCategoryCumulative" + cityNum;
-        document.getElementById(toggleID).innerHTML = toggleHTML;
+    injectRadioButtons() {
+        const { cityNum, ListOfLayers } = this;
+        var formHTML = "";
+        var NameOfQueries = ["Centrality Degree", "Closeness"];
+        for (const [i, value] of ListOfLayers.entries()) {
+            this.value = value;
+            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_" + cityNum + "\" value=\"" + value
+                + "\" onclick=\"{City" + cityNum + ".getRadioStatus(); City" + cityNum + ".turnOffAllLayers(); City" + cityNum + ".injectCatCumulToggleHTML(); City" + cityNum + ".injectCumulSlider(); City" + cityNum + ".loadCumulativeLayers();}\">"
+                + "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
+        }
+        var containerId = "radioForm" + cityNum;
+        document.getElementById(containerId).innerHTML = formHTML;
     }
 
-    loadCumulativeLayers() {
-        const { cityNum ,map, ListOfLayers } = this;
+    getRadioStatus() {
+        const { cityNum, ListOfLayers } = this;
+
         var radioList = [];
         for (const [i, val] of ListOfLayers.entries()) {
-            var buttonStatus = document.getElementById(val+"_"+cityNum).checked;
+            var buttonStatus = document.getElementById(val + "_" + cityNum).checked;
             console.log("buttonStatus", i, buttonStatus);
             radioList.push(buttonStatus);
         }
         this.radioList = radioList;
         console.log("This is all the radio buttons");
         console.log(this.radioList);
+    }
 
-        for (let i = 0; i < this.radioList.length; i++) {
-            var LayerInLoop="";
-            if (this.radioList[i]) {
-                for (var j = 1; j < 6; j++){
-                    LayerInLoop =ListOfLayers[i]+"_"+j.toString();
-                    console.log("Turning on: ", LayerInLoop);
-                    map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
-                }
+    injectCatCumulToggleHTML() {
 
-                this.mapLegend();
+        //DEFAULT: This toggle will be false on Cumulative to show all 5 layers inside map
+
+        const { cityNum } = this;
+        console.log("Injecting category/cumulative toggle in HTML");
+        var toggleHTML = "<p class=\"toggleText\">Stacked" +
+            "<label class=\"switch\" >" +
+            "<input type=\"checkbox\" id=\"toggCatCumulBtn" + cityNum + "\" onchange= \"City" + cityNum + ".getCatCumulToggle();\">" +
+            "<span class=\"slider round\"></span>" +
+            "</label>     Single" +
+            "</p>";
+        var toggleID = "toggleCategoryCumulative" + cityNum;
+        document.getElementById(toggleID).innerHTML = toggleHTML;
+    }
+
+    getCatCumulToggle() {
+
+        const { cityNum, cityJson } = this;
+        var toggleID = "toggCatCumulBtn" + cityNum;
+        var selSlider = document.getElementById(toggleID).checked;
+        console.log("Selected slider for Category/Cumulative: ", selSlider);
+
+        if (selSlider) {
+            // Switch Slider Function to Category
+            this.turnOffAllLayers();
+            console.log("Checking when the toggle is changed before calling injectCatSlider");
+            this.injectCatSlider();
+            console.log("Calling LoadCatLayers function");
+            this.loadCategoryLayer();
+        }
+        else {
+            // Switch Slider Function to Cumulative
+            console.log("Checking when the toggle is changed before calling injectCumulSlider");
+            this.injectCumulSlider();
+            console.log("Calling LoadCumulativeLayers function");
+            this.loadCumulativeLayers();
+        }
+        this.catCumulValue = catCumulValue;
+    }
+
+    injectCumulSlider() { // NEED TO FIX THIS!!!
+
+        //DEFAULT: For Cumul Slider, the head of the slider will be at the extreme right (highest value) to display all layers on map
+
+        const { cityNum, radioList } = this;
+
+        var queryNum = 0;
+
+        for (let i = 0; i < radioList.length; i++) {
+            if (radioList[i]) {
+                queryNum = i + 1;
             }
-            else {
+        }
+
+        var mapLegendID = "mapLegend" + cityNum;
+        var sliderHTML = "";
+        sliderHTML = "<input id=\"slider" + queryNum + "\" type=\"range\" min=\"1\" max=\"5\" value=\"5\" step=\"1\" onchange =\"{City" + cityNum + ".sliderValue=this.value; City" + cityNum + ".turnOffAllLayers(); City" + cityNum + ".loadCumulativeLayers();}\">" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+        console.log("Injecting the Cumulative Slider ", sliderHTML);
+        document.getElementById(mapLegendID).innerHTML = sliderHTML;
+    }
+
+    injectCatSlider() {
+        //refer to injectCumulSlider to make corresponding slider functionality for category layers
+
+        const { cityNum, radioList } = this;
+
+        var queryNum = 0;
+
+        for (let i = 0; i < radioList.length; i++) {
+            if (radioList[i]) {
+                queryNum = i + 1;
+            }
+        }
+
+        var mapLegendID = "mapLegend" + cityNum;
+        var sliderHTML = "";
+        sliderHTML = "<input id=\"slider" + queryNum + "\" type=\"range\" min=\"1\" max=\"5\" value=\"5\" step=\"1\" onchange =\"{City" + cityNum + ".sliderValue=this.value; City" + cityNum + ".turnOffAllLayers(); City" + cityNum + ".loadCategoryLayer();}\">" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+        console.log("Injecting the Category Slider", sliderHTML);
+        document.getElementById(mapLegendID).innerHTML = sliderHTML;
+    }
+
+    turnOffAllLayers() {
+        const { map, ListOfLayers, radioList } = this;
+        for (let i = 0; i < radioList.length; i++) {
+            if (typeof (ListOfLayers[i]) == "string") {
                 for (var j = 1; j < 6; j++) {
-                    LayerInLoop = ListOfLayers[i] + "_" + j.toString();
+                    var LayerInLoop = ListOfLayers[i] + "_" + j.toString();
                     console.log("Turning off: ", LayerInLoop);
                     map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
                 }
             }
+            else {
+                for (var transit in ListOfLayers[i]) {
+                    console.log("transit layer", ListOfLayers[i][transit]);
+                    for (var j = 1; j <= 5; j++) {
+                        LayerInLoop = ListOfLayers[i][transit] + "_" + j.toString();
+                        console.log("Turning off: ", LayerInLoop);
+                        map.setLayoutProperty(LayerInLoop, 'visibility', 'none');
+                    }
+                }
+            }
+
         }
     }
 
-    radioButtons() {
-        const { cityNum, ListOfLayers } = this;
-        var formHTML = "";
-        var NameOfQueries = ["Centrality Degree", "Closeness"];
-        for (const [i, value] of ListOfLayers.entries()) {
-            this.value = value;
-            formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_"+cityNum+"\" value=\"" + value + "\" onclick=\"{" + "City" + cityNum + ".loadCumulativeLayers();}\">" +
-                "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
-        }
-        var containerId = "radioForm" + cityNum;
-        document.getElementById(containerId).innerHTML = formHTML;
-    }
-    cityData() {
-        const { city, cityNum, cityJson } = this;
-        var IconList =  ["fas fa-bus", "fas fa-train", "fas fa-tram","fas fa-subway", "fas fa-taxi"];
-        var StopType = ["Bus Stops","Train Stations" ,"Tram Stops", "Metro Stations", "Other Stops" ];
-        //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
-        var cityTable ="<table class = \"table-contents\">";
-        for (var i = 0; i < 5; i++) {
-            if (cityJson["TransitSystems"][i].NumStops > 0) {
-                cityTable += "<tr class=\"rowA\">" +
-                    "<td class=\"columnA\">"+
-                    "<i class=\"" + IconList[i] +"\"></i>"+ // icon
-                    "</td>"+ //columnA
-                    "<td class=\"columnB\">"+ //Metrics Are Displayed
-                        "<tr class=\"row1\">"+
-                            "<td class=\"column1a\">"+
-                                "Number of " + StopType[i]+
-                            "</td>"+ //column1a
-                            "<td class=\"column1b\">"+
-                                ":"+
-                            "</td>"+ //column1b
-                            "<td class=\"column1c\">"+
-                                cityJson["TransitSystems"][i].NumStops+  // ADD VARIABLE HERE
-                            "</td>"+ //column1c
-                        "</tr>"+ //row1
-                        "<tr class=\"row2\">"+
-                            "<td class= \"column2a\">"+
-                                "Number of Lines"+
-                            "</td>"+ //column2a
-                            "<td class= \"column2b\">"+
-                                ":"+
-                            "</td>"+  //column2b
-                            "<td class=\"column2c\">"+
-                                cityJson["TransitSystems"][i].NumLines+ // ADD VARIABLE HERE
-                            "</td>"+  //column2c
-                        "</tr>"+ //row2
-                        "<tr class=\"row3\">"+
-                            "<td class=\"column3a\">"+
-                                "Average distance between "+ StopType[i] +
-                            "</td>"+   //column3a
-                            "<td class= \"column3b\">"+
-                                ":"+
-                            "</td>"+ //column3b
-                            "<td class=\"column3c\">"+
-                                cityJson["TransitSystems"][i].AvgDisStops+ // ADD VARIABLE HERE
-                            "</td>"+ //column3c
-                        "</tr>"+ //row3
-                    "</td>"+ //columnB
-                "</tr>"; //rowA
-            }    // Closing the if
-        }            // Clossing the loop
-        cityTable += " </table>";
-        console.log("cityTable: ", cityTable);
-        var citydatadivID = "city" + cityNum + "table";
-        document.getElementById(citydatadivID).innerHTML = cityTable;
-
-    }
-
-    loadMap() {
-        const { cityNum, cityCoords, cityZoom, cityURL, ListOfLayers } = this;
-
-        var mapContainer = "map" + cityNum;
-        let map = new mapboxgl.Map({
-            container: mapContainer,
-            style: shortURL + cityURL,
-            center: cityCoords,
-            zoom: cityZoom,
-        });
-        this.map = map;
-
-        // this.map.on('load', function () {
-        //     var layers = map.getStyle().layers;
-        //     for (var i = 0; i < ListOfLayers.length; i++) {
-        //         map.setLayoutProperty(ListOfLayers[i], 'visibility', 'none');
-        //     }
-        // }
-
-        // )
-        var legendHTML = "";
-        var legendivID = "mapLegend" + cityNum;
-        document.getElementById(legendivID).innerHTML = legendHTML;
-        console.log("undefined radio list and legend item");
-
-
-    }
-
-    mapLegend() {
-        const { cityNum, radioList } = this;
-        console.log("This function loads the map legend");
-        var legendHTML = "";
-        if (typeof (radioList) != "undefined") {
-            switch (radioList.indexOf(true)) {
-                case 0:
-                    legendHTML = "<div id=\"query1Legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
-                    break;
-                case 1:
-                    legendHTML = "<div id=\"query2Legend\"></div>" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
-                    break;
-                default:
-                    legendHTML = "";
-                    console.log("undefined legend item");
-                    break;
+    loadCumulativeLayers() {
+        const { map, ListOfLayers, radioList, sliderValue } = this;
+        for (let i = 0; i < radioList.length; i++) {
+            if (typeof (ListOfLayers[i]) == "string") {
+                var LayerInLoop = "";
+                if (radioList[i]) {
+                    for (var j = 1; j <= sliderValue; j++) {
+                        LayerInLoop = ListOfLayers[i] + "_" + j.toString();
+                        console.log("Turning on $LayerInLoop until slider value of $sliderValue");
+                        map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                    }
+                }
+            }
+            else {
+                var LayerInLoop = "";
+                for (var transit in ListOfLayers[i]) {
+                    if (radioList[i]) {
+                        console.log("transit layer", ListOfLayers[i][transit]);
+                        for (var j = 1; j <= sliderValue; j++) {
+                            LayerInLoop = ListOfLayers[i][transit] + "_" + j.toString();
+                            console.log("Turning on $LayerInLoop until slider value of $sliderValue");
+                            map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                        }
+                    }
+                }
             }
         }
+    }
 
-        var legendivID = "mapLegend" + cityNum;
-        document.getElementById(legendivID).innerHTML = legendHTML;
+
+    loadCategoryLayer() {
+        const { sliderValue, ListOfLayers, radioList, map } = this;
+        console.log("Showing the value of sliderValue: ");
+        console.log(sliderValue);
+        for (let i = 0; i < radioList.length; i++) {
+            if (typeof (ListOfLayers[i]) == "string") {
+
+                var LayerInLoop = "";
+                if (radioList[i]) {
+                    for (var j = 1; j < 6; j++) {
+                        LayerInLoop = ListOfLayers[i] + "_" + j.toString();
+                        if (j == sliderValue) {
+                            console.log("Turning on: ", LayerInLoop);
+                            map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                        }
+                    }
+                }
+            }
+            else {
+                var LayerInLoop = "";
+                for (var transit in ListOfLayers[i]) {
+                    if (radioList[i]) {
+                        for (var j = 1; j < 6; j++) {
+                            LayerInLoop = ListOfLayers[i][transit] + "_" + j.toString();
+                            if (j == sliderValue) {
+                                console.log("Turning on: ", LayerInLoop);
+                                map.setLayoutProperty(LayerInLoop, 'visibility', 'visible');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    displayCityMetrics() {
+        const { city, cityNum, cityJson } = this;
+        var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-tram", "fas fa-taxi"];
+        var StopType = ["Bus Stops", "Train Stations", "Metro Stations", "Tram Stops", "Other Stops"];
+        var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
+
+        var rowStyle = "style=\"width:80%; height:25px; text-align: center; color: black;\"";
+        var labelColStyle = "style=\"width: 65%; text-align: right; color: black; font-size: 11px;\"";
+        var colonColStyle = "style=\"width: 5%; text-align: center; color: black; font-size: 11px;\"";
+        var valueColStyle = "style=\"width: 30%; text-align: center; color: black; font-size: 11px;\"";
+
+        var cityTable = "<table style=\"padding-bottom: 20px; padding-left:25%;\">" +
+            "<tbody style=\"width:600px; height:75px;\">" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Area (Sq Km)</td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + cityJson["AreaSqKm"] + "</td>" +
+            "</tr>" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Population (Million)</td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + cityJson["PopulationMillion"] + "</td>" +
+            "</tr>" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Density (Person/SqKm)</td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + cityJson["DensityPersonSqKm"] + "</td>" +
+            "</tr>" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Number of Boroughs </td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + cityJson["NumBoroughs"] + "</td>" +
+            "</tr>" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Statistics last updated</td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + cityJson["YearOfStats"] + "</td>" +
+            "</tr>" +
+            "<tr " + rowStyle + ">" +
+            "<td " + labelColStyle + ">Source of GTFS </td>" +
+            "<td " + colonColStyle + ">:</td>" +
+            "<td " + valueColStyle + ">" + "<a href={" + cityJson["SourceGTFS"] + "}>Source</a>" + " (" + cityJson["DateUpdatedGTFS"] + ")" + "</td>" +
+            "</tr>" +
+            "</tbody>" + "</table>";
+
+        //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
+        for (var i = 0; i < 5; i++) {
+            if (cityJson["TransitSystems"][i].NumStops > 0) {
+                cityTable += "<table style=\"padding-bottom: 20px; padding-left:10%;\">" +
+                    "<tbody style=\"width:600px; height:75px;\">" +
+                    "<tr>" +
+                    "<td style=\"width: 75px; height:75px; text-align: right; color: " + TransitColors[i] + ";\">" +
+                    "<i class=\"" + IconList[i] + " fa-3x\"></i>" +
+                    "</td>" +
+                    "<td style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
+                    "<table style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
+                    "<tbody>" +
+                    "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
+                    "<td style=\"width: 65%; text-align: right; color: black; font-size: 11px;\">" +
+                    "Number of " + StopType[i] +
+                    "</td>" +
+                    "<td style=\"width: 5%; text-align: center; color: black; font-size: 11px;\">:</td>" +
+                    "<td style=\"width: 30%; text-align: center; color: black; font-size: 11px;\">" +
+                    cityJson["TransitSystems"][i].NumStops +
+                    "</td>" +
+                    "</tr>" +
+                    "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
+                    "<td style=\"width: 65%; text-align: right; color: black; font-size: 11px;\">" +
+                    "Number of Lines" +
+                    "</td>" +
+                    "<td style=\"width: 5%; text-align: center; color: black; font-size: 11px;\">:</td>" +
+                    "<td style=\"width: 30%; text-align: center; color: black; font-size: 11px;\">" +
+                    cityJson["TransitSystems"][i].NumLines +
+                    "</td>" +
+                    "</tr>" +
+                    "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
+                    "<td style=\"width: 65%; text-align: right; color: black; font-size: 11px;\">" +
+                    "Average distance between " + StopType[i] +
+                    "</td>" +
+                    "<td style=\"width: 5%; text-align: center; color: black; font-size: 11px;\">:</td>" +
+                    "<td style=\"width: 30%; text-align: center; color: black; font-size: 11px;\">" +
+                    cityJson["TransitSystems"][i].AvgDisStops +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>";
+            }    // Closing the if
+        }          // Clossing the loop
+        cityTable += "<span class=\"popUp3\" style=\"font-size: 1em; color: #d81b60; padding-left:10%; padding-bottom: 50px;\">" +
+            "<i class=\"fas fa-info-circle\" onclick=\"show_popup(4);\"></i>" +
+            "</span>";
+        var displayCityMetricsdivID = "city" + cityNum + "table";
+        document.getElementById(displayCityMetricsdivID).innerHTML = cityTable;
     }
 
 }
