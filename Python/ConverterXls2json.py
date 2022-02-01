@@ -44,7 +44,7 @@ def DirectLayerProcessing(Lists):
     #                 ["montreal-bus_CLtest","montreal-metro_CLtest"]
     return (ExitList)
 
-def writeToFile(Data,ExitPath):
+def WriteToFile(Data:dict,ExitPath:str) -> None:
     f = open(ExitPath, "w",encoding='utf-8')
     var=json.dumps(Data, ensure_ascii=False)
     # print("var",var)
@@ -52,7 +52,7 @@ def writeToFile(Data,ExitPath):
     f.write(var)
     f.close()
 
-def ReadFile(path):
+def ReadFile(path:str) -> dict:
     LetterHeaders={   
         "City":"A",
         "name":"B",
@@ -191,7 +191,7 @@ if __name__ =="__main__":
     Data=ReadFile(path=PathToTheFile)
     # print("\n"*10)
     # print(Data)
-    writeToFile(Data=Data,ExitPath="CityMetrics.json")
+    WriteToFile(Data=Data,ExitPath="CityMetrics.json")
     # for CityJs in Data['City']:
     #     print("\n"*10)
     #     print("CityJs",CityJs)
