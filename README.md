@@ -40,11 +40,17 @@ Add this note to the docs: Direct is now Individual and Node is now Cluster.
     <li>
       <a href="#processing-tool">Section 2 - Processing Tool</a>
       <ul>
-        <li><a href="#use-proc-tool">Use of the Processing Tool</a></li>
+        <li><a href="#use-proc-tool">Uses of the Processing Tool</a>
+         <ul>
+          <li><a href="#gtfs-processing">Process GTFS Files</a></li>
+          <li><a href="#xls-to-json">Convert Excel to JSON</a></li>
+         </ul>
+        </li>
         <li><a href="#data-collection">Data Collection</a></li>
         <li><a href="#op-functions">Operational Functions</a></li>
         <li><a href="#key-functions">Analysis Functions</a></li>
         <li><a href="#processed-data-mapbox">Processed Data for Mapbox & City Metrics</a></li>
+        <>
       </ul>
     </li>
     <li>
