@@ -1,20 +1,58 @@
 {
     "City": {
         "Montreal": {
-            "name": "Montreal",
-            "NumTransportSystem": 3,
-            "NumBusStops": 65666,
-            "NumRailStations": 123,
-            "NumMetroStations": 50,
-            "NumBoroughs": 19,
-            "AreaSqKm": 431.5,
+            "name": "Montréal",
+            "AreaSqKm": 365.65,
             "PopulationMillion": 1.78,
             "DensityPersonSqKm": 4115,
+            "NumBoroughs": 19,
+            "NumTransitSystems": 2,
+            "YearOfStats": 2016,
+            "SourceGTFS": "https://www.stm.info/en/about/developers",
+            "DateUpdatedGTFS": 2021,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 11355,
+                    "NumLines": 217,
+                    "AvgDisStops": 318
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 69,
+                    "NumLines": 4,
+                    "AvgDisStops": 2787
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
             "DirectStyleURL": "ckqr1dabb3x1i18nwv4qgyeoc",
             "NodeStyleURL": "ckqqyte800ogu18ljw7yybo7m",
             "DirectLayers": [
-                "montreal_D_CD",
-                "montreal_D_CL"
+                [
+                    "montreal-bus_CD",
+                    "montreal-metro_CD"
+                ],
+                [
+                    "montreal-bus_CL",
+                    "montreal-metro_CL"
+                ]
             ],
             "NodeLayers": [
                 "montreal_N_CD",
@@ -27,20 +65,60 @@
             "Zoom": 10.45
         },
         "Vienna": {
-            "name": "Vienna",
-            "NumTransportSystem": 6,
-            "NumBusStops": 78888,
-            "NumRailStations": 456,
-            "NumMetroStations": 35,
-            "NumBoroughs": 20,
+            "name": "Wien",
             "AreaSqKm": 414.6,
             "PopulationMillion": 1.8,
             "DensityPersonSqKm": 4341,
-            "DirectStyleURL": "ckmdv9k6p0y6617qwpyikvpms",
-            "NodeStyleURL": "ckmdvdgrv16cx17pljoyexm36",
+            "NumBoroughs": 20,
+            "NumTransitSystems": 3,
+            "YearOfStats": 2019,
+            "SourceGTFS": "https://www.data.gv.at/katalog/dataset/wiener-linien-fahrplandaten-gtfs-wien",
+            "DateUpdatedGTFS": 2021,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 9653,
+                    "NumLines": 451,
+                    "AvgDisStops": 331
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 768,
+                    "NumLines": 37,
+                    "AvgDisStops": 655
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 3360,
+                    "NumLines": 135,
+                    "AvgDisStops": 346
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+            "DirectStyleURL": "ckqtuan550oah17ofvsk91mkt",
+            "NodeStyleURL": "ckqtuaktz0c3317mopggbopa1",
             "DirectLayers": [
-                "vienna_D_CD",
-                "vienna_D_CL"
+                [
+                    "vienna-bus_CD",
+                    "vienna-metro_CD",
+                    "vienna-lightrail_CD"
+                ],
+                [
+                    "vienna-bus_CL",
+                    "vienna-metro_CL",
+                    "vienna-lightrail_CL"
+                ]
             ],
             "NodeLayers": [
                 "vienna_N_CD",
@@ -48,31 +126,67 @@
             ],
             "Coords": [
                 16.39,
-                48.20
+                48.2
             ],
             "Zoom": 11
         },
         "Barcelona": {
             "name": "Barcelona",
-            "NumTransportSystem": 6,
-            "NumBusStops": 44444,
-            "NumRailStations": 36,
-            "NumMetroStations": 135,
-            "NumBoroughs": 1,
-            "AreaSqKm": 101.9,
-            "PopulationMillion": 5.575,
-            "DensityPersonSqKm": 54710,
-            "DirectStyleURL": "ckmdvikhj16k118rv36unif4h",
-            "NodeStyleURL": "ckmdvr9px0yne17qw1abv6rqx",
+            "AreaSqKm": 101.35,
+            "PopulationMillion": 1.66,
+            "DensityPersonSqKm": 16420,
+            "NumBoroughs": 15,
+            "NumTransitSystems": 2,
+            "YearOfStats": 2015,
+            "SourceGTFS": "https://developer.tmb.cat/data",
+            "DateUpdatedGTFS": 2021,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 4067,
+                    "NumLines": 277,
+                    "AvgDisStops": 277
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 155,
+                    "NumLines": 10,
+                    "AvgDisStops": 2669
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+            "DirectStyleURL": "ckqtvgc0m18j817mdhbybg80n",
+            "NodeStyleURL": "ckqtvga970j6v17o1nvbue3yz",
             "DirectLayers": [
-                "barcelona_D_CD",
-                "barcelona_D_CL",
-                "barcelona_D_EV"
+                [
+                    "barcelona-bus_CD",
+                    "barcelona-metro_CD"
+                ],
+                [
+                    "barcelona-bus_CL",
+                    "barcelona-metro_CL"
+                ]
             ],
             "NodeLayers": [
                 "barcelona_N_CD",
-                "barcelona_N_CL",
-                "barcelona_N_EV"
+                "barcelona_N_CL"
             ],
             "Coords": [
                 2.13,
@@ -82,19 +196,61 @@
         },
         "Budapest": {
             "name": "Budapest",
-            "NumTransportSystem": 2,
-            "NumBusStops": 3333333,
-            "NumRailStations": 66,
-            "NumMetroStations": 222,
-            "NumBoroughs": 15,
             "AreaSqKm": 525.2,
             "PopulationMillion": 1.75,
             "DensityPersonSqKm": 3388,
-            "DirectStyleURL": "ckmdvy9vn0yud17qwen6l9jj8",
-            "NodeStyleURL": "ckmdw5kz7171117pddh6zl0bj",
+            "NumBoroughs": 33,
+            "NumTransitSystems": 4,
+            "YearOfStats": 2014,
+            "SourceGTFS": "https://data.europa.eu/it/news/centre-budapest-transport-and-open-mobility-data",
+            "DateUpdatedGTFS": 2021,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 10745,
+                    "NumLines": 298,
+                    "AvgDisStops": 449
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 170,
+                    "NumLines": 109,
+                    "AvgDisStops": 1056
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 73,
+                    "NumLines": 5,
+                    "AvgDisStops": 1121
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 851,
+                    "NumLines": 37,
+                    "AvgDisStops": 417
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+            "DirectStyleURL": "ckqttwkz60fv718pxigcal4id",
+            "NodeStyleURL": "ckqr2e1kd3egl17moxoz5t0r6",
             "DirectLayers": [
-                "budapest_D_CD",
-                "budapest_D_CL"
+                [
+                    "budapest-bus_CD",
+                    "budapest-rail_CD",
+                    "budapest-metro_CD",
+                    "budapest-lightrail_CD"
+                ],
+                [
+                    "budapest-bus_CL",
+                    "budapest-rail_CL",
+                    "budapest-metro_CL",
+                    "budapest-lightrail_CL"
+                ]
             ],
             "NodeLayers": [
                 "budapest_N_CD",
@@ -107,27 +263,61 @@
             "Zoom": 10
         },
         "Quebec": {
-            "name": "Quebec",
-            "NumTransportSystem": 4,
-            "NumBusStops": 777777,
-            "NumRailStations": 0,
-            "NumMetroStations": 0,
-            "NumBoroughs": 10,
-            "AreaSqKm": 234.5,
-            "PopulationMillion": 0.57,
-            "DensityPersonSqKm": 1648,
-            "DirectStyleURL": "ckqr0ljp50tnz17k8s2tm4rsh",
+            "name": "Québec",
+            "AreaSqKm": 453.38,
+            "PopulationMillion": 0.53,
+            "DensityPersonSqKm": 1173,
+            "NumBoroughs": 6,
+            "NumTransitSystems": 1,
+            "YearOfStats": 2016,
+            "SourceGTFS": "https://www.rtcquebec.ca/donnees-ouvertes",
+            "DateUpdatedGTFS": 2021,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 17368,
+                    "NumLines": 318,
+                    "AvgDisStops": 338
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+            "DirectStyleURL": "ckv8617pd0n9g14rxpi45ts4u",
             "NodeStyleURL": "ckpwzbcwp51pt17njpumzg0hq",
             "DirectLayers": [
-                "quebec_D_CD",
-                "quebec_D_CL"
+                [
+                    "quebec-bus_CD"
+                ],
+                [
+                    "quebec-bus_CL"
+                ]
             ],
-            "FrequencyQueryDirect":[[54,21186,3268,2268,1585],[14856,1658,123,789,45]],
             "NodeLayers": [
                 "quebec_N_CD",
                 "quebec_N_CL"
             ],
-            "FrequencyQueryNode": [[54,21186,3268,2268,1585],[14856,1658,123,789,45]],
             "Coords": [
                 -71.26,
                 46.78

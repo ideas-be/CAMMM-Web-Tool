@@ -1,5 +1,3 @@
-<!-- THIS IS THE TEST INDEX HTML TO TRY AND FIX THE UI -->
-
 <!DOCTYPE html>
 
 <html>
@@ -23,30 +21,9 @@
 <body>
 
 	<!-- START OF WEB ATLAS -->
-
-	<!-- START OF IDEAS-BE BANNER -->
-	<div style="text-align: center;">
-
-		<img src="Sources/Images/Ideas_be_banner.jpg" alt="IDEAS-BE Banner" style="width: 1232px; height: 214px;"></img>
-
-	</div>
-	<div>
-		<div style="width: 1232px; height: 50px;">
-			<a href=""
-				style="color: #d81b60; padding-top: 20px; padding-bottom: 20px; font-weight: bold; padding-left: 300px;">←Back</a>
-		</div>
-	</div>
-	<div style="text-align: center;">
-		<img src="Sources/Images/cammm_banner.jpg" alt="CAMMM Banner" style="width: 1232px; height: 302px;"></img>
-	</div>
-
-
-	<!-- END OF IDEAS-BE BANNER -->
-
 	<div class="atlas-title">
 		<p>
-			CAMMM Atlas Web Application
-		<p style="font-size: 10px; color: #d81b60;"> (prototype)</p>
+			CAMMM Web Atlas Prototype
 		</p>
 		<span style="font-size: 1em; color: #d81b60;">
 			<i class="fas fa-info-circle" onclick="show_popup(1);"></i>
@@ -71,9 +48,10 @@
 		</div>
 	</div>
 
-	<!-- <div>
+
+	<div>
 		<a href="uiTesting.html">UI Testing HTML</a>
-	</div> -->
+	</div>
 
 
 	<!-- START OF INFO AREA -->
@@ -275,201 +253,162 @@
 
 	<!-- END OF INFO AREA -->
 
-	<!-- START OF WEB ATLAS UI TABLE -->
 
-	<table style="width:100%;">
-		<tbody style="margin: 0;">
-			<tr>
-				<!-- THIS ROW IS WHERE THE DROPDOWN AREA GOES -->
-				<td style="width:50%">
-					<!-- THIS CELL IS WHERE THE LEFT DROPDOWN GOES -->
-					<!-- 	::before -->
-					<!-- START OF LEFT DROPDOWN -->
-					<div class="dropDown1">
+	<!-- START OF MAP MENU AREA -->
+	<div class="map-menu-area group">
+		<!-- 	::before -->
+		<!-- START OF LEFT MENU -->
+		<div class="dropDown1">
 
-						<!-- START OF CITY 1 LIST -->
-						<div class="atlas-city1">
-							<select id="cityList1" onchange="getSelectedCity(1);">
-							</select>
-							<button id="city1Reset" onclick="resetCity(1);">Reset</button>
-							<span style="font-size: 1em; color: #d81b60;">
-								<i class="fas fa-info-circle" onclick="show_popup(2);"></i>
-							</span>
-						</div>
-						<div class="emptyspace"></div>
-						<!-- END OF CITY 1 LIST -->
+			<!-- START OF CITY 1 LIST -->
+			<div class="atlas-city1">
+				<select id="cityList1" onchange="getSelectedCity(1);">
+				</select>
+				<button id="city1Reset" onclick="resetCity(1);">Reset</button>
+				<span style="font-size: 1em; color: #d81b60;">
+					<i class="fas fa-info-circle" onclick="show_popup(2);"></i>
+				</span>
+			</div>
+			<div class="emptyspace"></div>
+			<!-- END OF CITY 1 LIST -->
 
-					</div>
-					<!--END OF LEFT DROPDOWN -->
-				</td>
-				<td>
-					<!-- THIS CELL IS WHERE THE RIGHT DROPDOWN GOES -->
-					<!-- START OF RIGHT DROPDOWN -->
-					<div class="dropDown2">
+		</div>
+		<!--END OF LEFT MENU -->
 
-						<!-- START OF CITY 2 LIST -->
-						<div class="atlas-city2">
-							<select id="cityList2" onchange="getSelectedCity(2);">
-							</select>
-							<button id="city2Reset" onclick="resetCity(2);">Reset</button>
-							<span style="font-size: 1em; color: #d81b60;">
-								<i class="fas fa-info-circle" onclick="show_popup(2);"></i>
-							</span>
-						</div>
-						<div class="emptyspace"></div>
-						<!-- END OF CITY 2 LIST -->
-					</div>
-					<!--END OF RIGHT DROPDOWN -->
-					<!-- 	::after -->
-				</td>
+		<!-- START OF RIGHT MENU -->
+		<div class="dropDown2">
+
+			<!-- START OF CITY 2 LIST -->
+			<div class="atlas-city2">
+				<select id="cityList2" onchange="getSelectedCity(2);">
+				</select>
+				<button id="city2Reset" onclick="resetCity(2);">Reset</button>
+				<span style="font-size: 1em; color: #d81b60;">
+					<i class="fas fa-info-circle" onclick="show_popup(2);"></i>
+				</span>
+			</div>
+			<div class="emptyspace"></div>
+			<!-- END OF CITY 2 LIST -->
+
+
+		</div>
+		<!--END OF RIGHT MENU -->
+		<!-- 	::after -->
+	</div>
+	<!--END OF MAP MENU AREA -->
+
+	<!-- START OF MAP 1 MENU TABLE -->
+	<div id="filter-group1" class="filter-group">
+		<table id="map1menu">
+			<tr class="map-menu-headings">
+				<th>SELECT FORM OF ANALYSIS</th>
+				<th>SELECT QUERY</th>
+				<th>SELECT LAYER DISPLAY TYPE</th>
+				<th>SLIDER AND LEGEND</th>
 			</tr>
 			<tr>
-				<!-- THIS ROW IS WHERE THE MAP MENU AREA GOES -->
-				<td>
-					<!-- THIS CELL IS WHERE THE LEFT MAP MENU GOES -->
-					<!-- START OF MAP 1 MENU TABLE -->
-					<div id="filter-group1" class="filter-group">
-						<table id="map1menu">
-							<tr class="map-menu-headings">
-								<th>SELECT FORM OF ANALYSIS</th>
-								<th>SELECT QUERY</th>
-								<th>SELECT LAYER DISPLAY TYPE</th>
-								<th>SLIDER AND LEGEND</th>
-							</tr>
-							<tr>
-								<td class="mapCellsType1">
-									<!-- START OF DIRECT/NODE TOGGLE 1 -->
-									<div id="toggleCity1">
-									</div>
-									<!-- END OF DIRECT/NODE TOGGLE 1 -->
-								</td>
-								<td class="mapCellsType1">
-									<!-- START OF QUERY BUTTONS 1 -->
-									<form name="sampleForm" id="radioForm1">
-									</form>
-									<!-- END OF QUERY BUTTONS 1 -->
-								</td>
-								<td class="mapCellsType1">
-									<!-- START OF CATEGORY/CUMULATIVE TOGGLE 1 -->
-									<div id="toggleCategoryCumulative1">
-									</div>
-									<!-- END OF CATEGORY/CUMULATIVE TOGGLE 1 -->
-								</td>
-								<td class="mapCellsType1">
-									<!-- START OF MAP LEGEND AND SLIDER 1 -->
-									<div id="mapLegend1">
-									</div>
-									<!-- END OF MAP LEGEND AND SLIDER 1 -->
-								</td>
-								<td class="mapCellsType2">
-									<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
-										<i class="fas fa-info-circle" onclick="show_popup(3);"></i>
-									</span>
-								</td>
-							</tr>
-						</table>
+				<td class="mapCellsType1">
+					<!-- START OF DIRECT/NODE TOGGLE 1 -->
+					<div id="toggleCity1">
 					</div>
-					<!-- END OF MAP 1 MENU TABLE -->
+					<!-- END OF DIRECT/NODE TOGGLE 1 -->
 				</td>
-				<td>
-					<!-- THIS CELL IS WHERE THE RIGHT MAP MENU GOES -->
-					<!-- START OF MAP 2 MENU TABLE -->
-					<div id="filter-group2" class="filter-group">
-						<table id="map2menu">
-							<tr class="map-menu-headings">
-								<th>SELECT FORM OF ANALYSIS</th>
-								<th>SELECT QUERY</th>
-								<th>SELECT LAYER DISPLAY TYPE</th>
-								<th>SLIDER AND LEGEND</th>
-							</tr>
-							<tr>
-								<td class="mapCellsType1">
-									<!-- START OF DIRECT/NODE TOGGLE 2 -->
-									<div id="toggleCity2">
-									</div>
-									<!-- END OF DIRECT/NODE TOGGLE 2 -->
-								</td>
-								<td class="mapCellsType1">
-									<!-- START OF QUERY BUTTONS 2 -->
-									<form name="sampleForm" id="radioForm2">
-									</form>
-									<!-- END OF QUERY BUTTONS 2 -->
-								</td>
-								<td class="mapCellsType1">
-									<!-- START OF CATEGORY/CUMULATIVE TOGGLE 2 -->
-									<div id="toggleCategoryCumulative2">
-									</div>
-									<!-- END OF CATEGORY/CUMULATIVE TOGGLE 2 -->
-								</td>
-								<td class="mapCellsType1">
-									<!-- START OF MAP LEGEND AND SLIDER 2 -->
-									<div id="mapLegend2">
-									</div>
-									<!-- END OF MAP LEGEND AND SLIDER 2 -->
-								</td>
-								<td class="mapCellsType2">
-									<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
-										<i class="fas fa-info-circle" onclick="show_popup(3);"></i>
-									</span>
-								</td>
-							</tr>
-						</table>
+				<td class="mapCellsType1">
+					<!-- START OF QUERY BUTTONS 1 -->
+					<form name="sampleForm" id="radioForm1">
+					</form>
+					<!-- END OF QUERY BUTTONS 1 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF CATEGORY/CUMULATIVE TOGGLE 1 -->
+					<div id="toggleCategoryCumulative1">
 					</div>
-					<!-- END OF MAP 2 MENU TABLE -->
+					<!-- END OF CATEGORY/CUMULATIVE TOGGLE 1 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF MAP LEGEND AND SLIDER 1 -->
+					<div id="mapLegend1">
+					</div>
+					<!-- END OF MAP LEGEND AND SLIDER 1 -->
+				</td>
+				<td class="mapCellsType2">
+					<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
+						<i class="fas fa-info-circle" onclick="show_popup(3);"></i>
+					</span>
 				</td>
 			</tr>
-
-			<tr>
-				<!-- THIS ROW IS WHERE THE MAPBOX AREA GOES -->
-				<table style="width: 100%;">
-					<tbody>
-						<td style="width: 45%;">
-							<!-- THIS CELL IS WHERE THE LEFT MAPBOX GOES -->
-							<!-- START OF MAP 1 BOX-->
-							<div class="mapbox1" id="map1div">
-								<div id='map1'>
-								</div>
-							</div>
-							<!-- END OF MAP 1 BOX-->
-						</td>
-						<td style="width:40px;">
-							<!-- THIS CELL IS WHERE THE MAP 1 CONTOLS GOES -->
-							<div id='map1controls'></div>
-						</td>
-						<td style="width:40px;">
-							<!-- THIS CELL IS WHERE THE MAP 2 CONTOLS GOES -->
-							<div id='map2controls'></div>
-						</td>
-						<td style="width: 45%;">
-							<!-- THIS CELL IS WHERE THE RIGHT MAPBOX GOES -->
-							<!-- START OF MAP 2 BOX-->
-							<div class="mapbox2" id="map2div">
-								<div id='map2'>
-								</div>
-							</div>
-							<!-- END OF MAP 2 BOX -->
-						</td>
-					</tbody>
-				</table>
+		</table>
+	</div>
+	<!-- END OF MAP 1 MENU TABLE -->
+	<!-- START OF MAP 2 MENU TABLE -->
+	<div id="filter-group2" class="filter-group">
+		<table id="map2menu">
+			<tr class="map-menu-headings">
+				<th>SELECT FORM OF ANALYSIS</th>
+				<th>SELECT QUERY</th>
+				<th>SELECT LAYER DISPLAY TYPE</th>
+				<th>SLIDER AND LEGEND</th>
 			</tr>
 			<tr>
-				<!-- THIS ROW IS WHERE THE CITY METRICS TABLES GO -->
-				<table>
-					<tbody>
-						<!-- START OF CITY METRICS TABLES -->
-						<div class="emptyspace-table"></div>
-						<div id="city1table" class="oput"></div>
-						<div id="city2table" class="oput"></div>
-						<!-- END OF CITY METRICS TABLES -->
-					</tbody>
-				</table>
+				<td class="mapCellsType1">
+					<!-- START OF DIRECT/NODE TOGGLE 2 -->
+					<div id="toggleCity2">
+					</div>
+					<!-- END OF DIRECT/NODE TOGGLE 2 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF QUERY BUTTONS 2 -->
+					<form name="sampleForm" id="radioForm2">
+					</form>
+					<!-- END OF QUERY BUTTONS 2 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF CATEGORY/CUMULATIVE TOGGLE 2 -->
+					<div id="toggleCategoryCumulative2">
+					</div>
+					<!-- END OF CATEGORY/CUMULATIVE TOGGLE 2 -->
+				</td>
+				<td class="mapCellsType1">
+					<!-- START OF MAP LEGEND AND SLIDER 2 -->
+					<div id="mapLegend2">
+					</div>
+					<!-- END OF MAP LEGEND AND SLIDER 2 -->
+				</td>
+				<td class="mapCellsType2">
+					<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
+						<i class="fas fa-info-circle" onclick="show_popup(3);"></i>
+					</span>
+				</td>
 			</tr>
+		</table>
+	</div>
+	<!-- END OF MAP 2 MENU TABLE -->
 
-		</tbody>
+	<!-- START OF MAP 1 BOX-->
+	<div class="mapbox1" id="map1div">
+		<div id='map1'>
+		</div>
+		<div id='map1controls'></div>
+	</div>
+	<!-- END OF MAP 1 BOX-->
 
-	</table>
+	<!-- START OF MAP 2 BOX-->
 
-	<!-- END OF WEB ATLAS UI TABLE -->
+	<div class="mapbox2" id="map2div">
+		<div id='map2'>
+		</div>
+		<div id='map2controls'></div>
+	</div>
+	<!-- END OF MAP 2 BOX -->
+
+	<!-- START OF CITY METRICS TABLES -->
+
+	<div class="emptyspace-table"></div>
+	<div id="city1table" class="oput"></div>
+	<div id="city2table" class="oput"></div>
+
+
+	<!-- END OF CITY METRICS TABLES -->
 
 	<!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
 	<script>
@@ -477,7 +416,7 @@
 		var obj;
 		var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
 		function readMetrics() {
-			a.open('GET', "CityMetrics.json", true);  // This is reading the JSON FILE 
+			a.open('GET', "CityMetrics3.json", true);  // This is reading the JSON FILE 
 			console.log("Reading the City Metrics file to load JSON");
 
 			a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
