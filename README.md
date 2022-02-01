@@ -240,9 +240,77 @@ The overarching goal of this CURC research project is to take a leadership role 
 
 ## Section 2 - Processing Tool
 
+  The CAMMM Atlas web application makes use of a Processing Tool to manage the data that goes into the creation and maintenance of the city maps. This python-based tool is to be used by the development team to process large amounts of city data into relevant file formats that could be read and displayed onto the atlas web application.<br/>
+  <br/>The processing tool must be used when a new city needs to be added to the atlas, using the GTFS data for the respective city.
+
   <div id="use-proc-tool">
   
-  ### Use of the Processing Tool
+  ### Uses of the Processing Tool
+
+  the uses of the processing tool are ....list them
+
+  <div id="gtfs-processing"> 
+  
+  #### Process GTFS Files
+
+  what are gtfs files
+  what data is used in the project
+  how is this data processed
+  
+  </div>
+
+  <div id="xls-to-json"> 
+  
+  #### Convert Excel to JSON
+
+  *What does the CAMMM excel contain?*
+
+| Item              | Sub Item     | Row | Description |
+| ----------------- | ------------ | --- | ----------- |
+| City              |              | A   |             |
+| name              |              | B   |             |
+| DirectStyleURL    |              | C   |             |
+| NodeStyleURL      |              | D   |             |
+| Coords            | Lat          | E   |             |
+|                   | Lon          | F   |             |
+| Zoom              |              | G   |             |
+| NumTransitSystems |              | H   |             |
+| NodeLayers        |              | I   |             |
+| Bus               | DirectLayers | J   |             |
+|                   | NumStops     | K   |             |
+|                   | NumLines     | L   |             |
+|                   | AvgDisStops  | M   |             |
+| Train             | DirectLayers | N   |             |
+|                   | NumStops     | O   |             |
+|                   | NumLines     | P   |             |
+|                   | AvgDisStops  | Q   |             |
+| Metro             | DirectLayers | R   |             |
+|                   | NumStops     | S   |             |
+|                   | NumLines     | T   |             |
+|                   | AvgDisStops  | U   |             |
+| Tram              | DirectLayers | V   |             |
+|                   | NumStops     | W   |             |
+|                   | NumLines     | X   |             |
+|                   | AvgDisStops  | Y   |             |
+| Others            | DirectLayers | Z   |             |
+|                   | NumStops     | AA  |             |
+|                   | NumLines     | AB  |             |
+|                   | AvgDisStops  | AC  |             |
+| NumBoroughs       |              | AD  |             |
+| AreaSqKm          |              | AE  |             |
+| PopulationMillion |              | AF  |             |
+| DensityPersonSqKm |              | AG  |             |
+| YearOfStats       |              | AH  |             |
+| SourceGTFS        |              | AI  |             |
+| DateUpdatedGTFS   |              | AJ  |             |
+
+  why this format
+
+
+  how is the conversion done
+
+  </div>
+  
   </div>
   
   <div id="data-collection">
