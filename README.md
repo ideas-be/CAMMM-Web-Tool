@@ -1,10 +1,14 @@
-# Present for next meeting:
-- Deploy prototype for main website with Ideasbe Banner 
-- Pre-Mapbox Grid Analysis mapping
+# Agenda for Brainstorm meeting:
+- Show atlas button on IDEAS-BE website
+- Finalize style of grid options
+- Outline inforgraphics leading to atlas
+
+*if there's time*
 - Mock options for cluster (node and supernode) representation
+
+# Present for next meeting:
+- Pre-Mapbox Grid Analysis mapping - pending brainstorm meeting
 - XLS to JSON processing tool (GUI + python)
-- Addition of GTFS source links & year of stats
-- Go through About section of GitDocs
 
 # Currently working on: 
 Keep working on Documentation - Styling Guide for map layers and Troubleshooting section
@@ -264,7 +268,7 @@ The overarching goal of this CURC research project is to take a leadership role 
   #### Convert Excel to JSON
 
   *What does the CAMMM excel contain?*
-
+<details open="close">Click to see contents
 | Item              | Sub Item     | Row | Description |
 | ----------------- | ------------ | --- | ----------- |
 | City              |              | A   |             |
@@ -303,6 +307,7 @@ The overarching goal of this CURC research project is to take a leadership role 
 | YearOfStats       |              | AH  |             |
 | SourceGTFS        |              | AI  |             |
 | DateUpdatedGTFS   |              | AJ  |             |
+</details>
 
   why this format
 

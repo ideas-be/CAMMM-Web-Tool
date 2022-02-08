@@ -14,12 +14,23 @@ from ConverterXls2json import WriteToFile
 
 
 def MainWindow(root)-> None:
-    PathInput="Firdous"
-    PathExitt=""
+    global PathInput
+    PathInput=""
+    global PathExitt
+    PathExitt="" 
     def OpenFileDialogue(EntryElement):
-        PathInput=PathInput+". Hello. "
+        # PathInput=PathInput+". Hello. "
         print(EntryElement)
-        print("Test:",PathInput)
+        # print("Test:",PathInput)
+
+        name = askopenfilename(filetypes =(("Excel File", "*.xlsx"),("All Files","*.*")),
+                                    title = "Choose a file.")
+        print("Path to File!!!!:",name)
+        PathInput=name
+        return (PathInput)
+    def RunFunc():
+        print(PathInput)
+
 
     root.title("Excel to JSON Converter - CAMMM Atlas Web Application")    # This instruction modifies the title of the window
     FrameMaster =ttk.Frame(root)
@@ -34,9 +45,19 @@ def MainWindow(root)-> None:
     EntryElement.delete(0, END)                     # This line cleans the entry element
     EntryElement.insert(0,"")                       # This line cleans the entry element
 
-    button=ttk.Button(InputFrame,text="Open Excel")
+    button=ttk.Button(InputFrame,text="Select Excel")
     button.config(command=partial(OpenFileDialogue,EntryElement))
     button.place(x=400, y=10, anchor=W)
+
+    RUNFrame=ttk.LabelFrame(FrameMaster,height = 50, width =500,text ="RUN")
+    RUNFrame.place(x=50 , y=250, anchor=W)
+
+    button=ttk.Button(RUNFrame,text="RUN")
+    button.config(command=RunFunc)
+    button.place(x=200, y=10, anchor=W)
+
+
+
 
 
     root.mainloop()         # This section of code maintains the window open
