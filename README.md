@@ -268,7 +268,10 @@ The overarching goal of this CURC research project is to take a leadership role 
   #### Convert Excel to JSON
 
   *What does the CAMMM excel contain?*
-<details open="close">Click to see contents
+<details open="close">
+<summary>Click to see contents</summary>
+
+
 | Item              | Sub Item     | Row | Description |
 | ----------------- | ------------ | --- | ----------- |
 | City              |              | A   |             |
@@ -307,6 +310,8 @@ The overarching goal of this CURC research project is to take a leadership role 
 | YearOfStats       |              | AH  |             |
 | SourceGTFS        |              | AI  |             |
 | DateUpdatedGTFS   |              | AJ  |             |
+
+
 </details>
 
   why this format
