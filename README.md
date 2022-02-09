@@ -314,10 +314,15 @@ The overarching goal of this CURC research project is to take a leadership role 
 
 </details>
 
-  why this format
+<br/>This excel file should contain general descriptors of each city and their local transit systems. For example, 'YearOfStats' ensures that we attribute which year these city statistics were updated by their respective sources. This excel is a live document that could expand with data entries that are relevant to the city's transportation systems and should be updated on a regular basis. Remember, any modifications of this excel will not affect the atlas's functionality **UNLESS** it is converted into a <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">.JSON (JavaScript Object Notation) file</a>, which is required for the web implementation of the atlas. Hence, changes on the excel will reflect on the .JSON file **ONLY** through the use of the Processing Tool.<br/>
+<br/>
+
+  *Why JSON?*
+<br/>
+  <br/>The atlas integrates .JSON file for the city data because we are using JavaScript to code all functionality of the atlas UI, and <a href="https://www.w3schools.com/js/js_json.asp">Javascript works well with JSON</a>. We recommend the creation of the .JSON file with the Processing Tool. This is because no modifications should be done directly on the .JSON file as they will **NOT** be reflected back on the main city excel. Therefore, all city data are recommended to be maintained within the excel and then converted to .JSON solely for web integration purposes.<br/>  
 
 
-  how is the conversion done
+  *How is the conversion done?*
 
   </div>
   
