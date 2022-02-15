@@ -11,8 +11,9 @@
 - XLS to JSON processing tool (GUI + python)
 
 # Currently working on: 
-Keep working on Documentation - Styling Guide for map layers and Troubleshooting section
-Complete excel file with data for each city(area, pop, etc.)
+Keep working on Documentation - Section 2 Processing Tool
+Fix indentation in markdown numbered list
+Work on multi-browser solution for map comparison (see Testing HTML) https://www.w3schools.com/js/js_window.asp
 
 Add this note to the docs: Direct is now Individual and Node is now Cluster.
 
