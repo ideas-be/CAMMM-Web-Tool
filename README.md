@@ -329,23 +329,23 @@ The overarching goal of this CURC research project is to take a leadership role 
 <br/>
 <br/>The conversion from Excel to JSON is done through the following steps:
 1. Read the data from main city Excel file:<br/> 
-  \t1.1. Get the path of the Excel file<br/> 
-  \t1.2. Pass the path value to the ReadFile function<br/> 
-  \t\t1.2.1. Populate a dictionary with column names and values of the Excel to the corresponding JSON items<br/> 
-   1.2.2. Declare an exit dictionary to be returned to the ReadFile function<br/> 
-   1.2.3. Open the Excel file using the path variable<br/> 
-   1.2.4. Read the sheets in the Excel file<br/> 
-   1.2.5. Obtain the number of rows<br/> 
-   1.2.6. Run a loop through each row:<br/> 
-    1.2.6.1. Prepare the data to be stored in the JSON format<br/> 
-    1.2.6.2. Store the data in the exit dictionary variable (see 1.2.3.)<br/> 
-   1.2.7. Return the exit dictionary<br/> 
+  1.1. Get the path of the Excel file<br/> 
+  1.2. Pass the path value to the ReadFile function<br/> 
+  1.2.1. Populate a dictionary with column names and values of the Excel to the corresponding JSON items<br/> 
+    1.2.2. Declare an exit dictionary to be returned to the ReadFile function<br/> 
+    1.2.3. Open the Excel file using the path variable<br/> 
+    1.2.4. Read the sheets in the Excel file<br/> 
+    1.2.5. Obtain the number of rows<br/> 
+    1.2.6. Run a loop through each row:<br/> 
+      1.2.6.1. Prepare the data to be stored in the JSON format<br/> 
+      1.2.6.2. Store the data in the exit dictionary variable (see 1.2.3.)<br/> 
+    1.2.7. Return the exit dictionary<br/> 
 2. Write the data to JSON file:<br/> 
-  2.1. Get the Output path for the *'CityMetrics.json'*<br/> 
-  2.2. Pass the exit dictionary returned from the ReadFile function, and the JSON path<br/> 
-    2.2.1. Create *'CityMetrics.json'* file<br/> 
-    2.2.2. Encode and write the data from exit dictionary to JSON file<br/> 
-    2.2.3. Close the JSON file<br/> <br/> 
+   2.1. Get the Output path for the *'CityMetrics.json'*<br/> 
+   2.2. Pass the exit dictionary returned from the ReadFile function, and the JSON path<br/> 
+      2.2.1. Create *'CityMetrics.json'* file<br/> 
+      2.2.2. Encode and write the data from exit dictionary to JSON file<br/> 
+      2.2.3. Close the JSON file<br/> <br/> 
 
   </div>
   
