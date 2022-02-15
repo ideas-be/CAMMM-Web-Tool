@@ -316,6 +316,7 @@ The overarching goal of this CURC research project is to take a leadership role 
 
 </details>
 
+<br/>
 <br/>This excel file should contain general descriptors of each city and their local transit systems. For example, 'YearOfStats' ensures that we attribute which year these city statistics were updated by their respective sources. This excel is a live document that could expand with data entries that are relevant to the city's transportation systems and should be updated on a regular basis. Remember, any modifications of this excel will not affect the atlas's functionality **UNLESS** it is converted into a <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">JSON (JavaScript Object Notation) file</a>, which is required for the web implementation of the atlas. Hence, changes on the excel will reflect on the .JSON file **ONLY** through the use of the Processing Tool.<br/>
 <br/>
 
@@ -327,24 +328,24 @@ The overarching goal of this CURC research project is to take a leadership role 
   *How is the conversion done?*
 <br/>
 <br/>The conversion from Excel to JSON is done through the following steps:
-1. Read the data from main city Excel file:
-  1.1. Get the path of the Excel file
-  1.2. Pass the path value to the ReadFile function
-   1.2.1. Populate a dictionary with column names and values of the Excel to the corresponding JSON items
-   1.2.2. Declare an exit dictionary to be returned to the ReadFile function
-   1.2.3. Open the Excel file using the path variable
-   1.2.4. Read the sheets in the Excel file
-   1.2.5. Obtain the number of rows
-   1.2.6. Run a loop through each row:
-    1.2.6.1. Prepare the data to be stored in the JSON format
-    1.2.6.2. Store the data in the exit dictionary variable (see 1.2.3.)
-   1.2.7. Return the exit dictionary
-2. Write the data to JSON file:
-  2.1. Get the Output path for the *'CityMetrics.json'*
-  2.2. Pass the exit dictionary returned from the ReadFile function, and the JSON path
-    2.2.1. Create *'CityMetrics.json'* file
-    2.2.2. Encode and write the data from exit dictionary to JSON file
-    2.2.3. Close the JSON file
+1. Read the data from main city Excel file:<br/> 
+  1.1. Get the path of the Excel file<br/> 
+  1.2. Pass the path value to the ReadFile function<br/> 
+   1.2.1. Populate a dictionary with column names and values of the Excel to the corresponding JSON items<br/> 
+   1.2.2. Declare an exit dictionary to be returned to the ReadFile function<br/> 
+   1.2.3. Open the Excel file using the path variable<br/> 
+   1.2.4. Read the sheets in the Excel file<br/> 
+   1.2.5. Obtain the number of rows<br/> 
+   1.2.6. Run a loop through each row:<br/> 
+    1.2.6.1. Prepare the data to be stored in the JSON format<br/> 
+    1.2.6.2. Store the data in the exit dictionary variable (see 1.2.3.)<br/> 
+   1.2.7. Return the exit dictionary<br/> 
+2. Write the data to JSON file:<br/> 
+  2.1. Get the Output path for the *'CityMetrics.json'*<br/> 
+  2.2. Pass the exit dictionary returned from the ReadFile function, and the JSON path<br/> 
+    2.2.1. Create *'CityMetrics.json'* file<br/> 
+    2.2.2. Encode and write the data from exit dictionary to JSON file<br/> 
+    2.2.3. Close the JSON file<br/> <br/> 
 
   </div>
   
