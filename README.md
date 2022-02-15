@@ -329,9 +329,9 @@ The overarching goal of this CURC research project is to take a leadership role 
 <br/>
 <br/>The conversion from Excel to JSON is done through the following steps:
 1. Read the data from main city Excel file:<br/> 
-  1.1. Get the path of the Excel file<br/> 
-  1.2. Pass the path value to the ReadFile function<br/> 
-   1.2.1. Populate a dictionary with column names and values of the Excel to the corresponding JSON items<br/> 
+  \t1.1. Get the path of the Excel file<br/> 
+  \t1.2. Pass the path value to the ReadFile function<br/> 
+  \t\t1.2.1. Populate a dictionary with column names and values of the Excel to the corresponding JSON items<br/> 
    1.2.2. Declare an exit dictionary to be returned to the ReadFile function<br/> 
    1.2.3. Open the Excel file using the path variable<br/> 
    1.2.4. Read the sheets in the Excel file<br/> 
