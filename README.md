@@ -271,45 +271,47 @@ The overarching goal of this CURC research project is to take a leadership role 
 <details open="close">
 <summary>Click to see contents</summary>
 
+  
+  
 
-| Item              | Sub Item     | Row | Description |
-| ----------------- | ------------ | --- | ----------- |
-| City              |              | A   |             |
-| name              |              | B   |             |
-| DirectStyleURL    |              | C   |             |
-| NodeStyleURL      |              | D   |             |
-| Coords            | Lat          | E   |             |
-|                   | Lon          | F   |             |
-| Zoom              |              | G   |             |
-| NumTransitSystems |              | H   |             |
-| NodeLayers        |              | I   |             |
-| Bus               | DirectLayers | J   |             |
-|                   | NumStops     | K   |             |
-|                   | NumLines     | L   |             |
-|                   | AvgDisStops  | M   |             |
-| Train             | DirectLayers | N   |             |
-|                   | NumStops     | O   |             |
-|                   | NumLines     | P   |             |
-|                   | AvgDisStops  | Q   |             |
-| Metro             | DirectLayers | R   |             |
-|                   | NumStops     | S   |             |
-|                   | NumLines     | T   |             |
-|                   | AvgDisStops  | U   |             |
-| Tram              | DirectLayers | V   |             |
-|                   | NumStops     | W   |             |
-|                   | NumLines     | X   |             |
-|                   | AvgDisStops  | Y   |             |
-| Others            | DirectLayers | Z   |             |
-|                   | NumStops     | AA  |             |
-|                   | NumLines     | AB  |             |
-|                   | AvgDisStops  | AC  |             |
-| NumBoroughs       |              | AD  |             |
-| AreaSqKm          |              | AE  |             |
-| PopulationMillion |              | AF  |             |
-| DensityPersonSqKm |              | AG  |             |
-| YearOfStats       |              | AH  |             |
-| SourceGTFS        |              | AI  |             |
-| DateUpdatedGTFS   |              | AJ  |             |
+| Item              | Sub Item     | Row | Description                                           |
+| ----------------- | ------------ | --- | ----------------------------------------------------- |
+| City              |              | A   | English name of the city                              |
+| name              |              | B   | Local name of the city                                |
+| DirectStyleURL    |              | C   | Mapbox URL of the Individual analysis map             |
+| NodeStyleURL      |              | D   | Mapbox URL of the Clustere analysis map               |
+| Coords            | Lat          | E   | The latitude values of the center of the city         |
+|                   | Lon          | F   | The longitud values of the center of the city         |
+| Zoom              |              | G   | The initial zoom value of the city map                |
+| NumTransitSystems |              | H   | The total number of transit systems in the city       |
+| NodeLayers        |              | I   | The list of layers for Cluster analysis               |
+| Bus               | DirectLayers | J   | The list of Bus layers for Individual analysis        |
+|                   | NumStops     | K   | The number of Bus stops                               |
+|                   | NumLines     | L   | The number of Bus lines                               |
+|                   | AvgDisStops  | M   | The average distance between Bus stops                |
+| Train             | DirectLayers | N   | The list of Train layers for Individual analysis      |
+|                   | NumStops     | O   | The number of Train stations                          |
+|                   | NumLines     | P   | The number of Train lines                             |
+|                   | AvgDisStops  | Q   | The average distance between Train stops              |
+| Metro             | DirectLayers | R   | The list of Metro layers for Individual analysis      |
+|                   | NumStops     | S   | The number of Metro stations                          |
+|                   | NumLines     | T   | The number of Metro lines                             |
+|                   | AvgDisStops  | U   | The average distance between Metro stops              |
+| Tram              | DirectLayers | V   | The list of Tram layers for Individual analysis       |
+|                   | NumStops     | W   | The number of Tram stops                              |
+|                   | NumLines     | X   | The number of Tram lines                              |
+|                   | AvgDisStops  | Y   | The average distance between Tram stops               |
+| Others            | DirectLayers | Z   | The list of Other layers for Individual analysis      |
+|                   | NumStops     | AA  | The number of Other stops                             |
+|                   | NumLines     | AB  | The number of Other lines                             |
+|                   | AvgDisStops  | AC  | The average distance between Other stops              |
+| NumBoroughs       |              | AD  | Number of Boroughs in the city                        |
+| AreaSqKm          |              | AE  | Area of the city in square kilometers                 |
+| PopulationMillion |              | AF  | Total population of the city in millions              |
+| DensityPersonSqKm |              | AG  | Density of people in the city per square kilometer    |
+| YearOfStats       |              | AH  | Most recent year of statistics available for the city |
+| SourceGTFS        |              | AI  | Source URL of the city's GTFS file                    |
+| DateUpdatedGTFS   |              | AJ  | Date when the GTFS file was collected                 |
 
 
 </details>
@@ -323,6 +325,26 @@ The overarching goal of this CURC research project is to take a leadership role 
 
 
   *How is the conversion done?*
+<br/>
+<br/>The conversion from Excel to JSON is done through the following steps:
+1. Read the data from main city Excel file:
+  1.1. Get the path of the Excel file
+  1.2. Pass the path value to the ReadFile function
+   1.2.1. Populate a dictionary with column names and values of the Excel to the corresponding JSON items
+   1.2.2. Declare an exit dictionary to be returned to the ReadFile function
+   1.2.3. Open the Excel file using the path variable
+   1.2.4. Read the sheets in the Excel file
+   1.2.5. Obtain the number of rows
+   1.2.6. Run a loop through each row:
+    1.2.6.1. Prepare the data to be stored in the JSON format
+    1.2.6.2. Store the data in the exit dictionary variable (see 1.2.3.)
+   1.2.7. Return the exit dictionary
+2. Write the data to JSON file:
+  2.1. Get the Output path for the *'CityMetrics.json'*
+  2.2. Pass the exit dictionary returned from the ReadFile function, and the JSON path
+    2.2.1. Create *'CityMetrics.json'* file
+    2.2.2. Encode and write the data from exit dictionary to JSON file
+    2.2.3. Close the JSON file
 
   </div>
   
