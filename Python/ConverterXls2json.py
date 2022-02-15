@@ -90,9 +90,7 @@ def ReadFile(path:str) -> dict:
         "YearOfStats":"AH",
         "SourceGTFS":"AI",
         "DateUpdatedGTFS":"AJ"
-	
-
-    }
+	}
 
     ExitDict={"City": {}}
 
