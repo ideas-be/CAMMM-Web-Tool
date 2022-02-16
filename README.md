@@ -259,6 +259,7 @@ The overarching goal of this CURC research project is to take a leadership role 
   #### Process GTFS Files
 
 *What are GTFS files?*
+
 <br/>The <a href="https://gtfs.org/">General Transit Feed Specification (GTFS)</a> is a data specification that allows public transit agencies to publish their transit data in a format that can be consumed by a wide variety of software applications. 
 GTFS is split into a static component that contains schedule, fare, and geographic transit information and a real-time component that contains arrival predictions, vehicle positions and service advisories. For further information, please consult <a href="https://developers.google.com/transit/gtfs">Google Developer documentation</a> on GTFS.
 <br/>
