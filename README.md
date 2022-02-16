@@ -252,17 +252,45 @@ The overarching goal of this CURC research project is to take a leadership role 
   
   ### Uses of the Processing Tool
 
-  the uses of the processing tool are ....list them
+  The main two uses of the Processing Tool are, (1) to process the data in each city's GTFS files for MapBox and (2) to convert the metrics of each city from the main Excel file to the JSON format for the web application. The following subsections take a closer look at each of these uses.
 
   <div id="gtfs-processing"> 
   
   #### Process GTFS Files
 
-  what are gtfs files
-  what data is used in the project
-  how is this data processed
-  
-  </div>
+*What are GTFS files?*
+<br/>The <a href="https://gtfs.org/">General Transit Feed Specification (GTFS)</a> is a data specification that allows public transit agencies to publish their transit data in a format that can be consumed by a wide variety of software applications. 
+GTFS is split into a static component that contains schedule, fare, and geographic transit information and a real-time component that contains arrival predictions, vehicle positions and service advisories. For further information, please consult <a href="https://developers.google.com/transit/gtfs">Google Developer documentation</a> on GTFS.
+<br/>
+
+*What data from these files is used in our project?*
+<br/>The list of files from GTFS needed to run the Processing Tool are:
+Agency, Routes, Trips, Stop_times, Stops, and Shapes. 
+These files are <a href="https://developers.google.com/transit/gtfs/reference#fare_attributestxt">mandatory</a> components that make up a GTFS specification. The information necessary to construct the transit system networks is distributed these listed files.
+<br/>
+
+*How is this data processed?*
+
+<br/>The data is done in the following steps:
+
+1. De-compress the GTFS files
+2. Read information from these files: Agency, Routes, Trips, Stop_times, Stops, and Shapes.
+
+  ![Processing GTFS](screenshots/githubDocs/processingGTFS.png)
+
+3. The geographic data is transformed from WGS84 to local UTM coordinates.
+4. Store the read data in their corresponding UTM zone in a Network Object.
+5. Perform the analysis (queries)
+    <br/>5.1. Perform the network analysis calculations at an Individual network
+    <br/>5.2. Cluster the objects into Nodes and Supernodes.
+    <br/>5.3. Perfom the network analysis calculation with the Nodes and Supernodes.
+    <br/>5.4. Obtain the average distances between stops per transit system.
+    <br/>5.5. Perfom the rotated grid density analysis on the transit network.
+6. Transform the data from local UTM zone back to WGS84.
+7. Store the data in geojson file(s) for MapBox.
+
+<br/>
+</div>
 
   <div id="xls-to-json"> 
   
