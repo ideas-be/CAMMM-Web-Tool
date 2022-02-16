@@ -11,9 +11,9 @@
 - XLS to JSON processing tool (GUI + python)
 
 # Currently working on: 
-Keep working on Documentation - Section 2 Processing Tool
+Keep working on Documentation - Section 2 Processing Tool (second half)
 Fix indentation in markdown numbered list
-Work on multi-browser solution for map comparison (see Testing HTML) https://www.w3schools.com/js/js_window.asp
+Finish standalone mode for multi-browser solution (see indexStandalone HTML) https://www.w3schools.com/js/js_window.asp
 
 Add this note to the docs: Direct is now Individual and Node is now Cluster.
 
