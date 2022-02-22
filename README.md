@@ -1,4 +1,5 @@
 # Agenda for Brainstorm meeting:
+Miro Board: https://miro.com/app/board/o9J_kgmIpbw=/
 - Show atlas button on IDEAS-BE website
 - Finalize style of grid options
 - Outline inforgraphics leading to atlas
@@ -11,7 +12,8 @@
 - XLS to JSON processing tool (GUI + python)
 
 # Currently working on: 
-Keep working on Documentation - Section 2 Processing Tool (second half)
+Keep working on Documentation - Section 2 Processing Tool - Work on flowcharts for each Operational and Analysis function 
+Flowchart cheatsheet - https://www.breezetree.com/articles/flow-chart-symbols  https://www.conceptdraw.com/examples/flowchart-symbols-cheat-sheet
 Fix indentation in markdown numbered list
 Finish standalone mode for multi-browser solution (see indexStandalone HTML) https://www.w3schools.com/js/js_window.asp
 
@@ -381,24 +383,27 @@ These files are <a href="https://developers.google.com/transit/gtfs/reference#fa
   
   </div>
   
-  <div id="data-collection">
-  
-  ### Data Collection
-  </div>
-  
   <div id="op-functions">
   
   ### Operational Functions
+These functions allow for the processing tool to prepare the data that will be used for different stages of the atlas analyses. The main list of operational functions are: 
+Function 1 : Prepares the data of several cities to be held in a single file.
+Function 2 : Converting Excel to JSON file.
+
   </div>
   
   <div id="key-functions">
   
   ### Analysis Functions
+
+
   </div>
   
   <div id="processed-data-mapbox">
   
   ### Processed Data for Mapbox & City Metrics
+
+
   </div>
 
 </div>
