@@ -1,4 +1,4 @@
-var City;
+var CityVar;
 var myJson;
 var shortURL = 'mapbox://styles/carmela-cucuzzella/';
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
@@ -18,19 +18,20 @@ function newJson(obj) {
     window.setTimeout(dropdownCities, 500);
 }
 
-function getCity(city) {
-    City = city;
-    console.log("This is City");
-    console.log(City);
-}
+// function getCity(city) {
+//     CityVar = city;
+//     console.log("This is City");
+//     console.log(CityVar);
+// }
 
 function getSelectedCity() {
     var selectedCity = document.getElementById("cityList").value;
 
     if (selectedCity != "Select City") {
 
-        let city = new City(selectedCity, myJson["City"][selectedCity], 5);
-        getCity(city);
+        CityVar = new City(selectedCity, myJson["City"][selectedCity], 5);
+        console.log(CityVar);
+        // getCity(city);
 
         var mapdiv = document.getElementById("mapdiv");
 
@@ -47,10 +48,11 @@ function getSelectedCity() {
         }
 
         var popUp3div = document.getElementsByClassName("popUp3");
-        var popUp3display = popUp3div[num - 1].style.display;
+        console.log("Pop Up 3 Div", popUp3div);
+        var popUp3display = popUp3div[0].style.display;
 
         if (popUp3display == 'none') {
-            popUp3div[num - 1].style.display = 'block';
+            popUp3div[0].style.display = 'block';
         }
     }
 }
@@ -125,7 +127,7 @@ class City {
         console.log("Injecting toggle in HTML");
         var toggleHTML = "<p class=\"toggleText\">Individual" +
             "<label class=\"switch\" >" +
-            "<input type=\"checkbox\" id=\"toggBtn\" onchange=\"City.getDirectNodeToggle();\">" +
+            "<input type=\"checkbox\" id=\"toggBtn\" onchange=\"CityVar.getDirectNodeToggle();\">" +
             "<span class=\"slider round\"></span>" +
             "</label>     Cluster" +
             "</p>";
@@ -162,7 +164,7 @@ class City {
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
             formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "\" value=\"" + value
-                + "\" onclick=\"{City.getRadioStatus(); City.turnOffAllLayers(); City.injectCatCumulToggleHTML(); City.injectCumulSlider(); City.loadCumulativeLayers();}\">"
+                + "\" onclick=\"{CityVar.getRadioStatus(); CityVar.turnOffAllLayers(); CityVar.injectCatCumulToggleHTML(); CityVar.injectCumulSlider(); CityVar.loadCumulativeLayers();}\">"
                 + "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
         }
         document.getElementById("radioForm").innerHTML = formHTML;
@@ -189,7 +191,7 @@ class City {
         console.log("Injecting category/cumulative toggle in HTML");
         var toggleHTML = "<p class=\"toggleText\">Stacked" +
             "<label class=\"switch\" >" +
-            "<input type=\"checkbox\" id=\"toggCatCumulBtn\" onchange= \"City.getCatCumulToggle();\">" +
+            "<input type=\"checkbox\" id=\"toggCatCumulBtn\" onchange= \"CityVar.getCatCumulToggle();\">" +
             "<span class=\"slider round\"></span>" +
             "</label>     Single" +
             "</p>";
@@ -233,7 +235,7 @@ class City {
         }
 
         var sliderHTML = "";
-        sliderHTML = "<input id=\"slider" + queryNum + "\" type=\"range\" min=\"1\" max=\"5\" value=\"5\" step=\"1\" onchange =\"{City.sliderValue=this.value; City.turnOffAllLayers(); City.loadCumulativeLayers();}\">" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+        sliderHTML = "<input id=\"slider" + queryNum + "\" type=\"range\" min=\"1\" max=\"5\" value=\"5\" step=\"1\" onchange =\"{CityVar.sliderValue=this.value; CityVar.turnOffAllLayers(); CityVar.loadCumulativeLayers();}\">" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
         console.log("Injecting the Cumulative Slider ", sliderHTML);
         document.getElementById("mapLegend").innerHTML = sliderHTML;
     }
@@ -252,7 +254,7 @@ class City {
         }
 
         var sliderHTML = "";
-        sliderHTML = "<input id=\"slider" + queryNum + "\" type=\"range\" min=\"1\" max=\"5\" value=\"5\" step=\"1\" onchange =\"{City.sliderValue=this.value; City.turnOffAllLayers(); City.loadCategoryLayer();}\">" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
+        sliderHTML = "<input id=\"slider" + queryNum + "\" type=\"range\" min=\"1\" max=\"5\" value=\"5\" step=\"1\" onchange =\"{CityVar.sliderValue=this.value; CityVar.turnOffAllLayers(); CityVar.loadCategoryLayer();}\">" + "<p style=\"word-spacing:70px; font-size:10px; display:'block';\">Less More</p>";
         console.log("Injecting the Category Slider", sliderHTML);
         document.getElementById("mapLegend").innerHTML = sliderHTML;
     }
