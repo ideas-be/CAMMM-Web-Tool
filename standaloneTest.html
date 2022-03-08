@@ -59,20 +59,24 @@
 	<table style="width:100%;">
 		<tbody style="margin: 0;">
 			<tr>
-				<td style="width:70%; height:200px; background-color: #d81b60;">
+				<td style="width:70%; height:480px; background-color: #d81b60;">
 					<!-- THIS COLUMN IS WHERE THE MAP MENU AND MAPBOX GOES -->
-			<tr style="width:100%; height:50px; background-color: green;">
+					<table style="width:100%; text-align: center;">
+						<tbody>
+							<tr style="width:100%; height:60px; background-color: green;">
+								<td>MAP MENU</td>
+							</tr>
+							<tr style="width:100%; height:20px;"></tr>
+							<tr style="width:100%; height:360px; background-color: green;">
+								<td>MAP BOX</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+				<td style="width:30%; height:480px; background-color: blue;">
+					<!-- THIS COLUMN IS WHERE THE CITY METRICS GOES -->
 
-			</tr>
-			<tr style="width:100%; height:50px; background-color: green;">
-
-			</tr>
-
-			</td>
-			<td style="width:30%; height:200px; background-color: blue;">
-				<!-- THIS COLUMN IS WHERE THE CITY METRICS GOES -->
-
-			</td>
+				</td>
 			</tr>
 			<!-- <tr> -->
 			<!-- THIS ROW IS WHERE THE DROPDOWN AREA GOES -->
@@ -200,6 +204,7 @@
 			a.send();        // Closes the XMLHttpRequest   
 		}
 		setTimeout(readMetrics, 700);
+
 
 
 	</script>
