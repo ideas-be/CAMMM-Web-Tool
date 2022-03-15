@@ -13,18 +13,18 @@ body{
 .box{
     background-color: #d81d60;
     margin:10px;
-    height:200px;
-    width:200px;
+    height:400px;
+    width:600px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateX(400%);
-    transition: transform 5s ease;
+    transform: translateX(600%);
+    transition: transform 1s ease;
 }
 
 .box:nth-of-type(even){
-    transform: translateX(-400%);
+    transform: translateX(-600%);
 }
 
 .box.show{
@@ -33,5 +33,20 @@ body{
 
 .box h2{
    color:#FFF;
-   font-size: 26px;
+   /* font-size: 26px; */
 }
+
+.box.question{
+    background-color: #F48C18;
+    text-align: center;
+    font-size: 12px;
+    height:200px;
+    width:300px;
+ }
+.box.image{
+    background-color: lightblue;
+    color: black;
+    align-items: left;
+    /* transform: translateX(-30%); */
+    transition: transform 1s ease;
+ }
