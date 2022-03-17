@@ -55,7 +55,7 @@ Add this note to the docs: Direct is now Individual and Node is now Cluster.
         </li>
         <li><a href="#data-collection">Data Collection</a></li>
         <li><a href="#op-functions">Operational Functions</a></li>
-        <li><a href="#key-functions">Analysis Functions</a></li>
+        <li><a href="#queries-key-functions">Analysis Queries & Functions</a></li>
         <li><a href="#processed-data-mapbox">Processed Data for Mapbox & City Metrics</a></li>
         <>
       </ul>
@@ -387,15 +387,39 @@ These files are <a href="https://developers.google.com/transit/gtfs/reference#fa
   
   ### Operational Functions
 These functions allow for the processing tool to prepare the data that will be used for different stages of the atlas analyses. The main list of operational functions are: 
-Function 1 : Prepares the data of several cities to be held in a single file.
+Function 1 : Prepares the data of several cities to be held in a single file. DONE
 Function 2 : Converting Excel to JSON file.
 
   </div>
   
-  <div id="key-functions">
+  <div id="queries-key-functions">
   
-  ### Analysis Functions
+  ### Analysis Queries & Functions
+  *insert para on intro to analysis queries for the cammm tool*
 
+  #### Geometrical Analysis
+  *insert an intro to geometrical analysis before types*
+
+  ##### Types of Geometrical Analysis
+  **1. Distance between stops ||| Distribution Degree**
+
+  #### Centrality Analysis
+  *insert an intro to centrality before types*
+  
+  ##### Types of Centrality
+  **1. Betweeness Centrality ||| Centrality Degree**
+$C_{B}(v)$ = $sum_$
+  **2. Closeness Centrality ||| Closeness Degree**
+
+  **3. Eigen Vector Centrality**
+
+  #### Density Analysis
+  *insert an intro to rotated grid density analysis before types*
+
+  ##### Types of Density Analysis
+  **1. Mass Transit Density Analysis**
+
+  **2. Amenities & Services Density Analysis ||| TOD Degree**
 
   </div>
   
