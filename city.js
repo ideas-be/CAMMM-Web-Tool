@@ -129,6 +129,7 @@ class City {
         this.sliderValue = sliderValue;
         // this.injectCumulSlider();
         // this.displayCityMetrics();
+        this.injectCityGeneral();
         this.displayCityMetrics();
     }
     readCityJson() {
@@ -478,6 +479,62 @@ class City {
                 }
             }
         }
+    }
+
+    injectCityGeneral() {
+        const { cityJson } = this;
+        var generalTableDiv = document.getElementById("general-metrics");
+
+        var generalTableHTML = "<table>" +
+            "<tr>" +
+            "<td>" +
+            "<div style=\"width: 300px; height: 100px; background-color: lightgray; text-align: center; border-radius: 10px;\">" +
+            "<table>" +
+            "<tr>" +
+            "<td style=\"width: 75px; height:75px; text-align: right; color: darkgray;\"><i class=\"fa-solid fa-square-dashed\"></i></td>" +
+            "<td><div style=\"text-align: left;\"><p>Area (Sq Km)</p><p>" + cityJson["AreaSqKm"] + "</p></div></td>" +
+            "</tr>" +
+            "</table>" +
+            "</div>" +
+            "</td>" +
+            "<td>" +
+            "<div style=\"width: 300px; height: 100px; background-color: lightgray; text-align: center; border-radius: 10px;\">" +
+            "<table>" +
+            "<tr>" +
+            "<td><i class=\"fa-solid fa-users\"></i></td>" +
+            "<td><div style=\"text-align: left;\"><p>Population (Million)</p><p>" + cityJson["PopulationMillion"] + "</p></div></td>" +
+            "</tr>" +
+            "</table>" +
+            "</div>" +
+            "</td>" +
+
+            "</tr>" +
+            "<tr>" +
+            "<td>" +
+            "<div style=\"width: 300px; height: 100px; background-color: lightgray; text-align: center; border-radius: 10px;\">" +
+            "<table>" +
+            "<tr>" +
+            "<td><i class=\"fa-solid fa-people-line\"></i></td>" +
+            "<td><div style=\"text-align: left;\"><p>Density (Person/SqKm)</p><p>" + cityJson["DensityPersonSqKm"] + "</p></div></td>" +
+            "</tr>" +
+            "</table>" +
+            "</div>" +
+            "</td>" +
+            "<td>" +
+            "<div style=\"width: 300px; height: 100px; background-color: lightgray; text-align: center; border-radius: 10px;\">" +
+            "<table>" +
+            "<tr>" +
+            "<td><i class=\"fa-solid fa-house-building\"></i></td>" +
+            "<td><div style=\"text-align: left;\"><p>Number of Boroughs</p><p>" + cityJson["NumBoroughs"] + "</p></div></td>" +
+            "</tr>" +
+            "</table>" +
+            "</div>" +
+            "</td>" +
+            "</tr>" +
+            "</table>";
+
+        generalTableDiv.innerHTML = generalTableHTML;
+
     }
 
     displayCityMetrics() {
