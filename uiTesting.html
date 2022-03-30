@@ -9,9 +9,8 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
     <!-- <script src='script.js'></script> -->
     <link rel="stylesheet" href="mapUI.css">
+    <link rel="stylesheet" href="metrics.css">
     <script src="https://kit.fontawesome.com/7abfd05b6d.js" crossorigin="anonymous"></script>
-
-
 </head>
 
 <body>
@@ -42,7 +41,6 @@
                         onclick="printmsg(5);"></img></span>
             </div>
         </nav>
-
     </div>
 
 
@@ -71,8 +69,6 @@
                     onclick="printmsg(5);"></img></span>
         </div>
     </div>
-
-
 
     <table>
         <tbody style="width:800px; height:150px; background-color: coral;">
@@ -118,15 +114,15 @@
                             </td>
                         </tr>
                     </table>
-
-
                 </td>
             </tr>
         </tbody>
     </table>
 
+
+
     <div>
-        <h1>City Metrics 2.0</h1>
+        <h1 id="font-testing">City Metrics 2.0 34567</h1>
 
         <div>
             <table>
@@ -153,7 +149,7 @@
                 <tr>
                     <td>
                         <div id="general-card-1"
-                            style="width: 300px; height: 84px; background-color: lightgray; text-align: center; border-radius: 10px; margin: 5px; padding-top: 5px;">
+                            style="width: 300px; height: 96px; background-color: lightgray; text-align: center; border-radius: 10px; margin: 5px; padding-top: 5px;">
                             <table>
                                 <tr>
                                     <td style="width: 75px; height:75px; text-align: right; color: black;">
@@ -165,10 +161,10 @@
                                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 18px; color: darkgrey;">
                                                 Area in km<sup>2</sup>
                                             </h3>
-                                            <p
+                                            <h4
                                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 36px; font-weight: bold;">
                                                 5.66
-                                            </p>
+                                            </h4>
                                         </div>
                                     </td>
                                 </tr>
@@ -177,7 +173,7 @@
                     </td>
                     <td>
                         <div id="general-card-2"
-                            style="width: 300px; height: 84px; background-color: lightgray; text-align: center; border-radius: 10px; margin: 5px;  padding-top: 5px;">
+                            style="width: 300px; height: 96px; background-color: lightgray; text-align: center; border-radius: 10px; margin: 5px;  padding-top: 5px;">
                             <table>
                                 <tr>
                                     <td style="width: 75px; height:75px; text-align: right; color: black;">
@@ -189,10 +185,10 @@
                                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 18px; color: darkgrey;">
                                                 Area in km<sup>2</sup>
                                             </h3>
-                                            <p
+                                            <h4
                                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 36px; font-weight: bold;">
                                                 5.66
-                                            </p>
+                                            </h4>
                                         </div>
                                     </td>
                                 </tr>
@@ -203,7 +199,7 @@
                 <tr>
                     <td>
                         <div id="general-card-3"
-                            style="width: 300px; height: 84px; background-color: lightgray; text-align: center; border-radius: 10px; margin: 5px;  padding-top: 5px;">
+                            style="width: 300px; height: 96px; background-color: lightgray; text-align: center; border-radius: 10px; margin: 5px;  padding-top: 5px;">
                             <table>
                                 <tr>
                                     <td style="width: 75px; height:75px; text-align: right; color: black;">
@@ -215,10 +211,10 @@
                                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 18px; color: darkgrey;">
                                                 Area in km<sup>2</sup>
                                             </h3>
-                                            <p
+                                            <h4
                                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 36px; font-weight: bold;">
                                                 5.66
-                                            </p>
+                                            </h4>
                                         </div>
                                     </td>
                                 </tr>
@@ -227,7 +223,7 @@
                     </td>
                     <td>
                         <div id="general-card-4"
-                            style="width: 300px; height: 84px; background-color: lightgray; text-align: center; border-radius: 10px; margin: 5px;  padding-top: 5px;">
+                            style="width: 300px; height: 96px; background-color: lightgray; text-align: center; border-radius: 10px; margin: 5px;  padding-top: 5px;">
                             <table>
                                 <tr>
                                     <td style="width: 75px; height:75px; text-align: right; color: black;">
@@ -239,10 +235,10 @@
                                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 18px; color: darkgrey;">
                                                 Area in km<sup>2</sup>
                                             </h3>
-                                            <p
+                                            <h4
                                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 36px; font-weight: bold;">
                                                 5.66
-                                            </p>
+                                            </h4>
                                         </div>
                                     </td>
                                 </tr>
@@ -264,10 +260,57 @@
                     </td>
                     <td style="width: 25%; border-right: 3px solid lightgray; padding-right: 14px;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 12345
-                            </h3>
+                            </h4>
+                            <p
+                                style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; ">
+                                stops
+                            </p>
+                        </div>
+                    </td>
+                    <td style="width: 20%; border-right: 3px solid lightgray; padding-right: 14px;">
+                        <div>
+                            <h4
+                                style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
+                                123
+                            </h4>
+                            <p
+                                style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; ">
+                                lines
+                            </p>
+                        </div>
+                    </td>
+                    <td style="width: 25%;">
+                        <div>
+                            <h4
+                                style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
+                                123 m
+                            </h4>
+                            <p
+                                style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; ">
+                                avg. distance
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 15px;"></td>
+                </tr>
+                <tr>
+                    <td style="width: 30%; color: #f85a63ff; text-align: center;">
+                        <div
+                            style="background-color: white; width: 60px; height: 60px; padding: 10px; align-items: center; justify-content: center; border-radius: 50%; display: flex;">
+                            <i class="fas fa-bus fa-3x"></i>
+                        </div>
+                    </td>
+                    <td style="width: 25%; border-right: 3px solid lightgray; padding-right: 14px;">
+                        <div>
+                            <h4
+                                style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
+                                12345
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 stops
@@ -276,10 +319,10 @@
                     </td>
                     <td style="width: 20%; border-right: 3px solid lightgray; padding-right: 14px;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 123
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 lines
@@ -288,10 +331,10 @@
                     </td>
                     <td style="width: 25%;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 123 m
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 avg. distance
@@ -311,10 +354,10 @@
                     </td>
                     <td style="width: 25%; border-right: 3px solid lightgray; padding-right: 14px;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 12345
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 stops
@@ -323,10 +366,10 @@
                     </td>
                     <td style="width: 20%; border-right: 3px solid lightgray; padding-right: 14px;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 123
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 lines
@@ -335,10 +378,10 @@
                     </td>
                     <td style="width: 25%;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 123 m
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 avg. distance
@@ -358,10 +401,10 @@
                     </td>
                     <td style="width: 25%; border-right: 3px solid lightgray; padding-right: 14px;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 12345
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 stops
@@ -370,10 +413,10 @@
                     </td>
                     <td style="width: 20%; border-right: 3px solid lightgray; padding-right: 14px;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 123
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 lines
@@ -382,10 +425,10 @@
                     </td>
                     <td style="width: 25%;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 123 m
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 avg. distance
@@ -405,10 +448,10 @@
                     </td>
                     <td style="width: 25%; border-right: 3px solid lightgray; padding-right: 14px;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 12345
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 stops
@@ -417,10 +460,10 @@
                     </td>
                     <td style="width: 20%; border-right: 3px solid lightgray; padding-right: 14px;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 123
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 lines
@@ -429,57 +472,10 @@
                     </td>
                     <td style="width: 25%;">
                         <div>
-                            <h3
+                            <h4
                                 style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
                                 123 m
-                            </h3>
-                            <p
-                                style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
-                                avg. distance
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="height: 15px;"></td>
-                </tr>
-                <tr>
-                    <td style="width: 30%; color: #f85a63ff; text-align: center;">
-                        <div
-                            style="background-color: white; width: 60px; height: 60px; padding: 10px; align-items: center; justify-content: center; border-radius: 50%; display: flex;">
-                            <i class="fas fa-bus fa-3x"></i>
-                        </div>
-                    </td>
-                    <td style="width: 25%; border-right: 3px solid lightgray; padding-right: 14px;">
-                        <div>
-                            <h3
-                                style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
-                                12345
-                            </h3>
-                            <p
-                                style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
-                                stops
-                            </p>
-                        </div>
-                    </td>
-                    <td style="width: 20%; border-right: 3px solid lightgray; padding-right: 14px;">
-                        <div>
-                            <h3
-                                style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
-                                123
-                            </h3>
-                            <p
-                                style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
-                                lines
-                            </p>
-                        </div>
-                    </td>
-                    <td style="width: 25%;">
-                        <div>
-                            <h3
-                                style="margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; color: white; font-weight: bold;">
-                                123 m
-                            </h3>
+                            </h4>
                             <p
                                 style="margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 24px; ">
                                 avg. distance
