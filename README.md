@@ -1,15 +1,12 @@
 # Agenda for Brainstorm meeting:
 Miro Board: https://miro.com/app/board/o9J_kgmIpbw=/
-- Show atlas button on IDEAS-BE website
-- Finalize style of grid options
-- Outline inforgraphics leading to atlas
+- Review new city metrics
+- Review options for supernode graphics
+- Present and steal from TOMTOM atlas
+- Continue designing inforgraphics leading to atlas
 
 *if there's time*
-- Mock options for cluster (node and supernode) representation
-
-# Present for next meeting:
-- Pre-Mapbox Grid Analysis mapping - pending brainstorm meeting
-- XLS to JSON processing tool (GUI + python)
+- Schedule date/time for big TV test
 
 # Currently working on: 
 Keep working on Documentation - Section 2 Processing Tool - Work on flowcharts for each Operational and Analysis function 
@@ -689,9 +686,27 @@ $C_{B}(v)$ = $sum_$
 
   </div>
 
-  <div id=styling-manual">
+  <div id="styling-manual">
 
   ### Styling Manual
+  
+  Colors
+  - Hero Color - pink
+  - Transport System
+  - Grid Analysis
+  - Node and SuperNode
+    - Centrality Degree
+    - Closeness Degree
+
+  Typefaces
+  - Primary
+  - Secondary
+  - Substitutes
+
+  Icons
+  - Basic UI/UX
+  - Transport systems
+
 
   </div>
 
