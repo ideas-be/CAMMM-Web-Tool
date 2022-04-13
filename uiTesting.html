@@ -15,6 +15,48 @@
 
 <body>
 
+    <div><a href="flag-example.html">Flag Example HTML</a></div>
+
+
+
+
+    <div class="btn-group" style="margin:10px;">
+        <!-- CURRENCY, BOOTSTRAP DROPDOWN -->
+        <!--<a class="btn btn-primary" href="javascript:void(0);">Currency</a>-->
+        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">Select City<span
+                class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="javascript:void(0);">
+                    <img src="flags/austria-flag-xs.png" /> Vienna</a>
+            </li>
+            <li><a href="javascript:void(0);">
+                    <img src="flags/canada-flag-xs.png" /> Montreal</a>
+            </li>
+            <li><a href="javascript:void(0);">
+                    <img src="flags/hungary-flag-xs.png" /> Budapest</a>
+            </li>
+            <li><a href="javascript:void(0);">
+                    <img src="flags/spain-flag-xs.png" /> Barcelona</a>
+            </li>
+            <li><a href="javascript:void(0);">
+                    <img src="flags/united-states-of-america-flag-xs.png" /> Boston</a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+    <select id="cityList1">
+        <option disabled selected>Select City</option>
+        <option value="0">
+            <p style="background-image:url(flags/canada-flag-xs.png); width: 20px; height: 10px;">Montreal</p>
+        </option>
+    </select>
+
     <div style="width: 600px; height: 400px; background-color:black;">
         <nav
             style="width: 40px; height: 220px; background-color: #d81b60; border-radius: 5px; color: white; text-align: center; float: right; margin: 10px;">
@@ -516,6 +558,13 @@
 
 </html>
 <script>
+    /* BOOTSTRAP DROPDOWN MENU - Update selected item text and image */
+    $(".dropdown-menu li a").click(function () {
+        var selText = $(this).text();
+        var imgSource = $(this).find('img').attr('src');
+        var img = '<img src="' + imgSource + '"/>';
+        $(this).parents('.btn-group').find('.dropdown-toggle').html(img + ' ' + selText + ' <span class="caret"></span>');
+    });
 
 </script>
 

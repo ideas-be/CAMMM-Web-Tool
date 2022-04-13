@@ -67,8 +67,31 @@ function getSelectedCity(num) {
     }
 }
 
+// FOR DELETION!!!!!!
+// function dropdownCities() {
+//     var cityHTML = "<option disabled selected>Select City</option>";
+//     var nameCity = "";
+
+//     for (key in myJson["City"]) {
+//         if (myJson["City"][key].name == key) {
+//             nameCity = myJson["City"][key].name;
+//         }
+//         else {
+//             nameCity = key + " - " + myJson["City"][key].name;
+//         }
+//         cityHTML += "<option value=\"" + key + "\">" + nameCity + "</option>";
+//     }
+
+//     document.getElementById("cityList1").innerHTML = cityHTML;
+//     document.getElementById("cityList2").innerHTML = cityHTML;
+
+// }
+
 function dropdownCities() {
-    var cityHTML = "<option disabled selected>Select City</option>";
+
+    console.log("DROPDOWN FUNCTION!!!!!!!!");
+
+    var cityHTML = "";
     var nameCity = "";
 
     for (key in myJson["City"]) {
@@ -78,11 +101,10 @@ function dropdownCities() {
         else {
             nameCity = key + " - " + myJson["City"][key].name;
         }
-        cityHTML += "<option value=\"" + key + "\">" + nameCity + "</option>";
+        cityHTML += "<a href=\"#\">" + "<img src=\"flags/canada-flag-xs.png\" width=\"20\" height=\"15\">" + nameCity + "</a>";
     }
 
-    document.getElementById("cityList1").innerHTML = cityHTML;
-    document.getElementById("cityList2").innerHTML = cityHTML;
+    document.getElementById("dropdown-content").innerHTML = cityHTML;
 
 }
 
