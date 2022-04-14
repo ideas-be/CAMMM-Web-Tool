@@ -99,7 +99,7 @@ Add this note to the docs: Direct is now Individual and Node is now Cluster.
   **Here is the link to the Miro board:**
   https://miro.com/app/board/o9J_kgmIpbw=/
   #### Preview:
-  ![CAMMM Web Atlas](screenshots/01_June03.png)
+  ![CAMMM Web Atlas](screenshots/2022_04_14_Current_Prototype_Screenshot.png)
 
 ----------------------------------------------------------------------
 
