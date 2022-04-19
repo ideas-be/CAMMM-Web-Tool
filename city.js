@@ -30,9 +30,9 @@ function getCity(city, num) {
     }
 }
 
-function getSelectedCity(num) {
-    var citylist = "cityList" + num;
-    var selectedCity = document.getElementById(citylist).value;
+function getSelectedCity(selectedCity, num) {
+    // var citylist = "cityList" + num;
+    // var selectedCity = document.getElementById(citylist).value;
 
     if (selectedCity != "Select City") {
 
@@ -67,47 +67,35 @@ function getSelectedCity(num) {
     }
 }
 
-// FOR DELETION!!!!!!
 function dropdownCities() {
-    var cityHTML = "<option disabled selected>Select City</option>";
-    var nameCity = "";
+
+    var nameCity, cityFlag;
+    var dropDown1DivId = "dropdown1-content";
+    var dropDown2DivId = "dropdown2-content";
+    var dropDown1HTML = "";
+    var dropDown2HTML = "";
 
     for (key in myJson["City"]) {
         if (myJson["City"][key].name == key) {
             nameCity = myJson["City"][key].name;
+            cityFlag = myJson["City"][key].flag;
         }
         else {
             nameCity = key + " - " + myJson["City"][key].name;
+            cityFlag = myJson["City"][key].flag;
         }
-        cityHTML += "<option value=\"" + key + "\">" + nameCity + "</option>";
+
+        dropDown1HTML += "<a href=\"#\" onclick=\"getSelectedCity(\'" + key + "\', 1);\"><img src=" + cityFlag + " width=\"20\" height=\"15\">" + nameCity + "</a>";
+        dropDown2HTML += "<a href=\"#\" onclick=\"getSelectedCity(\'" + key + "\', 2);\"><img src=" + cityFlag + " width=\"20\" height=\"15\">" + nameCity + "</a>";
+        console.log("Injecting ", nameCity, "with its flag", cityFlag);
     }
 
-    document.getElementById("cityList1").innerHTML = cityHTML;
-    document.getElementById("cityList2").innerHTML = cityHTML;
-
+    document.getElementById(dropDown1DivId).innerHTML = dropDown1HTML;
+    document.getElementById(dropDown2DivId).innerHTML = dropDown2HTML;
 }
 
-//TO UPDATE TO NEW DROPDOWN
-// function dropdownCities() {
 
-//     console.log("DROPDOWN FUNCTION!!!!!!!!");
 
-//     var cityHTML = "";
-//     var nameCity = "";
-
-//     for (key in myJson["City"]) {
-//         if (myJson["City"][key].name == key) {
-//             nameCity = myJson["City"][key].name;
-//         }
-//         else {
-//             nameCity = key + " - " + myJson["City"][key].name;
-//         }
-//         cityHTML += "<a href=\"#\">" + "<img src=\"flags/canada-flag-xs.png\" width=\"20\" height=\"15\">" + nameCity + "</a>";
-//     }
-
-//     document.getElementById("dropdown-content").innerHTML = cityHTML;
-
-// }
 
 function resetCity(num) {
     // console.log("BUTTON IS PRESSED!! CITY HAS BEEN RESET!!");
@@ -308,7 +296,7 @@ class City {
     injectRadioButtons() {
         const { cityNum, ListOfLayers } = this;
         var formHTML = "";
-        var NameOfQueries = ["Centrality Degree", "Closeness"];
+        var NameOfQueries = ["Centrality Degree", "Closeness", "Rotated Grid"];
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
             formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_" + cityNum + "\" value=\"" + value

@@ -89,7 +89,10 @@ def ReadFile(path:str) -> dict:
         "DensityPersonSqKm":"AG",
         "YearOfStats":"AH",
         "SourceGTFS":"AI",
-        "DateUpdatedGTFS":"AJ"
+        "DateUpdatedGTFS":"AJ",
+        "GridLayers":"AK",
+        "GridStyleURL":"AL",
+        "Flag":"AM",
 	}
 
     ExitDict={"City": {}}
@@ -119,8 +122,8 @@ def ReadFile(path:str) -> dict:
             TransitionDictionary[key]=WorkSheet[ExcelCoord].value
             # print(key,"\t=",WorkSheet[ExcelCoord].value)
 
-        DirectList=DirectLayerProcessing([TransitionDictionary["Bus-DirectLayers"],TransitionDictionary["Train-DirectLayers"],TransitionDictionary["Metro-DirectLayers"],TransitionDictionary["Tram-DirectLayers"],TransitionDictionary["Others-DirectLayers"]])
-        NodeList=NodeLayerProcessing(TransitionDictionary["NodeLayers"])
+        DirectList=DirectLayerProcessing([TransitionDictionary["Bus-DirectLayers"],TransitionDictionary["Train-DirectLayers"],TransitionDictionary["Metro-DirectLayers"],TransitionDictionary["Tram-DirectLayers"],TransitionDictionary["Others-DirectLayers"],TransitionDictionary["GridLayers"]])
+        NodeList=NodeLayerProcessing(TransitionDictionary["NodeLayers"]+","+TransitionDictionary["GridLayers"])
 
         # ListNode=[]
         # for i in TransitionDictionary["NodeLayers"].split(","):
@@ -129,6 +132,7 @@ def ReadFile(path:str) -> dict:
         # print("listTest",listTest,type(listTest))
         ExitDict["City"][CityEnglishName]={
                 "name": TransitionDictionary["name"],
+                "flag": TransitionDictionary["Flag"],
                 "AreaSqKm": TransitionDictionary["AreaSqKm"],
                 "PopulationMillion": TransitionDictionary["PopulationMillion"],
                 "DensityPersonSqKm": TransitionDictionary["DensityPersonSqKm"],
@@ -173,6 +177,7 @@ def ReadFile(path:str) -> dict:
                 "NodeStyleURL": TransitionDictionary["NodeStyleURL"],
                 "DirectLayers": DirectList,
                 "NodeLayers": NodeList,
+                "GridStyleURL": TransitionDictionary["GridStyleURL"],
                 "Coords": [
                     TransitionDictionary["Coords-Lat"],
                     TransitionDictionary["Coords-Lon"]
@@ -189,7 +194,7 @@ if __name__ =="__main__":
     Data=ReadFile(path=PathToTheFile)
     # print("\n"*10)
     # print(Data)
-    WriteToFile(Data=Data,ExitPath="CityMetrics.json")
+    WriteToFile(Data=Data,ExitPath="CityMetricsTEST.json")
     # for CityJs in Data['City']:
     #     print("\n"*10)
     #     print("CityJs",CityJs)

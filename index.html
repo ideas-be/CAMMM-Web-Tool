@@ -290,8 +290,18 @@
 
 						<!-- START OF CITY 1 LIST -->
 						<div class="atlas-city1">
-							<select id="cityList1" onchange="getSelectedCity(1);">
-							</select>
+							<center>
+								<div class="dropdown">
+									<button class="dropbtn">
+										Select City
+									</button>
+
+									<div class="dropdown-content" id="dropdown1-content">
+									</div>
+								</div>
+							</center>
+							<!-- <select id="cityList1" onchange="getSelectedCity(1);">
+							</select> -->
 							<button id="city1Reset" onclick="resetCity(1);">Reset</button>
 							<span style="font-size: 1em; color: #d81b60;">
 								<i class="fas fa-info-circle" onclick="show_popup(2);"></i>
@@ -310,8 +320,18 @@
 
 						<!-- START OF CITY 2 LIST -->
 						<div class="atlas-city2">
-							<select id="cityList2" onchange="getSelectedCity(2);">
-							</select>
+							<center>
+								<div class="dropdown">
+									<button class="dropbtn">
+										Select City
+									</button>
+
+									<div class="dropdown-content" id="dropdown2-content">
+									</div>
+								</div>
+							</center>
+							<!-- <select id="cityList2" onchange="getSelectedCity(2);">
+							</select> -->
 							<button id="city2Reset" onclick="resetCity(2);">Reset</button>
 							<span style="font-size: 1em; color: #d81b60;">
 								<i class="fas fa-info-circle" onclick="show_popup(2);"></i>
@@ -481,7 +501,7 @@
 		var obj;
 		var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
 		function readMetrics() {
-			a.open('GET', "CityMetrics.json", true);  // This is reading the JSON FILE 
+			a.open('GET', "CityMetricsTEST.json", true);  // This is reading the JSON FILE 
 			console.log("Reading the City Metrics file to load JSON");
 
 			a.onreadystatechange = function () {  //When the JSON file is open it starts a function 

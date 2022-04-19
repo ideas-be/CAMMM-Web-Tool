@@ -56,11 +56,41 @@
 
         <div class="dropdown">
             <button class="dropbtn">
-                Country Flags
+                Select City
             </button>
 
-            <div class="dropdown-content">
-                <a href="#">
+            <div class="dropdown-content" id="dropdown-content">
+
+            </div>
+        </div>
+    </center>
+</body>
+
+<script>
+
+    function injectDropDownCities() {
+        var flagList = ["flags/canada-flag-xs.png", "flags/austria-flag-xs.png", "flags/hungary-flag-xs.png", "flags/spain-flag-xs.png", "flags/united-states-of-america-flag-xs.png"];
+        var cityList = ["Montreal-Montréal", "Vienna-Wien", "Buadpest", "Barcelona", "Boston"];
+
+        var dropDownDivId = "dropdown-content";
+        var dropDownHTML = "";
+
+        for (i = 0; i < cityList.length; i++) {
+            dropDownHTML += "<a href=\"#\"><img src=" + flagList[i] + " width=\"20\" height=\"15\">" + cityList[i] + "</a>";
+            console.log("Injecting ", cityList[i], "with its flag", flagList[i]);
+        }
+        console.log("dropdown HTML:", dropDownHTML);
+
+        document.getElementById(dropDownDivId).innerHTML = dropDownHTML;
+    }
+    injectDropDownCities();
+
+
+</script>
+
+</html>
+
+<!-- <a href="#">
                     <img src="flags/canada-flag-xs.png" width="20" height="15"> India</a>
 
                 <a href="#">
@@ -71,15 +101,4 @@
                         height="15"> England</a>
                 <a href="#">
                     <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200630132500/bflag.jpg" width="20"
-                        height="15"> Brazil</a>
-            </div>
-        </div>
-    </center>
-</body>
-
-<script>
-    var flagList = ["flags/canada-flag-xs.png", "flags/austria-flag-xs.png", "flags/hungary-flag-xs.png", "flags/spain-flag-xs.png", "flags/united-states-of-america-flag-xs.png"];
-    var cityList = [];
-</script>
-
-</html>
+                        height="15"> Brazil</a> -->
