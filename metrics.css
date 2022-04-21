@@ -5,15 +5,15 @@
 
 /* font-family: 'Cairo', sans-serif; */
 
-@font-face {
+/* @font-face {
     font-family: 'Righteous';
     src: url('fonts/Righteous-Regular.ttf');
-}
-
+} */
 
 #font-testing{
     font-family: 'Cairo', sans-serif;
     color: black;
+    margin-bottom: 0;
     /* letter-spacing: 2px;
     font-weight: 200; */
 }
@@ -31,4 +31,59 @@ h4{
     font-weight: 700;
     margin: 0;
     /* font-size: 12px; */
+}
+
+#general-card{
+    width: 20vw;
+    height: 96px;
+    background-color: lightgray;
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px;
+    padding-top: 5px;
+}
+
+#general-card table{
+    width: 90%;
+}
+
+#general-card h3{
+    margin: 0px;
+    text-align: right;
+    padding-left: 10px; 
+    font-size: 16px; 
+    color: darkgrey;
+}
+
+#general-card h4{
+    margin: 0px;
+    text-align: right;
+    /* padding-left: 5px; */
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#general-card .icon{
+    width: 30%;
+    height:75px;
+    text-align: center;
+    color: black;
+}
+
+#general-card .info{
+    width: 70%;
+    text-align: left;
+    line-height: 28px;
+}
+
+.transit-icon{
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    display: flex; 
 }

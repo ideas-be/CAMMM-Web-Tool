@@ -34,7 +34,11 @@ function getSelectedCity(selectedCity, num) {
     // var citylist = "cityList" + num;
     // var selectedCity = document.getElementById(citylist).value;
 
+    var dropBtnDivID = "dropbtn" + num;
+
     if (selectedCity != "Select City") {
+
+        document.getElementById(dropBtnDivID).innerHTML = selectedCity;
 
         let city = new City(selectedCity, num, myJson["City"][selectedCity], 5);
         getCity(city, num);
@@ -499,21 +503,21 @@ class City {
         var generalTableHTML = "<table style=\"margin-left: 20px;\">" +
             "<tr>" +
             "<td>" +
-            "<div style=\"width: 300px; height: 100px; background-color: lightgray; text-align: center; border-radius: 10px;\">" +
+            "<div id=\"general-card\">" +
             "<table>" +
             "<tr>" +
-            "<td style=\"width: 75px; height:75px; text-align: center; color: black;\"><i class=\"fas fa-vector-square fa-3x\"></i></td>" +
-            "<td><div style=\"text-align: left;\"><p>Area (Sq Km)</p><p>" + cityJson["AreaSqKm"] + "</p></div></td>" +
+            "<td class=\"icon\"><i class=\"fas fa-vector-square fa-3x\"></i></td>" +
+            "<td class=\"info\"><h3>Area in km<sup>2</sup></h3><h4>" + cityJson["AreaSqKm"] + "</h4></td>" +
             "</tr>" +
             "</table>" +
             "</div>" +
             "</td>" +
             "<td>" +
-            "<div style=\"width: 300px; height: 100px; background-color: lightgray; text-align: center; border-radius: 10px;\">" +
+            "<div id=\"general-card\">" +
             "<table>" +
             "<tr>" +
-            "<td style=\"width: 75px; height:75px; text-align: center; color: black;\"><i class=\"fas fa-users fa-3x\"></i></td>" +
-            "<td><div style=\"text-align: left;\"><p>Population (Million)</p><p>" + cityJson["PopulationMillion"] + "</p></div></td>" +
+            "<td class=\"icon\"><i class=\"fas fa-users fa-3x\"></i></td>" +
+            "<td class=\"info\"><h3>Population in million</h3><h4>" + cityJson["PopulationMillion"] + "</h4></td>" +
             "</tr>" +
             "</table>" +
             "</div>" +
@@ -522,21 +526,21 @@ class City {
             "</tr>" +
             "<tr>" +
             "<td>" +
-            "<div style=\"width: 300px; height: 100px; background-color: lightgray; text-align: center; border-radius: 10px;\">" +
+            "<div id=\"general-card\">" +
             "<table>" +
             "<tr>" +
-            "<td style=\"width: 75px; height:75px; text-align: center; color: black;\"><i class=\"fa-solid fa-users-line fa-3x\"></i></td>" +
-            "<td><div style=\"text-align: left;\"><p>Density (Person/SqKm)</p><p>" + cityJson["DensityPersonSqKm"] + "</p></div></td>" +
+            "<td class=\"icon\"><i class=\"fa-solid fa-users-line fa-3x\"></i></td>" +
+            "<td class=\"info\"><h3>Density in person/km<sup>2</sup></h3><h4>" + cityJson["DensityPersonSqKm"] + "</h4></td>" +
             "</tr>" +
             "</table>" +
             "</div>" +
             "</td>" +
             "<td>" +
-            "<div style=\"width: 300px; height: 100px; background-color: lightgray; text-align: center; border-radius: 10px;\">" +
+            "<div id=\"general-card\">" +
             "<table>" +
             "<tr>" +
-            "<td style=\"width: 75px; height:75px; text-align: center; color: black;\"><i class=\"fa-solid fa-city fa-2x\"></i></td>" +
-            "<td><div style=\"text-align: left;\"><p>Number of Boroughs</p><p>" + cityJson["NumBoroughs"] + "</p></div></td>" +
+            "<td class=\"icon\"><i class=\"fa-solid fa-city fa-2x\"></i></td>" +
+            "<td class=\"info\"><h3>Number of Boroughs</h3><h4>" + cityJson["NumBoroughs"] + "</h4></td>" +
             "</tr>" +
             "</table>" +
             "</div>" +
@@ -555,9 +559,9 @@ class City {
         var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
 
         var rowStyle = "style=\" height:25px; text-align: center; color: black;\"";
-        var colStyle = "style=\"width: 45%; text-align: right; color: black; font-size: 11px;\"";
+        var colStyle = "style=\"width: 45%; text-align: left; color: black; font-size: 11px;\"";
 
-        var cityTable = "<table style=\"padding-bottom: 20px; \">" +
+        var cityTable = "<table style=\"padding:25px; width:100%; \">" +
             "<tbody style=\"height:30px;\">" +
             "<tr " + rowStyle + "> <td " + colStyle + "> Statistics last updated  :      " + cityJson["YearOfStats"] +
             "</td><td " + colStyle + ">Source of GTFS :     " + "<a href={" + cityJson["SourceGTFS"] + "}>Source</a>" + " (" + cityJson["DateUpdatedGTFS"] + ")" +
@@ -567,48 +571,86 @@ class City {
         //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
         for (var i = 0; i < 5; i++) {
             if (cityJson["TransitSystems"][i].NumStops > 0) {
-                cityTable += "<table style=\"padding-bottom: 20px; padding-left:10%;\">" +
-                    "<tbody style=\"width:600px; height:75px;\">" +
-                    "<tr>" +
-                    "<td style=\"width: 75px; height:75px; text-align: right; color: " + TransitColors[i] + ";\">" +
-                    "<i class=\"" + IconList[i] + " fa-3x\"></i>" +
-                    "</td>" +
-                    "<td style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
-                    "<table style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
+                cityTable +=
+                    "<table style=\"width:22vw; margin:20px;\">" +
                     "<tbody>" +
-                    "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
-                    "<td style=\"width: 65%; text-align: right; color: black; \">" +
-                    "Number of " + StopType[i] +
+                    "<tr>" +
+                    "<td style=\"width: 30%; text-align: center;\">" +
+                    "<div class=\"transit-icon\" style=\"color: " + TransitColors[i] + "; \">" +
+                    "<i class=\"" + IconList[i] + " fa-3x\"></i>" +
+                    "</div>" +
                     "</td>" +
-                    "<td style=\"width: 5%; text-align: center; color: black; \">:</td>" +
-                    "<td style=\"width: 30%; text-align: center; color: black; \">" +
+                    "<td style=\"width: 25%; border-right: 3px solid lightgray; padding-right: 14px;\">" +
+                    "<div>" +
+                    "<h4 style=\"margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; font-weight: bold;\">" +
                     cityJson["TransitSystems"][i].NumStops +
+                    "</h4>" +
+                    "<p style=\"margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; \">stops</p>" +
+                    "</div>" +
                     "</td>" +
-                    "</tr>" +
-                    "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
-                    "<td style=\"width: 65%; text-align: right; color: black; \">" +
-                    "Number of Lines" +
-                    "</td>" +
-                    "<td style=\"width: 5%; text-align: center; color: black; \">:</td>" +
-                    "<td style=\"width: 30%; text-align: center; color: black; \">" +
+                    "<td style=\"width: 20%; border-right: 3px solid lightgray; padding-right: 14px;\">" +
+                    "<div>" +
+                    "<h4 style=\"margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; font-weight: bold;\">" +
                     cityJson["TransitSystems"][i].NumLines +
+                    "</h4>" +
+                    "<p style=\"margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; \">lines</p>" +
+                    "</div>" +
                     "</td>" +
-                    "</tr>" +
-                    "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
-                    "<td style=\"width: 65%; text-align: right; color: black; \">" +
-                    "Average distance between " + StopType[i] +
-                    "</td>" +
-                    "<td style=\"width: 5%; text-align: center; color: black; \">:</td>" +
-                    "<td style=\"width: 30%; text-align: center; color: black; \">" +
+                    "<td style=\"width: 25%;\">" +
+                    "<div>" +
+                    "<h4 style=\"margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; font-weight: bold;\">" +
                     cityJson["TransitSystems"][i].AvgDisStops +
+                    "</h4>" +
+                    "<p style=\"margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; \">avg. distance</p>" +
+                    "</div>" +
                     "</td>" +
                     "</tr>" +
-                    "</tbody>" +
-                    "</table>" +
-                    "</td>" +
+                    "<tr>" +
+                    "<td style=\"height: 15px;\"></td>" +
                     "</tr>" +
                     "</tbody>" +
                     "</table>";
+
+
+                //     "<tr>" +
+                //     "<td style=\"width: 75px; height:75px; text-align: right; color: " + TransitColors[i] + ";\">" +
+                //     "<i class=\"" + IconList[i] + " fa-3x\"></i>" +
+                //     "</td>" +
+                //     "<td style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
+                //     "<table style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
+                //     "<tbody>" +
+                //     "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
+                //     "<td style=\"width: 65%; text-align: right; color: black; \">" +
+                //     "Number of " + StopType[i] +
+                //     "</td>" +
+                //     "<td style=\"width: 5%; text-align: center; color: black; \">:</td>" +
+                //     "<td style=\"width: 30%; text-align: center; color: black; \">" +
+                //     cityJson["TransitSystems"][i].NumStops +
+                //     "</td>" +
+                //     "</tr>" +
+                //     "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
+                //     "<td style=\"width: 65%; text-align: right; color: black; \">" +
+                //     "Number of Lines" +
+                //     "</td>" +
+                //     "<td style=\"width: 5%; text-align: center; color: black; \">:</td>" +
+                //     "<td style=\"width: 30%; text-align: center; color: black; \">" +
+                //     cityJson["TransitSystems"][i].NumLines +
+                //     "</td>" +
+                //     "</tr>" +
+                //     "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
+                //     "<td style=\"width: 65%; text-align: right; color: black; \">" +
+                //     "Average distance between " + StopType[i] +
+                //     "</td>" +
+                //     "<td style=\"width: 5%; text-align: center; color: black; \">:</td>" +
+                //     "<td style=\"width: 30%; text-align: center; color: black; \">" +
+                //     cityJson["TransitSystems"][i].AvgDisStops +
+                //     "</td>" +
+                //     "</tr>" +
+                //     "</tbody>" +
+                //     "</table>" +
+                //     "</td>" +
+                //     "</tr>" +
+
             }    // Closing the if
         }          // Clossing the loop
         cityTable += "<span class=\"popUp3\" style=\"font-size: 1em; color: #d81b60; padding-left:10%; padding-bottom: 50px;\">" +

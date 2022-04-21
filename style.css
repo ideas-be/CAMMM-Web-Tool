@@ -90,10 +90,15 @@
 /* END OF DROPDOWN STYLE */
 
 /* START OF MAPBOX STYLE */
+#map1div, #map2div{
+  width: 45vw;
+  height: 25vw;
+}
+
  #map1 { 
 	display: block;
   width:95%; 
-  height: 400px; 
+  height: 100%; 
   margin-left: 20px;
 }
 
@@ -101,7 +106,7 @@
 #map2 { 
 	display: block;
 	width:95%; 
-  height: 400px; 
+  height: 100%; 
   /* margin-right: 20px; */
 }
 
@@ -123,14 +128,14 @@
   display: block;
 	position:absolute;
   font-family:sans-serif;  
-  left: 0px; width:50%;
+  left: 0px; width:45vw;
 }
 
 #city2table, #general-metrics2{
 	display: block;
 	position:absolute;
   font-family:sans-serif; 
-  right: 0; width:50%;
+  right: 0; width:45vw;
 }
 
 #city1table, #city2table{

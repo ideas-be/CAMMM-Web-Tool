@@ -16,12 +16,13 @@
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'>
 
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="metrics.css">
 	<link rel="stylesheet" href="mapUI.css">
 	<link rel="stylesheet" href="info_popup.css">
 </head>
 
 <body>
-	<div><a href="Testing.html">Testing HTML</a></div>
+	<div><a href="uiTesting.html">UI Testing HTML</a></div>
 	<!-- START OF WEB ATLAS -->
 
 	<!-- START OF IDEAS-BE BANNER -->
@@ -44,13 +45,15 @@
 	<!-- END OF IDEAS-BE BANNER -->
 
 	<div class="atlas-title">
-		<p>
-			CAMMM Atlas Web Application
-		<p style="font-size: 10px; color: #d81b60;"> (prototype)</p>
-		</p>
-		<span style="font-size: 1em; color: #d81b60;">
-			<i class="fas fa-info-circle" onclick="show_popup(1);"></i>
-		</span>
+		<h1 id="font-testing">CAMMM ATLAS</h1>
+		<h4>
+			Web Application
+			<p style="font-size: 10px; color: #d81b60;"> v1.0</p>
+			<span style="font-size: 1em; color: #d81b60;">
+				<i class="fas fa-info-circle" onclick="show_popup(1);"></i>
+			</span>
+		</h4>
+
 	</div>
 	<button id="printButton" onclick="window.print();">Print</button>
 	<br>
@@ -292,7 +295,7 @@
 						<div class="atlas-city1">
 							<center>
 								<div class="dropdown">
-									<button class="dropbtn">
+									<button class="dropbtn" id="dropbtn1">
 										Select City
 									</button>
 
@@ -322,7 +325,7 @@
 						<div class="atlas-city2">
 							<center>
 								<div class="dropdown">
-									<button class="dropbtn">
+									<button class="dropbtn" id="dropbtn2">
 										Select City
 									</button>
 
@@ -442,7 +445,7 @@
 
 			<tr>
 				<!-- THIS ROW IS WHERE THE MAPBOX AREA GOES -->
-				<table style="width: 100%;">
+				<table style="width: 100%; padding-top: 40px;">
 					<tbody>
 						<td style="width: 45%;">
 							<!-- THIS CELL IS WHERE THE LEFT MAPBOX GOES -->
