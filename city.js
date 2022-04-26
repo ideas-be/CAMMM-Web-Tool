@@ -300,7 +300,7 @@ class City {
     injectRadioButtons() {
         const { cityNum, ListOfLayers } = this;
         var formHTML = "";
-        var NameOfQueries = ["Centrality Degree", "Closeness", "Rotated Grid"];
+        var NameOfQueries = ["Node Centrality", "Node Cconnectivity", "Transit Network Density"];
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
             formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_" + cityNum + "\" value=\"" + value
@@ -572,7 +572,7 @@ class City {
         for (var i = 0; i < 5; i++) {
             if (cityJson["TransitSystems"][i].NumStops > 0) {
                 cityTable +=
-                    "<table style=\"width:22vw; margin:20px;\">" +
+                    "<table style=\"width:40vw; margin:20px;\">" +
                     "<tbody>" +
                     "<tr>" +
                     "<td style=\"width: 30%; text-align: center;\">" +
@@ -596,11 +596,11 @@ class City {
                     "<p style=\"margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; \">lines</p>" +
                     "</div>" +
                     "</td>" +
-                    "<td style=\"width: 25%;\">" +
+                    "<td style=\"width: 40%;\">" +
                     "<div>" +
                     "<h4 style=\"margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; font-weight: bold;\">" +
                     cityJson["TransitSystems"][i].AvgDisStops +
-                    "</h4>" +
+                    " m</h4>" +
                     "<p style=\"margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; \">avg. distance</p>" +
                     "</div>" +
                     "</td>" +
@@ -610,46 +610,6 @@ class City {
                     "</tr>" +
                     "</tbody>" +
                     "</table>";
-
-
-                //     "<tr>" +
-                //     "<td style=\"width: 75px; height:75px; text-align: right; color: " + TransitColors[i] + ";\">" +
-                //     "<i class=\"" + IconList[i] + " fa-3x\"></i>" +
-                //     "</td>" +
-                //     "<td style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
-                //     "<table style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
-                //     "<tbody>" +
-                //     "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
-                //     "<td style=\"width: 65%; text-align: right; color: black; \">" +
-                //     "Number of " + StopType[i] +
-                //     "</td>" +
-                //     "<td style=\"width: 5%; text-align: center; color: black; \">:</td>" +
-                //     "<td style=\"width: 30%; text-align: center; color: black; \">" +
-                //     cityJson["TransitSystems"][i].NumStops +
-                //     "</td>" +
-                //     "</tr>" +
-                //     "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
-                //     "<td style=\"width: 65%; text-align: right; color: black; \">" +
-                //     "Number of Lines" +
-                //     "</td>" +
-                //     "<td style=\"width: 5%; text-align: center; color: black; \">:</td>" +
-                //     "<td style=\"width: 30%; text-align: center; color: black; \">" +
-                //     cityJson["TransitSystems"][i].NumLines +
-                //     "</td>" +
-                //     "</tr>" +
-                //     "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
-                //     "<td style=\"width: 65%; text-align: right; color: black; \">" +
-                //     "Average distance between " + StopType[i] +
-                //     "</td>" +
-                //     "<td style=\"width: 5%; text-align: center; color: black; \">:</td>" +
-                //     "<td style=\"width: 30%; text-align: center; color: black; \">" +
-                //     cityJson["TransitSystems"][i].AvgDisStops +
-                //     "</td>" +
-                //     "</tr>" +
-                //     "</tbody>" +
-                //     "</table>" +
-                //     "</td>" +
-                //     "</tr>" +
 
             }    // Closing the if
         }          // Clossing the loop
