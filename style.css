@@ -1,4 +1,9 @@
-/* body { padding: 10px;} */
+/* ALL OUR FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+/* ALL OUR FONTS */
+
 /* START OF TITLE STYLE */
 .atlas-title{
   text-align: center;
@@ -62,9 +67,11 @@
 
 .dropdown-content {
   display: none;
+  text-align: left;
+  font-family: 'Cairo', sans-serif;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -118,7 +125,7 @@
 }
 
 .vertical-spacing-200px{
-	height: 200px;
+	height: 180px;
 }
 /* #general-metrics1, #general-metrics1{
   height: 400px;

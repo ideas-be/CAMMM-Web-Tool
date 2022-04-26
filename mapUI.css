@@ -1,7 +1,8 @@
 /* ALL OUR FONTS */
-/* TO BE FILLED */
-/* ALL OUR FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+/* ALL OUR FONTS */
 
 /* START OF MAP MENU TABLE STYLE */
 #filter-group1{
@@ -13,8 +14,12 @@
 
 #query-list{
     text-align: left;
+    padding-left: 10px;
 }
 
+#radioForm1,#radioForm2 label{
+    font-family: 'Cairo', sans-serif;
+}
 
 #map1menu{
     width:100%; 

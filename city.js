@@ -89,8 +89,8 @@ function dropdownCities() {
             cityFlag = myJson["City"][key].flag;
         }
 
-        dropDown1HTML += "<a href=\"#\" onclick=\"getSelectedCity(\'" + key + "\', 1);\"><img src=" + cityFlag + " width=\"20\" height=\"15\">" + nameCity + "</a>";
-        dropDown2HTML += "<a href=\"#\" onclick=\"getSelectedCity(\'" + key + "\', 2);\"><img src=" + cityFlag + " width=\"20\" height=\"15\">" + nameCity + "</a>";
+        dropDown1HTML += "<a href=\"#\" onclick=\"getSelectedCity(\'" + key + "\', 1);\"><img src=" + cityFlag + " width=\"20\" height=\"15\"> " + nameCity + "</a>";
+        dropDown2HTML += "<a href=\"#\" onclick=\"getSelectedCity(\'" + key + "\', 2);\"><img src=" + cityFlag + " width=\"20\" height=\"15\"> " + nameCity + "</a>";
         console.log("Injecting ", nameCity, "with its flag", cityFlag);
     }
 
@@ -300,12 +300,13 @@ class City {
     injectRadioButtons() {
         const { cityNum, ListOfLayers } = this;
         var formHTML = "";
-        var NameOfQueries = ["Node Centrality", "Node Cconnectivity", "Transit Network Density"];
+        var NameOfQueries = ["Node Centrality", "Node Connectivity", "Transit Network Density"];
+        var QueryAltText = ["How central a node is to the rest of the network", "How desirable a node is in a given trip based on network shape", "How dense the transit systems are in the grid"]
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
             formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_" + cityNum + "\" value=\"" + value
                 + "\" onclick=\"{City" + cityNum + ".getRadioStatus(); City" + cityNum + ".turnOffAllLayers(); City" + cityNum + ".injectCatCumulToggleHTML(); City" + cityNum + ".injectCumulSlider(); City" + cityNum + ".loadCumulativeLayers();}\">"
-                + "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
+                + "<label for=\"" + value + "\" alt=\"" + QueryAltText[i] + "\">" + NameOfQueries[i] + "</label><br>"
         }
         var containerId = "radioForm" + cityNum;
         document.getElementById(containerId).innerHTML = formHTML;
@@ -331,11 +332,11 @@ class City {
 
         const { cityNum } = this;
         console.log("Injecting category/cumulative toggle in HTML");
-        var toggleHTML = "<p class=\"toggleText\">Stacked" +
+        var toggleHTML = "<p class=\"toggleText\">All Layers" +
             "<label class=\"switch\" >" +
             "<input type=\"checkbox\" id=\"toggCatCumulBtn" + cityNum + "\" onchange= \"City" + cityNum + ".getCatCumulToggle();\">" +
             "<span class=\"slider round\"></span>" +
-            "</label>     Single" +
+            "</label>     Isolate Layers" +
             "</p>";
         var toggleID = "toggleCategoryCumulative" + cityNum;
         document.getElementById(toggleID).innerHTML = toggleHTML;
@@ -506,7 +507,7 @@ class City {
             "<div id=\"general-card\">" +
             "<table>" +
             "<tr>" +
-            "<td class=\"icon\"><i class=\"fas fa-vector-square fa-3x\"></i></td>" +
+            "<td class=\"icon\"><i class=\"fas fa-vector-square fa-2x\"></i></td>" +
             "<td class=\"info\"><h3>Area in km<sup>2</sup></h3><h4>" + cityJson["AreaSqKm"] + "</h4></td>" +
             "</tr>" +
             "</table>" +
@@ -516,7 +517,7 @@ class City {
             "<div id=\"general-card\">" +
             "<table>" +
             "<tr>" +
-            "<td class=\"icon\"><i class=\"fas fa-users fa-3x\"></i></td>" +
+            "<td class=\"icon\"><i class=\"fas fa-users fa-2x\"></i></td>" +
             "<td class=\"info\"><h3>Population in million</h3><h4>" + cityJson["PopulationMillion"] + "</h4></td>" +
             "</tr>" +
             "</table>" +
@@ -529,7 +530,7 @@ class City {
             "<div id=\"general-card\">" +
             "<table>" +
             "<tr>" +
-            "<td class=\"icon\"><i class=\"fa-solid fa-users-line fa-3x\"></i></td>" +
+            "<td class=\"icon\"><i class=\"fa-solid fa-users-line fa-2x\"></i></td>" +
             "<td class=\"info\"><h3>Density in person/km<sup>2</sup></h3><h4>" + cityJson["DensityPersonSqKm"] + "</h4></td>" +
             "</tr>" +
             "</table>" +
@@ -561,7 +562,7 @@ class City {
         var rowStyle = "style=\" height:25px; text-align: center; color: black;\"";
         var colStyle = "style=\"width: 45%; text-align: left; color: black; font-size: 11px;\"";
 
-        var cityTable = "<table style=\"padding:25px; width:100%; \">" +
+        var cityTable = "<table style=\"padding-left:25px; width:100%; \">" +
             "<tbody style=\"height:30px;\">" +
             "<tr " + rowStyle + "> <td " + colStyle + "> Statistics last updated  :      " + cityJson["YearOfStats"] +
             "</td><td " + colStyle + ">Source of GTFS :     " + "<a href={" + cityJson["SourceGTFS"] + "}>Source</a>" + " (" + cityJson["DateUpdatedGTFS"] + ")" +
@@ -574,39 +575,36 @@ class City {
                 cityTable +=
                     "<table style=\"width:40vw; margin:20px;\">" +
                     "<tbody>" +
-                    "<tr>" +
-                    "<td style=\"width: 30%; text-align: center;\">" +
+                    "<tr style=\"height: 40px;\">" +
+                    "<td style=\"width: 20%; text-align: center;\">" +
                     "<div class=\"transit-icon\" style=\"color: " + TransitColors[i] + "; \">" +
-                    "<i class=\"" + IconList[i] + " fa-3x\"></i>" +
+                    "<i class=\"" + IconList[i] + " fa-2x\"></i>" +
                     "</div>" +
                     "</td>" +
                     "<td style=\"width: 25%; border-right: 3px solid lightgray; padding-right: 14px;\">" +
                     "<div>" +
-                    "<h4 style=\"margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; font-weight: bold;\">" +
+                    "<h4 class=\"metrics-values\">" +
                     cityJson["TransitSystems"][i].NumStops +
                     "</h4>" +
-                    "<p style=\"margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; \">stops</p>" +
+                    "<p class=\"metrics-labels\">stops</p>" +
                     "</div>" +
                     "</td>" +
-                    "<td style=\"width: 20%; border-right: 3px solid lightgray; padding-right: 14px;\">" +
+                    "<td style=\"width: 25%; border-right: 3px solid lightgray; padding-right: 14px;\">" +
                     "<div>" +
-                    "<h4 style=\"margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; font-weight: bold;\">" +
+                    "<h4 class=\"metrics-values\">" +
                     cityJson["TransitSystems"][i].NumLines +
                     "</h4>" +
-                    "<p style=\"margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; \">lines</p>" +
+                    "<p class=\"metrics-labels\">lines</p>" +
                     "</div>" +
                     "</td>" +
-                    "<td style=\"width: 40%;\">" +
+                    "<td style=\"width: 30%;\">" +
                     "<div>" +
-                    "<h4 style=\"margin: 0px; text-align: right; padding-left: 10px; font-size: 40px; font-weight: bold;\">" +
+                    "<h4 class=\"metrics-values\">" +
                     cityJson["TransitSystems"][i].AvgDisStops +
                     " m</h4>" +
-                    "<p style=\"margin: 0px; text-align: right; padding-left: 10px; color: black; font-size: 20px; \">avg. distance</p>" +
+                    "<p class=\"metrics-labels\">avg. distance</p>" +
                     "</div>" +
                     "</td>" +
-                    "</tr>" +
-                    "<tr>" +
-                    "<td style=\"height: 15px;\"></td>" +
                     "</tr>" +
                     "</tbody>" +
                     "</table>";

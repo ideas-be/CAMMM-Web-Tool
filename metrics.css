@@ -35,12 +35,12 @@ h4{
 
 #general-card{
     width: 20vw;
-    height: 96px;
+    height: 70px;
     background-color: lightgray;
     text-align: center;
     border-radius: 10px;
+    padding-bottom: 10px;
     margin: 5px;
-    padding-top: 5px;
 }
 
 #general-card table{
@@ -51,8 +51,8 @@ h4{
     margin: 0px;
     text-align: right;
     padding-left: 10px; 
-    font-size: 16px; 
-    color: darkgrey;
+    font-size: 12px; 
+    color: #999;
 }
 
 #general-card h4{
@@ -60,13 +60,13 @@ h4{
     text-align: right;
     /* padding-left: 5px; */
     color: black;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 #general-card .icon{
-    width: 30%;
-    height:75px;
+    width: 25%;
+    height:70px;
     text-align: center;
     color: black;
 }
@@ -74,16 +74,32 @@ h4{
 #general-card .info{
     width: 70%;
     text-align: left;
-    line-height: 28px;
 }
 
 .transit-icon{
     background-color: white;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     padding: 10px;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     display: flex; 
+}
+
+.metrics-values{
+    margin: 0px;
+    text-align: right;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.metrics-labels{
+    margin: 0px;
+    text-align: right;
+    padding-left: 10px;
+    color: black;
+    font-size: 14px;
+    line-height: 12px;
 }
