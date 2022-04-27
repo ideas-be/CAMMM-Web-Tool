@@ -760,3 +760,23 @@ $C_{B}(v)$ = $sum_$
 
 </div>
 ----------------------------------------------------------------------
+
+# Scratchpad:
+budapest ranges:
+1-3, 4-11, 12-22, 23-39, 40-64
+
+quebec ranges: 
+1-4, 5-12, 13-21, 22-32, 33-50
+
+vienna ranges:
+1-4, 5-12, 13-22, 23-34, 35-57
+
+barcelona ranges:
+1-4, 5-15, 16-28, 29-42, 43-64
+
+COLORS FOR GRID
+Level 1     ff8f00  
+Level 2     eb6a00  
+Level 3     db4900  
+Level 4     e05200  
+Level 5     c41900
