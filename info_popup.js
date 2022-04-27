@@ -74,8 +74,7 @@ var infoPopup1HTML = "<div class=\"hover_info_popup\" id=\"hover_info_popup1\" s
     "</div >" +
     "</div >";
 
-var infoPopup2HTML = "<div class=\"hover_info_popup\" id=\"hover_info_popup2\" style=\"display: none;\">" +
-    "< span class=\"helper\" ></span >" +
+var infoPopup2HTML = "<div class=\"hover_info_popup\" id=\"hover_info_popup2\" style=\"display: none;\">" + "< span class=\"helper\" ></span >" +
     "<div>" +
     "<div class=\"popupCloseButton\" onclick=\"hide_popup(2);\">&times;</div>" +
     "<h3>Cities Selection</h3>" +
@@ -91,104 +90,108 @@ var infoPopup2HTML = "<div class=\"hover_info_popup\" id=\"hover_info_popup2\" s
     "<li>Quebec City</li>" +
     "<li>Vienna</li>" +
     "</ul>" +
-    <br>
-        <br><strong>Live list of Cities-in-progress</strong>
-            <br>Add explanation of upcoming cities:
-                <ul>
-                    <li>Laval</li>
-                    <li>Melbourne</li>
-                    <li>Stockholm</li>
-                    <li>Oslo</li>
-                </ul>
-            </p>
-        </div>
-    </div>";
+    "<br>" +
+    "<br><strong>Live list of Cities-in-progress</strong>" +
+    "<br>Add explanation of upcoming cities:" +
+    "<ul>" +
+    "<li>Laval</li>" +
+    "<li>Melbourne</li>" +
+    "<li>Stockholm</li>" +
+    "<li>Oslo</li>" +
+    "</ul>" +
+    "</p>" +
+    "</div>" +
+    "</div>";
 
-var infoPopup3HTML = "		<div class="hover_info_popup" id="hover_info_popup3" style="display: none; ">
-    < span class="helper" ></span >
-        <div style="overflow-y: scroll; height: 500px;">
-            <div class="popupCloseButton" onclick="hide_popup(3);">&times;</div>
-            <h3>Map Menu</h3>
-            <p>Introduction of how to use these menu items: left-to-right, etc. (written in reference to snapshot)
-                <br>
-                    <br><em style="color: lightcoral;">Labelled Snapshot </em>
-                        <br>
-                            <br><strong>Select Query</strong>
-                                <br>Add explanation on why we are selecting a query (need to add citations)
-                                    <br>
-                                        <br>The query list includes:
-                                            <ol>
-                                                <li>Centrality degree is associated with how accessible the rest of the network is,
-                                                    with respect to a given node. This means that this query evaluates the ease of a
-                                                    trip from the given node to any other point in the network and vice versa.</li>
-                                                <li>Closeness degree measures the desirability of a given node in being included in
-                                                    a particular trip inside the network. A node with a higher value of closeness centrality
-                                                    will imply that it is more frequented during trips inside the network.</li>
-                                            </ol>
-                                            <br>
-                                                <br><strong>Select Analysis Type</strong>
-                                                    <br>Add explanation on why we are selecting a type of analysis
-                                                        <br>
-                                                            <br>The types of analysis include:
-                                                                <ol>
-                                                                    <li>Direct: queries applied directly applied to the transit network.</li>
-                                                                    <li>Node: queries applied to nodes that aggregates points of access/transfer/connections
-                                                                        in the network based on their geography.</li>
-                                                                </ol>
-                                                                <br>
-                                                                    <br><strong>Select Display Type</strong>
-                                                                        <br>Add explanation on why we are toggling the display type (explain what the layers mean)
-                                                                            <br>
-                                                                                <br>The types of display of the data points on the map include:
-                                                                                    <ol>
-                                                                                        <li>Stacked: Shows the data points on the map in incremental layers based on the
-                                                                                            value of the corresponding slider. For example, if the slider is on “3”, the
-                                                                                            map would display data points from layers 1, 2 and 3.</li>
-                                                                                        <li>Single: Shows the data points on the map in individual layers based on the
-                                                                                            value of the corresponding slider. For example, if the slider is on “3”, the
-                                                                                            map would display data points from layer 3 only.</li>
-                                                                                    </ol>
-                                                                                    <br>
-                                                                                        <br><strong>Slider and Legend (TBD)</strong>
-                                                                                            <br>This slider is an interactive extension of the selected display type. The legend
-                                                                                                (color gradient) is a visual reflection of the selected query.
-                                                                                            </p>
-                                                                                        </div>
-                                                                                    </div>";
+var infoPopup3HTML = "<div class=\"hover_info_popup\" id=\"hover_info_popup3\" style=\"display: none; \">"
+    + "< span class=\"helper\" ></span >" +
+    "<div style=\"overflow-y: scroll; height: 500px;\">" +
+    "<div class=\"popupCloseButton\" onclick=\"hide_popup(3);\">&times;</div>" +
+    "<h3>Map Menu</h3>" +
+    "<p>Introduction of how to use these menu items: left-to-right, etc. (written in reference to snapshot)" +
+    "<br>" +
+    "<br><em style=\"color: lightcoral;\">Labelled Snapshot </em>" +
+    "<br>" +
+    "<br><strong>Select Query</strong>" +
+    "<br>Add explanation on why we are selecting a query (need to add citations)" +
+    "<br>" +
+    "<br>The query list includes:" +
+    "<ol>" +
+    "<li>Centrality degree is associated with how accessible the rest of the network is, with respect to a given node. This means that this query evaluates the ease of a trip from the given node to any other point in the network and vice versa.</li>" +
+    "<li>Closeness degree measures the desirability of a given node in being included in a particular trip inside the network. A node with a higher value of closeness centrality will imply that it is more frequented during trips inside the network.</li>" +
+    "</ol>" +
+    "<br>" +
+    "<br><strong>Select Analysis Type</strong>" +
+    "<br>Add explanation on why we are selecting a type of analysis" +
+    "<br>" +
+    "<br>The types of analysis include:" +
+    "<ol>" +
+    "<li>Direct: queries applied directly applied to the transit network.</li>" +
+    "<li>Node: queries applied to nodes that aggregates points of access/transfer/connections in the network based on their geography.</li>" +
+    "</ol>" +
+    "<br>" +
+    "<br><strong>Select Display Type</strong>" +
+    "<br>Add explanation on why we are toggling the display type (explain what the layers mean)" +
+    "<br>" +
+    "<br>The types of display of the data points on the map include:" +
+    "<ol>" +
+    "<li>Stacked: Shows the data points on the map in incremental layers based on the value of the corresponding slider. For example, if the slider is on “3”, the map would display data points from layers 1, 2 and 3.</li>" +
+    "<li>Single: Shows the data points on the map in individual layers based on the value of the corresponding slider. For example, if the slider is on “3”, the map would display data points from layer 3 only.</li>" +
+    "</ol>" +
+    "<br>" +
+    "<br><strong>Slider and Legend (TBD)</strong>" +
+    "<br>This slider is an interactive extension of the selected display type. The legend (color gradient) is a visual reflection of the selected query." +
+    "</p>" +
+    "</div>" +
+    "</div>";
 
-                                                                                    var infoPopup4HTML = "<div class="hover_info_popup" id="hover_info_popup4" style="display: none;">
-                                                                                        <span class="helper"></span>
-                                                                                        <div>
-                                                                                            <div class="popupCloseButton" onclick="hide_popup(4);">&times;</div>
-                                                                                            <h3>City Metrics</h3>
-                                                                                            <p>This contains a tabular description of the public transit networks servicing the city under analysis.
-                                                                                                <br>
-                                                                                                    <br>The available transit systems for each city are linked to the following signage:
-                                                                                                        <ol>
-                                                                                                            <li><i class="fas fa-bus"></i> : Bus Network</li>
-                                                                                                            <li><i class="fas fa-train"></i> : Heavy Rail, Trains, Interurbans, etc...</li>
-                                                                                                            <li><i class="fas fa-subway"></i> : Metro/Subway systems, etc.</li>
-                                                                                                            <li><i class="fas fa-tram"></i> : Tram, other types of light rail</li>
-                                                                                                            <li><i class="fas fa-taxi"></i> : Other types of transportation: Funicular, Fixed route taxi
-                                                                                                                service, Carriage, etc...</li>
-                                                                                                        </ol>
-                                                                                                        <br>
-                                                                                                            <br>The list of descriptors for each transit system includes:
-                                                                                                                <ul>
-                                                                                                                    <li>Number of stops/stations, or points of access to the network </li>
-                                                                                                                    <li>Number of lines in the system </li>
-                                                                                                                    <li>Average distance between stops/stations</li>
-                                                                                                                </ul>
-                                                                                                                <br>
-                                                                                                                    <br>DISCLAIMER: The data shown in the atlas reflects the information provided in GTFS format
-                                                                                                                        by the transport agencies managing the public transit locally in each city. These files are
-                                                                                                                        obtained from the official websites corresponding to each city, or internet aggregators.
-                                                                                                                        Therefore, accuracy of the data displayed is out of the scope of this research tool.
-                                                                                                                        The authors cannot guarantee the precision of this data.
-                                                                                                                    </p>
-                                                                                                                </div>
-                                                                                                            </div>";
+var infoPopup4HTML = "<div class=\"hover_info_popup\" id=\"hover_info_popup4\" style=\"display: none; \">" + "< span class=\"helper\" ></span >" +
+    "<div>" +
+    "<div class=\"popupCloseButton\" onclick=\"hide_popup(4);\">&times;</div>" +
+    "<h3>City Metrics</h3" > +
+    "<p>This contains a tabular description of the public transit networks servicing the city under analysis." +
+    "<br>" +
+    "<br>The available transit systems for each city are linked to the following signage:" +
+    "<ol>" +
+    "<li><i class=\"fas fa-bus\"></i> : Bus Network</li>" +
+    "<li><i class=\"fas fa-train\"></i> : Heavy Rail, Trains, Interurbans, etc...</li>" +
+    "<li><i class=\"fas fa-subway\"></i> : Metro/Subway systems, etc.</li>" +
+    "<li><i class=\"fas fa-tram\"></i> : Tram, other types of light rail</li>" +
+    "<li><i class=\"fas fa-taxi\"></i> : Other types of transportation: Funicular, Fixed route taxi service, Carriage, etc...</li>" +
+    "</ol>" +
+    "<br>" +
+    "<br>The list of descriptors for each transit system includes:" +
+    "<ul>" +
+    "<li>Number of stops/stations, or points of access to the network </li>" +
+    "<li>Number of lines in the system </li>" +
+    "<li>Average distance between stops/stations</li>" +
+    "</ul>" +
+    "<br>" +
+    "<br>DISCLAIMER: The data shown in the atlas reflects the information provided in GTFS format by the transport agencies managing the public transit locally in each city. These files are obtained from the official websites corresponding to each city, or internet aggregators. Therefore, accuracy of the data displayed is out of the scope of this research tool. The authors cannot guarantee the precision of this data." +
+    "</p>" +
+    "</div>" +
+    "</div>";
 
-                                                                                                            function injectInfoPopupText(){
-
-                                                                                                            }
+function injectInfoPopupText() {
+    for (i = 0; i < 3; i++) {
+        var infoPopupDivID = "info_popup_" + (i + 1);
+        console.log("infoPopupDivID", infoPopupDivID);
+        switch (i + 1) {
+            case 1: document.getElementById(infoPopupDivID).innerHTML = infoPopup1HTML;
+                console.log("Injecting Pop up ", i + 1);
+                break;
+            case 2: document.getElementById(infoPopupDivID).innerHTML = infoPopup2HTML;
+                console.log("Injecting Pop up ", i + 1);
+                break;
+            case 3: document.getElementById(infoPopupDivID).innerHTML = infoPopup3HTML;
+                console.log("Injecting Pop up ", i + 1);
+                break;
+            // case 4: document.getElementById(infoPopupDivID).innerHTML = infoPopup4HTML;
+            //     console.log("Injecting Pop up ", i + 1);
+            //     break;
+            default:
+                console.log("pop up div does not exist");
+                break;
+        }
+    }
+}

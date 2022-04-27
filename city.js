@@ -611,9 +611,9 @@ class City {
 
             }    // Closing the if
         }          // Clossing the loop
-        cityTable += "<span class=\"popUp3\" style=\"font-size: 1em; color: #d81b60; padding-left:10%; padding-bottom: 50px;\">" +
-            "<i class=\"fas fa-info-circle\" onclick=\"show_popup(4);\"></i>" +
-            "</span>";
+        // cityTable += "<span class=\"popUp4\" style=\"font-size: 1em; color: #d81b60; padding-left:10%; padding-bottom: 50px;\">" +
+        //     "<i class=\"fas fa-info-circle\" onclick=\"show_popup(4);\"></i>" +
+        //     "</span>";
         var displayCityMetricsdivID = "city" + cityNum + "table";
         document.getElementById(displayCityMetricsdivID).innerHTML = cityTable;
     }

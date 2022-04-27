@@ -25,9 +25,13 @@ def DirectLayerProcessing(Lists):
             # print(i,type(i))
             for j in i.split(","):
                 j=j.replace(" ", "")
-                # print("Name:",j)
+                print("Name:",j)
                 QueryName=j.split("_") # budapest-bus_CL -> list [budapest-bus,CL]
-                # print("QueryName:",QueryName)
+                print("QueryName:",QueryName)
+                print("QueryDict.keys()")
+                print(QueryDict.keys())
+                print("QueryName[1]")
+                print(QueryName[1])
                 if QueryName[1] in QueryDict.keys():
                     QueryDict[QueryName[1]].append(j)
                     # print("Key:",QueryName[1],"\tList:",QueryDict[QueryName[1]])
