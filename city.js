@@ -555,7 +555,7 @@ class City {
 
     displayCityMetrics() {
         const { city, cityNum, cityJson } = this;
-        var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-tram", "fas fa-taxi"];
+        var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fa-cable-car", "fas fa-taxi"];
         var StopType = ["Bus Stops", "Train Stations", "Metro Stations", "Tram Stops", "Other Stops"];
         var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
 
@@ -611,9 +611,9 @@ class City {
 
             }    // Closing the if
         }          // Clossing the loop
-        // cityTable += "<span class=\"popUp4\" style=\"font-size: 1em; color: #d81b60; padding-left:10%; padding-bottom: 50px;\">" +
-        //     "<i class=\"fas fa-info-circle\" onclick=\"show_popup(4);\"></i>" +
-        //     "</span>";
+        cityTable += "<span class=\"popUp4\" style=\"font-size: 1em; color: #d81b60; padding-left:10%; padding-bottom: 50px;\">" +
+            "<i class=\"fas fa-info-circle\" onclick=\"show_popup(4);\"></i>" +
+            "</span>";
         var displayCityMetricsdivID = "city" + cityNum + "table";
         document.getElementById(displayCityMetricsdivID).innerHTML = cityTable;
     }
