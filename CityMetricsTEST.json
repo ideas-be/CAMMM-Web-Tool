@@ -113,8 +113,8 @@
                     "AvgDisStops": 0
                 }
             ],
-            "DirectStyleURL": "cl2j34wvy000e14qht01ytedh",
-            "NodeStyleURL": "cl2j328jn000h14s7jtkryp5v",
+            "DirectStyleURL": "ckqtuan550oah17ofvsk91mkt",
+            "NodeStyleURL": "ckqtuaktz0c3317mopggbopa1",
             "DirectLayers": [
                 [
                     "vienna-bus_CD",
@@ -353,6 +353,430 @@
                 46.78
             ],
             "Zoom": 11.3
+        },
+        "Boston": {
+            "name": "Boston",
+            "flag": "flags/united-states-of-america-flag-xs.png",
+            "AreaSqKm": 232.11,
+            "PopulationMillion": 4.94,
+            "DensityPersonSqKm": 5396,
+            "NumBoroughs": 23,
+            "NumTransitSystems": 4,
+            "YearOfStats": 2021,
+            "SourceGTFS": "https://www.mbta.com/developers/gtfs",
+            "DateUpdatedGTFS": 2022,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 7460,
+                    "NumLines": 170,
+                    "AvgDisStops": 267
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 129,
+                    "NumLines": 12,
+                    "AvgDisStops": 3533
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 46,
+                    "NumLines": 13,
+                    "AvgDisStops": 675
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 98,
+                    "NumLines": 5,
+                    "AvgDisStops": 643
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+            "DirectStyleURL": "cl2j3s9ml000514p2mejx0yqb",
+            "NodeStyleURL": "cl2j65p95000l14qh59j99qq7",
+            "DirectLayers": [
+                [
+                    "boston-bus_CD",
+                    "boston-rail_CD",
+                    "boston-metro_CD",
+                    "boston-lightrail_CD"
+                ],
+                [
+                    "boston-bus_CL",
+                    "boston-rail_CL",
+                    "boston-metro_CL",
+                    "boston-lightrail_CL"
+                ],
+                [
+                    "boston_grid"
+                ]
+            ],
+            "NodeLayers": [
+                "boston_N_CD",
+                "boston_N_CL",
+                "boston_grid"
+            ],
+            "GridStyleURL": null,
+            "Coords": [
+                -71.03,
+                42.36
+            ],
+            "Zoom": 10.52
+        },
+        "GTA": {
+            "name": "Toronto",
+            "flag": "flags/canada-flag-xs.png",
+            "AreaSqKm": 7123.64,
+            "PopulationMillion": 6.71,
+            "DensityPersonSqKm": 942,
+            "NumBoroughs": 27,
+            "NumTransitSystems": 3,
+            "YearOfStats": 2020,
+            "SourceGTFS": "https://open.toronto.ca/dataset/ttc-routes-and-schedules/",
+            "DateUpdatedGTFS": 2022,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 26746,
+                    "NumLines": 476,
+                    "AvgDisStops": 11963
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 140,
+                    "NumLines": 4,
+                    "AvgDisStops": 904
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 866,
+                    "NumLines": 13,
+                    "AvgDisStops": 15509
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+            "DirectStyleURL": "cl2jkjtrb004n14mt0ew9jj0v",
+            "NodeStyleURL": "cl2jhcd6z001l15ogcoitd1zj",
+            "DirectLayers": [
+                [
+                    "toronto-bus_CD",
+                    "toronto-metro_CD",
+                    "toronto-lightrail_CD"
+                ],
+                [
+                    "toronto-bus_CL",
+                    "toronto-metro_CL",
+                    "toronto-lightrail_CL"
+                ],
+                [
+                    "toronto_grid"
+                ]
+            ],
+            "NodeLayers": [
+                "toronto_N_CD",
+                "toronto_N_CL",
+                "toronto_grid"
+            ],
+            "GridStyleURL": null,
+            "Coords": [
+                -79.4,
+                43.63
+            ],
+            "Zoom": 9.1
+        },
+        "Longueuil": {
+            "name": "Longueuil",
+            "flag": "flags/canada-flag-xs.png",
+            "AreaSqKm": 122.9,
+            "PopulationMillion": 0.23,
+            "DensityPersonSqKm": 2002,
+            "NumBoroughs": 4,
+            "NumTransitSystems": 1,
+            "YearOfStats": 2016,
+            "SourceGTFS": "https://www.rtl-longueuil.qc.ca/en-CA/open-data/gtfs-files/",
+            "DateUpdatedGTFS": 2022,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 6171,
+                    "NumLines": 153,
+                    "AvgDisStops": 302
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+            "DirectStyleURL": "cl2j3s9zm000h14nx6x271uo1",
+            "NodeStyleURL": "cl2j5m6qv000l14ltq66brxkm",
+            "DirectLayers": [
+                [
+                    "longueuil-bus_CD"
+                ],
+                [
+                    "longueuil-bus_CL"
+                ],
+                [
+                    "longueuil_grid"
+                ]
+            ],
+            "NodeLayers": [
+                "longueuil_N_CD",
+                "longueuil_N_CL",
+                "longueuil_grid"
+            ],
+            "GridStyleURL": null,
+            "Coords": [
+                -73.44,
+                45.52
+            ],
+            "Zoom": 12.22
+        },
+        "Vancouver": {
+            "name": "Vancouver",
+            "flag": "flags/canada-flag-xs.png",
+            "AreaSqKm": 2878.52,
+            "PopulationMillion": 2.64,
+            "DensityPersonSqKm": 2584,
+            "NumBoroughs": 22,
+            "NumTransitSystems": 2,
+            "YearOfStats": 2016,
+            "SourceGTFS": "https://developer.translink.ca/servicesgtfs/gtfsdata",
+            "DateUpdatedGTFS": 2022,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 13299,
+                    "NumLines": 232,
+                    "AvgDisStops": 1359
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 70,
+                    "NumLines": 3,
+                    "AvgDisStops": 5325
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+            "DirectStyleURL": "cl2j761fv000z14oybd9dv087",
+            "NodeStyleURL": "cl2j7dxy7001114oy0fwtufye",
+            "DirectLayers": [
+                [
+                    "vancouver-bus_CD",
+                    "vancouver-metro_CD"
+                ],
+                [
+                    "vancouver-bus_CL",
+                    "vancouver-metro_CL"
+                ],
+                [
+                    "vancouver_grid"
+                ]
+            ],
+            "NodeLayers": [
+                "vancouver_N_CD",
+                "vancouver_N_CL",
+                "vancouver_grid"
+            ],
+            "GridStyleURL": null,
+            "Coords": [
+                -123.1,
+                49.224
+            ],
+            "Zoom": 10.98
+        },
+        "Laval": {
+            "name": "Laval",
+            "flag": "flags/canada-flag-xs.png",
+            "AreaSqKm": 247.23,
+            "PopulationMillion": 0.42,
+            "DensityPersonSqKm": 1710,
+            "NumBoroughs": 6,
+            "NumTransitSystems": 1,
+            "YearOfStats": 2016,
+            "SourceGTFS": "https://stlaval.ca/a-propos/diffusion/donnees-ouvertes",
+            "DateUpdatedGTFS": 2022,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 4910,
+                    "NumLines": 50,
+                    "AvgDisStops": 714
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+            "DirectStyleURL": "cl2jhkvs9000215nt1rjl6mrv",
+            "NodeStyleURL": "cl2jk6kpl002e14sabu3e2gpu",
+            "DirectLayers": [
+                [
+                    "laval-bus_CD"
+                ],
+                [
+                    "laval-bus_CL"
+                ],
+                [
+                    "laval_grid"
+                ]
+            ],
+            "NodeLayers": [
+                "laval_N_CD",
+                "laval_N_CL",
+                "laval_grid"
+            ],
+            "GridStyleURL": null,
+            "Coords": [
+                -73.71,
+                45.64
+            ],
+            "Zoom": 10.56
+        },
+        "Seattle": {
+            "name": "Seattle",
+            "flag": "flags/united-states-of-america-flag-xs.png",
+            "AreaSqKm": 21222,
+            "PopulationMillion": 4.01,
+            "DensityPersonSqKm": 3387,
+            "NumBoroughs": 127,
+            "NumTransitSystems": 3,
+            "YearOfStats": 2019,
+            "SourceGTFS": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/otd-downloads",
+            "DateUpdatedGTFS": 2022,
+            "TransitSystems": [
+                {
+                    "Type": "Bus",
+                    "NumStops": 13036,
+                    "NumLines": null,
+                    "AvgDisStops": 490
+                },
+                {
+                    "Type": "Train",
+                    "NumStops": 11,
+                    "NumLines": null,
+                    "AvgDisStops": 5891
+                },
+                {
+                    "Type": "Metro",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                },
+                {
+                    "Type": "Tram",
+                    "NumStops": 62,
+                    "NumLines": null,
+                    "AvgDisStops": 8797
+                },
+                {
+                    "Type": "Others",
+                    "NumStops": 0,
+                    "NumLines": 0,
+                    "AvgDisStops": 0
+                }
+            ],
+            "DirectStyleURL": "cl2jfqz27000l15se1zk59igu",
+            "NodeStyleURL": "cl2jgv5qs004b14mtorc476ks",
+            "DirectLayers": [
+                [
+                    "seattle-bus_CD",
+                    "seattle-rail_CD",
+                    "seattle-lightrail_CD"
+                ],
+                [
+                    "seattle-bus_CL",
+                    "seattle-rail_CL",
+                    "seattle-lightrail_CL"
+                ],
+                [
+                    "seattle_grid"
+                ]
+            ],
+            "NodeLayers": [
+                "seattle_N_CD",
+                "seattle_N_CD",
+                "seattle_grid"
+            ],
+            "GridStyleURL": null,
+            "Coords": [
+                -122.22,
+                47.5
+            ],
+            "Zoom": 9.22
         }
     }
 }

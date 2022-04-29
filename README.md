@@ -905,3 +905,72 @@ The layers can be displayed in two ways:
 All Layers: Shows the data points on the map in incremental layers based on the value of the corresponding slider. For example, if the slider is on “3”, the map would display data points from layers 1, 2 and 3.
 Isolated Layer: Shows the data points on the map in individual layers based on the value of the corresponding slider. For example, if the slider is on “3”, the map would display data points from layer 3 only.
 
+____________________
+Toronto
+-79.392, 43.632
+9.10
+Direct
+cl2jkjtrb004n14mt0ew9jj0v
+bus
+toronto-bus_CD, toronto-bus_CL
+light rail
+toronto-lightrail_CD, toronto-lightrail_CL
+metro
+toronto-metro_CD, toronto-metro_CL
+
+Node
+cl2jhcd6z001l15ogcoitd1zj
+
+toronto_N_CD, toronto_N_CL
+
+Grid
+
+toronto_grid
+
+__________________________
+LAVAL
+-73.707086, 45.636763
+10.56
+
+Direct
+cl2jhkvs9000215nt1rjl6mrv
+
+Bus
+laval-bus_CD, laval-bus_CL
+
+Node
+cl2jk6kpl002e14sabu3e2gpu
+
+Grid
+laval_grid
+
+laval_N_CD, laval_N_CL
+
+https://stlaval.ca/a-propos/diffusion/donnees-ouvertes
+
+_______________
+Seattle
+-122.219930, 47.496418
+9.22
+
+Direct 
+cl2jfqz27000l15se1zk59igu
+
+Bus
+seattle-bus_CD, seattle-bus_CL
+
+Ligth Rail
+seattle-lightrail_CD, seattle-lightrail_CL
+
+Rail
+seattle-rail_CD, seattle-rail_CL
+
+Grid
+seattle_grid
+
+Node
+cl2jgv5qs004b14mtorc476ks
+
+seattle_N_CD,seattle_N_CD
+
+https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/otd-downloads
