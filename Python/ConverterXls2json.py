@@ -25,9 +25,13 @@ def DirectLayerProcessing(Lists):
             # print(i,type(i))
             for j in i.split(","):
                 j=j.replace(" ", "")
-                # print("Name:",j)
+                print("Name:",j)
                 QueryName=j.split("_") # budapest-bus_CL -> list [budapest-bus,CL]
-                # print("QueryName:",QueryName)
+                print("QueryName:",QueryName)
+                print("QueryDict.keys()")
+                print(QueryDict.keys())
+                print("QueryName[1]")
+                print(QueryName[1])
                 if QueryName[1] in QueryDict.keys():
                     QueryDict[QueryName[1]].append(j)
                     # print("Key:",QueryName[1],"\tList:",QueryDict[QueryName[1]])
@@ -44,7 +48,7 @@ def DirectLayerProcessing(Lists):
     #                 ["montreal-bus_CLtest","montreal-metro_CLtest"]
     return (ExitList)
 
-def writeToFile(Data,ExitPath):
+def WriteToFile(Data:dict,ExitPath:str) -> None:
     f = open(ExitPath, "w",encoding='utf-8')
     var=json.dumps(Data, ensure_ascii=False)
     # print("var",var)
@@ -52,7 +56,7 @@ def writeToFile(Data,ExitPath):
     f.write(var)
     f.close()
 
-def ReadFile(path):
+def ReadFile(path:str) -> dict:
     LetterHeaders={   
         "City":"A",
         "name":"B",
@@ -89,10 +93,11 @@ def ReadFile(path):
         "DensityPersonSqKm":"AG",
         "YearOfStats":"AH",
         "SourceGTFS":"AI",
-        "DateUpdatedGTFS":"AJ"
-	
-
-    }
+        "DateUpdatedGTFS":"AJ",
+        "GridLayers":"AK",
+        "GridStyleURL":"AL",
+        "Flag":"AM",
+	}
 
     ExitDict={"City": {}}
 
@@ -121,8 +126,8 @@ def ReadFile(path):
             TransitionDictionary[key]=WorkSheet[ExcelCoord].value
             # print(key,"\t=",WorkSheet[ExcelCoord].value)
 
-        DirectList=DirectLayerProcessing([TransitionDictionary["Bus-DirectLayers"],TransitionDictionary["Train-DirectLayers"],TransitionDictionary["Metro-DirectLayers"],TransitionDictionary["Tram-DirectLayers"],TransitionDictionary["Others-DirectLayers"]])
-        NodeList=NodeLayerProcessing(TransitionDictionary["NodeLayers"])
+        DirectList=DirectLayerProcessing([TransitionDictionary["Bus-DirectLayers"],TransitionDictionary["Train-DirectLayers"],TransitionDictionary["Metro-DirectLayers"],TransitionDictionary["Tram-DirectLayers"],TransitionDictionary["Others-DirectLayers"],TransitionDictionary["GridLayers"]])
+        NodeList=NodeLayerProcessing(TransitionDictionary["NodeLayers"]+","+TransitionDictionary["GridLayers"])
 
         # ListNode=[]
         # for i in TransitionDictionary["NodeLayers"].split(","):
@@ -131,6 +136,7 @@ def ReadFile(path):
         # print("listTest",listTest,type(listTest))
         ExitDict["City"][CityEnglishName]={
                 "name": TransitionDictionary["name"],
+                "flag": TransitionDictionary["Flag"],
                 "AreaSqKm": TransitionDictionary["AreaSqKm"],
                 "PopulationMillion": TransitionDictionary["PopulationMillion"],
                 "DensityPersonSqKm": TransitionDictionary["DensityPersonSqKm"],
@@ -175,6 +181,7 @@ def ReadFile(path):
                 "NodeStyleURL": TransitionDictionary["NodeStyleURL"],
                 "DirectLayers": DirectList,
                 "NodeLayers": NodeList,
+                "GridStyleURL": TransitionDictionary["GridStyleURL"],
                 "Coords": [
                     TransitionDictionary["Coords-Lat"],
                     TransitionDictionary["Coords-Lon"]
@@ -191,7 +198,7 @@ if __name__ =="__main__":
     Data=ReadFile(path=PathToTheFile)
     # print("\n"*10)
     # print(Data)
-    writeToFile(Data=Data,ExitPath="CityMetrics.json")
+    WriteToFile(Data=Data,ExitPath="CityMetricsTEST.json")
     # for CityJs in Data['City']:
     #     print("\n"*10)
     #     print("CityJs",CityJs)

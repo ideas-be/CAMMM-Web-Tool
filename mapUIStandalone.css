@@ -1,27 +1,12 @@
-/* ALL OUR FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-/* ALL OUR FONTS */
-
 /* START OF MAP MENU TABLE STYLE */
-#filter-group1{
+#filter-group{
     width: 95%; 
     height: 75px; 
     text-align: center; 
     margin: 20px 0 0 20px;
 }
 
-#query-list{
-    text-align: left;
-    padding-left: 10px;
-}
-
-#radioForm1,#radioForm2 label{
-    font-family: 'Cairo', sans-serif;
-}
-
-#map1menu{
+#mapmenu{
     width:100%; 
     height: 100%; 
     /* border: 2px solid lightgrey; */
@@ -33,19 +18,6 @@
     font-size: 11px;
 }
 
-#filter-group2{
-    width: 95%; 
-    height: 75px; 
-    text-align: center; 
-    margin: 20px 20px 0 0;
-}
-
-#map2menu{
-    width:100%; 
-    height: 100%; 
-    /* border: 2px solid lightgrey; */
-}
-
 .mapCellsType1{
     width: 15%;
     box-sizing: content-box;
@@ -53,7 +25,6 @@
     font-size: 11px;
     font-weight: bold;
     border-right: 2px solid lightgrey;
-    text-align: center;
 }
 
 .mapCellsType2{
@@ -64,14 +35,6 @@
 }
 
 /* END OF MAP MENU TABLE STYLE */
-
-/* START OF MAP CONTROLS STYLE */
-
-#map1controls, #map2controls{
-    z-index: 10;
-}
-
-/* END OF MAP CONTROLS STYLE */
 
 /* START OF MAP LEGEND STYLE */
 
