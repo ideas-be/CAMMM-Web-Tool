@@ -1,13 +1,3 @@
-# Agenda for Brainstorm meeting:
-Miro Board: https://miro.com/app/board/o9J_kgmIpbw=/
-- Review new city metrics
-- Review options for supernode graphics
-- Present and steal from TOMTOM atlas
-- Continue designing inforgraphics leading to atlas
-
-*if there's time*
-- Schedule date/time for big TV test
-
 # Currently working on: 
 Keep working on Documentation - Section 2 Processing Tool - Work on flowcharts for each Operational and Analysis function 
 Flowchart cheatsheet - https://www.breezetree.com/articles/flow-chart-symbols  https://www.conceptdraw.com/examples/flowchart-symbols-cheat-sheet
