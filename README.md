@@ -5,7 +5,7 @@ https://ideas-be.github.io/CAMMM-Web-Tool/
 **Here is the link to the Miro board:**
 https://miro.com/app/board/o9J_kgmIpbw=/
 #### Preview:
-![CAMMM Web Atlas](screenshots/2022_04_14_Current_Prototype_Screenshot.png)
+![CAMMM Web Atlas](screenshots/2022_05_03_Current_Prototype_Screenshot.png)
 
 ----------------------------------------------------------------------
   
@@ -705,9 +705,7 @@ $C_{B}(v)$ = $sum_$
 
   <div id="appendix-b">
 
-  ### Appendix B - Managing Development Workflow
-
-  <!-- ### CAMMM Atlas Gantt Chart Summer 2021: -->
+  ### Appendix B - Managing Development Workflow  <!-- ### CAMMM Atlas Gantt Chart Summer 2021: -->
   #### User scale Flowchart:
   ![CAMMM Web Atlas](screenshots/Flowchart_CAMMM_Web_Atlas.jpg)
 
@@ -716,25 +714,6 @@ $C_{B}(v)$ = $sum_$
 
   #### CAMMM Atlas Info Pop-Ups:
   ![CAMMM Atlas Popups](screenshots/PopUps.png)
-
-  #### For next session 
-
-  **CAMMM Web Atlas Updates**
-
-   - ~~align mapboxes and menu items of both cities~~
-   - ~~make wireframe with named menu items~~
-   - move print and export citation buttons at top right corner, one below the other
-   - test a collapsable text box for citations
-   - short description on WP project page
-   - more documentation for the entire process so far
-   - ~~menu items: increase font and space them out~~
-   - piecharts for distribution of stops, line and dist. between stops for each transit system
-
-  #### For next month:
-   - figure out graphical representation of city metrics
-   - density grid analysis to be added in queries
-   - add button to download excel of metrics (tbd)
-   - integrating businesses data points for each city and adding them to metrics
 
   </div>
 
