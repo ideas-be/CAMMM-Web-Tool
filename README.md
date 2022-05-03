@@ -5,7 +5,7 @@ https://ideas-be.github.io/CAMMM-Web-Tool/
 **Here is the link to the Miro board:**
 https://miro.com/app/board/o9J_kgmIpbw=/
 #### Preview:
-![CAMMM Web Atlas](screenshots/2022_05_03_Current_Prototype_Screenshot.png)
+![CAMMM Web Atlas](Images/GithubDocs/2022_05_03_Current_Prototype_Screenshot.png)
 
 ----------------------------------------------------------------------
   
@@ -95,7 +95,7 @@ https://miro.com/app/board/o9J_kgmIpbw=/
   
   ### IDEAS-BE
   
-  ![IDEAS-BE Logo](screenshots/githubDocs/ideasbelogo_long_transparent.png)
+  ![IDEAS-BE Logo](Images/Logos/ideasbelogo_long_transparent.png)
 
   #### Mandate</br>
 The **Concordia University** Research Chair in *Integrated Design, Ecology And Sustainability for the Built Environment* (ideas-be)  focuses on the study of design projects and practices for the built environment situated at the crossroads of cultural, social, environmental and economic concerns. It considers sustainability as a paradigm crossing the main disciplines and professions concerned with design for the built environment (urban design, architecture, and landscape). This research program identifies, categorizes and disseminates strategic transformations of sustainable intentions in the design of the urban built environment. Our main objective is to better understand how designers go beyond current injunctions of environmental norms and policies in order to achieve a creative balance between design ethics and aesthetics in their public space projects – a question that has remained largely unaddressed in recent design theory.</br>
@@ -112,7 +112,7 @@ The overarching goal of this CURC research project is to take a leadership role 
   
   ### CAMMM Project & Web Atlas
 
-  ![CAMMM Logo](screenshots/githubDocs/CAMMM_logo.png)
+  ![CAMMM Logo](Images/Logos/CAMMM_logo.png)
 
   Welcome to the **CAMMM Atlas Web Application**, developed by **IDEAS-BE** (*Integrated Design and Sustainability for the Built Environment*). This tool is a work-in-progress and part of the research project titled, **CoLLaboratoire for Activating Multi-modal Mobility (CAMMM): One Public Space at a Time**, in order to compare the transit systems between each city and critically reflect on mobility in the city.<br/>
   
@@ -256,7 +256,7 @@ These files are <a href="https://developers.google.com/transit/gtfs/reference#fa
 1. De-compress the GTFS files
 2. Read information from these files: Agency, Routes, Trips, Stop_times, Stops, and Shapes.
 
-  ![Processing GTFS](screenshots/githubDocs/processingGTFS.png)
+  ![Processing GTFS](Images/GithubDocs/processingGTFS.png)
 
 3. The geographic data is transformed from WGS84 to local UTM coordinates.
 4. Store the read data in their corresponding UTM zone in a Network Object.
@@ -438,48 +438,48 @@ $C_{B}(v)$ = $sum_$
 
     - In the MapBox Studio, go to the Tileset section and select New Tileset.
   
-  ![Creating City Map Screenshot 1](screenshots/githubDocs/creatingCityMap1.png)
+  ![Creating City Map Screenshot 1](Images/GithubDocs/creatingCityMap1.png)
 
     - Upload the file containing the data you wish to display on the map.
   
-  ![Creating City Map Screenshot 2](screenshots/githubDocs/creatingCityMap2.png)
+  ![Creating City Map Screenshot 2](Images/GithubDocs/creatingCityMap2.png)
 
-  ![Creating City Map Screenshot 3](screenshots/githubDocs/creatingCityMap3.png)
+  ![Creating City Map Screenshot 3](Images/GithubDocs/creatingCityMap3.png)
 
     - The upload will report success on the bottom right corner of the website. (see Troubleshoot section if the upload fails)
 
-  ![Creating City Map Screenshot 4](screenshots/githubDocs/creatingCityMap4.png)
+  ![Creating City Map Screenshot 4](Images/GithubDocs/creatingCityMap4.png)
 
     - Once all the data is in Tileset a new map can be created. Inside of Mapbox, the Styles are the 'maps'.
     - Click the New Stule button.
 
-  ![Creating City Map Screenshot 5](screenshots/githubDocs/creatingCityMap5.png)
+  ![Creating City Map Screenshot 5](Images/GithubDocs/creatingCityMap5.png)
 
     - Select the appropriate temple, for this project we have used the 'Basic' as is.
 
-  ![Creating City Map Screenshot 6](screenshots/githubDocs/creatingCityMap6.png)
+  ![Creating City Map Screenshot 6](Images/GithubDocs/creatingCityMap6.png)
 
     - Once you landed on the map, you have to go to the plus icon on the top left side. There you will add the Tileset with the processed data.
 
-  ![Creating City Map Screenshot 7](screenshots/githubDocs/creatingCityMap7.png)
+  ![Creating City Map Screenshot 7](Images/GithubDocs/creatingCityMap7.png)
 
     - An alternative list of the tileset already loaded can be seen by changin from Components to Layers in the top left side.
 
-  ![Creating City Map Screenshot 8](screenshots/githubDocs/creatingCityMap8.png)
+  ![Creating City Map Screenshot 8](Images/GithubDocs/creatingCityMap8.png)
   
     - After pressing the plus button (top-left), in the Source section you click on the 'None Selected'.
 
-  ![Creating City Map Screenshot 9](screenshots/githubDocs/creatingCityMap9.png)
+  ![Creating City Map Screenshot 9](Images/GithubDocs/creatingCityMap9.png)
 
     - Navigate to the desired Tileset, you may also use the search bar with the name of the Tileset.
 
-  ![Creating City Map Screenshot 10](screenshots/githubDocs/creatingCityMap10.png)
+  ![Creating City Map Screenshot 10](Images/GithubDocs/creatingCityMap10.png)
 
     - Change the Type as needed. View style guidelines for layer maps. 
 
-  ![Creating City Map Screenshot 11](screenshots/githubDocs/creatingCityMap11.png)
+  ![Creating City Map Screenshot 11](Images/GithubDocs/creatingCityMap11.png)
 
-  ![Creating City Map Screenshot 12](screenshots/githubDocs/creatingCityMap12.png)
+  ![Creating City Map Screenshot 12](Images/GithubDocs/creatingCityMap12.png)
 
   
 
@@ -502,7 +502,7 @@ $C_{B}(v)$ = $sum_$
 
   The atlas uses a series of predefined *Icons* for each catergory in each of the five types of transit systems the atlas includes. These are customized versions from the <a href="https://fontawesome.com/v5.15/icons/bus?style=solid">FontAwesome</a>. These are modified using a vector-based software such as InkScape or Adobe Illustrator. Each specific category layer of a transit system displays the corresponding icon in a color gradient that represents the value of that datapoint. The gradient goes from *very high* to *very low*.<br/>
 
-  ![Map Transit Icons](screenshots/githubDocs/mapTransitIcons.PNG)
+  ![Map Transit Icons](Images/GithubDocs/mapTransitIcons.PNG)
   
   For example, the *Bus* transit system in its *low* category is represented with the color <div style="background-color: #fca9adff; font-weight: bold;">#fca9adff</div>
   The current icon and color shceme can be found in the Teams folder (see <a href="#software-requirements">Section 1</a>): </br>
@@ -510,21 +510,21 @@ $C_{B}(v)$ = $sum_$
 
   The following example shows how the layer named *montreal_D_CL* is styled. For the layer to have the functionality in the atlas it needs to be replicated five (5) times, each one of the copies corresponding to one category of the analysis. <br/>
 
-  ![Styling a Layer Screenshot 1](screenshots/githubDocs/stylingLayer1.png) <br/>
+  ![Styling a Layer Screenshot 1](Images/GithubDocs/stylingLayer1.png) <br/>
   
   <br/>The workflow to add a custom icon requires the user to (1)set the desired variable to be mapped, (2)set the data condition for the category of the variable to be mapped and, (3)uplod the custom icon image file. These are the following steps in the workflow:<br/>
 
    - First, you have to select the **Icon** tab under the name of the layer. This tab is located in between the *Text* and *Position* tabs.
-  ![Uploading an Icon 1](screenshots/githubDocs/iconUpload1.png) <br/>
+  ![Uploading an Icon 1](Images/GithubDocs/iconUpload1.png) <br/>
 
    - Once in the Icon tab, you select **Style with data condition**.
-  ![Uploading an Icon 2](screenshots/githubDocs/iconUpload2.png)<br/>
+  ![Uploading an Icon 2](Images/GithubDocs/iconUpload2.png)<br/>
   
    - In the pop-up that appears, you select the variable&mdash;in this case, CatClossnes&mdash;to map. In the following pop-up that appears in the top right, you select the corresponding value that will be listed&mdash;in this case, 3.
-  ![Uploading an Icon 3](screenshots/githubDocs/iconUpload3.png)<br/>
+  ![Uploading an Icon 3](Images/GithubDocs/iconUpload3.png)<br/>
   
    - Finally, to upload the custom icon image to this category, you navigate to the *Image* section under the Icon tab and select the **Add or remove images** under *Custom*. A new pop-up with the upload button will appear.
-  ![Uploading an Icon 4](screenshots/githubDocs/iconUpload4.png)<br/>
+  ![Uploading an Icon 4](Images/GithubDocs/iconUpload4.png)<br/>
 
 <!-- WORK MORE ON STYLING FOR EACH INDIVIDUAL LAYER -->
 
@@ -707,13 +707,14 @@ $C_{B}(v)$ = $sum_$
 
   ### Appendix B - Managing Development Workflow  <!-- ### CAMMM Atlas Gantt Chart Summer 2021: -->
   #### User scale Flowchart:
-  ![CAMMM Web Atlas](screenshots/Flowchart_CAMMM_Web_Atlas.jpg)
+  
+  ![CAMMM Web Atlas](Images/GithubDocs/Flowchart_CAMMM_Web_Atlas.jpg)
 
   #### City Catalogue Update Flowchart:
-  ![CAMMM City Catalogue](screenshots/Flowchart_City_Catalog.jpg)
+  ![CAMMM City Catalogue](Images/GithubDocs/Flowchart_City_Catalog.jpg)
 
   #### CAMMM Atlas Info Pop-Ups:
-  ![CAMMM Atlas Popups](screenshots/PopUps.png)
+  ![CAMMM Atlas Popups](Images/GithubDocs/PopUps.png)
 
   </div>
 

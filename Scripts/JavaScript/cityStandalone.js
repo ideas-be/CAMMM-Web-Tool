@@ -18,12 +18,6 @@ function newJson(obj) {
     window.setTimeout(dropdownCities, 500);
 }
 
-// function getCity(city) {
-//     CityVar = city;
-//     console.log("This is City");
-//     console.log(CityVar);
-// }
-
 function getSelectedCity() {
     var selectedCity = document.getElementById("cityList").value;
 

@@ -9,15 +9,15 @@
 	<title>Standalone - Map Comparison</title>
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 	<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
-	<script src='cityStandalone.js'></script>
-	<script src='info_popup.js'></script>
+	<script src='Scripts/JavaScript/cityStandalone.js'></script>
+	<script src='Scripts/JavaScript/info_popup.js'></script>
 	<script src="https://kit.fontawesome.com/7abfd05b6d.js" crossorigin="anonymous"></script>
 
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'>
 
-	<link rel="stylesheet" href="styleStandalone.css">
-	<link rel="stylesheet" href="mapUIStandalone.css">
-	<link rel="stylesheet" href="info_popup.css">
+	<link rel="stylesheet" href="Styles/styleStandalone.css">
+	<link rel="stylesheet" href="Styles/mapUIStandalone.css">
+	<link rel="stylesheet" href="Styles/info_popup.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 	<!-- START OF IDEAS-BE BANNER -->
 	<div style="text-align: center;">
 
-		<img src="Sources/Images/Ideas_be_banner.jpg" alt="IDEAS-BE Banner" style="width: 1232px; height: 214px;"></img>
+		<img src="Images/Logos/Ideas_be_banner.jpg" alt="IDEAS-BE Banner" style="width: 1232px; height: 214px;"></img>
 
 	</div>
 	<div>
@@ -37,7 +37,7 @@
 		</div>
 	</div>
 	<div style="text-align: center;">
-		<img src="Sources/Images/cammm_banner.jpg" alt="CAMMM Banner" style="width: 1232px; height: 302px;"></img>
+		<img src="Images/Logos/cammm_banner.jpg" alt="CAMMM Banner" style="width: 1232px; height: 302px;"></img>
 	</div>
 
 
@@ -59,15 +59,16 @@
 	<br>
 	<div id="citationText" style="display: none;">
 		<div>
-			<p>APA: Cucuzzella, C., Gauthier, P., Nizar, F., & Ortiz Meraz, O. (2021). CAMMM Web Atlas 0.3. CAMMM Web
-				Atlas 0.3.</p>
+			<p>APA: Cucuzzella, C., Gauthier, P., Ortiz Meraz, O., & Nizar, F. (2022). CAMMM Atlas Web Application v1.0
+			</p>
 		</div>
 		<div>
-			<p>MLA: Cucuzzella, Carmela, et al. “CAMMM Web Atlas 0.3.” CAMMM Web Atlas 0.3, 2021.</p>
+			<p>MLA: Cucuzzella, Carmela, et al. “CAMMM Atlas Web Application v1.0”, CAMMM Atlas Web Application v1.0,
+				2022.</p>
 		</div>
 		<div>
-			<p>CHICAGO: Cucuzzella, Carmela, Pierre Gauthier, Firdous Nizar, and Omar Ortiz Meraz. 2021. “CAMMM Web
-				Atlas 0.3.” CAMMM Web Atlas 0.3. 2021.</p>
+			<p>CHICAGO: Cucuzzella, Carmela, Pierre Gauthier, Omar Ortiz Meraz, and Firdous Nizar. 2022. “CAMMM Atlas
+				Web Application v1.0” CAMMM Atlas Web Application v1.0, 2022.</p>
 		</div>
 	</div>
 
@@ -388,7 +389,7 @@
 		var obj;
 		var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
 		function readMetrics() {
-			a.open('GET', "CityMetrics.json", true);  // This is reading the JSON FILE 
+			a.open('GET', "Data/CityMetrics.json", true);  // This is reading the JSON FILE 
 			console.log("Reading the City Metrics file to load JSON");
 
 			a.onreadystatechange = function () {  //When the JSON file is open it starts a function 

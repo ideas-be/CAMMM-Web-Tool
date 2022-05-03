@@ -194,11 +194,11 @@ def ReadFile(path:str) -> dict:
 
 
 if __name__ =="__main__":
-    PathToTheFile="DatabaseCitys.xlsx"
+    PathToTheFile="Data/DatabaseCitys.xlsx"
     Data=ReadFile(path=PathToTheFile)
     # print("\n"*10)
     # print(Data)
-    WriteToFile(Data=Data,ExitPath="CityMetricsTEST.json")
+    WriteToFile(Data=Data,ExitPath="Data/CityMetrics.json")
     # for CityJs in Data['City']:
     #     print("\n"*10)
     #     print("CityJs",CityJs)

@@ -139,11 +139,8 @@ class City {
         this.cityJson = cityJson;
         this.readCityJson();
         this.injectDirectNodeToggleHTML();
-        // this.injectCatCumulToggleHTML();
         this.getDirectNodeToggle();
         this.sliderValue = sliderValue;
-        // this.injectCumulSlider();
-        // this.displayCityMetrics();
         this.injectCityGeneral();
         this.displayCityMetrics();
     }
@@ -183,8 +180,8 @@ class City {
 
     injectMapControls() {
         const { cityNum, cityCoords, cityZoom } = this;
-        var iconZoomPath = ["", "customIcons/CustomNavigationIcons/TransferZoomLeft.png", "customIcons/CustomNavigationIcons/TransferZoomRight.png"];
-        var iconCordPath = ["", "customIcons/CustomNavigationIcons/TransferCoordsLeft.png", "customIcons/CustomNavigationIcons/TransferCoordsRight.png"];
+        var iconZoomPath = ["", "Images/CustomNavigationIcons/TransferZoomLeft.png", "Images/CustomNavigationIcons/TransferZoomRight.png"];
+        var iconCordPath = ["", "Images/CustomNavigationIcons/TransferCoordsLeft.png", "Images/CustomNavigationIcons/TransferCoordsRight.png"];
         var floatSide = ["right", "left"];
         console.log("Injecting map controls in HTML!!!");
         var mapControlsHTML = "<nav style=\"width: 40px; height: 180px; background-color: #d81b60; border-radius: 5px; color: white; text-align: center; float: " + floatSide[cityNum] + "; margin: 10px; z-index: 10; position: relative;\">" +
@@ -194,9 +191,6 @@ class City {
             "<div style=\"padding: 8px;\">" +
             "<span style=\"font-size: 1.5em; color: white;\">" +
             "<i class=\"fas fa-search-minus\" onclick=\"{City" + cityNum + ".zoomOutMap();}\"></i></span></div>" +
-            // "<div style=\"padding: 8px;\">" +
-            // "<span style=\"font-size: 1.5em; color: white;\">" +
-            // "<i class=\"fas fa-compass\" onclick=\"printmsg(3);\"></i></span></div>" +
             "<div style=\"padding: 8px;\">" +
             "<span style=\"font-size: 1.5em; color: white;\">" +
             "<img width=\"25\" height=\"28\" src=\"" + iconZoomPath[cityNum] + "\"onclick=\"{City" + cityNum + ".transferMapZoom();}\"></img></span></div>" +
@@ -210,7 +204,7 @@ class City {
 
     zoomInMap() {
         //get current zoom value from the mapbox and increase it by 1
-        const { cityNum, cityZoom, map } = this;
+        const { map } = this;
 
         console.log("Zooming In!!!");
         map.zoomIn();
@@ -219,16 +213,12 @@ class City {
 
     zoomOutMap() {
         //get current zoom value from the mapbox and decrease it by 1
-        const { cityNum, cityZoom, map } = this;
+        const { map } = this;
 
         console.log("Zooming Out!!!");
         map.zoomOut();
 
     }
-
-    // changeMapOrientation(){
-    //     //get current map orientation and reset to North
-    // }
 
     transferMapZoom() {
         //get current zoom value for one City object map and move it to the other City object map
@@ -247,7 +237,7 @@ class City {
 
     transferMapCoords() {
         //get current center value for one City object map and move it to the other City object map
-        const { cityNum, cityZoom, map } = this;
+        const { cityNum, map } = this;
         var currentCoords = map.getCenter();
         console.log("Center coords: ", currentCoords);
         if (cityNum == 1) {
@@ -569,7 +559,6 @@ class City {
             "</td></tr>" +
             "</tbody>" + "</table>";
 
-        //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
         for (var i = 0; i < 5; i++) {
             if (cityJson["TransitSystems"][i].NumStops > 0) {
                 cityTable +=
