@@ -29,54 +29,32 @@
 /* END OF PRINT BUTTON STYLE */
 
 /* START OF DROPDOWN STYLE */
-.dropDown1{
+.dropDown{
   text-align: center;
   width: 100%;
 }
 
-.atlas-city1 select{
+.atlas-city select{
 	width: 142px;
 }
 
-.dropDown2{
-  text-align: center;
-  width: 100%;
-}
-
-.atlas-city2 select{
-	width: 142px;
-}
 /* END OF DROPDOWN STYLE */
 
 /* START OF MAPBOX STYLE */
- #map1 { 
+ #map { 
 	display: block;
   width:95%; 
   height: 400px; 
   margin-left: 20px;
 }
 
-
-#map2 { 
-	display: block;
-	width:95%; 
-  height: 400px; 
-  /* margin-right: 20px; */
-}
-
 /* END OF MAPBOX STYLE */
 
 /* START OF METRICS TABLES STYLE */
-#city1table{
+#citytable{
   display: block;
 	position:absolute; 
-  left: 0px; width:50%;
-}
-
-#city2table{
-	display: block;
-	position:absolute; 
-  right: 0; width:50%;
+  left: 0px; width:100%;
 }
 
 .emptyspace-table{

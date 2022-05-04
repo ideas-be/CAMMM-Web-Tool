@@ -1,21 +1,15 @@
-WHICH BRANCH IS THIS?!!! YES It is Ideas Be
+ #### CAMMM Web Atlas Tool
+https://github.com/ideas-be/CAMMM-Web-Tool/
+**Here is the link to see the website proper:**
+https://ideas-be.github.io/CAMMM-Web-Tool/
+**Here is the link to the Miro board:**
+https://miro.com/app/board/o9J_kgmIpbw=/
+#### Preview:
+![CAMMM Web Atlas](Images/GithubDocs/2022_05_03_Current_Prototype_Screenshot.png)
 
-# Present for next meeting:
-- Deploy prototype for main website with Ideasbe Banner 
-- Pre-Mapbox Grid Analysis mapping
-- Mock options for cluster (node and supernode) representation
-- XLS to JSON processing tool (GUI + python)
-- Addition of GTFS source links & year of stats
-- Go through About section of GitDocs
-
-# Currently working on: 
-Keep working on Documentation - Styling Guide for map layers and Troubleshooting section
-Complete excel file with data for each city(area, pop, etc.)
-
-Add this note to the docs: Direct is now Individual and Node is now Cluster.
-
+----------------------------------------------------------------------
+  
 # Documentation:
-
 <!-- TABLE OF CONTENTS (WIP) -->
 
 <details open="open">
@@ -42,11 +36,17 @@ Add this note to the docs: Direct is now Individual and Node is now Cluster.
     <li>
       <a href="#processing-tool">Section 2 - Processing Tool</a>
       <ul>
-        <li><a href="#use-proc-tool">Use of the Processing Tool</a></li>
+        <li><a href="#use-proc-tool">Uses of the Processing Tool</a>
+         <ul>
+          <li><a href="#gtfs-processing">Process GTFS Files</a></li>
+          <li><a href="#xls-to-json">Convert Excel to JSON</a></li>
+         </ul>
+        </li>
         <li><a href="#data-collection">Data Collection</a></li>
         <li><a href="#op-functions">Operational Functions</a></li>
-        <li><a href="#key-functions">Analysis Functions</a></li>
+        <li><a href="#queries-key-functions">Analysis Queries & Functions</a></li>
         <li><a href="#processed-data-mapbox">Processed Data for Mapbox & City Metrics</a></li>
+        <>
       </ul>
     </li>
     <li>
@@ -84,18 +84,6 @@ Add this note to the docs: Direct is now Individual and Node is now Cluster.
   </ol>
 </details>
 
-  #### CAMMM Web Atlas Tool
-  https://github.com/ideas-be/CAMMM-Web-Tool/tree/cumulative-testing
-  **Here is the link to see the website proper:**
-  https://ideas-be.github.io/CAMMM-Web-Tool/
-  **Here is the link to the Miro board:**
-  https://miro.com/app/board/o9J_kgmIpbw=/
-  #### Preview:
-  ![CAMMM Web Atlas](screenshots/01_June03.png)
-
-----------------------------------------------------------------------
-
-<!-- ACTUAL DOCUMENTATION -->
 ----------------------------------------------------------------------
 
 
@@ -107,7 +95,7 @@ Add this note to the docs: Direct is now Individual and Node is now Cluster.
   
   ### IDEAS-BE
   
-  ![IDEAS-BE Logo](screenshots/githubDocs/ideasbelogo_long_transparent.png)
+  ![IDEAS-BE Logo](Images/Logos/ideasbelogo_long_transparent.png)
 
   #### Mandate</br>
 The **Concordia University** Research Chair in *Integrated Design, Ecology And Sustainability for the Built Environment* (ideas-be)  focuses on the study of design projects and practices for the built environment situated at the crossroads of cultural, social, environmental and economic concerns. It considers sustainability as a paradigm crossing the main disciplines and professions concerned with design for the built environment (urban design, architecture, and landscape). This research program identifies, categorizes and disseminates strategic transformations of sustainable intentions in the design of the urban built environment. Our main objective is to better understand how designers go beyond current injunctions of environmental norms and policies in order to achieve a creative balance between design ethics and aesthetics in their public space projects – a question that has remained largely unaddressed in recent design theory.</br>
@@ -124,7 +112,7 @@ The overarching goal of this CURC research project is to take a leadership role 
   
   ### CAMMM Project & Web Atlas
 
-  ![CAMMM Logo](screenshots/githubDocs/CAMMM_logo.png)
+  ![CAMMM Logo](Images/Logos/CAMMM_logo.png)
 
   Welcome to the **CAMMM Atlas Web Application**, developed by **IDEAS-BE** (*Integrated Design and Sustainability for the Built Environment*). This tool is a work-in-progress and part of the research project titled, **CoLLaboratoire for Activating Multi-modal Mobility (CAMMM): One Public Space at a Time**, in order to compare the transit systems between each city and critically reflect on mobility in the city.<br/>
   
@@ -236,29 +224,187 @@ The overarching goal of this CURC research project is to take a leadership role 
 
 ## Section 2 - Processing Tool
 
+  The CAMMM Atlas web application makes use of a Processing Tool to manage the data that goes into the creation and maintenance of the city maps. This python-based tool is to be used by the development team to process large amounts of city data into relevant file formats that could be read and displayed onto the atlas web application.<br/>
+  <br/>The processing tool must be used when a new city needs to be added to the atlas, using the GTFS data for the respective city.
+
   <div id="use-proc-tool">
   
-  ### Use of the Processing Tool
+  ### Uses of the Processing Tool
+
+  The main two uses of the Processing Tool are, (1) to process the data in each city's GTFS files for MapBox and (2) to convert the metrics of each city from the main Excel file to the JSON format for the web application. The following subsections take a closer look at each of these uses.
+
+  <div id="gtfs-processing"> 
+  
+  #### Process GTFS Files
+
+*What are GTFS files?*
+
+<br/>The <a href="https://gtfs.org/">General Transit Feed Specification (GTFS)</a> is a data specification that allows public transit agencies to publish their transit data in a format that can be consumed by a wide variety of software applications. 
+GTFS is split into a static component that contains schedule, fare, and geographic transit information and a real-time component that contains arrival predictions, vehicle positions and service advisories. For further information, please consult <a href="https://developers.google.com/transit/gtfs">Google Developer documentation</a> on GTFS.
+<br/>
+
+*What data from these files is used in our project?*
+<br/>The list of files from GTFS needed to run the Processing Tool are:
+Agency, Routes, Trips, Stop_times, Stops, and Shapes. 
+These files are <a href="https://developers.google.com/transit/gtfs/reference#fare_attributestxt">mandatory</a> components that make up a GTFS specification. The information necessary to construct the transit system networks is distributed these listed files.
+<br/>
+
+*How is this data processed?*
+
+<br/>The data is done in the following steps:
+
+1. De-compress the GTFS files
+2. Read information from these files: Agency, Routes, Trips, Stop_times, Stops, and Shapes.
+
+  ![Processing GTFS](Images/GithubDocs/processingGTFS.png)
+
+3. The geographic data is transformed from WGS84 to local UTM coordinates.
+4. Store the read data in their corresponding UTM zone in a Network Object.
+5. Perform the analysis (queries)
+    <br/>5.1. Perform the network analysis calculations at an Individual network
+    <br/>5.2. Cluster the objects into Nodes and Supernodes.
+    <br/>5.3. Perfom the network analysis calculation with the Nodes and Supernodes.
+    <br/>5.4. Obtain the average distances between stops per transit system.
+    <br/>5.5. Perfom the rotated grid density analysis on the transit network.
+6. Transform the data from local UTM zone back to WGS84.
+7. Store the data in geojson file(s) for MapBox.
+
+<br/>
+</div>
+
+  <div id="xls-to-json"> 
+  
+  #### Convert Excel to JSON
+
+  *What does the CAMMM excel contain?*
+<details open="close">
+<summary>Click to see contents</summary>
+
+  
+  
+
+| Item              | Sub Item     | Row | Description                                           |
+| ----------------- | ------------ | --- | ----------------------------------------------------- |
+| City              |              | A   | English name of the city                              |
+| name              |              | B   | Local name of the city                                |
+| DirectStyleURL    |              | C   | Mapbox URL of the Individual analysis map             |
+| NodeStyleURL      |              | D   | Mapbox URL of the Clustere analysis map               |
+| Coords            | Lat          | E   | The latitude values of the center of the city         |
+|                   | Lon          | F   | The longitud values of the center of the city         |
+| Zoom              |              | G   | The initial zoom value of the city map                |
+| NumTransitSystems |              | H   | The total number of transit systems in the city       |
+| NodeLayers        |              | I   | The list of layers for Cluster analysis               |
+| Bus               | DirectLayers | J   | The list of Bus layers for Individual analysis        |
+|                   | NumStops     | K   | The number of Bus stops                               |
+|                   | NumLines     | L   | The number of Bus lines                               |
+|                   | AvgDisStops  | M   | The average distance between Bus stops                |
+| Train             | DirectLayers | N   | The list of Train layers for Individual analysis      |
+|                   | NumStops     | O   | The number of Train stations                          |
+|                   | NumLines     | P   | The number of Train lines                             |
+|                   | AvgDisStops  | Q   | The average distance between Train stops              |
+| Metro             | DirectLayers | R   | The list of Metro layers for Individual analysis      |
+|                   | NumStops     | S   | The number of Metro stations                          |
+|                   | NumLines     | T   | The number of Metro lines                             |
+|                   | AvgDisStops  | U   | The average distance between Metro stops              |
+| Tram              | DirectLayers | V   | The list of Tram layers for Individual analysis       |
+|                   | NumStops     | W   | The number of Tram stops                              |
+|                   | NumLines     | X   | The number of Tram lines                              |
+|                   | AvgDisStops  | Y   | The average distance between Tram stops               |
+| Others            | DirectLayers | Z   | The list of Other layers for Individual analysis      |
+|                   | NumStops     | AA  | The number of Other stops                             |
+|                   | NumLines     | AB  | The number of Other lines                             |
+|                   | AvgDisStops  | AC  | The average distance between Other stops              |
+| NumBoroughs       |              | AD  | Number of Boroughs in the city                        |
+| AreaSqKm          |              | AE  | Area of the city in square kilometers                 |
+| PopulationMillion |              | AF  | Total population of the city in millions              |
+| DensityPersonSqKm |              | AG  | Density of people in the city per square kilometer    |
+| YearOfStats       |              | AH  | Most recent year of statistics available for the city |
+| SourceGTFS        |              | AI  | Source URL of the city's GTFS file                    |
+| DateUpdatedGTFS   |              | AJ  | Date when the GTFS file was collected                 |
+
+
+</details>
+
+<br/>
+<br/>This excel file should contain general descriptors of each city and their local transit systems. For example, 'YearOfStats' ensures that we attribute which year these city statistics were updated by their respective sources. This excel is a live document that could expand with data entries that are relevant to the city's transportation systems and should be updated on a regular basis. Remember, any modifications of this excel will not affect the atlas's functionality **UNLESS** it is converted into a <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">JSON (JavaScript Object Notation) file</a>, which is required for the web implementation of the atlas. Hence, changes on the excel will reflect on the .JSON file **ONLY** through the use of the Processing Tool.<br/>
+<br/>
+
+  *Why JSON?*
+<br/>
+  <br/>The atlas integrates .JSON file for the city data because we are using JavaScript to code all functionality of the atlas UI, and <a href="https://www.w3schools.com/js/js_json.asp">Javascript works well with JSON</a>. We recommend the creation of the .JSON file with the Processing Tool. This is because no modifications should be done directly on the .JSON file as they will **NOT** be reflected back on the main city excel. Therefore, all city data are recommended to be maintained within the excel and then converted to .JSON solely for web integration purposes.<br/>  
+
+
+  *How is the conversion done?*
+<br/>
+<br/>The conversion from Excel to JSON is done through the following steps:
+1. Read the data from main city Excel file:<br/> 
+  1.1. Get the path of the Excel file<br/> 
+  1.2. Pass the path value to the ReadFile function<br/> 
+  1.2.1. Populate a dictionary with column names and values of the Excel to the corresponding JSON items<br/> 
+    1.2.2. Declare an exit dictionary to be returned to the ReadFile function<br/> 
+    1.2.3. Open the Excel file using the path variable<br/> 
+    1.2.4. Read the sheets in the Excel file<br/> 
+    1.2.5. Obtain the number of rows<br/> 
+    1.2.6. Run a loop through each row:<br/> 
+      1.2.6.1. Prepare the data to be stored in the JSON format<br/> 
+      1.2.6.2. Store the data in the exit dictionary variable (see 1.2.3.)<br/> 
+    1.2.7. Return the exit dictionary<br/> 
+2. Write the data to JSON file:<br/> 
+   2.1. Get the Output path for the *'CityMetrics.json'*<br/> 
+   2.2. Pass the exit dictionary returned from the ReadFile function, and the JSON path<br/> 
+      2.2.1. Create *'CityMetrics.json'* file<br/> 
+      2.2.2. Encode and write the data from exit dictionary to JSON file<br/> 
+      2.2.3. Close the JSON file<br/> <br/> 
+
   </div>
   
-  <div id="data-collection">
-  
-  ### Data Collection
   </div>
   
   <div id="op-functions">
   
   ### Operational Functions
+These functions allow for the processing tool to prepare the data that will be used for different stages of the atlas analyses. The main list of operational functions are: 
+Function 1 : Prepares the data of several cities to be held in a single file. DONE
+Function 2 : Converting Excel to JSON file.
+
   </div>
   
-  <div id="key-functions">
+  <div id="queries-key-functions">
   
-  ### Analysis Functions
+  ### Analysis Queries & Functions
+  *insert para on intro to analysis queries for the cammm tool*
+
+  #### Geometrical Analysis
+  *insert an intro to geometrical analysis before types*
+
+  ##### Types of Geometrical Analysis
+  **1. Distance between stops ||| Distribution Degree**
+
+  #### Centrality Analysis
+  *insert an intro to centrality before types*
+  
+  ##### Types of Centrality
+  **1. Betweeness Centrality ||| Centrality Degree**
+$C_{B}(v)$ = $sum_$
+  **2. Closeness Centrality ||| Closeness Degree**
+
+  **3. Eigen Vector Centrality**
+
+  #### Density Analysis
+  *insert an intro to rotated grid density analysis before types*
+
+  ##### Types of Density Analysis
+  **1. Mass Transit Density Analysis**
+
+  **2. Amenities & Services Density Analysis ||| TOD Degree**
+
   </div>
   
   <div id="processed-data-mapbox">
   
   ### Processed Data for Mapbox & City Metrics
+
+
   </div>
 
 </div>
@@ -292,48 +438,48 @@ The overarching goal of this CURC research project is to take a leadership role 
 
     - In the MapBox Studio, go to the Tileset section and select New Tileset.
   
-  ![Creating City Map Screenshot 1](screenshots/githubDocs/creatingCityMap1.png)
+  ![Creating City Map Screenshot 1](Images/GithubDocs/creatingCityMap1.png)
 
     - Upload the file containing the data you wish to display on the map.
   
-  ![Creating City Map Screenshot 2](screenshots/githubDocs/creatingCityMap2.png)
+  ![Creating City Map Screenshot 2](Images/GithubDocs/creatingCityMap2.png)
 
-  ![Creating City Map Screenshot 3](screenshots/githubDocs/creatingCityMap3.png)
+  ![Creating City Map Screenshot 3](Images/GithubDocs/creatingCityMap3.png)
 
     - The upload will report success on the bottom right corner of the website. (see Troubleshoot section if the upload fails)
 
-  ![Creating City Map Screenshot 4](screenshots/githubDocs/creatingCityMap4.png)
+  ![Creating City Map Screenshot 4](Images/GithubDocs/creatingCityMap4.png)
 
     - Once all the data is in Tileset a new map can be created. Inside of Mapbox, the Styles are the 'maps'.
     - Click the New Stule button.
 
-  ![Creating City Map Screenshot 5](screenshots/githubDocs/creatingCityMap5.png)
+  ![Creating City Map Screenshot 5](Images/GithubDocs/creatingCityMap5.png)
 
     - Select the appropriate temple, for this project we have used the 'Basic' as is.
 
-  ![Creating City Map Screenshot 6](screenshots/githubDocs/creatingCityMap6.png)
+  ![Creating City Map Screenshot 6](Images/GithubDocs/creatingCityMap6.png)
 
     - Once you landed on the map, you have to go to the plus icon on the top left side. There you will add the Tileset with the processed data.
 
-  ![Creating City Map Screenshot 7](screenshots/githubDocs/creatingCityMap7.png)
+  ![Creating City Map Screenshot 7](Images/GithubDocs/creatingCityMap7.png)
 
     - An alternative list of the tileset already loaded can be seen by changin from Components to Layers in the top left side.
 
-  ![Creating City Map Screenshot 8](screenshots/githubDocs/creatingCityMap8.png)
+  ![Creating City Map Screenshot 8](Images/GithubDocs/creatingCityMap8.png)
   
     - After pressing the plus button (top-left), in the Source section you click on the 'None Selected'.
 
-  ![Creating City Map Screenshot 9](screenshots/githubDocs/creatingCityMap9.png)
+  ![Creating City Map Screenshot 9](Images/GithubDocs/creatingCityMap9.png)
 
     - Navigate to the desired Tileset, you may also use the search bar with the name of the Tileset.
 
-  ![Creating City Map Screenshot 10](screenshots/githubDocs/creatingCityMap10.png)
+  ![Creating City Map Screenshot 10](Images/GithubDocs/creatingCityMap10.png)
 
     - Change the Type as needed. View style guidelines for layer maps. 
 
-  ![Creating City Map Screenshot 11](screenshots/githubDocs/creatingCityMap11.png)
+  ![Creating City Map Screenshot 11](Images/GithubDocs/creatingCityMap11.png)
 
-  ![Creating City Map Screenshot 12](screenshots/githubDocs/creatingCityMap12.png)
+  ![Creating City Map Screenshot 12](Images/GithubDocs/creatingCityMap12.png)
 
   
 
@@ -356,7 +502,7 @@ The overarching goal of this CURC research project is to take a leadership role 
 
   The atlas uses a series of predefined *Icons* for each catergory in each of the five types of transit systems the atlas includes. These are customized versions from the <a href="https://fontawesome.com/v5.15/icons/bus?style=solid">FontAwesome</a>. These are modified using a vector-based software such as InkScape or Adobe Illustrator. Each specific category layer of a transit system displays the corresponding icon in a color gradient that represents the value of that datapoint. The gradient goes from *very high* to *very low*.<br/>
 
-  ![Map Transit Icons](screenshots/githubDocs/mapTransitIcons.PNG)
+  ![Map Transit Icons](Images/GithubDocs/mapTransitIcons.PNG)
   
   For example, the *Bus* transit system in its *low* category is represented with the color <div style="background-color: #fca9adff; font-weight: bold;">#fca9adff</div>
   The current icon and color shceme can be found in the Teams folder (see <a href="#software-requirements">Section 1</a>): </br>
@@ -364,21 +510,21 @@ The overarching goal of this CURC research project is to take a leadership role 
 
   The following example shows how the layer named *montreal_D_CL* is styled. For the layer to have the functionality in the atlas it needs to be replicated five (5) times, each one of the copies corresponding to one category of the analysis. <br/>
 
-  ![Styling a Layer Screenshot 1](screenshots/githubDocs/stylingLayer1.png) <br/>
+  ![Styling a Layer Screenshot 1](Images/GithubDocs/stylingLayer1.png) <br/>
   
   <br/>The workflow to add a custom icon requires the user to (1)set the desired variable to be mapped, (2)set the data condition for the category of the variable to be mapped and, (3)uplod the custom icon image file. These are the following steps in the workflow:<br/>
 
    - First, you have to select the **Icon** tab under the name of the layer. This tab is located in between the *Text* and *Position* tabs.
-  ![Uploading an Icon 1](screenshots/githubDocs/iconUpload1.png) <br/>
+  ![Uploading an Icon 1](Images/GithubDocs/iconUpload1.png) <br/>
 
    - Once in the Icon tab, you select **Style with data condition**.
-  ![Uploading an Icon 2](screenshots/githubDocs/iconUpload2.png)<br/>
+  ![Uploading an Icon 2](Images/GithubDocs/iconUpload2.png)<br/>
   
    - In the pop-up that appears, you select the variable&mdash;in this case, CatClossnes&mdash;to map. In the following pop-up that appears in the top right, you select the corresponding value that will be listed&mdash;in this case, 3.
-  ![Uploading an Icon 3](screenshots/githubDocs/iconUpload3.png)<br/>
+  ![Uploading an Icon 3](Images/GithubDocs/iconUpload3.png)<br/>
   
    - Finally, to upload the custom icon image to this category, you navigate to the *Image* section under the Icon tab and select the **Add or remove images** under *Custom*. A new pop-up with the upload button will appear.
-  ![Uploading an Icon 4](screenshots/githubDocs/iconUpload4.png)<br/>
+  ![Uploading an Icon 4](Images/GithubDocs/iconUpload4.png)<br/>
 
 <!-- WORK MORE ON STYLING FOR EACH INDIVIDUAL LAYER -->
 
@@ -520,9 +666,27 @@ The overarching goal of this CURC research project is to take a leadership role 
 
   </div>
 
-  <div id=styling-manual">
+  <div id="styling-manual">
 
   ### Styling Manual
+  
+  Colors
+  - Hero Color - pink
+  - Transport System
+  - Grid Analysis
+  - Node and SuperNode
+    - Centrality Degree
+    - Closeness Degree
+
+  Typefaces
+  - Primary
+  - Secondary
+  - Substitutes
+
+  Icons
+  - Basic UI/UX
+  - Transport systems
+
 
   </div>
 
@@ -541,36 +705,16 @@ The overarching goal of this CURC research project is to take a leadership role 
 
   <div id="appendix-b">
 
-  ### Appendix B - Managing Development Workflow
-
-  <!-- ### CAMMM Atlas Gantt Chart Summer 2021: -->
+  ### Appendix B - Managing Development Workflow  <!-- ### CAMMM Atlas Gantt Chart Summer 2021: -->
   #### User scale Flowchart:
-  ![CAMMM Web Atlas](screenshots/Flowchart_CAMMM_Web_Atlas.jpg)
+  
+  ![CAMMM Web Atlas](Images/GithubDocs/Flowchart_CAMMM_Web_Atlas.jpg)
 
   #### City Catalogue Update Flowchart:
-  ![CAMMM City Catalogue](screenshots/Flowchart_City_Catalog.jpg)
+  ![CAMMM City Catalogue](Images/GithubDocs/Flowchart_City_Catalog.jpg)
 
   #### CAMMM Atlas Info Pop-Ups:
-  ![CAMMM Atlas Popups](screenshots/PopUps.png)
-
-  #### For next session 
-
-  **CAMMM Web Atlas Updates**
-
-   - ~~align mapboxes and menu items of both cities~~
-   - ~~make wireframe with named menu items~~
-   - move print and export citation buttons at top right corner, one below the other
-   - test a collapsable text box for citations
-   - short description on WP project page
-   - more documentation for the entire process so far
-   - ~~menu items: increase font and space them out~~
-   - piecharts for distribution of stops, line and dist. between stops for each transit system
-
-  #### For next month:
-   - figure out graphical representation of city metrics
-   - density grid analysis to be added in queries
-   - add button to download excel of metrics (tbd)
-   - integrating businesses data points for each city and adding them to metrics
+  ![CAMMM Atlas Popups](Images/GithubDocs/PopUps.png)
 
   </div>
 

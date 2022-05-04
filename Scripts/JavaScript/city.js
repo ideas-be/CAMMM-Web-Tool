@@ -30,11 +30,15 @@ function getCity(city, num) {
     }
 }
 
-function getSelectedCity(num) {
-    var citylist = "cityList" + num;
-    var selectedCity = document.getElementById(citylist).value;
+function getSelectedCity(selectedCity, num) {
+    // var citylist = "cityList" + num;
+    // var selectedCity = document.getElementById(citylist).value;
+
+    var dropBtnDivID = "dropbtn" + num;
 
     if (selectedCity != "Select City") {
+
+        document.getElementById(dropBtnDivID).innerHTML = selectedCity;
 
         let city = new City(selectedCity, num, myJson["City"][selectedCity], 5);
         getCity(city, num);
@@ -68,23 +72,34 @@ function getSelectedCity(num) {
 }
 
 function dropdownCities() {
-    var cityHTML = "<option disabled selected>Select City</option>";
-    var nameCity = "";
+
+    var nameCity, cityFlag;
+    var dropDown1DivId = "dropdown1-content";
+    var dropDown2DivId = "dropdown2-content";
+    var dropDown1HTML = "";
+    var dropDown2HTML = "";
 
     for (key in myJson["City"]) {
         if (myJson["City"][key].name == key) {
             nameCity = myJson["City"][key].name;
+            cityFlag = myJson["City"][key].flag;
         }
         else {
             nameCity = key + " - " + myJson["City"][key].name;
+            cityFlag = myJson["City"][key].flag;
         }
-        cityHTML += "<option value=\"" + key + "\">" + nameCity + "</option>";
+
+        dropDown1HTML += "<a href=\"#\" onclick=\"getSelectedCity(\'" + key + "\', 1);\"><img src=" + cityFlag + " width=\"20\" height=\"15\"> " + nameCity + "</a>";
+        dropDown2HTML += "<a href=\"#\" onclick=\"getSelectedCity(\'" + key + "\', 2);\"><img src=" + cityFlag + " width=\"20\" height=\"15\"> " + nameCity + "</a>";
+        console.log("Injecting ", nameCity, "with its flag", cityFlag);
     }
 
-    document.getElementById("cityList1").innerHTML = cityHTML;
-    document.getElementById("cityList2").innerHTML = cityHTML;
-
+    document.getElementById(dropDown1DivId).innerHTML = dropDown1HTML;
+    document.getElementById(dropDown2DivId).innerHTML = dropDown2HTML;
 }
+
+
+
 
 function resetCity(num) {
     // console.log("BUTTON IS PRESSED!! CITY HAS BEEN RESET!!");
@@ -124,11 +139,9 @@ class City {
         this.cityJson = cityJson;
         this.readCityJson();
         this.injectDirectNodeToggleHTML();
-        // this.injectCatCumulToggleHTML();
         this.getDirectNodeToggle();
         this.sliderValue = sliderValue;
-        // this.injectCumulSlider();
-        // this.displayCityMetrics();
+        this.injectCityGeneral();
         this.displayCityMetrics();
     }
     readCityJson() {
@@ -167,8 +180,8 @@ class City {
 
     injectMapControls() {
         const { cityNum, cityCoords, cityZoom } = this;
-        var iconZoomPath = ["", "customIcons/CustomNavigationIcons/TransferZoomLeft.png", "customIcons/CustomNavigationIcons/TransferZoomRight.png"];
-        var iconCordPath = ["", "customIcons/CustomNavigationIcons/TransferCoordsLeft.png", "customIcons/CustomNavigationIcons/TransferCoordsRight.png"];
+        var iconZoomPath = ["", "Images/CustomNavigationIcons/TransferZoomLeft.png", "Images/CustomNavigationIcons/TransferZoomRight.png"];
+        var iconCordPath = ["", "Images/CustomNavigationIcons/TransferCoordsLeft.png", "Images/CustomNavigationIcons/TransferCoordsRight.png"];
         var floatSide = ["right", "left"];
         console.log("Injecting map controls in HTML!!!");
         var mapControlsHTML = "<nav style=\"width: 40px; height: 180px; background-color: #d81b60; border-radius: 5px; color: white; text-align: center; float: " + floatSide[cityNum] + "; margin: 10px; z-index: 10; position: relative;\">" +
@@ -178,9 +191,6 @@ class City {
             "<div style=\"padding: 8px;\">" +
             "<span style=\"font-size: 1.5em; color: white;\">" +
             "<i class=\"fas fa-search-minus\" onclick=\"{City" + cityNum + ".zoomOutMap();}\"></i></span></div>" +
-            // "<div style=\"padding: 8px;\">" +
-            // "<span style=\"font-size: 1.5em; color: white;\">" +
-            // "<i class=\"fas fa-compass\" onclick=\"printmsg(3);\"></i></span></div>" +
             "<div style=\"padding: 8px;\">" +
             "<span style=\"font-size: 1.5em; color: white;\">" +
             "<img width=\"25\" height=\"28\" src=\"" + iconZoomPath[cityNum] + "\"onclick=\"{City" + cityNum + ".transferMapZoom();}\"></img></span></div>" +
@@ -194,7 +204,7 @@ class City {
 
     zoomInMap() {
         //get current zoom value from the mapbox and increase it by 1
-        const { cityNum, cityZoom, map } = this;
+        const { map } = this;
 
         console.log("Zooming In!!!");
         map.zoomIn();
@@ -203,16 +213,12 @@ class City {
 
     zoomOutMap() {
         //get current zoom value from the mapbox and decrease it by 1
-        const { cityNum, cityZoom, map } = this;
+        const { map } = this;
 
         console.log("Zooming Out!!!");
         map.zoomOut();
 
     }
-
-    // changeMapOrientation(){
-    //     //get current map orientation and reset to North
-    // }
 
     transferMapZoom() {
         //get current zoom value for one City object map and move it to the other City object map
@@ -231,7 +237,7 @@ class City {
 
     transferMapCoords() {
         //get current center value for one City object map and move it to the other City object map
-        const { cityNum, cityZoom, map } = this;
+        const { cityNum, map } = this;
         var currentCoords = map.getCenter();
         console.log("Center coords: ", currentCoords);
         if (cityNum == 1) {
@@ -284,12 +290,13 @@ class City {
     injectRadioButtons() {
         const { cityNum, ListOfLayers } = this;
         var formHTML = "";
-        var NameOfQueries = ["Centrality Degree", "Closeness"];
+        var NameOfQueries = ["Node Centrality", "Node Connectivity", "Transit Network Density"];
+        var QueryAltText = ["How central a node is to the rest of the network", "How desirable a node is in a given trip based on network shape", "How dense the transit systems are in the grid"]
         for (const [i, value] of ListOfLayers.entries()) {
             this.value = value;
             formHTML += "<input type=\"radio\" name=\"mapRadios\" id=\"" + value + "_" + cityNum + "\" value=\"" + value
                 + "\" onclick=\"{City" + cityNum + ".getRadioStatus(); City" + cityNum + ".turnOffAllLayers(); City" + cityNum + ".injectCatCumulToggleHTML(); City" + cityNum + ".injectCumulSlider(); City" + cityNum + ".loadCumulativeLayers();}\">"
-                + "<label for=\"" + value + "\">" + NameOfQueries[i] + "</label><br>"
+                + "<label for=\"" + value + "\" alt=\"" + QueryAltText[i] + "\">" + NameOfQueries[i] + "</label><br>"
         }
         var containerId = "radioForm" + cityNum;
         document.getElementById(containerId).innerHTML = formHTML;
@@ -315,11 +322,11 @@ class City {
 
         const { cityNum } = this;
         console.log("Injecting category/cumulative toggle in HTML");
-        var toggleHTML = "<p class=\"toggleText\">Stacked" +
+        var toggleHTML = "<p class=\"toggleText\">All Layers" +
             "<label class=\"switch\" >" +
             "<input type=\"checkbox\" id=\"toggCatCumulBtn" + cityNum + "\" onchange= \"City" + cityNum + ".getCatCumulToggle();\">" +
             "<span class=\"slider round\"></span>" +
-            "</label>     Single" +
+            "</label>     Isolate Layers" +
             "</p>";
         var toggleID = "toggleCategoryCumulative" + cityNum;
         document.getElementById(toggleID).innerHTML = toggleHTML;
@@ -480,99 +487,120 @@ class City {
         }
     }
 
+    injectCityGeneral() {
+        const { cityJson, cityNum } = this;
+        var generalTableDiv = "general-metrics" + cityNum;
+
+        var generalTableHTML = "<table style=\"margin-left: 20px;\">" +
+            "<tr>" +
+            "<td>" +
+            "<div id=\"general-card\">" +
+            "<table>" +
+            "<tr>" +
+            "<td class=\"icon\"><i class=\"fas fa-vector-square fa-2x\"></i></td>" +
+            "<td class=\"info\"><h3>Area in km<sup>2</sup></h3><h4>" + cityJson["AreaSqKm"] + "</h4></td>" +
+            "</tr>" +
+            "</table>" +
+            "</div>" +
+            "</td>" +
+            "<td>" +
+            "<div id=\"general-card\">" +
+            "<table>" +
+            "<tr>" +
+            "<td class=\"icon\"><i class=\"fas fa-users fa-2x\"></i></td>" +
+            "<td class=\"info\"><h3>Population in million</h3><h4>" + cityJson["PopulationMillion"] + "</h4></td>" +
+            "</tr>" +
+            "</table>" +
+            "</div>" +
+            "</td>" +
+
+            "</tr>" +
+            "<tr>" +
+            "<td>" +
+            "<div id=\"general-card\">" +
+            "<table>" +
+            "<tr>" +
+            "<td class=\"icon\"><i class=\"fa-solid fa-users-line fa-2x\"></i></td>" +
+            "<td class=\"info\"><h3>Density in person/km<sup>2</sup></h3><h4>" + cityJson["DensityPersonSqKm"] + "</h4></td>" +
+            "</tr>" +
+            "</table>" +
+            "</div>" +
+            "</td>" +
+            "<td>" +
+            "<div id=\"general-card\">" +
+            "<table>" +
+            "<tr>" +
+            "<td class=\"icon\"><i class=\"fa-solid fa-city fa-2x\"></i></td>" +
+            "<td class=\"info\"><h3>Number of Boroughs</h3><h4>" + cityJson["NumBoroughs"] + "</h4></td>" +
+            "</tr>" +
+            "</table>" +
+            "</div>" +
+            "</td>" +
+            "</tr>" +
+            "</table>";
+
+        document.getElementById(generalTableDiv).innerHTML = generalTableHTML;
+
+    }
+
     displayCityMetrics() {
         const { city, cityNum, cityJson } = this;
-        var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-tram", "fas fa-taxi"];
+        var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fa-cable-car", "fas fa-taxi"];
         var StopType = ["Bus Stops", "Train Stations", "Metro Stations", "Tram Stops", "Other Stops"];
         var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
 
-        var rowStyle = "style=\"width:80%; height:25px; text-align: center; color: black;\"";
-        var labelColStyle = "style=\"width: 65%; text-align: right; color: black; font-size: 11px;\"";
-        var colonColStyle = "style=\"width: 5%; text-align: center; color: black; font-size: 11px;\"";
-        var valueColStyle = "style=\"width: 30%; text-align: center; color: black; font-size: 11px;\"";
+        var rowStyle = "style=\" height:25px; text-align: center; color: black;\"";
+        var colStyle = "style=\"width: 45%; text-align: left; color: black; font-size: 11px;\"";
 
-        var cityTable = "<table style=\"padding-bottom: 20px; padding-left:25%;\">" +
-            "<tbody style=\"width:600px; height:75px;\">" +
-            "<tr " + rowStyle + ">" +
-            "<td " + labelColStyle + ">Area (Sq Km)</td>" +
-            "<td " + colonColStyle + ">:</td>" +
-            "<td " + valueColStyle + ">" + cityJson["AreaSqKm"] + "</td>" +
-            "</tr>" +
-            "<tr " + rowStyle + ">" +
-            "<td " + labelColStyle + ">Population (Million)</td>" +
-            "<td " + colonColStyle + ">:</td>" +
-            "<td " + valueColStyle + ">" + cityJson["PopulationMillion"] + "</td>" +
-            "</tr>" +
-            "<tr " + rowStyle + ">" +
-            "<td " + labelColStyle + ">Density (Person/SqKm)</td>" +
-            "<td " + colonColStyle + ">:</td>" +
-            "<td " + valueColStyle + ">" + cityJson["DensityPersonSqKm"] + "</td>" +
-            "</tr>" +
-            "<tr " + rowStyle + ">" +
-            "<td " + labelColStyle + ">Number of Boroughs </td>" +
-            "<td " + colonColStyle + ">:</td>" +
-            "<td " + valueColStyle + ">" + cityJson["NumBoroughs"] + "</td>" +
-            "</tr>" +
-            "<tr " + rowStyle + ">" +
-            "<td " + labelColStyle + ">Statistics last updated</td>" +
-            "<td " + colonColStyle + ">:</td>" +
-            "<td " + valueColStyle + ">" + cityJson["YearOfStats"] + "</td>" +
-            "</tr>" +
-            "<tr " + rowStyle + ">" +
-            "<td " + labelColStyle + ">Source of GTFS </td>" +
-            "<td " + colonColStyle + ">:</td>" +
-            "<td " + valueColStyle + ">" + "<a href={" + cityJson["SourceGTFS"] + "}>Source</a>" + " (" + cityJson["DateUpdatedGTFS"] + ")" + "</td>" +
-            "</tr>" +
+        var cityTable = "<table style=\"padding-left:25px; width:100%; \">" +
+            "<tbody style=\"height:30px;\">" +
+            "<tr " + rowStyle + "> <td " + colStyle + "> Statistics last updated  :      " + cityJson["YearOfStats"] +
+            "</td><td " + colStyle + ">Source of GTFS :     " + "<a href={" + cityJson["SourceGTFS"] + "}>Source</a>" + " (" + cityJson["DateUpdatedGTFS"] + ")" +
+            "</td></tr>" +
             "</tbody>" + "</table>";
 
-        //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
         for (var i = 0; i < 5; i++) {
             if (cityJson["TransitSystems"][i].NumStops > 0) {
-                cityTable += "<table style=\"padding-bottom: 20px; padding-left:10%;\">" +
-                    "<tbody style=\"width:600px; height:75px;\">" +
-                    "<tr>" +
-                    "<td style=\"width: 75px; height:75px; text-align: right; color: " + TransitColors[i] + ";\">" +
-                    "<i class=\"" + IconList[i] + " fa-3x\"></i>" +
-                    "</td>" +
-                    "<td style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
-                    "<table style=\"width: 268px; height:75px; text-align: center; color: black;\">" +
+                cityTable +=
+                    "<table style=\"width:40vw; margin:20px;\">" +
                     "<tbody>" +
-                    "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
-                    "<td style=\"width: 65%; text-align: right; color: black; font-size: 11px;\">" +
-                    "Number of " + StopType[i] +
+                    "<tr style=\"height: 40px;\">" +
+                    "<td style=\"width: 20%; text-align: center;\">" +
+                    "<div class=\"transit-icon\" style=\"color: " + TransitColors[i] + "; \">" +
+                    "<i class=\"" + IconList[i] + " fa-2x\"></i>" +
+                    "</div>" +
                     "</td>" +
-                    "<td style=\"width: 5%; text-align: center; color: black; font-size: 11px;\">:</td>" +
-                    "<td style=\"width: 30%; text-align: center; color: black; font-size: 11px;\">" +
+                    "<td style=\"width: 25%; border-right: 3px solid lightgray; padding-right: 14px;\">" +
+                    "<div>" +
+                    "<h4 class=\"metrics-values\">" +
                     cityJson["TransitSystems"][i].NumStops +
+                    "</h4>" +
+                    "<p class=\"metrics-labels\">stops</p>" +
+                    "</div>" +
                     "</td>" +
-                    "</tr>" +
-                    "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
-                    "<td style=\"width: 65%; text-align: right; color: black; font-size: 11px;\">" +
-                    "Number of Lines" +
-                    "</td>" +
-                    "<td style=\"width: 5%; text-align: center; color: black; font-size: 11px;\">:</td>" +
-                    "<td style=\"width: 30%; text-align: center; color: black; font-size: 11px;\">" +
+                    "<td style=\"width: 25%; border-right: 3px solid lightgray; padding-right: 14px;\">" +
+                    "<div>" +
+                    "<h4 class=\"metrics-values\">" +
                     cityJson["TransitSystems"][i].NumLines +
+                    "</h4>" +
+                    "<p class=\"metrics-labels\">lines</p>" +
+                    "</div>" +
                     "</td>" +
-                    "</tr>" +
-                    "<tr style=\"width:80%; height:25px; text-align: center; color: black;\">" +
-                    "<td style=\"width: 65%; text-align: right; color: black; font-size: 11px;\">" +
-                    "Average distance between " + StopType[i] +
-                    "</td>" +
-                    "<td style=\"width: 5%; text-align: center; color: black; font-size: 11px;\">:</td>" +
-                    "<td style=\"width: 30%; text-align: center; color: black; font-size: 11px;\">" +
+                    "<td style=\"width: 30%;\">" +
+                    "<div>" +
+                    "<h4 class=\"metrics-values\">" +
                     cityJson["TransitSystems"][i].AvgDisStops +
-                    "</td>" +
-                    "</tr>" +
-                    "</tbody>" +
-                    "</table>" +
+                    " m</h4>" +
+                    "<p class=\"metrics-labels\">avg. distance</p>" +
+                    "</div>" +
                     "</td>" +
                     "</tr>" +
                     "</tbody>" +
                     "</table>";
+
             }    // Closing the if
         }          // Clossing the loop
-        cityTable += "<span class=\"popUp3\" style=\"font-size: 1em; color: #d81b60; padding-left:10%; padding-bottom: 50px;\">" +
+        cityTable += "<span class=\"popUp4\" style=\"font-size: 1em; color: #d81b60; padding-left:10%; padding-bottom: 50px;\">" +
             "<i class=\"fas fa-info-circle\" onclick=\"show_popup(4);\"></i>" +
             "</span>";
         var displayCityMetricsdivID = "city" + cityNum + "table";
