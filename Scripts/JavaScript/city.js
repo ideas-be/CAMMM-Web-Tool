@@ -545,7 +545,7 @@ class City {
 
     displayCityMetrics() {
         const { city, cityNum, cityJson } = this;
-        var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fa-cable-car", "fas fa-taxi"];
+        var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-train-tram", "fas fa-taxi"];
         var StopType = ["Bus Stops", "Train Stations", "Metro Stations", "Tram Stops", "Other Stops"];
         var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
 
