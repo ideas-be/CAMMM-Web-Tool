@@ -3,33 +3,29 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Display a popup on hover</title>
+    <title>CAMMM testing popup on hover</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="Styles/UIv2.css">
+    <script src="Scripts/JavaScript/sidebar.js"></script>
 </head>
 
 <body>
-    <style>
-        .mapboxgl-popup {
-            max-width: 400px;
-            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-        }
-    </style>
-    <div id="map"></div>
+    <!-- testing a sidebar code -->
+    <div id="mySidebar" class="sidebar">
+        <!-- <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a> -->
+    </div>
+
+    <div id="main">
+        <div id="map"></div>
+        <button class="openbtn" onclick="openSidebar()">&#9776; Open Sidebar</button>
+        <h1 class="cammm-title">CAMMM</h1>
+    </div>
+    <!-- testing a sidebar code -->
     <script>
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
@@ -50,7 +46,7 @@
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                                    '<iframe src="https://www.google.com/maps/embed?pb=!4v1663884048833!6m8!1m7!1sxgOotgwK_4cHJe-PNHZH1A!2m2!1d45.55477699568413!2d-73.54686106945971!3f144.93868909956825!4f3.6738048998522004!5f0.7820865974627469" width="100%" height="400px" allowfullscreen="" style="border:0;"></iframe><strong>Supernode:<br>Rue Hochelaga x Pie-IX</strong><p>Popular transit options: Pie-IX metro, Viau metro<br>Metro Stations: 3<br>Bus Stops: 10</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -64,7 +60,7 @@
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                                    '<iframe src="https://www.google.com/maps/embed?pb=!4v1663891559112!6m8!1m7!1sloAZojzzTDD-n64P3nu8NA!2m2!1d45.54401276464763!2d-73.61539306655644!3f80.0563593132705!4f0!5f0.7820865974627469" width="100%" height="400px" style="border:0;" allowfullscreen=""></iframe><strong>Supernode:<br>Rue Jean-Talon E x Ave. Christophe-Colomb</strong><p>Popular transit options: Jean-Talon metro, Fabre metro<br>Metro Stations: 2<br>Bus Stops: 12</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -78,7 +74,7 @@
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                                    '<iframe src="https://www.google.com/maps/embed?pb=!4v1663891972991!6m8!1m7!1s1mN8ql6ZlPOFmhAgs27xKw!2m2!1d45.49008204528826!2d-73.58565804156427!3f47.72317256183064!4f0!5f0.7820865974627469" width="100%" height="400px" style="border:0;" allowfullscreen=""></iframe><strong>Supernode:<br>Atwater Ave. x Boul. de Maisonneuve Ouest</strong><p>Popular transit options: Atwater metro, Lionel-Groulx metro, Guy-Concordia metro, Georges-Vanier metro<br>Metro Stations: 4<br>Bus Stops: 30</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -92,7 +88,7 @@
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                                    '<iframe src="https://www.google.com/maps/embed?pb=!4v1663892600215!6m8!1m7!1smUOA12WyS4wdG-d4lEG2XQ!2m2!1d45.43352264384387!2d-73.62856669000328!3f328.8644430489141!4f0!5f0.7820865974627469" width="100%" height="400px" style="border:0;" allowfullscreen=""></iframe><strong>Supernode:<br>Newman Blvd x Shevchenko Blvd</strong><p>Popular transit options: Bus 106, Bus 109, Bus 406, Bus 350<br>Metro Stations: 0<br>Bus Stops: 10</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -106,7 +102,7 @@
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                                    '<iframe src="https://www.google.com/maps/embed?pb=!4v1663892921289!6m8!1m7!1s1Yo_34jO6upIbS6IS0odOA!2m2!1d45.51883991080884!2d-73.55583247448548!3f108.97725522989687!4f0!5f0.7820865974627469" width="100%" height="400px" style="border:0;" allowfullscreen=""></iframe><strong>Supernode:<br>St. Catherine St E x Rue Beaudry</strong><p>Popular transit options: Beaudry metro, Bus 14, Bus 15, Bus 358 <br>Metro Stations: 1<br>Bus Stops: 9</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -120,7 +116,7 @@
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode:<br>Victoria Ave. x Boul. de Maisonneuve Ouest</strong><p>Popular transit options: Vendome metro, Bus 14, Bus 15, Bus 358 <br>Metro Stations: 1<br>Bus Stops: 9</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -171,7 +167,105 @@
                                     45.483062
                                 ],
                             }
-                        }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                "coordinates": [
+                                    -73.552195,
+                                    45.533504
+                                ],
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                "coordinates": [
+                                    -73.537871,
+                                    45.570197
+                                ],
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                "coordinates": [
+                                    -73.568432,
+                                    45.50822
+                                ],
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                "coordinates": [
+                                    -73.614172,
+                                    45.444259
+                                ],
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                "coordinates": [
+                                    -73.626527,
+                                    45.546566
+                                ],
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                "coordinates": [
+                                    -73.604996,
+                                    45.539357
+                                ],
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<img src="Images/PopUps/Metro_Test.png" style="width:220px;"></img><strong>Supernode Name</strong><p>This is where the information of this supernode will go</p>'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                "coordinates": [
+                                    -73.541433,
+                                    45.56341
+                                ],
+                            }
+                        },
                     ]
                 }
             });
@@ -183,7 +277,7 @@
                 'source': 'places',
                 'paint': {
                     'circle-color': '#000000',
-                    'circle-radius': 8,
+                    'circle-radius': 12,
                     'circle-stroke-width': 2,
                     'circle-stroke-color': '#ffffff'
                 }
@@ -192,7 +286,7 @@
 
             // Create a popup, but don't add it to the map yet.
             const popup = new mapboxgl.Popup({
-                closeButton: true,
+                closeButton: false,
                 closeOnClick: true
             });
 
@@ -203,20 +297,33 @@
                 map.setPaintProperty('places', 'circle-color', '#008080');
 
                 // Copy coordinates array.
-                const coordinates = e.features[0].geometry.coordinates.slice();
+                // const coordinates = e.features[0].geometry.coordinates.slice();
                 const description = e.features[0].properties.description;
-
                 // Ensure that if the map is zoomed out such that multiple
                 // copies of the feature are visible, the popup appears
                 // over the copy being pointed to.
-                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                }
+                // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                //     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                // }
 
                 // Populate the popup and set its coordinates
                 // based on the feature found.
-                popup.setLngLat(coordinates).setHTML(description).addTo(map);
+                // popup.setLngLat(coordinates).setHTML(description).addTo(map);
+                openSidebar(description);
+
             });
+
+            map.on('click', (e) => {
+                // if (popup.isOpen() === false)
+                const description = "closing sidebar";
+                if (document.getElementById("mySidebar").style.width === "250px") {
+                    // openSidebar(description);
+                    console.log("pop up closed, reverting to black dots");
+                    map.setPaintProperty('places', 'circle-color', '#000000');
+                };
+            });
+
+
 
         });
     </script>

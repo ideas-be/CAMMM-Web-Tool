@@ -6,6 +6,8 @@ Fix indentation in markdown numbered list
 Finish standalone mode for multi-browser solution (see indexStandalone HTML) https://www.w3schools.com/js/js_window.asp
 
 Add this note to the docs: Direct is now Individual and Node is now Cluster.
+#### Mapbox Interactive Options API Docs
+https://docs.mapbox.com/mapbox-gl-js/api/map/#instance-members-interaction-handlers
 #### CAMMM Web Atlas Tool
 https://github.com/ideas-be/CAMMM-Web-Tool/
 **Here is the link to see the website proper:**
