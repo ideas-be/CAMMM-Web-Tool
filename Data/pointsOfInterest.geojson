@@ -1,0 +1,276 @@
+{
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1663884048833!6m8!1m7!1sxgOotgwK_4cHJe-PNHZH1A!2m2!1d45.55477699568413!2d-73.54686106945971!3f144.93868909956825!4f3.6738048998522004!5f0.7820865974627469\" width=\"100%\" height=\"400px\" allowfullscreen=\"\" style=\"border:0;\"></iframe>",
+                "description": "<strong>Supernode:<br>Rue Hochelaga x Pie-IX</strong><p>Popular transit options: Pie-IX metro, Viau metro<br>Metro Stations: 3<br>Bus Stops: 10</p>",
+                "primary": 22,
+                "secondary": 17,
+                "tertiary": 21
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.546655,
+                    45.554954
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1663891559112!6m8!1m7!1sloAZojzzTDD-n64P3nu8NA!2m2!1d45.54401276464763!2d-73.61539306655644!3f80.0563593132705!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Rue Jean-Talon E x Ave. Christophe-Colomb</strong><p>Popular transit options: Jean-Talon metro, Fabre metro<br>Metro Stations: 2<br>Bus Stops: 12</p>",
+                "primary": 168,
+                "secondary": 105,
+                "tertiary": 14
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.615425,
+                    45.543998
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1663891972991!6m8!1m7!1s1mN8ql6ZlPOFmhAgs27xKw!2m2!1d45.49008204528826!2d-73.58565804156427!3f47.72317256183064!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Atwater Ave. x Boul. de Maisonneuve Ouest</strong><p>Popular transit options: Atwater metro, Lionel-Groulx metro, Guy-Concordia metro, Georges-Vanier metro<br>Metro Stations: 4<br>Bus Stops: 30</p>",
+                "primary": 109,
+                "secondary": 88,
+                "tertiary": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.585811,
+                    45.490068
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1663892600215!6m8!1m7!1smUOA12WyS4wdG-d4lEG2XQ!2m2!1d45.43352264384387!2d-73.62856669000328!3f328.8644430489141!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Newman Blvd x Shevchenko Blvd</strong><p>Popular transit options: Bus 106, Bus 109, Bus 406, Bus 350<br>Metro Stations: 0<br>Bus Stops: 10</p>",
+                "primary": 5,
+                "secondary": 10,
+                "tertiary": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.628581,
+                    45.433553
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1663892921289!6m8!1m7!1s1Yo_34jO6upIbS6IS0odOA!2m2!1d45.51883991080884!2d-73.55583247448548!3f108.97725522989687!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>St. Catherine St E x Rue Beaudry</strong><p>Popular transit options: Beaudry metro, Bus 14, Bus 15, Bus 358 <br>Metro Stations: 1<br>Bus Stops: 9</p>",
+                "primary": 142,
+                "secondary": 170,
+                "tertiary": 68
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.555836,
+                    45.518831
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664208168517!6m8!1m7!1sB8Rw-6kv6dLKbQjdzxoIFw!2m2!1d45.47799556939403!2d-73.60128008243495!3f298.21568456144513!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Victoria Ave. x Boul. de Maisonneuve Ouest</strong><p>Popular transit options: Vendome metro, Bus 14, Bus 15, Bus 358 <br>Metro Stations: 1<br>Bus Stops: 9</p>",
+                "primary": 22,
+                "secondary": 22,
+                "tertiary": 3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.601325,
+                    45.478085
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664208483402!6m8!1m7!1s4PHpCu_5qDE30NNDD34Llg!2m2!1d45.52756395788133!2d-73.57596133342811!3f344.5038780357641!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Marie-Anne St E x De La Roche St</strong><p>Popular transit options: Laurier metro, Mont-Royal metro, Bus 11, Bus 14, Bus 97, Bus 368 <br>Metro Stations: 2<br>Bus Stops: 10</p>",
+                "primary": 150,
+                "secondary": 173,
+                "tertiary": 32
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.576027,
+                    45.527654
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664208595065!6m8!1m7!1sXEUvS46NXJswaw6STnsfQA!2m2!1d45.54920731529806!2d-73.6355272424788!3f57.430690475478464!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Rue St-Hubert x Boul Cremazie E</strong><p>Popular transit options: Cremazie metro, Bus 30, Bus 54, Bus 192<br>Metro Stations: 1<br>Bus Stops: 10</p>",
+                "primary": 41,
+                "secondary": 31,
+                "tertiary": 4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.635399,
+                    45.549344
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664208864193!6m8!1m7!1sFaRgDWsitgD1TXx7bc1Tmw!2m2!1d45.48304577185929!2d-73.59101233231824!3f66.02090212702593!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Clarke Ave x Saint-Catherine St W</strong><p>Popular transit options: Atwater metro, Lionel-Groulx metro, Bus 24, Bus 63, Bus 90, Bus 104, Bus 138, Bus 356<br>Metro Stations: 2<br>Bus Stops: 10</p>",
+                "primary": 5,
+                "secondary": 10,
+                "tertiary": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.591007,
+                    45.483062
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664209412633!6m8!1m7!1sPF4uIwE51qFK1e__9zGOHg!2m2!1d45.53352008254514!2d-73.55215212482075!3f55.25100242377858!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Rue du Havre x Ontario St E</strong><p>Popular transit options: Frontenac metro, Bus 85, Bus 94, Bus 125, Bus 185, Bus, 350, Bus 353, Bus 355, Bus 356, Bus 357, Bus 358, Bus 360, Bus 362, Bus 364, Bus 368<br>Metro Stations: 1<br>Bus Stops: 9</p>",
+                "primary": 5,
+                "secondary": 10,
+                "tertiary": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.552195,
+                    45.533504
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664209502991!6m8!1m7!1s8IGvAYpBnLvoF1e_15jNow!2m2!1d45.57023415150593!2d-73.53787035266475!3f156.1369024200322!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Rue Dickson x Rue Hochelaga</strong><p>Popular transit options: L'Assomption metro, Bus 22, Bus 85, Bus 362<br>Metro Stations: 1<br>Bus Stops: 10</p>",
+                "primary": 5,
+                "secondary": 10,
+                "tertiary": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.537871,
+                    45.570197
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664210186017!6m8!1m7!1sXHdd_gSM2tPyshUpuJSLTQ!2m2!1d45.50823430728203!2d-73.56842003798499!3f114.88394139773838!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Jeanne Mance St x Boul. de Maisonneuve Ouest</strong><p>Popular transit options: Place-des-Arts metro, McGill metro, Saint-Laurent metro, Bus 15, Bus 24, Bus 35, Bus 80, Bus 125, Bus 129, Bus 356, Bus 365, Bus 465, Bus 480<br>Metro Stations: 3<br>Bus Stops: 9</p>",
+                "primary": 5,
+                "secondary": 10,
+                "tertiary": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.568432,
+                    45.50822
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664210637951!6m8!1m7!1sFDYqzrWqxnjmGkTH2TM65w!2m2!1d45.44430345312779!2d-73.61426698622606!3f99.98162872160361!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Rue Senkus x Newman Blvd</strong><p>Popular transit options: Bus 1, Bus 21, Bus 22, Bus 23, Bus 24, Bus 25, Bus 29, Bus 31, Bus 32, Bus 98, Bus 106, Bus 111, Bus 195, Bus 200, Bus 350, Bus 406, Bus 495<br>Metro Stations: 0<br>Bus Stops: 10</p>",
+                "primary": 5,
+                "secondary": 10,
+                "tertiary": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.614172,
+                    45.444259
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664210722078!6m8!1m7!1sEMbVZJ3JXR2TgkjPR6zJcg!2m2!1d45.54649021228401!2d-73.62649837246046!3f17.763628024479548!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Rue St-Hubert x Rue Jarry E</strong><p>Popular transit options: Jarry metro, Bus 30, Bus 193<br>Metro Stations: 1<br>Bus Stops: 10</p>",
+                "primary": 5,
+                "secondary": 10,
+                "tertiary": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.626527,
+                    45.546566
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664210932903!6m8!1m7!1syIlyW5SKuWDC17rMzai4fg!2m2!1d45.539376376109!2d-73.60498789891507!3f159.26536518333063!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Rue Saint-Zotique E x Ave Christophe-Colomb</strong><p>Popular transit options: Beaubien metro, Jean-Talon metro, Rosemont metro, Bus 13, Bus 30, Bus 95<br>Metro Stations: 3<br>Bus Stops: 10</p>",
+                "primary": 5,
+                "secondary": 10,
+                "tertiary": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.604996,
+                    45.539357
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "streetview": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1664211137032!6m8!1m7!1soQuqs8lfUhCxthB5ZhKtnA!2m2!1d45.56344000072168!2d-73.54135695429798!3f223.59543170282097!4f0!5f0.7820865974627469\" width=\"100%\" height=\"400px\" style=\"border:0;\" allowfullscreen=\"\"></iframe>",
+                "description": "<strong>Supernode:<br>Viau St x Rue Hochelaga</strong><p>Popular transit options: Viau metro, Bus 34, Bus 85, Bus 125, Bus 136, Bus 353, Bus 362<br>Metro Stations: 3<br>Bus Stops: 10</p>",
+                "primary": 5,
+                "secondary": 10,
+                "tertiary": 13
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.541433,
+                    45.56341
+                ]
+            }
+        }
+    ]
+}
