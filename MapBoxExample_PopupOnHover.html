@@ -7,6 +7,7 @@
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
     <link rel="stylesheet" href="Styles/UIv2.css">
     <script src="Scripts/JavaScript/sidebar.js"></script>
 </head>
@@ -71,8 +72,9 @@
                 'paint': {
                     'circle-translate': [0, -15],
                     'circle-color': '#cf2020',
-                    'circle-radius': ['get', 'secondary'],
-                    // { property: 'secondary', stops: [[0, 6], [250, 40]] },
+                    'circle-radius':
+                        // ['get', 'secondary'],
+                        { property: 'secondary', stops: [[0, 6], [250, 40]] },
                     'circle-opacity': 0.7
                 }
             }
@@ -86,12 +88,14 @@
                 'paint': {
                     'circle-translate': [10, -10],
                     'circle-color': '#56bd94',
-                    'circle-radius': ['get', 'tertiary'],
-                    // { property: 'tertiary', stops: [[0, 6], [250, 40]] },
+                    'circle-radius':
+                        // ['get', 'tertiary'],
+                        { property: 'tertiary', stops: [[0, 6], [250, 40]] },
                     'circle-opacity': 0.7
                 }
             }
             );
+
             // Add a layer showing the places.
             map.addLayer({
                 'id': 'places',
@@ -106,14 +110,6 @@
             }
             );
 
-
-
-            // Create a popup, but don't add it to the map yet.
-            // const popup = new mapboxgl.Popup({
-            //     closeButton: false,
-            //     closeOnClick: true
-            // });
-
             map.on('click', 'places', (e) => {
                 // Change the cursor style as a UI indicator.
                 map.getCanvas().style.cursor = 'pointer';
@@ -123,20 +119,6 @@
                 const streetview = e.features[0].properties.streetview;
 
                 openSidebar(description, streetview);
-                // Copy coordinates array.
-                // const coordinates = e.features[0].geometry.coordinates.slice();
-
-                // Ensure that if the map is zoomed out such that multiple
-                // copies of the feature are visible, the popup appears
-                // over the copy being pointed to.
-                // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                //     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                // }
-
-                // Populate the popup and set its coordinates
-                // based on the feature found.
-                // popup.setLngLat(coordinates).setHTML(description).addTo(map);
-
             });
 
             map.on('click', (e) => {
@@ -145,31 +127,61 @@
                     map.setPaintProperty('places', 'circle-color', '#000000');
                 };
             });
+
+            // map.on('sourcedata', function (e) {
+
+            //     // if (e.sourceId !== 'total') return
+            //     if (e.sourceId !== 'primary') return
+            //     if (e.isSourceLoaded !== true) return
+
+            //     var data = {
+            //         "type": "FeatureCollection",
+            //         "features": []
+            //     }
+
+            //     e.source.data.features.forEach(function (f) {
+            //         // map.querySourceFeatures('places').forEach(function (f) {
+            //         var object = turf.centerOfMass(f)
+            //         var center = object.geometry.coordinates
+            //         var radius = 10;
+            //         var options = {
+            //             steps: 16,
+            //             units: 'meters',
+            //             properties: object.properties
+            //         };
+            //         data.features.push(turf.circle(center, radius, options));
+            //     })
+            //     // console.log(data);
+            //     map.getSource('extrusion').setData(data);
+            // })
+
+            // // Load the service map and fill extrusions
+            // map.addSource('services', {
+            //     'type': 'geojson',
+            //     'data': {
+            //         'type': 'FeatureCollection',
+            //         'features': serv.features,
+            //     }
+            // });
+            // // console.log(serv.features);
+            // // Add layer with 3D no. of primary services
+            // map.addLayer({
+            //     'id': 'primary',
+            //     'type': 'fill-extrusion',
+            //     'filter': ['==', 'extrude', 'true'],
+            //     'source': 'services',
+            //     'paint': {
+            //         'fill-extrusion-translate': [-10, -10],
+            //         'fill-extrusion-color': '#6d55ce',
+            //         'fill-extrusion-height': 5,
+            //         'fill-extrusion-base': 0,
+            //         // { property: 'primary', stops: [[0, 6], [250, 40]] },
+            //         'fill-extrusion-opacity': 1
+            //     }
+            // });
         });
 
-        // map.on('load', () => {
-        //     map.addSource('services', {
-        //         'type': 'geojson',
-        //         'data': {
-        //             'type': 'FeatureCollection',
-        //             'features': serv.features,
-        //         }
-        //     });
 
-        //     // Add layer with no. of primary services
-        //     map.addLayer({
-        //         'id': 'primary',
-        //         'type': 'fill-extrusion',
-        //         'source': 'services',
-        //         'paint': {
-        //             'circle-translate': [-10, -10],
-        //             'circle-color': '#6d55ce',
-        //             'circle-radius': { property: 'primary', stops: [[0, 6], [250, 40]] },
-        //             'circle-opacity': 0.7
-        //         }
-        //     }
-        //     );
-        // });
         // Read point of interest JSON
         var obj;
         var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
@@ -199,7 +211,7 @@
             b.onreadystatechange = function () {  //When the JSON file is open it starts a function 
 
                 if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
-                    obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+                    serv = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
                     newJson2(serv);
                 }
             }
