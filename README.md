@@ -1,4 +1,5 @@
  # Currently working on: 
+Continue reformatting fields in geojson for UI sidebar info
 Make Inforgraphics interactive pages + embed on website - https://indd.adobe.com/view/60c23b28-eaec-4f56-bb1f-5b400a5b3296 
 Keep working on Documentation - Section 2 Processing Tool - Work on flowcharts for each Operational and Analysis function 
 Flowchart cheatsheet - https://www.breezetree.com/articles/flow-chart-symbols  https://www.conceptdraw.com/examples/flowchart-symbols-cheat-sheet
