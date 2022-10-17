@@ -30,3 +30,7 @@ function newJson(obj) {
     //   },
     //   "id": "0e43619b6142216e146e2d75934d91b8"
     // },
+
+
+// URL Base example for the Streetview link
+// http://maps.google.com/maps?q=&layer=c&cbll=45.537949,-73.578240
