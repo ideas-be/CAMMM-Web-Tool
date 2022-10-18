@@ -46,55 +46,55 @@
                 }
             });
 
-            // console.log(obj.features[0].properties.primary);
+            // console.log(obj.features[0]);
 
-            // Add layer with no. of primary services
-            map.addLayer({
-                'id': 'primary',
-                'type': 'circle',
-                'source': 'places',
-                'paint': {
-                    'circle-translate': [-10, -10],
-                    'circle-color': '#6d55ce',
-                    'circle-radius':
-                        // ['get', 'primary'],
-                        { property: 'primary', stops: [[0, 6], [250, 40]] },
-                    'circle-opacity': 0.7
-                }
-            }
-            );
+            //     // Add layer with no. of primary services
+            //     map.addLayer({
+            //         'id': 'primary',
+            //         'type': 'circle',
+            //         'source': 'places',
+            //         'paint': {
+            //             'circle-translate': [-10, -10],
+            //             'circle-color': '#6d55ce',
+            //             'circle-radius':
+            //                 // ['get', 'primary'],
+            //                 { property: 'primary', stops: [[0, 6], [250, 40]] },
+            //             'circle-opacity': 0.7
+            //         }
+            //     }
+            //     );
 
-            // Add layer with no. of secondary services
-            map.addLayer({
-                'id': 'secondary',
-                'type': 'circle',
-                'source': 'places',
-                'paint': {
-                    'circle-translate': [0, -15],
-                    'circle-color': '#cf2020',
-                    'circle-radius':
-                        // ['get', 'secondary'],
-                        { property: 'secondary', stops: [[0, 6], [250, 40]] },
-                    'circle-opacity': 0.7
-                }
-            }
-            );
+            //     // Add layer with no. of secondary services
+            //     map.addLayer({
+            //         'id': 'secondary',
+            //         'type': 'circle',
+            //         'source': 'places',
+            //         'paint': {
+            //             'circle-translate': [0, -15],
+            //             'circle-color': '#cf2020',
+            //             'circle-radius':
+            //                 // ['get', 'secondary'],
+            //                 { property: 'secondary', stops: [[0, 6], [250, 40]] },
+            //             'circle-opacity': 0.7
+            //         }
+            //     }
+            //     );
 
-            // Add layer with no. of tertiary services
-            map.addLayer({
-                'id': 'tertiary',
-                'type': 'circle',
-                'source': 'places',
-                'paint': {
-                    'circle-translate': [10, -10],
-                    'circle-color': '#56bd94',
-                    'circle-radius':
-                        // ['get', 'tertiary'],
-                        { property: 'tertiary', stops: [[0, 6], [250, 40]] },
-                    'circle-opacity': 0.7
-                }
-            }
-            );
+            //     // Add layer with no. of tertiary services
+            //     map.addLayer({
+            //         'id': 'tertiary',
+            //         'type': 'circle',
+            //         'source': 'places',
+            //         'paint': {
+            //             'circle-translate': [10, -10],
+            //             'circle-color': '#56bd94',
+            //             'circle-radius':
+            //                 // ['get', 'tertiary'],
+            //                 { property: 'tertiary', stops: [[0, 6], [250, 40]] },
+            //             'circle-opacity': 0.7
+            //         }
+            //     }
+            //     );
 
             // Add a layer showing the places.
             map.addLayer({
@@ -116,8 +116,8 @@
                 map.setPaintProperty('places', 'circle-color', '#008080');
 
                 // <strong>Supernode:<br>Rue Hochelaga x Pie-IX</strong><p>Popular transit options: Pie-IX metro, Viau metro<br>Metro Stations: 3<br>Bus Stops: 10</p>
-                const description = e.features[0].properties.description;
-                const streetview = e.features[0].properties.streetview;
+                const description = e.features[0].properties.Name;
+                const streetview = "<a href=\"" + e.features[0].properties.URL + "\"  style=\"width=100%; border:0; background-color: #d81b60; color: white;\" target:\"_blank\">Street View</a>";
 
                 openSidebar(description, streetview);
             });
@@ -183,11 +183,11 @@
         });
 
 
-        // Read point of interest JSON
+        // Read features JSON with new version of nodes
         var obj;
         var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-        function readPOI() {
-            a.open('GET', "Data/pointsOfInterest.geojson", true);  // This is reading the JSON FILE 
+        function readNodes() {
+            a.open('GET', "Data/features.geojson", true);  // This is reading the JSON FILE 
             console.log("Reading the popup info file to load JSON");
 
             a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
@@ -200,26 +200,7 @@
 
             a.send();        // Closes the XMLHttpRequest   
         }
-        setTimeout(readPOI, 700);
-
-        //  Read services JSON for points of interest
-        var serv;
-        var b = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-        function readServPOI() {
-            b.open('GET', "Data/POIservices.geojson", true);  // This is reading the JSON FILE 
-            console.log("Reading the popup info file to load JSON");
-
-            b.onreadystatechange = function () {  //When the JSON file is open it starts a function 
-
-                if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
-                    serv = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
-                    newJson2(serv);
-                }
-            }
-
-            b.send();        // Closes the XMLHttpRequest   
-        }
-        setTimeout(readServPOI, 700);
+        setTimeout(readNodes, 700);
 
     </script>
 

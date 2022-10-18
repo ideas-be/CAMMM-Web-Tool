@@ -1,15 +1,16 @@
-var myJson1, myJson2;
+var myJson1;
+// , myJson2;
 
 function newJson1(obj) {
     myJson1 = obj;
-    console.log("Initializing new POI Json obj");
+    console.log("Initializing new Node Json obj");
     // console.log(myJson1);
 }
-function newJson2(obj) {
-    myJson2 = obj;
-    console.log("Initializing new Services Json obj");
-    // console.log(myJson2);
-}
+// function newJson2(obj) {
+//     myJson2 = obj;
+//     console.log("Initializing new Services Json obj");
+//     // console.log(myJson2);
+// }
 
 var isOpened = true;
 
