@@ -86,9 +86,10 @@
                     map.getCanvas().style.cursor = 'pointer';
                     map.setPaintProperty('clusters', 'circle-color', '#008080');
 
-                    // <strong>Supernode:<br>Rue Hochelaga x Pie-IX</strong><p>Popular transit options: Pie-IX metro, Viau metro<br>Metro Stations: 3<br>Bus Stops: 10</p>
-                    const description = "Cluster: " + e.features[0].properties.Name;
-                    const streetview = "<a href=\"" + e.features[0].properties.URL + "\"  style=\"width=100%; border:0; background-color: #f15924; color: white;\" target:\"_blank\">Street View</a>";
+                    var clusterProperties = e.features[0].properties;
+
+                    const description = clusterProperties.Category + " Cluster: " + clusterProperties.Name + "<br>Number of Stops: " + clusterProperties.NumberOfStops + "<br>List of Stops: " + clusterProperties.ListOfStops;
+                    const streetview = "<a href=\"" + clusterProperties.URL + "\"  style=\"width=100%; border:0; background-color: #f15924; color: white;\" target:\"_blank\">Street View</a>";
 
                     openSidebar(description, streetview);
                 });
@@ -98,9 +99,11 @@
                     map.getCanvas().style.cursor = 'pointer';
                     map.setPaintProperty('hubs', 'circle-color', '#000000');
 
-                    // <strong>Supernode:<br>Rue Hochelaga x Pie-IX</strong><p>Popular transit options: Pie-IX metro, Viau metro<br>Metro Stations: 3<br>Bus Stops: 10</p>
-                    const description = "Hub: " + e.features[0].properties.Name;
-                    const streetview = "<a href=\"" + e.features[0].properties.URL + "\"  style=\"width=100%; border:0; background-color: #d81b60; color: white;\" target:\"_blank\">Street View</a>";
+                    var hubProperties = e.features[0].properties;
+
+                    const description = hubProperties.Category + " Hub: " + hubProperties.Name + "<br>Number of Metro Stations: " + hubProperties.NumberOfStations + "<br>List of Metro Stations: " + hubProperties.ListOfStations + "<br>Number of Bus Stops: " + hubProperties.NumberOfStops + "<br>List of Bus Stops: " + hubProperties.ListOfStops;
+                    const streetview = "<embed src=\"" + hubProperties.URL + "\" style=\"width=100%; border:0; background-color: #d81b60; color: white;\">";
+                    // "<a href=\"" + e.features[0].properties.URL + "\"  style=\"width=100%; border:0; background-color: #d81b60; color: white;\" target:\"_blank\">Street View</a>";
 
                     openSidebar(description, streetview);
                 });
