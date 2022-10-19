@@ -1,9 +1,10 @@
-var myJson1;
+var myJson;
 // , myJson2;
 
-function newJson1(obj) {
-    myJson1 = obj;
+function newJson(obj) {
+    myJson = obj;
     console.log("Initializing new Node Json obj");
+    // console.log(myJson);
     // console.log(myJson1);
 }
 // function newJson2(obj) {
@@ -33,3 +34,23 @@ const openSidebar = (desc, stview) => {
     }
 
 };
+
+function getClusters() {
+    var clusterList = [];
+    // console.log(myJson);
+    for (i = 0; i < myJson.features.length; i++) {
+        if (myJson.features[i].properties.Type == "Cluster")
+            clusterList.push(myJson.features[i]);
+    }
+    return (clusterList);
+}
+
+function getHubs() {
+    var hubList = [];
+    // console.log(myJson);
+    for (i = 0; i < myJson.features.length; i++) {
+        if (myJson.features[i].properties.Type == "Hub")
+            hubList.push(myJson.features[i]);
+    }
+    return (hubList);
+}
