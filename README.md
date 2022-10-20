@@ -17,6 +17,7 @@ https://ideas-be.github.io/CAMMM-Web-Tool/
 https://miro.com/app/board/o9J_kgmIpbw=/
 #### Preview:
 ![CAMMM Web Atlas](Images/GithubDocs/2022_05_03_Current_Prototype_Screenshot.png)
+![v2 mockups](Images/GithubDocs/figma-v2-mockups.png)
 
 ----------------------------------------------------------------------
   

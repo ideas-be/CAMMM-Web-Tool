@@ -1,21 +1,13 @@
 var myJson;
-// , myJson2;
 
 function newJson(obj) {
     myJson = obj;
     console.log("Initializing new Node Json obj");
-    // console.log(myJson);
-    // console.log(myJson1);
 }
-// function newJson2(obj) {
-//     myJson2 = obj;
-//     console.log("Initializing new Services Json obj");
-//     // console.log(myJson2);
-// }
 
 var isOpened = true;
 
-const openSidebar = (desc, stview) => {
+const openSidebar = (nodeProperties) => {
     if (isOpened) {
         // console.log(desc);
         var sidebarDiv = document.getElementById("mySidebar");
@@ -23,7 +15,14 @@ const openSidebar = (desc, stview) => {
         sidebarDiv.style.width = "300px";
         // toString(windowWidth * 0.3);
         document.getElementById("main").style.marginRight = "300px";
-        sidebarDiv.innerHTML = stview + desc;
+        var sidebarHTML = "";
+        if (nodeProperties.Type == 'Hub') {
+            sidebarHTML = nodeProperties.Category + " Hub: " + nodeProperties.Name + "<embed src=\"" + nodeProperties.URL + "\" style=\"width=100%; border:0; background-color: #d81b60; color: white;\">" + "<br>Number of Metro Stations: " + nodeProperties.NumberOfStations + "<br>List of Metro Stations: " + nodeProperties.ListOfStations + "<br>Number of Bus Stops: " + nodeProperties.NumberOfStops + "<br>List of Bus Stops: " + nodeProperties.ListOfStops;
+        } else if (nodeProperties.Type == 'Cluster') {
+            sidebarHTML = nodeProperties.Category + " Cluster: " + nodeProperties.Name + "<a href=\"" + nodeProperties.URL + "\"  style=\"width=100%; border:0; background-color: #f15924; color: white;\" target:\"_blank\">Street View</a>" + "<br>Number of Stops: " + nodeProperties.NumberOfStops + "<br>List of Stops: " + nodeProperties.ListOfStops;
+        }
+        sidebarDiv.innerHTML = sidebarHTML;
+
         isOpened = false;
     } else {
         var sidebarDiv = document.getElementById("mySidebar");
