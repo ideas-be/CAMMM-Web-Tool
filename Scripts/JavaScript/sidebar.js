@@ -9,17 +9,14 @@ var isOpened = true;
 
 const openSidebar = (nodeProperties) => {
     if (isOpened) {
-        // console.log(desc);
         var sidebarDiv = document.getElementById("mySidebar");
-        // var windowWidth = window.MediaQueryList.windowWidth;
         sidebarDiv.style.width = "300px";
-        // toString(windowWidth * 0.3);
         document.getElementById("main").style.marginRight = "300px";
-        var sidebarHTML = "";
+        var sidebarHTML = "<p id=\"query-name\">" + selectedQuery + " rating:</p>" + displayQueryRating();
         if (nodeProperties.Type == 'Hub') {
-            sidebarHTML = nodeProperties.Category + " Hub: " + nodeProperties.Name + "<embed src=\"" + nodeProperties.URL + "\" style=\"width=100%; border:0; background-color: #d81b60; color: white;\">" + "<br>Number of Metro Stations: " + nodeProperties.NumberOfStations + "<br>List of Metro Stations: " + nodeProperties.ListOfStations + "<br>Number of Bus Stops: " + nodeProperties.NumberOfStops + "<br>List of Bus Stops: " + nodeProperties.ListOfStops;
+            sidebarHTML += nodeProperties.Category + " Hub: " + nodeProperties.Name + "<embed src=\"" + nodeProperties.URL + "\" style=\"width=100%; border:0; background-color: #d81b60; color: white;\">" + "<br>Number of Metro Stations: " + nodeProperties.NumberOfStations + "<br>List of Metro Stations: " + nodeProperties.ListOfStations + "<br>Number of Bus Stops: " + nodeProperties.NumberOfStops + "<br>List of Bus Stops: " + nodeProperties.ListOfStops;
         } else if (nodeProperties.Type == 'Cluster') {
-            sidebarHTML = nodeProperties.Category + " Cluster: " + nodeProperties.Name + "<a href=\"" + nodeProperties.URL + "\"  style=\"width=100%; border:0; background-color: #f15924; color: white;\" target:\"_blank\">Street View</a>" + "<br>Number of Stops: " + nodeProperties.NumberOfStops + "<br>List of Stops: " + nodeProperties.ListOfStops;
+            sidebarHTML += nodeProperties.Category + " Cluster: " + nodeProperties.Name + "<a href=\"" + nodeProperties.URL + "\"  style=\"width=100%; border:0; background-color: #f15924; color: white;\" target:\"_blank\">Street View</a>" + "<br>Number of Stops: " + nodeProperties.NumberOfStops + "<br>List of Stops: " + nodeProperties.ListOfStops;
         }
         sidebarDiv.innerHTML = sidebarHTML;
 
@@ -33,6 +30,32 @@ const openSidebar = (nodeProperties) => {
     }
 
 };
+
+function queryDropDown() {
+    var queryList = ["Multimodality", "Accessibility", "Serviceability", "Reliability"];
+    var dropDownDiv = document.getElementById("dropdown-content");
+    var dropDownHTML = "";
+
+    for (i = 0; i < queryList.length; i++) {
+        // console.log(queryList[i]);
+        dropDownHTML += "<a href=\"#\" onclick=\"getSelectedQuery(\'" + queryList[i] + "\');\">" + queryList[i] + "</a>";
+    }
+
+    dropDownDiv.innerHTML += dropDownHTML;
+}
+
+var selectedQuery = "Multimodality";
+
+function getSelectedQuery(queryName) {
+    selectedQuery = queryName;
+    document.getElementById("dropbtn").innerHTML = selectedQuery;
+    document.getElementById("query-name").innerHTML = selectedQuery + " rating:";
+}
+
+function displayQueryRating() {
+    var ratingHTML = "<div class=\"query-rating\">This is where the rating will be.\n</div>";
+    return (ratingHTML);
+}
 
 function getClusters() {
     var clusterList = [];

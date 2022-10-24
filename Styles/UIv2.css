@@ -1,6 +1,22 @@
+/* ALL OUR FONTS */
+/* Cairo */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/* Primary Font - Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+/* Secondary Font - Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* ALL OUR FONTS */
+
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 #map {
@@ -20,6 +36,8 @@ body {
     font-size: 36px;
     color: #ffffff;
     padding-left: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
 }
 
 .sidebar {
@@ -83,3 +101,78 @@ body {
         font-size: 18px;
     }
 }
+
+/* START OF DROPDOWN STYLE */
+#query-dropdown {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.dropDown {
+    text-align: center;
+    width: 100%;
+}
+
+.dropbtn {
+    margin-left: 20px;
+    background-color: #d81b60;
+    width: 150px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    /* float: right; */
+    position: relative;
+    display: inline-block;
+    /* margin-left: auto;
+    margin-right: 0; */
+}
+
+.dropdown-content {
+
+    display: none;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    /* position: absolute; */
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #c21655;
+}
+
+/* END OF DROPDOWN STYLE */
+
+/* START OF QUERY RATING STYLE */
+.query-rating {
+    color: #c3c3c3;
+}
+
+#query-name {
+    font-size: 16px;
+}
+
+/* END OF QUERY RATING STYLE */
