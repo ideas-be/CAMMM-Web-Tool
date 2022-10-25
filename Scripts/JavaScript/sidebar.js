@@ -53,7 +53,7 @@ function getSelectedQuery(queryName) {
 }
 
 function displayQueryRating() {
-    var ratingHTML = "<div class=\"query-rating\">This is where the rating will be.\n</div>";
+    var ratingHTML = "<div class=\"query-rating\"><span class=\"rating-value\">8</span><span>/10\n</span></div>";
     return (ratingHTML);
 }
 
