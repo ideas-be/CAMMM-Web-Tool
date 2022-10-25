@@ -40,6 +40,15 @@ body {
     font-weight: bold;
 }
 
+h2 {
+    margin-top: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 22px;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 .sidebar {
     height: 100%;
     width: 0;
@@ -52,7 +61,7 @@ body {
     /* margin: 20px; */
     padding: 20px;
     padding-top: 40px;
-    font-size: 1.4rem;
+    font-size: 16px;
     color: #d81b60;
     transition: 0.5s;
 }
@@ -60,7 +69,7 @@ body {
 .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 16px;
     color: #d81b60;
     display: block;
     transition: 0.3s;
@@ -68,6 +77,11 @@ body {
 
 .sidebar a:hover {
     color: #d81b60;
+}
+
+.sidebar iframe {
+    /* height: 300px; */
+    margin-bottom: 20px;
 }
 
 .openbtn {
@@ -171,15 +185,45 @@ body {
     color: #000000;
     font-family: 'Nunito', 'sans-serif';
     font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 50px;
 }
 
 #query-name {
     font-size: 16px;
+    margin-bottom: 0;
 }
 
 .rating-value {
     font-size: 48px;
     color: #c3c3c3;
+}
+
+.rating-words {
+    float: right;
+    margin-top: 25px;
+    /* vertical-align: auto; */
+}
+
+progress {
+    border-radius: 50px;
+    width: 100%;
+    height: 10px;
+    /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+}
+
+progress::-webkit-progress-bar {
+    background-color: #c3c3c3;
+    border-radius: 50px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #d81b60;
+    border-radius: 50px;
+}
+
+progress::-moz-progress-bar {
+    /* style rules */
 }
 
 /* END OF QUERY RATING STYLE */
