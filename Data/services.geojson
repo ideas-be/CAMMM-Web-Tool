@@ -1,0 +1,32 @@
+{
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "fid": "1644",
+                "Id": "54735",
+                "Type": "Cluster",
+                "Primary_AvDist": 396,
+                "Primary_NumberServices": 1,
+                "Primary_MinDist": 396,
+                "Primary_MaxDist": 396,
+                "Secondary_AvDist": 0,
+                "Secondary_NumberServices": 0,
+                "Secondary_MinDist": 0,
+                "Secondary_MaxDist": 0,
+                "Tertiary_AvDist": 0,
+                "Tertiary_NumberServices": 0,
+                "Tertiary_MinDist": 0,
+                "Tertiary_MaxDist": 0
+            },
+            "geometry": {
+                "coordinates": [
+                    -73.546093,
+                    45.613755
+                ],
+                "type": "Point"
+            },
+            "id": "000d266853a868d30dbb6460c5c3b427"
+        }
+    ]
+}
