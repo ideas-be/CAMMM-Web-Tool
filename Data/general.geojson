@@ -6,14 +6,13 @@
                 "fid": "1644",
                 "Id": "54735",
                 "Type": "Cluster",
-                "ListOfStations": "[]",
-                "ListOfStops": "['54737', '54735']",
+                "Category": "Small",
+                "MetroData": "{}",
+                "BusData": "{'54737':['24','101'],'54735':['102']}",
+                "TramData": "{}",
+                "RailData": "{}",
                 "Name": "De La V�rendrye - Rondeau",
                 "URL": "http://maps.google.com/maps?q=&layer=c&cbll=45.613755500424006,-73.54609349974568",
-                "Magnitude": 2,
-                "NumberOfStations": 0,
-                "NumberOfStops": 2,
-                "Category": "Small"
             },
             "geometry": {
                 "coordinates": [

@@ -1,0 +1,43 @@
+{
+    "Name_en": "",
+    "Name_local": "",
+    "Population_in_mil": 0,
+    "Area_in_sq_km": 0,
+    "Density": 0,
+    "TransitTypesStops": {
+        "Tram": 0,
+        "Metro": 0,
+        "Rail": 0,
+        "Bus": 0,
+        "Ferry": 0,
+        "Cable": 0,
+        "Aerieal": 0,
+        "Funicular": 0,
+        "Trolleybus": 0,
+        "Monorail": 0
+    },
+    "TransitTypesLines": {
+        "Tram": 0,
+        "Metro": 0,
+        "Rail": 0,
+        "Bus": 0,
+        "Ferry": 0,
+        "Cable": 0,
+        "Aerieal": 0,
+        "Funicular": 0,
+        "Trolleybus": 0,
+        "Monorail": 0
+    },
+    "TransitTypesAvDistStops": {
+        "Tram": 0,
+        "Metro": 0,
+        "Rail": 0,
+        "Bus": 0,
+        "Ferry": 0,
+        "Cable": 0,
+        "Aerieal": 0,
+        "Funicular": 0,
+        "Trolleybus": 0,
+        "Monorail": 0
+    }
+}
