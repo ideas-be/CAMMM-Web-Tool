@@ -3,8 +3,8 @@ var myJson, myCityJson, myServicesJson;
 function serviceJson(servicesObj) {
     myServicesJson = servicesObj;
     console.log("Initializing new Services Json obj");
-    console.log(myServicesJson);
-    setTimeout(calDiversityServices, 1300);
+    // console.log(myServicesJson);
+    // setTimeout(calDiversityServices, 1300);
 }
 
 function cityJson(cityObj) {
@@ -22,9 +22,10 @@ var isOpened = true;
 
 var nodeProperties;
 
-const openSidebar = (nodeProps) => {
+function openSidebar(nodeProps) {
 
     nodeProperties = nodeProps;
+    console.log(nodeProperties);
 
     if (isOpened) {
         // setTimeout(calMultiModality, 1200);
@@ -33,7 +34,6 @@ const openSidebar = (nodeProps) => {
         document.getElementById("main").style.marginRight = "300px";
         document.getElementById("query-name").innerHTML = selectedQuery + " rating:";
         document.getElementById("query-name").style.color = "#d81b60";
-        displayQueryRating();
         var sidebarHTML = "";
         if (nodeProperties.Type == 'Hub') {
             sidebarHTML += nodeProperties.Category + " Hub<br><h2>" + nodeProperties.Name + "</h2>" + "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1666713720490!6m8!1m7!1s2GB1U9IEipeoMotr7X9lGw!2m2!1d45.56103412274398!2d-73.70978898711944!3f172.86802296682595!4f2.415573086827166!5f0.7820865974627469\" width=\"100%\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\"></iframe>" + "<br>Number of Metro Stations: " + nodeProperties.NumberOfStations + "<br>Number of Bus Stops: " + nodeProperties.NumberOfStops + "<br>Number of Services: " + nodeNumberServices;
@@ -53,10 +53,31 @@ const openSidebar = (nodeProps) => {
 
 };
 
+function callQueryCalFunc(selQuery) {
+
+    console.log("Running Query Function Calls with Switch Case");
+
+    switch (selQuery) {
+        case "Select Query": console.log("Please select the query");
+            break;
+        case "Multimodality": calMultiModality();
+            break;
+        case "Accessibility": console.log("Accessibility");
+            break;
+        case "Serviceability": calDiversityServices();
+            break;
+        case "Reliability": console.log("Reliability");
+            break;
+        default: console.log("missing query");
+    }
+
+}
+
 function calMultiModality() {
-    if (myCityJson["City"]["Name_en"] == "Montreal") {
+    if (myCityJson.City.Name_en == "Montreal") {
         var totalTransit = 0;
         for (key in myCityJson["City"]["TransitTypesStops"]) {
+            // console.log(myCityJson["City"]["TransitTypesStops"][key]);
             var value = myCityJson["City"]["TransitTypesStops"][key];
             if (value != 0) {
                 totalTransit += 1;
@@ -64,6 +85,8 @@ function calMultiModality() {
         }
         console.log("Total transit");
         console.log(totalTransit);
+        var MultimodalityRating = 8;
+        displayQueryRating(MultimodalityRating);
     }
 }
 var nodeNumberServices = 0;
@@ -71,13 +94,21 @@ var nodeNumberServices = 0;
 function calDiversityServices() {
     console.log("Diversity of Primary, Secondary and Tertiary Services");
     var serviceProperties;
+
+    console.log("Node Properties:");
+    console.log(nodeProperties);
+
     for (i = 0; i < myServicesJson.features.length; i++) {
+        // console.log(myServicesJson.features[i].properties.fid);
         if (nodeProperties.fid == myServicesJson.features[i].properties.fid) {
             serviceProperties = myServicesJson.features[i].properties;
         }
     }
     nodeNumberServices = serviceProperties.Primary_NumberServices + serviceProperties.Secondary_NumberServices + serviceProperties.Tertiary_NumberServices;
     console.log(nodeNumberServices);
+
+    var ServiceabilityRating = 6;
+    displayQueryRating(ServiceabilityRating);
 }
 
 function queryDropDown() {
@@ -93,17 +124,19 @@ function queryDropDown() {
     dropDownDiv.innerHTML += dropDownHTML;
 }
 
-var selectedQuery = "Multimodality";
+var selectedQuery = "Select Query";
+// displayQueryRating(8);
 
 function getSelectedQuery(queryName) {
     selectedQuery = queryName;
     document.getElementById("dropbtn").innerHTML = selectedQuery;
     document.getElementById("query-name").innerHTML = selectedQuery + " rating:";
+    callQueryCalFunc(selectedQuery);
 }
 
-function displayQueryRating() {
+function displayQueryRating(ratingValue) {
     var queryRatingDiv = document.getElementById("query-rating");
-    var ratingHTML = "<span class=\"rating-value\">8</span><span>/10\n</span><span class=\"rating-words\">Very Good</span><div><progress id=\"rating-bar\" value=\"32\" max=\"100\"> 32% </progress></div>";
+    var ratingHTML = "<span class=\"rating-value\">" + ratingValue + "</span><span>/10\n</span><span class=\"rating-words\">Very Good</span><div><progress id=\"rating-bar\" value=\"" + ratingValue * 10 + "\" max=\"100\"> 32% </progress></div>";
     queryRatingDiv.innerHTML = ratingHTML;
 }
 
