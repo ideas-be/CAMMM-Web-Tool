@@ -9,6 +9,7 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
     <link rel="stylesheet" href="Styles/UIv2.css">
     <script src="Scripts/JavaScript/sidebar.js"></script>
+    <script src="Scripts/JavaScript/readFiles.js"></script>
 </head>
 
 <body>
@@ -179,24 +180,30 @@
         setTimeout(loadNodes, 900);
 
 
-        // Read services JSON
-        var servicesObj;
-        var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-        function readServices() {
-            a.open('GET', "Data/services.geojson", true);  // This is reading the JSON FILE 
-            console.log("Reading the services file to load JSON");
+        // // Read services JSON
+        // var servicesObj;
+        // var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+        // // function read2Services(Path1,Objt1) {
 
-            a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+        // // }
+        // // function read2Services(Path2, Objt2) {
 
-                if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
-                    servicesObj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
-                    serviceJson(servicesObj);
-                }
-            }
+        // //         }
+        // function readServices() {
+        //     a.open('GET', "Data/services.geojson", true);  // This is reading the JSON FILE 
+        //     console.log("Reading the services file to load JSON");
 
-            a.send();        // Closes the XMLHttpRequest   
-        }
-        setTimeout(readServices, 800);
+        //     a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+
+        //         if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
+        //             servicesObj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+        //             serviceJson(servicesObj);
+        //         }
+        //     }
+
+        //     a.send();        // Closes the XMLHttpRequest   
+        // }
+        // setTimeout(readServices, 800);
 
         // Read features JSON with new version of nodes
         var clusterFeatures = [];
@@ -226,23 +233,23 @@
         }
         setTimeout(readNodes, 700);
 
-        var cityObj;
-        var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-        function readCity() {
-            a.open('GET', "Data/city.geojson", true);  // This is reading the JSON FILE 
-            console.log("Reading the city JSON");
+        // var cityObj;
+        // var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+        // function readCity() {
+        //     a.open('GET', "Data/city.geojson", true);  // This is reading the JSON FILE
+        //     console.log("Reading the city JSON");
 
-            a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+        //     a.onreadystatechange = function () {  //When the JSON file is open it starts a function
 
-                if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
-                    cityObj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
-                    cityJson(cityObj);
-                }
-            }
+        //         if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
+        //             cityObj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON
+        //             cityJson(cityObj);
+        //         }
+        //     }
 
-            a.send();        // Closes the XMLHttpRequest   
-        }
-        setTimeout(readCity, 600);
+        //     a.send();        // Closes the XMLHttpRequest
+        // }
+        // setTimeout(readCity, 600);
 
 
 
