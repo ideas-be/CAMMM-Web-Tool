@@ -3,6 +3,14 @@
 - Add transit option horizontal scrollable list
 - Implement Multimodality and Services UI (dummy)
 
+## Cluster and Hub Categories
+    Small Cluster - 1-2 bus stops
+    Medium Cluster - 3-5 bus stops
+    Large Cluster - 6+ bus stops
+    Small Hub - 1-4 bus stops + 1 Rail/metro station
+    Medium Hub - 5+ bus stops + 1 Rail/metro station
+    Large Hub - 1+ bus stops + 2 Rail/Metro station
+
 # Currently working on: 
 Continue reformatting fields in geojson for UI sidebar info
 Make Inforgraphics interactive pages + embed on website - https://indd.adobe.com/view/60c23b28-eaec-4f56-bb1f-5b400a5b3296 
@@ -23,6 +31,8 @@ https://miro.com/app/board/o9J_kgmIpbw=/
 #### Preview:
 ![CAMMM Web Atlas](Images/GithubDocs/2022_05_03_Current_Prototype_Screenshot.png)
 ![v2 mockups](Images/GithubDocs/figma-v2-mockups.png)
+
+
 
 ----------------------------------------------------------------------
   
