@@ -20,7 +20,7 @@ function newJson(obj) {
 
 var isOpened = true;
 
-var nodeProperties;
+var nodeProperties, nodeCategory;
 
 function openSidebar(nodeProps) {
 
@@ -38,7 +38,7 @@ function openSidebar(nodeProps) {
         document.getElementById("query-name").style.color = "#d81b60";
         var sidebarHTML = "";
         if (nodeProperties.Type == 'Hub') {
-            sidebarHTML += nodeProperties.Category + " Hub<br><h2>" + nodeProperties.Name + "</h2>" + "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1666713720490!6m8!1m7!1s2GB1U9IEipeoMotr7X9lGw!2m2!1d45.56103412274398!2d-73.70978898711944!3f172.86802296682595!4f2.415573086827166!5f0.7820865974627469\" width=\"100%\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\"></iframe>" + "<br>Number of Metro Stations: " + nodeProperties.NumberOfStations + "<br>Number of Bus Stops: " + nodeProperties.NumberOfStops + "<br>Number of Services: " + nodeNumberServices;
+            sidebarHTML += nodeCategory + " Hub<br><h2>" + nodeProperties.Name + "</h2>" + "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1666713720490!6m8!1m7!1s2GB1U9IEipeoMotr7X9lGw!2m2!1d45.56103412274398!2d-73.70978898711944!3f172.86802296682595!4f2.415573086827166!5f0.7820865974627469\" width=\"100%\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\"></iframe>" + "<br>Number of Metro Stations: " + nodeProperties.NumberOfStations + "<br>Number of Bus Stops: " + nodeProperties.NumberOfStops + "<br>Number of Services: " + nodeNumberServices;
         } else if (nodeProperties.Type == 'Cluster') {
             sidebarHTML += nodeProperties.Category + " Cluster<br><h2>" + nodeProperties.Name + "</h2><a href=\"" + nodeProperties.URL + "\"  style=\"width=100%; border:0; background-color: #f15924; color: white;\" target:\"_blank\">Street View</a>" + "<br>Number of Stops: " + nodeProperties.NumberOfStops + "<br>List of Stops: " + nodeProperties.ListOfStops;
         }
@@ -88,15 +88,32 @@ function parseStopsLines() {
 
     if (nodeProperties.Type == "Cluster") {
 
-        console.log("Counting stops and lines at this Cluster!!");
-        // if()
+        console.log("Finding the Category of this Cluster!!");
+        if ((NumberBusStops >= 1) && (NumberBusStops <= 2)) {
+            console.log("Small Cluster!!");
+            nodeCategory = "Small";
+        } else if ((NumberBusStops >= 3) && (NumberBusStops <= 5)) {
+            console.log("Medium Cluster!!");
+            nodeCategory = "Medium";
+        } else if ((NumberBusStops >= 6)) {
+            console.log("Large Cluster!!");
+            nodeCategory = "Large";
+        }
 
 
     } else if (nodeProperties.Type == "Hub") {
 
-
-        console.log("Counting stops and lines at this Hub!!");
-
+        console.log("Finding the Category of this Hub!!");
+        if ((NumberMetroStations == 1) && (NumberBusStops >= 1) && (NumberBusStops <= 4)) {
+            console.log("Small Hub!!");
+            nodeCategory = "Small";
+        } else if ((NumberMetroStations == 1) && (NumberBusStops >= 5)) {
+            console.log("Medium Hub!!");
+            nodeCategory = "Medium";
+        } else if ((NumberMetroStations == 2) && (NumberBusStops >= 1)) {
+            console.log("Large Hub!!");
+            nodeCategory = "Large";
+        }
 
     }
 }
