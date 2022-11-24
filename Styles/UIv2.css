@@ -227,3 +227,39 @@ progress::-moz-progress-bar {
 }
 
 /* END OF QUERY RATING STYLE */
+
+/* START OF TRANSIT MENU STYLE */
+
+#transit-option-menu {
+    color: #000000;
+    overflow: auto;
+    white-space: nowrap;
+    padding-bottom: 20px;
+}
+
+#transit-option {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    width: 70px;
+    padding: 10px;
+    /* align-items: center; */
+}
+
+.fas.fa-bus {
+    color: #f85a63ff;
+    padding-bottom: 10px;
+}
+
+#transit-lines {
+    vertical-align: middle;
+    margin: auto;
+    padding: 2px;
+    background-color: #d3d3d3;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* END OF TRANSIT MENU STYLE */

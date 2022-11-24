@@ -27,7 +27,7 @@ function openSidebar(nodeProps) {
     nodeProperties = nodeProps;
     console.log(nodeProperties);
 
-    displayStopsLines();
+    fetchStopsLines();
 
     if (isOpened) {
         // setTimeout(calMultiModality, 1200);
@@ -36,13 +36,17 @@ function openSidebar(nodeProps) {
         document.getElementById("main").style.marginRight = "300px";
         document.getElementById("query-name").innerHTML = selectedQuery + " rating:";
         document.getElementById("query-name").style.color = "#d81b60";
-        var sidebarHTML = "";
-        if (nodeProperties.Type == 'Hub') {
-            sidebarHTML += nodeCategory + " Hub<br><h2>" + nodeProperties.Name + "</h2>" + "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1666713720490!6m8!1m7!1s2GB1U9IEipeoMotr7X9lGw!2m2!1d45.56103412274398!2d-73.70978898711944!3f172.86802296682595!4f2.415573086827166!5f0.7820865974627469\" width=\"100%\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\"></iframe>" + "<br>Number of Metro Stations: " + nodeProperties.NumberOfStations + "<br>Number of Bus Stops: " + nodeProperties.NumberOfStops + "<br>Number of Services: " + nodeNumberServices;
-        } else if (nodeProperties.Type == 'Cluster') {
-            sidebarHTML += nodeProperties.Category + " Cluster<br><h2>" + nodeProperties.Name + "</h2><a href=\"" + nodeProperties.URL + "\"  style=\"width=100%; border:0; background-color: #f15924; color: white;\" target:\"_blank\">Street View</a>" + "<br>Number of Stops: " + nodeProperties.NumberOfStops + "<br>List of Stops: " + nodeProperties.ListOfStops;
-        }
-        sidebarDiv.innerHTML += sidebarHTML;
+
+        // Node Category & Type
+        document.getElementById("node-category-type").innerHTML = nodeCategory + " " + nodeProperties.Type;
+
+        // Node Name
+        document.getElementById("node-name").innerHTML = nodeProperties.Name;
+
+        // Node Street View
+        document.getElementById("node-street-view").innerHTML = "<iframe src=\"" + nodeProperties.URL + "\">Street View</iframe>";
+
+        displayStopsLines();
 
         isOpened = false;
     } else {
@@ -55,36 +59,83 @@ function openSidebar(nodeProps) {
 
 };
 
-var SampleMetroData = '{"12": ["2"], "24":["5", "23"]}';
-var SampleBusData = '{"124565": ["2", "45"], "245465":["5", "23", "98"], "56765": ["30"]}';
+var NumberBusStops = 0;
+var NumberMetroStations = 0;
 
-var SampleMetroArray = JSON.parse(SampleMetroData);
-var SampleBusArray = JSON.parse(SampleBusData);
+var MetroData, BusData;
 
-function parseStopsLines() {
-    // var BusData = JSON.parse(JSON.stringify(nodeProperties.BusData));
-    // console.log("Bus Data", BusData);
+function fetchStopsLines() {
 
-    // {'BusData': {'56503': ['58'], '56504': ['58']}}
+    MetroData = JSON.parse(nodeProperties.MetroData);
+    BusData = JSON.parse(nodeProperties.BusData);
 
-    // console.log("nodeProperties.MetroData:", typeof (nodeProperties.MetroData), nodeProperties.MetroData);
-    // var MetroData = JSON.parse(nodeProperties.MetroData);
-    // console.log("Metro Data", MetroData, typeof (MetroData));
+    console.log("Metro JSON: ", MetroData);
+    console.log("Bus JSON  : ", BusData);
+    // console.log("Bus Data", nodeProperties.BusData, typeof (nodeProperties.BusData));
 
-    console.log("Metro Data", SampleMetroArray);
-    console.log("Bus Data", SampleBusArray);
-
-    var NumberBusStops = 0;
-    var NumberMetroStations = 0;
-    for (const key in SampleMetroArray) {
+    for (const key in MetroData) {
         NumberMetroStations += 1;
     }
-    for (const key in SampleBusArray) {
+    for (const key in BusData) {
         NumberBusStops += 1;
+        console.log("NumberBusStops", NumberBusStops, "key", key, BusData[key]);
     }
-
     console.log("Number of Metro Stations: ", NumberMetroStations);
     console.log("Number of Bus Stops: ", NumberBusStops);
+
+    assignCategory();
+    NumberMetroStations = 0;
+    NumberBusStops = 0;
+
+}
+
+function displayStopsLines() {
+
+    var transitMenuDiv = document.getElementById("transit-option-menu");
+    var transitOptionHTML = "";
+    for (const key in BusData) {
+        var busLines = " | ";
+        for (i = 0; i < BusData[key].length; i++) {
+            busLines += BusData[key][i] + " | ";
+        }
+        transitOptionHTML += "<div id=\"transit-option\">" +
+            "<p id=\"transit-stop-id\">#" + key + "</p>" +
+            "<i class=\"fas fa-bus fa-2x\"></i>" +
+            "<div id=\"transit-lines\">" +
+            "<p>" + busLines + "</p>" +
+            "</div>" +
+            "</div>";
+    }
+
+    transitMenuDiv.innerHTML = transitOptionHTML;
+
+
+
+    // var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-train-tram", "fas fa-taxi"];
+    // //     var StopType = ["Bus Stops", "Train Stations", "Metro Stations", "Tram Stops", "Other Stops"];
+    // //     var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
+    // var transitOptionHTML = "<div id=\"transit-option\"></div>";
+
+    // <div class=\"transit-icon\" style=\"color: " + TransitColors[i] + "; \">" + "<i class=\"" + IconList[i] + " fa-2x\"></i>" + "</div>"
+
+    // for (const key in SampleMetroArray) {
+    //     NumberMetroStations += 1;
+    // }
+    // for (const key in SampleBusArray) {
+    //     NumberBusStops += 1;
+    // }
+
+
+
+}
+
+function assignCategory() {
+    // Small Cluster - 1-2 bus stops
+    // Medium Cluster - 3-5 bus stops
+    // Large Cluster - 6+ bus stops
+    // Small Hub - 1-4 bus stops + 1 Rail/metro station
+    // Medium Hub - 5+ bus stops + 1 Rail/metro station
+    // Large Hub - 1+ bus stops + 2 Rail/Metro station
 
     if (nodeProperties.Type == "Cluster") {
 
@@ -99,7 +150,6 @@ function parseStopsLines() {
             console.log("Large Cluster!!");
             nodeCategory = "Large";
         }
-
 
     } else if (nodeProperties.Type == "Hub") {
 
@@ -116,35 +166,6 @@ function parseStopsLines() {
         }
 
     }
-}
-
-function displayStopsLines() {
-
-    parseStopsLines();
-
-    var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-train-tram", "fas fa-taxi"];
-    //     var StopType = ["Bus Stops", "Train Stations", "Metro Stations", "Tram Stops", "Other Stops"];
-    //     var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
-    var transitOptionHTML = "<div class=\"transit-icon\" style=\"color: " + TransitColors[i] + "; \">" + "<i class=\"" + IconList[i] + " fa-2x\"></i>" + "</div>"
-
-    for (const key in SampleMetroArray) {
-        NumberMetroStations += 1;
-    }
-    for (const key in SampleBusArray) {
-        NumberBusStops += 1;
-    }
-
-
-
-}
-
-function assignCategory() {
-    // Small Cluster - 1-2 bus stops
-    // Medium Cluster - 3-5 bus stops
-    // Large Cluster - 6+ bus stops
-    // Small Hub - 1-4 bus stops + 1 Rail/metro station
-    // Medium Hub - 5+ bus stops + 1 Rail/metro station
-    // Large Hub - 1+ bus stops + 2 Rail/Metro station
 }
 
 function callQueryCalFunc(selQuery) {
