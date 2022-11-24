@@ -55,6 +55,12 @@ function openSidebar(nodeProps) {
 
 };
 
+var SampleMetroData = '{"12": ["2"], "24":["5", "23"]}';
+var SampleBusData = '{"124565": ["2", "45"], "245465":["5", "23", "98"], "56765": ["30"]}';
+
+var SampleMetroArray = JSON.parse(SampleMetroData);
+var SampleBusArray = JSON.parse(SampleBusData);
+
 function parseStopsLines() {
     // var BusData = JSON.parse(JSON.stringify(nodeProperties.BusData));
     // console.log("Bus Data", BusData);
@@ -64,12 +70,6 @@ function parseStopsLines() {
     // console.log("nodeProperties.MetroData:", typeof (nodeProperties.MetroData), nodeProperties.MetroData);
     // var MetroData = JSON.parse(nodeProperties.MetroData);
     // console.log("Metro Data", MetroData, typeof (MetroData));
-
-    var SampleMetroData = '{"12": ["2"], "24":["5", "23"]}';
-    var SampleBusData = '{"124565": ["2", "45"], "245465":["5", "23", "98"], "56765": ["30"]}';
-
-    var SampleMetroArray = JSON.parse(SampleMetroData);
-    var SampleBusArray = JSON.parse(SampleBusData);
 
     console.log("Metro Data", SampleMetroArray);
     console.log("Bus Data", SampleBusArray);
@@ -122,13 +122,19 @@ function displayStopsLines() {
 
     parseStopsLines();
 
-    // var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-train-tram", "fas fa-taxi"];
+    var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-train-tram", "fas fa-taxi"];
     //     var StopType = ["Bus Stops", "Train Stations", "Metro Stations", "Tram Stops", "Other Stops"];
     //     var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
+    var transitOptionHTML = "<div class=\"transit-icon\" style=\"color: " + TransitColors[i] + "; \">" + "<i class=\"" + IconList[i] + " fa-2x\"></i>" + "</div>"
 
-    // "<div class=\"transit-icon\" style=\"color: " + TransitColors[i] + "; \">" +
-    //                 "<i class=\"" + IconList[i] + " fa-2x\"></i>" +
-    //                 "</div>"
+    for (const key in SampleMetroArray) {
+        NumberMetroStations += 1;
+    }
+    for (const key in SampleBusArray) {
+        NumberBusStops += 1;
+    }
+
+
 
 }
 
