@@ -51,7 +51,7 @@ function openSidebar(nodeProps) {
         isOpened = false;
     } else {
         document.getElementById("mySidebar").style.color = "#ffffff";
-        sidebarDiv.style.width = "0";
+        // sidebarDiv.style.width = "0";
         // sidebarDiv.innerHTML = "";
         document.getElementById("query-name").innerHTML = "";
 
