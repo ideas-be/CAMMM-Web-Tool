@@ -41,7 +41,7 @@ function openSidebar(nodeProps) {
         document.getElementById("node-category-type").innerHTML = nodeCategory + " " + nodeProperties.Type;
 
         // Node Name
-        document.getElementById("node-name").innerHTML = nodeProperties.Name;
+        document.getElementById("node-name").innerHTML = "<h2>" + nodeProperties.Name + "</h2>";
 
         // Node Street View
         document.getElementById("node-street-view").innerHTML = "<iframe src=\"" + nodeProperties.URL + "\">Street View</iframe>";
@@ -50,9 +50,20 @@ function openSidebar(nodeProps) {
 
         isOpened = false;
     } else {
-        var sidebarDiv = document.getElementById("mySidebar");
+        document.getElementById("mySidebar").style.color = "#ffffff";
         sidebarDiv.style.width = "0";
-        sidebarDiv.innerHTML = "";
+        // sidebarDiv.innerHTML = "";
+        document.getElementById("query-name").innerHTML = "";
+
+        // Node Category & Type
+        document.getElementById("node-category-type").innerHTML = "";
+
+        // Node Name
+        document.getElementById("node-name").innerHTML = "";
+
+        // Node Street View
+        document.getElementById("node-street-view").innerHTML = "";
+
         document.getElementById("main").style.marginRight = "0";
         isOpened = true;
     }
@@ -93,6 +104,22 @@ function displayStopsLines() {
 
     var transitMenuDiv = document.getElementById("transit-option-menu");
     var transitOptionHTML = "";
+
+    // Adding Metro Data on Transit Options
+    for (const key in MetroData) {
+        var metroLines = " | ";
+        for (i = 0; i < MetroData[key].length; i++) {
+            metroLines += MetroData[key][i] + " | ";
+        }
+        transitOptionHTML += "<div id=\"transit-option\">" +
+            "<p id=\"transit-stop-id\">#" + key + "</p>" +
+            "<i class=\"fas fa-subway fa-2x\"></i>" +
+            "<div id=\"transit-lines\">" +
+            "<p>" + metroLines + "</p>" +
+            "</div>" +
+            "</div>";
+    }
+    // Adding Bus Data on Transit Options
     for (const key in BusData) {
         var busLines = " | ";
         for (i = 0; i < BusData[key].length; i++) {
@@ -107,25 +134,8 @@ function displayStopsLines() {
             "</div>";
     }
 
+
     transitMenuDiv.innerHTML = transitOptionHTML;
-
-
-
-    // var IconList = ["fas fa-bus", "fas fa-train", "fas fa-subway", "fas fa-train-tram", "fas fa-taxi"];
-    // //     var StopType = ["Bus Stops", "Train Stations", "Metro Stations", "Tram Stops", "Other Stops"];
-    // //     var TransitColors = ["#f85a63ff", "#5ebea0ff", "#6379eaff", "#dd4e14ff", "#98d04eff"];
-    // var transitOptionHTML = "<div id=\"transit-option\"></div>";
-
-    // <div class=\"transit-icon\" style=\"color: " + TransitColors[i] + "; \">" + "<i class=\"" + IconList[i] + " fa-2x\"></i>" + "</div>"
-
-    // for (const key in SampleMetroArray) {
-    //     NumberMetroStations += 1;
-    // }
-    // for (const key in SampleBusArray) {
-    //     NumberBusStops += 1;
-    // }
-
-
 
 }
 

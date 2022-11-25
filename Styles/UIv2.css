@@ -13,6 +13,31 @@
 
 /* ALL OUR FONTS */
 
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+    /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f3f3;
+    border-radius: 20px;
+    /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d81b60;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid #f3f3f3;
+    /* creates padding around scroll thumb */
+}
+
+/* CUSTOM SCROLLBAR */
+
 body {
     margin: 0;
     padding: 0;
@@ -80,7 +105,8 @@ h2 {
 }
 
 .sidebar iframe {
-    /* height: 300px; */
+    height: 300px;
+    /* margin-top: 20px; */
     margin-bottom: 20px;
 }
 
@@ -241,8 +267,9 @@ progress::-moz-progress-bar {
     display: inline-block;
     text-align: center;
     font-size: 14px;
-    width: 70px;
+    inline-size: 70px;
     padding: 10px;
+    overflow-wrap: break-word;
     /* align-items: center; */
 }
 
@@ -251,15 +278,21 @@ progress::-moz-progress-bar {
     padding-bottom: 10px;
 }
 
+.fas.fa-subway {
+    color: #6379eaff;
+    padding-bottom: 10px;
+}
+
 #transit-lines {
     vertical-align: middle;
     margin: auto;
     padding: 2px;
     background-color: #d3d3d3;
-    width: 60px;
+    inline-size: 60px;
     height: 30px;
     border-radius: 5px;
     font-size: 12px;
+    /* overflow-wrap: break-word; */
 }
 
 /* END OF TRANSIT MENU STYLE */
