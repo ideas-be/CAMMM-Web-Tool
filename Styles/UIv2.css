@@ -38,6 +38,57 @@
 
 /* CUSTOM SCROLLBAR */
 
+/* START OF LANDING PAGE STYLING */
+
+.cammm-landing {
+    margin-left: 10vw;
+    margin-top: 20vh;
+}
+
+.welcome {
+    color: #a3a3a3;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.cammm-logo {
+    margin-left: -10px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.atlas-title {
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: -30px;
+}
+
+.cammm-button {
+    padding: 20px 60px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #d81b60;
+    border-radius: 10px;
+    border: none;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.cammm-button:hover {
+    background-color: #9b1345;
+    cursor: pointer;
+}
+
+.cammm-button i {
+    margin-right: 20px;
+}
+
+/* END OF LANDING PAGE STYLING */
+
 body {
     margin: 0;
     padding: 0;
