@@ -22,7 +22,7 @@ function openSidebar(nodeProps) {
         sidebarDiv.style.width = "300px";
         document.getElementById("main").style.marginRight = "300px";
         callQueryCalFunc();
-        document.getElementById("query-name").style.color = "#d81b60";
+        document.getElementById("query-name").style.color = "#000000";
 
         // Node Category & Type
         document.getElementById("node-category-type").innerHTML = nodeCategory + " " + nodeProperties.Type;
@@ -52,6 +52,7 @@ function openSidebar(nodeProps) {
         document.getElementById("node-street-view").innerHTML = "";
 
         document.getElementById("main").style.marginRight = "0";
+
         isOpened = true;
     }
 
@@ -61,36 +62,80 @@ function fetchNodeProps() {
     return nodeProperties;
 }
 
-var NumberBusStops = 0;
+// Rail-based transit stations
+var NumberRailStations = 0;
 var NumberMetroStations = 0;
+// Street transit stops
+var NumberTramStops = 0;
+var NumberBusStops = 0;
 
-var MetroData, BusData;
+var nodeTransitNumber = 0;
+
+var RailData, MetroData, TramData, BusData;
 
 function fetchStopsLines() {
-
+    // Rail-based transit
+    RailData = JSON.parse(nodeProperties.RailData);
     MetroData = JSON.parse(nodeProperties.MetroData);
+
+    // Street transit
+    TramData = JSON.parse(nodeProperties.TramData);
     BusData = JSON.parse(nodeProperties.BusData);
+
 
     // console.log("Metro JSON: ", MetroData);
     // console.log("Bus JSON  : ", BusData);
     // console.log("Bus Data", nodeProperties.BusData, typeof (nodeProperties.BusData));
 
+    // Rail-based transit station number
+    for (const key in RailData) {
+        NumberRailStations += 1;
+    }
     for (const key in MetroData) {
         NumberMetroStations += 1;
+    }
+    // Street transit stop number
+    for (const key in TramData) {
+        NumberTramStops += 1;
     }
     for (const key in BusData) {
         NumberBusStops += 1;
     }
+    console.log("Number of Rail Stations: ", NumberRailStations);
     console.log("Number of Metro Stations: ", NumberMetroStations);
+    console.log("Number of Tram Stops: ", NumberTramStops);
     console.log("Number of Bus Stops: ", NumberBusStops);
 
+    // if (NumberRailStations > 0) {
+    //     nodeTransitNumber += 1;
+    // }
+    // if (NumberMetroStations > 0) {
+    //     nodeTransitNumber += 1;
+    // }
+    // if (NumberTramStops > 0) {
+    //     nodeTransitNumber += 1;
+    // }
+    // if (NumberBusStops > 0) {
+    //     nodeTransitNumber +=1;                                                 
+    // }
+
+    // console.log("Node Transit Number from SidebarJS: ", nodeTransitNumber);
+    // getTransitNumber(nodeTransitNumber);
     assignCategory();
+
+    NumberRailStations = 0;
     NumberMetroStations = 0;
+    NumberTramStops = 0;
     NumberBusStops = 0;
+    // nodeTransitNumber = 0;
 
 }
 
+
+
 function displayStopsLines() {
+
+    document.getElementById("query-info").innerHTML = "";
 
     var transitMenuDiv = document.getElementById("transit-option-menu");
     var transitOptionHTML = "";
@@ -125,7 +170,7 @@ function displayStopsLines() {
     }
 
 
-    transitMenuDiv.innerHTML = transitOptionHTML;
+    transitMenuDiv.innerHTML = transitOptionHTML + "<p>Transit Options</p>";
 
 }
 
