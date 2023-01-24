@@ -16,7 +16,7 @@ var selectedQuery = "Select Query";
 
 function getSelectedQuery(queryName) {
     selectedQuery = queryName;
-    document.getElementById("dropbtn").innerHTML = selectedQuery;
+    document.getElementById("dropbtn").innerHTML = selectedQuery + "<i class=\"fas fa-chevron-down\"></i>";
     if (selectedQuery == "Diversity of Services and Amenities") {
         document.getElementById("query-name").innerHTML = "Diversity rating:";
     } else if (selectedQuery == "Closeness of Services and Amenities") {
@@ -24,7 +24,7 @@ function getSelectedQuery(queryName) {
     } else {
         document.getElementById("query-name").innerHTML = selectedQuery + " rating:";
     }
-
+    callQueryCalFunc();
 
 }
 
@@ -70,6 +70,9 @@ function callQueryCalFunc() {
 
 function calMultiModality() {
 
+    document.getElementById("query-info") = "";
+    displayStopsLines();
+
     var myCityJson = readGeoJsonObj("city.geojson");
     console.log("City json read from query.js: ", myCityJson);
     if (myCityJson.City.Name_en == "Montreal") {
@@ -84,7 +87,7 @@ function calMultiModality() {
         console.log("Total transit");
         console.log(totalTransit);
 
-        // TODO: Need to continue calculation here
+        // Calculate the number of transit types at node
         var nodeTransit = 0;
         var nodeProperties = fetchNodeProps();
 
@@ -128,10 +131,56 @@ function fetchServiceProps() {
 
 function displayServiceBarGraphs() {
     // Display number of Primary Secondary and Tertiary Services bar graph on UI
+
     var queryInfoDiv = document.getElementById("query-info");
+
+    // Service Bar Graph HTML
     var serviceBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + serviceProperties.Primary_NumberServices * 20 + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + serviceProperties.Primary_NumberServices + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + serviceProperties.Secondary_NumberServices * 20 + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + serviceProperties.Secondary_NumberServices + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + serviceProperties.Tertiary_NumberServices * 20 + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + serviceProperties.Tertiary_NumberServices + "</span></div>";
+
+    // Inserting bar graphs into query info HTML
     queryInfoDiv.innerHTML = serviceBarGraphHTML + "<div>Types of Services</div>";
 
+}
+
+function displaySurroundingServices() {
+
+    var queryInfoDiv = document.getElementById("query-info");
+
+    // Surrounding Services Menu HTML
+    var surrServiceMenuHTML = "<div id=\"service-option-menu\">" +
+        "<div class=\"service-option\" id=\"primary\">" +
+        "<i class=\"fas fa-utensils fa-2x\"></i>" +
+        "<div id=\"service-units\">" +
+        "<p>10</p>" +
+        "</div>" +
+        "</div>" +
+        "<div class=\"service-option\" id=\"primary\">" +
+        "<i class=\"fas fa-hospital fa-2x\"></i>" +
+        "<div id=\"service-units\">" +
+        "<p>2</p>" +
+        "</div>" +
+        "</div>" +
+        "<div class=\"service-option\" id=\"secondary\">" +
+        "<i class=\"fas fa-shirt fa-2x\"></i>" +
+        "<div id=\"service-units\">" +
+        "<p>4</p>" +
+        "</div>" +
+        "</div>" +
+        "<div class=\"service-option\" id=\"tertiary\">" +
+        "<i class=\"fas fa-glasses fa-2x\"></i>" +
+        "<div id=\"service-units\">" +
+        "<p>1</p>" +
+        "</div>" +
+        "</div>" +
+        "<div class=\"service-option\" id=\"tertiary\">" +
+        "<i class=\"fas fa-person-swimming fa-2x\"></i>" +
+        "<div id=\"service-units\">" +
+        "<p>2</p>" +
+        "</div>" +
+        "</div>" +
+        "</div>";
+
+    queryInfoDiv.innerHTML += surrServiceMenuHTML + "<p>Surrounding Services and Amenities</p>";
 }
 
 var nodeNumberServices = 0;
@@ -144,6 +193,7 @@ function calDiversityServices() {
 
     fetchServiceProps();
     displayServiceBarGraphs();
+    displaySurroundingServices();
 
     // Calculate total number of Services
     nodeNumberServices = serviceProperties.Primary_NumberServices + serviceProperties.Secondary_NumberServices + serviceProperties.Tertiary_NumberServices;

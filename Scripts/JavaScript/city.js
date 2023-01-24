@@ -169,7 +169,7 @@ class City {
         });
         this.map = map;
 
-        //TODO: Check what this does and maybe move to another function
+
         var legendHTML = "";
         var legendivID = "mapLegend" + cityNum;
         document.getElementById(legendivID).innerHTML = legendHTML;

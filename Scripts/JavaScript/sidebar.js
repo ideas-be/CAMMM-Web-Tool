@@ -16,12 +16,14 @@ function openSidebar(nodeProps) {
 
     fetchStopsLines();
 
+    var sidebarDiv = document.getElementById("mySidebar");
+
     if (isOpened) {
         // setTimeout(calMultiModality, 1200);
-        var sidebarDiv = document.getElementById("mySidebar");
+
         sidebarDiv.style.width = "300px";
-        document.getElementById("main").style.marginRight = "300px";
-        callQueryCalFunc();
+        sidebarDiv.style.padding = "20px";
+        document.getElementById("map").style.marginRight = "300px";
         document.getElementById("query-name").style.color = "#000000";
 
         // Node Category & Type
@@ -38,7 +40,8 @@ function openSidebar(nodeProps) {
         isOpened = false;
     } else {
         document.getElementById("mySidebar").style.color = "#ffffff";
-        // sidebarDiv.style.width = "0";
+        sidebarDiv.style.width = "0";
+        sidebarDiv.style.padding = "0";
         // sidebarDiv.innerHTML = "";
         document.getElementById("query-name").innerHTML = "";
 
