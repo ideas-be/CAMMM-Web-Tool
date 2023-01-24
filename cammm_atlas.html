@@ -12,6 +12,12 @@
     <script src="Scripts/JavaScript/readFiles.js"></script>
     <script src="Scripts/JavaScript/query.js"></script>
     <script src="Scripts/JavaScript/lines.js"></script>
+    <script src="Scripts/JavaScript/accessibility.js"></script>
+    <script src="Scripts/JavaScript/greenery.js"></script>
+    <script src="Scripts/JavaScript/services.js"></script>
+    <script src="Scripts/JavaScript/multimodality.js"></script>
+    <script src="Scripts/JavaScript/walkability.js"></script>
+    <script src="Scripts/JavaScript/connectivity.js"></script>
     <script src="https://kit.fontawesome.com/7abfd05b6d.js" crossorigin="anonymous"></script>
 
 </head>
@@ -19,6 +25,7 @@
 <body>
     <!-- testing a sidebar code -->
     <div id="mySidebar" class="sidebar">
+        <a class="close-btn" onclick="closeSidebar();">x</a>
         <p id="query-name" style="color: white;">Query rating:</p>
         <div id="query-rating"></div>
         <div style="height: 20px;"></div>
@@ -53,6 +60,8 @@
             zoom: 11.44
         });
 
+        var centerTemp = [];
+
         function loadNodes() {
             map.on('load', () => {
                 map.addSource('clusters', {
@@ -83,6 +92,34 @@
                     }
                 }
                 );
+
+                // Add labels for clusters
+                map.addLayer({
+                    'id': 'cluster-labels',
+                    'type': 'symbol',
+                    'source': 'clusters',
+                    'paint': {
+                        // 'text-halo-blur': 1,
+                        'text-halo-color': "#f5f5f5",
+                        'text-halo-width': 0.5,
+                        // 'text-opacity': ['case',
+                        //     ['boolean', ['feature-state', 'click'], false],
+                        //     1,
+                        //     0]
+                    },
+                    'layout': {
+                        'visibility': 'none',
+                        'text-field': [
+                            'format',
+                            ['upcase', ['get', 'Name']],
+                            { 'font-scale': 0.8 },
+                        ],
+                        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                        'text-offset': [0, 2],
+                        'text-max-width': 2,
+                        'text-ignore-placement': true,
+                    }
+                });
 
                 // Add a layer showing the hubs.
                 map.addLayer({
@@ -127,34 +164,18 @@
 
                 // let clickStateId = null;
 
+                // Change color, display label and zoom into node
                 map.on('click', 'clusters', (e) => {
                     // Change the cursor style as a UI indicator.
                     map.getCanvas().style.cursor = 'pointer';
                     map.setPaintProperty('clusters', 'circle-color', '#008080');
-                    openSidebar(e.features[0].properties);
-                });
+                    map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
 
-                map.on('click', 'hubs', (e) => {
-                    // Change the cursor style as a UI indicator.
-                    map.getCanvas().style.cursor = 'pointer';
-                    map.setPaintProperty('hubs', 'circle-color', '#000000');
-                    map.setLayoutProperty('hub-labels', 'visibility', 'visible');
-                    // if (e.features.length > 0) {
-                    //     clickStateId = e.features[0].id;
-                    // if (clickStateId !== null) {
-                    // map.setFeatureState(
-                    //     { source: 'hubs', sourcelayer: 'hub-labels', id: clickStateId },
-                    //     { click: false }
-                    // );
-                    // }
-                    // map.setFeatureState(
-                    //     { source: 'hubs', sourcelayer: 'hub-labels', id: e.features[0].id },
-                    //     { click: true }
-                    // );
-                    // }
+                    centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
 
                     map.flyTo({
-                        'center': e.features[0].geometry.coordinates, 'zoom': 14, 'pitch': 60,
+                        'center': centerTemp,
+                        'zoom': 16, 'pitch': 60,
                         // 'bearing': 90,
                         'speed': 0.2,
                         'curve': 1,
@@ -168,26 +189,32 @@
                     openSidebar(e.features[0].properties);
                 });
 
-                map.on('click', (e) => {
-                    if (isOpened) {
-                        console.log("pop up closed, reverting to original color");
-                        map.setPaintProperty('clusters', 'circle-color', '#f15924');
-                        map.setPaintProperty('hubs', 'circle-color', '#d81b60');
-                        map.setLayoutProperty('hub-labels', 'visibility', 'none');
-                        map.flyTo({
-                            'center': [-73.624701, 45.525104],
-                            'zoom': 11.44, 'pitch': 0,
-                            // 'bearing': 90,
-                            'speed': 0.2,
-                            'curve': 1,
-                            'duration': 2000,
-                            'essential': true,
-                            'easing': function (t) {
-                                return t;
-                            }
-                        });
-                    };
+                // Revert color, hide label and zoom out of node
+                map.on('click', 'hubs', (e) => {
+                    // Change the cursor style as a UI indicator.
+
+                    map.getCanvas().style.cursor = 'pointer';
+                    map.setPaintProperty('hubs', 'circle-color', '#000000');
+                    map.setLayoutProperty('hub-labels', 'visibility', 'visible');
+
+                    centerTemp = [e.features[0].geometry.coordinates[0] + 0.008, e.features[0].geometry.coordinates[1]];
+
+                    map.flyTo({
+                        'center': centerTemp,
+                        'zoom': 14, 'pitch': 60,
+                        // 'bearing': 90,
+                        'speed': 0.2,
+                        'curve': 1,
+                        'duration': 3000,
+                        'essential': true,
+                        'easing': function (t) {
+                            return t;
+                        }
+                    });
+
+                    openSidebar(e.features[0].properties);
                 });
+
             });
         }
         setTimeout(loadNodes, 10);

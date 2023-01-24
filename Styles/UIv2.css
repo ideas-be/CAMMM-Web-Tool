@@ -162,17 +162,36 @@ h2 {
     transition: 0.5s;
 }
 
-.sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
+/* .sidebar a {
+    /* padding: 8px 8px 8px 32px; */
+/* text-decoration: none;
     font-size: 16px;
     color: #d81b60;
     display: block;
-    transition: 0.3s;
+    transition: 0.3s; */
+/* } */
+
+/* .sidebar a:hover {
+    color: #d81b60;
+} */
+
+.close-btn {
+    padding: 4px 4px;
+    position: relative;
+    float: right;
+    text-align: center;
+    border-radius: 50px;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    background-color: #d81b60;
 }
 
-.sidebar a:hover {
-    color: #d81b60;
+.close-btn:hover {
+    background-color: #9b1345;
+    /* color: #000000; */
 }
 
 .sidebar iframe {
@@ -215,8 +234,8 @@ h2 {
 
 /* START OF DROPDOWN STYLE */
 #query-dropdown {
-    /* margin-left: auto; */
-    margin-right: 50px;
+    margin-right: 80px;
+    text-align: center;
     z-index: 99;
     float: right;
     position: relative;
@@ -239,6 +258,7 @@ h2 {
     border-radius: 10px;
     border: none;
     cursor: pointer;
+    max-width: 250px;
 }
 
 .fas.fa-chevron-down {
@@ -247,6 +267,7 @@ h2 {
 
 .dropdown-content {
 
+    margin-right: -70px;
     display: none;
     text-align: center;
     font-family: 'Lato', sans-serif;
