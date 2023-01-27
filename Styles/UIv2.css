@@ -538,3 +538,43 @@ progress::-moz-progress-bar {
 }
 
 /* END OF TRANSIT MENU STYLE */
+/* START OF ACCESSIBILITY BAR GRAPH STYLE */
+#accessible-bar-graph {
+    width: 100%;
+    z-index: 0;
+    position: relative;
+    color: #666666;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+#bus {
+    /* text-align: right; */
+    position: fixed;
+    background-color: #f85a63ff;
+    z-index: 1;
+}
+
+#metro {
+    /* text-align: right; */
+    background-color: #6379eaff;
+}
+
+#rail {
+    /* text-align: right; */
+    background-color: #5ebea0ff;
+}
+
+#tram {
+    /* text-align: right; */
+    background-color: #dd4e14ff;
+}
+
+.accessible-number {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+/* END OF ACCESSIBILITY BAR GRAPH STYLE */

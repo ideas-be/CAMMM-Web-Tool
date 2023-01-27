@@ -174,21 +174,3 @@ function calClosenessServices() {
     displayQueryRating(ClosenessServicesRating);
 
 }
-
-function displayQueryRating(ratingValue) {
-
-    var ratingWord = "";
-    if ((ratingValue >= 2) && (ratingValue < 5)) {
-        ratingWord = "Needs to Improve";
-    } else if ((ratingValue >= 5) && (ratingValue < 7)) {
-        ratingWord = "Good";
-    } else if ((ratingValue >= 7) && (ratingValue < 9)) {
-        ratingWord = "Very Good";
-    } else if ((ratingValue > 9)) {
-        ratingWord = "Excellent";
-    }
-
-    var queryRatingDiv = document.getElementById("query-rating");
-    var ratingHTML = "<span class=\"rating-value\">" + ratingValue + "</span><span style=\"color: #d81b60;\">/10\n</span><span class=\"rating-words\">" + ratingWord + "</span><div><progress id=\"rating-bar\" value=\"" + ratingValue * 10 + "\" max=\"100\"> 32% </progress></div>";
-    queryRatingDiv.innerHTML = ratingHTML;
-}

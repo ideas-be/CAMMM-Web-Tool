@@ -1,30 +1,61 @@
 var nodeProperties = fetchNodeProps();
 
+var accessibilityData;
+
+var transitTotal, transitAccessible;
+
+function transitIcon(transit) {
+    switch (transit) {
+        case "Bus": return "fas fa-bus fa-2x";
+            break;
+        case "Metro": return "fas fa-subway fa-2x";
+            break;
+        case "Rail": return "fas fa-train fa-2x";
+            break;
+        case "Tram": return "fas fa-train-tram fa-2x";
+            break;
+        default: console.log("Unknown transit mode");
+    }
+}
+
 function displayAccessibilityGraphs() {
     // TODO: Display bar graphs depicting accessible stops/stations at node
 
-    // Calculate and display accessibility for bus stops
-    var busAccessibility = nodeProperties.AccessibilityIndex.Bus;
-    var accessibleBus = 0;
-    for (i = 0; i < busAccessibility.length; i++) {
-        if (busAccessibility[i] == 1) {
-            accessibleBus += 1;
-        }
-    }
-    console.log(accessibleBus, " out of ", busAccessibility.length, " bus stops are accessible!!");
+    var queryInfoDiv = document.getElementById("query-info");
+    var accessibilityHTML = "<div id=\"accessible-transit-graphs\">";
 
-    // Calculate and display accessibility for metro stations
-    var metroAccessibility = nodeProperties.AccessibilityIndex.Metro;
-    var accessibleMetro = 0;
-    for (i = 0; i < metroAccessibility.length; i++) {
-        if (metroAccessibility[i] == 1) {
-            accessibleMetro += 1;
+    accessibilityData = JSON.parse(nodeProperties.AccessibilityIndex);
+
+    for (key in accessibilityData) {
+
+        transitTotal = 0;
+        transitAccessible = 0;
+
+        if (accessibilityData[key].length > 0) {
+            transitTotal = accessibilityData[key].length;
+            for (i = 0; i < accessibilityData[key].length; i++) {
+                if (accessibilityData[key][i] == 1) {
+                    transitAccessible += 1;
+                }
+            }
+
         }
+
+        console.log("The accessibility of ", key, " is ", transitAccessible, " out of ", transitTotal);
+
+        if (transitTotal > 0) {
+            accessibilityHTML += "<i class=\"" + transitIcon(key) + "\"></i><div class=\"bar-graph\" id=\"accessible-bar-graph\"><div class=\"bar-graph\" id=\"" + key.toLowerCase() + "\" style=\"width: " + transitTotal * 50 + "px;\"><span class=\"accessible-number\">" + transitAccessible + "</span></div><span class=\"accessible-number\">" + transitTotal + "</span></div>";
+        }
+
     }
-    console.log(accessibleMetro, " out of ", metroAccessibility.length, " metro stations are accessible!!");
+
+    queryInfoDiv.innerHTML = accessibilityHTML + "</div>Wheelchair Accessibility";
+    console.log("accessibility HTML: ", queryInfoDiv);
 
 }
 
 function calAccessibility() {
     // TODO: Calculate Accessibility rating for node
+
+
 }
