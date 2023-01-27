@@ -71,7 +71,7 @@ function fetchStopsLines() {
 
 function displayStopsLines() {
 
-    document.getElementById("query-info").innerHTML = "";
+    // document.getElementById("query-info").innerHTML = "";
 
     var transitMenuDiv = document.getElementById("transit-option-menu");
     var transitOptionHTML = "";
@@ -153,9 +153,65 @@ function assignCategory() {
     return nodeCategory;
 }
 
+function displayTransitModes() {
+    // TODO: Show the available transit modes in sidebar
+
+    var queryInfoDiv = document.getElementById("query-info");
+    var transitModeHTML = "<div id=\"transit-mode-section\">";
+
+    if (NumberBusStops > 0) {
+
+        transitModeHTML += "<div id=\"transit-mode\">" +
+            "<i class=\"fas fa-bus fa-2x\"></i>" +
+            "<div id=\"transit-mode-name\">" +
+            "<p>bus</p>" +
+            "</div>" +
+            "</div>";
+
+    }
+    if (NumberMetroStations > 0) {
+
+        transitModeHTML += "<div id=\"transit-mode\">" +
+            "<i class=\"fas fa-subway fa-2x\"></i>" +
+            "<div id=\"transit-mode-name\">" +
+            "<p>metro</p>" +
+            "</div>" +
+            "</div>";
+
+    }
+    if (NumberRailStations > 0) {
+
+        transitModeHTML += "<div id=\"transit-mode\">" +
+            "<i class=\"fas fa-train fa-2x\"></i>" +
+            "<div id=\"transit-mode-name\">" +
+            "<p>rail</p>" +
+            "</div>" +
+            "</div>";
+
+    }
+    if (NumberTramStops > 0) {
+
+        transitModeHTML += "<div id=\"transit-mode\">" +
+            "<i class=\"fas fa-train-tram fa-2x\"></i>" +
+            "<div id=\"transit-mode-name\">" +
+            "<p>tram</p>" +
+            "</div>" +
+            "</div>";
+
+    }
+
+    console.log("Inserting Available Transit Modes");
+    console.log("Displaying bus, metro, rail and tram numbers from transit mode function:", NumberBusStops, ", ", NumberMetroStations, ", ", NumberRailStations, ", ", NumberTramStops);
+
+    queryInfoDiv.innerHTML = transitModeHTML + "</div>Available Transit Modes";
+    console.log("Checking transit mode HTML", transitModeHTML);
+
+}
+
 function calMultiModality() {
 
-    document.getElementById("query-info").innerHTML = "";
+    // document.getElementById("query-info").innerHTML = "";
+    displayTransitModes();
     displayStopsLines();
 
     var myCityJson = readGeoJsonObj("city.geojson");

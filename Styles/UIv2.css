@@ -160,6 +160,7 @@ h2 {
     font-size: 16px;
     color: #000000;
     transition: 0.5s;
+    padding-bottom: 200px;
 }
 
 /* .sidebar a {
@@ -405,7 +406,7 @@ progress::-moz-progress-bar {
 
 /* END OF SERVICE BAR GRAPH STYLE */
 
-/* START OF TRANSIT MENU STYLE */
+/* START OF SERVICE MENU STYLE */
 
 #service-option-menu {
     color: #000000;
@@ -452,7 +453,38 @@ progress::-moz-progress-bar {
     /* overflow-wrap: break-word; */
 }
 
-/* END OF TRANSIT MENU STYLE */
+/* END OF SERVICE MENU STYLE */
+
+/* START OF TRANSIT MODE SECTION STYLE */
+#transit-mode-section {
+    color: #000000;
+    overflow: auto;
+    white-space: nowrap;
+    /* padding-bottom: 20px; */
+}
+
+#transit-mode {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    inline-size: 70px;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
+#transit-mode-name {
+    vertical-align: middle;
+    /* margin: auto; */
+    /* padding: 2px; */
+    background-color: #d3d3d3;
+    /* inline-size: 60px; */
+    height: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* overflow-wrap: break-word; */
+}
+
+/* END OF TRANSIT MODE SECTION STYLE */
 
 /* START OF TRANSIT MENU STYLE */
 
@@ -475,12 +507,22 @@ progress::-moz-progress-bar {
 
 .fas.fa-bus {
     color: #f85a63ff;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .fas.fa-subway {
     color: #6379eaff;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.fas.fa-train {
+    color: #5ebea0ff;
+    padding-bottom: 5px;
+}
+
+.fas.fa-train-tram {
+    color: #dd4e14ff;
+    padding-bottom: 5px;
 }
 
 #transit-lines {

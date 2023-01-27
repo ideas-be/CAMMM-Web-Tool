@@ -26,7 +26,7 @@ function fetchServiceProps() {
 
 }
 
-function displayServiceBarGraphs() {
+function displayServiceNumberBarGraphs() {
     // Display number of Primary Secondary and Tertiary Services bar graph on UI
 
     var queryInfoDiv = document.getElementById("query-info");
@@ -40,6 +40,26 @@ function displayServiceBarGraphs() {
 
     // Inserting bar graphs into query info HTML
     queryInfoDiv.innerHTML = serviceBarGraphHTML + "<div>Types of Services</div>";
+
+}
+
+function displayServiceDistanceBarGraphs() {
+    // Display avg distances in m to services and amenities
+
+    // TODO: Display distance bar graphs for closeness query
+
+    var queryInfoDiv = document.getElementById("query-info");
+
+    var primaryBarWidth = serviceProperties.Primary_AvDist * 0.4;
+    var secondaryBarWidth = serviceProperties.Secondary_AvDist * 0.4;
+    var tertiaryBarWidth = serviceProperties.Tertiary_AvDist * 0.4;
+
+    // Service Bar Graph HTML
+    var serviceBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + serviceProperties.Primary_AvDist.toFixed(2) + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + serviceProperties.Secondary_AvDist.toFixed(2) + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + serviceProperties.Tertiary_AvDist.toFixed(2) + "</span></div>";
+
+    // Inserting bar graphs into query info HTML
+    queryInfoDiv.innerHTML = serviceBarGraphHTML + "<div>Distances to Services in m</div>";
+
 
 }
 
@@ -91,7 +111,7 @@ function calDiversityServices() {
     console.log("Diversity of Primary, Secondary and Tertiary Services");
 
     fetchServiceProps();
-    displayServiceBarGraphs();
+    displayServiceNumberBarGraphs();
     displaySurroundingServices();
 
     var serviceRatingVal = 0;
@@ -115,7 +135,44 @@ function calDiversityServices() {
 }
 
 function calClosenessServices() {
+    document.getElementById("transit-option-menu").innerHTML = "";
+    // document.getElementById("query-info").innerHTML = "";
+
     console.log("Calculating Closeness of Services and Amenities");
+    // TODO: Calculate closeness of services and amenities
+
+    fetchServiceProps();
+    displayServiceDistanceBarGraphs();
+    displaySurroundingServices();
+
+    var nodeProperties = fetchNodeProps();
+    var bufferLimit = 0;
+    if (nodeProperties.Type == "Hub") {
+        bufferLimit = 800;
+    } else if (nodeProperties.Type == "Cluster") {
+        bufferLimit = 400;
+    }
+
+    console.log("Buffer Limit for this", nodeProperties.Type, "is: ", bufferLimit);
+
+    var ClosenessServicesRating = 0;
+
+    // Assign query rating value based on distance of services and amenities
+
+    if (serviceProperties.Primary_AvDist <= bufferLimit) {
+        ClosenessServicesRating += 5;
+    }
+    if (serviceProperties.Secondary_AvDist <= bufferLimit) {
+        ClosenessServicesRating += 3;
+    }
+    if (serviceProperties.Tertiary_AvDist <= bufferLimit) {
+        ClosenessServicesRating += 2;
+    }
+
+    console.log("Service Rating: ", ClosenessServicesRating);
+
+    displayQueryRating(ClosenessServicesRating);
+
 }
 
 function displayQueryRating(ratingValue) {
