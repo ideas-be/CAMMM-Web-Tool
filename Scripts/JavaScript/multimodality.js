@@ -245,6 +245,14 @@ function calMultiModality() {
 
         // Multimodality Rating Formula
         var MultimodalityRating = (nodeTransit / totalTransit) * 10;
+
+        // Add bixi, communauto icon but grey them out
+        // check GBSF for bixi
+
+        // Think about Directionality as a separate query
+
+        // ideas-be, NGCI, ARTM, Concordia
+
         displayQueryRating(MultimodalityRating);
     }
 }
