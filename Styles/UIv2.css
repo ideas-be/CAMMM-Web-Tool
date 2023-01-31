@@ -1,0 +1,580 @@
+/* ALL OUR FONTS */
+/* Cairo */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/* Primary Font - Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+/* Secondary Font - Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* ALL OUR FONTS */
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+    /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f3f3;
+    border-radius: 20px;
+    /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d81b60;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid #f3f3f3;
+    /* creates padding around scroll thumb */
+}
+
+/* CUSTOM SCROLLBAR */
+
+/* START OF LANDING PAGE STYLING */
+
+.cammm-landing {
+    margin-left: 10vw;
+    margin-top: 20vh;
+    width: 60vw;
+    height: 40vh;
+    max-width: 500px;
+}
+
+.welcome {
+    color: #a3a3a3;
+    font-size: min(3vw, 20px);
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.cammm-logo {
+    margin-left: -2vw;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cammm-logo img {
+    width: 100%;
+}
+
+
+.atlas-title {
+    font-family: 'Nunito', 'sans-serif';
+    font-size: min(4.8vw, 40px);
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: -2vh;
+}
+
+.atlas-buttons {
+    height: 20vh;
+    width: 100%;
+    /* display: block; */
+    /* margin-top: vh; */
+}
+
+.cammm-button {
+    display: inline-flex;
+    padding: max(10px, 2vh) max(40px, 4.5vw);
+    font-size: min(3vw, 16px);
+    color: #ffffff;
+    background-color: #d81b60;
+    border-radius: 10px;
+    border: none;
+    margin-right: 10px;
+    text-decoration: none;
+    margin-bottom: 1.5vh;
+}
+
+#start-button {
+    margin-right: 0;
+}
+
+.cammm-button:hover {
+    background-color: #9b1345;
+    cursor: pointer;
+}
+
+.cammm-button i {
+    margin-right: 20px;
+}
+
+/* END OF LANDING PAGE STYLING */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.cammm-title {
+    font-size: 36px;
+    color: #ffffff;
+    padding-left: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 22px;
+    color: #d81b60;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    margin-top: 100px;
+    /* padding-top: 200px; */
+    font-size: 16px;
+    color: #000000;
+    transition: 0.5s;
+    padding-bottom: 200px;
+}
+
+/* .sidebar a {
+    /* padding: 8px 8px 8px 32px; */
+/* text-decoration: none;
+    font-size: 16px;
+    color: #d81b60;
+    display: block;
+    transition: 0.3s; */
+/* } */
+
+/* .sidebar a:hover {
+    color: #d81b60;
+} */
+
+.close-btn {
+    padding: 4px 4px;
+    position: relative;
+    float: right;
+    text-align: center;
+    border-radius: 50px;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    background-color: #d81b60;
+}
+
+.close-btn:hover {
+    background-color: #9b1345;
+    /* color: #000000; */
+}
+
+.sidebar iframe {
+    height: 300px;
+    /* margin-top: 20px; */
+    margin-bottom: 20px;
+}
+
+.openbtn {
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #d81b60;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.openbtn:hover {
+    background-color: #9b1345;
+}
+
+#main {
+    transition: margin-right 0.5s;
+    padding-top: 20px;
+    background-color: #d81b60;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+/* START OF DROPDOWN STYLE */
+#query-dropdown {
+    margin-right: 80px;
+    text-align: center;
+    z-index: 99;
+    float: right;
+    position: relative;
+    /* width: 100%; */
+}
+
+.dropDown {
+    text-align: center;
+    width: 100%;
+    /* float: right; */
+}
+
+.dropbtn {
+    /* margin-left: 20px; */
+    background-color: #d81b60;
+    min-width: 200px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    max-width: 250px;
+}
+
+.fas.fa-chevron-down {
+    margin-left: 8px;
+}
+
+.dropdown-content {
+
+    margin-right: -70px;
+    display: none;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    /* position: absolute; */
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #c21655;
+    /* position: static; */
+}
+
+/* END OF DROPDOWN STYLE */
+
+/* START OF QUERY RATING STYLE */
+.query-rating {
+    color: #d81b60;
+    font-family: 'Lato', 'sans-serif';
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+#query-name {
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-top: 100px;
+}
+
+.rating-value {
+    font-size: 48px;
+    font-family: 'Nunito', 'sans-serif';
+    color: #c3c3c3;
+}
+
+.rating-words {
+    float: right;
+    margin-top: 25px;
+    color: #d81b60;
+    /* vertical-align: auto; */
+}
+
+progress {
+    border-radius: 50px;
+    width: 100%;
+    height: 10px;
+    /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+}
+
+progress::-webkit-progress-bar {
+    background-color: #c3c3c3;
+    border-radius: 50px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #d81b60;
+    border-radius: 50px;
+}
+
+progress::-moz-progress-bar {
+    /* style rules */
+}
+
+/* END OF QUERY RATING STYLE */
+
+/* START OF SERVICE BAR GRAPH STYLE */
+.bar-graph {
+    display: flex;
+    height: 20px;
+    width: 30px;
+    color: #ffffff;
+    font-family: 'Nunito', 'sans-serif';
+    font-weight: 600;
+    background-color: #c3c3c3;
+    border-radius: 50px;
+    padding: 4px;
+    padding-right: 10px;
+    text-align: right;
+    margin-bottom: 5px;
+    max-width: 290px;
+}
+
+.service-type {
+    padding-left: 5px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    /* vertical-align: text-bottom; */
+}
+
+.service-number {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+#primary-services {
+    background-color: #6d55ce;
+    min-width: 80px;
+}
+
+#secondary-services {
+    background-color: #d86666;
+    min-width: 100px;
+}
+
+#tertiary-services {
+    background-color: #56bd94;
+    min-width: 80px;
+
+}
+
+#query-info {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+/* END OF SERVICE BAR GRAPH STYLE */
+
+/* START OF SERVICE MENU STYLE */
+
+#service-option-menu {
+    color: #000000;
+    overflow: auto;
+    white-space: nowrap;
+    padding-top: 50px;
+    margin-bottom: -10px;
+}
+
+.service-option {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    inline-size: 70px;
+    padding: 10px;
+    overflow-wrap: break-word;
+    /* align-items: center; */
+}
+
+.service-option#primary i {
+    color: #6d55ce;
+    padding-bottom: 10px;
+}
+
+.service-option#secondary i {
+    color: #d86666;
+    padding-bottom: 10px;
+}
+
+.service-option#tertiary i {
+    color: #56bd94;
+    padding-bottom: 10px;
+}
+
+#service-units {
+    vertical-align: middle;
+    margin: auto;
+    padding: 2px;
+    background-color: #d3d3d3;
+    inline-size: 60px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* overflow-wrap: break-word; */
+}
+
+/* END OF SERVICE MENU STYLE */
+
+/* START OF TRANSIT MODE SECTION STYLE */
+#transit-mode-section {
+    color: #000000;
+    overflow: auto;
+    white-space: nowrap;
+    /* padding-bottom: 20px; */
+}
+
+#transit-mode {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    inline-size: 70px;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
+#transit-mode-name {
+    vertical-align: middle;
+    /* margin: auto; */
+    /* padding: 2px; */
+    background-color: #d3d3d3;
+    /* inline-size: 60px; */
+    height: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* overflow-wrap: break-word; */
+}
+
+/* END OF TRANSIT MODE SECTION STYLE */
+
+/* START OF TRANSIT MENU STYLE */
+
+#transit-option-menu {
+    color: #000000;
+    overflow: auto;
+    white-space: nowrap;
+    padding-bottom: 20px;
+}
+
+#transit-option {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    inline-size: 70px;
+    padding: 10px;
+    overflow-wrap: break-word;
+    /* align-items: center; */
+}
+
+.fas.fa-bus {
+    color: #f85a63ff;
+    padding-bottom: 5px;
+}
+
+.fas.fa-subway {
+    color: #6379eaff;
+    padding-bottom: 5px;
+}
+
+.fas.fa-train {
+    color: #5ebea0ff;
+    padding-bottom: 5px;
+}
+
+.fas.fa-train-tram {
+    color: #dd4e14ff;
+    padding-bottom: 5px;
+}
+
+#transit-lines {
+    vertical-align: middle;
+    margin: auto;
+    padding: 2px;
+    background-color: #d3d3d3;
+    inline-size: 60px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* overflow-wrap: break-word; */
+}
+
+/* END OF TRANSIT MENU STYLE */
+/* START OF ACCESSIBILITY BAR GRAPH STYLE */
+#accessible-bar-graph {
+    width: 100%;
+    z-index: 0;
+    position: relative;
+    color: #666666;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+#bus {
+    /* text-align: right; */
+    position: fixed;
+    background-color: #f85a63ff;
+    z-index: 1;
+}
+
+#metro {
+    /* text-align: right; */
+    background-color: #6379eaff;
+}
+
+#rail {
+    /* text-align: right; */
+    background-color: #5ebea0ff;
+}
+
+#tram {
+    /* text-align: right; */
+    background-color: #dd4e14ff;
+}
+
+.accessible-number {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+/* END OF ACCESSIBILITY BAR GRAPH STYLE */

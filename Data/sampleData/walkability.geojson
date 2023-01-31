@@ -1,0 +1,22 @@
+{
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "fid": "1644",
+                "Id": "54735",
+                "Type": "Cluster",
+                "Walk_Intersection_Points": 20,
+                "Walk_Area": 30
+            },
+            "geometry": {
+                "coordinates": [
+                    -73.546093,
+                    45.613755
+                ],
+                "type": "Point"
+            },
+            "id": "000d266853a868d30dbb6460c5c3b427"
+        }
+    ]
+}

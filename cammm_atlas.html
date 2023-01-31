@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CAMMM testing popup on hover</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="Styles/UIv2.css">
+    <script src="Scripts/JavaScript/sidebar.js"></script>
+    <script src="Scripts/JavaScript/readFiles.js"></script>
+    <script src="Scripts/JavaScript/query.js"></script>
+    <script src="Scripts/JavaScript/lines.js"></script>
+    <script src="Scripts/JavaScript/accessibility.js"></script>
+    <script src="Scripts/JavaScript/greenery.js"></script>
+    <script src="Scripts/JavaScript/services.js"></script>
+    <script src="Scripts/JavaScript/multimodality.js"></script>
+    <script src="Scripts/JavaScript/walkability.js"></script>
+    <script src="Scripts/JavaScript/connectivity.js"></script>
+    <script src="https://kit.fontawesome.com/7abfd05b6d.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- testing a sidebar code -->
+    <div id="mySidebar" class="sidebar">
+        <a class="close-btn" onclick="closeSidebar();">x</a>
+        <p id="query-name" style="color: white;">Query rating:</p>
+        <div id="query-rating"></div>
+        <div style="height: 20px;"></div>
+        <div id="query-info"></div>
+        <div id="node-info">
+            <div id="node-category-type"></div>
+            <div id="node-name"></div>
+            <div id="node-street-view"></div>
+        </div>
+        <div id="transit-option-menu"></div>
+    </div>
+
+    <div id="main">
+        <div id="map">
+        </div>
+        <h1 class="cammm-title">CAMMM</h1>
+        <div id="query-dropdown">
+            <div class="dropdown"><button class="dropbtn" id="dropbtn">Select Query<i
+                        class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content" id="dropdown-content"></div>
+            </div>
+        </div>
+    </div>
+    <!-- testing a sidebar code -->
+    <script>
+        var shortURL = 'mapbox://styles/carmela-cucuzzella/';
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: shortURL + 'ckzekgdsr001k14qfh7hkmabp',
+            center: [-73.624701, 45.525104],
+            zoom: 11.44
+        });
+
+        var centerTemp = [];
+
+        function loadNodes() {
+            map.on('load', () => {
+                map.addSource('clusters', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': clusterFeatures,
+                    }
+                });
+
+                map.addSource('hubs', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': hubFeatures,
+                    }
+                });
+
+                // Add a layer showing the clusters.
+                map.addLayer({
+                    'id': 'clusters',
+                    'type': 'circle',
+                    'source': 'clusters',
+                    'paint': {
+                        'circle-color': '#f15924',
+                        'circle-opacity': 0.5,
+                        'circle-radius': 8,
+                    }
+                }
+                );
+
+                // Add labels for clusters
+                map.addLayer({
+                    'id': 'cluster-labels',
+                    'type': 'symbol',
+                    'source': 'clusters',
+                    'paint': {
+                        // 'text-halo-blur': 1,
+                        'text-halo-color': "#f5f5f5",
+                        'text-halo-width': 0.5,
+                        // 'text-opacity': ['case',
+                        //     ['boolean', ['feature-state', 'click'], false],
+                        //     1,
+                        //     0]
+                    },
+                    'layout': {
+                        'visibility': 'none',
+                        'text-field': [
+                            'format',
+                            ['upcase', ['get', 'Name']],
+                            { 'font-scale': 0.8 },
+                        ],
+                        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                        'text-offset': [0, 2],
+                        'text-max-width': 2,
+                        'text-ignore-placement': true,
+                    }
+                });
+
+                // Add a layer showing the hubs.
+                map.addLayer({
+                    'id': 'hubs',
+                    'type': 'circle',
+                    'source': 'hubs',
+                    'paint': {
+                        'circle-color': '#d81b60',
+                        'circle-opacity': 0.7,
+                        'circle-radius': 12,
+                    }
+                }
+                );
+
+                // Add labels for hubs
+                map.addLayer({
+                    'id': 'hub-labels',
+                    'type': 'symbol',
+                    'source': 'hubs',
+                    'paint': {
+                        // 'text-halo-blur': 1,
+                        'text-halo-color': "#f5f5f5",
+                        'text-halo-width': 0.5,
+                        // 'text-opacity': ['case',
+                        //     ['boolean', ['feature-state', 'click'], false],
+                        //     1,
+                        //     0]
+                    },
+                    'layout': {
+                        'visibility': 'none',
+                        'text-field': [
+                            'format',
+                            ['upcase', ['get', 'Name']],
+                            { 'font-scale': 0.8 },
+                        ],
+                        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                        'text-offset': [0, 2],
+                        'text-max-width': 2,
+                        'text-ignore-placement': true,
+                    }
+                });
+
+                // let clickStateId = null;
+
+                // Change color, display label and zoom into node
+                map.on('click', 'clusters', (e) => {
+                    // Change the cursor style as a UI indicator.
+                    map.getCanvas().style.cursor = 'pointer';
+                    map.setPaintProperty('clusters', 'circle-color', '#008080');
+                    map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
+
+                    centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
+
+                    map.flyTo({
+                        'center': centerTemp,
+                        'zoom': 16, 'pitch': 60,
+                        // 'bearing': 90,
+                        'speed': 0.2,
+                        'curve': 1,
+                        'duration': 3000,
+                        'essential': true,
+                        'easing': function (t) {
+                            return t;
+                        }
+                    });
+
+                    openSidebar(e.features[0].properties);
+                });
+
+                // Revert color, hide label and zoom out of node
+                map.on('click', 'hubs', (e) => {
+                    // Change the cursor style as a UI indicator.
+
+                    map.getCanvas().style.cursor = 'pointer';
+                    map.setPaintProperty('hubs', 'circle-color', '#000000');
+                    map.setLayoutProperty('hub-labels', 'visibility', 'visible');
+
+                    centerTemp = [e.features[0].geometry.coordinates[0] + 0.008, e.features[0].geometry.coordinates[1]];
+
+                    map.flyTo({
+                        'center': centerTemp,
+                        'zoom': 14, 'pitch': 60,
+                        // 'bearing': 90,
+                        'speed': 0.2,
+                        'curve': 1,
+                        'duration': 3000,
+                        'essential': true,
+                        'easing': function (t) {
+                            return t;
+                        }
+                    });
+
+                    openSidebar(e.features[0].properties);
+                });
+
+            });
+        }
+        setTimeout(loadNodes, 10);
+
+        // Read features JSON with new version of nodes
+        var clusterFeatures = [];
+        var hubFeatures = [];
+        var obj;
+        var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+        function readNodes() {
+            a.open('GET', "Data/general.geojson", true);  // This is reading the JSON FILE 
+            console.log("Reading the popup info file to load JSON");
+
+            a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+
+                if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
+                    obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+                    newJson(obj);
+                    queryDropDown();
+                    clusterFeatures = getClusters();
+                    console.log("Cluster Features:\n");
+                    console.log(clusterFeatures);
+                    hubFeatures = getHubs();
+                    console.log("Hub Features:\n");
+                    console.log(hubFeatures);
+                }
+            }
+
+            a.send();        // Closes the XMLHttpRequest   
+        }
+        setTimeout(readNodes, 10);
+
+    </script>
+
+</body>
+
+</html>

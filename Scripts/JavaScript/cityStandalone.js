@@ -111,7 +111,6 @@ class City {
         });
         this.map = map;
 
-        //TODO: Check what this does and maybe move to another function
         var legendHTML = "";
         document.getElementById("mapLegend").innerHTML = legendHTML;
         console.log("undefined radio list and legend item");
@@ -387,7 +386,6 @@ class City {
             "</tr>" +
             "</tbody>" + "</table>";
 
-        //TODO: WORK ON THE FRICKIN CITY METRICS 2.0 !!!
         for (var i = 0; i < 5; i++) {
             if (cityJson["TransitSystems"][i].NumStops > 0) {
                 cityTable += "<table style=\"padding-bottom: 20px; padding-left:10%;\">" +

@@ -1,0 +1,176 @@
+var serviceProperties;
+
+var nodeNumberServices = 0;
+
+
+function fetchServiceProps() {
+    var myServicesJson = readGeoJsonObj("services.geojson");
+
+    var nodeProperties = fetchNodeProps();
+    console.log("Node Properties:");
+    console.log(nodeProperties);
+
+    // console.log("Node properties ID: ", nodeProperties.Id);
+    // console.log("Service Json ID: ", myServicesJson.features[0].properties.Id);
+
+    for (i = 0; i < myServicesJson.features.length; i++) {
+        if (nodeProperties.Id == myServicesJson.features[i].properties.Id) {
+            serviceProperties = myServicesJson.features[i].properties;
+        }
+    }
+    console.log("Service properties: ", serviceProperties);
+
+    // Calculate total number of Services
+    nodeNumberServices = serviceProperties.Primary_NumberServices + serviceProperties.Secondary_NumberServices + serviceProperties.Tertiary_NumberServices;
+    console.log("Service Number: ", nodeNumberServices);
+
+}
+
+function displayServiceNumberBarGraphs() {
+    // Display number of Primary Secondary and Tertiary Services bar graph on UI
+
+    var queryInfoDiv = document.getElementById("query-info");
+
+    var primaryBarWidth = (serviceProperties.Primary_NumberServices / nodeNumberServices) * 500;
+    var secondaryBarWidth = (serviceProperties.Secondary_NumberServices / nodeNumberServices) * 500;
+    var tertiaryBarWidth = (serviceProperties.Tertiary_NumberServices / nodeNumberServices) * 500;
+
+    // Service Bar Graph HTML
+    var serviceBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + serviceProperties.Primary_NumberServices + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + serviceProperties.Secondary_NumberServices + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + serviceProperties.Tertiary_NumberServices + "</span></div>";
+
+    // Inserting bar graphs into query info HTML
+    queryInfoDiv.innerHTML = serviceBarGraphHTML + "<div>Types of Services</div>";
+
+}
+
+function displayServiceDistanceBarGraphs() {
+    // Display avg distances in m to services and amenities
+
+    // TODO: Display distance bar graphs for closeness query
+
+    var queryInfoDiv = document.getElementById("query-info");
+
+    var primaryBarWidth = serviceProperties.Primary_AvDist * 0.4;
+    var secondaryBarWidth = serviceProperties.Secondary_AvDist * 0.4;
+    var tertiaryBarWidth = serviceProperties.Tertiary_AvDist * 0.4;
+
+    // Service Bar Graph HTML
+    var serviceBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + serviceProperties.Primary_AvDist.toFixed(2) + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + serviceProperties.Secondary_AvDist.toFixed(2) + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + serviceProperties.Tertiary_AvDist.toFixed(2) + "</span></div>";
+
+    // Inserting bar graphs into query info HTML
+    queryInfoDiv.innerHTML = serviceBarGraphHTML + "<div>Distances to Services in m</div>";
+
+
+}
+
+function displaySurroundingServices() {
+
+    var queryInfoDiv = document.getElementById("query-info");
+
+    // Surrounding Services Menu HTML
+    var surrServiceMenuHTML = "<div id=\"service-option-menu\">" +
+        "<div class=\"service-option\" id=\"primary\">" +
+        "<i class=\"fas fa-utensils fa-2x\"></i>" +
+        "<div id=\"service-units\">" +
+        "<p>10</p>" +
+        "</div>" +
+        "</div>" +
+        "<div class=\"service-option\" id=\"primary\">" +
+        "<i class=\"fas fa-hospital fa-2x\"></i>" +
+        "<div id=\"service-units\">" +
+        "<p>2</p>" +
+        "</div>" +
+        "</div>" +
+        "<div class=\"service-option\" id=\"secondary\">" +
+        "<i class=\"fas fa-shirt fa-2x\"></i>" +
+        "<div id=\"service-units\">" +
+        "<p>4</p>" +
+        "</div>" +
+        "</div>" +
+        "<div class=\"service-option\" id=\"tertiary\">" +
+        "<i class=\"fas fa-glasses fa-2x\"></i>" +
+        "<div id=\"service-units\">" +
+        "<p>1</p>" +
+        "</div>" +
+        "</div>" +
+        "<div class=\"service-option\" id=\"tertiary\">" +
+        "<i class=\"fas fa-person-swimming fa-2x\"></i>" +
+        "<div id=\"service-units\">" +
+        "<p>2</p>" +
+        "</div>" +
+        "</div>" +
+        "</div>";
+
+    queryInfoDiv.innerHTML += surrServiceMenuHTML + "<p>Surrounding Services and Amenities</p>";
+}
+
+function calDiversityServices() {
+
+    document.getElementById("transit-option-menu").innerHTML = "";
+
+    console.log("Diversity of Primary, Secondary and Tertiary Services");
+
+    fetchServiceProps();
+    displayServiceNumberBarGraphs();
+    displaySurroundingServices();
+
+    var serviceRatingVal = 0;
+
+    // Assign query rating value based on number of services ad amenities
+
+    if (serviceProperties.Primary_NumberServices > 0) {
+        serviceRatingVal += 5;
+    }
+    if (serviceProperties.Secondary_NumberServices > 0) {
+        serviceRatingVal += 3;
+    }
+    if (serviceProperties.Tertiary_NumberServices > 0) {
+        serviceRatingVal += 2;
+    }
+
+    console.log("Service Rating: ", serviceRatingVal);
+
+    var DiversityServicesRating = serviceRatingVal;
+    displayQueryRating(DiversityServicesRating);
+}
+
+function calClosenessServices() {
+    document.getElementById("transit-option-menu").innerHTML = "";
+    // document.getElementById("query-info").innerHTML = "";
+
+    console.log("Calculating Closeness of Services and Amenities");
+    // TODO: Calculate closeness of services and amenities
+
+    fetchServiceProps();
+    displayServiceDistanceBarGraphs();
+    displaySurroundingServices();
+
+    var nodeProperties = fetchNodeProps();
+    var bufferLimit = 0;
+    if (nodeProperties.Type == "Hub") {
+        bufferLimit = 800;
+    } else if (nodeProperties.Type == "Cluster") {
+        bufferLimit = 400;
+    }
+
+    console.log("Buffer Limit for this", nodeProperties.Type, "is: ", bufferLimit);
+
+    var ClosenessServicesRating = 0;
+
+    // Assign query rating value based on distance of services and amenities
+
+    if (serviceProperties.Primary_AvDist <= bufferLimit) {
+        ClosenessServicesRating += 5;
+    }
+    if (serviceProperties.Secondary_AvDist <= bufferLimit) {
+        ClosenessServicesRating += 3;
+    }
+    if (serviceProperties.Tertiary_AvDist <= bufferLimit) {
+        ClosenessServicesRating += 2;
+    }
+
+    console.log("Service Rating: ", ClosenessServicesRating);
+
+    displayQueryRating(ClosenessServicesRating);
+
+}

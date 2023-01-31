@@ -1,4 +1,28 @@
- #### CAMMM Web Atlas Tool
+## CAMMM v2 UI Task List
+- Dynamic query rating on sidebar
+- Add transit option horizontal scrollable list
+- Implement Multimodality and Services UI (dummy)
+
+## Cluster and Hub Categories
+    Small Cluster - 1-2 bus stops
+    Medium Cluster - 3-5 bus stops
+    Large Cluster - 6+ bus stops
+    Small Hub - 1-4 bus stops + 1 Rail/metro station
+    Medium Hub - 5+ bus stops + 1 Rail/metro station
+    Large Hub - 1+ bus stops + 2 Rail/Metro station
+
+# Currently working on: 
+Continue reformatting fields in geojson for UI sidebar info
+Make Inforgraphics interactive pages + embed on website - https://indd.adobe.com/view/60c23b28-eaec-4f56-bb1f-5b400a5b3296 
+Keep working on Documentation - Section 2 Processing Tool - Work on flowcharts for each Operational and Analysis function 
+Flowchart cheatsheet - https://www.breezetree.com/articles/flow-chart-symbols  https://www.conceptdraw.com/examples/flowchart-symbols-cheat-sheet
+Fix indentation in markdown numbered list
+Finish standalone mode for multi-browser solution (see indexStandalone HTML) https://www.w3schools.com/js/js_window.asp
+
+Add this note to the docs: Direct is now Individual and Node is now Cluster.
+#### Mapbox Interactive Options API Docs
+https://docs.mapbox.com/mapbox-gl-js/api/map/#instance-members-interaction-handlers
+#### CAMMM Web Atlas Tool
 https://github.com/ideas-be/CAMMM-Web-Tool/
 **Here is the link to see the website proper:**
 https://ideas-be.github.io/CAMMM-Web-Tool/
@@ -6,6 +30,9 @@ https://ideas-be.github.io/CAMMM-Web-Tool/
 https://miro.com/app/board/o9J_kgmIpbw=/
 #### Preview:
 ![CAMMM Web Atlas](Images/GithubDocs/2022_05_03_Current_Prototype_Screenshot.png)
+![v2 mockups](Images/GithubDocs/figma-v2-mockups.png)
+
+
 
 ----------------------------------------------------------------------
   
@@ -720,3 +747,217 @@ $C_{B}(v)$ = $sum_$
 
 </div>
 ----------------------------------------------------------------------
+
+# Scratchpad:
+budapest ranges:
+1-3, 4-11, 12-22, 23-39, 40-64
+
+quebec ranges: 
+1-4, 5-12, 13-21, 22-32, 33-50
+
+vienna ranges:
+1-4, 5-12, 13-22, 23-34, 35-57
+
+barcelona ranges:
+1-4, 5-15, 16-28, 29-42, 43-64
+
+boston ranges:
+1-3, 4-12, 13-25, 26-49, 50-83
+
+longueuil ranges:
+1-3, 4-11, 12-20, 21-30, 31-47
+
+vancouver ranges:
+1-2, 3-8, 9-16, 17-31, 32-58
+
+COLORS FOR GRID
+_grid_1
+Level 1     ff8f00  
+Level 2     eb6a00  
+Level 3     db4900  
+Level 4     e05200  
+Level 5     c41900
+
+
+Colors for Node Centrality
+_N_CD_1
+
+Level 1     d3eecd  
+Level 2     b3e4a8  
+Level 3     6dc25a  
+Level 4     458337  
+Level 5     006127
+
+
+Colors for Node Centrality
+_N_CL_1
+
+Level 1     000000  
+Level 2     2a0d30  
+Level 3     4a1655  
+Level 4     5b1b69  
+Level 5     76158c 
+
+
+
+DIRECT SIZE
+Buses 0.7
+Tram  1.0
+Metro 0.8
+Rail  0.8
+
+
+INFO POP UP ONE TEXT
+--------------------------
+About
+Welcome to the CAMMM Atlas Web Application, developed by IDEAS-BE (Integrated Design and Sustainability for the Built Environment). This tool is a work-in-progress and part of the research project titled, CoLLaboratoire for Activating Multi-modal Mobility (CAMMM): One Public Space at a Time, in order to compare the transit systems between each city and critically reflect on mobility in the city.
+
+License
+CAMMM Atlas Web Application
+Copyright (C) 2022, Carmela Cucuzzella
+
+This program is free software: you can redistribute it and/or modify 
+it under the terms of the GNU General Public License as published by 
+the Free Software Foundation, either version 3 of the License, or 
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License 
+along with this program. If not, see <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>
+
+Lead of Project
+Dr.Carmela Cucuzzella, Ph.D. [Professor, Design and Computation Arts; Concordia University Research Chair in Integrated Design And Sustainability for the Built Environment (IDEAS-BE); Founding Co-Director, Next Generation Cities Institute]
+
+Author Information
+Carmela Cucuzzella is lead coordinator of the Atlas Web Application and surrounding technical infrastructure.
+Pierre Gauthier is advisor on urban morphological aspects of each city represented on the atlas.
+Omar Ortiz Meraz is the back end and lead GIS programmer for all queries displayed on the atlas.
+Firdous Nizar is the lead front end developer for the web application interface.
+
+Processing Tool Information
+The CAMMM Atlas web application makes use of a Processing Tool to manage the data that goes into the creation and maintenance of the city maps. This python-based tool is to be used by the development team to process large amounts of city data into relevant file formats that could be read and displayed onto the atlas web application.
+The processing tool must be used when a new city needs to be added to the atlas, using the GTFS data for the respective city.
+
+Related research
+List of links to PG research + student uses & feedback, etc.
+
+Documentation
+https://github.com/ideas-be/CAMMM-Web-Tool/tree/cumulative-testing#readme
+
+DISCLAIMER: The data shown in the atlas reflects the information provided in GTFS format by the transport agencies managing the public transit locally in each city.These files are obtained from the official websites corresponding to each city, or internet aggregators.Therefore, accuracy of the data displayed is out of the scope of this research tool.The authors cannot guarantee the precision of this data.
+
+INFO POP UP TWO TEXT
+--------------------------
+Cities Selection
+Extent and Scope of Atlas
+The CAMMM Atlas web application is an open-source research analysis tool that contains a collection of maps that compare public transit networks around the global north. The atlas covers a selection of cities that fit a pre-defined list of parameters.
+
+Catalogue of Processed Cities:
+<ul>Montréal</ul>
+ <ul>Laval</ul>
+ <ul>Barcelona</ul>
+ <ul>Boston</ul>
+ <ul>Budapest</ul>
+ <ul>Quebec</ul>
+ <ul>Seattle</ul>
+ <ul>Toronto*</ul>
+ <ul>Vancouver</ul>
+ <ul>Vienna.</ul>
+
+INFO POP UP THREE TEXT
+--------------------------
+Map Menu
+
+Select Form of Analysis
+The types of analysis include:
+Individual: queries applied directly applied to the transit network.
+Cluster: queries applied to nodes that aggregates points of access/transfer/connections in the network based on their geography.
+
+Select Query
+For the analysis, each metro station, bus/tram stop or other point of access to the transit network is treated as an individual object, i.e., node. The collection of all nodes and their relationships build the entire transit network. This network is the object of our research queries explored in the atlas. The query list includes:
+
+Node Centrality (shortest path) is associated with how accessible the rest of the network is, with respect to a given node. This means that this query evaluates the ease of a trip from the given node to any other point in the network and vice versa.
+Node Connectivity (closeness) measures the desirability of a given node in being included in a particular trip inside the network. A node with a higher value of closeness centrality will imply that it is more frequented during trips inside the network.
+Transit Network Density describes the density of bus/tram stops and metro/train stations across the built environment, following the natural angle of the urban fabric.
+
+
+Display Query Output
+The query data points are stored in distinct layers. To interact with them, first, toggle the layer display type and then change the slider to show the respective data points. 
+
+The layers can be displayed in two ways: 
+All Layers: Shows the data points on the map in incremental layers based on the value of the corresponding slider. For example, if the slider is on “3”, the map would display data points from layers 1, 2 and 3.
+Isolated Layer: Shows the data points on the map in individual layers based on the value of the corresponding slider. For example, if the slider is on “3”, the map would display data points from layer 3 only.
+
+____________________
+Toronto
+-79.392, 43.632
+9.10
+Direct
+cl2jkjtrb004n14mt0ew9jj0v
+bus
+toronto-bus_CD, toronto-bus_CL
+light rail
+toronto-lightrail_CD, toronto-lightrail_CL
+metro
+toronto-metro_CD, toronto-metro_CL
+
+Node
+cl2jhcd6z001l15ogcoitd1zj
+
+toronto_N_CD, toronto_N_CL
+
+Grid
+
+toronto_grid
+
+__________________________
+LAVAL
+-73.707086, 45.636763
+10.56
+
+Direct
+cl2jhkvs9000215nt1rjl6mrv
+
+Bus
+laval-bus_CD, laval-bus_CL
+
+Node
+cl2jk6kpl002e14sabu3e2gpu
+
+Grid
+laval_grid
+
+laval_N_CD, laval_N_CL
+
+https://stlaval.ca/a-propos/diffusion/donnees-ouvertes
+
+_______________
+Seattle
+-122.219930, 47.496418
+9.22
+
+Direct 
+cl2jfqz27000l15se1zk59igu
+
+Bus
+seattle-bus_CD, seattle-bus_CL
+
+Ligth Rail
+seattle-lightrail_CD, seattle-lightrail_CL
+
+Rail
+seattle-rail_CD, seattle-rail_CL
+
+Grid
+seattle_grid
+
+Node
+cl2jgv5qs004b14mtorc476ks
+
+seattle_N_CD,seattle_N_CD
+
+https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/otd-downloads
