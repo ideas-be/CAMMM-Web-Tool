@@ -37,8 +37,7 @@ function callQueryCalFunc() {
             break;
         case "Multimodality":
             fetchGeoJson("city.geojson");
-            displayLines();
-            setTimeout(calMultiModality, 200);
+            setTimeout(calMultiModality, 300);
             break;
         case "Accessibility": console.log("Accessibility");
             // fetchGeoJson("city.geojson");

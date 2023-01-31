@@ -214,6 +214,9 @@ function calMultiModality() {
     displayTransitModes();
     displayStopsLines();
 
+    fetchGeoJson("Lines.geojson");
+    displayLines();
+
     var myCityJson = readGeoJsonObj("city.geojson");
     console.log("City json read from query.js: ", myCityJson);
     if (myCityJson.City.Name_en == "Montreal") {
