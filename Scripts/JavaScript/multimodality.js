@@ -254,7 +254,6 @@ function calMultiModality() {
 
         // Think about Directionality as a separate query
 
-        // ideas-be, NGCI, ARTM, Concordia
 
         displayQueryRating(MultimodalityRating);
     }
