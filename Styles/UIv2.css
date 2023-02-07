@@ -558,6 +558,16 @@ progress::-moz-progress-bar {
     padding-bottom: 5px;
 }
 
+.fas.fa-car {
+    color: #f4af00;
+    padding-bottom: 5px;
+}
+
+.fas.fa-bicycle {
+    color: #008d1a;
+    padding-bottom: 5px;
+}
+
 #transit-lines {
     vertical-align: middle;
     margin: auto;

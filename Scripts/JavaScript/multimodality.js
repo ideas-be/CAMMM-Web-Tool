@@ -6,6 +6,10 @@ var NumberMetroStations = 0;
 // Street transit stops
 var NumberTramStops = 0;
 var NumberBusStops = 0;
+// Sharing transit stops
+var NumberCarShareStops = 0;
+var NumberBikeShareStops = 0;
+
 
 var nodeTransitNumber = 0;
 
@@ -23,11 +27,6 @@ function fetchStopsLines() {
     // Street transit
     TramData = JSON.parse(nodeProperties.TramData);
     BusData = JSON.parse(nodeProperties.BusData);
-
-
-    // console.log("Metro JSON: ", MetroData);
-    // console.log("Bus JSON  : ", BusData);
-    // console.log("Bus Data", nodeProperties.BusData, typeof (nodeProperties.BusData));
 
     // Rail-based transit station number
     for (const key in RailData) {
@@ -47,24 +46,6 @@ function fetchStopsLines() {
     console.log("Number of Metro Stations: ", NumberMetroStations);
     console.log("Number of Tram Stops: ", NumberTramStops);
     console.log("Number of Bus Stops: ", NumberBusStops);
-
-    // if (NumberRailStations > 0) {
-    //     nodeTransitNumber += 1;
-    // }
-    // if (NumberMetroStations > 0) {
-    //     nodeTransitNumber += 1;
-    // }
-    // if (NumberTramStops > 0) {
-    //     nodeTransitNumber += 1;
-    // }
-    // if (NumberBusStops > 0) {
-    //     nodeTransitNumber +=1;                                                 
-    // }
-
-    // console.log("Node Transit Number from SidebarJS: ", nodeTransitNumber);
-    // getTransitNumber(nodeTransitNumber);
-
-    // nodeTransitNumber = 0;
 
 }
 
@@ -157,51 +138,62 @@ function displayTransitModes() {
     // TODO: Show the available transit modes in sidebar
 
     var queryInfoDiv = document.getElementById("query-info");
+
+    var transitDictionary = [
+        {
+            transitName: "bus",
+            transitIcons: "fas fa-bus fa-2x",
+            isActive: NumberBusStops > 0 ? true : false
+        },
+        {
+            transitName: "metro",
+            transitIcons: "fas fa-subway fa-2x",
+            isActive: NumberMetroStations > 0 ? true : false
+        },
+        {
+            transitName: "rail",
+            transitIcons: "fas fa-train fa-2x",
+            isActive: NumberRailStations > 0 ? true : false
+        },
+        {
+            transitName: "tram",
+            transitIcons: "fas fa-train-tram fa-2x",
+            isActive: NumberTramStops > 0 ? true : false
+        },
+        {
+            transitName: "car-sharing",
+            transitIcons: "fas fa-car fa-2x",
+            isActive: NumberCarShareStops > 0 ? true : false
+        },
+        {
+            transitName: "bike-sharing",
+            transitIcons: "fas fa-bicycle fa-2x",
+            isActive: NumberBikeShareStops > 0 ? true : false
+        }
+    ];
+
+    console.log("Transit Dictionary:", transitDictionary);
+
     var transitModeHTML = "<div id=\"transit-mode-section\">";
 
-    if (NumberBusStops > 0) {
-
-        transitModeHTML += "<div id=\"transit-mode\">" +
-            "<i class=\"fas fa-bus fa-2x\"></i>" +
-            "<div id=\"transit-mode-name\">" +
-            "<p>bus</p>" +
-            "</div>" +
-            "</div>";
-
+    for (transitMode in transitDictionary) {
+        if (transitDictionary[transitMode].isActive == true) {
+            transitModeHTML += "<div id=\"transit-mode\">" +
+                "<i class=\"" + transitDictionary[transitMode].transitIcons + "\"></i>" +
+                "<div id=\"transit-mode-name\">" +
+                "<p>" + transitDictionary[transitMode].transitName + "</p>" + "</div>" + "</div>";
+        }
     }
-    if (NumberMetroStations > 0) {
-
-        transitModeHTML += "<div id=\"transit-mode\">" +
-            "<i class=\"fas fa-subway fa-2x\"></i>" +
-            "<div id=\"transit-mode-name\">" +
-            "<p>metro</p>" +
-            "</div>" +
-            "</div>";
-
-    }
-    if (NumberRailStations > 0) {
-
-        transitModeHTML += "<div id=\"transit-mode\">" +
-            "<i class=\"fas fa-train fa-2x\"></i>" +
-            "<div id=\"transit-mode-name\">" +
-            "<p>rail</p>" +
-            "</div>" +
-            "</div>";
-
-    }
-    if (NumberTramStops > 0) {
-
-        transitModeHTML += "<div id=\"transit-mode\">" +
-            "<i class=\"fas fa-train-tram fa-2x\"></i>" +
-            "<div id=\"transit-mode-name\">" +
-            "<p>tram</p>" +
-            "</div>" +
-            "</div>";
-
+    for (transitMode in transitDictionary) {
+        if (transitDictionary[transitMode].isActive == false) {
+            transitModeHTML += "<div id=\"transit-mode\">" +
+                "<i class=\"" + transitDictionary[transitMode].transitIcons + "\" style=\"color:#d3d3d3;\"></i>" +
+                "<div id=\"transit-mode-name\">" +
+                "<p>" + transitDictionary[transitMode].transitName + "</p>" + "</div>" + "</div>";
+        }
     }
 
     console.log("Inserting Available Transit Modes");
-    console.log("Displaying bus, metro, rail and tram numbers from transit mode function:", NumberBusStops, ", ", NumberMetroStations, ", ", NumberRailStations, ", ", NumberTramStops);
 
     queryInfoDiv.innerHTML = transitModeHTML + "</div>Available Transit Modes";
     console.log("Checking transit mode HTML", transitModeHTML);
@@ -233,15 +225,19 @@ function calMultiModality() {
 
         // Calculate the number of transit types at node
         var nodeTransit = 0;
-        var nodeProperties = fetchNodeProps();
+        // var nodeProperties = fetchNodeProps();
 
-        if (nodeProperties.MetroData.length > 2)
+        if (NumberMetroStations > 0)
             nodeTransit += 1;
-        if (nodeProperties.RailData.length > 2)
+        if (NumberBusStops > 0)
             nodeTransit += 1;
-        if (nodeProperties.TramData.length > 2)
+        if (NumberRailStations > 0)
             nodeTransit += 1;
-        if (nodeProperties.BusData.length > 2)
+        if (NumberTramStops > 0)
+            nodeTransit += 1;
+        if (NumberCarShareStops > 0)
+            nodeTransit += 1;
+        if (NumberBikeShareStops > 0)
             nodeTransit += 1;
 
         console.log("Transit Types at the Current Node: ", nodeTransit);
@@ -253,7 +249,6 @@ function calMultiModality() {
         // check GBSF for bixi
 
         // Think about Directionality as a separate query
-
 
         displayQueryRating(MultimodalityRating);
     }
