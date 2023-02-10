@@ -45,10 +45,12 @@ function callQueryCalFunc() {
             break;
         case "Diversity of Services and Amenities":
             fetchGeoJson("services.geojson");
+            fetchGeoJson("category_services.json");
             setTimeout(calDiversityServices, 200);
             break;
         case "Closeness of Services and Amenities":
             fetchGeoJson("services.geojson");
+            fetchGeoJson("category_services.json");
             setTimeout(calClosenessServices, 200);
             break;
         case "Greenery": console.log("Greenery");
@@ -63,6 +65,8 @@ function callQueryCalFunc() {
 }
 
 function displayQueryRating(ratingValue) {
+
+    // TODO: Fix the function call and rating insert errors
 
     var ratingWord = "";
     if ((ratingValue >= 2) && (ratingValue < 5)) {

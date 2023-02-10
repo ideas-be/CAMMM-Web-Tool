@@ -135,7 +135,7 @@ function assignCategory() {
 }
 
 function displayTransitModes() {
-    // TODO: Show the available transit modes in sidebar
+    // Show the available transit modes in sidebar
 
     var queryInfoDiv = document.getElementById("query-info");
 
@@ -201,6 +201,8 @@ function displayTransitModes() {
 }
 
 function calMultiModality() {
+
+    // TODO: Troubleshoot function call and runtime error
 
     // document.getElementById("query-info").innerHTML = "";
     displayTransitModes();
