@@ -44,6 +44,10 @@ The field "Route" matches the routes contained in the file "general.geojson" wit
           ],
 ```
 
+# Connectivity Metrics Icons
+Centrality - <i class="fa-solid fa-arrows-to-circle"></i>
+Closeness - <i class="fa-solid fa-timeline"></i>
+Betweenness - <i class="fa-solid fa-circle-nodes"></i>
 
 
 # For Monday 

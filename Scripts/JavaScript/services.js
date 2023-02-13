@@ -53,7 +53,7 @@ function displayServiceDistanceBarGraphs() {
     var tertiaryBarWidth = serviceProperties.Tertiary_AvDist * 0.4;
 
     // Service Bar Graph HTML
-    var serviceBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + serviceProperties.Primary_AvDist.toFixed(2) + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + serviceProperties.Secondary_AvDist.toFixed(2) + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + serviceProperties.Tertiary_AvDist.toFixed(2) + "</span></div>";
+    var serviceBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + serviceProperties.Primary_AvDist.toFixed(0) + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + serviceProperties.Secondary_AvDist.toFixed(0) + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + serviceProperties.Tertiary_AvDist.toFixed(0) + "</span></div>";
 
     // Inserting bar graphs into query info HTML
     queryInfoDiv.innerHTML = serviceBarGraphHTML + "<div>Distances to Services in m</div>";
@@ -87,6 +87,8 @@ function displaySurroundingServices() {
 
     // loop through category data for the services at the current node
     var surrServiceMenuHTML = "<div id=\"service-option-menu\">";
+
+    var serviceUnit;
     for (serviceType in nodeServiceData) {
         {
             // loop through all categories and append into HTML string
@@ -95,12 +97,25 @@ function displaySurroundingServices() {
             // check the category of the service and assign icon
             for (category in nodeServiceData[serviceType]) {
 
-                surrServiceMenuHTML += "<div class=\"service-option\" id=\"" + serviceType.toLowerCase() + "\">" +
-                    "<i class=\"" + serviceCategoryIcons[category] + "\"></i>" +
-                    "<div id=\"service-units\">" +
-                    "<p>" + nodeServiceData[serviceType][category].Count + "</p>" +
-                    "</div>" +
-                    "</div>";
+                // check if the current query is diversity/closeness and display count or avg dist accordingly
+                if (selectedQuery == "Diversity of Services and Amenities") {
+                    serviceUnit = nodeServiceData[serviceType][category].Count;
+                } else if (selectedQuery == "Closeness of Services and Amenities") {
+                    serviceUnit = nodeServiceData[serviceType][category].avgDist;
+                }
+                // Replace "BeautyNFashion" with "Beauty & Fashion" for UI
+                var catName;
+
+                if (category == "BeautyNFashion") {
+                    catName = "Beauty & Fashion";
+                } else {
+                    catName = category;
+                }
+
+                surrServiceMenuHTML += "<div class=\"service-option\" id=\"" + serviceType.toLowerCase() + "\">" + "<div id=\"service-category-name\">" +
+                    "<p>" + catName.toLowerCase() + "</p>" + "</div>" +
+                    "<i class=\"" + serviceCategoryIcons[category] + "\"></i>" + "<div id=\"service-units\">" +
+                    "<p>" + serviceUnit + "</p>" + "</div>" + "</div>";
             }
 
         }
@@ -108,7 +123,7 @@ function displaySurroundingServices() {
 
     console.log("Surrounding Services HTML debug", surrServiceMenuHTML);
 
-    // TODO: check if the current query is diversity/closeness and display count or avg dist accordingly
+
 
     // insert HTML into sidebar
     queryInfoDiv.innerHTML += surrServiceMenuHTML + "<p>Surrounding Services and Amenities</p>";

@@ -486,6 +486,17 @@ progress::-moz-progress-bar {
     /* overflow-wrap: break-word; */
 }
 
+#service-category-name {
+    vertical-align: middle;
+    margin: auto;
+    padding: 2px;
+    /* background-color: #d3d3d3; */
+    inline-size: 60px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
 /* END OF SERVICE MENU STYLE */
 
 /* START OF TRANSIT MODE SECTION STYLE */
@@ -590,6 +601,14 @@ progress::-moz-progress-bar {
     padding-bottom: 10px;
     vertical-align: middle;
     margin-bottom: 10px;
+}
+
+.bar-graph#bus,
+.bar-graph#metro,
+.bar-graph#tram,
+.bar-graph#rail {
+    /* color: #000000; */
+    min-width: 20px;
 }
 
 #bus {

@@ -19,7 +19,7 @@ function transitIcon(transit) {
 }
 
 function displayAccessibilityGraphs() {
-    // TODO: Display bar graphs depicting accessible stops/stations at node
+    // Display bar graphs depicting accessible stops/stations at node
 
     var queryInfoDiv = document.getElementById("query-info");
     var accessibilityHTML = "<div id=\"accessible-transit-graphs\">";
@@ -43,8 +43,11 @@ function displayAccessibilityGraphs() {
 
         console.log("The accessibility of ", key, " is ", transitAccessible, " out of ", transitTotal);
 
+        var accessibleBarWidth = 0;
+        accessibleBarWidth += (transitAccessible * 280) / transitTotal;
+
         if (transitTotal > 0) {
-            accessibilityHTML += "<i class=\"" + transitIcon(key) + "\"></i><div class=\"bar-graph\" id=\"accessible-bar-graph\"><div class=\"bar-graph\" id=\"" + key.toLowerCase() + "\" style=\"width: " + transitTotal * 50 + "px;\"><span class=\"accessible-number\">" + transitAccessible + "</span></div><span class=\"accessible-number\">" + transitTotal + "</span></div>";
+            accessibilityHTML += "<i class=\"" + transitIcon(key) + "\"></i><div class=\"bar-graph\" id=\"accessible-bar-graph\"><div class=\"bar-graph\" id=\"" + key.toLowerCase() + "\" style=\"width: " + accessibleBarWidth + "px;\"><span class=\"accessible-number\">" + transitAccessible + "</span></div><span class=\"accessible-number\">" + transitTotal + "</span></div>";
         }
 
     }
