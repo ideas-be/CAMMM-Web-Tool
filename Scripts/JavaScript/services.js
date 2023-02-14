@@ -121,16 +121,13 @@ function displaySurroundingServices() {
         }
     }
 
-    console.log("Surrounding Services HTML debug", surrServiceMenuHTML);
-
-
-
     // insert HTML into sidebar
     queryInfoDiv.innerHTML += surrServiceMenuHTML + "<p>Surrounding Services and Amenities</p>";
 }
 
 function calDiversityServices() {
 
+    hideLines();
     document.getElementById("transit-option-menu").innerHTML = "";
 
     console.log("Diversity of Primary, Secondary and Tertiary Services");
@@ -160,6 +157,8 @@ function calDiversityServices() {
 }
 
 function calClosenessServices() {
+
+    hideLines();
     document.getElementById("transit-option-menu").innerHTML = "";
     // document.getElementById("query-info").innerHTML = "";
 

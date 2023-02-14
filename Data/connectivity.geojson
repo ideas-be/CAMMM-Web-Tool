@@ -1,0 +1,17 @@
+{
+    "features": [
+        {
+            "Id": "1",
+            "Centrality": 5,
+            "Closeness": 8,
+            "Betweenness": 2
+        },
+        {
+            "Id": "22",
+            "Centrality": 7,
+            "Closeness": 5,
+            "Betweenness": 3
+        },
+        {}
+    ]
+}

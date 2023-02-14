@@ -592,6 +592,7 @@ progress::-moz-progress-bar {
 }
 
 /* END OF TRANSIT MENU STYLE */
+
 /* START OF ACCESSIBILITY BAR GRAPH STYLE */
 #accessible-bar-graph {
     width: 100%;
@@ -640,3 +641,37 @@ progress::-moz-progress-bar {
 }
 
 /* END OF ACCESSIBILITY BAR GRAPH STYLE */
+
+/* START OF CONNECTIVITY BAR GRAPH STYLE */
+
+.metrics-type {
+    padding-left: 5px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    /* vertical-align: text-bottom; */
+}
+
+.metrics-number {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+#centrality {
+    background-color: #6d55ce;
+    min-width: 80px;
+}
+
+#closeness {
+    background-color: #d86666;
+    min-width: 100px;
+}
+
+#betweenness {
+    background-color: #56bd94;
+    min-width: 80px;
+
+}
+
+/* END OF CONNECTIVITY BAR GRAPH STYLE */

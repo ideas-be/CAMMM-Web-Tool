@@ -44,6 +44,30 @@ The field "Route" matches the routes contained in the file "general.geojson" wit
           ],
 ```
 
+Example for the network analysis json
+
+``` json
+{
+  "features": [
+    {
+        "Id": "1",  
+        "Centrality": 5,
+        "Closeness" : 8,
+        "EigenVect" : 2
+    },
+    {
+        "Id": "21",  
+        "Centrality": 7,
+        "Closeness" : 5,
+        "EigenVect" : 3
+    },{
+     }
+ ]
+}
+
+```
+
+
 # Connectivity Metrics Icons
 Centrality - <i class="fa-solid fa-arrows-to-circle"></i>
 Closeness - <i class="fa-solid fa-timeline"></i>

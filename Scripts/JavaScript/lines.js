@@ -1,14 +1,71 @@
 var nodeProperties = fetchNodeProps();
 
+var myLinesJson;
+
+function getCurrentLines() {
+    // Fetch lines connected to current node
+    var routes = [];
+    var currentLines = [];
+    var metroJSON = JSON.parse(nodeProperties.MetroData);
+    var busJSON = JSON.parse(nodeProperties.BusData);
+    var railJSON = JSON.parse(nodeProperties.RailData);
+    var tramJSON = JSON.parse(nodeProperties.TramData);
+    // for (i = 0; i < myLinesJson.features.length; i++) {
+    for (metroStation in metroJSON) {
+        for (j = 0; j < metroJSON[metroStation].length; j++) {
+            console.log("Metro route: ", metroJSON[metroStation][j]);
+            routes.push(metroJSON[metroStation][j]);
+        }
+
+    }
+    for (busStop in busJSON) {
+        for (k = 0; k < busJSON[busStop].length; k++) {
+            console.log("Bus route: ", busJSON[busStop][k]);
+            routes.push(busJSON[busStop][k]);
+        }
+
+    }
+    for (tramStop in tramJSON) {
+        for (l = 0; l < tramJSON[tramStop].length; l++) {
+            console.log("Tram route: ", tramJSON[tramStop][l]);
+            routes.push(tramJSON[tramStop][l]);
+        }
+    }
+    for (railStation in railJSON) {
+        for (m = 0; m < railJSON[railStation].length; m++) {
+            console.log("Rail route: ", railJSON[railStation][m]);
+            routes.push(railJSON[railStation][m]);
+        }
+    }
+
+    // remove duplicate routes
+    uniqueRoutes = [...new Set(routes)];
+
+    console.log("All Routes: ", uniqueRoutes);
+
+    for (i = 0; i < myLinesJson.features.length; i++) {
+        for (route in uniqueRoutes) {
+            if (uniqueRoutes[route] == myLinesJson.features[i].properties.Route) {
+                currentLines.push(myLinesJson.features[i]);
+            }
+        }
+    }
+
+    console.log("Current Lines: ", currentLines);
+    return currentLines;
+}
+
 function displayLines() {
     // The objective of this function is:
     // To fetch lines geojson file and display associated lines with selected node on map
     // fetchGeoJson("Lines.geojson");
 
-    var myLinesJson = readGeoJsonObj("Lines.geojson");
+    myLinesJson = readGeoJsonObj("Lines.geojson");
     console.log("Fetching and Displaying Lines!!!");
     console.log(myLinesJson);
     console.log(myLinesJson.features);
+
+
 
     // TODO: Refer tutorial and figure out how to display the lines
 
@@ -17,7 +74,7 @@ function displayLines() {
         'type': 'geojson',
         'data': {
             'type': 'FeatureCollection',
-            'features': myLinesJson.features,
+            'features': getCurrentLines(),
         }
     });
 
@@ -38,4 +95,10 @@ function displayLines() {
     }
     );
 
+    map.setPaintProperty('transit-lines', 'line-color', '#008080');
+
+}
+
+function hideLines() {
+    map.setLayoutProperty('transit-lines', 'visibility', 'none');
 }

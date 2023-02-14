@@ -202,13 +202,11 @@ function displayTransitModes() {
 
 function calMultiModality() {
 
-    // TODO: Troubleshoot function call and runtime error
-
     // document.getElementById("query-info").innerHTML = "";
     displayTransitModes();
     displayStopsLines();
 
-    fetchGeoJson("Lines.geojson");
+    // fetchGeoJson("Lines.geojson");
     displayLines();
 
     var myCityJson = readGeoJsonObj("city.geojson");

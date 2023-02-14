@@ -37,11 +37,13 @@ function callQueryCalFunc() {
             break;
         case "Multimodality":
             fetchGeoJson("city.geojson");
+            fetchGeoJson("Lines.geojson");
             setTimeout(calMultiModality, 300);
+
             break;
-        case "Accessibility": console.log("Accessibility");
+        case "Accessibility":
             // fetchGeoJson("city.geojson");
-            displayAccessibilityGraphs();
+            setTimeout(calAccessibility, 200);
             break;
         case "Diversity of Services and Amenities":
             fetchGeoJson("services.geojson");
@@ -57,7 +59,9 @@ function callQueryCalFunc() {
             break;
         case "Walkability": console.log("Walkability");
             break;
-        case "Connectivity": console.log("Connectivity");
+        case "Connectivity":
+            fetchGeoJson("connectivity.geojson");
+            setTimeout(calConnectivity, 200);
             break;
         default: console.log("missing query");
     }

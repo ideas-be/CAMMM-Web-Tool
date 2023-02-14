@@ -1,6 +1,8 @@
 var nodeProperties = fetchNodeProps();
 
-var connectivityData;
+var myConnectivityJSON;
+
+var connectivityProperties;
 
 var connectivityIcons = [{ "Centrality": "fas fa-arrows-to-circle" }, { "Closeness": "fas fa-timeline" }, { "Betweenness": "fas fa-circle-nodes" }];
 
@@ -8,43 +10,46 @@ function displayConnectivityGraphs() {
     // Display bar graphs depicting connectivity metrics at node
 
     var queryInfoDiv = document.getElementById("query-info");
-    var accessibilityHTML = "<div id=\"accessible-transit-graphs\">";
+    var connectivityHTML = "<div id=\"connectivity-graphs\">";
 
-    accessibilityData = JSON.parse(nodeProperties.AccessibilityIndex);
+    var centralityWidth = connectivityProperties.Centrality * 50;
+    var closenessWidth = connectivityProperties.Closeness * 50;
+    var betweennessWidth = connectivityProperties.Betweenness * 50;
 
-    for (key in accessibilityData) {
+    var connectivityHTML = "<div class=\"bar-graph\" id=\"centrality\" style=\"width: " + centralityWidth + "px;\"><span class=\"metrics-type\">Centrality</span><span class=\"metrics-number\">" + connectivityProperties.Centrality + "</span></div>" + "<div class=\"bar-graph\" id=\"closeness\" style=\"width: " + closenessWidth + "px;\"><span class=\"metrics-type\">Closeness</span><span class=\"metrics-number\">" + connectivityProperties.Closeness + "</span></div>" + "<div class=\"bar-graph\" id=\"betweenness\" style=\"width: " + betweennessWidth + "px;\"><span class=\"metrics-type\">Betweenness</span><span class=\"metrics-number\">" + connectivityProperties.Betweenness + "</span></div>";
 
-        transitTotal = 0;
-        transitAccessible = 0;
+    queryInfoDiv.innerHTML = connectivityHTML + "</div>Connectivity Metrics";
+    console.log("Connectivity HTML: ", queryInfoDiv);
 
-        if (accessibilityData[key].length > 0) {
-            transitTotal = accessibilityData[key].length;
-            for (i = 0; i < accessibilityData[key].length; i++) {
-                if (accessibilityData[key][i] == 1) {
-                    transitAccessible += 1;
-                }
-            }
+}
 
+function fetchConnectivityProps() {
+    for (i = 0; i < myConnectivityJSON.features.length; i++) {
+        if (nodeProperties.Id == myConnectivityJSON.features[i].Id) {
+            connectivityProperties = myConnectivityJSON.features[i];
         }
-
-        console.log("The accessibility of ", key, " is ", transitAccessible, " out of ", transitTotal);
-
-        var accessibleBarWidth = 0;
-        accessibleBarWidth += (transitAccessible * 280) / transitTotal;
-
-        if (transitTotal > 0) {
-            accessibilityHTML += "<i class=\"" + transitIcon(key) + "\"></i><div class=\"bar-graph\" id=\"accessible-bar-graph\"><div class=\"bar-graph\" id=\"" + key.toLowerCase() + "\" style=\"width: " + accessibleBarWidth + "px;\"><span class=\"accessible-number\">" + transitAccessible + "</span></div><span class=\"accessible-number\">" + transitTotal + "</span></div>";
-        }
-
     }
-
-    queryInfoDiv.innerHTML = accessibilityHTML + "</div>Wheelchair Accessibility";
-    console.log("accessibility HTML: ", queryInfoDiv);
-
+    console.log("Connectivity properties: ", connectivityProperties);
 }
 
 function calConnectivity() {
     // TODO: Calculate Connectivity rating for node
 
+    hideLines();
+    document.getElementById("transit-option-menu").innerHTML = "";
+
+    myConnectivityJSON = readGeoJsonObj("connectivity.geojson");
+    fetchConnectivityProps();
+    displayConnectivityGraphs();
+
+    var connectivityRatingVal = 0;
+
+    // Assign query rating value
+
+    connectivityRatingVal = (connectivityProperties.Centrality + connectivityProperties.Closeness + connectivityProperties.Betweenness) / 3;
+
+    console.log("Connectivity Rating: ", connectivityRatingVal);
+
+    displayQueryRating(connectivityRatingVal);
 
 }
