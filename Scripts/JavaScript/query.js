@@ -1,5 +1,5 @@
 function queryDropDown() {
-    var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Accessibility", "Greenery", "Walkability", "Connectivity"];
+    var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity", "Greenery", "Walkability"];
     var dropDownDiv = document.getElementById("dropdown-content");
     var dropDownHTML = "";
 
@@ -41,7 +41,7 @@ function callQueryCalFunc() {
             setTimeout(calMultiModality, 300);
 
             break;
-        case "Accessibility":
+        case "Universal Design & Accessibility":
             // fetchGeoJson("city.geojson");
             setTimeout(calAccessibility, 200);
             break;
@@ -59,7 +59,7 @@ function callQueryCalFunc() {
             break;
         case "Walkability": console.log("Walkability");
             break;
-        case "Connectivity":
+        case "Transit Connectivity":
             fetchGeoJson("connectivity.geojson");
             setTimeout(calConnectivity, 200);
             break;

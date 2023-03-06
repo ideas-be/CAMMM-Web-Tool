@@ -10,20 +10,22 @@ function displayConnectivityGraphs() {
     // Display bar graphs depicting connectivity metrics at node
 
     var queryInfoDiv = document.getElementById("query-info");
-    var connectivityHTML = "<div id=\"connectivity-graphs\">";
+    var connectivityHTML = "<p>Network Analysis Metrics</p><div id=\"connectivity-graphs\">";
 
     var centralityWidth = connectivityProperties.Centrality * 50;
     var closenessWidth = connectivityProperties.Closeness * 50;
     var betweennessWidth = connectivityProperties.Betweenness * 50;
 
-    var connectivityHTML = "<div class=\"bar-graph\" id=\"centrality\" style=\"width: " + centralityWidth + "px;\"><span class=\"metrics-type\">Centrality</span><span class=\"metrics-number\">" + connectivityProperties.Centrality + "</span></div>" + "<div class=\"bar-graph\" id=\"closeness\" style=\"width: " + closenessWidth + "px;\"><span class=\"metrics-type\">Closeness</span><span class=\"metrics-number\">" + connectivityProperties.Closeness + "</span></div>" + "<div class=\"bar-graph\" id=\"betweenness\" style=\"width: " + betweennessWidth + "px;\"><span class=\"metrics-type\">Betweenness</span><span class=\"metrics-number\">" + connectivityProperties.Betweenness + "</span></div>";
+    connectivityHTML += "<div class=\"bar-graph\" id=\"centrality\" style=\"width: " + centralityWidth + "px;\"><span class=\"metrics-type\">Centrality</span><span class=\"metrics-number\">" + connectivityProperties.Centrality + "</span></div><p>The higher the value, the better the connection to the rest of the transit network.</p>" + "<div class=\"bar-graph\" id=\"closeness\" style=\"width: " + closenessWidth + "px;\"><span class=\"metrics-type\">Closeness</span><span class=\"metrics-number\">" + connectivityProperties.Closeness + "</span></div><p>The higher the value, the more likely this node will be used in a trip.</p>" + "<div class=\"bar-graph\" id=\"betweenness\" style=\"width: " + betweennessWidth + "px;\"><span class=\"metrics-type\">Betweenness</span><span class=\"metrics-number\">" + connectivityProperties.Betweenness + "</span></div><p>The higher the value, the larger the number of connections to this node.</p>";
 
-    queryInfoDiv.innerHTML = connectivityHTML + "</div>Connectivity Metrics";
+    queryInfoDiv.innerHTML = connectivityHTML + "</div>";
     console.log("Connectivity HTML: ", queryInfoDiv);
 
 }
 
 function fetchConnectivityProps() {
+    myConnectivityJSON = readGeoJsonObj("connectivity.geojson");
+
     for (i = 0; i < myConnectivityJSON.features.length; i++) {
         if (nodeProperties.Id == myConnectivityJSON.features[i].Id) {
             connectivityProperties = myConnectivityJSON.features[i];
@@ -38,7 +40,7 @@ function calConnectivity() {
     hideLines();
     document.getElementById("transit-option-menu").innerHTML = "";
 
-    myConnectivityJSON = readGeoJsonObj("connectivity.geojson");
+    
     fetchConnectivityProps();
     displayConnectivityGraphs();
 
@@ -50,6 +52,6 @@ function calConnectivity() {
 
     console.log("Connectivity Rating: ", connectivityRatingVal);
 
-    displayQueryRating(connectivityRatingVal);
+    displayQueryRating(connectivityRatingVal.toFixed(0));
 
 }
