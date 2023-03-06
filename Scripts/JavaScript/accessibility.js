@@ -2,7 +2,7 @@ var nodeProperties = fetchNodeProps();
 
 var accessibilityData;
 
-var transitTotal, transitAccessible;
+var transitTotal, transitAccessible, accessibleRating, totalRating;
 
 function transitIcon(transit) {
     switch (transit) {
@@ -19,12 +19,13 @@ function transitIcon(transit) {
 }
 
 function displayAccessibilityGraphs() {
-    // TODO: Display bar graphs depicting accessible stops/stations at node
+    // Display bar graphs depicting accessible stops/stations at node
 
     var queryInfoDiv = document.getElementById("query-info");
     var accessibilityHTML = "<div id=\"accessible-transit-graphs\">";
 
-    accessibilityData = JSON.parse(nodeProperties.AccessibilityIndex);
+    accessibleRating = 0;
+    totalRating = 0;
 
     for (key in accessibilityData) {
 
@@ -43,10 +44,14 @@ function displayAccessibilityGraphs() {
 
         console.log("The accessibility of ", key, " is ", transitAccessible, " out of ", transitTotal);
 
-        if (transitTotal > 0) {
-            accessibilityHTML += "<i class=\"" + transitIcon(key) + "\"></i><div class=\"bar-graph\" id=\"accessible-bar-graph\"><div class=\"bar-graph\" id=\"" + key.toLowerCase() + "\" style=\"width: " + transitTotal * 50 + "px;\"><span class=\"accessible-number\">" + transitAccessible + "</span></div><span class=\"accessible-number\">" + transitTotal + "</span></div>";
-        }
+        var accessibleBarWidth = 0;
+        accessibleBarWidth += (transitAccessible * 280) / transitTotal;
 
+        if (transitTotal > 0) {
+            accessibilityHTML += "<i class=\"" + transitIcon(key) + "\"></i><div class=\"bar-graph\" id=\"accessible-bar-graph\"><div class=\"bar-graph\" id=\"" + key.toLowerCase() + "\" style=\"width: " + accessibleBarWidth + "px;\"><span class=\"accessible-number\">" + transitAccessible + "</span></div><span class=\"accessible-number\">" + transitTotal + "</span></div>";
+        }
+        accessibleRating += transitAccessible;
+        totalRating += transitTotal;
     }
 
     queryInfoDiv.innerHTML = accessibilityHTML + "</div>Wheelchair Accessibility";
@@ -55,7 +60,21 @@ function displayAccessibilityGraphs() {
 }
 
 function calAccessibility() {
-    // TODO: Calculate Accessibility rating for node
+    // Calculate Accessibility rating for node
+    hideLines();
+    document.getElementById("transit-option-menu").innerHTML = "";
 
+    accessibilityData = JSON.parse(nodeProperties.AccessibilityIndex);
+    displayAccessibilityGraphs();
+
+    var accessibilityRatingVal = 0;
+
+    // Assign query rating value
+
+    accessibilityRatingVal = (accessibleRating / totalRating) * 10;
+
+    console.log("Accessibility Rating: ", accessibilityRatingVal);
+
+    displayQueryRating(accessibilityRatingVal);
 
 }

@@ -108,6 +108,39 @@
     margin-right: 20px;
 }
 
+.landing-logos {
+    /* display: inline; */
+    /* margin-bottom: 0; */
+    margin-left: 10vw;
+    width: 80vw;
+    height: 20vh;
+    max-width: 1000px;
+}
+
+#ideas-be img {
+    margin-right: 6vw;
+    margin-bottom: 3vh;
+    width: 40%;
+}
+
+#ngci img {
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+    width: 40%;
+}
+
+#artm img {
+    margin-right: 6vw;
+    margin-bottom: 3vh;
+    width: 40%;
+}
+
+#concordia img {
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+    width: 40%;
+}
+
 /* END OF LANDING PAGE STYLING */
 
 body {
@@ -453,6 +486,17 @@ progress::-moz-progress-bar {
     /* overflow-wrap: break-word; */
 }
 
+#service-category-name {
+    vertical-align: middle;
+    margin: auto;
+    padding: 2px;
+    /* background-color: #d3d3d3; */
+    inline-size: 60px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
 /* END OF SERVICE MENU STYLE */
 
 /* START OF TRANSIT MODE SECTION STYLE */
@@ -525,6 +569,16 @@ progress::-moz-progress-bar {
     padding-bottom: 5px;
 }
 
+.fas.fa-car {
+    color: #f4af00;
+    padding-bottom: 5px;
+}
+
+.fas.fa-bicycle {
+    color: #008d1a;
+    padding-bottom: 5px;
+}
+
 #transit-lines {
     vertical-align: middle;
     margin: auto;
@@ -538,6 +592,7 @@ progress::-moz-progress-bar {
 }
 
 /* END OF TRANSIT MENU STYLE */
+
 /* START OF ACCESSIBILITY BAR GRAPH STYLE */
 #accessible-bar-graph {
     width: 100%;
@@ -547,6 +602,14 @@ progress::-moz-progress-bar {
     padding-bottom: 10px;
     vertical-align: middle;
     margin-bottom: 10px;
+}
+
+.bar-graph#bus,
+.bar-graph#metro,
+.bar-graph#tram,
+.bar-graph#rail {
+    /* color: #000000; */
+    min-width: 20px;
 }
 
 #bus {
@@ -578,3 +641,37 @@ progress::-moz-progress-bar {
 }
 
 /* END OF ACCESSIBILITY BAR GRAPH STYLE */
+
+/* START OF CONNECTIVITY BAR GRAPH STYLE */
+
+.metrics-type {
+    padding-left: 5px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    /* vertical-align: text-bottom; */
+}
+
+.metrics-number {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+#centrality {
+    background-color: #6d55ce;
+    min-width: 80px;
+}
+
+#closeness {
+    background-color: #d86666;
+    min-width: 100px;
+}
+
+#betweenness {
+    background-color: #56bd94;
+    min-width: 80px;
+
+}
+
+/* END OF CONNECTIVITY BAR GRAPH STYLE */

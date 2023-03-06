@@ -1,5 +1,9 @@
 Drop your notes here:
 
+HIIIIIII
+hi
+
+
 ### Figure out how to automate the collection of embed codes for Streetview (OOM)
 Sample embed code:
 <iframe src="https://www.google.com/maps/embed?pb=!4v1674230436200!6m8!1m7!1sNqHRqKsEalobZHhpUMmOaQ!2m2!1d45.3919748033253!2d-75.7207963323827!3f329.2174!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;"></iframe>
@@ -44,6 +48,34 @@ The field "Route" matches the routes contained in the file "general.geojson" wit
           ],
 ```
 
+Example for the network analysis json
+
+``` json
+{
+  "features": [
+    {
+        "Id": "1",  
+        "Centrality": 5,
+        "Closeness" : 8,
+        "EigenVect" : 2
+    },
+    {
+        "Id": "21",  
+        "Centrality": 7,
+        "Closeness" : 5,
+        "EigenVect" : 3
+    },{
+     }
+ ]
+}
+
+```
+
+
+# Connectivity Metrics Icons
+Centrality - <i class="fa-solid fa-arrows-to-circle"></i>
+Closeness - <i class="fa-solid fa-timeline"></i>
+Betweenness - <i class="fa-solid fa-circle-nodes"></i>
 
 
 # For Monday 

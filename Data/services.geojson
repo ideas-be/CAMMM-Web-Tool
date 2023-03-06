@@ -91822,14 +91822,14 @@
         "Tertiary_NumberServices": 1,
         "Primary_AvDist": 650.125,
         "Secondary_MinDist": 681,
-        "Tertiary_MinDist": 0,
+        "Tertiary_MinDist": 450,
         "Secondary_AvDist": 818.333333333333,
-        "Tertiary_AvDist": 0,
+        "Tertiary_AvDist": 814,
         "Primary_MaxDist": 977,
         "Type": "Hub",
         "Id": "22",
         "Secondary_MaxDist": 950,
-        "Tertiary_MaxDist": 0
+        "Tertiary_MaxDist": 1035
       },
       "geometry": {
         "coordinates": [

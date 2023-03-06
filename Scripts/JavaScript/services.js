@@ -46,8 +46,6 @@ function displayServiceNumberBarGraphs() {
 function displayServiceDistanceBarGraphs() {
     // Display avg distances in m to services and amenities
 
-    // TODO: Display distance bar graphs for closeness query
-
     var queryInfoDiv = document.getElementById("query-info");
 
     var primaryBarWidth = serviceProperties.Primary_AvDist * 0.4;
@@ -55,7 +53,7 @@ function displayServiceDistanceBarGraphs() {
     var tertiaryBarWidth = serviceProperties.Tertiary_AvDist * 0.4;
 
     // Service Bar Graph HTML
-    var serviceBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + serviceProperties.Primary_AvDist.toFixed(2) + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + serviceProperties.Secondary_AvDist.toFixed(2) + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + serviceProperties.Tertiary_AvDist.toFixed(2) + "</span></div>";
+    var serviceBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + serviceProperties.Primary_AvDist.toFixed(0) + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + serviceProperties.Secondary_AvDist.toFixed(0) + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + serviceProperties.Tertiary_AvDist.toFixed(0) + "</span></div>";
 
     // Inserting bar graphs into query info HTML
     queryInfoDiv.innerHTML = serviceBarGraphHTML + "<div>Distances to Services in m</div>";
@@ -68,44 +66,68 @@ function displaySurroundingServices() {
     var queryInfoDiv = document.getElementById("query-info");
 
     // Surrounding Services Menu HTML
-    var surrServiceMenuHTML = "<div id=\"service-option-menu\">" +
-        "<div class=\"service-option\" id=\"primary\">" +
-        "<i class=\"fas fa-utensils fa-2x\"></i>" +
-        "<div id=\"service-units\">" +
-        "<p>10</p>" +
-        "</div>" +
-        "</div>" +
-        "<div class=\"service-option\" id=\"primary\">" +
-        "<i class=\"fas fa-hospital fa-2x\"></i>" +
-        "<div id=\"service-units\">" +
-        "<p>2</p>" +
-        "</div>" +
-        "</div>" +
-        "<div class=\"service-option\" id=\"secondary\">" +
-        "<i class=\"fas fa-shirt fa-2x\"></i>" +
-        "<div id=\"service-units\">" +
-        "<p>4</p>" +
-        "</div>" +
-        "</div>" +
-        "<div class=\"service-option\" id=\"tertiary\">" +
-        "<i class=\"fas fa-glasses fa-2x\"></i>" +
-        "<div id=\"service-units\">" +
-        "<p>1</p>" +
-        "</div>" +
-        "</div>" +
-        "<div class=\"service-option\" id=\"tertiary\">" +
-        "<i class=\"fas fa-person-swimming fa-2x\"></i>" +
-        "<div id=\"service-units\">" +
-        "<p>2</p>" +
-        "</div>" +
-        "</div>" +
-        "</div>";
+    // list of icons
+    var serviceCategoryIcons = { "Food": "fas fa-utensils fa-2x", "Health": "fas fa-house-medical fa-2x", "Sanitation": "fas fa-restroom fa-2x", "Recreation": "fas fa-champagne-glasses fa-2x", "Education": "fas fa-book fa-2x", "Government": "fas fa-landmark-flag fa-2x", "Laundry": "fas fa-jug-detergent fa-2x", "Culture": "fas fa-masks-theater fa-2x", "Shelter": "fas fa-person-shelter fa-2x", "Finance": "fas fa-coins fa-2x", "Electronics": "fas fa-mobile-retro fa-2x", "Store": "fas fa-store fa-2x", "BeautyNFashion": "fas fa-shirt fa-2x" };
 
+    // fetch and read category services JSON
+
+    var serviceCategoryJSON = readGeoJsonObj("category_services.json");
+    console.log("Category of Services JSON: ", serviceCategoryJSON);
+
+    // loop through JSON and match node ID
+
+    var nodeServiceData;
+    for (i = 0; i < serviceCategoryJSON.features.length; i++) {
+        if (nodeProperties.Id == serviceCategoryJSON.features[i].Id) {
+            nodeServiceData = serviceCategoryJSON.features[i].CategoryData;
+        }
+    }
+
+    console.log("The service category data for the current node is ", nodeServiceData);
+
+    // loop through category data for the services at the current node
+    var surrServiceMenuHTML = "<div id=\"service-option-menu\">";
+
+    var serviceUnit;
+    for (serviceType in nodeServiceData) {
+        {
+            // loop through all categories and append into HTML string
+            console.log("Node Service Data Type", nodeServiceData[serviceType]);
+            // check if the service is primary/secondary/tertiary and assign color
+            // check the category of the service and assign icon
+            for (category in nodeServiceData[serviceType]) {
+
+                // check if the current query is diversity/closeness and display count or avg dist accordingly
+                if (selectedQuery == "Diversity of Services and Amenities") {
+                    serviceUnit = nodeServiceData[serviceType][category].Count;
+                } else if (selectedQuery == "Closeness of Services and Amenities") {
+                    serviceUnit = nodeServiceData[serviceType][category].avgDist;
+                }
+                // Replace "BeautyNFashion" with "Beauty & Fashion" for UI
+                var catName;
+
+                if (category == "BeautyNFashion") {
+                    catName = "Beauty & Fashion";
+                } else {
+                    catName = category;
+                }
+
+                surrServiceMenuHTML += "<div class=\"service-option\" id=\"" + serviceType.toLowerCase() + "\">" + "<div id=\"service-category-name\">" +
+                    "<p>" + catName.toLowerCase() + "</p>" + "</div>" +
+                    "<i class=\"" + serviceCategoryIcons[category] + "\"></i>" + "<div id=\"service-units\">" +
+                    "<p>" + serviceUnit + "</p>" + "</div>" + "</div>";
+            }
+
+        }
+    }
+
+    // insert HTML into sidebar
     queryInfoDiv.innerHTML += surrServiceMenuHTML + "<p>Surrounding Services and Amenities</p>";
 }
 
 function calDiversityServices() {
 
+    hideLines();
     document.getElementById("transit-option-menu").innerHTML = "";
 
     console.log("Diversity of Primary, Secondary and Tertiary Services");
@@ -135,11 +157,13 @@ function calDiversityServices() {
 }
 
 function calClosenessServices() {
+
+    hideLines();
     document.getElementById("transit-option-menu").innerHTML = "";
     // document.getElementById("query-info").innerHTML = "";
 
     console.log("Calculating Closeness of Services and Amenities");
-    // TODO: Calculate closeness of services and amenities
+    // Calculate closeness of services and amenities
 
     fetchServiceProps();
     displayServiceDistanceBarGraphs();

@@ -1,5 +1,5 @@
 function queryDropDown() {
-    var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Accessibility", "Greenery", "Walkability", "Connectivity"];
+    var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity", "Greenery", "Walkability"];
     var dropDownDiv = document.getElementById("dropdown-content");
     var dropDownHTML = "";
 
@@ -37,26 +37,31 @@ function callQueryCalFunc() {
             break;
         case "Multimodality":
             fetchGeoJson("city.geojson");
-            displayLines();
-            setTimeout(calMultiModality, 200);
+            fetchGeoJson("Lines.geojson");
+            setTimeout(calMultiModality, 300);
+
             break;
-        case "Accessibility": console.log("Accessibility");
+        case "Universal Design & Accessibility":
             // fetchGeoJson("city.geojson");
-            displayAccessibilityGraphs();
+            setTimeout(calAccessibility, 200);
             break;
         case "Diversity of Services and Amenities":
             fetchGeoJson("services.geojson");
+            fetchGeoJson("category_services.json");
             setTimeout(calDiversityServices, 200);
             break;
         case "Closeness of Services and Amenities":
             fetchGeoJson("services.geojson");
+            fetchGeoJson("category_services.json");
             setTimeout(calClosenessServices, 200);
             break;
         case "Greenery": console.log("Greenery");
             break;
         case "Walkability": console.log("Walkability");
             break;
-        case "Connectivity": console.log("Connectivity");
+        case "Transit Connectivity":
+            fetchGeoJson("connectivity.geojson");
+            setTimeout(calConnectivity, 200);
             break;
         default: console.log("missing query");
     }
@@ -64,6 +69,8 @@ function callQueryCalFunc() {
 }
 
 function displayQueryRating(ratingValue) {
+
+    // TODO: Fix the function call and rating insert errors
 
     var ratingWord = "";
     if ((ratingValue >= 2) && (ratingValue < 5)) {
