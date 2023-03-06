@@ -75,6 +75,6 @@ function calAccessibility() {
 
     console.log("Accessibility Rating: ", accessibilityRatingVal);
 
-    displayQueryRating(accessibilityRatingVal);
+    displayQueryRating(accessibilityRatingVal.toFixed(0));
 
 }
