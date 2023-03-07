@@ -31,9 +31,9 @@
             "Id": "43"
         },
         {
-            "Centrality": 1,
-            "Closeness": 1,
-            "Betweenness": 1,
+            "Centrality": 8,
+            "Closeness": 6,
+            "Betweenness": 7,
             "Id": "92"
         },
         {
@@ -97,9 +97,9 @@
             "Id": "15"
         },
         {
-            "Centrality": 1,
-            "Closeness": 1,
-            "Betweenness": 1,
+            "Centrality": 7,
+            "Closeness": 8,
+            "Betweenness": 8,
             "Id": "91"
         },
         {

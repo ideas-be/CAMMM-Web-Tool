@@ -37,7 +37,7 @@ function openSidebar(nodeProps) {
     document.getElementById("node-name").innerHTML = "<h2>" + nodeProperties.Name + "</h2>";
 
     // Node Street View
-    document.getElementById("node-street-view").innerHTML = "<iframe src=\"" + nodeProperties.URL + "\">Street View</iframe>";
+    // document.getElementById("node-street-view").innerHTML = "<iframe src=\"" + nodeProperties.URL + "\">Street View</iframe>";
 
     //     isOpened = false;
     // }
@@ -61,7 +61,7 @@ function closeSidebar() {
     document.getElementById("node-name").innerHTML = "";
 
     // Node Street View
-    document.getElementById("node-street-view").innerHTML = "";
+    // document.getElementById("node-street-view").innerHTML = "";
 
     document.getElementById("main").style.marginRight = "0";
 
