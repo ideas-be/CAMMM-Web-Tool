@@ -32,7 +32,15 @@ https://miro.com/app/board/o9J_kgmIpbw=/
 ![CAMMM Web Atlas](Images/GithubDocs/2022_05_03_Current_Prototype_Screenshot.png)
 ![v2 mockups](Images/GithubDocs/figma-v2-mockups.png)
 
+# Agenda for the 2023-03-28
 
+- Brief presentation of the Atlas to MDes student.
+- Finish the Encyclopedia Chapter, final touches.
+- Update of merging different jurisdiction data for Laval (STM+STL+RTL+EXO)
+- Discussion on the Bixi and Communauto integration.
+- Review the landing page for multiple cities.
+
+In regards to someone else to work on th back end, I am looking for someone that has experience in using Python (or C++) + Spatial Analysis that can join the effort to accelerate the development of the Atlas. I will update you during our meeting on the results of my search.
 
 ----------------------------------------------------------------------
   
