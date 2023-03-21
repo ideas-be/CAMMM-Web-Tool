@@ -3,7 +3,7 @@ let geojsonObjs = [];
 let objNames = [];
 
 function fetchGeoJson(jsonFile) {
-    var fileName = "Data/" + jsonFile;
+    var fileName = "Data/Montreal_Island/" + jsonFile;
     // READING AND PARSING CITY JSON
     fetch(fileName).then(function (response) {
         return response.json();

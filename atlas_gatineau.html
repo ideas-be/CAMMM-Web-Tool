@@ -9,7 +9,7 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
     <link rel="stylesheet" href="Styles/UIv2.css">
     <script src="Scripts/JavaScript/sidebar.js"></script>
-    <script src="Scripts/JavaScript/readFiles/readMMRFiles.js"></script>
+    <script src="Scripts/JavaScript/readFiles/readGatineauFiles.js"></script>
     <script src="Scripts/JavaScript/query.js"></script>
     <script src="Scripts/JavaScript/lines.js"></script>
     <script src="Scripts/JavaScript/accessibility.js"></script>
@@ -56,8 +56,8 @@
         const map = new mapboxgl.Map({
             container: 'map',
             style: shortURL + 'ckzekgdsr001k14qfh7hkmabp',
-            center: [-73.624701, 45.525104],
-            zoom: 11.44
+            center: [-75.721433, 45.457787],
+            zoom: 11.46
         });
 
         var centerTemp = [];
@@ -225,7 +225,7 @@
         var obj;
         var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
         function readNodes() {
-            a.open('GET', "Data/Montreal_Metropolitan_Region/general.geojson", true);  // This is reading the JSON FILE 
+            a.open('GET', "Data/Gatineau/general.geojson", true);  // This is reading the JSON FILE 
             console.log("Reading the popup info file to load JSON");
 
             a.onreadystatechange = function () {  //When the JSON file is open it starts a function 

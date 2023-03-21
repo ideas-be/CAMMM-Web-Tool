@@ -11,6 +11,7 @@
     <script src="Scripts/JavaScript/sidebar.js"></script>
     <script src="Scripts/JavaScript/readFiles/readMMRFiles.js"></script>
     <script src="Scripts/JavaScript/query.js"></script>
+    <script src="Scripts/JavaScript/borough.js"></script>
     <script src="Scripts/JavaScript/lines.js"></script>
     <script src="Scripts/JavaScript/accessibility.js"></script>
     <script src="Scripts/JavaScript/greenery.js"></script>
@@ -61,6 +62,8 @@
         });
 
         var centerTemp = [];
+
+        setTimeout(displayBoroughs, 200);
 
         function loadNodes() {
             map.on('load', () => {

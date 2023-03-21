@@ -1,4 +1,5 @@
-var cityList = ["Montreal Island", "Montreal Metropolitan Region", "Quebec City", "Trois Rivieres", "Sherbrooke", "Gatineau"];
+var cityList = ["Montreal Island", "Montreal Metropolitan Region", "Quebec City", "Trois Rivieres", "Gatineau"];
+var cityMapURLList = ["./atlas_montreal_island.html", "./atlas_montreal_metropolitan_region.html", "./atlas_quebec_city.html", "./atlas_trois_rivieres.html", "./atlas_gatineau.html"];
 
 var selectedCities = [];
 
@@ -38,6 +39,8 @@ function removeCity(filterNum) {
 
 function openCityTabs() {
     for (city in selectedCities) {
-        window.open("./cammm_atlas.html");
+        var index = cityList.indexOf(selectedCities[city]);
+        console.log("index of selected city: ", index);
+        window.open(cityMapURLList[index]);
     }
 }
