@@ -11,6 +11,7 @@
     <script src="Scripts/JavaScript/sidebar.js"></script>
     <script src="Scripts/JavaScript/readFiles/readMIFiles.js"></script>
     <script src="Scripts/JavaScript/borough.js"></script>
+    <script src="Scripts/JavaScript/borough_sidebar.js"></script>
     <script src="Scripts/JavaScript/query.js"></script>
     <script src="Scripts/JavaScript/lines.js"></script>
     <script src="Scripts/JavaScript/accessibility.js"></script>
@@ -39,6 +40,13 @@
         <div id="transit-option-menu"></div>
     </div>
 
+    <!-- borough sidebar code -->
+    <div id="myBoroughSidebar" class="sidebar">
+        <a class="close-btn" onclick="closeBoroughSidebar();">x</a>
+        <div style="height: 20px;"></div>
+        <div id="borough-info"></div>
+    </div>
+
     <div id="main">
         <div id="map">
         </div>
@@ -64,6 +72,7 @@
         var centerTemp = [];
 
         setTimeout(displayBoroughs, 200);
+        setTimeout(clickBoroughs, 250);
 
         function loadNodes() {
             map.on('load', () => {
