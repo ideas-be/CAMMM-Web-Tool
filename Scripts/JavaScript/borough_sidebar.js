@@ -13,6 +13,9 @@ function openBoroughSidebar(boroughProps) {
     document.getElementById("map").style.marginRight = "300px";
 
     // TODO: Display Borough Info Here
+    var boroughInfoHTML = "<p>Borough Name</p><h2 id=\"borough-name\">" + boroughProperties.NOM + "</h2>" +
+        "<div id=\"borough-area\"><p>Area: <strong>" + boroughProperties.AIRE + " sq.m. </strong></p><div>";
+    document.getElementById("borough-info").innerHTML += boroughInfoHTML;
 
 };
 
@@ -26,6 +29,7 @@ function closeBoroughSidebar() {
     sidebarDiv.style.padding = "0";
 
     document.getElementById("main").style.marginRight = "0";
+    document.getElementById("borough-info").innerHTML = "";
 
     setTimeout(hideSelectedBorough, 100);
     setTimeout(showBoroughs, 100);

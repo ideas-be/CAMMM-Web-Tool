@@ -78,7 +78,7 @@ function clickBoroughs() {
         hideBoroughs();
 
         console.log("Opening Sidebar for Borough-level Info!!!");
-        openBoroughSidebar(selectedBorough);
+        openBoroughSidebar(selectedBorough[0].properties);
     });
 }
 

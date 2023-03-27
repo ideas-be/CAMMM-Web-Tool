@@ -15,7 +15,7 @@ function openSidebar(nodeProps) {
         getSelectedQuery(selectedQuery);
     }
 
-
+    closeBoroughSidebar();
     nodeProperties = nodeProps;
     nodeCategory = assignCategory();
     console.log(nodeProperties);
