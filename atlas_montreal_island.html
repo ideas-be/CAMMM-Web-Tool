@@ -50,7 +50,10 @@
     <div id="main">
         <div id="map">
         </div>
-        <h1 class="cammm-title">CAMMM</h1>
+        <span id="atlas-banner">
+            <h1 class="cammm-title">CAMMM</h1>
+            <div id="borough-toggle"></div>
+        </span>
         <div id="query-dropdown">
             <div class="dropdown"><button class="dropbtn" id="dropbtn">Select Query<i
                         class="fas fa-chevron-down"></i></button>
@@ -71,6 +74,7 @@
 
         var centerTemp = [];
 
+        setTimeout(insertBoroughToggle, 100);
         setTimeout(displayBoroughs, 200);
         setTimeout(clickBoroughs, 250);
 

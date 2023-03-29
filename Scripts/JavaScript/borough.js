@@ -140,3 +140,14 @@ function hideSelectedBorough() {
     selectedBorough = [];
     boroughCenter = [];
 }
+//  ~(=^‥^)ノ
+
+function insertBoroughToggle() {
+    var boroughToggleHTML = "<p class=\"toggleText\">" +
+        "<label class=\"switch\" >" +
+        "<input type=\"checkbox\" id=\"boroughtoggBtn\" onchange=\"\">" +
+        "<span class=\"slider round\"></span>" +
+        "</label>     Borough" +
+        "</p>";
+    document.getElementById("borough-toggle").innerHTML = boroughToggleHTML;
+}

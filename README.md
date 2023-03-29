@@ -1,3 +1,53 @@
+## OOM Pipeline (March-April)
+- Finish the multi-jurisdiction or Metropolitan Area tool
+- Add the BIXI data at Montreal
+- Add the BIXI data at Montreal MA 
+- process the Montreal Metropolitan Area
+    - Multimodality
+    - Universal Design
+    - Diversity of services and amenites
+    - Closeness of services and amenites
+    - Transit connectivity
+- process Another CITY CHECK DATA
+    - Multimodality
+    - Universal Design
+    - Diversity of services and amenites
+    - Closeness of services and amenites
+    - Transit connectivity
+- Borrough analysis
+- TOD index
+  - brainstorm
+- Walkability
+- Greenery
+- Route analysis
+
+
+## FN Pipeline (March-April)
+- Figma mockup of borough sidebar
+- ~~work on toggle for polygons~~
+- Work on TOD index sidebar
+- Work on Greenery sidebar
+- Work on Walkability sidebar
+- Fix landing page city dropdown
+
+
+## Joint Pipeline (March-April)
+- Brainstorm Safety query
+- Heatmap query
+- Work on the article for a journal
+- better explanations in the sidebar
+- Altering the maps with the queries and the side bar
+- Create a landing side bar
+
+
+## For the next agenda 
+
+- The other university thingy
+- Discuss color paallette for the borroughs 
+- Update on the side-bar
+- brainstorm on the managemente of the Metropolitan area iconografy and side-bar
+
+
 ## CAMMM v2 UI Task List
 - Dynamic query rating on sidebar
 - Add transit option horizontal scrollable list
@@ -11,14 +61,9 @@
     Medium Hub - 5+ bus stops + 1 Rail/metro station
     Large Hub - 1+ bus stops + 2 Rail/Metro station
 
-# Currently working on: 
-Continue reformatting fields in geojson for UI sidebar info
+# For Later: 
 Make Inforgraphics interactive pages + embed on website - https://indd.adobe.com/view/60c23b28-eaec-4f56-bb1f-5b400a5b3296 
 Keep working on Documentation - Section 2 Processing Tool - Work on flowcharts for each Operational and Analysis function 
-Flowchart cheatsheet - https://www.breezetree.com/articles/flow-chart-symbols  https://www.conceptdraw.com/examples/flowchart-symbols-cheat-sheet
-Fix indentation in markdown numbered list
-Finish standalone mode for multi-browser solution (see indexStandalone HTML) https://www.w3schools.com/js/js_window.asp
-
 Add this note to the docs: Direct is now Individual and Node is now Cluster.
 #### Mapbox Interactive Options API Docs
 https://docs.mapbox.com/mapbox-gl-js/api/map/#instance-members-interaction-handlers
