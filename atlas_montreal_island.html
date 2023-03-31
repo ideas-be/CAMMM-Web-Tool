@@ -50,10 +50,7 @@
     <div id="main">
         <div id="map">
         </div>
-        <span id="atlas-banner">
-            <h1 class="cammm-title">CAMMM</h1>
-            <div id="borough-toggle"></div>
-        </span>
+        <h1 class="cammm-title">CAMMM</h1>
         <div id="query-dropdown">
             <div class="dropdown"><button class="dropbtn" id="dropbtn">Select Query<i
                         class="fas fa-chevron-down"></i></button>
@@ -69,12 +66,11 @@
             container: 'map',
             style: shortURL + 'ckzekgdsr001k14qfh7hkmabp',
             center: [-73.624701, 45.525104],
-            zoom: 11.44
+            zoom: 10.20
         });
 
         var centerTemp = [];
 
-        setTimeout(insertBoroughToggle, 100);
         setTimeout(displayBoroughs, 200);
         setTimeout(clickBoroughs, 250);
 
@@ -85,6 +81,14 @@
                     'data': {
                         'type': 'FeatureCollection',
                         'features': clusterFeatures,
+                    }
+                });
+
+                map.addSource('large-clusters', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': largeClusterFeatures,
                     }
                 });
 
@@ -103,7 +107,15 @@
                     'source': 'clusters',
                     'paint': {
                         'circle-color': '#f15924',
-                        'circle-opacity': 0.5,
+                        'circle-opacity': [
+                            'interpolate',
+                            ['exponential', 0.5],
+                            ['zoom'],
+                            11,
+                            0,
+                            14,
+                            0.5
+                        ],
                         'circle-radius': 8,
                     }
                 }
@@ -137,6 +149,19 @@
                     }
                 });
 
+                // Add a layer showing the large clusters.
+                map.addLayer({
+                    'id': 'large-clusters',
+                    'type': 'circle',
+                    'source': 'large-clusters',
+                    'paint': {
+                        'circle-color': '#f15924',
+                        'circle-opacity': 0.5,
+                        'circle-radius': 8,
+                    }
+                }
+                );
+
                 // Add a layer showing the hubs.
                 map.addLayer({
                     'id': 'hubs',
@@ -145,7 +170,15 @@
                     'paint': {
                         'circle-color': '#d81b60',
                         'circle-opacity': 0.7,
-                        'circle-radius': 12,
+                        'circle-radius': [
+                            'interpolate',
+                            ['exponential', 0.5],
+                            ['zoom'],
+                            11,
+                            9,
+                            14,
+                            14
+                        ],
                     }
                 }
                 );
@@ -182,6 +215,7 @@
 
                 // Change color, display label and zoom into node
                 map.on('click', 'clusters', (e) => {
+                    // TODO: Isolate the selected cluster in another layer and show label
                     // Change the cursor style as a UI indicator.
                     map.getCanvas().style.cursor = 'pointer';
                     map.setPaintProperty('clusters', 'circle-color', '#008080');
@@ -207,6 +241,7 @@
 
                 // Revert color, hide label and zoom out of node
                 map.on('click', 'hubs', (e) => {
+                    // TODO: Isolate the selected hub in another layer and show label
                     // Change the cursor style as a UI indicator.
 
                     map.getCanvas().style.cursor = 'pointer';
@@ -237,6 +272,7 @@
 
         // Read features JSON with new version of nodes
         var clusterFeatures = [];
+        var largeClusterFeatures = [];
         var hubFeatures = [];
         var obj;
         var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
@@ -253,6 +289,9 @@
                     clusterFeatures = getClusters();
                     console.log("Cluster Features:\n");
                     console.log(clusterFeatures);
+                    largeClusterFeatures = getLargeClusters();
+                    console.log("Large Cluster Features:\n");
+                    console.log(largeClusterFeatures);
                     hubFeatures = getHubs();
                     console.log("Hub Features:\n");
                     console.log(hubFeatures);

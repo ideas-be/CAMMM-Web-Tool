@@ -31,8 +31,8 @@ function displayBoroughs() {
         'type': 'fill',
         'source': 'boroughs',
         'paint': {
-            'fill-color': '#eda18c',
-            'fill-outline-color': '#d7380c',
+            'fill-color': '#AD84E3',
+            'fill-outline-color': '#7d4cbe',
             'fill-opacity': 0.4,
         }
     });
@@ -43,7 +43,7 @@ function displayBoroughs() {
         'type': 'line',
         'source': 'boroughs',
         'paint': {
-            'line-color': '#d7380c',
+            'line-color': '#7d4cbe',
             'line-width': 2
         }
     });
@@ -83,7 +83,7 @@ function clickBoroughs() {
 }
 
 function displaySelectedBorough() {
-
+    // TODO: Render the selected borough under the existing clusters and hubs
     map.addSource('selected_borough', {
         'type': 'geojson',
         'data': {
@@ -98,8 +98,8 @@ function displaySelectedBorough() {
         'type': 'fill',
         'source': 'selected_borough',
         'paint': {
-            'fill-color': '#eda18c',
-            'fill-outline-color': '#d7380c',
+            'fill-color': '#AD84E3',
+            'fill-outline-color': '#7d4cbe',
             'fill-opacity': 0.6,
         }
     });
@@ -110,12 +110,13 @@ function displaySelectedBorough() {
         'type': 'line',
         'source': 'selected_borough',
         'paint': {
-            'line-color': '#d7380c',
+            'line-color': '#7d4cbe',
             'line-width': 2.5
         }
     });
 
     // Zoom into selected borough.
+    // TODO: Check why the zoom center doesn't update for borough
     map.flyTo({
         'center': boroughCenter,
         'zoom': 13, 'pitch': 45,
@@ -141,13 +142,3 @@ function hideSelectedBorough() {
     boroughCenter = [];
 }
 //  ~(=^‥^)ノ
-
-function insertBoroughToggle() {
-    var boroughToggleHTML = "<p class=\"toggleText\">" +
-        "<label class=\"switch\" >" +
-        "<input type=\"checkbox\" id=\"boroughtoggBtn\" onchange=\"\">" +
-        "<span class=\"slider round\"></span>" +
-        "</label>     Borough" +
-        "</p>";
-    document.getElementById("borough-toggle").innerHTML = boroughToggleHTML;
-}

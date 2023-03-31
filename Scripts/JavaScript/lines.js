@@ -65,10 +65,6 @@ function displayLines() {
     console.log(myLinesJson);
     console.log(myLinesJson.features);
 
-
-
-    // TODO: Refer tutorial and figure out how to display the lines
-
     console.log("Adding Lines as Source in MapBox");
     map.addSource('lines', {
         'type': 'geojson',

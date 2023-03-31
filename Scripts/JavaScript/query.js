@@ -70,8 +70,6 @@ function callQueryCalFunc() {
 
 function displayQueryRating(ratingValue) {
 
-    // TODO: Fix the function call and rating insert errors
-
     var ratingWord = "";
     if ((ratingValue >= 2) && (ratingValue < 5)) {
         ratingWord = "Needs to Improve";

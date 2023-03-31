@@ -35,12 +35,11 @@ function fetchConnectivityProps() {
 }
 
 function calConnectivity() {
-    // TODO: Calculate Connectivity rating for node
 
     hideLines();
     document.getElementById("transit-option-menu").innerHTML = "";
 
-    
+
     fetchConnectivityProps();
     displayConnectivityGraphs();
 

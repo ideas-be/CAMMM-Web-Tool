@@ -15,18 +15,18 @@ var nodeTransitNumber = 0;
 
 var RailData, MetroData, TramData, BusData;
 
-function fetchStopsLines() {
+function fetchStopsLines(nodeProps) {
     NumberRailStations = 0;
     NumberMetroStations = 0;
     NumberTramStops = 0;
     NumberBusStops = 0;
     // Rail-based transit
-    RailData = JSON.parse(nodeProperties.RailData);
-    MetroData = JSON.parse(nodeProperties.MetroData);
+    RailData = JSON.parse(nodeProps.RailData);
+    MetroData = JSON.parse(nodeProps.MetroData);
 
     // Street transit
-    TramData = JSON.parse(nodeProperties.TramData);
-    BusData = JSON.parse(nodeProperties.BusData);
+    TramData = JSON.parse(nodeProps.TramData);
+    BusData = JSON.parse(nodeProps.BusData);
 
     // Rail-based transit station number
     for (const key in RailData) {
@@ -48,6 +48,10 @@ function fetchStopsLines() {
     console.log("Number of Bus Stops: ", NumberBusStops);
 
 }
+
+// function fetchBusStops() {
+//     return (NumberBusStops);
+// }
 
 
 function displayStopsLines() {
@@ -99,7 +103,7 @@ function assignCategory() {
     // Medium Hub - 5+ bus stops + 1 Rail/metro station
     // Large Hub - 1+ bus stops + 2 Rail/Metro station
 
-    fetchStopsLines();
+    fetchStopsLines(nodeProperties);
 
     if (nodeProperties.Type == "Cluster") {
 
