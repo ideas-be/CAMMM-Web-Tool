@@ -71,7 +71,9 @@ function closeSidebar() {
 function zoomOutNode() {
 
     console.log("pop up closed, reverting to original color");
-    map.setPaintProperty('clusters', 'circle-color', '#f15924');
+    map.setPaintProperty('large-clusters', 'circle-color', '#f15924');
+    map.setPaintProperty('medium-clusters', 'circle-color', '#f15924');
+    map.setPaintProperty('small-clusters', 'circle-color', '#f15924');
     map.setPaintProperty('hubs', 'circle-color', '#d81b60');
     map.setLayoutProperty('hub-labels', 'visibility', 'none');
     map.setLayoutProperty('cluster-labels', 'visibility', 'none');
@@ -91,53 +93,4 @@ function zoomOutNode() {
 
 function fetchNodeProps() {
     return nodeProperties;
-}
-
-function getClusters() {
-    var clusterList = [];
-    // console.log(myJson);
-    for (i = 0; i < myJson.features.length; i++) {
-        if (myJson.features[i].properties.Type == "Cluster")
-            clusterList.push(myJson.features[i]);
-    }
-    return (clusterList);
-}
-
-function getLargeClusters() {
-    var largeClusterList = [];
-    var NumBusStops;
-    var BusesData;
-    var count = 0;
-    // console.log(myJson);
-    for (i = 0; i < myJson.features.length; i++) {
-        NumBusStops = 0;
-        if (myJson.features[i].properties.Type == "Cluster") {
-            BusesData = myJson.features[i].properties.BusData;
-            // console.log(BusesData);
-            for (const key in BusesData) {
-                // console.log(key);
-                NumBusStops += 1;
-            }
-            console.log("Number of Bus Stops: ", NumBusStops);
-            if (NumBusStops >= 6) {
-                count++;
-                largeClusterList.push(myJson.features[i]);
-            }
-        }
-
-    }
-    console.log("Number of Large Clusters: ", count);
-    // console.log("Large Clusters are: ", largeClusterList);
-    return (largeClusterList);
-}
-
-
-function getHubs() {
-    var hubList = [];
-    // console.log(myJson);
-    for (i = 0; i < myJson.features.length; i++) {
-        if (myJson.features[i].properties.Type == "Hub")
-            hubList.push(myJson.features[i]);
-    }
-    return (hubList);
 }

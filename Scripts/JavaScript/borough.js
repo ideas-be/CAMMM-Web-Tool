@@ -71,7 +71,8 @@ function clickBoroughs() {
         map.getCanvas().style.cursor = 'pointer';
 
         selectedBorough.push(e.features[0]);
-        boroughCenter = [selectedBorough[0].properties.cent_Lon - 0.01, selectedBorough[0].properties.cent_Lat + 0.04];
+        console.log("Selected borough is: ", selectedBorough);
+        boroughCenter = [selectedBorough[0].properties.Longitude + 0.0125, selectedBorough[0].properties.Latitude];
         console.log("Center of the Selected Borough is: ", boroughCenter);
         setTimeout(displaySelectedBorough, 300);
 
@@ -83,7 +84,7 @@ function clickBoroughs() {
 }
 
 function displaySelectedBorough() {
-    // TODO: Render the selected borough under the existing clusters and hubs
+    // Render the selected borough under the existing clusters and hubs
     map.addSource('selected_borough', {
         'type': 'geojson',
         'data': {
@@ -100,9 +101,18 @@ function displaySelectedBorough() {
         'paint': {
             'fill-color': '#AD84E3',
             'fill-outline-color': '#7d4cbe',
-            'fill-opacity': 0.6,
-        }
-    });
+            'fill-opacity': [
+                'interpolate',
+                ['exponential', 0.5],
+                ['zoom'],
+                11,
+                0.6,
+                14,
+                0.2
+            ],
+        },
+    }, 'small-clusters');
+
 
     // Add a layer showing the selected borough outline.
     map.addLayer({
@@ -113,10 +123,16 @@ function displaySelectedBorough() {
             'line-color': '#7d4cbe',
             'line-width': 2.5
         }
-    });
+    }, 'selected_borough_polygon');
+
+    // Push the selected borough layers underneath the node layers in the map
+    map.moveLayer('small-clusters');
+    map.moveLayer('medium-clusters');
+    map.moveLayer('large-clusters');
+    map.moveLayer('hub-labels');
+    map.moveLayer('hubs');
 
     // Zoom into selected borough.
-    // TODO: Check why the zoom center doesn't update for borough
     map.flyTo({
         'center': boroughCenter,
         'zoom': 13, 'pitch': 45,
