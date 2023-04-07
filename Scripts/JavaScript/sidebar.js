@@ -15,7 +15,7 @@ function openSidebar(nodeProps) {
         getSelectedQuery(selectedQuery);
     }
 
-    closeBoroughSidebar();
+    // closeBoroughSidebar();
     nodeProperties = nodeProps;
     nodeCategory = assignCategory();
     console.log(nodeProperties);
@@ -44,6 +44,9 @@ function openSidebar(nodeProps) {
 };
 
 function closeSidebar() {
+
+    // Hide node query dropdown at closed sidebar
+    document.getElementById("query-dropdown").style.display = "none";
 
     zoomOutNode();
     var sidebarDiv = document.getElementById("mySidebar");

@@ -1,0 +1,60 @@
+{
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "NOM": "Outremont",
+                "TYPE": "Arrondissement",
+                "CODEID": "11",
+                "ABREV": "OM",
+                "NUM": 5,
+                "CODEMAMROT": "REM05",
+                "AIRE": 3813355.7232650402,
+                "MUNID": 66023,
+                "PERIM": 10836.670634088199,
+                "Longitude": -73.60865493,
+                "Latitude": 45.515620666499998,
+                "PopulationInThousands": 73.608,
+                "NumOfHubs": 3,
+                "NumOfClusters": 342,
+                "Multimodality": {
+                    "AvailableModes": [
+                        "bus",
+                        "metro",
+                        "train",
+                        "rail",
+                        "car-sharing",
+                        "bike-sharing"
+                    ]
+                },
+                "AvailableServices": {
+                    "NumOfFood": 20,
+                    "AvgDistFood": 234,
+                    "NumOfBank": 20,
+                    "AvgDistBank": 234
+                },
+                "DiversityOfServices": {
+                    "NumOfPrimary": 230,
+                    "NumOfSecondary": 34,
+                    "NumOfTertiary": 70
+                },
+                "ClosenessOfServices": {
+                    "AvgDistPrimary": 540,
+                    "AvgDistSecondary": 620,
+                    "AvgDistTertiary": 649
+                },
+                "TransitConnectivity": {
+                    "Centrality": 6,
+                    "Closeness": 8,
+                    "Betweenness": 7
+                },
+                "UniversalAccessibility": {
+                    "TotalBusStops": 200,
+                    "AccessibleBusStops": 165,
+                    "TotalMetroStations": 4,
+                    "AccessibleMetroStations": 2
+                }
+            }
+        }
+    ]
+}

@@ -53,7 +53,7 @@
 			</a>
 
 			<a class="cammm-button" id="start-button" onclick="openCityTabs();">
-				<i class="fas fa-forward-fast"></i>Skip & Start
+				<i class="fas fa-forward-fast"></i>Start
 			</a>
 		</div>
 
@@ -123,6 +123,12 @@
 				}
 			}
 		});
+		// TODO: add the active city directly in the filters below once clicked from dropdown
+		// inp.addEventListener("click", function (e) {
+		// 	addCity();
+		// 	document.getElementById("city-search-input").value = "";
+		// });
+
 		/*execute a function presses a key on the keyboard:*/
 		inp.addEventListener("keydown", function (e) {
 			var x = document.getElementById(this.id + "autocomplete-list");

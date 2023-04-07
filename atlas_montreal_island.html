@@ -61,6 +61,10 @@
     </div>
     <!-- testing a sidebar code -->
     <script>
+
+        // Hide node query dropdown at inital load
+        document.getElementById("query-dropdown").style.display = "none";
+
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 
@@ -255,78 +259,110 @@
                 map.on('click', 'small-clusters', (e) => {
                     // TODO: Isolate the selected cluster in another layer and show label
                     // Change the cursor style as a UI indicator.
-                    map.getCanvas().style.cursor = 'pointer';
-                    map.setPaintProperty('small-clusters', 'circle-color', '#008080');
-                    // map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
+                    var boroughLayer = map.getLayer("selected_borough_polygon");
 
-                    centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
+                    if (typeof (boroughLayer) != "undefined") {
+                        console.log("Borough was selected before this cluster");
 
-                    map.flyTo({
-                        'center': centerTemp,
-                        'zoom': 16, 'pitch': 60,
-                        // 'bearing': 90,
-                        'speed': 0.2,
-                        'curve': 1,
-                        'duration': 3000,
-                        'essential': true,
-                        'easing': function (t) {
-                            return t;
-                        }
-                    });
+                        // Now start cluster interactions
+                        map.getCanvas().style.cursor = 'pointer';
+                        map.setPaintProperty('small-clusters', 'circle-color', '#008080');
+                        // map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
 
-                    openSidebar(e.features[0].properties);
+                        centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
+
+                        map.flyTo({
+                            'center': centerTemp,
+                            'zoom': 16, 'pitch': 60,
+                            // 'bearing': 90,
+                            'speed': 0.2,
+                            'curve': 1,
+                            'duration': 3000,
+                            'essential': true,
+                            'easing': function (t) {
+                                return t;
+                            }
+                        });
+
+                        // Show node query dropdown on click
+                        document.getElementById("query-dropdown").style.display = "block";
+                        openSidebar(e.features[0].properties);
+
+                    } else {
+                        console.log("click a borough first!");
+                    }
+
                 });
 
                 // Click Large Cluster Function
                 map.on('click', 'medium-clusters', (e) => {
                     // TODO: Isolate the selected cluster in another layer and show label
+                    // TODO: Fix query dropdown hide and reveal for medium and large clusters
                     // Change the cursor style as a UI indicator.
-                    map.getCanvas().style.cursor = 'pointer';
-                    map.setPaintProperty('medium-clusters', 'circle-color', '#008080');
-                    // map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
+                    var boroughLayer = map.getLayer("selected_borough_polygon");
 
-                    centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
+                    if (typeof (boroughLayer) != "undefined") {
+                        console.log("Borough was selected before this cluster");
 
-                    map.flyTo({
-                        'center': centerTemp,
-                        'zoom': 16, 'pitch': 60,
-                        // 'bearing': 90,
-                        'speed': 0.2,
-                        'curve': 1,
-                        'duration': 3000,
-                        'essential': true,
-                        'easing': function (t) {
-                            return t;
-                        }
-                    });
+                        // Now start cluster interactions
+                        map.getCanvas().style.cursor = 'pointer';
+                        map.setPaintProperty('medium-clusters', 'circle-color', '#008080');
+                        // map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
 
-                    openSidebar(e.features[0].properties);
+                        centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
+
+                        map.flyTo({
+                            'center': centerTemp,
+                            'zoom': 16, 'pitch': 60,
+                            // 'bearing': 90,
+                            'speed': 0.2,
+                            'curve': 1,
+                            'duration': 3000,
+                            'essential': true,
+                            'easing': function (t) {
+                                return t;
+                            }
+                        });
+
+                        openSidebar(e.features[0].properties);
+                    } else {
+                        console.log("click a borough first!");
+                    }
                 });
 
                 // Click Large Cluster Function
                 map.on('click', 'large-clusters', (e) => {
                     // TODO: Isolate the selected cluster in another layer and show label
                     // Change the cursor style as a UI indicator.
-                    map.getCanvas().style.cursor = 'pointer';
-                    map.setPaintProperty('large-clusters', 'circle-color', '#008080');
-                    // map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
+                    var boroughLayer = map.getLayer("selected_borough_polygon");
 
-                    centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
+                    if (typeof (boroughLayer) != "undefined") {
+                        console.log("Borough was selected before this cluster");
 
-                    map.flyTo({
-                        'center': centerTemp,
-                        'zoom': 16, 'pitch': 60,
-                        // 'bearing': 90,
-                        'speed': 0.2,
-                        'curve': 1,
-                        'duration': 3000,
-                        'essential': true,
-                        'easing': function (t) {
-                            return t;
-                        }
-                    });
+                        // Now start cluster interactions
+                        map.getCanvas().style.cursor = 'pointer';
+                        map.setPaintProperty('large-clusters', 'circle-color', '#008080');
+                        // map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
 
-                    openSidebar(e.features[0].properties);
+                        centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
+
+                        map.flyTo({
+                            'center': centerTemp,
+                            'zoom': 16, 'pitch': 60,
+                            // 'bearing': 90,
+                            'speed': 0.2,
+                            'curve': 1,
+                            'duration': 3000,
+                            'essential': true,
+                            'easing': function (t) {
+                                return t;
+                            }
+                        });
+
+                        openSidebar(e.features[0].properties);
+                    } else {
+                        console.log("click a borough first!");
+                    }
                 });
 
                 // Click Hub Function
