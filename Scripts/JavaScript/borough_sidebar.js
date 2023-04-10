@@ -1,9 +1,9 @@
-var boroughProperties;
+var boroughQueryProps;
 
 
-function openBoroughSidebar(boroughProps) {
+function openBoroughSidebar(boroughQueries) {
 
-    boroughProperties = boroughProps;
+    boroughQueryProps = boroughQueries;
     console.log(boroughProperties);
 
     var sidebarDiv = document.getElementById("myBoroughSidebar");
@@ -13,8 +13,8 @@ function openBoroughSidebar(boroughProps) {
     document.getElementById("map").style.marginRight = "300px";
 
     // TODO: Display Borough Info Here
-    var boroughInfoHTML = "<p>Borough Name</p><h2 id=\"borough-name\">" + boroughProperties.NOM + "</h2>" +
-        "<div id=\"borough-area\"><p>Area: <strong>" + boroughProperties.AIRE + " sq.m. </strong></p><div>";
+    var boroughInfoHTML = "<p>Borough Name</p><h2 id=\"borough-name\">" + boroughQueryProps.NOM + "</h2>" +
+        "<div id=\"borough-area\"><p>Area: <strong>" + boroughQueryProps.AIRE + " sq.m. </strong></p><div>";
     document.getElementById("borough-info").innerHTML += boroughInfoHTML;
 
 };

@@ -1,8 +1,10 @@
-// This is where the JS related to the boroughs for each city will go
 var myBoroughsJson;
+var myBoroughQueryJson;
 var selectedBorough = [];
+var selectedBoroughQuery = [];
 var boroughCenter = [];
 fetchGeoJson("borough.geojson");
+
 
 function getBoroughsJson() {
     // Read the boroughs.geojson file and assign to variable
@@ -10,6 +12,26 @@ function getBoroughsJson() {
     console.log("Fetching Boroughs JSON!!!");
     console.log(myBoroughsJson);
     console.log(myBoroughsJson.features);
+}
+
+function getBoroughQueryJson() {
+    // Read the boroughs.geojson file and assign to variable
+    myBoroughQueryJson = readGeoJsonObj("borough_query.geojson");
+    console.log("Fetching Borough Query JSON!!!");
+    console.log(myBoroughQueryJson);
+}
+
+function getBoroughQueryProp() {
+    for (borough in myBoroughQueryJson) {
+
+        console.log("Borough in Query JSON: ", myBoroughQueryJson[borough][0]);
+        if (selectedBorough[0].properties.NOM == myBoroughQueryJson[borough][0].properties.NOM) {
+            console.log("There are query values for borough : ", myBoroughQueryJson[borough][0].properties.NOM);
+            selectedBoroughQuery = myBoroughQueryJson[borough][0].properties;
+        } else if (selectedBorough[0].properties.NOM != myBoroughQueryJson[borough][0].properties.NOM) {
+            console.log("There are no query values for this borough!");
+        }
+    }
 }
 
 function displayBoroughs() {
@@ -71,6 +93,9 @@ function clickBoroughs() {
         map.getCanvas().style.cursor = 'pointer';
 
         boroughQueryDropDown();
+        fetchGeoJson("borough_query.geojson");
+        setTimeout(getBoroughQueryJson, 100);
+        setTimeout(getBoroughQueryProp, 300);
 
         selectedBorough.push(e.features[0]);
         console.log("Selected borough is: ", selectedBorough);
@@ -81,7 +106,7 @@ function clickBoroughs() {
         hideBoroughs();
 
         console.log("Opening Sidebar for Borough-level Info!!!");
-        openBoroughSidebar(selectedBorough[0].properties);
+        openBoroughSidebar(selectedBoroughQuery);
     });
 }
 
