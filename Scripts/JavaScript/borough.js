@@ -70,6 +70,8 @@ function clickBoroughs() {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
 
+        boroughQueryDropDown();
+
         selectedBorough.push(e.features[0]);
         console.log("Selected borough is: ", selectedBorough);
         boroughCenter = [selectedBorough[0].properties.Longitude + 0.0125, selectedBorough[0].properties.Latitude];

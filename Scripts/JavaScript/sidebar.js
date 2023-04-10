@@ -48,6 +48,9 @@ function closeSidebar() {
     // Hide node query dropdown at closed sidebar
     document.getElementById("query-dropdown").style.display = "none";
 
+    // Show borough query dropdown at  closed node sidebar
+    document.getElementById("borough-query-dropdown").style.display = "block";
+
     zoomOutNode();
     var sidebarDiv = document.getElementById("mySidebar");
 

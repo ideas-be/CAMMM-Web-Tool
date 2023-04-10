@@ -373,13 +373,17 @@ h2 {
 }
 
 /* START OF DROPDOWN STYLE */
-#query-dropdown {
+.query-dropdown {
     margin-right: 80px;
     text-align: center;
     z-index: 101;
     float: right;
     position: relative;
     /* width: 100%; */
+}
+
+#borough-query-dropdown {
+    margin-top: 165px;
 }
 
 .dropDown {

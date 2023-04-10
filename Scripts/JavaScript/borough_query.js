@@ -1,11 +1,14 @@
-function queryDropDown() {
+function boroughQueryDropDown() {
+    // Show borough query dropdown at inital load
+    document.getElementById("borough-query-dropdown").style.display = "block";
+
     var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity", "Greenery", "Walkability"];
-    var dropDownDiv = document.getElementById("dropdown-content");
+    var dropDownDiv = document.getElementById("borough-dropdown-content");
     var dropDownHTML = "";
 
     for (i = 0; i < queryList.length; i++) {
         // console.log(queryList[i]);
-        dropDownHTML += "<a href=\"#\" onclick=\"getSelectedQuery(\'" + queryList[i] + "\');\">" + queryList[i] + "</a>";
+        dropDownHTML += "<a href=\"#\" onclick=\"getSelectedBoroughQuery(\'" + queryList[i] + "\');\">" + queryList[i] + "</a>";
     }
 
     dropDownDiv.innerHTML += dropDownHTML;
@@ -14,21 +17,21 @@ function queryDropDown() {
 var selectedQuery = "Select Query";
 // displayQueryRating(8);
 
-function getSelectedQuery(queryName) {
+function getSelectedBoroughQuery(queryName) {
     selectedQuery = queryName;
-    document.getElementById("dropbtn").innerHTML = selectedQuery + "<i class=\"fas fa-chevron-down\"></i>";
-    if (selectedQuery == "Diversity of Services and Amenities") {
-        document.getElementById("query-name").innerHTML = "Diversity rating:";
-    } else if (selectedQuery == "Closeness of Services and Amenities") {
-        document.getElementById("query-name").innerHTML = "Closeness rating:";
-    } else {
-        document.getElementById("query-name").innerHTML = selectedQuery + " rating:";
-    }
-    callQueryCalFunc();
+    document.getElementById("borough-dropbtn").innerHTML = selectedQuery + "<i class=\"fas fa-chevron-down\"></i>";
+    // if (selectedQuery == "Diversity of Services and Amenities") {
+    //     document.getElementById("query-name").innerHTML = "Diversity rating:";
+    // } else if (selectedQuery == "Closeness of Services and Amenities") {
+    //     document.getElementById("query-name").innerHTML = "Closeness rating:";
+    // } else {
+    //     document.getElementById("query-name").innerHTML = selectedQuery + " rating:";
+    // }
+    callBoroughQueryCalFunc();
 
 }
 
-function callQueryCalFunc() {
+function callBoroughQueryCalFunc() {
 
     console.log("Running Query Function Calls with Switch Case");
 
@@ -38,37 +41,42 @@ function callQueryCalFunc() {
         case "Multimodality":
             fetchGeoJson("city.geojson");
             fetchGeoJson("Lines.geojson");
-            setTimeout(calMultiModality, 300);
+            console.log("Borough-level Multimodality!!");
+            // setTimeout(calBoroughMultiModality, 300);
 
             break;
         case "Universal Design & Accessibility":
+            console.log("Borough-level Universal Design & Accessibility!!");
             // fetchGeoJson("city.geojson");
-            setTimeout(calAccessibility, 200);
+            // setTimeout(calBoroughAccessibility, 200);
             break;
         case "Diversity of Services and Amenities":
             fetchGeoJson("services.geojson");
             fetchGeoJson("category_services.json");
-            setTimeout(calDiversityServices, 200);
+            console.log("Borough-level Diversity of Services and Amenities!!");
+            // setTimeout(calBoroughDiversityServices, 200);
             break;
         case "Closeness of Services and Amenities":
             fetchGeoJson("services.geojson");
             fetchGeoJson("category_services.json");
-            setTimeout(calClosenessServices, 200);
+            console.log("Borough-level Closeness of Services and Amenities!!");
+            // setTimeout(calBoroughClosenessServices, 200);
             break;
-        case "Greenery": console.log("Greenery");
+        case "Greenery": console.log("Borough-level Greenery");
             break;
-        case "Walkability": console.log("Walkability");
+        case "Walkability": console.log("Borough-level Walkability");
             break;
         case "Transit Connectivity":
             fetchGeoJson("connectivity.geojson");
-            setTimeout(calConnectivity, 200);
+            console.log("Borough-level Connectivity!!");
+            // setTimeout(calBoroughConnectivity, 200);
             break;
         default: console.log("missing query");
     }
 
 }
 
-function displayQueryRating(ratingValue) {
+function displayBoroughQueryRating(ratingValue) {
 
     var ratingWord = "";
     if ((ratingValue >= 2) && (ratingValue < 5)) {
@@ -85,3 +93,4 @@ function displayQueryRating(ratingValue) {
     var ratingHTML = "<span class=\"rating-value\">" + ratingValue + "</span><span style=\"color: #d81b60;\">/10\n</span><span class=\"rating-words\">" + ratingWord + "</span><div><progress id=\"rating-bar\" value=\"" + ratingValue * 10 + "\" max=\"100\"> 32% </progress></div>";
     queryRatingDiv.innerHTML = ratingHTML;
 }
+

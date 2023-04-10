@@ -21,6 +21,9 @@ function openBoroughSidebar(boroughProps) {
 
 function closeBoroughSidebar() {
 
+    // Hide borough query dropdown at closed sidebar
+    document.getElementById("borough-query-dropdown").style.display = "none";
+
     zoomOutBorough();
     var sidebarDiv = document.getElementById("myBoroughSidebar");
 
