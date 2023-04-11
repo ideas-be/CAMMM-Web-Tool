@@ -28,8 +28,11 @@ function getBoroughQueryProp() {
         if (selectedBorough[0].properties.NOM == myBoroughQueryJson[borough][0].properties.NOM) {
             console.log("There are query values for borough : ", myBoroughQueryJson[borough][0].properties.NOM);
             selectedBoroughQuery = myBoroughQueryJson[borough][0].properties;
+            console.log("Selected Borough Query Properties: ", selectedBoroughQuery);
         } else if (selectedBorough[0].properties.NOM != myBoroughQueryJson[borough][0].properties.NOM) {
             console.log("There are no query values for this borough!");
+            selectedBoroughQuery = selectedBorough[0].properties;
+            console.log("Selected Borough Query Properties: ", selectedBoroughQuery);
         }
     }
 }
@@ -92,7 +95,7 @@ function clickBoroughs() {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
 
-        boroughQueryDropDown();
+        // setTimeout(boroughQueryDropDown, 50);
         fetchGeoJson("borough_query.geojson");
         setTimeout(getBoroughQueryJson, 100);
         setTimeout(getBoroughQueryProp, 300);
@@ -106,7 +109,10 @@ function clickBoroughs() {
         hideBoroughs();
 
         console.log("Opening Sidebar for Borough-level Info!!!");
-        openBoroughSidebar(selectedBoroughQuery);
+        setTimeout(function () {
+            openBoroughSidebar(selectedBoroughQuery);
+        }, 400);
+
     });
 }
 

@@ -1,6 +1,6 @@
 function boroughQueryDropDown() {
     // Show borough query dropdown at inital load
-    document.getElementById("borough-query-dropdown").style.display = "block";
+    // document.getElementById("borough-query-dropdown").style.display = "block";
 
     var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity", "Greenery", "Walkability"];
     var dropDownDiv = document.getElementById("borough-dropdown-content");
@@ -11,7 +11,7 @@ function boroughQueryDropDown() {
         dropDownHTML += "<a href=\"#\" onclick=\"getSelectedBoroughQuery(\'" + queryList[i] + "\');\">" + queryList[i] + "</a>";
     }
 
-    dropDownDiv.innerHTML += dropDownHTML;
+    dropDownDiv.innerHTML = dropDownHTML;
 }
 
 var selectedQuery = "Select Query";
@@ -40,36 +40,26 @@ function callBoroughQueryCalFunc() {
             break;
         case "Multimodality":
             fetchGeoJson("city.geojson");
-            fetchGeoJson("Lines.geojson");
-            console.log("Borough-level Multimodality!!");
-            // setTimeout(calBoroughMultiModality, 300);
-
+            // fetchGeoJson("Lines.geojson");
+            setTimeout(displayBoroughMultimodality, 300);
             break;
         case "Universal Design & Accessibility":
-            console.log("Borough-level Universal Design & Accessibility!!");
-            // fetchGeoJson("city.geojson");
-            // setTimeout(calBoroughAccessibility, 200);
+            displayBoroughAccessibility();
             break;
         case "Diversity of Services and Amenities":
-            fetchGeoJson("services.geojson");
-            fetchGeoJson("category_services.json");
-            console.log("Borough-level Diversity of Services and Amenities!!");
-            // setTimeout(calBoroughDiversityServices, 200);
+            displayBoroughDiversity();
             break;
         case "Closeness of Services and Amenities":
-            fetchGeoJson("services.geojson");
-            fetchGeoJson("category_services.json");
-            console.log("Borough-level Closeness of Services and Amenities!!");
-            // setTimeout(calBoroughClosenessServices, 200);
+            displayBoroughCloseness();
             break;
-        case "Greenery": console.log("Borough-level Greenery");
+        case "Greenery":
+            displayBoroughGreenery();
             break;
-        case "Walkability": console.log("Borough-level Walkability");
+        case "Walkability":
+            displayBoroughWalkability();
             break;
         case "Transit Connectivity":
-            fetchGeoJson("connectivity.geojson");
-            console.log("Borough-level Connectivity!!");
-            // setTimeout(calBoroughConnectivity, 200);
+            displayBoroughConnectivity();
             break;
         default: console.log("missing query");
     }
@@ -89,8 +79,36 @@ function displayBoroughQueryRating(ratingValue) {
         ratingWord = "Excellent";
     }
 
-    var queryRatingDiv = document.getElementById("query-rating");
+    var queryRatingDiv = document.getElementById("borough-query-rating");
     var ratingHTML = "<span class=\"rating-value\">" + ratingValue + "</span><span style=\"color: #d81b60;\">/10\n</span><span class=\"rating-words\">" + ratingWord + "</span><div><progress id=\"rating-bar\" value=\"" + ratingValue * 10 + "\" max=\"100\"> 32% </progress></div>";
     queryRatingDiv.innerHTML = ratingHTML;
 }
 
+function displayBoroughMultimodality() {
+    // TODO: Display multimodality query info for selected borough
+    console.log("Borough-level Multimodality!!");
+}
+function displayBoroughDiversity() {
+    // TODO: Display diversity of services query info for selected borough
+    console.log("Borough-level Diversity of Services and Amenities!!");
+}
+function displayBoroughCloseness() {
+    // TODO: Display closeness of services query info for selected borough
+    console.log("Borough-level Closeness of Services and Amenities!!");
+}
+function displayBoroughAccessibility() {
+    // TODO: Display universal accessibility query info for selected borough
+    console.log("Borough-level Universal Design & Accessibility!!");
+}
+function displayBoroughConnectivity() {
+    // TODO: Display connectivity query info for selected borough
+    console.log("Borough-level Connectivity!!");
+}
+function displayBoroughGreenery() {
+    // TODO: Display greenery query info for selected borough
+    console.log("Borough-level Greenery");
+}
+function displayBoroughWalkability() {
+    // TODO: Display walkability query info for selected borough
+    console.log("Borough-level Walkability");
+}

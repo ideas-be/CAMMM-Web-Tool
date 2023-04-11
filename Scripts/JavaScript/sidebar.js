@@ -27,6 +27,7 @@ function openSidebar(nodeProps) {
 
     sidebarDiv.style.width = "300px";
     sidebarDiv.style.padding = "20px";
+    document.getElementById("mySidebar").style.color = "#000000";
     document.getElementById("map").style.marginRight = "300px";
     document.getElementById("query-name").style.color = "#000000";
 
@@ -46,10 +47,10 @@ function openSidebar(nodeProps) {
 function closeSidebar() {
 
     // Hide node query dropdown at closed sidebar
-    document.getElementById("query-dropdown").style.display = "none";
+    // document.getElementById("query-dropdown").style.display = "none";
 
     // Show borough query dropdown at  closed node sidebar
-    document.getElementById("borough-query-dropdown").style.display = "block";
+    // document.getElementById("borough-query-dropdown").style.display = "block";
 
     zoomOutNode();
     var sidebarDiv = document.getElementById("mySidebar");
@@ -84,8 +85,8 @@ function zoomOutNode() {
     map.setLayoutProperty('hub-labels', 'visibility', 'none');
     map.setLayoutProperty('cluster-labels', 'visibility', 'none');
     map.flyTo({
-        'center': [-73.624701, 45.525104],
-        'zoom': 11.44, 'pitch': 0,
+        'center': boroughCenter,
+        'zoom': 13, 'pitch': 45,
         // 'bearing': 90,
         'speed': 0.2,
         'curve': 1,

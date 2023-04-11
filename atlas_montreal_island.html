@@ -30,13 +30,19 @@
     <!-- testing a sidebar code -->
     <div id="mySidebar" class="sidebar">
         <a class="close-btn" onclick="closeSidebar();">x</a>
+        <div id="node-category-type"></div>
+        <div id="node-name"></div>
+        <div class="query-dropdown" id="query-dropdown">
+            <div class="dropdown"><button class="dropbtn" id="dropbtn">Select Query<i
+                        class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content" id="dropdown-content"></div>
+            </div>
+        </div>
         <p id="query-name" style="color: white;">Query rating:</p>
         <div id="query-rating"></div>
         <div style="height: 20px;"></div>
         <div id="query-info"></div>
         <div id="node-info">
-            <div id="node-category-type"></div>
-            <div id="node-name"></div>
             <!-- <div id="node-street-view"></div> -->
         </div>
         <div id="transit-option-menu"></div>
@@ -47,33 +53,33 @@
         <a class="close-btn" onclick="closeBoroughSidebar();">x</a>
         <div style="height: 20px;"></div>
         <div id="borough-info"></div>
-    </div>
-
-    <div id="main">
-        <div id="map">
-        </div>
-        <h1 class="cammm-title">CAMMM</h1>
-        <div class="query-dropdown" id="query-dropdown">
-            <div class="dropdown"><button class="dropbtn" id="dropbtn">Select Query<i
-                        class="fas fa-chevron-down"></i></button>
-                <div class="dropdown-content" id="dropdown-content"></div>
-            </div>
-        </div>
         <div class="query-dropdown" id="borough-query-dropdown">
             <div class="dropdown"><button class="dropbtn" id="borough-dropbtn">Select Query<i
                         class="fas fa-chevron-down"></i></button>
                 <div class="dropdown-content" id="borough-dropdown-content"></div>
             </div>
         </div>
+        <p id="borough-query-name" style="color: white;">Query rating:</p>
+        <div id="borough-query-rating"></div>
+        <div style="height: 20px;"></div>
+        <div id="borough-query-info"></div>
+    </div>
+
+    <div id="main">
+        <div id="map">
+        </div>
+        <h1 class="cammm-title">CAMMM</h1>
+
+
     </div>
     <!-- testing a sidebar code -->
     <script>
 
         // Hide node query dropdown at inital load
-        document.getElementById("query-dropdown").style.display = "none";
+        // document.getElementById("query-dropdown").style.display = "none";
 
         // Hide borough query dropdown at inital load
-        document.getElementById("borough-query-dropdown").style.display = "none";
+        // document.getElementById("borough-query-dropdown").style.display = "none";
 
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
@@ -270,7 +276,7 @@
                     // TODO: Isolate the selected cluster in another layer and show label
 
                     // Hide borough query dropdown at node click
-                    document.getElementById("borough-query-dropdown").style.display = "none";
+                    // document.getElementById("borough-query-dropdown").style.display = "none";
                     // Change the cursor style as a UI indicator.
                     var boroughLayer = map.getLayer("selected_borough_polygon");
 
@@ -290,7 +296,7 @@
                             // 'bearing': 90,
                             'speed': 0.2,
                             'curve': 1,
-                            'duration': 3000,
+                            'duration': 2000,
                             'essential': true,
                             'easing': function (t) {
                                 return t;
@@ -310,10 +316,9 @@
                 // Click Medium Cluster Function
                 map.on('click', 'medium-clusters', (e) => {
                     // TODO: Isolate the selected cluster in another layer and show label
-                    // TODO: Fix query dropdown hide and reveal for medium and large clusters
 
                     // Hide borough query dropdown at node click
-                    document.getElementById("borough-query-dropdown").style.display = "none";
+                    // document.getElementById("borough-query-dropdown").style.display = "none";
 
                     // Change the cursor style as a UI indicator.
                     var boroughLayer = map.getLayer("selected_borough_polygon");
@@ -334,7 +339,7 @@
                             // 'bearing': 90,
                             'speed': 0.2,
                             'curve': 1,
-                            'duration': 3000,
+                            'duration': 2000,
                             'essential': true,
                             'easing': function (t) {
                                 return t;
@@ -352,7 +357,7 @@
                     // TODO: Isolate the selected cluster in another layer and show label
 
                     // Hide borough query dropdown at node click
-                    document.getElementById("borough-query-dropdown").style.display = "none";
+                    // document.getElementById("borough-query-dropdown").style.display = "none";
 
                     // Change the cursor style as a UI indicator.
                     var boroughLayer = map.getLayer("selected_borough_polygon");
@@ -373,7 +378,7 @@
                             // 'bearing': 90,
                             'speed': 0.2,
                             'curve': 1,
-                            'duration': 3000,
+                            'duration': 2000,
                             'essential': true,
                             'easing': function (t) {
                                 return t;
@@ -390,27 +395,35 @@
                 map.on('click', 'hubs', (e) => {
                     // TODO: Isolate the selected hub in another layer and show label
                     // Change the cursor style as a UI indicator.
+                    var boroughLayer = map.getLayer("selected_borough_polygon");
 
-                    map.getCanvas().style.cursor = 'pointer';
-                    map.setPaintProperty('hubs', 'circle-color', '#000000');
-                    map.setLayoutProperty('hub-labels', 'visibility', 'visible');
+                    if (typeof (boroughLayer) != "undefined") {
+                        console.log("Borough was selected before this cluster");
 
-                    centerTemp = [e.features[0].geometry.coordinates[0] + 0.008, e.features[0].geometry.coordinates[1]];
+                        // Now start cluster interactions
+                        map.getCanvas().style.cursor = 'pointer';
+                        map.setPaintProperty('hubs', 'circle-color', '#000000');
+                        map.setLayoutProperty('hub-labels', 'visibility', 'visible');
 
-                    map.flyTo({
-                        'center': centerTemp,
-                        'zoom': 14, 'pitch': 60,
-                        // 'bearing': 90,
-                        'speed': 0.2,
-                        'curve': 1,
-                        'duration': 3000,
-                        'essential': true,
-                        'easing': function (t) {
-                            return t;
-                        }
-                    });
+                        centerTemp = [e.features[0].geometry.coordinates[0] + 0.008, e.features[0].geometry.coordinates[1]];
 
-                    openSidebar(e.features[0].properties);
+                        map.flyTo({
+                            'center': centerTemp,
+                            'zoom': 14, 'pitch': 60,
+                            // 'bearing': 90,
+                            'speed': 0.2,
+                            'curve': 1,
+                            'duration': 2000,
+                            'essential': true,
+                            'easing': function (t) {
+                                return t;
+                            }
+                        });
+
+                        openSidebar(e.features[0].properties);
+                    } else {
+                        console.log("click a borough first!");
+                    }
                 });
 
             });
@@ -434,6 +447,7 @@
                     obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
                     newJson(obj);
                     queryDropDown();
+                    boroughQueryDropDown();
                     smallClusterFeatures = getSmallClusters();
                     console.log("Small Cluster Features:\n");
                     console.log(smallClusterFeatures);
