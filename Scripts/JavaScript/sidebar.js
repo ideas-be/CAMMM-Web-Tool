@@ -53,6 +53,7 @@ function closeSidebar() {
     // document.getElementById("borough-query-dropdown").style.display = "block";
 
     zoomOutNode();
+    hideLines();
     var sidebarDiv = document.getElementById("mySidebar");
 
     document.getElementById("mySidebar").style.color = "#ffffff";
@@ -83,7 +84,9 @@ function zoomOutNode() {
     map.setPaintProperty('small-clusters', 'circle-color', '#f15924');
     map.setPaintProperty('hubs', 'circle-color', '#d81b60');
     map.setLayoutProperty('hub-labels', 'visibility', 'none');
-    map.setLayoutProperty('cluster-labels', 'visibility', 'none');
+    map.setLayoutProperty('small-cluster-labels', 'visibility', 'none');
+    map.setLayoutProperty('medium-cluster-labels', 'visibility', 'none');
+    map.setLayoutProperty('large-cluster-labels', 'visibility', 'none');
     map.flyTo({
         'center': boroughCenter,
         'zoom': 13, 'pitch': 45,

@@ -87,28 +87,35 @@ function displayBoroughQueryRating(ratingValue) {
 function displayBoroughMultimodality() {
     // TODO: Display multimodality query info for selected borough
     console.log("Borough-level Multimodality!!");
+    console.log(boroughQueryProps.Multimodality.AvailableModes);
 }
 function displayBoroughDiversity() {
     // TODO: Display diversity of services query info for selected borough
     console.log("Borough-level Diversity of Services and Amenities!!");
+    console.log(boroughQueryProps.DiversityOfServices);
 }
 function displayBoroughCloseness() {
     // TODO: Display closeness of services query info for selected borough
     console.log("Borough-level Closeness of Services and Amenities!!");
+    console.log(boroughQueryProps.ClosenessOfServices);
 }
 function displayBoroughAccessibility() {
     // TODO: Display universal accessibility query info for selected borough
     console.log("Borough-level Universal Design & Accessibility!!");
+    console.log(boroughQueryProps.UniversalAccessibility);
 }
 function displayBoroughConnectivity() {
     // TODO: Display connectivity query info for selected borough
     console.log("Borough-level Connectivity!!");
+    console.log(boroughQueryProps.TransitConnectivity);
 }
 function displayBoroughGreenery() {
     // TODO: Display greenery query info for selected borough
     console.log("Borough-level Greenery");
+    // console.log(borboroughQueryProps.UniversalAccessibility);
 }
 function displayBoroughWalkability() {
     // TODO: Display walkability query info for selected borough
     console.log("Borough-level Walkability");
+    // console.log(borboroughQueryProps.UniversalAccessibility);
 }

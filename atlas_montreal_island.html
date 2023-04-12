@@ -131,33 +131,89 @@
                     }
                 });
 
-                // // Add labels for clusters
-                // map.addLayer({
-                //     'id': 'cluster-labels',
-                //     'type': 'symbol',
-                //     'source': 'clusters',
-                //     'paint': {
-                //         // 'text-halo-blur': 1,
-                //         'text-halo-color': "#f5f5f5",
-                //         'text-halo-width': 0.5,
-                //         // 'text-opacity': ['case',
-                //         //     ['boolean', ['feature-state', 'click'], false],
-                //         //     1,
-                //         //     0]
-                //     },
-                //     'layout': {
-                //         'visibility': 'none',
-                //         'text-field': [
-                //             'format',
-                //             ['upcase', ['get', 'Name']],
-                //             { 'font-scale': 0.8 },
-                //         ],
-                //         'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
-                //         'text-offset': [0, 2],
-                //         'text-max-width': 2,
-                //         'text-ignore-placement': true,
-                //     }
-                // });
+                // // Add labels for small clusters
+                map.addLayer({
+                    'id': 'small-cluster-labels',
+                    'type': 'symbol',
+                    'source': 'small-clusters',
+                    'paint': {
+                        // 'text-halo-blur': 1,
+                        'text-halo-color': "#f5f5f5",
+                        'text-halo-width': 0.5,
+                        // 'text-opacity': ['case',
+                        //     ['boolean', ['feature-state', 'click'], false],
+                        //     1,
+                        //     0]
+                    },
+                    'layout': {
+                        'visibility': 'none',
+                        'text-field': [
+                            'format',
+                            ['upcase', ['get', 'Name']],
+                            { 'font-scale': 0.8 },
+                        ],
+                        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                        'text-offset': [0, 2],
+                        'text-max-width': 2,
+                        'text-ignore-placement': true,
+                    }
+                });
+
+                // // Add labels for medium clusters
+                map.addLayer({
+                    'id': 'medium-cluster-labels',
+                    'type': 'symbol',
+                    'source': 'medium-clusters',
+                    'paint': {
+                        // 'text-halo-blur': 1,
+                        'text-halo-color': "#f5f5f5",
+                        'text-halo-width': 0.5,
+                        // 'text-opacity': ['case',
+                        //     ['boolean', ['feature-state', 'click'], false],
+                        //     1,
+                        //     0]
+                    },
+                    'layout': {
+                        'visibility': 'none',
+                        'text-field': [
+                            'format',
+                            ['upcase', ['get', 'Name']],
+                            { 'font-scale': 0.8 },
+                        ],
+                        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                        'text-offset': [0, 2],
+                        'text-max-width': 2,
+                        'text-ignore-placement': true,
+                    }
+                });
+
+                // // Add labels for large clusters
+                map.addLayer({
+                    'id': 'large-cluster-labels',
+                    'type': 'symbol',
+                    'source': 'large-clusters',
+                    'paint': {
+                        // 'text-halo-blur': 1,
+                        'text-halo-color': "#f5f5f5",
+                        'text-halo-width': 0.5,
+                        // 'text-opacity': ['case',
+                        //     ['boolean', ['feature-state', 'click'], false],
+                        //     1,
+                        //     0]
+                    },
+                    'layout': {
+                        'visibility': 'none',
+                        'text-field': [
+                            'format',
+                            ['upcase', ['get', 'Name']],
+                            { 'font-scale': 0.8 },
+                        ],
+                        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                        'text-offset': [0, 2],
+                        'text-max-width': 2,
+                        'text-ignore-placement': true,
+                    }
+                });
 
                 // Add a layer showing the small clusters.
                 map.addLayer({
@@ -286,7 +342,7 @@
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
                         map.setPaintProperty('small-clusters', 'circle-color', '#008080');
-                        // map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
+                        map.setLayoutProperty('small-cluster-labels', 'visibility', 'visible');
 
                         centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
 
@@ -329,7 +385,7 @@
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
                         map.setPaintProperty('medium-clusters', 'circle-color', '#008080');
-                        // map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
+                        map.setLayoutProperty('medium-cluster-labels', 'visibility', 'visible');
 
                         centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
 
@@ -368,7 +424,7 @@
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
                         map.setPaintProperty('large-clusters', 'circle-color', '#008080');
-                        // map.setLayoutProperty('cluster-labels', 'visibility', 'visible');
+                        map.setLayoutProperty('large-cluster-labels', 'visibility', 'visible');
 
                         centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
 
