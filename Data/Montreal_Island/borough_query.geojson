@@ -21,8 +21,8 @@
                     "AvailableModes": [
                         "bus",
                         "metro",
-                        "train",
                         "rail",
+                        "tram",
                         "car-sharing",
                         "bike-sharing"
                     ]

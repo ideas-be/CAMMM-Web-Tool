@@ -1,13 +1,10 @@
 function boroughQueryDropDown() {
-    // Show borough query dropdown at inital load
-    // document.getElementById("borough-query-dropdown").style.display = "block";
 
     var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity", "Greenery", "Walkability"];
     var dropDownDiv = document.getElementById("borough-dropdown-content");
     var dropDownHTML = "";
 
     for (i = 0; i < queryList.length; i++) {
-        // console.log(queryList[i]);
         dropDownHTML += "<a href=\"#\" onclick=\"getSelectedBoroughQuery(\'" + queryList[i] + "\');\">" + queryList[i] + "</a>";
     }
 
@@ -15,18 +12,10 @@ function boroughQueryDropDown() {
 }
 
 var selectedQuery = "Select Query";
-// displayQueryRating(8);
 
 function getSelectedBoroughQuery(queryName) {
     selectedQuery = queryName;
     document.getElementById("borough-dropbtn").innerHTML = selectedQuery + "<i class=\"fas fa-chevron-down\"></i>";
-    // if (selectedQuery == "Diversity of Services and Amenities") {
-    //     document.getElementById("query-name").innerHTML = "Diversity rating:";
-    // } else if (selectedQuery == "Closeness of Services and Amenities") {
-    //     document.getElementById("query-name").innerHTML = "Closeness rating:";
-    // } else {
-    //     document.getElementById("query-name").innerHTML = selectedQuery + " rating:";
-    // }
     callBoroughQueryCalFunc();
 
 }
@@ -86,8 +75,46 @@ function displayBoroughQueryRating(ratingValue) {
 
 function displayBoroughMultimodality() {
     // TODO: Display multimodality query info for selected borough
-    console.log("Borough-level Multimodality!!");
-    console.log(boroughQueryProps.Multimodality.AvailableModes);
+    var myCityJson = readGeoJsonObj("city.geojson");
+
+    if (myCityJson.City.Name_en == "Montreal") {
+        var totalTransit = 0;
+        for (key in myCityJson["City"]["TransitTypesStops"]) {
+            var value = myCityJson["City"]["TransitTypesStops"][key];
+            if (value != 0) {
+                totalTransit += 1;
+            }
+        }
+        // Adjusting for missing transit data for Montreal
+        totalTransit += 4;
+
+        console.log("Total transit");
+        console.log(totalTransit);
+
+        // Multimodality Rating Formula
+        var MultimodalityRating = (boroughQueryProps.Multimodality.AvailableModes.length / totalTransit) * 10;
+
+        displayBoroughQueryRating(MultimodalityRating);
+
+        var transitIcons = ["fas fa-bus fa-2x", "fas fa-subway fa-2x", "fas fa-train fa-2x", "fas fa-train-tram fa-2x", "fas fa-car fa-2x", "fas fa-bicycle fa-2x"];
+
+        // Looping and inserting available transit modes
+
+        var transitModeHTML = "<div id=\"transit-mode-section\">";
+        for (i = 0; i < transitIcons.length; i++) {
+
+            // TODO: Displaying all transit modes for now
+            transitModeHTML += "<div id=\"transit-mode\">" +
+                "<i class=\"" + transitIcons[i] + "\"></i>" +
+                "<div id=\"transit-mode-name\">" +
+                "<p>" + boroughQueryProps.Multimodality.AvailableModes[i] + "</p>" + "</div>" + "</div>";
+
+        }
+
+        document.getElementById("borough-query-info").innerHTML = transitModeHTML + "</div>Available Transit Modes";
+
+    }
+
 }
 function displayBoroughDiversity() {
     // TODO: Display diversity of services query info for selected borough

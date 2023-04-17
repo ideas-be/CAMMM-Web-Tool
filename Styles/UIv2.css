@@ -781,3 +781,15 @@ progress::-moz-progress-bar {
 }
 
 /* END OF CONNECTIVITY BAR GRAPH STYLE */
+
+/* START OF BOROUGH SIDEBAR STYLE */
+
+#borough-query-rating {
+    margin-top: 100px;
+}
+
+#borough-query-info {
+    margin-top: 50px;
+}
+
+/* END OF BOROUGH SIDEBAR STYLE */
