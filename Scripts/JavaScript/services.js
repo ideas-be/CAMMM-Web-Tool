@@ -61,13 +61,13 @@ function displayServiceDistanceBarGraphs() {
 
 }
 
+// Surrounding Services Menu HTML
+// list of icons
+var serviceCategoryIcons = { "Food": "fas fa-utensils fa-2x", "Health": "fas fa-house-medical fa-2x", "Sanitation": "fas fa-restroom fa-2x", "Recreation": "fas fa-champagne-glasses fa-2x", "Education": "fas fa-book fa-2x", "Government": "fas fa-landmark-flag fa-2x", "Laundry": "fas fa-jug-detergent fa-2x", "Culture": "fas fa-masks-theater fa-2x", "Shelter": "fas fa-person-shelter fa-2x", "Finance": "fas fa-coins fa-2x", "Electronics": "fas fa-mobile-retro fa-2x", "Store": "fas fa-store fa-2x", "BeautyNFashion": "fas fa-shirt fa-2x" };
+
 function displaySurroundingServices() {
 
     var queryInfoDiv = document.getElementById("query-info");
-
-    // Surrounding Services Menu HTML
-    // list of icons
-    var serviceCategoryIcons = { "Food": "fas fa-utensils fa-2x", "Health": "fas fa-house-medical fa-2x", "Sanitation": "fas fa-restroom fa-2x", "Recreation": "fas fa-champagne-glasses fa-2x", "Education": "fas fa-book fa-2x", "Government": "fas fa-landmark-flag fa-2x", "Laundry": "fas fa-jug-detergent fa-2x", "Culture": "fas fa-masks-theater fa-2x", "Shelter": "fas fa-person-shelter fa-2x", "Finance": "fas fa-coins fa-2x", "Electronics": "fas fa-mobile-retro fa-2x", "Store": "fas fa-store fa-2x", "BeautyNFashion": "fas fa-shirt fa-2x" };
 
     // fetch and read category services JSON
 
@@ -86,7 +86,7 @@ function displaySurroundingServices() {
     console.log("The service category data for the current node is ", nodeServiceData);
 
     // loop through category data for the services at the current node
-    var surrServiceMenuHTML = "<div id=\"service-option-menu\">";
+    var surrServiceMenuHTML = "<div class=\"service-option-menu\">";
 
     var serviceUnit;
     for (serviceType in nodeServiceData) {
@@ -112,9 +112,9 @@ function displaySurroundingServices() {
                     catName = category;
                 }
 
-                surrServiceMenuHTML += "<div class=\"service-option\" id=\"" + serviceType.toLowerCase() + "\">" + "<div id=\"service-category-name\">" +
+                surrServiceMenuHTML += "<div class=\"service-option\" id=\"" + serviceType.toLowerCase() + "\">" + "<div class=\"service-category-name\">" +
                     "<p>" + catName.toLowerCase() + "</p>" + "</div>" +
-                    "<i class=\"" + serviceCategoryIcons[category] + "\"></i>" + "<div id=\"service-units\">" +
+                    "<i class=\"" + serviceCategoryIcons[category] + "\"></i>" + "<div class=\"service-units\">" +
                     "<p>" + serviceUnit + "</p>" + "</div>" + "</div>";
             }
 

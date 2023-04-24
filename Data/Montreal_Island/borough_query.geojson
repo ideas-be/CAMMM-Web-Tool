@@ -28,10 +28,44 @@
                     ]
                 },
                 "AvailableServices": {
-                    "NumOfFood": 20,
-                    "AvgDistFood": 234,
-                    "NumOfBank": 20,
-                    "AvgDistBank": 234
+                    "Primary": {
+                        "Food": [
+                            20,
+                            234
+                        ],
+                        "Finance": [
+                            2,
+                            320
+                        ],
+                        "Education": [
+                            7,
+                            630
+                        ]
+                    },
+                    "Secondary": {
+                        "Sanitation": [
+                            10,
+                            450
+                        ],
+                        "Store": [
+                            35,
+                            254
+                        ],
+                        "Health": [
+                            4,
+                            786
+                        ]
+                    },
+                    "Tertiary": {
+                        "Recreation": [
+                            5,
+                            493
+                        ],
+                        "Laundry": [
+                            6,
+                            380
+                        ]
+                    }
                 },
                 "DiversityOfServices": {
                     "NumOfPrimary": 230,

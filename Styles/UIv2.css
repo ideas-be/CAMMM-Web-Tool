@@ -547,7 +547,7 @@ progress::-moz-progress-bar {
 
 /* START OF SERVICE MENU STYLE */
 
-#service-option-menu {
+.service-option-menu {
     color: #000000;
     overflow: auto;
     white-space: nowrap;
@@ -580,7 +580,7 @@ progress::-moz-progress-bar {
     padding-bottom: 10px;
 }
 
-#service-units {
+.service-units {
     vertical-align: middle;
     margin: auto;
     padding: 2px;
@@ -592,7 +592,7 @@ progress::-moz-progress-bar {
     /* overflow-wrap: break-word; */
 }
 
-#service-category-name {
+.service-category-name {
     vertical-align: middle;
     margin: auto;
     padding: 2px;

@@ -74,7 +74,7 @@ function displayBoroughQueryRating(ratingValue) {
 }
 
 function displayBoroughMultimodality() {
-    // TODO: Display multimodality query info for selected borough
+    // Display multimodality query info for selected borough
     var myCityJson = readGeoJsonObj("city.geojson");
 
     if (myCityJson.City.Name_en == "Montreal") {
@@ -116,15 +116,138 @@ function displayBoroughMultimodality() {
     }
 
 }
-function displayBoroughDiversity() {
-    // TODO: Display diversity of services query info for selected borough
-    console.log("Borough-level Diversity of Services and Amenities!!");
-    console.log(boroughQueryProps.DiversityOfServices);
+
+function displayDiversityGraphs(boroughDiversityServices) {
+    var totalServices = boroughDiversityServices.NumOfPrimary + boroughDiversityServices.NumOfSecondary + boroughDiversityServices.NumOfTertiary;
+
+    // Display the bar graph with numbers of services
+    var primaryBarWidth = (boroughDiversityServices.NumOfPrimary / totalServices) * 500;
+    var secondaryBarWidth = (boroughDiversityServices.NumOfSecondary / totalServices) * 500;
+    var tertiaryBarWidth = (boroughDiversityServices.NumOfTertiary / totalServices) * 500;
+
+    // Diversity Bar Graph HTML
+    var diversityBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + boroughDiversityServices.NumOfPrimary + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + boroughDiversityServices.NumOfSecondary + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + boroughDiversityServices.NumOfTertiary + "</span></div>";
+
+    document.getElementById("borough-query-info").innerHTML = diversityBarGraphHTML + "</div>Types of Services";
 }
+
+function displayAvailableServices() {
+
+    var availableServices = boroughQueryProps.AvailableServices;
+
+    console.log("Available Services: ", availableServices);
+
+    var availServiceMenuHTML = "<div class=\"service-option-menu\">";
+
+    var serviceUnit;
+    for (serviceType in availableServices) {
+        {
+            // loop through all categories and append into HTML string
+            console.log("Service Type: ", serviceType);
+            // check if the service is primary/secondary/tertiary and assign color
+            // check the category of the service and assign icon
+            for (category in availableServices[serviceType]) {
+
+                // check if the current query is diversity/closeness and display count or avg dist accordingly
+                if (selectedQuery == "Diversity of Services and Amenities") {
+                    serviceUnit = availableServices[serviceType][category][0];
+                } else if (selectedQuery == "Closeness of Services and Amenities") {
+                    serviceUnit = availableServices[serviceType][category][1];
+                }
+
+                var catName;
+                if (category == "BeautyNFashion") {
+                    catName = "Beauty & Fashion";
+                } else {
+                    catName = category;
+                }
+                console.log("Category: ", catName);
+
+                availServiceMenuHTML += "<div class=\"service-option\" id=\"" + serviceType.toLowerCase() + "\">" + "<div class=\"borough-service-category-name\">" +
+                    "<p>" + catName.toLowerCase() + "</p>" + "</div>" +
+                    "<i class=\"" + serviceCategoryIcons[category] + "\"></i>" + "<div class=\"service-units\">" +
+                    "<p>" + serviceUnit + "</p>" + "</div>" + "</div>";
+            }
+
+        }
+    }
+
+    // insert HTML into sidebar
+    document.getElementById("borough-query-info").innerHTML += availServiceMenuHTML + "<p>Available Services and Amenities</p>";
+}
+
+function displayBoroughDiversity() {
+    // Display diversity of services query info for selected borough
+
+    document.getElementById("borough-query-info").innerHTML = "";
+    console.log("Borough-level Diversity of Services and Amenities!!");
+
+    var boroughDiversityServices = boroughQueryProps.DiversityOfServices;
+    console.log(boroughDiversityServices);
+
+    // Calculate and display diversity rating
+    var diversityRating = 0;
+
+    if (boroughDiversityServices.NumOfPrimary > 0) {
+        diversityRating += 5;
+    }
+    if (boroughDiversityServices.NumOfSecondary > 0) {
+        diversityRating += 3;
+    }
+    if (boroughDiversityServices.NumOfTertiary > 0) {
+        diversityRating += 2;
+    }
+
+    displayBoroughQueryRating(diversityRating);
+    displayDiversityGraphs(boroughDiversityServices);
+    displayAvailableServices();
+
+}
+
+function displayClosenessGraphs(boroughClosenessServices) {
+    // Display avg distances in m to borough services and amenities
+
+    var primaryBarWidth = boroughClosenessServices.AvgDistPrimary * 0.4;
+    var secondaryBarWidth = boroughClosenessServices.AvgDistSecondary * 0.4;
+    var tertiaryBarWidth = boroughClosenessServices.AvgDistTertiary * 0.4;
+
+    // Service Bar Graph HTML
+    var closenessBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + boroughClosenessServices.AvgDistPrimary.toFixed(0) + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + boroughClosenessServices.AvgDistSecondary.toFixed(0) + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + boroughClosenessServices.AvgDistTertiary.toFixed(0) + "</span></div>";
+
+    // Inserting bar graphs into query info HTML
+    document.getElementById("borough-query-info").innerHTML = closenessBarGraphHTML + "<div>Distances to Services in m</div>";
+}
+
 function displayBoroughCloseness() {
-    // TODO: Display closeness of services query info for selected borough
+    // Display closeness of services query info for selected borough
+    document.getElementById("borough-query-info").innerHTML = "";
     console.log("Borough-level Closeness of Services and Amenities!!");
-    console.log(boroughQueryProps.ClosenessOfServices);
+
+    var boroughClosenessServices = boroughQueryProps.ClosenessOfServices;
+    console.log(boroughClosenessServices);
+
+    // TODO: Calculate and display closeness rating
+    var closenessRating = 0;
+    // var bufferLimit = 0;
+    // if (boroughQueryProps.Type == "Hub") {
+    //     bufferLimit = 800;
+    // } else if (boroughQueryProps.Type == "Cluster") {
+    //     bufferLimit = 400;
+    // }
+
+    if (boroughClosenessServices.AvgDistPrimary > 0) {
+        closenessRating += 5;
+    }
+    if (boroughClosenessServices.AvgDistSecondary > 0) {
+        closenessRating += 3;
+    }
+    if (boroughClosenessServices.AvgDistTertiary > 0) {
+        closenessRating += 2;
+    }
+
+    displayBoroughQueryRating(closenessRating);
+    displayClosenessGraphs(boroughClosenessServices);
+    displayAvailableServices();
 }
 function displayBoroughAccessibility() {
     // TODO: Display universal accessibility query info for selected borough
