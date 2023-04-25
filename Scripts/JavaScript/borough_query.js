@@ -249,11 +249,46 @@ function displayBoroughCloseness() {
     displayClosenessGraphs(boroughClosenessServices);
     displayAvailableServices();
 }
+
+function displayBoroughAccessGraphs(boroughAccessibility, totalAccessibility, totalStops) {
+
+    for (transitType in boroughAccessibility) {
+        var transitAccessibility = boroughAccessibility[transitType];
+
+        var accessibleBarWidth = 0;
+        accessibleBarWidth += (transitAccessibility.Accessible * 280) / transitAccessibility.Total;
+
+        var accessibilityHTML = "";
+
+        if (transitAccessibility.Total > 0) {
+            accessibilityHTML += "<i class=\"" + transitIcon(transitType) + "\"></i><div class=\"bar-graph\" id=\"accessible-bar-graph\"><div class=\"bar-graph\" id=\"" + transitType.toLowerCase() + "\" style=\"width: " + accessibleBarWidth + "px;\"><span class=\"accessible-number\">" + transitAccessibility.Accessible + "</span></div><span class=\"accessible-number\">" + transitAccessibility.Total + "</span></div>";
+        }
+        totalAccessibility += transitAccessibility.Accessible;
+        totalStops += transitAccessibility.Total;
+    }
+
+
+    document.getElementById("borough-query-info").innerHTML = accessibilityHTML + "</div>Wheelchair Accessibility";
+}
 function displayBoroughAccessibility() {
     // TODO: Display universal accessibility query info for selected borough
+    document.getElementById("borough-query-info").innerHTML = "";
     console.log("Borough-level Universal Design & Accessibility!!");
     console.log(boroughQueryProps.UniversalAccessibility);
+
+    var boroughAccessibility = boroughQueryProps.UniversalAccessibility;
+
+    var totalAccessibility = 0;
+    var totalStops = 0;
+
+    displayBoroughAccessGraphs(boroughAccessibility, totalAccessibility, totalStops);
+
+    var accessibilityRating = 0;
+    accessibilityRating = (totalAccessibility / totalStops) * 10;
+
+    displayBoroughQueryRating(accessibilityRating);
 }
+
 function displayBoroughConnectivity() {
     // TODO: Display connectivity query info for selected borough
     console.log("Borough-level Connectivity!!");

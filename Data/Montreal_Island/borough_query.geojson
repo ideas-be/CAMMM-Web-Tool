@@ -83,10 +83,14 @@
                     "Betweenness": 7
                 },
                 "UniversalAccessibility": {
-                    "TotalBusStops": 200,
-                    "AccessibleBusStops": 165,
-                    "TotalMetroStations": 4,
-                    "AccessibleMetroStations": 2
+                    "Bus": {
+                        "Total": 200,
+                        "Accessible": 165
+                    },
+                    "Metro": {
+                        "Total": 4,
+                        "Accessible": 2
+                    }
                 }
             }
         }
