@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CAMMM testing popup on hover</title>
+    <title>Montreal Island | CAMMM Atlas Web Application</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
@@ -342,8 +342,10 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
-                        map.setPaintProperty('small-clusters', 'circle-color', '#008080');
-                        map.setLayoutProperty('small-cluster-labels', 'visibility', 'visible');
+                        // map.setPaintProperty('small-clusters', 'circle-color', '#008080');
+                        // map.setLayoutProperty('small-cluster-labels', 'visibility', 'visible');
+                        selectedCluster = e.features[0];
+                        setTimeout(displaySelectedCluster, 400);
 
                         centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
 
