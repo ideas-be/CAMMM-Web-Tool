@@ -1,6 +1,8 @@
 var cityList = ["Montreal Island", "Montreal Metropolitan Region", "Quebec City", "Trois Rivieres", "Gatineau"];
 var cityMapURLList = ["./atlas_montreal_island.html", "./atlas_montreal_metropolitan_region.html", "./atlas_quebec_city.html", "./atlas_trois_rivieres.html", "./atlas_gatineau.html"];
 
+var selectedCity = '';
+
 var selectedCities = [];
 
 var filterNumber = 0;
@@ -37,10 +39,19 @@ function removeCity(filterNum) {
     document.getElementById(cityToRemove.toLowerCase()).remove();
 }
 
-function openCityTabs() {
-    for (city in selectedCities) {
-        var index = cityList.indexOf(selectedCities[city]);
-        console.log("index of selected city: ", index);
-        window.open(cityMapURLList[index]);
+// function openCityTabs() {
+//     for (city in selectedCities) {
+//         var index = cityList.indexOf(selectedCities[city]);
+//         console.log("index of selected city: ", index);
+//         window.open(cityMapURLList[index]);
+//     }
+// }
+
+function openSelectedCityTab(selCity) {
+    selectedCity = selCity;
+    for (city in cityList) {
+        if (selectedCity == cityList[city]) {
+            window.open(cityMapURLList[city]);
+        }
     }
 }

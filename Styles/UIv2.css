@@ -13,6 +13,34 @@
 
 /* ALL OUR FONTS */
 
+/* RESPONSIVE SCREENS */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* .example {background: red;} */
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    /* .example {background: green;} */
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* .example {background: blue;} */
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* .example {background: orange;} */
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    /* .example {background: pink;} */
+}
+
+/* RESPONSIVE SCREENS */
+
 /* CUSTOM SCROLLBAR */
 
 ::-webkit-scrollbar {
@@ -45,7 +73,7 @@
     margin-top: 20vh;
     width: 60vw;
     height: 40vh;
-    max-width: 500px;
+    max-width: 570px;
 }
 
 .welcome {
@@ -156,14 +184,24 @@
     margin-bottom: 4vh;
 }
 
+.city-buttons {
+    margin-bottom: 30px;
+}
+
 .city-filter {
     background-color: #f6daa5;
     border-color: #cd9326;
-    border-radius: 3px;
-    padding: 5px;
+    border-radius: 8px;
+    padding: 12px 20px;
     color: #cd9326;
-    font-size: 12px;
-    margin: 4px;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+.city-filter:hover {
+    cursor: pointer;
+    background-color: #f2c674;
+    color: #a76f06;
 }
 
 .city-filter-btn {
@@ -185,19 +223,31 @@
 
 .cammm-button {
     display: inline-flex;
-    padding: max(8px, 2vh) max(30px, 4.5vw);
-    font-size: min(3vw, 16px);
+    /* padding: max(8px, 2vh) max(30px, 4.5vw); */
+    padding: 12px 20px;
+    font-size: 14px;
     color: #ffffff;
     background-color: #d81b60;
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
     margin-right: 10px;
     text-decoration: none;
     margin-bottom: 1.5vh;
 }
 
-#start-button {
+.city-filter#start-button {
     margin-right: 0;
+    background-color: #d81b60;
+    color: #ffffff;
+}
+
+.fas.fa-forward-fast {
+    margin-right: 10px;
+}
+
+.city-filter#start-button:hover {
+    background-color: #9b1345;
+    cursor: pointer;
 }
 
 .cammm-button:hover {
