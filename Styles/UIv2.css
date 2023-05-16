@@ -237,7 +237,7 @@
 
 .city-filter#start-button {
     margin-right: 0;
-    background-color: #d81b60;
+    background-color: #eaa7c0;
     color: #ffffff;
 }
 
@@ -246,14 +246,14 @@
 }
 
 .city-filter#start-button:hover {
-    background-color: #9b1345;
-    cursor: pointer;
+    /* background-color: #9b1345; */
+    cursor: default;
 }
 
-.cammm-button:hover {
+/* .cammm-button:hover {
     background-color: #9b1345;
     cursor: pointer;
-}
+} */
 
 .cammm-button i {
     margin-right: 20px;
@@ -298,6 +298,7 @@
 body {
     margin: 0;
     padding: 0;
+    /* background-color: #d81b60; */
     font-family: 'Lato', sans-serif;
 }
 
@@ -320,6 +321,14 @@ body {
     padding-left: 20px;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
+    float: left;
+}
+
+#city-name {
+    color: #ffffff;
+    float: right;
+    margin: 0.67em;
+    padding-top: 20px;
 }
 
 h2 {
@@ -410,6 +419,7 @@ h2 {
     transition: margin-right 0.5s;
     padding-top: 20px;
     background-color: #d81b60;
+    height: 75px;
 }
 
 @media screen and (max-height: 450px) {

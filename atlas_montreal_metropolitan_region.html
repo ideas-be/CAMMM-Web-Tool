@@ -67,16 +67,10 @@
     </div>
 
     <div id="main">
-        <div id="map">
-        </div>
         <h1 class="cammm-title">CAMMM</h1>
-        <div id="query-dropdown">
-            <div class="dropdown"><button class="dropbtn" id="dropbtn">Select Query<i
-                        class="fas fa-chevron-down"></i></button>
-                <div class="dropdown-content" id="dropdown-content"></div>
-            </div>
-        </div>
+        <h2 id="city-name">Montreal Metropolitan Region</h2>
     </div>
+    <div id="map"></div>
     <!-- testing a sidebar code -->
     <script>
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
@@ -85,7 +79,7 @@
             container: 'map',
             style: shortURL + 'ckzekgdsr001k14qfh7hkmabp',
             center: [-73.624701, 45.525104],
-            zoom: 11.44
+            zoom: 10.24
         });
 
         var centerTemp = [];

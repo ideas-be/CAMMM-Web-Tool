@@ -78,27 +78,48 @@ function closeSidebar() {
 
 function zoomOutNode() {
 
-    console.log("pop up closed, reverting to original color");
-    map.setPaintProperty('large-clusters', 'circle-color', '#f15924');
-    map.setPaintProperty('medium-clusters', 'circle-color', '#f15924');
     map.setPaintProperty('small-clusters', 'circle-color', '#f15924');
+    map.setLayoutProperty('small-cluster-labels', 'visibility', 'none');
+
+    map.setPaintProperty('medium-clusters', 'circle-color', '#f15924');
+    map.setLayoutProperty('medium-cluster-labels', 'visibility', 'none');
+
+    map.setPaintProperty('large-clusters', 'circle-color', '#f15924');
+    map.setLayoutProperty('large-cluster-labels', 'visibility', 'none');
+
     map.setPaintProperty('hubs', 'circle-color', '#d81b60');
     map.setLayoutProperty('hub-labels', 'visibility', 'none');
-    map.setLayoutProperty('small-cluster-labels', 'visibility', 'none');
-    map.setLayoutProperty('medium-cluster-labels', 'visibility', 'none');
-    map.setLayoutProperty('large-cluster-labels', 'visibility', 'none');
-    map.flyTo({
-        'center': boroughCenter,
-        'zoom': 13, 'pitch': 45,
-        // 'bearing': 90,
-        'speed': 0.2,
-        'curve': 1,
-        'duration': 2000,
-        'essential': true,
-        'easing': function (t) {
-            return t;
-        }
-    });
+
+    var currentCity = document.getElementById("city-name").innerHTML;
+    if (currentCity == "Montreal Metropolitan Region") {
+        map.flyTo({
+            'center': [-73.624701, 45.525104],
+            'zoom': 10.24,
+            'pitch': 0,
+            // 'bearing': 90,
+            'speed': 0.2,
+            'curve': 1,
+            'duration': 2000,
+            'essential': true,
+            'easing': function (t) {
+                return t;
+            }
+        });
+    } else {
+        map.flyTo({
+            'center': boroughCenter,
+            'zoom': 13, 'pitch': 45,
+            // 'bearing': 90,
+            'speed': 0.2,
+            'curve': 1,
+            'duration': 2000,
+            'essential': true,
+            'easing': function (t) {
+                return t;
+            }
+        });
+    }
+
 }
 
 function fetchNodeProps() {
