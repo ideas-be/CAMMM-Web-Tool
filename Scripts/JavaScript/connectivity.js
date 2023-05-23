@@ -32,6 +32,9 @@ function fetchConnectivityProps() {
         }
     }
     console.log("Connectivity properties: ", connectivityProperties);
+    console.log("Centrality: ", connectivityProperties.Centrality);
+    console.log("Betweenness: ", connectivityProperties.Betweenness);
+    console.log("Closeness: ", connectivityProperties.Closeness);
 }
 
 function calConnectivity() {
