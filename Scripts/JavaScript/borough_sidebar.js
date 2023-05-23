@@ -17,7 +17,7 @@ function openBoroughSidebar(boroughQueries) {
     // Display Borough Info Here
     var boroughInfoHTML = "<p>Borough Name</p><h2 id=\"borough-name\">" + boroughQueryProps.NOM + "</h2>" +
         "<p>Area: <strong>" + boroughQueryProps.AIRE.toFixed(2) + " sq.m. </strong><br>" +
-        "Population in thousands: <strong>" + boroughQueryProps.PopulationInThousands + "</strong><br>" +
+        // "Population in thousands: <strong>" + boroughQueryProps.PopulationInThousands + "</strong><br>" +
         "Number of Hubs: <strong>" + boroughQueryProps.NumOfHubs + "</strong><br>" +
         "Number of Clusters: <strong>" + boroughQueryProps.NumOfClusters + "</strong><br>" + "</p>";
     document.getElementById("borough-info").innerHTML += boroughInfoHTML;

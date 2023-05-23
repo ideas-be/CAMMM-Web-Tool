@@ -328,7 +328,7 @@
 
                 // Click Small Cluster Function
                 map.on('click', 'small-clusters', (e) => {
-                    // TODO: Isolate the selected cluster in another layer and show label
+                    // Isolate the selected cluster in another layer and show label
 
                     // Hide borough query dropdown at node click
                     // document.getElementById("borough-query-dropdown").style.display = "none";
@@ -342,7 +342,8 @@
                         map.getCanvas().style.cursor = 'pointer';
                         // map.setPaintProperty('small-clusters', 'circle-color', '#008080');
                         // map.setLayoutProperty('small-cluster-labels', 'visibility', 'visible');
-                        selectedCluster = e.features[0];
+                        // hideSelectedCluster();
+                        selectedCluster.push(e.features[0]);
                         setTimeout(displaySelectedCluster, 400);
 
                         centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
@@ -372,7 +373,7 @@
 
                 // Click Medium Cluster Function
                 map.on('click', 'medium-clusters', (e) => {
-                    // TODO: Isolate the selected cluster in another layer and show label
+                    // Isolate the selected cluster in another layer and show label
 
                     // Hide borough query dropdown at node click
                     // document.getElementById("borough-query-dropdown").style.display = "none";
@@ -385,8 +386,8 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
-                        map.setPaintProperty('medium-clusters', 'circle-color', '#008080');
-                        map.setLayoutProperty('medium-cluster-labels', 'visibility', 'visible');
+                        selectedCluster.push(e.features[0]);
+                        setTimeout(displaySelectedCluster, 400);
 
                         centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
 
@@ -411,7 +412,7 @@
 
                 // Click Large Cluster Function
                 map.on('click', 'large-clusters', (e) => {
-                    // TODO: Isolate the selected cluster in another layer and show label
+                    // Isolate the selected cluster in another layer and show label
 
                     // Hide borough query dropdown at node click
                     // document.getElementById("borough-query-dropdown").style.display = "none";
@@ -424,8 +425,8 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
-                        map.setPaintProperty('large-clusters', 'circle-color', '#008080');
-                        map.setLayoutProperty('large-cluster-labels', 'visibility', 'visible');
+                        selectedCluster.push(e.features[0]);
+                        setTimeout(displaySelectedCluster, 400);
 
                         centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
 
@@ -450,7 +451,7 @@
 
                 // Click Hub Function
                 map.on('click', 'hubs', (e) => {
-                    // TODO: Isolate the selected hub in another layer and show label
+                    // Isolate the selected hub in another layer and show label
                     // Change the cursor style as a UI indicator.
                     var boroughLayer = map.getLayer("selected_borough_polygon");
 
@@ -459,8 +460,8 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
-                        map.setPaintProperty('hubs', 'circle-color', '#000000');
-                        map.setLayoutProperty('hub-labels', 'visibility', 'visible');
+                        selectedHub.push(e.features[0]);
+                        setTimeout(displaySelectedHub, 400);
 
                         centerTemp = [e.features[0].geometry.coordinates[0] + 0.008, e.features[0].geometry.coordinates[1]];
 

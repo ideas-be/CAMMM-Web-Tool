@@ -296,13 +296,13 @@ function displayBoroughConnectivity() {
     console.log("Borough-level Connectivity!!");
     console.log(boroughQueryProps.TransitConnectivity);
 }
-function displayBoroughGreenery() {
-    // TODO: Display greenery query info for selected borough
-    console.log("Borough-level Greenery");
-    // console.log(borboroughQueryProps.UniversalAccessibility);
-}
-function displayBoroughWalkability() {
-    // TODO: Display walkability query info for selected borough
-    console.log("Borough-level Walkability");
-    // console.log(borboroughQueryProps.UniversalAccessibility);
-}
+// function displayBoroughGreenery() {
+//     // Display greenery query info for selected borough
+//     console.log("Borough-level Greenery");
+//     // console.log(borboroughQueryProps.UniversalAccessibility);
+// }
+// function displayBoroughWalkability() {
+//     // Display walkability query info for selected borough
+//     console.log("Borough-level Walkability");
+//     // console.log(borboroughQueryProps.UniversalAccessibility);
+// }

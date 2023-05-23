@@ -1,5 +1,7 @@
-var selectedCluster, selectedHub;
+var selectedCluster = [];
+var selectedHub = [];
 
+// Display and Hide Selected Cluster
 function displaySelectedCluster() {
     // Render the selected cluster over the existing clusters and hubs
     console.log("Adding a new layer for selected cluster!!!");
@@ -33,7 +35,6 @@ function displaySelectedCluster() {
         },
     });
 
-
     // Add a layer showing the selected cluster label.
     map.addLayer({
         'id': 'selected_cluster_label',
@@ -51,7 +52,7 @@ function displaySelectedCluster() {
                 { 'font-scale': 0.8 },
             ],
             'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
-            'text-offset': [0, 2],
+            'text-offset': [0, 3],
             'text-max-width': 2,
             'text-ignore-placement': true,
         }
@@ -64,13 +65,124 @@ function displaySelectedCluster() {
 }
 
 function hideSelectedCluster() {
-    // TODO: Hide selected cluster circle and label from mapbox
-    // console.log("Hiding Selected Borough from Mapbox!!!");
-    // map.removeLayer('selected_borough_polygon');
-    // map.removeLayer('selected_borough_outline');
-    // map.removeSource('selected_borough');
-    // selectedBorough = [];
-    // boroughCenter = [];
+    // Hide selected cluster circle and label from mapbox
+    console.log("Hiding Selected Cluster from Mapbox!!!");
+    map.removeLayer('selected_cluster_circle');
+    map.removeLayer('selected_cluster_label');
+    map.removeSource('selected_cluster');
+    selectedCluster = [];
+}
+
+// Display and Hide Selected Hub
+function displaySelectedHub() {
+    // Render the selected hub over the existing clusters and hubs
+    console.log("Adding a new layer for selected hub!!!");
+    map.addSource('selected_hub', {
+        'type': 'geojson',
+        'data': {
+            'type': 'FeatureCollection',
+            'features': selectedHub,
+        }
+    });
+
+    console.log("Selected Hub is: ", selectedHub);
+
+    // Add a layer showing the selected hub circle.
+    map.addLayer({
+        'id': 'selected_hub_circle',
+        'type': 'circle',
+        'source': 'selected_hub',
+        'paint': {
+            'circle-color': '#000000',
+            'circle-opacity': [
+                'interpolate',
+                ['exponential', 0.5],
+                ['zoom'],
+                11,
+                0.7,
+                14,
+                1
+            ],
+            'circle-radius': 14,
+        },
+    });
+
+    // Add a layer showing the selected hub label.
+    map.addLayer({
+        'id': 'selected_hub_label',
+        'type': 'symbol',
+        'source': 'selected_hub',
+        'paint': {
+            'text-halo-color': "#f5f5f5",
+            'text-halo-width': 0.5,
+        },
+        'layout': {
+            // 'visibility': 'none',
+            'text-field': [
+                'format',
+                ['upcase', ['get', 'Name']],
+                { 'font-scale': 0.8 },
+            ],
+            'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+            'text-offset': [0, 3],
+            'text-max-width': 2,
+            'text-ignore-placement': true,
+        }
+    });
+
+    // Move the selected hub layers to the top of the map
+    map.moveLayer('selected_hub_circle');
+    map.moveLayer('selected_hub_label');
+
+}
+
+function hideSelectedHub() {
+    // Hide selected hub circle and label from mapbox
+    console.log("Hiding Selected Hub from Mapbox!!!");
+    map.removeLayer('selected_hub_circle');
+    map.removeLayer('selected_hub_label');
+    map.removeSource('selected_hub');
+    selectedHub = [];
+}
+
+function zoomOutNode() {
+
+    if (nodeProperties.Type == "Cluster") {
+        hideSelectedCluster();
+    } else if (nodeProperties.Type == "Hub") {
+        hideSelectedHub();
+    }
+
+    var currentCity = document.getElementById("city-name").innerHTML;
+    if (currentCity == "Montreal Metropolitan Region") {
+        map.flyTo({
+            'center': [-73.624701, 45.525104],
+            'zoom': 10.24,
+            'pitch': 0,
+            // 'bearing': 90,
+            'speed': 0.2,
+            'curve': 1,
+            'duration': 2000,
+            'essential': true,
+            'easing': function (t) {
+                return t;
+            }
+        });
+    } else {
+        map.flyTo({
+            'center': boroughCenter,
+            'zoom': 13, 'pitch': 45,
+            // 'bearing': 90,
+            'speed': 0.2,
+            'curve': 1,
+            'duration': 2000,
+            'essential': true,
+            'easing': function (t) {
+                return t;
+            }
+        });
+    }
+
 }
 
 function getSmallClusters() {
