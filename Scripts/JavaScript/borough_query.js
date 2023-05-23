@@ -1,6 +1,8 @@
 function boroughQueryDropDown() {
 
-    var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity", "Greenery", "Walkability"];
+    var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity"
+        // , "Greenery", "Walkability"
+    ];
     var dropDownDiv = document.getElementById("borough-dropdown-content");
     var dropDownHTML = "";
 
