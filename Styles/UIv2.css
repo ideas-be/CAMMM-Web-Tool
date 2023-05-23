@@ -16,7 +16,27 @@
 /* RESPONSIVE SCREENS */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+
+    .atlas-title {
+        /* margin-top: 20px; */
+        padding-top: 10px;
+    }
+
     /* .example {background: red;} */
+    .city-filter {
+        display: block;
+        font-size: 10px;
+        margin-bottom: 10px;
+        width: fit-content;
+    }
+
+    .landing-logos #ideas-be,
+    #ngci,
+    #artm {
+        display: block;
+        /* height: 100%; */
+        width: 100vw;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -194,7 +214,7 @@
     border-radius: 8px;
     padding: 12px 20px;
     color: #cd9326;
-    font-size: 14px;
+    font-size: calc(10px + 0.390625vw);
     margin-right: 15px;
 }
 
