@@ -112,6 +112,7 @@ function clickBoroughs() {
         setTimeout(function () {
             openBoroughSidebar(selectedBoroughQuery);
         }, 400);
+        // setTimeout(responsiveSidebar, 500);
 
     });
 }

@@ -9,6 +9,25 @@ function newJson(obj) {
 
 var nodeProperties, nodeCategory;
 
+// var breakpoints = ["(max-width: 600px)", "(min-width: 600px)", "(min-width: 768px)", "(min-width: 992px)", "(min-width: 1200px)"];
+// var x = "";
+
+// function responsiveSidebar() {
+
+//     for (i = 0; i < breakpoints.length; i++) {
+//         x = window.matchMedia(breakpoints[i]);
+//         if (x.matches) {
+//             document.getElementById("map").style.marginBottom = "300px";
+//             console.log("Width of the screen is within ", breakpoints[i]);
+//             break;
+//         } else {
+//             document.getElementById("map").style.marginRight = "300px";
+//             console.log("Width of the screen is more than ", breakpoints[i]);
+//         }
+//     }
+
+
+// }
 
 function openSidebar(nodeProps) {
     if (selectedQuery != "Select Query") {
@@ -28,7 +47,7 @@ function openSidebar(nodeProps) {
     sidebarDiv.style.width = "300px";
     sidebarDiv.style.padding = "20px";
     document.getElementById("mySidebar").style.color = "#000000";
-    document.getElementById("map").style.marginRight = "300px";
+    // document.getElementById("map").style.marginRight = "300px";
     document.getElementById("query-name").style.color = "#000000";
 
     // Node Category & Type
