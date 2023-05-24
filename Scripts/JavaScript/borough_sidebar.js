@@ -28,6 +28,11 @@ function closeBoroughSidebar() {
 
     // Hide borough query dropdown at closed sidebar
     // document.getElementById("borough-query-dropdown").style.display = "none";
+    if (map.getLayer('selected_cluster_circle') != null) {
+        hideSelectedCluster();
+    } else if (map.getLayer('selected_hub_circle') != null) {
+        hideSelectedHub();
+    }
 
     zoomOutBorough();
     var sidebarDiv = document.getElementById("myBoroughSidebar");
