@@ -88,15 +88,20 @@ function displayBoroughMultimodality() {
             }
         }
         // Adjusting for missing transit data for Montreal
-        totalTransit += 4;
+        totalTransit += 1;
 
         console.log("Total transit");
         console.log(totalTransit);
 
         // Multimodality Rating Formula
-        var MultimodalityRating = (boroughQueryProps.Multimodality.AvailableModes.length / totalTransit) * 10;
+        var boroughMultimodality = JSON.parse(boroughQueryProps.Multimodality);
 
-        displayBoroughQueryRating(MultimodalityRating);
+        console.log("Borough Multimodality: ", boroughMultimodality.AvailableModes.length);
+
+        var MultimodalityRating = (boroughMultimodality.AvailableModes.length / totalTransit) * 10;
+
+
+        displayBoroughQueryRating(MultimodalityRating.toFixed(0));
 
         var transitIcons = ["fas fa-bus fa-2x", "fas fa-subway fa-2x", "fas fa-train fa-2x", "fas fa-train-tram fa-2x", "fas fa-car fa-2x", "fas fa-bicycle fa-2x"];
 
@@ -109,7 +114,7 @@ function displayBoroughMultimodality() {
             transitModeHTML += "<div id=\"transit-mode\">" +
                 "<i class=\"" + transitIcons[i] + "\"></i>" +
                 "<div id=\"transit-mode-name\">" +
-                "<p>" + boroughQueryProps.Multimodality.AvailableModes[i] + "</p>" + "</div>" + "</div>";
+                "<p>" + boroughMultimodality.AvailableModes[i] + "</p>" + "</div>" + "</div>";
 
         }
 
@@ -120,6 +125,7 @@ function displayBoroughMultimodality() {
 }
 
 function displayDiversityGraphs(boroughDiversityServices) {
+
     var totalServices = boroughDiversityServices.NumOfPrimary + boroughDiversityServices.NumOfSecondary + boroughDiversityServices.NumOfTertiary;
 
     // Display the bar graph with numbers of services
@@ -135,7 +141,7 @@ function displayDiversityGraphs(boroughDiversityServices) {
 
 function displayAvailableServices() {
 
-    var availableServices = boroughQueryProps.AvailableServices;
+    var availableServices = JSON.parse(boroughQueryProps.AvailableServices);
 
     console.log("Available Services: ", availableServices);
 
@@ -184,8 +190,8 @@ function displayBoroughDiversity() {
     document.getElementById("borough-query-info").innerHTML = "";
     console.log("Borough-level Diversity of Services and Amenities!!");
 
-    var boroughDiversityServices = boroughQueryProps.DiversityOfServices;
-    console.log(boroughDiversityServices);
+    var boroughDiversityServices = JSON.parse(boroughQueryProps.DiversityOfServices);
+    console.log("Borough Diversity of Services: ", boroughDiversityServices);
 
     // Calculate and display diversity rating
     var diversityRating = 0;
@@ -225,7 +231,7 @@ function displayBoroughCloseness() {
     document.getElementById("borough-query-info").innerHTML = "";
     console.log("Borough-level Closeness of Services and Amenities!!");
 
-    var boroughClosenessServices = boroughQueryProps.ClosenessOfServices;
+    var boroughClosenessServices = JSON.parse(boroughQueryProps.ClosenessOfServices);
     console.log(boroughClosenessServices);
 
     // TODO: Calculate and display closeness rating
@@ -252,49 +258,82 @@ function displayBoroughCloseness() {
     displayAvailableServices();
 }
 
-function displayBoroughAccessGraphs(boroughAccessibility, totalAccessibility, totalStops) {
+var totalAccessibility = 0;
+var totalStops = 0;
+
+function displayBoroughAccessGraphs(boroughAccessibility) {
+    var accessibilityHTML = "";
 
     for (transitType in boroughAccessibility) {
         var transitAccessibility = boroughAccessibility[transitType];
+        console.log(transitType, " Total Transit: ", transitAccessibility.Total);
 
         var accessibleBarWidth = 0;
-        accessibleBarWidth += (transitAccessibility.Accessible * 280) / transitAccessibility.Total;
-
-        var accessibilityHTML = "";
 
         if (transitAccessibility.Total > 0) {
+
+            accessibleBarWidth += (transitAccessibility.Accessible * 280) / transitAccessibility.Total;
+
+            console.log("Accessible Bar Width: ", accessibleBarWidth);
+
             accessibilityHTML += "<i class=\"" + transitIcon(transitType) + "\"></i><div class=\"bar-graph\" id=\"accessible-bar-graph\"><div class=\"bar-graph\" id=\"" + transitType.toLowerCase() + "\" style=\"width: " + accessibleBarWidth + "px;\"><span class=\"accessible-number\">" + transitAccessibility.Accessible + "</span></div><span class=\"accessible-number\">" + transitAccessibility.Total + "</span></div>";
         }
+
         totalAccessibility += transitAccessibility.Accessible;
         totalStops += transitAccessibility.Total;
     }
 
-
+    console.log("Accessibility HTML", accessibilityHTML);
     document.getElementById("borough-query-info").innerHTML = accessibilityHTML + "</div>Wheelchair Accessibility";
 }
 function displayBoroughAccessibility() {
     // TODO: Display universal accessibility query info for selected borough
     document.getElementById("borough-query-info").innerHTML = "";
+
+
+    var boroughAccessibility = JSON.parse(boroughQueryProps.UniversalAccessibility);
+
     console.log("Borough-level Universal Design & Accessibility!!");
-    console.log(boroughQueryProps.UniversalAccessibility);
+    console.log(boroughAccessibility);
 
-    var boroughAccessibility = boroughQueryProps.UniversalAccessibility;
-
-    var totalAccessibility = 0;
-    var totalStops = 0;
-
-    displayBoroughAccessGraphs(boroughAccessibility, totalAccessibility, totalStops);
+    displayBoroughAccessGraphs(boroughAccessibility);
 
     var accessibilityRating = 0;
     accessibilityRating = (totalAccessibility / totalStops) * 10;
 
-    displayBoroughQueryRating(accessibilityRating);
+    displayBoroughQueryRating(accessibilityRating.toFixed(0));
+}
+
+function displayBoroughConnectivityGraphs(boroughConnectvity) {
+    var queryInfoDiv = document.getElementById("borough-query-info");
+
+    var connectivityHTML = "<p>Network Analysis Metrics</p><div id=\"connectivity-graphs\">";
+
+    var centralityWidth = boroughConnectvity.Centrality * 50 + 20;
+    var closenessWidth = boroughConnectvity.Closeness * 50;
+    var betweennessWidth = boroughConnectvity.Betweenness * 50 + 80;
+
+    connectivityHTML += "<div class=\"bar-graph\" id=\"centrality\" style=\"width: " + centralityWidth + "px;\"><span class=\"metrics-type\">Centrality</span><span class=\"metrics-number\">" + boroughConnectvity.Centrality + "</span></div><p>The higher the value, the better the connection to the rest of the transit network.</p>" + "<div class=\"bar-graph\" id=\"closeness\" style=\"width: " + closenessWidth + "px;\"><span class=\"metrics-type\">Closeness</span><span class=\"metrics-number\">" + boroughConnectvity.Closeness + "</span></div><p>The higher the value, the more likely this node will be used in a trip.</p>" + "<div class=\"bar-graph\" id=\"betweenness\" style=\"width: " + betweennessWidth + "px;\"><span class=\"metrics-type\">Betweenness</span><span class=\"metrics-number\">" + boroughConnectvity.Betweenness + "</span></div><p>The higher the value, the larger the number of connections to this node.</p>";
+
+    queryInfoDiv.innerHTML = connectivityHTML + "</div>";
+    console.log("Connectivity HTML: ", queryInfoDiv);
 }
 
 function displayBoroughConnectivity() {
     // TODO: Display connectivity query info for selected borough
+
+    var boroughConnectvity = JSON.parse(boroughQueryProps.TransitConnectivity);
+
     console.log("Borough-level Connectivity!!");
-    console.log(boroughQueryProps.TransitConnectivity);
+    console.log(boroughConnectvity);
+
+    displayBoroughConnectivityGraphs(boroughConnectvity);
+
+    // Connectivity Rating
+    var connectivityRating = 0;
+    connectivityRating = (boroughConnectvity.Centrality + boroughConnectvity.Closeness + boroughConnectvity.Betweenness) / 3;
+
+    displayBoroughQueryRating(connectivityRating.toFixed(0));
 }
 // function displayBoroughGreenery() {
 //     // Display greenery query info for selected borough

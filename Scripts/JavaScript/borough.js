@@ -1,7 +1,7 @@
 var myBoroughsJson;
-var myBoroughQueryJson;
+// var myBoroughQueryJson;
 var selectedBorough = [];
-var selectedBoroughQuery = [];
+// var selectedBoroughQuery = [];
 var boroughCenter = [];
 fetchGeoJson("borough.geojson");
 
@@ -12,29 +12,6 @@ function getBoroughsJson() {
     console.log("Fetching Boroughs JSON!!!");
     console.log(myBoroughsJson);
     console.log(myBoroughsJson.features);
-}
-
-function getBoroughQueryJson() {
-    // Read the boroughs.geojson file and assign to variable
-    myBoroughQueryJson = readGeoJsonObj("borough_query.geojson");
-    console.log("Fetching Borough Query JSON!!!");
-    console.log(myBoroughQueryJson);
-}
-
-function getBoroughQueryProp() {
-    for (borough in myBoroughQueryJson) {
-
-        console.log("Borough in Query JSON: ", myBoroughQueryJson[borough][0]);
-        if (selectedBorough[0].properties.NOM == myBoroughQueryJson[borough][0].properties.NOM) {
-            console.log("There are query values for borough : ", myBoroughQueryJson[borough][0].properties.NOM);
-            selectedBoroughQuery = myBoroughQueryJson[borough][0].properties;
-            console.log("Selected Borough Query Properties: ", selectedBoroughQuery);
-        } else if (selectedBorough[0].properties.NOM != myBoroughQueryJson[borough][0].properties.NOM) {
-            console.log("There are no query values for this borough!");
-            selectedBoroughQuery = selectedBorough[0].properties;
-            console.log("Selected Borough Query Properties: ", selectedBoroughQuery);
-        }
-    }
 }
 
 function displayBoroughs() {
@@ -96,22 +73,23 @@ function clickBoroughs() {
         map.getCanvas().style.cursor = 'pointer';
 
         // setTimeout(boroughQueryDropDown, 50);
-        fetchGeoJson("borough_query.geojson");
-        setTimeout(getBoroughQueryJson, 100);
-        setTimeout(getBoroughQueryProp, 300);
+        // fetchGeoJson("borough_query.geojson");
+        // setTimeout(getBoroughQueryJson, 100);
+        // setTimeout(getBoroughQueryProp, 400);
 
         selectedBorough.push(e.features[0]);
         console.log("Selected borough is: ", selectedBorough);
         boroughCenter = [selectedBorough[0].properties.Longitude + 0.0125, selectedBorough[0].properties.Latitude];
         console.log("Center of the Selected Borough is: ", boroughCenter);
-        setTimeout(displaySelectedBorough, 300);
+        setTimeout(displaySelectedBorough, 500);
 
         hideBoroughs();
 
         console.log("Opening Sidebar for Borough-level Info!!!");
         setTimeout(function () {
-            openBoroughSidebar(selectedBoroughQuery);
-        }, 400);
+            console.log("Type of Selected Borough Properties: ", typeof (selectedBorough[0].properties));
+            openBoroughSidebar(selectedBorough[0].properties);
+        }, 600);
         // setTimeout(responsiveSidebar, 500);
 
     });
