@@ -335,7 +335,7 @@
                         selectedCluster.push(e.features[0]);
                         setTimeout(displaySelectedCluster, 400);
 
-                        centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
+                        getMapCenter(e.features[0].geometry.coordinates);
 
                         map.flyTo({
                             'center': centerTemp,
@@ -378,7 +378,7 @@
                         selectedCluster.push(e.features[0]);
                         setTimeout(displaySelectedCluster, 400);
 
-                        centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
+                        getMapCenter(e.features[0].geometry.coordinates);
 
                         map.flyTo({
                             'center': centerTemp,
@@ -417,7 +417,7 @@
                         selectedCluster.push(e.features[0]);
                         setTimeout(displaySelectedCluster, 400);
 
-                        centerTemp = [e.features[0].geometry.coordinates[0] + 0.002, e.features[0].geometry.coordinates[1]];
+                        getMapCenter(e.features[0].geometry.coordinates);
 
                         map.flyTo({
                             'center': centerTemp,
@@ -452,7 +452,7 @@
                         selectedHub.push(e.features[0]);
                         setTimeout(displaySelectedHub, 400);
 
-                        centerTemp = [e.features[0].geometry.coordinates[0] + 0.008, e.features[0].geometry.coordinates[1]];
+                        getMapCenter(e.features[0].geometry.coordinates);
 
                         map.flyTo({
                             'center': centerTemp,
@@ -476,6 +476,20 @@
             });
         }
         setTimeout(loadNodes, 300);
+
+        function getMapCenter(nodeCoords) {
+            var x = window.matchMedia("(max-width: 600px)");
+
+            console.log("The screen is within 600px? ", x.matches);
+
+            if (x.matches) {
+                centerTemp = [nodeCoords[0], nodeCoords[1] - 0.003];
+                console.log("centerTemp if within 600px: ", centerTemp);
+            } else {
+                centerTemp = [nodeCoords[0] + 0.002, nodeCoords[1]];
+                console.log("centerTemp if more than 600px: ", centerTemp);
+            }
+        }
 
         // Read features JSON with new version of nodes
         var smallClusterFeatures = [];
