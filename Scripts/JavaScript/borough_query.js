@@ -104,17 +104,30 @@ function displayBoroughMultimodality() {
         displayBoroughQueryRating(MultimodalityRating.toFixed(0));
 
         var transitIcons = ["fas fa-bus fa-2x", "fas fa-subway fa-2x", "fas fa-train fa-2x", "fas fa-train-tram fa-2x", "fas fa-car fa-2x", "fas fa-bicycle fa-2x"];
+        var transitList = ["Bus", "Metro", "Rail", "Tram", "Car-sharing", "Bike-sharing"];
 
         // Looping and inserting available transit modes
 
         var transitModeHTML = "<div id=\"transit-mode-section\">";
         for (i = 0; i < transitIcons.length; i++) {
 
-            // TODO: Displaying all transit modes for now
-            transitModeHTML += "<div id=\"transit-mode\">" +
-                "<i class=\"" + transitIcons[i] + "\"></i>" +
-                "<div id=\"transit-mode-name\">" +
-                "<p>" + boroughMultimodality.AvailableModes[i] + "</p>" + "</div>" + "</div>";
+            // Displaying available transit modes for now
+            if (transitList[i] == boroughMultimodality.AvailableModes[i]) {
+                transitModeHTML += "<div id=\"transit-mode\">" +
+                    "<i class=\"" + transitIcons[i] + "\"></i>" +
+                    "<div id=\"transit-mode-name\">" +
+                    "<p>" + boroughMultimodality.AvailableModes[i] + "</p>" + "</div>" + "</div>";
+            }
+
+
+        }
+        for (i = 0; i < transitIcons.length; i++) {
+
+            if (transitList[i] != boroughMultimodality.AvailableModes[i])
+                transitModeHTML += "<div id=\"transit-mode\">" +
+                    "<i class=\"" + transitIcons[i] + "\" style=\"color:#d3d3d3;\"></i>" +
+                    "<div id=\"transit-mode-name\">" +
+                    "<p>" + transitList[i] + "</p>" + "</div>" + "</div>";
 
         }
 
@@ -165,7 +178,7 @@ function displayAvailableServices() {
 
                 var catName;
                 if (category == "BeautyNFashion") {
-                    catName = "Beauty & Fashion";
+                    catName = "BeautyNFashion";
                 } else {
                     catName = category;
                 }
@@ -234,7 +247,7 @@ function displayBoroughCloseness() {
     var boroughClosenessServices = JSON.parse(boroughQueryProps.ClosenessOfServices);
     console.log(boroughClosenessServices);
 
-    // TODO: Calculate and display closeness rating
+    // Calculate and display closeness rating
     var closenessRating = 0;
     // var bufferLimit = 0;
     // if (boroughQueryProps.Type == "Hub") {
@@ -287,7 +300,7 @@ function displayBoroughAccessGraphs(boroughAccessibility) {
     document.getElementById("borough-query-info").innerHTML = accessibilityHTML + "</div>Wheelchair Accessibility";
 }
 function displayBoroughAccessibility() {
-    // TODO: Display universal accessibility query info for selected borough
+    // Display universal accessibility query info for selected borough
     document.getElementById("borough-query-info").innerHTML = "";
 
 
@@ -320,7 +333,7 @@ function displayBoroughConnectivityGraphs(boroughConnectvity) {
 }
 
 function displayBoroughConnectivity() {
-    // TODO: Display connectivity query info for selected borough
+    // Display connectivity query info for selected borough
 
     var boroughConnectvity = JSON.parse(boroughQueryProps.TransitConnectivity);
 

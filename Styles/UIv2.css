@@ -17,6 +17,15 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 
+    #city-name {
+        float: left;
+    }
+
+    .cammm-logo {
+        width: 100%;
+        max-width: 300px;
+    }
+
     .atlas-title {
         /* margin-top: 20px; */
         padding-top: 10px;
@@ -115,9 +124,9 @@
 .cammm-landing {
     margin-left: 10vw;
     margin-top: 20vh;
-    width: 60vw;
+    /* width: 80vw; */
     height: 40vh;
-    max-width: 570px;
+    /* max-width: 1000px; */
 }
 
 .welcome {
@@ -135,6 +144,7 @@
 
 .cammm-logo img {
     width: 100%;
+    max-width: 570px;
 }
 
 
@@ -308,33 +318,37 @@
     /* margin-bottom: 0; */
     margin-top: 20vh;
     margin-left: 10vw;
-    width: 60vw;
+    /* width: 60vw; */
     height: 20vh;
-    max-width: 1000px;
+    /* max-width: 1000px; */
 }
 
 #ideas-be img {
     margin-right: 6vw;
     margin-bottom: 3vh;
     width: 40%;
+    max-width: 300px;
 }
 
 #ngci img {
-    margin-right: 2vw;
+    margin-right: 6vw;
     margin-bottom: 2vh;
     width: 40%;
+    max-width: 300px;
 }
 
 #artm img {
     margin-right: 6vw;
     margin-bottom: 3vh;
     width: 40%;
+    max-width: 300px;
 }
 
 #concordia img {
     margin-right: 2vw;
     margin-bottom: 2vh;
     width: 40%;
+    max-width: 300px;
 }
 
 /* END OF LANDING PAGE STYLING */

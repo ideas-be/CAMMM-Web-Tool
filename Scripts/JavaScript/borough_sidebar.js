@@ -37,18 +37,6 @@ function closeBoroughSidebar() {
 
     zoomOutBorough();
     setTimeout(function () { window.location.reload(); }, 2000);
-    // var sidebarDiv = document.getElementById("myBoroughSidebar");
-
-    // sidebarDiv.style.color = "#ffffff";
-    // sidebarDiv.style.width = "0";
-    // sidebarDiv.style.padding = "0";
-
-    // document.getElementById("main").style.marginRight = "0";
-    // document.getElementById("borough-info").innerHTML = "";
-    // document.getElementById("borough-query-name").innerHTML = "";
-
-    // setTimeout(hideSelectedBorough, 100);
-    // setTimeout(showBoroughs, 100);
 }
 
 function zoomOutBorough() {
