@@ -346,6 +346,9 @@
                         // map.setPaintProperty('small-clusters', 'circle-color', '#008080');
                         // map.setLayoutProperty('small-cluster-labels', 'visibility', 'visible');
                         // hideSelectedCluster();
+                        if (selectedHub.length == 1) {
+                            hideSelectedHub();
+                        }
                         if (selectedCluster.length != 1) {
                             selectedCluster.push(e.features[0]);
                         } else {
@@ -395,6 +398,9 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
+                        if (selectedHub.length == 1) {
+                            hideSelectedHub();
+                        }
                         if (selectedCluster.length != 1) {
                             selectedCluster.push(e.features[0]);
                         } else {
@@ -439,6 +445,9 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
+                        if (selectedHub.length == 1) {
+                            hideSelectedHub();
+                        }
                         if (selectedCluster.length != 1) {
                             selectedCluster.push(e.features[0]);
                         } else {
@@ -479,6 +488,9 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
+                        if (selectedCluster.length == 1) {
+                            hideSelectedCluster();
+                        }
                         if (selectedHub.length != 1) {
                             selectedHub.push(e.features[0]);
                         } else {

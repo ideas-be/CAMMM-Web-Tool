@@ -153,35 +153,35 @@ function zoomOutNode() {
         hideSelectedHub();
     }
 
-    var currentCity = document.getElementById("city-name").innerHTML;
-    if (currentCity == "Montreal Metropolitan Region") {
-        map.flyTo({
-            'center': [-73.624701, 45.525104],
-            'zoom': 10.24,
-            'pitch': 0,
-            // 'bearing': 90,
-            'speed': 0.2,
-            'curve': 1,
-            'duration': 2000,
-            'essential': true,
-            'easing': function (t) {
-                return t;
-            }
-        });
-    } else {
-        map.flyTo({
-            'center': boroughCenter,
-            'zoom': 13, 'pitch': 45,
-            // 'bearing': 90,
-            'speed': 0.2,
-            'curve': 1,
-            'duration': 2000,
-            'essential': true,
-            'easing': function (t) {
-                return t;
-            }
-        });
-    }
+    // var currentCity = document.getElementById("city-name").innerHTML;
+    // if (currentCity == "Montreal Metropolitan Region") {
+    //     map.flyTo({
+    //         'center': [-73.624701, 45.525104],
+    //         'zoom': 10.24,
+    //         'pitch': 0,
+    //         // 'bearing': 90,
+    //         'speed': 0.2,
+    //         'curve': 1,
+    //         'duration': 2000,
+    //         'essential': true,
+    //         'easing': function (t) {
+    //             return t;
+    //         }
+    //     });
+    // } else {
+    map.flyTo({
+        'center': boroughCenter,
+        'zoom': 13, 'pitch': 45,
+        // 'bearing': 90,
+        'speed': 0.2,
+        'curve': 1,
+        'duration': 2000,
+        'essential': true,
+        'easing': function (t) {
+            return t;
+        }
+    });
+    // }
 
 }
 

@@ -332,7 +332,15 @@
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
                         // hideSelectedCluster();
-                        selectedCluster.push(e.features[0]);
+                        if (selectedHub.length == 1) {
+                            hideSelectedHub();
+                        }
+                        if (selectedCluster.length != 1) {
+                            selectedCluster.push(e.features[0]);
+                        } else {
+                            hideSelectedCluster();
+                            selectedCluster.push(e.features[0]);
+                        }
                         setTimeout(displaySelectedCluster, 400);
 
                         getMapCenter(e.features[0].geometry.coordinates);
@@ -375,7 +383,15 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
-                        selectedCluster.push(e.features[0]);
+                        if (selectedHub.length == 1) {
+                            hideSelectedHub();
+                        }
+                        if (selectedCluster.length != 1) {
+                            selectedCluster.push(e.features[0]);
+                        } else {
+                            hideSelectedCluster();
+                            selectedCluster.push(e.features[0]);
+                        }
                         setTimeout(displaySelectedCluster, 400);
 
                         getMapCenter(e.features[0].geometry.coordinates);
@@ -414,7 +430,15 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
-                        selectedCluster.push(e.features[0]);
+                        if (selectedHub.length == 1) {
+                            hideSelectedHub();
+                        }
+                        if (selectedCluster.length != 1) {
+                            selectedCluster.push(e.features[0]);
+                        } else {
+                            hideSelectedCluster();
+                            selectedCluster.push(e.features[0]);
+                        }
                         setTimeout(displaySelectedCluster, 400);
 
                         getMapCenter(e.features[0].geometry.coordinates);
@@ -449,7 +473,15 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
-                        selectedHub.push(e.features[0]);
+                        if (selectedCluster.length == 1) {
+                            hideSelectedCluster();
+                        }
+                        if (selectedHub.length != 1) {
+                            selectedHub.push(e.features[0]);
+                        } else {
+                            hideSelectedHub();
+                            selectedHub.push(e.features[0]);
+                        }
                         setTimeout(displaySelectedHub, 400);
 
                         getMapCenter(e.features[0].geometry.coordinates);
