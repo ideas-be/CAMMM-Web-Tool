@@ -115,7 +115,7 @@ function displaySurroundingServices() {
                 surrServiceMenuHTML += "<div class=\"service-option\" id=\"" + serviceType.toLowerCase() + "\">" + "<div class=\"service-category-name\">" +
                     "<p>" + catName.toLowerCase() + "</p>" + "</div>" +
                     "<i class=\"" + serviceCategoryIcons[category] + "\"></i>" + "<div class=\"service-units\">" +
-                    "<p>" + serviceUnit + "</p>" + "</div>" + "</div>";
+                    "<p>" + serviceUnit.toFixed(0) + "</p>" + "</div>" + "</div>";
             }
 
         }
