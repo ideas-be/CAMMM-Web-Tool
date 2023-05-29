@@ -28,7 +28,19 @@
 
 <body>
     <!-- testing a sidebar code -->
-    <!-- <div id="sidebar-section"> -->
+    <div id="sidebar-section">
+        <!-- Hi! This is the sidebar section -->
+        <div class="sidebar-card">
+            This is the sidebar card!
+        </div>
+        <div class="sidebar-card">
+            This is the sidebar card!
+        </div>
+    </div>
+    <div class="arrows-div">
+        <a id="sidebar-left-arrow" onclick="printSidebar('left');"><i class="fas fa-chevron-left"></i></a>
+        <a id="sidebar-right-arrow" onclick="printSidebar('right');"><i class="fas fa-chevron-right"></i></a>
+    </div>
     <div id="mySidebar" class="sidebar">
         <a class="close-btn" onclick="closeSidebar();">x</a>
         <div id="node-category-type"></div>
@@ -82,7 +94,14 @@
 
         // Hide borough query dropdown at inital load
         // document.getElementById("borough-query-dropdown").style.display = "none";
+        function printSidebar(arrow) {
 
+            if (arrow == 'left') {
+                console.log("Left arrow was clicked!!");
+            } else if (arrow == 'right') {
+                console.log("Right arrow was clicked!!");
+            }
+        }
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 
