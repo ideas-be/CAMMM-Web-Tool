@@ -28,6 +28,7 @@
 
 <body>
     <!-- testing a sidebar code -->
+    <!-- <div id="sidebar-section"> -->
     <div id="mySidebar" class="sidebar">
         <a class="close-btn" onclick="closeSidebar();">x</a>
         <div id="node-category-type"></div>
@@ -49,6 +50,7 @@
     </div>
 
     <!-- borough sidebar code -->
+
     <div id="myBoroughSidebar" class="sidebar">
         <a class="close-btn" onclick="closeBoroughSidebar();">x</a>
         <div style="height: 20px;"></div>
@@ -65,6 +67,7 @@
         <!-- <div style="height: 20px;"></div> -->
         <div id="borough-query-info"></div>
     </div>
+    <!-- </div> -->
 
     <div id="main">
         <h1 class="cammm-title">CAMMM</h1>
@@ -343,7 +346,13 @@
                         // map.setPaintProperty('small-clusters', 'circle-color', '#008080');
                         // map.setLayoutProperty('small-cluster-labels', 'visibility', 'visible');
                         // hideSelectedCluster();
-                        selectedCluster.push(e.features[0]);
+                        if (selectedCluster.length != 1) {
+                            selectedCluster.push(e.features[0]);
+                        } else {
+                            hideSelectedCluster();
+                            selectedCluster.push(e.features[0]);
+                        }
+
                         setTimeout(displaySelectedCluster, 400);
 
                         getMapCenter(e.features[0].geometry.coordinates);
@@ -386,7 +395,12 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
-                        selectedCluster.push(e.features[0]);
+                        if (selectedCluster.length != 1) {
+                            selectedCluster.push(e.features[0]);
+                        } else {
+                            hideSelectedCluster();
+                            selectedCluster.push(e.features[0]);
+                        }
                         setTimeout(displaySelectedCluster, 400);
 
                         getMapCenter(e.features[0].geometry.coordinates);
@@ -425,7 +439,12 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
-                        selectedCluster.push(e.features[0]);
+                        if (selectedCluster.length != 1) {
+                            selectedCluster.push(e.features[0]);
+                        } else {
+                            hideSelectedCluster();
+                            selectedCluster.push(e.features[0]);
+                        }
                         setTimeout(displaySelectedCluster, 400);
 
                         getMapCenter(e.features[0].geometry.coordinates);
@@ -460,7 +479,12 @@
 
                         // Now start cluster interactions
                         map.getCanvas().style.cursor = 'pointer';
-                        selectedHub.push(e.features[0]);
+                        if (selectedHub.length != 1) {
+                            selectedHub.push(e.features[0]);
+                        } else {
+                            hideSelectedHub();
+                            selectedHub.push(e.features[0]);
+                        }
                         setTimeout(displaySelectedHub, 400);
 
                         getMapCenter(e.features[0].geometry.coordinates);

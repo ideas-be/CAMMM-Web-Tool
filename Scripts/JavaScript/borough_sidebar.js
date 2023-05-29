@@ -7,11 +7,15 @@ function openBoroughSidebar(boroughQueries) {
     console.log("Borough Query properties from sidebar js", boroughQueryProps);
     console.log(typeof (boroughQueryProps));
 
-    var sidebarDiv = document.getElementById("myBoroughSidebar");
+    // document.getElementsById("sidebar-section").style.width = "300px";
+    // sidebarSection.style.width = "300px";
+    // sidebarSection.style.height = "300px";
 
-    sidebarDiv.style.width = "300px";
-    sidebarDiv.style.padding = "20px";
-    sidebarDiv.style.color = "#000000";
+    var boroughSidebarDiv = document.getElementById("myBoroughSidebar");
+
+    boroughSidebarDiv.style.width = "300px";
+    boroughSidebarDiv.style.padding = "20px";
+    boroughSidebarDiv.style.color = "#000000";
     document.getElementById("map").style.marginRight = "300px";
     document.getElementById("borough-query-name").style.color = "#000000";
 
@@ -36,6 +40,20 @@ function closeBoroughSidebar() {
     }
 
     zoomOutBorough();
+    var sidebarDiv = document.getElementById("myBoroughSidebar");
+    setTimeout(function () { window.location.reload(); }, 2000);
+    // var sidebarDiv = document.getElementById("myBoroughSidebar");
+
+    sidebarDiv.style.color = "#ffffff";
+    sidebarDiv.style.width = "0";
+    sidebarDiv.style.padding = "0";
+    // sidebarDiv.style.color = "#ffffff";
+    // sidebarDiv.style.width = "0";
+    // sidebarDiv.style.padding = "0";
+
+    document.getElementById("main").style.marginRight = "0";
+    document.getElementById("borough-info").innerHTML = "";
+    document.getElementById("borough-query-name").innerHTML = "";
     setTimeout(function () { window.location.reload(); }, 2000);
 }
 

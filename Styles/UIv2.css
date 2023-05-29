@@ -23,7 +23,7 @@
 
     .cammm-logo {
         width: 100%;
-        max-width: 300px;
+        max-width: 250px;
     }
 
     .atlas-title {
@@ -31,7 +31,6 @@
         padding-top: 10px;
     }
 
-    /* .example {background: red;} */
     .city-filter {
         display: block;
         font-size: 10px;
@@ -47,6 +46,12 @@
         width: 100vw;
     }
 
+    /* .sidebar-section {
+        text-align: center;
+        align-content: center;
+        width: 100%;
+    } */
+
     #mySidebar {
         height: 300px;
         /* margin-bottom: 0; */
@@ -57,9 +62,14 @@
     }
 
     #myBoroughSidebar {
+        /* width: 600px; */
         height: 300px;
         bottom: 0;
-        margin: 60vh 30px 0 30px;
+        margin-top: 60vh;
+        /* margin-left: 20px; */
+        margin-right: 5vw;
+        /* align-self: center; */
+        /* text-align: center; */
         padding-bottom: 0;
         border-radius: 10px;
     }
@@ -315,11 +325,11 @@
 
 .landing-logos {
     /* display: inline; */
-    /* margin-bottom: 0; */
-    margin-top: 20vh;
+    margin-bottom: 50px;
+    margin-top: 15vh;
     margin-left: 10vw;
     /* width: 60vw; */
-    height: 20vh;
+    /* height: 20vh; */
     /* max-width: 1000px; */
 }
 
