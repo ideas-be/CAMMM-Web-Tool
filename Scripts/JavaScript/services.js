@@ -71,14 +71,19 @@ function displaySurroundingServices() {
 
     // fetch and read category services JSON
 
-    var serviceCategoryJSON = readGeoJsonObj("category_services.json");
+    var serviceCategoryJSON = readGeoJsonObj("category_services.geojson");
+    fetch
     console.log("Category of Services JSON: ", serviceCategoryJSON);
 
     // loop through JSON and match node ID
 
     var nodeServiceData;
     for (i = 0; i < serviceCategoryJSON.features.length; i++) {
+        // console.log("Node Properties ID: ", nodeProperties.Id);
+        // console.log("Service Category Data: ", serviceCategoryJSON.features[0]);
         if (nodeProperties.Id == serviceCategoryJSON.features[i].Id) {
+
+            // console.log("Service Category Data: ", serviceCategoryJSON.features[i].CategoryData);
             nodeServiceData = serviceCategoryJSON.features[i].CategoryData;
         }
     }

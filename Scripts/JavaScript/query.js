@@ -49,12 +49,12 @@ function callQueryCalFunc() {
             break;
         case "Diversity of Services and Amenities":
             fetchGeoJson("services.geojson");
-            fetchGeoJson("category_services.json");
+            fetchGeoJson("category_services.geojson");
             setTimeout(calDiversityServices, 200);
             break;
         case "Closeness of Services and Amenities":
             fetchGeoJson("services.geojson");
-            fetchGeoJson("category_services.json");
+            fetchGeoJson("category_services.geojson");
             setTimeout(calClosenessServices, 200);
             break;
         case "Greenery": console.log("Greenery");
