@@ -30,10 +30,10 @@
     <!-- testing a sidebar code -->
     <!-- <div id="sidebar-section">
         Hi! This is the sidebar section
-        <div class="sidebar-card">
+        <div class="sidebar-card" id="sidebar-card-1">
             This is the sidebar card!
         </div>
-        <div class="sidebar-card">
+        <div class="sidebar-card" id="sidebar-card-2">
             This is the sidebar card!
         </div>
     </div>
@@ -98,10 +98,12 @@
 
             if (arrow == 'left') {
                 console.log("Left arrow was clicked!!");
+
             } else if (arrow == 'right') {
                 console.log("Right arrow was clicked!!");
             }
         }
+
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
 

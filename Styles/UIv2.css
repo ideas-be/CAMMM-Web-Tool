@@ -47,8 +47,8 @@
     }
 
     #sidebar-section {
-        display: none;
-        /* display: inline-flex; */
+        /* display: none; */
+        display: inline-flex;
         overflow-x: auto;
         white-space: nowrap;
         /* padding-bottom: 5px; */
@@ -71,7 +71,7 @@
     }
 
     .arrows-div {
-        display: none;
+        /* display: none; */
         text-align: center;
         position: fixed;
         z-index: 10;
