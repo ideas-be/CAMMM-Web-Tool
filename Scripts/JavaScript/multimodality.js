@@ -57,7 +57,7 @@ function fetchStopsLines(nodeProps) {
 function displayStopsLines() {
 
     // document.getElementById("query-info").innerHTML = "";
-
+    // TODO: Add labels to the transit options carousel
     var transitMenuDiv = document.getElementById("transit-option-menu");
     var transitOptionHTML = "";
 

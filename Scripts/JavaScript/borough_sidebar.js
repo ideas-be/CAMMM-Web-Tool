@@ -20,6 +20,7 @@ function openBoroughSidebar(boroughQueries) {
     document.getElementById("borough-query-name").style.color = "#000000";
 
     // Display Borough Info Here
+    // TODO: Format the area number with spaces after every 3 digits
     var boroughInfoHTML = "<p>Borough Name</p><h2 id=\"borough-name\">" + boroughQueryProps.NOM + "</h2>" +
         "<p>Area: <strong>" + boroughQueryProps.AIRE.toFixed(2) + " sq.m. </strong><br>" +
         // "Population in thousands: <strong>" + boroughQueryProps.PopulationInThousands + "</strong><br>" +

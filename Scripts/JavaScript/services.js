@@ -66,7 +66,7 @@ function displayServiceDistanceBarGraphs() {
 var serviceCategoryIcons = { "Food": "fas fa-utensils fa-2x", "Health": "fas fa-house-medical fa-2x", "Sanitation": "fas fa-restroom fa-2x", "Recreation": "fas fa-champagne-glasses fa-2x", "Education": "fas fa-book fa-2x", "Government": "fas fa-landmark-flag fa-2x", "Laundry": "fas fa-jug-detergent fa-2x", "Culture": "fas fa-masks-theater fa-2x", "Shelter": "fas fa-person-shelter fa-2x", "Finance": "fas fa-coins fa-2x", "Electronics": "fas fa-mobile-retro fa-2x", "Store": "fas fa-store fa-2x", "BeautyNFashion": "fas fa-shirt fa-2x" };
 
 function displaySurroundingServices() {
-
+    // TODO: Add units in m or specify number of services to clarify the values for each service in the carousel
     var queryInfoDiv = document.getElementById("query-info");
 
     // fetch and read category services JSON

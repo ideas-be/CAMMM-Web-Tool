@@ -56,6 +56,7 @@ function openSidebar(nodeProps) {
     // Node Name
     document.getElementById("node-name").innerHTML = "<h2>" + nodeProperties.Name + "</h2>";
 
+    // TODO: Add more general info about node before selecting query
     // Node Street View
     // document.getElementById("node-street-view").innerHTML = "<iframe src=\"" + nodeProperties.URL + "\">Street View</iframe>";
 
