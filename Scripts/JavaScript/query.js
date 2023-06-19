@@ -1,3 +1,5 @@
+var queryDefinitions = ["The number of alternative public transport options available at a given node.", "The different types of services available-primary, secondary, tertiary-and their respective categories (store, food, finance, etc.).", "The closeness of the services and amenities focuses on the geographical distribution of the categories.", "The comparison of the number of bus/tram stops and if applicable stations declared with facilities that allow access to wheelchairs.", "The mathematical abstraction of the transit network that represents each of the point of access as nodes building up the network."];
+
 function queryDropDown() {
     var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity"
         // , "Greenery", "Walkability"

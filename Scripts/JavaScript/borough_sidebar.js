@@ -20,15 +20,23 @@ function openBoroughSidebar(boroughQueries) {
     document.getElementById("borough-query-name").style.color = "#000000";
 
     // Display Borough Info Here
-    // TODO: Format the area number with spaces after every 3 digits
+    // Format the area number with spaces after every 3 digits
+
+    var boroughAreaNum = Number(boroughQueryProps.AIRE.toFixed(0));
+
+    var boroughArea = boroughAreaNum.toLocaleString();
+    // formatAreaNum(boroughQueryProps.AIRE.toFixed(0));
+
+    console.log("Borough area is: ", boroughArea);
+
     var boroughInfoHTML = "<p>Borough Name</p><h2 id=\"borough-name\">" + boroughQueryProps.NOM + "</h2>" +
-        "<p>Area: <strong>" + boroughQueryProps.AIRE.toFixed(2) + " sq.m. </strong><br>" +
+        "<p>Area: <strong>" + boroughArea + " sq.m. </strong><br>" +
         // "Population in thousands: <strong>" + boroughQueryProps.PopulationInThousands + "</strong><br>" +
         "Number of Hubs: <strong>" + boroughQueryProps.NumOfHubs + "</strong><br>" +
         "Number of Clusters: <strong>" + boroughQueryProps.NumOfClusters + "</strong><br>" + "</p>";
     document.getElementById("borough-info").innerHTML += boroughInfoHTML;
 
-};
+}
 
 function closeBoroughSidebar() {
 
