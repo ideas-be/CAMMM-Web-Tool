@@ -617,6 +617,18 @@ h2 {
     /* position: static; */
 }
 
+#query-info-button {
+    float: right;
+    cursor: pointer;
+    display: inline;
+}
+
+#query-definition,
+#borough-query-definition {
+    text-align: left;
+    /* display: none; */
+}
+
 /* END OF DROPDOWN STYLE */
 
 /* START OF QUERY RATING STYLE */

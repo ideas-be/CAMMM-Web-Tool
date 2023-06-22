@@ -1,18 +1,43 @@
-var queryDefinitions = ["The number of alternative public transport options available at a given node.", "The different types of services available-primary, secondary, tertiary-and their respective categories (store, food, finance, etc.).", "The closeness of the services and amenities focuses on the geographical distribution of the categories.", "The comparison of the number of bus/tram stops and if applicable stations declared with facilities that allow access to wheelchairs.", "The mathematical abstraction of the transit network that represents each of the point of access as nodes building up the network."];
+var flag = 0;
+var queryDictionary = [
+    {
+        title: "Multimodality",
+        definition: "The number of alternative public transport options available at a given node."
+    },
+    {
+        title: "Diversity of Services and Amenities",
+        definition: "The different types of services available-primary, secondary, tertiary-and their respective categories (store, food, finance, etc.)."
+    },
+    {
+        title: "Closeness of Services and Amenities",
+        definition: "The closeness of the services and amenities focuses on the geographical distribution of the categories."
+    },
+    {
+        title: "Universal Design & Accessibility",
+        definition: "The comparison of the number of bus/tram stops and if applicable stations declared with facilities that allow access to wheelchairs."
+    },
+    {
+        title: "Transit Connectivity",
+        definition: "The mathematical abstraction of the transit network that represents each of the point of access as nodes building up the network."
+    },
+];
 
 function queryDropDown() {
-    var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity"
-        // , "Greenery", "Walkability"
-    ];
+    // var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity"
+    //     // , "Greenery", "Walkability"
+    // ];
     var dropDownDiv = document.getElementById("dropdown-content");
     var dropDownHTML = "";
 
-    for (i = 0; i < queryList.length; i++) {
+    for (i = 0; i < queryDictionary.length; i++) {
         // console.log(queryList[i]);
-        dropDownHTML += "<a href=\"#\" onclick=\"getSelectedQuery(\'" + queryList[i] + "\');\">" + queryList[i] + "</a>";
+        dropDownHTML += "<a href=\"#\" onclick=\"getSelectedQuery(\'" + queryDictionary[i].title + "\');\">" + queryDictionary[i].title + "</a>";
+        // console.log("Query inserted in the dropdown is: ", queryDictionary[i].title);
+        // console.log("Query definition is: ", queryDictionary[i].definition);
     }
 
     dropDownDiv.innerHTML += dropDownHTML;
+    insertQueryInfoButton();
 }
 
 var selectedQuery = "Select Query";
@@ -29,6 +54,41 @@ function getSelectedQuery(queryName) {
         document.getElementById("query-name").innerHTML = selectedQuery + " rating:";
     }
     callQueryCalFunc();
+
+}
+
+function insertQueryInfoButton() {
+    var queryDropdownDiv = document.getElementById("query-dropdown");
+    var boroughQueryDropdownDiv = document.getElementById("borough-query-dropdown");
+
+    var infoButtonHTML = "<span id=\"query-info-button\" style=\"font-size: 1em; color: #d81b60;\">" +
+        "<i class=\"fas fa-info-circle\" onclick=\"showQueryDefinition();\"></i></span>";
+
+    queryDropdownDiv.innerHTML += infoButtonHTML;
+    boroughQueryDropdownDiv.innerHTML += infoButtonHTML;
+    // console.log("Info Button HTML is: ", infoButtonHTML);
+    // console.log("Query Dropdown HTML contains: ", queryDropdownDiv.innerHTML);
+    // console.log("Borough Query Dropdown HTML contains: ", boroughQueryDropdownDiv.innerHTML);
+
+}
+
+function showQueryDefinition() {
+
+    var queryDefinitionDiv = document.getElementById("query-definition");
+    var boroughQueryDefinitionDiv = document.getElementById("borough-query-definition");
+    if (flag == 0) {
+        for (i = 0; i < queryDictionary.length; i++) {
+            if (selectedQuery == queryDictionary[i].title) {
+                queryDefinitionDiv.innerHTML = "<p>" + queryDictionary[i].definition + "</p>";
+                boroughQueryDefinitionDiv.innerHTML = "<p>" + queryDictionary[i].definition + "</p>";
+                flag = 1;
+            }
+        }
+    } else if (flag == 1) {
+        queryDefinitionDiv.innerHTML = "";
+        boroughQueryDefinitionDiv.innerHTML = "";
+        flag = 0;
+    }
 
 }
 
