@@ -8,6 +8,7 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
     <link rel="stylesheet" href="Styles/UIv2.css">
+    <script src="Scripts/JavaScript/atlas-tutorial.js"></script>
     <script src="Scripts/JavaScript/sidebar.js"></script>
     <script src="Scripts/JavaScript/cluster-hub.js"></script>
     <script src="Scripts/JavaScript/readFiles/readMIFiles.js"></script>
@@ -45,7 +46,7 @@
     <div id="atlas-tutorial-overlay">
         <div class="tutorial-prompt-box">
             <a class="tutorial-close-btn" onclick="">x</a>
-            <p class="tutorial-text">This is a sample prompt text. <br>Would you like to continue?</p>
+            <p class="tutorial-text">This is a sample prompt text. Would you like to continue?</p>
             <span class="tutorial-buttons">
                 <a id="button-1" onclick="">Button 1</a>
                 <a id="button-2" onclick="">Button 2</a>
@@ -117,6 +118,9 @@
                 console.log("Right arrow was clicked!!");
             }
         }
+
+        setTimeout(displayIntroPrompt, 100);
+        // displayTutorialPrompts();
 
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
