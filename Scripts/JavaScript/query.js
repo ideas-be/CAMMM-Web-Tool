@@ -132,8 +132,6 @@ function callQueryCalFunc() {
 
 }
 
-// TODO: Write function to add info button with query definitions
-
 function displayQueryRating(ratingValue) {
 
     var ratingWord = "";
