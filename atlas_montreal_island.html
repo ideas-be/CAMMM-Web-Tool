@@ -45,7 +45,7 @@
     <!-- TODO Add node points and UI tutorial -->
     <div id="atlas-tutorial-overlay">
         <div class="tutorial-prompt-box">
-            <a class="tutorial-close-btn" onclick="">x</a>
+            <a class="tutorial-close-btn" onclick="closeTutorialPrompt();">x</a>
             <p class="tutorial-text">This is a sample prompt text. Would you like to continue?</p>
             <span class="tutorial-buttons">
                 <a id="button-1" onclick="">Button 1</a>
@@ -98,6 +98,7 @@
 
     <div id="main">
         <h1 class="cammm-title">CAMMM</h1>
+        <i class="fas fa-clipboard-question" onclick="displayIntroPrompt();"></i>
         <h2 id="city-name">Montreal Island</h2>
     </div>
     <div id="map"></div>

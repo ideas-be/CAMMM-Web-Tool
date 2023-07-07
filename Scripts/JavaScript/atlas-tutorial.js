@@ -54,7 +54,10 @@ var tutorialBtn1 = document.getElementById("button-1");
 var tutorialBtn1 = document.getElementById("button-2");
 
 function displayIntroPrompt() {
-    tutorialTextDiv.innerHTML = tutorialPrompts[0].text;
+    document.getElementById("atlas-tutorial-overlay").style.display = 'block';
+    // tutorialTextDiv.innerHTML = tutorialPrompts[0].text;
+    tutorialTextDiv = tutorialPrompts[0].text;
+    console.log("Tutorial Prompt Text: ", tutorialPrompts[0].text);
     console.log("Tutorial text div: ", tutorialTextDiv);
     // tutorialBtn1.innerHTML = tutorialPrompts[0].buttons[0];
     // tutorialBtn2.innerHTML = tutorialPrompts[0].buttons[1];
@@ -66,4 +69,8 @@ function displayTutorialPrompts() {
         console.log("Prompt: ");
         console.log(tutorialPrompts[prompt].text);
     }
+}
+
+function closeTutorialPrompt() {
+    document.getElementById("atlas-tutorial-overlay").style.display = 'none';
 }
