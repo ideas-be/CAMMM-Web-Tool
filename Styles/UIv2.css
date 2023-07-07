@@ -585,10 +585,10 @@ h2 {
     /* margin-left: -20px; */
 }
 
-.tutorial-prompt-box {
+#tutorial-prompt-box {
     background-color: #ffffff;
     width: 250px;
-    height: 150px;
+    /* height: 150px; */
     z-index: 3;
     /* position: relative; */
     border-radius: 10px;
@@ -617,8 +617,8 @@ h2 {
     background-color: #9b1345;
 }
 
-.tutorial-text {
-    margin: 30px 0px;
+#tutorial-text {
+    margin: 40px 0px 20px 0px;
 }
 
 .tutorial-buttons #button-1,

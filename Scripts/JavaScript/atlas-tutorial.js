@@ -49,18 +49,18 @@ var tutorialPrompts = [
     },
 ];
 
-var tutorialTextDiv = document.getElementsByClassName("tutorial-text");
-var tutorialBtn1 = document.getElementById("button-1");
-var tutorialBtn1 = document.getElementById("button-2");
-
 function displayIntroPrompt() {
     document.getElementById("atlas-tutorial-overlay").style.display = 'block';
-    // tutorialTextDiv.innerHTML = tutorialPrompts[0].text;
-    tutorialTextDiv = tutorialPrompts[0].text;
-    console.log("Tutorial Prompt Text: ", tutorialPrompts[0].text);
-    console.log("Tutorial text div: ", tutorialTextDiv);
-    // tutorialBtn1.innerHTML = tutorialPrompts[0].buttons[0];
-    // tutorialBtn2.innerHTML = tutorialPrompts[0].buttons[1];
+
+    document.getElementById("tutorial-text").innerHTML = tutorialPrompts[0].text;
+
+    var tutorialbtn1 = document.getElementById("button-1");
+    tutorialbtn1.innerHTML = tutorialPrompts[0].buttons[0];
+    tutorialbtn1.onclick = function () { displayNextPrompt(); };
+
+    var tutorialbtn2 = document.getElementById("button-2");
+    tutorialbtn2.innerHTML = tutorialPrompts[0].buttons[1];
+    tutorialbtn2.onclick = function () { closeTutorialPrompt(); };
 }
 
 function displayTutorialPrompts() {
@@ -73,4 +73,59 @@ function displayTutorialPrompts() {
 
 function closeTutorialPrompt() {
     document.getElementById("atlas-tutorial-overlay").style.display = 'none';
+}
+
+function displayPreviousPrompt() {
+    console.log("Displaying the previous prompt!!!");
+
+    var currentPrompt = document.getElementById("tutorial-text").innerHTML;
+    console.log("Current Prompt is: ", currentPrompt);
+    var promptIndex = Number(getPromptIndex(currentPrompt));
+    console.log("Index of Current Prompt is: ", promptIndex);
+
+    document.getElementById("tutorial-text").innerHTML = tutorialPrompts[promptIndex - 1].text;
+
+    var tutorialbtn1 = document.getElementById("button-1");
+    tutorialbtn1.innerHTML = tutorialPrompts[promptIndex - 1].buttons[0];
+    tutorialbtn1.onclick = function () { displayPreviousPrompt(); };
+
+    var tutorialbtn2 = document.getElementById("button-2");
+    tutorialbtn2.innerHTML = tutorialPrompts[promptIndex - 1].buttons[1];
+    tutorialbtn2.onclick = function () { displayNextPrompt(); };
+}
+
+function displayNextPrompt() {
+    console.log("Displaying the next prompt!!!");
+
+    var currentPrompt = document.getElementById("tutorial-text").innerHTML;
+    console.log("Current Prompt is: ", currentPrompt);
+    var promptIndex = Number(getPromptIndex(currentPrompt));
+    console.log("Index of Current Prompt is: ", promptIndex);
+
+    // TODO: Change the position of the prompts
+    var tutorialBoxDiv = document.getElementById("tutorial-prompt-box");
+    var promptPosition = tutorialPrompts[promptIndex + 1].position;
+    console.log("Position of Next Prompt is: ", promptPosition);
+    console.log("Current Left Margin of Tutorial Box is: ", tutorialBoxDiv.style.marginLeft);
+    tutorialBoxDiv.style.marginLeft = toString(promptPosition[0]) + "%";
+    console.log("Moving Tutorial Box Left by: ", tutorialBoxDiv.style.marginLeft);
+    tutorialBoxDiv.style.marginTop = toString(promptPosition[1]) + "%";
+
+    document.getElementById("tutorial-text").innerHTML = tutorialPrompts[promptIndex + 1].text;
+
+    var tutorialbtn1 = document.getElementById("button-1");
+    tutorialbtn1.innerHTML = tutorialPrompts[promptIndex + 1].buttons[0];
+    tutorialbtn1.onclick = function () { displayPreviousPrompt(); };
+
+    var tutorialbtn2 = document.getElementById("button-2");
+    tutorialbtn2.innerHTML = tutorialPrompts[promptIndex + 1].buttons[1];
+    tutorialbtn2.onclick = function () { displayNextPrompt(); };
+}
+
+function getPromptIndex(promptText) {
+    for (prompt in tutorialPrompts) {
+        if (tutorialPrompts[prompt].text == promptText) {
+            return prompt;
+        }
+    }
 }
