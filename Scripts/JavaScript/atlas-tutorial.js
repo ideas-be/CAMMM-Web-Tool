@@ -83,15 +83,29 @@ function displayPreviousPrompt() {
     var promptIndex = Number(getPromptIndex(currentPrompt));
     console.log("Index of Current Prompt is: ", promptIndex);
 
+    // Change the position of the prompts
+    var tutorialBoxDiv = document.getElementById("tutorial-prompt-box");
+    var promptPosition = tutorialPrompts[promptIndex - 1].position;
+    console.log("Position of Next Prompt is: ", promptPosition);
+    console.log("Current Left Margin of Tutorial Box is: ", document.getElementById("tutorial-prompt-box").style.marginLeft);
+    tutorialBoxDiv.style.marginLeft = promptPosition[0].toString() + "%";
+    console.log("Moving Tutorial Box Left by: ", tutorialBoxDiv.style.marginLeft);
+    tutorialBoxDiv.style.marginTop = promptPosition[1].toString() + "%";
+    console.log("Moving Tutorial Box Top by: ", tutorialBoxDiv.style.marginTop);
+
     document.getElementById("tutorial-text").innerHTML = tutorialPrompts[promptIndex - 1].text;
 
     var tutorialbtn1 = document.getElementById("button-1");
     tutorialbtn1.innerHTML = tutorialPrompts[promptIndex - 1].buttons[0];
-    tutorialbtn1.onclick = function () { displayPreviousPrompt(); };
+    tutorialbtn1.onclick = function () {
+        clickBtn1(tutorialbtn1.innerHTML, document.getElementById("tutorial-text").innerHTML);
+    };
 
     var tutorialbtn2 = document.getElementById("button-2");
     tutorialbtn2.innerHTML = tutorialPrompts[promptIndex - 1].buttons[1];
-    tutorialbtn2.onclick = function () { displayNextPrompt(); };
+    tutorialbtn2.onclick = function () {
+        clickBtn2(tutorialbtn2.innerHTML, document.getElementById("tutorial-text").innerHTML);
+    };
 }
 
 function displayNextPrompt() {
@@ -102,24 +116,55 @@ function displayNextPrompt() {
     var promptIndex = Number(getPromptIndex(currentPrompt));
     console.log("Index of Current Prompt is: ", promptIndex);
 
-    // TODO: Change the position of the prompts
+    // Change the position of the prompts
     var tutorialBoxDiv = document.getElementById("tutorial-prompt-box");
     var promptPosition = tutorialPrompts[promptIndex + 1].position;
     console.log("Position of Next Prompt is: ", promptPosition);
-    console.log("Current Left Margin of Tutorial Box is: ", tutorialBoxDiv.style.marginLeft);
-    tutorialBoxDiv.style.marginLeft = toString(promptPosition[0]) + "%";
+    console.log("Current Left Margin of Tutorial Box is: ", document.getElementById("tutorial-prompt-box").style.marginLeft);
+    tutorialBoxDiv.style.marginLeft = promptPosition[0].toString() + "%";
     console.log("Moving Tutorial Box Left by: ", tutorialBoxDiv.style.marginLeft);
-    tutorialBoxDiv.style.marginTop = toString(promptPosition[1]) + "%";
+    tutorialBoxDiv.style.marginTop = promptPosition[1].toString() + "%";
+    console.log("Moving Tutorial Box Top by: ", tutorialBoxDiv.style.marginTop);
 
     document.getElementById("tutorial-text").innerHTML = tutorialPrompts[promptIndex + 1].text;
 
     var tutorialbtn1 = document.getElementById("button-1");
     tutorialbtn1.innerHTML = tutorialPrompts[promptIndex + 1].buttons[0];
-    tutorialbtn1.onclick = function () { displayPreviousPrompt(); };
+    tutorialbtn1.onclick = function () {
+        clickBtn1(tutorialbtn1.innerHTML, document.getElementById("tutorial-text").innerHTML);
+    };
 
     var tutorialbtn2 = document.getElementById("button-2");
     tutorialbtn2.innerHTML = tutorialPrompts[promptIndex + 1].buttons[1];
-    tutorialbtn2.onclick = function () { displayNextPrompt(); };
+    tutorialbtn2.onclick = function () {
+        clickBtn2(tutorialbtn2.innerHTML, document.getElementById("tutorial-text").innerHTML);
+    };
+}
+
+function clickBtn1(btnText, promptText) {
+    if ((btnText == "Yes") && (promptText == "You\'re all set! Would you like to end this atlas tutorial?")) {
+
+        console.log("Reached end prompt: ", promptText);
+        closeTutorialPrompt();
+
+    } else if ((btnText == "Yes") && (promptText == "Hi, would you like to go through a tutorial of the atlas?")) {
+        displayNextPrompt();
+    } else {
+        displayPreviousPrompt();
+    }
+}
+
+function clickBtn2(btnText, promptText) {
+    if ((btnText == "No") && (promptText == "You\'re all set! Would you like to end this atlas tutorial?")) {
+
+        console.log("Reached end prompt: ", promptText);
+        displayPreviousPrompt();
+
+    } else if ((btnText == "No") && (promptText == "Hi, would you like to go through a tutorial of the atlas?")) {
+        closeTutorialPrompt();
+    } else {
+        displayNextPrompt();
+    }
 }
 
 function getPromptIndex(promptText) {
