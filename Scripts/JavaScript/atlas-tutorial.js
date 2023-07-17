@@ -93,15 +93,18 @@ function displayPreviousPrompt() {
     var promptIndex = Number(getPromptIndex(currentPrompt));
     console.log("Index of Current Prompt is: ", promptIndex);
 
-    // Change the position of the prompts
+    // Change the position of the arrows and prompts
+    var arrowSectionDiv = document.getElementById("tutorial-arrow-section");
     var tutorialBoxDiv = document.getElementById("tutorial-prompt-box");
     var promptPosition = tutorialPrompts[promptIndex - 1].position;
-    console.log("Position of Next Prompt is: ", promptPosition);
-    console.log("Current Left Margin of Tutorial Box is: ", document.getElementById("tutorial-prompt-box").style.marginLeft);
+
+    arrowSectionDiv.style.marginLeft = promptPosition[0].toString() + "%";
+    arrowSectionDiv.style.marginTop = promptPosition[1].toString() + "%";
+
+    insertArrow(promptIndex - 1);
+
     tutorialBoxDiv.style.marginLeft = promptPosition[0].toString() + "%";
-    console.log("Moving Tutorial Box Left by: ", tutorialBoxDiv.style.marginLeft);
     tutorialBoxDiv.style.marginTop = promptPosition[1].toString() + "%";
-    console.log("Moving Tutorial Box Top by: ", tutorialBoxDiv.style.marginTop);
 
     document.getElementById("tutorial-text").innerHTML = tutorialPrompts[promptIndex - 1].text;
 
@@ -127,18 +130,19 @@ function displayNextPrompt() {
     console.log("Index of Current Prompt is: ", promptIndex);
 
     // Change the position of the prompts
+    var arrowSectionDiv = document.getElementById("tutorial-arrow-section");
     var tutorialBoxDiv = document.getElementById("tutorial-prompt-box");
     var promptPosition = tutorialPrompts[promptIndex + 1].position;
-    console.log("Position of Next Prompt is: ", promptPosition);
-    console.log("Current Left Margin of Tutorial Box is: ", document.getElementById("tutorial-prompt-box").style.marginLeft);
+
+    arrowSectionDiv.style.marginLeft = promptPosition[0].toString() + "%";
+    arrowSectionDiv.style.marginTop = promptPosition[1].toString() + "%";
+
+    insertArrow(promptIndex + 1);
+
     tutorialBoxDiv.style.marginLeft = promptPosition[0].toString() + "%";
-    console.log("Moving Tutorial Box Left by: ", tutorialBoxDiv.style.marginLeft);
     tutorialBoxDiv.style.marginTop = promptPosition[1].toString() + "%";
-    console.log("Moving Tutorial Box Top by: ", tutorialBoxDiv.style.marginTop);
 
     document.getElementById("tutorial-text").innerHTML = tutorialPrompts[promptIndex + 1].text;
-
-    // insertArrow(promptIndex + 1);
 
     var tutorialbtn1 = document.getElementById("button-1");
     tutorialbtn1.innerHTML = tutorialPrompts[promptIndex + 1].buttons[0];
@@ -189,28 +193,29 @@ function getPromptIndex(promptText) {
 
 function insertArrow(index) {
     // Render fontawesome arrow on prompt box
-    // if(document.getElementById("tutorial-box-arrow").innerHTML!=""){
-    //     document.getElementById("tutorial-box-arrow").innerHTML="";
-    // }
-    var tutorialBoxDiv = document.getElementById("tutorial-prompt-box");
+    if (document.getElementById("tutorial-box-arrow") != null) {
+        document.getElementById("tutorial-box-arrow").remove();
+    }
+
+    var arrowSectionDiv = document.getElementById("tutorial-arrow-section");
 
     var arrowHTML = "";
 
     switch (tutorialPrompts[index].arrow) {
         case "right":
-            arrowHTML = "<i id=\"tutorial-box-arrow\" class=\"fas fa-arrow-right-long\" style=\"margin: 0 0 -5% 100%; \"></i>";
+            arrowHTML = "<i id=\"tutorial-box-arrow\" class=\"fas fa-arrow-right-long\"></i>";
             break;
         case "left":
-            arrowHTML = "<i id=\"tutorial-box-arrow\" class=\"fas fa-arrow-left-long\" style=\"margin: 0 0 -5% 100%; \"></i>";
+            arrowHTML = "<i id=\"tutorial-box-arrow\" class=\"fas fa-arrow-left-long\"></i>";
             break;
         case "up":
-            arrowHTML = "<i id=\"tutorial-box-arrow\" class=\"fas fa-arrow-up-long\" style=\"margin: 0 0 -5% 100%; \"></i>";
+            arrowHTML = "<i id=\"tutorial-box-arrow\" class=\"fas fa-arrow-up-long\"></i>";
             break;
         case "down":
-            arrowHTML = "<i id=\"tutorial-box-arrow\" class=\"fas fa-arrow-down-long\" style=\"margin: 0 0 -5% 100%; \"></i>";
+            arrowHTML = "<i id=\"tutorial-box-arrow\" class=\"fas fa-arrow-down-long\"></i>";
             break;
         default: console.log("error finding arrow!");
     }
 
-    tutorialBoxDiv.innerHTML += arrowHTML;
+    arrowSectionDiv.innerHTML += arrowHTML;
 }
