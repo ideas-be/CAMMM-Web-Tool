@@ -18,6 +18,10 @@ var city = [
     {
         cityName: "Gatineau",
         cityURL: "./atlas_gatineau.html"
+    },
+    {
+        cityName: "Sherbrooke",
+        cityURL: "./atlas_sherbrooke.html"
     }
 ];
 

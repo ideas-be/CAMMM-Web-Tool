@@ -170,7 +170,25 @@ function zoomOutNode() {
         });
 
         setTimeout(function () { window.location.reload(); }, 2000);
-    } else {
+    }
+    if (currentCity == "Sherbrooke") {
+        map.flyTo({
+            'center': [-75.721433, 45.457787],
+            'zoom': 11.24,
+            'pitch': 0,
+            // 'bearing': 90,
+            'speed': 0.2,
+            'curve': 1,
+            'duration': 2000,
+            'essential': true,
+            'easing': function (t) {
+                return t;
+            }
+        });
+
+        setTimeout(function () { window.location.reload(); }, 2000);
+    }
+    else {
         map.flyTo({
             'center': boroughCenter,
             'zoom': 13, 'pitch': 45,
