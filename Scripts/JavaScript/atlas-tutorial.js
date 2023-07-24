@@ -59,6 +59,12 @@ var tutorialPrompts = [
     },
 ];
 
+function startTutorial() {
+    // Start the tutorial from icon click
+    // Display intro or specific prompt based on current UI interaction
+    // if()
+}
+
 function displayIntroPrompt() {
     document.getElementById("atlas-tutorial-overlay").style.display = 'block';
 
@@ -71,14 +77,6 @@ function displayIntroPrompt() {
     var tutorialbtn2 = document.getElementById("button-2");
     tutorialbtn2.innerHTML = tutorialPrompts[0].buttons[1];
     tutorialbtn2.onclick = function () { closeTutorialPrompt(); };
-}
-
-function displayTutorialPrompts() {
-    console.log("Tutorial Prompts are: ");
-    for (prompt in tutorialPrompts) {
-        console.log("Prompt: ");
-        console.log(tutorialPrompts[prompt].text);
-    }
 }
 
 function closeTutorialPrompt() {
@@ -218,4 +216,25 @@ function insertArrow(index) {
     }
 
     arrowSectionDiv.innerHTML += arrowHTML;
+}
+
+function displaySpecificPrompt(topic) {
+    // Pass the topic value and display the corresponding prompt
+    var specificPrompt;
+    for (prompt in tutorialPrompts) {
+        if (tutorialPrompts[prompt].text == topic) {
+            specificPrompt = tutorialPrompts[prompt];
+        }
+    }
+
+    document.getElementById("tutorial-text").innerHTML = specificPrompt.text;
+
+    var tutorialbtn1 = document.getElementById("button-1");
+    tutorialbtn1.innerHTML = specificPrompt.buttons[0];
+    tutorialbtn1.onclick = function () { displayPreviousPrompt(); };
+
+    var tutorialbtn2 = document.getElementById("button-2");
+    tutorialbtn2.innerHTML = specificPrompt.buttons[1];
+    tutorialbtn2.onclick = function () { closeNextPrompt(); };
+
 }
