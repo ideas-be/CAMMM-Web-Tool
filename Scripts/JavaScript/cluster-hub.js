@@ -173,8 +173,25 @@ function zoomOutNode() {
     }
     if (currentCity == "Sherbrooke") {
         map.flyTo({
-            'center': [-75.721433, 45.457787],
-            'zoom': 11.24,
+            'center': [-71.924396, 45.398415],
+            'zoom': 11.46,
+            'pitch': 0,
+            // 'bearing': 90,
+            'speed': 0.2,
+            'curve': 1,
+            'duration': 2000,
+            'essential': true,
+            'easing': function (t) {
+                return t;
+            }
+        });
+
+        setTimeout(function () { window.location.reload(); }, 2000);
+    }
+    if (currentCity == "Quebec City") {
+        map.flyTo({
+            'center': [-71.262953, 46.831758],
+            'zoom': 11.10,
             'pitch': 0,
             // 'bearing': 90,
             'speed': 0.2,
