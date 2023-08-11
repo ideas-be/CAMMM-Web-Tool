@@ -1,3 +1,8 @@
+## Firdous Tasks for Safety Index
+- Check and add the values of the last column for each city in the atlas: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310030901
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310031101
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410026201
+
 ## OOM Pipeline (March-April)
 - Finish the multi-jurisdiction or Metropolitan Area tool
 - Add the BIXI data at Montreal
