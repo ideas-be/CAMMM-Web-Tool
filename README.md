@@ -1,6 +1,10 @@
 ## Greenery Notes
 50 meter buffer for Clusters
 100 meter buffer for Hubs  
+
+## Population Excel Data Notes
+For Montreal Island, we sum up the value of the entries: Montréal (V), Montréal-Est (V) and Montréal-Ouest (V).
+For Montreal Metropolitan Region, we take the Montréal entry's value.
 ## Firdous Tasks for Safety Index
 - Check and add the values of the last column for each city in the atlas: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310030901
 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310031101
