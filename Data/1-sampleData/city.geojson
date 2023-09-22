@@ -4,6 +4,11 @@
     "Population_in_mil": 0,
     "Area_in_sq_km": 0,
     "Density": 0,
+    "PopulationTransitDistribution": {
+        "500m": 0,
+        "1km": 0,
+        "2km": 0
+    },
     "TransitTypesStops": {
         "Tram": 0,
         "Metro": 0,
