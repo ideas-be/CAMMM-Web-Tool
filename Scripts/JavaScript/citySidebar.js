@@ -17,3 +17,15 @@ function loadCitySidebar() {
     // document.getElementById("city-stats").style.color = "#000000";
 }
 
+function closeCitySidebar() {
+
+    var citySidebarDiv = document.getElementById("myCitySidebar");
+
+    document.getElementById("myCitySidebar").style.color = "#ffffff";
+    citySidebarDiv.style.width = "0";
+    citySidebarDiv.style.padding = "0";
+
+    document.getElementById("main").style.marginRight = "0";
+
+}
+

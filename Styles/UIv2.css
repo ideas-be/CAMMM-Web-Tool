@@ -130,29 +130,10 @@
         height: 300px;
         bottom: 0;
         margin-top: 60vh;
-        /* margin-left: 20px; */
         margin-right: 5vw;
-        /* align-self: center; */
-        /* text-align: center; */
         padding-bottom: 0;
         border-radius: 10px;
     }
-
-    /* #city-area,
-    #city-population,
-    #city-density {
-        display: block;
-        color: #008d1a;
-        margin-top: -20px;
-        font-size: 8px;
-    } */
-
-    /* #map {
-        padding-right: -100px;
-        padding-left: 100px;
-        margin-left: 100px;
-        border: none;
-    } */
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -498,7 +479,28 @@ h2 {
     padding-bottom: 200px;
 }
 
+.left-sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    margin-top: 100px;
+    /* padding-top: 200px; */
+    font-size: 16px;
+    /* color: #000000; */
+    transition: 0.5s;
+    padding-bottom: 200px;
+}
+
 #myBoroughSidebar.sidebar {
+    z-index: 1;
+}
+
+#myCitySidebar.sidebar {
     z-index: 1;
 }
 
@@ -1118,3 +1120,33 @@ progress::-moz-progress-bar {
 }
 
 /* END OF BOROUGH SIDEBAR STYLE */
+
+/* START OF CITY SIDEBAR STYLE */
+.fas.fa-info-circle {
+    /* display: inline-flex; */
+    /* margin-left: 600px; */
+    /* right: 0; */
+    color: #ffffff;
+}
+
+#city-image {
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+#myCitySidebar p {
+    font-size: 14px;
+}
+
+#city-name-en {
+    margin-top: -15px;
+}
+
+#city-stats p {
+    /* font-size: 14px; */
+    margin-top: -10px;
+    color: #000000;
+}
+
+/* END OF CITY SIDEBAR STYLE */

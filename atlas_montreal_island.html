@@ -56,11 +56,11 @@
         </div>
     </div>
 
-    <div id="myCitySidebar" class="sidebar">
-        <a class="close-btn" onclick="closeSidebar();">x</a>
-        <img id="city-image" src="Images/CityImages" />
+    <div id="myCitySidebar" class="left-sidebar">
+        <a class="close-btn" onclick="closeCitySidebar();">x</a>
+        <img id="city-image" src="Images/CityImages/Montreal-Island.jpeg" />
         <p>City Name</p>
-        <p id="city-name-en">CITY NAME</p>
+        <h2 id="city-name-en">MONTREAL ISLAND</h2>
         <div class="city-stats" id="city-stats">
             <p id="city-area">Area: </p>
             <p id="city-population">Population in mil: </p>
@@ -69,8 +69,6 @@
         </div>
         <div id="city-transit-modes"></div>
         <div id="population-transit-graph"></div>
-    </div>
-    <div id="transit-option-menu"></div>
     </div>
 
     <div id="mySidebar" class="sidebar">
@@ -119,6 +117,8 @@
         <h1 class="cammm-title">CAMMM</h1>
         <i class="fas fa-clipboard-question" onclick="displayIntroPrompt();"></i>
         <h2 id="city-name">Montreal Island</h2>
+        <i class="fas fa-info-circle" onclick="loadCitySidebar();"></i>
+
     </div>
     <div id="map"></div>
     <!-- testing a sidebar code -->
