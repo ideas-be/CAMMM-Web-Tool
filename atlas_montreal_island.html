@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="Styles/UIv2.css">
     <script src="Scripts/JavaScript/atlas-tutorial.js"></script>
     <script src="Scripts/JavaScript/sidebar.js"></script>
+    <script src="Scripts/JavaScript/citySidebar.js"></script>
     <script src="Scripts/JavaScript/cluster-hub.js"></script>
     <script src="Scripts/JavaScript/readFiles/readMIFiles.js"></script>
     <script src="Scripts/JavaScript/borough.js"></script>
@@ -53,6 +54,23 @@
                 <a id="button-2" onclick="">Button 2</a>
             </span>
         </div>
+    </div>
+
+    <div id="myCitySidebar" class="sidebar">
+        <a class="close-btn" onclick="closeSidebar();">x</a>
+        <img id="city-image" src="Images/CityImages" />
+        <p>City Name</p>
+        <p id="city-name-en">CITY NAME</p>
+        <div class="city-stats" id="city-stats">
+            <p id="city-area">Area: </p>
+            <p id="city-population">Population in mil: </p>
+            <p id="city-density">Density: </p>
+            <p>Available Transit Modes: </p>
+        </div>
+        <div id="city-transit-modes"></div>
+        <div id="population-transit-graph"></div>
+    </div>
+    <div id="transit-option-menu"></div>
     </div>
 
     <div id="mySidebar" class="sidebar">
@@ -122,6 +140,7 @@
         }
 
         setTimeout(displayIntroPrompt, 100);
+        setTimeout(loadCitySidebar, 150);
 
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';

@@ -125,6 +125,28 @@
         border-radius: 10px;
     }
 
+    #myCitySidebar {
+        /* width: 600px; */
+        height: 300px;
+        bottom: 0;
+        margin-top: 60vh;
+        /* margin-left: 20px; */
+        margin-right: 5vw;
+        /* align-self: center; */
+        /* text-align: center; */
+        padding-bottom: 0;
+        border-radius: 10px;
+    }
+
+    /* #city-area,
+    #city-population,
+    #city-density {
+        display: block;
+        color: #008d1a;
+        margin-top: -20px;
+        font-size: 8px;
+    } */
+
     /* #map {
         padding-right: -100px;
         padding-left: 100px;
