@@ -13,6 +13,7 @@
     <script src="Scripts/JavaScript/citySidebar.js"></script>
     <script src="Scripts/JavaScript/cluster-hub.js"></script>
     <script src="Scripts/JavaScript/readFiles/readMIFiles.js"></script>
+    <script src="Scripts/JavaScript/population.js"></script>
     <script src="Scripts/JavaScript/borough.js"></script>
     <script src="Scripts/JavaScript/borough_sidebar.js"></script>
     <script src="Scripts/JavaScript/borough_query.js"></script>
@@ -139,8 +140,10 @@
             }
         }
 
+        setTimeout(displayPopData, 250);
         setTimeout(displayIntroPrompt, 100);
         fetchGeoJson("city_sample.geojson");
+        // readPopulationJson();
         setTimeout(readCityJSON, 200);
         setTimeout(loadCitySidebar, 300);
 
@@ -636,6 +639,22 @@
             a.send();        // Closes the XMLHttpRequest   
         }
         setTimeout(readNodes, 10);
+
+        var jsonObj;
+        var b = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+        function readPopulation() {
+            b.open('GET', "Data/Montreal_Island/population_borough.json", true);  // This is reading the JSON FILE 
+
+            b.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+
+                if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
+                    jsonObj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+                    getPopJson(jsonObj);
+                }
+            }
+            b.send();        // Closes the XMLHttpRequest   
+        }
+        setTimeout(readPopulation, 20);
 
     </script>
 

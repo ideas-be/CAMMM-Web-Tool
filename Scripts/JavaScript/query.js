@@ -1,6 +1,10 @@
 var flag = 0;
 var queryDictionary = [
     {
+        title: "Demographics",
+        definition: "The population pyramids on a borough level based on gender and age."
+    },
+    {
         title: "Multimodality",
         definition: "The number of alternative public transport options available at a given node."
     },

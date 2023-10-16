@@ -1,4 +1,3 @@
-// var jsonFile = "services.geojson";
 let geojsonObjs = [];
 let objNames = [];
 
@@ -18,16 +17,6 @@ function fetchGeoJson(jsonFile) {
     });
 }
 
-// fetchGeoJson(jsonFile);
-
-// function initJson() {
-//     console.log("Geojson objects fetched and initialized!!");
-//     console.log(geojsonObjs);
-
-// }
-
-// setTimeout(initJson, 600);
-
 function readGeoJsonObj(selectedJson) {
     // The objective of this function is:
     // to return the selected geojson object
@@ -38,15 +27,3 @@ function readGeoJsonObj(selectedJson) {
     }
     return geojsonObjs[index];
 }
-
-
-
-// let jsondata;
-// fetch(file).then(
-//     function (u) { return u.json(); }
-// ).then(
-//     function (json) {
-//         jsondata = json;
-//     }
-// )
-// console.log(jsondata);
