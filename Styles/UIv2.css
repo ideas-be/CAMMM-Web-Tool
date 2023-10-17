@@ -439,11 +439,16 @@ body {
 
 .cammm-title {
     font-size: 36px;
-    color: #ffffff;
     padding-left: 20px;
+    color: #ffffff;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
     float: left;
+}
+
+.cammm-title a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 #city-name {
