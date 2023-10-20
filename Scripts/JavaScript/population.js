@@ -7,9 +7,12 @@ function getPopJson(jsonData) {
 
 function displayPopData() {
     var popDemographicData = popJson.features[0].demographic_data;
+
     console.log(popJson.features[0].deomgraphic_data);
     console.log("Printing population demographic data: ");
     for (demoData in popDemographicData) {
         console.log(demoData, ": ", popDemographicData[demoData]);
     }
+
+    document.getElementById("borough-query-info").innerHTML = "Population Bar Graph will go here.";
 }

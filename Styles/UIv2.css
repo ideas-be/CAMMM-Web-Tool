@@ -1127,7 +1127,7 @@ progress::-moz-progress-bar {
 /* END OF BOROUGH SIDEBAR STYLE */
 
 /* START OF CITY SIDEBAR STYLE */
-.fas.fa-info-circle {
+#main .fas.fa-info-circle {
     /* display: inline-flex; */
     /* margin-left: 600px; */
     /* right: 0; */
