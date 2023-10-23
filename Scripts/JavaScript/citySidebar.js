@@ -35,6 +35,11 @@ function closeCitySidebar() {
 
     document.getElementById("main").style.marginRight = "0";
 
+    // document.getElementById("myCitySidebar").innerHTML = "";
+    document.getElementById("city-area").innerHTML = "Area: ";
+    document.getElementById("city-population").innerHTML = "Population in mil: ";
+    document.getElementById("city-density").innerHTML = "Density: ";
+
 }
 
 function insertCityStats() {
