@@ -6,7 +6,7 @@ density and available transit modes.
 var myCityJson = [];
 
 function readCityJSON() {
-    myCityJson = readGeoJsonObj("city_sample.geojson");
+    myCityJson = readGeoJsonObj("city.geojson");
 }
 
 function loadCitySidebar() {
@@ -86,27 +86,23 @@ function displayCityTransitModes() {
 
     console.log("Available City Transit Modes are: ", availCityModes);
 
-    //     for(transitMode in transitIconDictionary){
-    // if(transitIconDictionary[transitMode].transitType)
-    //     }
-    //     if (transitDictionary[transitMode].isActive == true) {
-    //         transitModeHTML += "<div id=\"transit-mode\">" +
-    //             "<i class=\"" + transitDictionary[transitMode].transitIcons + "\"></i>" +
-    //             "<div id=\"transit-mode-name\">" +
-    //             "<p>" + transitDictionary[transitMode].transitName + "</p>" + "</div>" + "</div>";
-    //     }
-    // }
-    // for (transitMode in transitDictionary) {
-    //     if (transitDictionary[transitMode].isActive == false) {
-    //         transitModeHTML += "<div id=\"transit-mode\">" +
-    //             "<i class=\"" + transitDictionary[transitMode].transitIcons + "\" style=\"color:#d3d3d3;\"></i>" +
-    //             "<div id=\"transit-mode-name\">" +
-    //             "<p>" + transitDictionary[transitMode].transitName + "</p>" + "</div>" + "</div>";
-    //     }
-    // }
+    for (transitMode in availCityModes) {
+        for (i = 0; i < transitIconDictionary.length; i++) {
+            if (availCityModes[transitMode] == transitIconDictionary[i].transitType) {
+                // console.log("Matching transit type is : ", transitIconDictionary[i].transitType);
+                transitModeHTML += "<div id=\"transit-mode\">" +
+                    "<i class=\"" + transitIconDictionary[i].transitIcon + "\"></i>" +
+                    "<div id=\"transit-mode-name\">" +
+                    "<p>" + transitIconDictionary[i].transitType.toLowerCase() + "</p>" + "</div>" + "</div>";
+            }
+        }
+    }
 
     console.log("Displaying City-level Available Transit Modes");
 
     cityTransitDiv.innerHTML = transitModeHTML;
 }
 
+function displayPopTransitRadialGraph() {
+    // TODO: Write a function to display radial graph of city population distribution wrt transit nodes
+}

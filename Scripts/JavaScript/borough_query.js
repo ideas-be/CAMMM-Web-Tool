@@ -30,6 +30,7 @@ function callBoroughQueryCalFunc() {
         case "Select Query": console.log("Please select the query");
             break;
         case "Demographics": displayPopData();
+            break;
         case "Multimodality":
             fetchGeoJson("city.geojson");
             // fetchGeoJson("Lines.geojson");
@@ -80,10 +81,10 @@ function displayBoroughMultimodality() {
     // Display multimodality query info for selected borough
     var myCityJson = readGeoJsonObj("city.geojson");
 
-    if (myCityJson.City.Name_en == "Montreal") {
+    if (myCityJson.Name_en == "Montreal") {
         var totalTransit = 0;
-        for (key in myCityJson["City"]["TransitTypesStops"]) {
-            var value = myCityJson["City"]["TransitTypesStops"][key];
+        for (key in myCityJson["TransitTypesStops"]) {
+            var value = myCityJson["TransitTypesStops"][key];
             if (value != 0) {
                 totalTransit += 1;
             }
