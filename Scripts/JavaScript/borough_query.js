@@ -1,7 +1,7 @@
 function boroughQueryDropDown() {
 
-    var queryList = ["Demographics", "Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity"
-        // , "Greenery", "Walkability"
+    var queryList = ["Demographics", "Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity", "Greenery"
+        // , "Walkability"
     ];
     var dropDownDiv = document.getElementById("borough-dropdown-content");
     var dropDownHTML = "";
@@ -350,13 +350,62 @@ function displayBoroughConnectivity() {
 
     displayBoroughQueryRating(connectivityRating.toFixed(0));
 }
-// function displayBoroughGreenery() {
-//     // Display greenery query info for selected borough
-//     console.log("Borough-level Greenery");
-//     // console.log(borboroughQueryProps.UniversalAccessibility);
-// }
+function displayBoroughGreenery() {
+    // Display greenery query info for selected borough
+    console.log("Borough-level Greenery");
+    fetchGeoJson("greenery.geojson");
+    setTimeout(loadGreeneryData, 200);
+}
 // function displayBoroughWalkability() {
 //     // Display walkability query info for selected borough
 //     console.log("Borough-level Walkability");
 //     // console.log(borboroughQueryProps.UniversalAccessibility);
 // }
+
+function loadGreeneryData() {
+    var greenJSON = readGeoJsonObj("greenery.geojson");
+    console.log("Greenery JSON is: ", greenJSON);
+    var boroughGreenFeatures = [];
+    for (greenFeature in greenJSON.features) {
+        if (greenJSON.features[greenFeature].properties.NOM == boroughQueryProps.NOM) {
+            boroughGreenFeatures.push(greenJSON.features[greenFeature]);
+        }
+    }
+
+    console.log("Green Features inside Selected Borough are: ", boroughGreenFeatures);
+    // TODO: Classify features based on NDVI value and have separate feature arrays for display on mapbox
+    map.loadImage('Images/tree-solid.png', (error, image) => {
+        if (error) throw error;
+        map.addImage('tree-icon', image, { 'sdf': true });
+
+        map.addSource('borough-green-nodes', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': boroughGreenFeatures,
+            }
+        });
+        map.addLayer({
+            'id': 'borough-green-nodes',
+            'source': 'borough-green-nodes',
+            'type': 'symbol',
+            'layout': {
+                'icon-image': 'tree-icon',
+                'icon-size': 0.05,
+                // 'icon-offset': ["literal", [-10, -10]]
+            },
+            'paint': {
+                'icon-color': [
+                    'match',
+                    ['get', 'NDVI_1'],
+                    [5570, 14958], '#d7191c',
+                    '#4b8e30'
+                ],
+            }
+        }
+        );
+    });
+
+
+
+}
