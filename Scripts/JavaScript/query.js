@@ -26,7 +26,7 @@ var queryDictionary = [
     },
     {
         title: "Greenery",
-        definition: "The level of natural vegetation in and around the transit nodes."
+        definition: "The observed level of natural vegetation around the transit nodes."
     }
 ];
 
