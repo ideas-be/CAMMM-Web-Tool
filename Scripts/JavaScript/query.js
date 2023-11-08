@@ -1,9 +1,9 @@
 var flag = 0;
 var queryDictionary = [
-    {
-        title: "Demographics",
-        definition: "The population pyramids on a borough level based on gender and age."
-    },
+    // {
+    //     title: "Demographics",
+    //     definition: "The population pyramids on a borough level based on gender and age."
+    // },
     {
         title: "Multimodality",
         definition: "The number of alternative public transport options available at a given node."
@@ -111,7 +111,6 @@ function callQueryCalFunc() {
             fetchGeoJson("city.geojson");
             fetchGeoJson("Lines.geojson");
             setTimeout(calMultiModality, 300);
-
             break;
         case "Universal Design & Accessibility":
             // fetchGeoJson("city.geojson");

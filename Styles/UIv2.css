@@ -690,9 +690,52 @@ h2 {
 
 /* END OF ATLAS TUTORIAL STYLE */
 
+/* START OF DEMOGRAPHICS STYLE */
+#demographics-button {
+    background-color: #d81b60;
+    /* min-width: 20px; */
+    width: 20px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    /* float: left; */
+    /* max-width: 250px; */
+}
+
+#demographics-button:hover {
+    background-color: #c21655;
+}
+
+.demo-data-bar {
+    color: #ffffff;
+    font-size: 10px;
+    padding-top: 4px;
+    min-width: 20px;
+    max-width: 140px;
+    border-radius: 2px;
+    height: 15px;
+}
+
+#male-demo-data {
+    background-color: #3148c1;
+    padding-left: 4px;
+    float: right;
+}
+
+#female-demo-data {
+    background-color: #d81b60;
+    padding-right: 4px;
+    text-align: right;
+}
+
+/* END OF DEMOGRAPHICS STYLE */
+
 /* START OF DROPDOWN STYLE */
 .query-dropdown {
-    margin-right: 80px;
+    margin-right: 40px;
     text-align: center;
     z-index: 200;
     float: right;

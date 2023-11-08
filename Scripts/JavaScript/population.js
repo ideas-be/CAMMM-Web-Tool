@@ -4,24 +4,35 @@ function getPopJson(jsonData) {
     popJson = jsonData;
     console.log("Population JSON: ", popJson);
 }
-
+var demoButtonFlag = 0;
 function displayPopData() {
     var MaleDemographicData = popJson.features[0].demographic_data.Males_demoData;
     var FemaleDemographicData = popJson.features[0].demographic_data.Females_demoData;
 
-    // console.log(popDemographicData);
-    // console.log("Printing population demographic data: ");
-    var popDataHTML = "<table style=\"font-size: 11px;\">";
-    for (demoData in MaleDemographicData) {
-        //     console.log(demoData, ": ", popDemographicData[demoData]);
-        popDataHTML += "<tr><td>" + demoData + "</td>" + "<td> : </td><td><div style=\"width:" + MaleDemographicData[demoData] * 0.025 + "px; height:15px; background-color:#3148c1; color: #ffffff; font-size: 10px; text-align: right; padding-top: 4px; padding-right: 4px;\">" + MaleDemographicData[demoData] + "</div></td></tr>";
-        // TODO: Make bar graph div
-    }
-    popDataHTML += "</table><br><em>Females: </em><table style=\"font-size: 11px;\">";
-    for (demoData in FemaleDemographicData) {
-        //     console.log(demoData, ": ", popDemographicData[demoData]);
-        popDataHTML += "<tr><td>" + demoData + "</td>" + "<td> : </td><td><div style=\"width:" + FemaleDemographicData[demoData] * 0.025 + "px; height:15px; background-color:#d81b60; color: #ffffff; font-size: 10px; text-align: right;  padding-top: 4px; padding-right: 4px;\">" + FemaleDemographicData[demoData] + "</div></td></tr>";
-    }
+    var popDataHTML = "<table style=\"font-size: 11px;\"><tr><td>male</td><td style=\"text-align: right;\">female</td></tr>";
 
-    document.getElementById("borough-query-info").innerHTML = "<em>Males: </em>" + popDataHTML;
+    if (demoButtonFlag == 0) {
+        document.getElementById('demographics-button').style.backgroundColor = '#c21655';
+        demoButtonFlag = 1;
+
+        var maleKeys = Object.keys(MaleDemographicData);
+        maleKeys.reverse();
+        // console.log("Male demo data keys: ", maleKeys);
+
+        var femaleKeys = Object.keys(FemaleDemographicData);
+        femaleKeys.reverse();
+
+        for (i = 0; i < maleKeys.length; i++) {
+            popDataHTML += "<tr><td><div class=\"demo-data-bar\" id=\"male-demo-data\" style=\"width:" + MaleDemographicData[maleKeys[i]] * 0.02 + "px;\">" + MaleDemographicData[maleKeys[i]] + "</div></td><td><div class=\"demo-data-bar\" id=\"female-demo-data\" style=\"width:" + FemaleDemographicData[femaleKeys[i]] * 0.02 + "px;\">" + FemaleDemographicData[femaleKeys[i]] + "</div></td></tr>";
+        }
+
+        document.getElementById('borough-query-rating').innerHTML = "";
+
+        document.getElementById("borough-query-info").innerHTML = "Borough Demographic Data<br><br>" + popDataHTML;
+
+    } else if (demoButtonFlag == 1) {
+        document.getElementById('demographics-button').style.backgroundColor = '#d81b60';
+        demoButtonFlag = 0;
+        document.getElementById("borough-query-info").innerHTML = "";
+    }
 }

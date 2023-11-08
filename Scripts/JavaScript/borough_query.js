@@ -1,6 +1,6 @@
 function boroughQueryDropDown() {
 
-    var queryList = ["Demographics", "Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity", "Greenery"
+    var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity", "Greenery"
         // , "Walkability"
     ];
     var dropDownDiv = document.getElementById("borough-dropdown-content");
@@ -29,8 +29,8 @@ function callBoroughQueryCalFunc() {
     switch (selectedQuery) {
         case "Select Query": console.log("Please select the query");
             break;
-        case "Demographics": displayPopData();
-            break;
+        // case "Demographics": displayPopData();
+        //     break;
         case "Multimodality":
             fetchGeoJson("city.geojson");
             // fetchGeoJson("Lines.geojson");
