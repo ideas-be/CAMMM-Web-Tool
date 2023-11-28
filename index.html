@@ -1,5 +1,3 @@
-<!-- THIS IS THE TEST INDEX HTML TO TRY AND FIX THE UI -->
-
 <!DOCTYPE html>
 
 <html>
@@ -12,20 +10,25 @@
 	<script src="https://kit.fontawesome.com/7abfd05b6d.js" crossorigin="anonymous"></script>
 	<!-- <script src="Scripts/JavaScript/citySearch.js"></script> -->
 	<script src="Scripts/JavaScript/citySelect.js"></script>
-
+	<script src="Scripts/JavaScript/en_fr.js"></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'>
-
 	<link rel="stylesheet" href="Styles/UIv2.css">
 </head>
 
 <body>
 	<!-- START OF WEB ATLAS LANDING -->
 	<div class="cammm-landing">
-
-		<!-- START OF BANNER -->
-		<div class="welcome">
-			<p>Welcome to the</p>
+		<div id="en-fr-toggle">
+			<p class="toggleText">EN
+				<label class="switch">
+					<input class="switch-input" type="checkbox" id="toggBtn1" onchange="FRLandingPage();" data-on="Yes"
+						data-off="No">
+					<span class="slider round"></span>
+				</label> FR
+			</p>
 		</div>
+		<!-- START OF BANNER -->
+		<p class="welcome" id="welcome">Welcome to the</p>
 		<div class="cammm-logo">
 			<img src="Images/Logos/CAMMM_logo.png" alt="CAMMM Logo"></img>
 		</div>
