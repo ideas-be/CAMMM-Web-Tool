@@ -247,7 +247,6 @@ input:checked+.slider:before {
 .toggleText {
     font-size: 12px;
     font-weight: bold;
-    color: #000;
 }
 
 /* END OF LANGUAGE TOGGLE STYLING */
