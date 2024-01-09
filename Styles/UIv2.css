@@ -225,6 +225,10 @@ input:checked+.slider {
     background-color: #d81b60;
 }
 
+input:checked+#atlas-en-fr-toggle {
+    background-color: #888;
+}
+
 input:focus+.slider {
     box-shadow: 0 0 1px #d81b60;
 }
@@ -371,6 +375,7 @@ input:checked+.slider:before {
 }
 
 .city-buttons {
+    height: 200px;
     margin-bottom: 30px;
 }
 

@@ -50,7 +50,7 @@
 
 		<!-- END OF CITY SEARCH BAR -->
 		<!-- START CITY BUTTONS -->
-		<div class="city-buttons">
+		<div class="city-buttons" id="city-buttons">
 			<p id="city-button-cta" style="color: #a3a3a3; font-size: 12px; padding-bottom: 5px;"><em>Select Cities and
 					Click Start</em></p>
 			<span class="city-filter" id="city1">
@@ -62,8 +62,6 @@
 			<span class="city-filter" id="city3">
 				<a onclick="addCity('Gatineau', 3);"> Gatineau </a>
 			</span>
-		</div>
-		<div class="city-buttons">
 			<span class="city-filter" id="city4">
 				<a onclick="addCity('Sherbrooke', 4);"> Sherbrooke </a>
 			</span>
@@ -76,6 +74,7 @@
 				</a>
 			</span>
 		</div>
+
 		<!-- END CITY BUTTONS -->
 
 		<!-- START OF ATLAS BUTTONS -->
@@ -115,6 +114,8 @@
 </body>
 
 <script>
+
+	insertCityButtons();
 
 	function playIntro() {
 		console.log("PLAYING INTRO!!!");

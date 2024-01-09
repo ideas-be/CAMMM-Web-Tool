@@ -1,26 +1,32 @@
 var city = [
     {
         cityName: "Montreal Island",
+        cityNameFR: "Île de Montréal",
         cityURL: "./atlas_montreal_island.html"
     },
     {
         cityName: "Montreal Metropolitan Region",
+        cityNameFR: "Région métropolitaine de Montréal",
         cityURL: "./atlas_montreal_metropolitan_region.html"
     },
     {
         cityName: "Quebec City",
+        cityNameFR: "Ville de Québec",
         cityURL: "./atlas_quebec_city.html"
     },
     {
-        cityName: "Trois Rivieres",
+        cityName: "Trois Rivières",
+        cityNameFR: "Trois Rivières",
         cityURL: "./atlas_trois_rivieres.html"
     },
     {
         cityName: "Gatineau",
+        cityNameFR: "Gatineau",
         cityURL: "./atlas_gatineau.html"
     },
     {
         cityName: "Sherbrooke",
+        cityNameFR: "Sherbrooke",
         cityURL: "./atlas_sherbrooke.html"
     }
 ];
@@ -30,6 +36,26 @@ var city = [
 var selectedCities = [];
 
 var filterNumber = 0;
+
+function insertCityButtons() {
+    var cityCounter = 1;
+    var result = document.getElementsByClassName("switch-input")[0].checked ? 'Yes' : 'No';
+    var cityButtonsDiv = document.getElementById("city-buttons");
+    var startText = "";
+    startText = result == 'Yes' ? "Lancer" : "Start";
+    var citySelectCTA = "";
+    citySelectCTA = result == 'Yes' ? "Sélectionnez les villes et cliquez sur Lancer" : "Select Cities and Click Start";
+    var cityButtonsHTML = "<p id=\"city-button-cta\" style=\"color: #a3a3a3; font-size: 12px; padding-bottom: 5px;\"><em>" + citySelectCTA + "</em></p>";
+    console.log("Cities Processed in the Atlas are: ");
+    for (cityObj in city) {
+        console.log(city[cityObj].cityName, " / ", city[cityObj].cityNameFR);
+        var cName = "";
+        cName = result == 'Yes' ? city[cityObj].cityNameFR : city[cityObj].cityName;
+        cityButtonsHTML += "<span class=\"city-filter\" id=\"city" + cityCounter + "\"><a onclick=\"addCity('" + cName + "', " + cityCounter + ");\"> " + cName + " </a></span>";
+        cityCounter += 1;
+    }
+    cityButtonsDiv.innerHTML = cityButtonsHTML + "<span class=\"city-filter\" id=\"start-button\"><a onclick=\"openCityTabs();\"><i class=\"fas fa-forward-fast\"></i>" + startText + "</a></span>";
+}
 
 function addCity(selCity, num) {
     var cityID = "city" + num;
@@ -57,7 +83,7 @@ function openCityTabs() {
         console.log("Selected City: ", selectedCity);
         for (cityObj in city) {
             console.log(city[cityObj].cityName);
-            if (city[cityObj].cityName == selectedCity) {
+            if ((city[cityObj].cityName == selectedCity) || (city[cityObj].cityNameFR == selectedCity)) {
                 window.open(city[cityObj].cityURL);
             }
         }
