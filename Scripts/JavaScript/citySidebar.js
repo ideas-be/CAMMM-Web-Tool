@@ -6,6 +6,7 @@ density and available transit modes.
 var myCityJson = [];
 
 function readCityJSON() {
+    // fetchGeoJson("city.geojson");
     myCityJson = readGeoJsonObj("city.geojson");
 }
 
@@ -43,7 +44,8 @@ function closeCitySidebar() {
 }
 
 function insertCityStats() {
-    document.getElementById("city-area").innerHTML += myCityJson[Area_in_sq_km].toString() + " sq.km.";
+    var cityArea = myCityJson.Area_in_sq_km;
+    document.getElementById("city-area").innerHTML += cityArea.toString() + " sq.km.";
     document.getElementById("city-population").innerHTML += myCityJson.Population_in_mil.toString();
     document.getElementById("city-density").innerHTML += myCityJson.Density.toString() + " people/sq.km.";
 }
