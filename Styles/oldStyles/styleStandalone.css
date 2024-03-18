@@ -1,0 +1,147 @@
+/* body { padding: 10px;} */
+/* START OF TITLE STYLE */
+.atlas-title{
+  text-align: center;
+}
+
+.atlas-title p{
+  display:inline-block;
+	font-size: 180%;
+	font-weight: bold;
+	/* text-align: center; */
+}
+
+.emptyspace{
+	height: 50px;
+}
+/* END OF TITLE STYLE */
+
+/* START OF PRINT BUTTON STYLE */
+#printButton, #exportCitation{
+  height: 20;
+  width: 120;
+  text-align: right;
+  background-color: #d81b60;
+  color: white;
+  border-style: none;
+  float: right;
+}
+/* END OF PRINT BUTTON STYLE */
+
+/* START OF DROPDOWN STYLE */
+.dropDown{
+  text-align: center;
+  width: 100%;
+}
+
+.atlas-city select{
+	width: 142px;
+}
+
+/* END OF DROPDOWN STYLE */
+
+/* START OF MAPBOX STYLE */
+ #map { 
+	display: block;
+  width:95%; 
+  height: 400px; 
+  margin-left: 20px;
+}
+
+/* END OF MAPBOX STYLE */
+
+/* START OF METRICS TABLES STYLE */
+#citytable{
+  display: block;
+	position:absolute; 
+  left: 0px; width:100%;
+}
+
+.emptyspace-table{
+	height: 50px;
+}
+
+/* END OF METRICS TABLES STYLE */
+
+/* START OF DIRECT/NODE TOGGLE STYLE*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #d81b60;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #d81b60;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.toggleText{
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/* END OF DIRECT/NODE TOGGLE STYLE*/
+
+/* START OF MAP MENU AREA STYLE */
+.group:before, .group:after{
+content: "";
+display: table;
+}
+
+.group:after{
+	clear: both;
+}
+
+.group{
+	zoom: 1;
+}
+/* END OF MAP MENU AREA STYLE */

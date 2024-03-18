@@ -1,0 +1,100 @@
+/* ALL OUR FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+/* ALL OUR FONTS */
+
+/* START OF MAP MENU TABLE STYLE */
+#filter-group1{
+    width: 95%; 
+    height: 75px; 
+    text-align: center; 
+    margin: 20px 0 0 20px;
+}
+
+#query-list{
+    text-align: left;
+    padding-left: 10px;
+}
+
+#radioForm1,#radioForm2 label{
+    font-family: 'Cairo', sans-serif;
+}
+
+#map1menu{
+    width:100%; 
+    height: 100%; 
+    /* border: 2px solid lightgrey; */
+}
+
+.map-menu-headings{
+    color:#d81d60; 
+    font-family:sans-serif; 
+    font-size: 11px;
+}
+
+#filter-group2{
+    width: 95%; 
+    height: 75px; 
+    text-align: center; 
+    margin: 20px 20px 0 0;
+}
+
+#map2menu{
+    width:100%; 
+    height: 100%; 
+    /* border: 2px solid lightgrey; */
+}
+
+.mapCellsType1{
+    width: 15%;
+    box-sizing: content-box;
+    padding: 2px;
+    font-size: 11px;
+    font-weight: bold;
+    border-right: 2px solid lightgrey;
+    text-align: center;
+}
+
+.mapCellsType2{
+    width: 5%;
+    box-sizing: content-box;
+    padding: 2px;
+    font-size: 16px;
+}
+
+/* END OF MAP MENU TABLE STYLE */
+
+/* START OF MAP CONTROLS STYLE */
+
+#map1controls, #map2controls{
+    z-index: 10;
+}
+
+/* END OF MAP CONTROLS STYLE */
+
+/* START OF MAP LEGEND STYLE */
+
+#slider1{
+    -webkit-appearance: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 80%;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: linear-gradient(to right, #D1ECCB, #006127);
+}
+
+#slider2{
+    -webkit-appearance: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 80%;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: linear-gradient(to right, #261C43, #742287);
+}
+
+/* END OF MAP LEGEND STYLE */

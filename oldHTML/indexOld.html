@@ -1,0 +1,379 @@
+<!-- THIS IS THE TEST INDEX HTML TO TRY AND FIX THE UI -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset='utf-8' />
+	<title>Map Comparison</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+	<script src='Scripts/JavaScript/city.js'></script>
+	<script src='Scripts/JavaScript/info_popup.js'></script>
+	<script src="https://kit.fontawesome.com/7abfd05b6d.js" crossorigin="anonymous"></script>
+
+	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'>
+
+	<link rel="stylesheet" href="Styles/style.css">
+	<link rel="stylesheet" href="Styles/metrics.css">
+	<link rel="stylesheet" href="Styles/mapUI.css">
+	<link rel="stylesheet" href="Styles/info_popup.css">
+</head>
+
+<body>
+	<!-- START OF WEB ATLAS -->
+	<!-- START OF IDEAS-BE BANNER -->
+	<div style="text-align: center;">
+
+		<a href="https://ideas-be.ca/project/collaboratoire-for-activating-multi-modal-mobility-one-public-space-at-a-time/"
+			target="_blank">
+			<img src="Images/Logos/Ideas_be_banner.jpg" alt="IDEAS-BE Banner" style=" height: 160px; "></img>
+		</a>
+
+	</div>
+	<div>
+		<div style="width: 1232px; height: 50px;">
+			<a href=""
+				style="color: #d81b60; padding-top: 20px; padding-bottom: 20px; font-weight: bold; padding-left: 300px;">←Back</a>
+		</div>
+	</div>
+	<div style="text-align: center;">
+		<img src="Images/Logos/cammm_banner.jpg" alt="CAMMM Banner" style="height: 230px;"></img>
+	</div>
+
+
+	<!-- END OF IDEAS-BE BANNER -->
+
+	<div class="atlas-title">
+		<h1 id="font-testing">CAMMM ATLAS</h1>
+		<h4>
+			Web Application
+			<p style="font-size: 10px; color: #d81b60;"> v1.0</p>
+			<span style="font-size: 1em; color: #d81b60;">
+				<i class="fas fa-info-circle" onclick="show_popup(1);"></i>
+			</span>
+		</h4>
+
+	</div>
+	<button id="printButton" onclick="window.print();">Print</button>
+	<br>
+	<!-- <input type="button" id="exportCitation" onclick="location.href='https://google.com';" value="Go to Google" /> -->
+	<button id="exportCitation" onclick="{location.href='Reference.ris'; show_citation();}">Export Citation</button>
+	<br>
+	<div id="citationText" style="display: none;">
+		<div>
+			<p>APA: Cucuzzella, C., Gauthier, P., Ortiz Meraz, O., & Nizar, F. (2022). CAMMM Atlas Web Application v1.0
+			</p>
+		</div>
+		<div>
+			<p>MLA: Cucuzzella, Carmela, et al. “CAMMM Atlas Web Application v1.0”, CAMMM Atlas Web Application v1.0,
+				2022.</p>
+		</div>
+		<div>
+			<p>CHICAGO: Cucuzzella, Carmela, Pierre Gauthier, Omar Ortiz Meraz, and Firdous Nizar. 2022. “CAMMM Atlas
+				Web Application v1.0” CAMMM Atlas Web Application v1.0, 2022.</p>
+		</div>
+	</div>
+
+
+	<!-- START OF INFO AREA -->
+
+	<!-- START OF INFO POP UP 1 -->
+	<div class="info_popup_area" id="info_popup_1">
+	</div>
+	<!-- END OF INFO POP UP 1 -->
+
+	<!-- START OF INFO POP UP 2 -->
+	<div class="info_popup_area" id="info_popup_2">
+	</div>
+	<!-- END OF INFO POP UP 2 -->
+
+	<!-- START OF INFO POP UP 3 -->
+	<div class="info_popup_area" id="info_popup_3">
+	</div>
+	<!-- END OF INFO POP UP 3 -->
+
+	<!-- START OF INFO POP UP 4 -->
+	<div class="info_popup_area" id="info_popup_4">
+	</div>
+	<!-- END OF INFO POP UP 4 -->
+
+	<!-- END OF INFO AREA -->
+
+	<!-- START OF WEB ATLAS UI TABLE -->
+
+	<table style="width:100%;">
+		<tbody style="margin: 0;">
+			<tr>
+				<!-- THIS ROW IS WHERE THE DROPDOWN AREA GOES -->
+				<td style="width:50%">
+					<!-- THIS CELL IS WHERE THE LEFT DROPDOWN GOES -->
+					<!-- 	::before -->
+					<!-- START OF LEFT DROPDOWN -->
+					<div class="dropDown1">
+
+						<!-- START OF CITY 1 LIST -->
+						<div class="atlas-city1">
+							<center>
+								<div class="dropdown">
+									<button class="dropbtn" id="dropbtn1">
+										Select City
+									</button>
+
+									<div class="dropdown-content" id="dropdown1-content">
+									</div>
+								</div>
+							</center>
+							<!-- <select id="cityList1" onchange="getSelectedCity(1);">
+							</select> -->
+							<button id="city1Reset" onclick="resetCity(1);">Reset</button>
+							<span style="font-size: 1em; color: #d81b60;">
+								<i class="fas fa-info-circle" onclick="show_popup(2);"></i>
+							</span>
+						</div>
+						<div class="emptyspace"></div>
+						<!-- END OF CITY 1 LIST -->
+
+					</div>
+					<!--END OF LEFT DROPDOWN -->
+				</td>
+				<td>
+					<!-- THIS CELL IS WHERE THE RIGHT DROPDOWN GOES -->
+					<!-- START OF RIGHT DROPDOWN -->
+					<div class="dropDown2">
+
+						<!-- START OF CITY 2 LIST -->
+						<div class="atlas-city2">
+							<center>
+								<div class="dropdown">
+									<button class="dropbtn" id="dropbtn2">
+										Select City
+									</button>
+
+									<div class="dropdown-content" id="dropdown2-content">
+									</div>
+								</div>
+							</center>
+							<!-- <select id="cityList2" onchange="getSelectedCity(2);">
+							</select> -->
+							<button id="city2Reset" onclick="resetCity(2);">Reset</button>
+							<span style="font-size: 1em; color: #d81b60;">
+								<i class="fas fa-info-circle" onclick="show_popup(2);"></i>
+							</span>
+						</div>
+						<div class="emptyspace"></div>
+						<!-- END OF CITY 2 LIST -->
+					</div>
+					<!--END OF RIGHT DROPDOWN -->
+					<!-- 	::after -->
+				</td>
+			</tr>
+			<tr>
+				<!-- THIS ROW IS WHERE THE MAP MENU AREA GOES -->
+				<td>
+					<!-- THIS CELL IS WHERE THE LEFT MAP MENU GOES -->
+					<!-- START OF MAP 1 MENU TABLE -->
+					<div id="filter-group1" class="filter-group">
+						<table id="map1menu">
+							<tr class="map-menu-headings">
+								<th>SELECT FORM OF ANALYSIS</th>
+								<th>SELECT QUERY</th>
+								<th>DISPLAY QUERY OUTPUT</th>
+							</tr>
+							<tr>
+								<td class="mapCellsType1">
+									<!-- START OF DIRECT/NODE TOGGLE 1 -->
+									<div id="toggleCity1">
+									</div>
+									<!-- END OF DIRECT/NODE TOGGLE 1 -->
+								</td>
+								<td class="mapCellsType1" id="query-list">
+									<!-- START OF QUERY BUTTONS 1 -->
+									<form name="sampleForm" id="radioForm1">
+									</form>
+									<!-- END OF QUERY BUTTONS 1 -->
+								</td>
+								<td class="mapCellsType1">
+									<!-- START OF CATEGORY/CUMULATIVE TOGGLE 1 -->
+									<div id="toggleCategoryCumulative1">
+									</div>
+									<!-- END OF CATEGORY/CUMULATIVE TOGGLE 1 -->
+									<!-- START OF MAP LEGEND AND SLIDER 1 -->
+									<div id="mapLegend1">
+									</div>
+									<!-- END OF MAP LEGEND AND SLIDER 1 -->
+								</td>
+								<td class="mapCellsType2">
+									<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
+										<i class="fas fa-info-circle" onclick="show_popup(3);"></i>
+									</span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<!-- END OF MAP 1 MENU TABLE -->
+				</td>
+				<td>
+					<!-- THIS CELL IS WHERE THE RIGHT MAP MENU GOES -->
+					<!-- START OF MAP 2 MENU TABLE -->
+					<div id="filter-group2" class="filter-group">
+						<table id="map2menu">
+							<tr class="map-menu-headings">
+								<th>SELECT FORM OF ANALYSIS</th>
+								<th>SELECT QUERY</th>
+								<th>DISPLAY QUERY OUTPUT</th>
+							</tr>
+							<tr>
+								<td class="mapCellsType1">
+									<!-- START OF DIRECT/NODE TOGGLE 2 -->
+									<div id="toggleCity2">
+									</div>
+									<!-- END OF DIRECT/NODE TOGGLE 2 -->
+								</td>
+								<td class="mapCellsType1" id="query-list">
+									<!-- START OF QUERY BUTTONS 2 -->
+									<form name="sampleForm" id="radioForm2">
+									</form>
+									<!-- END OF QUERY BUTTONS 2 -->
+								</td>
+								<td class="mapCellsType1">
+									<!-- START OF CATEGORY/CUMULATIVE TOGGLE 2 -->
+									<div id="toggleCategoryCumulative2">
+									</div>
+									<!-- END OF CATEGORY/CUMULATIVE TOGGLE 2 -->
+									<!-- START OF MAP LEGEND AND SLIDER 2 -->
+									<div id="mapLegend2">
+									</div>
+									<!-- END OF MAP LEGEND AND SLIDER 2 -->
+								</td>
+								<td class="mapCellsType2">
+									<span class="popUp3" style="font-size: 1em; color: #d81b60; display: none;">
+										<i class="fas fa-info-circle" onclick="show_popup(3);"></i>
+									</span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<!-- END OF MAP 2 MENU TABLE -->
+				</td>
+			</tr>
+
+			<tr>
+				<!-- THIS ROW IS WHERE THE MAPBOX AREA GOES -->
+				<table style="width: 100%; padding-top: 40px;">
+					<tbody>
+						<td style="width: 45%;">
+							<!-- THIS CELL IS WHERE THE LEFT MAPBOX GOES -->
+							<!-- START OF MAP 1 BOX-->
+							<div class="mapbox1" id="map1div">
+								<div id='map1'>
+								</div>
+							</div>
+							<!-- END OF MAP 1 BOX-->
+						</td>
+						<td style="width:40px;">
+							<!-- THIS CELL IS WHERE THE MAP 1 CONTOLS GOES -->
+							<div id='map1controls'></div>
+						</td>
+						<td style="width:40px;">
+							<!-- THIS CELL IS WHERE THE MAP 2 CONTOLS GOES -->
+							<div id='map2controls'></div>
+						</td>
+						<td style="width: 45%;">
+							<!-- THIS CELL IS WHERE THE RIGHT MAPBOX GOES -->
+							<!-- START OF MAP 2 BOX-->
+							<div class="mapbox2" id="map2div">
+								<div id='map2'>
+								</div>
+							</div>
+							<!-- END OF MAP 2 BOX -->
+						</td>
+					</tbody>
+				</table>
+			</tr>
+			<tr>
+				<!-- THIS ROW IS WHERE THE CITY METRICS TABLES GO -->
+				<table>
+					<tbody>
+						<!-- START OF CITY METRICS TABLES -->
+						<div class="vertical-spacing-50px"></div>
+						<div id="general-metrics1" class="oput"></div>
+						<div id="general-metrics2" class="oput"></div>
+						<div class="vertical-spacing-200px"></div>
+						<div id="city1table" class="oput"></div>
+						<div id="city2table" class="oput"></div>
+						<!-- END OF CITY METRICS TABLES -->
+					</tbody>
+				</table>
+			</tr>
+
+		</tbody>
+
+	</table>
+
+	<!-- END OF WEB ATLAS UI TABLE -->
+	<div style="height: 500px;"></div>
+	<div class="atlas-footer">
+		<hr style="width: 80%; size: 0.5px; margin-bottom: 30px;">
+		<div class="atlas-partners">
+			<h4 id="font-testing" style="text-align: center;">IN PARTNERSHIP WITH</h4>
+			<a href="https://www.artm.quebec/" target="_blank"><img src="Images/Logos/ARTM_horizontal_couleurs_RVB.png"
+					alt="ARTM Horizontal Logo"
+					style="padding: 50px; height: 40px; display: block; margin-left: auto; margin-right: auto;"></img></a>
+		</div>
+		<hr style="width: 80%; size: 0.5px; margin-bottom: 30px;">
+		<div class="atlas-copyright">
+			<table style="width: 100%;">
+				<tbody>
+					<tr style="text-align: center;">
+						<td style="width: 50%;">
+							<a href="https://www.concordia.ca/" target="_blank"><img
+									src="https://ideas-be.ca/wp-content/uploads/2019/05/concordia-logo-sherpened.jpg"
+									alt="" width="287" height="63"></a>
+							<p style="line-height: normal; padding-top: 0; padding-left: 10px;">
+								Sir George Williams Campus
+								<br> 1455 De Maisonneuve Blvd W.
+								<br> Montreal (QC) Canada, H3G 1M8
+							</p>
+						</td>
+						<td style="width: 50%;">
+							<p style="text-align: center; font-size: 18px;">Copyright (C) 2022, IDEAS-BE</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+	<!-- START OF FUNCTION TO DISPLAY CITY METRICS JSON -->
+	<script>
+
+		var obj;
+		var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+		function readMetrics() {
+			a.open('GET', "Data/CityMetrics.json", true);  // This is reading the JSON FILE 
+			console.log("Reading the City Metrics file to load JSON");
+
+			a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+
+				if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
+					obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+					newJson(obj);
+				}
+			}
+
+			a.send();        // Closes the XMLHttpRequest   
+		}
+		setTimeout(readMetrics, 700);
+
+		injectInfoPopupText();
+	</script>
+
+	<!-- END OF FUNCTION TO DISPLAY CITY METRICS JSON -->
+
+	<!-- END OF WEB ATLAS -->
+</body>
+
+</html>

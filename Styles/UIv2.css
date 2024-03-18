@@ -1,0 +1,1325 @@
+/* ALL OUR FONTS */
+/* Cairo */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/* Primary Font - Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+/* Secondary Font - Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* ALL OUR FONTS */
+
+/* RESPONSIVE SCREENS */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    #city-name {
+        float: left;
+    }
+
+    .cammm-logo {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .atlas-title {
+        /* margin-top: 20px; */
+        padding-top: 10px;
+    }
+
+    .city-filter {
+        display: block;
+        font-size: 10px;
+        margin-bottom: 10px;
+        width: fit-content;
+    }
+
+    .landing-logos #ideas-be,
+    #ngci,
+    #artm {
+        display: block;
+        /* height: 100%; */
+        width: 100vw;
+    }
+
+    #sidebar-section {
+        /* display: none; */
+        display: inline-flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        /* padding-bottom: 5px; */
+        text-align: center;
+        /* background-color: rgba(0, 0, 0, 0.7); */
+        color: #ffffff;
+        /* opacity: 0.7; */
+        z-index: 2;
+        position: fixed;
+        width: 850px;
+        height: 320px;
+        /* top: 0; */
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* margin: 10px; */
+        /* cursor: pointer; */
+        padding-top: 40px;
+        /* margin-left: -20px; */
+    }
+
+    .arrows-div {
+        /* display: none; */
+        text-align: center;
+        position: fixed;
+        z-index: 10;
+        font-size: 30px;
+        width: 100%;
+        color: #d81b60;
+        /* left: 0;
+        right: 0; */
+        bottom: 0;
+        margin-bottom: 150px;
+        /* display: inline-flex; */
+    }
+
+    .arrows-div i.fas.fa-chevron-left {
+        margin-right: 290px;
+    }
+
+    .sidebar-card {
+        background-color: #ffffff;
+        color: #000000;
+        height: 200px;
+        margin: 10px 20px;
+        text-align: left;
+        z-index: 3;
+        padding: 30px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 280px;
+        transition: 0.5s;
+    }
+
+    #mySidebar {
+        height: 300px;
+        /* margin-bottom: 0; */
+        margin: 60vh 30px 0 30px;
+        padding-bottom: 0;
+        border-radius: 10px;
+        /* position: ; */
+    }
+
+    #myBoroughSidebar {
+        /* width: 600px; */
+        height: 300px;
+        bottom: 0;
+        margin-top: 60vh;
+        /* margin-left: 20px; */
+        margin-right: 5vw;
+        /* align-self: center; */
+        /* text-align: center; */
+        padding-bottom: 0;
+        border-radius: 10px;
+    }
+
+    #myCitySidebar {
+        /* width: 600px; */
+        height: 300px;
+        bottom: 0;
+        margin-top: 60vh;
+        margin-right: 5vw;
+        padding-bottom: 0;
+        border-radius: 10px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    /* .example {background: green;} */
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* .example {background: blue;} */
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* .example {background: orange;} */
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    /* .example {background: pink;} */
+}
+
+/* RESPONSIVE SCREENS */
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+    /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f3f3;
+    border-radius: 20px;
+    /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d81b60;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid #f3f3f3;
+    /* creates padding around scroll thumb */
+}
+
+/* CUSTOM SCROLLBAR */
+
+/* START OF LANGUAGE TOGGLE STYLING */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+}
+
+/* .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+} */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #d81b60;
+}
+
+input:checked+#atlas-en-fr-toggle {
+    background-color: #888;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #d81b60;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.toggleText {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* END OF LANGUAGE TOGGLE STYLING */
+
+/* START OF LANDING PAGE STYLING */
+
+.cammm-landing {
+    margin-left: 10vw;
+    margin-top: 20vh;
+    /* width: 80vw; */
+    height: 40vh;
+    /* max-width: 1000px; */
+}
+
+.welcome {
+    color: #a3a3a3;
+    font-size: min(3vw, 20px);
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.cammm-logo {
+    margin-left: -1vw;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cammm-logo img {
+    width: 100%;
+    max-width: 570px;
+}
+
+
+.atlas-title {
+    font-family: 'Nunito', 'sans-serif';
+    font-size: min(4.8vw, 40px);
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: -4vh;
+}
+
+.autocomplete {
+    width: 100%;
+    position: relative;
+    float: left;
+    /* display: inline-block; */
+}
+
+.city-search {
+    display: inline-block;
+    width: 70%;
+    /* height: 20vh; */
+    margin-bottom: 2vh;
+    margin-top: -4vh;
+}
+
+.city-search-input {
+    width: 100%;
+    height: 18px;
+    border-color: #d81b60;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 15px;
+}
+
+.city-search-input::placeholder {
+    color: #a3a3a3;
+    font-style: italic;
+    margin-right: 10px;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+.city-add-btn {
+    /* display: inline-flex; */
+    float: right;
+    padding: 5px;
+    color: #ffffff;
+    background-color: #d81b60;
+    border-radius: 4px;
+    border: none;
+    /* margin-bottom: 1.5vh; */
+}
+
+.city-add-btn:hover {
+    background-color: #9b1345;
+    cursor: pointer;
+}
+
+#city-filters {
+    margin-bottom: 4vh;
+}
+
+.city-buttons {
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+.city-filter {
+    background-color: #f6daa5;
+    border-color: #cd9326;
+    border-radius: 8px;
+    padding: 12px 20px;
+    color: #cd9326;
+    font-size: calc(10px + 0.390625vw);
+    margin-right: 15px;
+}
+
+.city-filter:hover {
+    cursor: pointer;
+    background-color: #f2c674;
+    color: #a76f06;
+}
+
+.city-filter-btn {
+    border-width: 1px;
+    margin-right: 6px;
+}
+
+.city-filter i:hover {
+    cursor: pointer;
+}
+
+.atlas-buttons {
+    height: 20vh;
+    width: 100%;
+    /* margin-bottom: 6vh; */
+    /* display: block; */
+    /* margin-top: vh; */
+}
+
+.cammm-button {
+    display: inline-flex;
+    /* padding: max(8px, 2vh) max(30px, 4.5vw); */
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #d81b60;
+    border-radius: 8px;
+    border: none;
+    margin-right: 10px;
+    text-decoration: none;
+    margin-bottom: 1.5vh;
+}
+
+.city-filter#start-button {
+    margin-right: 0;
+    background-color: #eaa7c0;
+    color: #ffffff;
+}
+
+.fas.fa-forward-fast {
+    margin-right: 10px;
+}
+
+.city-filter#start-button:hover {
+    /* background-color: #9b1345; */
+    cursor: default;
+}
+
+/* .cammm-button:hover {
+    background-color: #9b1345;
+    cursor: pointer;
+} */
+
+.cammm-button i {
+    margin-right: 20px;
+}
+
+.landing-logos {
+    /* display: inline; */
+    margin-bottom: 50px;
+    margin-top: 15vh;
+    margin-left: 10vw;
+    /* width: 60vw; */
+    /* height: 20vh; */
+    /* max-width: 1000px; */
+}
+
+#ideas-be img {
+    margin-right: 6vw;
+    margin-bottom: 3vh;
+    width: 40%;
+    max-width: 300px;
+}
+
+#ngci img {
+    margin-right: 6vw;
+    margin-bottom: 2vh;
+    width: 40%;
+    max-width: 300px;
+}
+
+#artm img {
+    margin-right: 6vw;
+    margin-bottom: 3vh;
+    width: 40%;
+    max-width: 300px;
+}
+
+#concordia img {
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+    width: 40%;
+    max-width: 300px;
+}
+
+/* END OF LANDING PAGE STYLING */
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: #d81b60; */
+    font-family: 'Lato', sans-serif;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.cammm-title {
+    font-size: 36px;
+    padding-left: 20px;
+    color: #ffffff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    float: left;
+}
+
+.cammm-title a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#city-name {
+    color: #ffffff;
+    float: right;
+    margin: 0.67em;
+    padding-top: 20px;
+}
+
+h2 {
+    margin-top: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 22px;
+    color: #d81b60;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    margin-top: 100px;
+    /* padding-top: 200px; */
+    font-size: 16px;
+    color: #000000;
+    transition: 0.5s;
+    padding-bottom: 200px;
+}
+
+.left-sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    margin-top: 100px;
+    /* padding-top: 200px; */
+    font-size: 16px;
+    /* color: #000000; */
+    transition: 0.5s;
+    padding-bottom: 200px;
+}
+
+#myBoroughSidebar.sidebar {
+    z-index: 1;
+}
+
+#myCitySidebar.sidebar {
+    z-index: 1;
+}
+
+/* .sidebar a {
+    /* padding: 8px 8px 8px 32px; */
+/* text-decoration: none;
+    font-size: 16px;
+    color: #d81b60;
+    display: block;
+    transition: 0.3s; */
+/* } */
+
+/* .sidebar a:hover {
+    color: #d81b60;
+} */
+
+.close-btn {
+    padding: 4px 4px;
+    position: relative;
+    float: right;
+    text-align: center;
+    border-radius: 50px;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    background-color: #d81b60;
+}
+
+.close-btn:hover {
+    background-color: #9b1345;
+    /* color: #000000; */
+}
+
+.sidebar iframe {
+    height: 300px;
+    /* margin-top: 20px; */
+    margin-bottom: 20px;
+}
+
+.openbtn {
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #d81b60;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.openbtn:hover {
+    background-color: #9b1345;
+}
+
+#main {
+    transition: margin-right 0.5s;
+    padding-top: 20px;
+    background-color: #d81b60;
+    height: 75px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+/* START OF ATLAS TUTORIAL STYLE */
+.fas.fa-clipboard-question {
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 10px;
+    /* display: block; */
+}
+
+.fas.fa-clipboard-question:hover {
+    cursor: pointer;
+    color: #e6bbca;
+}
+
+#atlas-tutorial-overlay {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* color: #ffffff; */
+    /* opacity: 0.7; */
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* cursor: pointer; */
+    /* padding-top: 40px; */
+    transition: background-color 0.5s;
+    /* text-align: center; */
+    /* margin-left: -20px; */
+}
+
+#tutorial-arrow-section {
+    width: 250px;
+    padding: 10px 20px;
+    text-align: center;
+    z-index: 4;
+    position: fixed;
+}
+
+#tutorial-prompt-box {
+    background-color: #ffffff;
+    width: 250px;
+    /* height: 150px; */
+    z-index: 3;
+    /* position: relative; */
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-left: 45%;
+    margin-top: 20%;
+}
+
+.tutorial-close-btn {
+    padding: 3px 3px;
+    position: relative;
+    float: right;
+    text-align: center;
+    border-radius: 50px;
+    vertical-align: middle;
+    /* cursor: pointer; */
+    width: 15px;
+    height: 15px;
+    color: #ffffff;
+    font-size: 12px;
+    background-color: #d81b60;
+}
+
+.tutorial-close-btn:hover {
+    cursor: pointer;
+    background-color: #9b1345;
+}
+
+#tutorial-text {
+    margin: 40px 0px 20px 0px;
+}
+
+#tutorial-box-arrow {
+    font-size: 40px;
+    /* position: relative; */
+    /* display: inline-flex; */
+    /* z-index: 4; */
+    /* padding: 0; */
+    /* margin-top: -5px; */
+}
+
+.tutorial-buttons #button-1,
+#button-2 {
+    display: inline-flex;
+    /* padding: max(8px, 2vh) max(30px, 4.5vw); */
+    padding: 12px 20px;
+    font-size: 14px;
+    background-color: #eaa7c0;
+    color: #ffffff;
+    border-radius: 8px;
+    border: none;
+    margin-right: 10px;
+    text-decoration: none;
+    /* bottom: 0; */
+}
+
+.tutorial-buttons #button-1:hover,
+#button-2:hover {
+    background-color: #d81b60;
+    cursor: pointer;
+}
+
+/* END OF ATLAS TUTORIAL STYLE */
+
+/* START OF DEMOGRAPHICS STYLE */
+#demographics-button {
+    background-color: #d81b60;
+    /* min-width: 20px; */
+    width: 20px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    /* float: left; */
+    /* max-width: 250px; */
+}
+
+#demographics-button:hover {
+    background-color: #c21655;
+}
+
+.demo-data-bar {
+    color: #ffffff;
+    font-size: 10px;
+    padding-top: 4px;
+    min-width: 20px;
+    max-width: 140px;
+    border-radius: 2px;
+    height: 15px;
+}
+
+#male-demo-data {
+    background-color: #3148c1;
+    padding-left: 4px;
+    float: right;
+}
+
+#female-demo-data {
+    background-color: #d81b60;
+    padding-right: 4px;
+    text-align: right;
+}
+
+/* END OF DEMOGRAPHICS STYLE */
+
+/* START OF DROPDOWN STYLE */
+.query-dropdown {
+    margin-right: 40px;
+    text-align: center;
+    z-index: 200;
+    float: right;
+    position: relative;
+    /* width: 100%; */
+}
+
+.dropDown {
+    text-align: center;
+    width: 100%;
+    /* float: right; */
+}
+
+.dropbtn {
+    /* margin-left: 20px; */
+    background-color: #d81b60;
+    min-width: 200px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    max-width: 250px;
+}
+
+.fas.fa-chevron-down {
+    margin-left: 8px;
+}
+
+.dropdown-content {
+
+    margin-right: -70px;
+    display: none;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    /* position: absolute; */
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 200;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #c21655;
+    /* position: static; */
+}
+
+#query-info-button {
+    float: right;
+    cursor: pointer;
+    display: inline;
+}
+
+#query-definition,
+#borough-query-definition {
+    text-align: left;
+    /* display: none; */
+}
+
+/* END OF DROPDOWN STYLE */
+
+/* START OF QUERY RATING STYLE */
+.query-rating {
+    color: #d81b60;
+    font-family: 'Lato', 'sans-serif';
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+#query-name {
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-top: 100px;
+}
+
+.rating-value {
+    font-size: 48px;
+    font-family: 'Nunito', 'sans-serif';
+    color: #c3c3c3;
+}
+
+.rating-words {
+    float: right;
+    margin-top: 25px;
+    color: #d81b60;
+    /* vertical-align: auto; */
+}
+
+progress {
+    border-radius: 50px;
+    width: 100%;
+    height: 10px;
+    /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+}
+
+progress::-webkit-progress-bar {
+    background-color: #c3c3c3;
+    border-radius: 50px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #d81b60;
+    border-radius: 50px;
+}
+
+progress::-moz-progress-bar {
+    /* style rules */
+}
+
+/* END OF QUERY RATING STYLE */
+
+/* START OF SERVICE BAR GRAPH STYLE */
+.bar-graph {
+    display: flex;
+    height: 20px;
+    width: 30px;
+    color: #ffffff;
+    font-family: 'Nunito', 'sans-serif';
+    font-weight: 600;
+    background-color: #c3c3c3;
+    border-radius: 50px;
+    padding: 4px;
+    padding-right: 10px;
+    text-align: right;
+    margin-bottom: 5px;
+    max-width: 290px;
+}
+
+.service-type {
+    padding-left: 5px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    /* vertical-align: text-bottom; */
+}
+
+.service-number {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+#primary-services {
+    background-color: #6d55ce;
+    min-width: 80px;
+}
+
+#secondary-services {
+    background-color: #d86666;
+    min-width: 100px;
+}
+
+#tertiary-services {
+    background-color: #56bd94;
+    min-width: 80px;
+
+}
+
+#query-info {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+/* END OF SERVICE BAR GRAPH STYLE */
+
+/* START OF SERVICE MENU STYLE */
+
+.service-option-menu {
+    color: #000000;
+    overflow: auto;
+    white-space: nowrap;
+    padding-top: 50px;
+    margin-bottom: -10px;
+}
+
+.service-option {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    inline-size: 70px;
+    padding: 10px;
+    overflow-wrap: break-word;
+    /* align-items: center; */
+}
+
+.service-option#primary i {
+    color: #6d55ce;
+    padding-bottom: 10px;
+}
+
+.service-option#secondary i {
+    color: #d86666;
+    padding-bottom: 10px;
+}
+
+.service-option#tertiary i {
+    color: #56bd94;
+    padding-bottom: 10px;
+}
+
+.service-units {
+    vertical-align: middle;
+    margin: auto;
+    padding: 2px;
+    background-color: #d3d3d3;
+    inline-size: 60px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* overflow-wrap: break-word; */
+}
+
+.service-category-name {
+    vertical-align: middle;
+    margin: auto;
+    padding: 2px;
+    /* background-color: #d3d3d3; */
+    inline-size: 60px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* END OF SERVICE MENU STYLE */
+
+/* START OF TRANSIT MODE SECTION STYLE */
+#transit-mode-section {
+    color: #000000;
+    overflow: auto;
+    white-space: nowrap;
+    /* padding-bottom: 20px; */
+}
+
+#transit-mode {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    inline-size: 70px;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
+#transit-mode-name {
+    vertical-align: middle;
+    /* margin: auto; */
+    /* padding: 2px; */
+    background-color: #d3d3d3;
+    /* inline-size: 60px; */
+    height: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* overflow-wrap: break-word; */
+}
+
+/* END OF TRANSIT MODE SECTION STYLE */
+
+/* START OF TRANSIT MENU STYLE */
+
+#transit-option-menu {
+    color: #000000;
+    overflow: auto;
+    white-space: nowrap;
+    padding-bottom: 20px;
+}
+
+#transit-option {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    inline-size: auto;
+    padding: 5px;
+    /* overflow-wrap: break-word; */
+    /* align-items: center; */
+}
+
+.fas.fa-bus {
+    color: #f85a63ff;
+    padding-bottom: 5px;
+}
+
+.fas.fa-subway {
+    color: #6379eaff;
+    padding-bottom: 5px;
+}
+
+.fas.fa-train {
+    color: #5ebea0ff;
+    padding-bottom: 5px;
+}
+
+.fas.fa-train-tram {
+    color: #dd4e14ff;
+    padding-bottom: 5px;
+}
+
+.fas.fa-car {
+    color: #f4af00;
+    padding-bottom: 5px;
+}
+
+.fas.fa-bicycle {
+    color: #008d1a;
+    padding-bottom: 5px;
+}
+
+#transit-lines {
+    /* vertical-align: middle; */
+    margin: auto;
+    padding: 2px 5px;
+    /* padding-right: inherit; */
+    background-color: #d3d3d3;
+    /* inline-size: max(auto, 80px); */
+    /* width: min(80px, 100%); */
+    /* height: 30px; */
+    border-radius: 5px;
+    font-size: 12px;
+    /* overflow-wrap: inherit; */
+}
+
+/* END OF TRANSIT MENU STYLE */
+
+/* START OF ACCESSIBILITY BAR GRAPH STYLE */
+#accessible-bar-graph {
+    width: 100%;
+    z-index: 0;
+    position: relative;
+    color: #666666;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+.bar-graph#bus,
+.bar-graph#metro,
+.bar-graph#tram,
+.bar-graph#rail {
+    /* color: #000000; */
+    min-width: 20px;
+}
+
+#bus {
+    /* text-align: right; */
+    position: fixed;
+    background-color: #f85a63ff;
+    z-index: 1;
+}
+
+#metro {
+    /* text-align: right; */
+    background-color: #6379eaff;
+}
+
+#rail {
+    /* text-align: right; */
+    background-color: #5ebea0ff;
+}
+
+#tram {
+    /* text-align: right; */
+    background-color: #dd4e14ff;
+}
+
+.accessible-number {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+/* END OF ACCESSIBILITY BAR GRAPH STYLE */
+
+/* START OF CONNECTIVITY BAR GRAPH STYLE */
+
+.metrics-type {
+    padding-left: 5px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    /* vertical-align: text-bottom; */
+}
+
+.metrics-number {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+#centrality {
+    background-color: #6d55ce;
+    min-width: 80px;
+}
+
+#closeness {
+    background-color: #d86666;
+    min-width: 100px;
+}
+
+#betweenness {
+    background-color: #56bd94;
+    min-width: 80px;
+
+}
+
+/* END OF CONNECTIVITY BAR GRAPH STYLE */
+
+/* START OF BOROUGH SIDEBAR STYLE */
+
+#borough-query-rating {
+    margin-top: 100px;
+}
+
+#borough-query-info {
+    margin-top: 50px;
+}
+
+/* END OF BOROUGH SIDEBAR STYLE */
+
+/* START OF CITY SIDEBAR STYLE */
+#main .fas.fa-info-circle {
+    /* display: inline-flex; */
+    /* margin-left: 600px; */
+    /* right: 0; */
+    color: #ffffff;
+}
+
+#city-image {
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+#myCitySidebar p {
+    font-size: 14px;
+}
+
+#city-name-en {
+    margin-top: -15px;
+}
+
+#city-stats p {
+    /* font-size: 14px; */
+    margin-top: -10px;
+    color: #000000;
+}
+
+/* END OF CITY SIDEBAR STYLE */
+
+/* START OF GREENERY BAR GRAPH STYLE */
+
+.coverage-type {
+    padding-left: 5px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    /* vertical-align: text-bottom; */
+}
+
+.node-number {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+#sparse-coverage {
+    background-color: #d7191c;
+    min-width: 135px;
+}
+
+#fair-coverage {
+    background-color: #fdae61;
+    min-width: 110px;
+}
+
+#moderate-coverage {
+    background-color: #ffffc0;
+    min-width: 160px;
+    color: #aeae4b;
+
+}
+
+#good-coverage {
+    background-color: #a6d96a;
+    min-width: 130px;
+
+}
+
+#dense-coverage {
+    background-color: #1a9641;
+    min-width: 125px;
+
+}
+
+#query-info {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+/* END OF SERVICE BAR GRAPH STYLE */
