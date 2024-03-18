@@ -8,7 +8,6 @@
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 	<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 	<script src="https://kit.fontawesome.com/7abfd05b6d.js" crossorigin="anonymous"></script>
-	<!-- <script src="Scripts/JavaScript/citySearch.js"></script> -->
 	<script src="Scripts/JavaScript/citySelect.js"></script>
 	<script src="Scripts/JavaScript/en_fr.js"></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'>
@@ -37,18 +36,6 @@
 		</div>
 		<!-- END OF BANNER -->
 
-		<!-- START OF CITY SEARCH BAR -->
-		<!-- <span class="city-search">
-			<form autocomplete="off" action="/action_page.php">
-				<div class="autocomplete" style="width:300px;">
-					<input class="city-search-input" id="city-search-input" type="text" placeholder="Type name of city">
-				</div>
-			</form>
-			<a class="city-add-btn" onclick="addCity();"><i class="fas fa-plus"></i></a>
-		</span>
-		<div id="city-filters"></div> -->
-
-		<!-- END OF CITY SEARCH BAR -->
 		<!-- START CITY BUTTONS -->
 		<div class="city-buttons" id="city-buttons">
 			<p id="city-button-cta" style="color: #a3a3a3; font-size: 12px; padding-bottom: 5px;"><em>Select Cities and
@@ -77,37 +64,19 @@
 
 		<!-- END CITY BUTTONS -->
 
-		<!-- START OF ATLAS BUTTONS -->
-		<!-- <div class="atlas-buttons"> -->
-		<!-- <a class="cammm-button" onclick="playIntro();">
-				<i class="fas fa-play"></i>Play Intro
-			</a> -->
-
-		<!-- <a class="cammm-button" id="start-button" onclick="openCityTabs();">
-				<i class="fas fa-forward-fast"></i>Start
-			</a>
-		</div> -->
-
-		<!-- END OF ATLAS BUTTONS -->
-
 
 	</div>
 	<div class="landing-logos">
 		<!-- ideas-be, NGCI, ARTM, Concordia -->
 		<p id="dev-by" style="color: #a3a3a3; font-size: 12px; padding-bottom: 5px;"><em>Developed by</em></p>
 		<span id="ideas-be">
-			<img src="Images/Logos/ideasbelogo_long_transparent.png" alt="IDEAS-BE Logo"></img>
+			<img src="Images/Logos/ideasbelogo_wo_curc.png" alt="IDEAS-BE Logo"></img>
 		</span>
-		<span id="ngci">
-			<img src="Images/Logos/NGCI_Logo.jpg" alt="NGCI Logo"></img>
-		</span>
+		<p id="in-partner" style="color: #a3a3a3; font-size: 12px; padding-bottom: 5px;"><em>In partnership with</em>
+		</p>
 		<span id="artm">
 			<img src="Images/Logos/ARTM_horizontal_couleurs_RVB.png" alt="ARTM Logo"></img>
 		</span>
-		<!-- <span id="concordia">
-			<img src="Images/Logos/concordia-logo.png" alt="Concordia Logo"></img>
-		</span> -->
-
 	</div>
 
 	<!-- END OF WEB ATLAS LANDING -->
@@ -117,13 +86,6 @@
 
 	insertCityButtons();
 
-	function playIntro() {
-		console.log("PLAYING INTRO!!!");
-	}
-
-	function skipStart() {
-		console.log("Skipping and STARTING ATLAS UI!!!");
-	}
 </script>
 
 </html>
