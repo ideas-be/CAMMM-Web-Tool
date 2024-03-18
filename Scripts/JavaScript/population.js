@@ -5,6 +5,31 @@ function getPopJson(jsonData) {
     console.log("Population JSON: ", popJson);
 }
 var demoButtonFlag = 0;
+
+// fetchGeoJson("population_borough.json");
+// setTimeout(function () { popJson = readGeoJsonObj("population_borough.json"); }, 100);
+
+// moved this from html
+var jsonObj;
+var b = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+function readPopulation() {
+    b.open('GET', "Data/Montreal_Island/population_borough.json", true);  // This is reading the JSON FILE 
+
+    b.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+
+        if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
+            jsonObj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+            getPopJson(jsonObj);
+        }
+    }
+    b.send();        // Closes the XMLHttpRequest   
+}
+// moved this from html
+
+
+
+
+
 function displayPopData() {
     var MaleDemographicData = popJson.features[0].demographic_data.Males_demoData;
     var FemaleDemographicData = popJson.features[0].demographic_data.Females_demoData;
