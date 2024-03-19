@@ -133,14 +133,20 @@
     <!-- END OF HEADER AND MAP BODY -->
 
     <script>
-        setTimeout(readNodes, 10);
-        setTimeout(readPopulation, 20);
+        // TODO:Fix the timing of these functions to load borough and nodes better
+        readNodes();
+        readPopulation();
+        // setTimeout(readBoroughs, 50);
+        setTimeout(displayBoroughs, 350);
         setTimeout(displayIntroPrompt, 100);
-        fetchGeoJson("city.geojson");
-        setTimeout(readCityJSON, 250);
+        // fetchGeoJson("city.json");
+        // setTimeout(readCityJSON, 250);
         setTimeout(loadCitySidebar, 300);
 
+        setTimeout(clickBoroughs, 250);
+        setTimeout(loadNodes, 300);
 
+        // START OF MAP FUNCTIONS
         // do not move this code from html
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
@@ -154,14 +160,7 @@
         });
 
         // do not move this code from html
-
-
         var centerTemp = [];
-
-        setTimeout(displayBoroughs, 200);
-        setTimeout(clickBoroughs, 250);
-        setTimeout(loadNodes, 300);
-
         function getMapCenter(nodeCoords) {
             var x = window.matchMedia("(max-width: 600px)");
 
@@ -175,6 +174,7 @@
                 console.log("centerTemp if more than 600px: ", centerTemp);
             }
         }
+        // END OF MAP FUNCTIONS
 
     </script>
 

@@ -7,7 +7,7 @@ var obj;
 var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
 function readNodes() {
     a.open('GET', "Data/Montreal_Island/general.geojson", true);  // This is reading the JSON FILE 
-    console.log("Reading the popup info file to load JSON");
+    // console.log("Reading the popup info file to load JSON");
 
     a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
 
@@ -17,17 +17,17 @@ function readNodes() {
             queryDropDown();
             boroughQueryDropDown();
             smallClusterFeatures = getSmallClusters();
-            console.log("Small Cluster Features:\n");
-            console.log(smallClusterFeatures);
+            // console.log("Small Cluster Features:\n");
+            // console.log(smallClusterFeatures);
             mediumClusterFeatures = getMediumClusters();
-            console.log("Medium Cluster Features:\n");
-            console.log(mediumClusterFeatures);
+            // console.log("Medium Cluster Features:\n");
+            // console.log(mediumClusterFeatures);
             largeClusterFeatures = getLargeClusters();
-            console.log("Large Cluster Features:\n");
-            console.log(largeClusterFeatures);
+            // console.log("Large Cluster Features:\n");
+            // console.log(largeClusterFeatures);
             hubFeatures = getHubs();
-            console.log("Hub Features:\n");
-            console.log(hubFeatures);
+            // console.log("Hub Features:\n");
+            // console.log(hubFeatures);
         }
     }
 

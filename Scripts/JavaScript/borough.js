@@ -3,52 +3,76 @@ var myBoroughsJson;
 var selectedBorough = [];
 // var selectedBoroughQuery = [];
 var boroughCenter = [];
-fetchGeoJson("borough.geojson");
 
 
-function getBoroughsJson() {
-    // Read the boroughs.geojson file and assign to variable
-    myBoroughsJson = readGeoJsonObj("borough.geojson");
-    console.log("Fetching Boroughs JSON!!!");
-    console.log(myBoroughsJson);
-    console.log(myBoroughsJson.features);
-}
+
+// function getBoroughsJson() {
+//     // Read the boroughs.geojson file and assign to variable
+//     myBoroughsJson = readGeoJsonObj("borough.geojson");
+//     console.log("Fetching Boroughs JSON!!!");
+//     console.log(myBoroughsJson);
+//     console.log(myBoroughsJson.features);
+// }
+
+// var c = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+// function readBoroughs() {
+//     c.open('GET', "Data/Montreal_Island/borough.geojson", true);  // This is reading the JSON FILE 
+
+//     c.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+//         // this.readyState = 4;
+//         console.log("Ready State Change: ", this.readyState);
+
+//         if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
+//             myBoroughsJson = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+//             // getPopJson(jsonObj);
+//         }
+//         console.log("Reading Borough GeoJSON: ", myBoroughsJson);
+//     }
+//     c.send();        // Closes the XMLHttpRequest   
+// }
 
 function displayBoroughs() {
     // Display the borough polygons onto mapbox from json
-    getBoroughsJson();
+    // getBoroughsJson();
+    // readBoroughs();
+    myBoroughsJson = fetchGeoJson("borough.geojson");
 
     console.log("Adding Boroughs as Source in MapBox");
-    map.addSource('boroughs', {
-        'type': 'geojson',
-        'data': {
-            'type': 'FeatureCollection',
-            'features': myBoroughsJson.features,
-        }
-    });
+    if (myBoroughsJson != null) {
+        map.addSource('boroughs', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': myBoroughsJson.features,
+            }
+        });
 
-    // Add a layer showing the borough polygons.
-    map.addLayer({
-        'id': 'borough_polygons',
-        'type': 'fill',
-        'source': 'boroughs',
-        'paint': {
-            'fill-color': '#AD84E3',
-            'fill-outline-color': '#7d4cbe',
-            'fill-opacity': 0.4,
-        }
-    });
+        // Add a layer showing the borough polygons.
+        map.addLayer({
+            'id': 'borough_polygons',
+            'type': 'fill',
+            'source': 'boroughs',
+            'paint': {
+                'fill-color': '#AD84E3',
+                'fill-outline-color': '#7d4cbe',
+                'fill-opacity': 0.4,
+            }
+        });
 
-    // Add a layer showing the borough outlines.
-    map.addLayer({
-        'id': 'borough_outlines',
-        'type': 'line',
-        'source': 'boroughs',
-        'paint': {
-            'line-color': '#7d4cbe',
-            'line-width': 2
-        }
-    });
+        // Add a layer showing the borough outlines.
+        map.addLayer({
+            'id': 'borough_outlines',
+            'type': 'line',
+            'source': 'boroughs',
+            'paint': {
+                'line-color': '#7d4cbe',
+                'line-width': 2
+            }
+        });
+    } else {
+        console.log("My Boroughs JSON is NULL");
+    }
+
 
 }
 
