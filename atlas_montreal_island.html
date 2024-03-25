@@ -13,6 +13,7 @@
     <script src="Scripts/JavaScript/sidebar.js"></script>
     <script src="Scripts/JavaScript/citySidebar.js"></script>
     <script src="Scripts/JavaScript/cluster-hub.js"></script>
+    <script src="Scripts/JavaScript/readFiles/testParallelReading.js"></script>
     <script src="Scripts/JavaScript/readFiles/readMIFiles.js"></script>
     <script src="Scripts/JavaScript/population.js"></script>
     <script src="Scripts/JavaScript/borough.js"></script>
@@ -135,13 +136,17 @@
     <script>
         // TODO:Fix the timing of these functions to load borough and nodes better
         readNodes();
-        readPopulation();
+        // readPopulation();
         // setTimeout(readBoroughs, 50);
-        setTimeout(displayBoroughs, 350);
+        // console.log("Showing Parallel Files from HTML: ", parallelFiles);
+        // setTimeout(displayBoroughs, 350);
+        // if (parallelFiles != null) {
+        //     displayBoroughs();
+        // }
         setTimeout(displayIntroPrompt, 100);
         // fetchGeoJson("city.json");
         // setTimeout(readCityJSON, 250);
-        setTimeout(loadCitySidebar, 300);
+        // setTimeout(loadCitySidebar, 300);
 
         setTimeout(clickBoroughs, 250);
         setTimeout(loadNodes, 300);

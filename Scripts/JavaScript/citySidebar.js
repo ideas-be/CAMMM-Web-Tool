@@ -11,8 +11,8 @@ var myCityJson = [];
 // }
 
 function loadCitySidebar() {
-    myCityJson = fetchGeoJson("city.json");
-    console.log("City JSON: ", myCityJson);
+    // myCityJson = fetchGeoJson("city.json");
+    // console.log("City JSON: ", myCityJson);
 
     var citySidebarDiv = document.getElementById("myCitySidebar");
 

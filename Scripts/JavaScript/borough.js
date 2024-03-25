@@ -31,11 +31,17 @@ var boroughCenter = [];
 //     c.send();        // Closes the XMLHttpRequest   
 // }
 
+function getBoroughJSON(json) {
+    myBoroughsJson = json;
+    console.log("Borough GeoJSON is: ", myBoroughsJson);
+    displayBoroughs();
+}
+
 function displayBoroughs() {
     // Display the borough polygons onto mapbox from json
     // getBoroughsJson();
     // readBoroughs();
-    myBoroughsJson = fetchGeoJson("borough.geojson");
+
 
     console.log("Adding Boroughs as Source in MapBox");
     if (myBoroughsJson != null) {

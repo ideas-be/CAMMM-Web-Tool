@@ -5,24 +5,28 @@ var demoButtonFlag = 0;
 // setTimeout(function () { popJson = readGeoJsonObj("population_borough.json"); }, 100);
 
 // moved this from html
-var b = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-function readPopulation() {
-    b.open('GET', "Data/Montreal_Island/population_borough.json", true);  // This is reading the JSON FILE 
+// var b = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+// function readPopulation() {
+//     b.open('GET', "Data/Montreal_Island/population_borough.json", true);  // This is reading the JSON FILE 
 
-    b.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+//     b.onreadystatechange = function () {  //When the JSON file is open it starts a function 
 
-        if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
-            popJson = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
-            // getPopJson(jsonObj);
-        }
-        console.log("Population JSON: ", popJson);
-    }
-    b.send();        // Closes the XMLHttpRequest   
+//         if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
+//             popJson = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+//             // getPopJson(jsonObj);
+//         }
+//         console.log("Population JSON: ", popJson);
+//     }
+//     b.send();        // Closes the XMLHttpRequest   
 
-}
+// }
 // moved this from html
 
-
+function getPopJson(json) {
+    // get the population_borough.json file from parallel reading js
+    popJson = json;
+    console.log("Population JSON is: ", popJson);
+}
 
 
 
