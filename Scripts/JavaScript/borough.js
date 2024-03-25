@@ -34,7 +34,8 @@ var boroughCenter = [];
 function getBoroughJSON(json) {
     myBoroughsJson = json;
     console.log("Borough GeoJSON is: ", myBoroughsJson);
-    displayBoroughs();
+    // displayBoroughs();
+    setTimeout(displayBoroughs, 300);
 }
 
 function displayBoroughs() {

@@ -18,6 +18,7 @@ loadJSONFilesInParallel(files)
         // loading population JSON file
         getPopJson(parallelFiles[0]);
         // loading city JSON file
+        getCityJSON(parallelFiles[1]);
         // loading borough GeoJSON file
         // displayBoroughs(parallelFiles[2]);
         getBoroughJSON(parallelFiles[2]);

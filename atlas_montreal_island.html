@@ -136,6 +136,7 @@
     <script>
         // TODO:Fix the timing of these functions to load borough and nodes better
         readNodes();
+        displayIntroPrompt();
         // readPopulation();
         // setTimeout(readBoroughs, 50);
         // console.log("Showing Parallel Files from HTML: ", parallelFiles);
@@ -143,12 +144,12 @@
         // if (parallelFiles != null) {
         //     displayBoroughs();
         // }
-        setTimeout(displayIntroPrompt, 100);
+        // setTimeout(displayIntroPrompt, 100);
         // fetchGeoJson("city.json");
         // setTimeout(readCityJSON, 250);
         // setTimeout(loadCitySidebar, 300);
 
-        setTimeout(clickBoroughs, 250);
+        setTimeout(clickBoroughs, 350);
         setTimeout(loadNodes, 300);
 
         // START OF MAP FUNCTIONS

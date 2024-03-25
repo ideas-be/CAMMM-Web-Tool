@@ -10,6 +10,12 @@ var myCityJson = [];
 //     myCityJson = readGeoJsonObj("city.json");
 // }
 
+function getCityJSON(json) {
+    myCityJson = json;
+    console.log("City JSON is: ", myCityJson);
+    loadCitySidebar();
+}
+
 function loadCitySidebar() {
     // myCityJson = fetchGeoJson("city.json");
     // console.log("City JSON: ", myCityJson);
