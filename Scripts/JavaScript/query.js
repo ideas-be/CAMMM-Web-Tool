@@ -108,16 +108,17 @@ function callQueryCalFunc() {
         case "Select Query": console.log("Please select the query");
             break;
         case "Multimodality":
-            fetchGeoJson("city.geojson");
-            fetchGeoJson("Lines.geojson");
-            setTimeout(calMultiModality, 300);
+            // fetchGeoJson("city.geojson");
+            // fetchGeoJson("Lines.geojson");
+            // myLinesJson = fetchGeoJson("Lines.geojson");
+            setTimeout(displayLines, 300);
             break;
         case "Universal Design & Accessibility":
             // fetchGeoJson("city.geojson");
             setTimeout(calAccessibility, 200);
             break;
         case "Diversity of Services and Amenities":
-            fetchGeoJson("services.geojson");
+            // fetchGeoJson("services.geojson");
             fetchGeoJson("category_services.geojson");
             setTimeout(calDiversityServices, 200);
             break;

@@ -1,6 +1,12 @@
 var nodeProperties = fetchNodeProps();
 
-var myLinesJson;
+var myLinesJson = [];
+
+function getLinesJSON(json) {
+    myLinesJson = json;
+    console.log("Lines GeoJSON is: ");
+    console.log(myLinesJson);
+}
 
 function getCurrentLines() {
     // Fetch lines connected to current node
@@ -55,46 +61,56 @@ function getCurrentLines() {
     return currentLines;
 }
 
+var isLinesDisplayed = false;
+
 function displayLines() {
     // The objective of this function is:
     // To fetch lines geojson file and display associated lines with selected node on map
     // fetchGeoJson("Lines.geojson");
 
-    myLinesJson = readGeoJsonObj("Lines.geojson");
-    console.log("Fetching and Displaying Lines!!!");
-    console.log(myLinesJson);
-    console.log(myLinesJson.features);
 
-    console.log("Adding Lines as Source in MapBox");
-    map.addSource('lines', {
-        'type': 'geojson',
-        'data': {
-            'type': 'FeatureCollection',
-            'features': getCurrentLines(),
-        }
-    });
 
-    // Add a layer showing the clusters.
-    map.addLayer({
-        'id': 'transit-lines',
-        'type': 'line',
-        'source': 'lines',
-        'layout': {
-            'line-join': 'round',
-            'line-cap': 'round',
-        },
-        'paint': {
-            'line-color': '#000000',
-            'line-width': 2,
-            // 'circle-radius': 8,
+    // console.log(myLinesJson.features);
+
+    if (myLinesJson != null) {
+
+        console.log("Adding Lines as Source in MapBox");
+        map.addSource('lines', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': getCurrentLines(),
+            }
+        });
+
+        // Add a layer showing the clusters.
+        map.addLayer({
+            'id': 'transit-lines',
+            'type': 'line',
+            'source': 'lines',
+            'layout': {
+                'line-join': 'round',
+                'line-cap': 'round',
+            },
+            'paint': {
+                'line-color': '#000000',
+                'line-width': 2,
+                // 'circle-radius': 8,
+            }
         }
+        );
+
+        map.setPaintProperty('transit-lines', 'line-color', '#008080');
+        calMultiModality();
+        isLinesDisplayed = true;
     }
-    );
 
-    map.setPaintProperty('transit-lines', 'line-color', '#008080');
 
 }
 
 function hideLines() {
-    map.setLayoutProperty('transit-lines', 'visibility', 'none');
+    // map.setLayoutProperty('transit-lines', 'visibility', 'none');
+    map.removeLayer('transit-lines');
+    map.removeSource('lines');
+    isLinesDisplayed = false;
 }

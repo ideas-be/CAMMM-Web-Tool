@@ -209,17 +209,13 @@ function calMultiModality() {
     // document.getElementById("query-info").innerHTML = "";
     displayTransitModes();
     displayStopsLines();
+    // displayLines();
 
-    // fetchGeoJson("Lines.geojson");
-    displayLines();
-
-    var myCityJson = readGeoJsonObj("city.geojson");
     console.log("City json read from query.js: ", myCityJson);
-    if (myCityJson.City.Name_en == "Montreal") {
+    if (myCityJson.Name_en == "Montreal") {
         var totalTransit = 0;
-        for (key in myCityJson["City"]["TransitTypesStops"]) {
-            // console.log(myCityJson["City"]["TransitTypesStops"][key]);
-            var value = myCityJson["City"]["TransitTypesStops"][key];
+        for (key in myCityJson["TransitTypesStops"]) {
+            var value = myCityJson["TransitTypesStops"][key];
             if (value != 0) {
                 totalTransit += 1;
             }
@@ -229,7 +225,6 @@ function calMultiModality() {
 
         // Calculate the number of transit types at node
         var nodeTransit = 0;
-        // var nodeProperties = fetchNodeProps();
 
         if (NumberMetroStations > 0)
             nodeTransit += 1;

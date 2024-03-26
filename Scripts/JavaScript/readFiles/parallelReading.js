@@ -3,7 +3,7 @@ function loadJSONFilesInParallel(files) {
 }
 
 // Usage
-const files = ["Data/Montreal_Island/population_borough.json", "Data/Montreal_Island/city.json", "Data/Montreal_Island/borough.geojson"];
+const files = ["Data/Montreal_Island/population_borough.json", "Data/Montreal_Island/city.json", "Data/Montreal_Island/borough.geojson", "Data/Montreal_Island/Lines.geojson"];
 
 var parallelFiles;
 loadJSONFilesInParallel(files)
@@ -22,6 +22,8 @@ loadJSONFilesInParallel(files)
         // loading borough GeoJSON file
         // displayBoroughs(parallelFiles[2]);
         getBoroughJSON(parallelFiles[2]);
+        // loading lines GeoJSON file
+        getLinesJSON(parallelFiles[3]);
     })
     .catch(error => {
         console.error("Error loading JSON files:", error);

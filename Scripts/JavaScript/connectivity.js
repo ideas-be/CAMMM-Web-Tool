@@ -39,7 +39,9 @@ function fetchConnectivityProps() {
 
 function calConnectivity() {
 
-    hideLines();
+    if (isLinesDisplayed) {
+        hideLines();
+    }
     document.getElementById("transit-option-menu").innerHTML = "";
 
 

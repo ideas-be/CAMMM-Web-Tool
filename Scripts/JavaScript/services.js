@@ -132,7 +132,9 @@ function displaySurroundingServices() {
 
 function calDiversityServices() {
 
-    hideLines();
+    if (isLinesDisplayed) {
+        hideLines();
+    }
     document.getElementById("transit-option-menu").innerHTML = "";
 
     console.log("Diversity of Primary, Secondary and Tertiary Services");
@@ -163,7 +165,9 @@ function calDiversityServices() {
 
 function calClosenessServices() {
 
-    hideLines();
+    if (isLinesDisplayed) {
+        hideLines();
+    }
     document.getElementById("transit-option-menu").innerHTML = "";
     // document.getElementById("query-info").innerHTML = "";
 

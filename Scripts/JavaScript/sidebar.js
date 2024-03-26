@@ -73,7 +73,10 @@ function closeSidebar() {
     // document.getElementById("borough-query-dropdown").style.display = "block";
 
     zoomOutNode();
-    hideLines();
+    if (isLinesDisplayed) {
+        hideLines();
+    }
+
     var sidebarDiv = document.getElementById("mySidebar");
 
     document.getElementById("mySidebar").style.color = "#ffffff";
