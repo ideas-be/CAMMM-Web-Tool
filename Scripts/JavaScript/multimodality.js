@@ -212,7 +212,7 @@ function calMultiModality() {
     // displayLines();
 
     console.log("City json read from query.js: ", myCityJson);
-    if (myCityJson.Name_en == "Montreal") {
+    if (myCityJson.Name_en == "Montreal Island") {
         var totalTransit = 0;
         for (key in myCityJson["TransitTypesStops"]) {
             var value = myCityJson["TransitTypesStops"][key];

@@ -142,6 +142,8 @@ function callQueryCalFunc() {
 
 function displayQueryRating(ratingValue) {
 
+    console.log("Calculating query rating!!");
+
     var ratingWord = "";
     if ((ratingValue >= 2) && (ratingValue < 5)) {
         ratingWord = "Needs to Improve";
