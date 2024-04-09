@@ -61,7 +61,9 @@ function displayAccessibilityGraphs() {
 
 function calAccessibility() {
     // Calculate Accessibility rating for node
-    hideLines();
+    if (isLinesDisplayed) {
+        hideLines();
+    }
     document.getElementById("transit-option-menu").innerHTML = "";
 
     accessibilityData = JSON.parse(nodeProperties.AccessibilityIndex);

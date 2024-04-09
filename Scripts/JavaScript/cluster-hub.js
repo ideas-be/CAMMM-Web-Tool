@@ -1,3 +1,465 @@
+// moved from html
+var smallClusterFeatures = [];
+var mediumClusterFeatures = [];
+var largeClusterFeatures = [];
+var hubFeatures = [];
+var obj;
+var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+function readNodes() {
+    a.open('GET', "Data/Montreal_Island/general.geojson", true);  // This is reading the JSON FILE 
+    // console.log("Reading the popup info file to load JSON");
+
+    a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+
+        if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
+            obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+            newJson(obj);
+            queryDropDown();
+            boroughQueryDropDown();
+            smallClusterFeatures = getSmallClusters();
+            // console.log("Small Cluster Features:\n");
+            // console.log(smallClusterFeatures);
+            mediumClusterFeatures = getMediumClusters();
+            // console.log("Medium Cluster Features:\n");
+            // console.log(mediumClusterFeatures);
+            largeClusterFeatures = getLargeClusters();
+            // console.log("Large Cluster Features:\n");
+            // console.log(largeClusterFeatures);
+            hubFeatures = getHubs();
+            // console.log("Hub Features:\n");
+            // console.log(hubFeatures);
+        }
+    }
+
+    a.send();        // Closes the XMLHttpRequest   
+}
+// moved from html
+
+// also moved from html
+function loadNodes() {
+    map.on('load', () => {
+        map.addSource('small-clusters', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': smallClusterFeatures,
+            }
+        });
+
+        map.addSource('medium-clusters', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': mediumClusterFeatures,
+            }
+        });
+
+        map.addSource('large-clusters', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': largeClusterFeatures,
+            }
+        });
+
+        map.addSource('hubs', {
+            'type': 'geojson',
+            'data': {
+                'type': 'FeatureCollection',
+                'features': hubFeatures,
+            }
+        });
+
+        // // Add labels for small clusters
+        map.addLayer({
+            'id': 'small-cluster-labels',
+            'type': 'symbol',
+            'source': 'small-clusters',
+            'paint': {
+                // 'text-halo-blur': 1,
+                'text-halo-color': "#f5f5f5",
+                'text-halo-width': 0.5,
+                // 'text-opacity': ['case',
+                //     ['boolean', ['feature-state', 'click'], false],
+                //     1,
+                //     0]
+            },
+            'layout': {
+                'visibility': 'none',
+                'text-field': [
+                    'format',
+                    ['upcase', ['get', 'Name']],
+                    { 'font-scale': 0.8 },
+                ],
+                'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                'text-offset': [0, 2],
+                'text-max-width': 2,
+                'text-ignore-placement': true,
+            }
+        });
+
+        // // Add labels for medium clusters
+        map.addLayer({
+            'id': 'medium-cluster-labels',
+            'type': 'symbol',
+            'source': 'medium-clusters',
+            'paint': {
+                // 'text-halo-blur': 1,
+                'text-halo-color': "#f5f5f5",
+                'text-halo-width': 0.5,
+                // 'text-opacity': ['case',
+                //     ['boolean', ['feature-state', 'click'], false],
+                //     1,
+                //     0]
+            },
+            'layout': {
+                'visibility': 'none',
+                'text-field': [
+                    'format',
+                    ['upcase', ['get', 'Name']],
+                    { 'font-scale': 0.8 },
+                ],
+                'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                'text-offset': [0, 2],
+                'text-max-width': 2,
+                'text-ignore-placement': true,
+            }
+        });
+
+        // // Add labels for large clusters
+        map.addLayer({
+            'id': 'large-cluster-labels',
+            'type': 'symbol',
+            'source': 'large-clusters',
+            'paint': {
+                // 'text-halo-blur': 1,
+                'text-halo-color': "#f5f5f5",
+                'text-halo-width': 0.5,
+                // 'text-opacity': ['case',
+                //     ['boolean', ['feature-state', 'click'], false],
+                //     1,
+                //     0]
+            },
+            'layout': {
+                'visibility': 'none',
+                'text-field': [
+                    'format',
+                    ['upcase', ['get', 'Name']],
+                    { 'font-scale': 0.8 },
+                ],
+                'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                'text-offset': [0, 2],
+                'text-max-width': 2,
+                'text-ignore-placement': true,
+            }
+        });
+
+        // Add a layer showing the small clusters.
+        map.addLayer({
+            'id': 'small-clusters',
+            'type': 'circle',
+            'source': 'small-clusters',
+            'paint': {
+                'circle-color': '#f15924',
+                'circle-opacity': [
+                    'interpolate',
+                    ['exponential', 0.5],
+                    ['zoom'],
+                    11,
+                    0,
+                    14,
+                    1
+                ],
+                'circle-radius': 8,
+            }
+        }
+        );
+
+        // Add a layer showing the medium clusters.
+        map.addLayer({
+            'id': 'medium-clusters',
+            'type': 'circle',
+            'source': 'medium-clusters',
+            'paint': {
+                'circle-color': '#f15924',
+                'circle-opacity': [
+                    'interpolate',
+                    ['exponential', 0.5],
+                    ['zoom'],
+                    11,
+                    0.2,
+                    14,
+                    1
+                ],
+                'circle-radius': 8,
+            }
+        }
+        );
+
+        // Add a layer showing the large clusters.
+        map.addLayer({
+            'id': 'large-clusters',
+            'type': 'circle',
+            'source': 'large-clusters',
+            'paint': {
+                'circle-color': '#f15924',
+                'circle-opacity': 0.7,
+                'circle-radius': 8,
+            }
+        }
+        );
+
+        // Add a layer showing the hubs.
+        map.addLayer({
+            'id': 'hubs',
+            'type': 'circle',
+            'source': 'hubs',
+            'paint': {
+                'circle-color': '#d81b60',
+                'circle-opacity': [
+                    'interpolate',
+                    ['exponential', 0.5],
+                    ['zoom'],
+                    11,
+                    0.7,
+                    14,
+                    1
+                ],
+                'circle-radius': [
+                    'interpolate',
+                    ['exponential', 0.5],
+                    ['zoom'],
+                    11,
+                    9,
+                    14,
+                    14
+                ],
+            }
+        }
+        );
+
+        // Add labels for hubs
+        map.addLayer({
+            'id': 'hub-labels',
+            'type': 'symbol',
+            'source': 'hubs',
+            'paint': {
+                // 'text-halo-blur': 1,
+                'text-halo-color': "#f5f5f5",
+                'text-halo-width': 0.5,
+                // 'text-opacity': ['case',
+                //     ['boolean', ['feature-state', 'click'], false],
+                //     1,
+                //     0]
+            },
+            'layout': {
+                'visibility': 'none',
+                'text-field': [
+                    'format',
+                    ['upcase', ['get', 'Name']],
+                    { 'font-scale': 0.8 },
+                ],
+                'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                'text-offset': [0, 2],
+                'text-max-width': 2,
+                'text-ignore-placement': true,
+            }
+        });
+
+        // Click Small Cluster Function
+        map.on('click', 'small-clusters', (e) => {
+            // Isolate the selected cluster in another layer and show label
+
+            // Hide borough query dropdown at node click
+            // document.getElementById("borough-query-dropdown").style.display = "none";
+            // Change the cursor style as a UI indicator.
+            var boroughLayer = map.getLayer("selected_borough_polygon");
+
+            if (typeof (boroughLayer) != "undefined") {
+                console.log("Borough was selected before this cluster");
+
+                // Now start cluster interactions
+                map.getCanvas().style.cursor = 'pointer';
+                // hideSelectedCluster();
+                if (selectedHub.length == 1) {
+                    hideSelectedHub();
+                }
+                if (selectedCluster.length != 1) {
+                    selectedCluster.push(e.features[0]);
+                } else {
+                    hideSelectedCluster();
+                    selectedCluster.push(e.features[0]);
+                }
+
+                setTimeout(displaySelectedCluster, 400);
+
+                getMapCenter(e.features[0].geometry.coordinates);
+
+                map.flyTo({
+                    'center': centerTemp,
+                    'zoom': 16, 'pitch': 60,
+                    // 'bearing': 90,
+                    'speed': 0.2,
+                    'curve': 1,
+                    'duration': 2000,
+                    'essential': true,
+                    'easing': function (t) {
+                        return t;
+                    }
+                });
+
+                // Show node query dropdown on click
+                document.getElementById("query-dropdown").style.display = "block";
+                openSidebar(e.features[0].properties);
+
+            } else {
+                console.log("click a borough first!");
+            }
+
+        });
+
+        // Click Medium Cluster Function
+        map.on('click', 'medium-clusters', (e) => {
+            // Isolate the selected cluster in another layer and show label
+
+            // Hide borough query dropdown at node click
+            // document.getElementById("borough-query-dropdown").style.display = "none";
+
+            // Change the cursor style as a UI indicator.
+            var boroughLayer = map.getLayer("selected_borough_polygon");
+
+            if (typeof (boroughLayer) != "undefined") {
+                console.log("Borough was selected before this cluster");
+
+                // Now start cluster interactions
+                map.getCanvas().style.cursor = 'pointer';
+                if (selectedHub.length == 1) {
+                    hideSelectedHub();
+                }
+                if (selectedCluster.length != 1) {
+                    selectedCluster.push(e.features[0]);
+                } else {
+                    hideSelectedCluster();
+                    selectedCluster.push(e.features[0]);
+                }
+                setTimeout(displaySelectedCluster, 400);
+
+                getMapCenter(e.features[0].geometry.coordinates);
+
+                map.flyTo({
+                    'center': centerTemp,
+                    'zoom': 16, 'pitch': 60,
+                    // 'bearing': 90,
+                    'speed': 0.2,
+                    'curve': 1,
+                    'duration': 2000,
+                    'essential': true,
+                    'easing': function (t) {
+                        return t;
+                    }
+                });
+
+                openSidebar(e.features[0].properties);
+            } else {
+                console.log("click a borough first!");
+            }
+        });
+
+        // Click Large Cluster Function
+        map.on('click', 'large-clusters', (e) => {
+            // Isolate the selected cluster in another layer and show label
+
+            // Hide borough query dropdown at node click
+            // document.getElementById("borough-query-dropdown").style.display = "none";
+
+            // Change the cursor style as a UI indicator.
+            var boroughLayer = map.getLayer("selected_borough_polygon");
+
+            if (typeof (boroughLayer) != "undefined") {
+                console.log("Borough was selected before this cluster");
+
+                // Now start cluster interactions
+                map.getCanvas().style.cursor = 'pointer';
+                if (selectedHub.length == 1) {
+                    hideSelectedHub();
+                }
+                if (selectedCluster.length != 1) {
+                    selectedCluster.push(e.features[0]);
+                } else {
+                    hideSelectedCluster();
+                    selectedCluster.push(e.features[0]);
+                }
+                setTimeout(displaySelectedCluster, 400);
+
+                getMapCenter(e.features[0].geometry.coordinates);
+
+                map.flyTo({
+                    'center': centerTemp,
+                    'zoom': 16, 'pitch': 60,
+                    // 'bearing': 90,
+                    'speed': 0.2,
+                    'curve': 1,
+                    'duration': 2000,
+                    'essential': true,
+                    'easing': function (t) {
+                        return t;
+                    }
+                });
+
+                openSidebar(e.features[0].properties);
+            } else {
+                console.log("click a borough first!");
+            }
+        });
+
+        // Click Hub Function
+        map.on('click', 'hubs', (e) => {
+            // Isolate the selected hub in another layer and show label
+            // Change the cursor style as a UI indicator.
+            var boroughLayer = map.getLayer("selected_borough_polygon");
+
+            if (typeof (boroughLayer) != "undefined") {
+                console.log("Borough was selected before this cluster");
+
+                // Now start cluster interactions
+                map.getCanvas().style.cursor = 'pointer';
+                if (selectedCluster.length == 1) {
+                    hideSelectedCluster();
+                }
+                if (selectedHub.length != 1) {
+                    selectedHub.push(e.features[0]);
+                } else {
+                    hideSelectedHub();
+                    selectedHub.push(e.features[0]);
+                }
+                setTimeout(displaySelectedHub, 400);
+
+                getMapCenter(e.features[0].geometry.coordinates);
+
+                map.flyTo({
+                    'center': centerTemp,
+                    'zoom': 14, 'pitch': 60,
+                    // 'bearing': 90,
+                    'speed': 0.2,
+                    'curve': 1,
+                    'duration': 2000,
+                    'essential': true,
+                    'easing': function (t) {
+                        return t;
+                    }
+                });
+
+                openSidebar(e.features[0].properties);
+            } else {
+                console.log("click a borough first!");
+            }
+        });
+
+    });
+}
+// also moved from html
+
+
 var selectedCluster = [];
 var selectedHub = [];
 

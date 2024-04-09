@@ -2,20 +2,20 @@ function FRLandingPage() {
     insertCityButtons();
     var result = document.getElementsByClassName("switch-input")[0].checked ? 'Yes' : 'No';
 
-    // console.log("Result", result);
-
     if (result == 'Yes') {
         console.log("Translating to FR");
         document.getElementById("welcome").innerHTML = "Bienvenue chez";
         // document.getElementById("city-button-cta").innerHTML = "<em>Sélectionnez les villes et cliquez sur Lancer</em>";
         // document.getElementById("start-button").innerHTML = "<a onclick=\"openCityTabs();\"><i class=\"fas fa-forward-fast\"></i>Lancer</a>";
         document.getElementById("dev-by").innerHTML = "<em>Développé par</em>";
+        document.getElementById("in-partner").innerHTML = "<em>En partenariat avec</em>";
     } else if (result == 'No') {
         console.log("Translating to EN");
         document.getElementById("welcome").innerHTML = "Welcome to the";
         // document.getElementById("city-button-cta").innerHTML = "<em>Select Cities and Click Start</em>";
         // document.getElementById("start-button").innerHTML = "<a onclick=\"openCityTabs();\"><i class=\"fas fa-forward-fast\"></i>Start</a>";
         document.getElementById("dev-by").innerHTML = "<em>Developed by</em>";
+        document.getElementById("in-partner").innerHTML = "<em>In partnership with</em>";
     }
 }
 

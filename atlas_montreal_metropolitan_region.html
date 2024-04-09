@@ -13,6 +13,7 @@
     <script src="Scripts/JavaScript/sidebar.js"></script>
     <script src="Scripts/JavaScript/citySidebar.js"></script>
     <script src="Scripts/JavaScript/cluster-hub.js"></script>
+    <script src="Scripts/JavaScript/readFiles/parallelReading.js"></script>
     <script src="Scripts/JavaScript/readFiles/readMMRFiles.js"></script>
     <script src="Scripts/JavaScript/population.js"></script>
     <script src="Scripts/JavaScript/query.js"></script>
@@ -31,6 +32,8 @@
 </head>
 
 <body>
+
+    <!-- START OF ATLAS TUTORIAL -->
     <!-- testing a sidebar code -->
     <div id="atlas-tutorial-overlay">
         <div id="tutorial-arrow-section" style="margin-left: 45%; margin-top: 20%;"></div>
@@ -43,22 +46,27 @@
             </span>
         </div>
     </div>
+    <!-- END OF ATLAS TUTORIAL -->
 
+    <!-- START OF LEFT CITY SIDEBAR -->
     <div id="myCitySidebar" class="left-sidebar">
         <a class="close-btn" onclick="closeCitySidebar();">x</a>
         <img id="city-image" src="Images/CityImages/Montreal-Island.jpeg" />
         <p id="cn-text">City Name</p>
+        <h2 id="city-name-text"></h2>
         <h2 id="city-name-en">MONTREAL METROPOLITAN REGION</h2>
         <div class="city-stats" id="city-stats">
             <p id="city-area">Area: </p>
             <p id="city-population">Population in mil: </p>
             <p id="city-density">Density: </p>
-            <p>Available Transit Modes: </p>
+            <p id="avail-transit-text">Available Transit Modes: </p>
         </div>
         <div id="city-transit-modes"></div>
         <div id="population-transit-graph"></div>
     </div>
+    <!-- END OF LEFT CITY SIDEBAR -->
 
+    <!-- START OF RIGHT NODE SIDEBAR -->
     <div id="mySidebar" class="sidebar">
         <a class="close-btn" onclick="closeSidebar();">x</a>
         <div id="node-category-type"></div>
@@ -79,7 +87,9 @@
         </div>
         <div id="transit-option-menu"></div>
     </div>
+    <!-- END OF RIGHT NODE SIDEBAR -->
 
+    <!-- START OF RIGHT BOROUGH SIDEBAR -->
     <!-- borough sidebar code -->
     <div id="myBoroughSidebar" class="sidebar">
         <a class="close-btn" onclick="closeBoroughSidebar();">x</a>
@@ -108,7 +118,9 @@
         <!-- <div style="height: 20px;"></div> -->
         <div id="borough-query-info"></div>
     </div>
+    <!-- END OF RIGHT BOROUGH SIDEBAR -->
 
+    <!-- START OF HEADER AND MAP BODY -->
     <div id="main">
         <div id="en-fr-toggle" style="display: inline-flex; padding-left: 10px;">
             <p class="toggleText" style="color: #fff;"> EN
@@ -125,14 +137,22 @@
             onclick="loadCitySidebar();"></i>
     </div>
     <div id="map"></div>
+    <!-- END OF HEADER AND MAP BODY -->
+
     <!-- testing a sidebar code -->
     <script>
-        // setTimeout(displayPopData, 350);
+        readNodes();
+        displayIntroPrompt();
         setTimeout(displayIntroPrompt, 100);
         fetchGeoJson("city.geojson");
         // readPopulationJson();
         setTimeout(readCityJSON, 200);
         setTimeout(loadCitySidebar, 300);
+        setTimeout(clickBoroughs, 350);
+        setTimeout(loadNodes, 300);
+
+        // START OF MAP FUNCTIONS
+        // do not move this code from html
 
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
@@ -143,6 +163,7 @@
             zoom: 10.84
         });
 
+        // do not move this code from html
         var centerTemp = [];
 
         setTimeout(displayBoroughs, 220);
@@ -583,6 +604,7 @@
                 console.log("centerTemp if more than 600px: ", centerTemp);
             }
         }
+        // END OF MAP FUNCTIONS
 
         // Read features JSON with new version of nodes
         var smallClusterFeatures = [];

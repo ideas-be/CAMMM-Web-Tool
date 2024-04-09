@@ -463,8 +463,8 @@ input:checked+.slider:before {
 #ideas-be img {
     margin-right: 6vw;
     margin-bottom: 3vh;
-    width: 40%;
-    max-width: 300px;
+    width: 30%;
+    max-width: 150px;
 }
 
 #ngci img {
@@ -1260,7 +1260,7 @@ progress::-moz-progress-bar {
     font-size: 14px;
 }
 
-#city-name-en {
+#city-name-text {
     margin-top: -15px;
 }
 

@@ -5,13 +5,20 @@ density and available transit modes.
 
 var myCityJson = [];
 
-function readCityJSON() {
-    // fetchGeoJson("city.geojson");
-    myCityJson = readGeoJsonObj("city.geojson");
+// function readCityJSON() {
+//     // fetchGeoJson("city.geojson");
+//     myCityJson = readGeoJsonObj("city.json");
+// }
+
+function getCityJSON(json) {
+    myCityJson = json;
+    console.log("City JSON is: ", myCityJson);
+    loadCitySidebar();
 }
 
 function loadCitySidebar() {
-    console.log("City GeoJSON: ", myCityJson);
+    // myCityJson = fetchGeoJson("city.json");
+    // console.log("City JSON: ", myCityJson);
 
     var citySidebarDiv = document.getElementById("myCitySidebar");
 
@@ -44,6 +51,7 @@ function closeCitySidebar() {
 }
 
 function insertCityStats() {
+    document.getElementById("city-name-text").innerHTML = myCityJson.Name_en;
     var cityArea = myCityJson.Area_in_sq_km;
     document.getElementById("city-area").innerHTML += cityArea.toString() + " sq.km.";
     document.getElementById("city-population").innerHTML += myCityJson.Population_in_mil.toString();
@@ -81,7 +89,7 @@ function displayCityTransitModes() {
     var cityTransitDiv = document.getElementById("city-transit-modes");
     var transitModeHTML = "";
 
-    console.log("Finding available transit modes from City GeoJSON");
+    console.log("Finding available transit modes from City JSON");
 
     var availCityModes = [];
     for (transit in myCityJson.TransitTypesStops) {
