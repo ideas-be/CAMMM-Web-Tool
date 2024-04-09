@@ -4,6 +4,47 @@ Test committing this line from v2 branch for sanity check.
 50 meter buffer for Clusters
 100 meter buffer for Hubs  
 
+
+# April-May Pipeline 2024
+
+Mon & Tue - coding; Thu - research (articles)
+
+## Joint Pipeline
+- Add license files to Github
+- Contact partners
+- Have application ready for PEG (June)
+- Clean up article outline for a journal
+
+## OOM Pipeline
+- Finish the multi-jurisdiction or Metropolitan Area tool
+- process the T-R Area
+    - Multimodality
+    - Universal Design
+    - Diversity of services and amenites
+    - Closeness of services and amenites
+    - Transit connectivity
+- all cities
+  - Borough analysis
+  - Greenery
+
+
+## FN Pipeline
+- Work on fixing read files for queries
+- Add licensing and copyright info tab in UI
+- implement TR data in atlas UI
+- Update the display of pyramid for demographic data
+
+
+# Tasks for later 2024
+- Add the BIXI data at Montreal
+- brainstorm
+  - TOD index
+  - Walkability
+  - Route analysis
+  - Safety query
+- start working on radial graph (aggregate data in excel)
+
+
 ## Population Excel Data Notes
 For Montreal Island, we sum up the value of the entries: Montréal (V), Montréal-Est (V) and Montréal-Ouest (V).
 For Montreal Metropolitan Region, we take the Montréal entry's value.
@@ -11,61 +52,6 @@ For Montreal Metropolitan Region, we take the Montréal entry's value.
 - Check and add the values of the last column for each city in the atlas: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310030901
 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310031101
 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410026201
-
-## OOM Pipeline (March-April)
-- Finish the multi-jurisdiction or Metropolitan Area tool
-- Add the BIXI data at Montreal
-- Add the BIXI data at Montreal MA 
-- process the Montreal Metropolitan Area
-    - Multimodality
-    - Universal Design
-    - Diversity of services and amenites
-    - Closeness of services and amenites
-    - Transit connectivity
-- process Another CITY CHECK DATA
-    - Multimodality
-    - Universal Design
-    - Diversity of services and amenites
-    - Closeness of services and amenites
-    - Transit connectivity
-- Borrough analysis
-- TOD index
-  - brainstorm
-- Walkability
-- Greenery
-- Route analysis
-
-
-## FN Pipeline (March-April)
-- Figma mockup of borough sidebar
-- ~~work on toggle for polygons~~
-- Work on TOD index sidebar
-- Work on Greenery sidebar
-- Work on Walkability sidebar
-- Fix landing page city dropdown
-
-
-## Joint Pipeline (March-April)
-- Brainstorm Safety query
-- Heatmap query
-- Work on the article for a journal
-- better explanations in the sidebar
-- Altering the maps with the queries and the side bar
-- Create a landing side bar
-
-
-## For the next agenda 
-
-- The other university thingy
-- Discuss color paallette for the borroughs 
-- Update on the side-bar
-- brainstorm on the managemente of the Metropolitan area iconografy and side-bar
-
-
-## CAMMM v2 UI Task List
-- Dynamic query rating on sidebar
-- Add transit option horizontal scrollable list
-- Implement Multimodality and Services UI (dummy)
 
 ## Cluster and Hub Categories
     Small Cluster - 1-2 bus stops
