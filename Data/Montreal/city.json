@@ -1,0 +1,31 @@
+{
+    "Name_en": "Montreal",
+    "Name_fr": "Montr\u00e9al",
+    "Population_in_mil": 1.78,
+    "Area_in_sq_km": 365.65,
+    "Density": 4115,
+    "TransitTypesStops": {
+        "Tram": 5,
+        "Metro": 68,
+        "Rail": 104,
+        "Bus": 23132,
+        "Ferry": 0,
+        "Cable": 0,
+        "Aerieal": 0,
+        "Funicular": 0,
+        "Trolleybus": 0,
+        "Monorail": 0
+    },
+    "TransitTypesLines": {
+        "Tram": 1,
+        "Metro": 4,
+        "Rail": 5,
+        "Bus": 739,
+        "Ferry": 0,
+        "Cable": 0,
+        "Aerieal": 0,
+        "Funicular": 0,
+        "Trolleybus": 0,
+        "Monorail": 0
+    }
+}

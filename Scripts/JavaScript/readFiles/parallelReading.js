@@ -3,7 +3,7 @@ function loadJSONFilesInParallel(files) {
 }
 
 // Usage
-const files = ["Data/Montreal_Island/population_borough.json", "Data/Montreal_Island/city.json", "Data/Montreal_Island/borough.geojson", "Data/Montreal_Island/Lines.geojson"];
+const files = ["Data/Montreal/population_borough.json", "Data/Montreal/city.json", "Data/Montreal/borough.geojson", "Data/Montreal/Lines.geojson"];
 
 var parallelFiles;
 loadJSONFilesInParallel(files)

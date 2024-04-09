@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Montreal Island | Île de Montréal | CAMMM Atlas Web Application</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="Styles/UIv2.css">
+    <script src="Scripts/JavaScript/en_fr.js"></script>
+    <script src="Scripts/JavaScript/atlas-tutorial.js"></script>
+    <script src="Scripts/JavaScript/sidebar.js"></script>
+    <script src="Scripts/JavaScript/citySidebar.js"></script>
+    <script src="Scripts/JavaScript/cluster-hub.js"></script>
+    <script src="Scripts/JavaScript/readFiles/parallelReading.js"></script>
+    <script src="Scripts/JavaScript/readFiles/readMIFiles.js"></script>
+    <script src="Scripts/JavaScript/population.js"></script>
+    <script src="Scripts/JavaScript/borough.js"></script>
+    <script src="Scripts/JavaScript/borough_sidebar.js"></script>
+    <script src="Scripts/JavaScript/borough_query.js"></script>
+    <script src="Scripts/JavaScript/query.js"></script>
+    <script src="Scripts/JavaScript/lines.js"></script>
+    <script src="Scripts/JavaScript/accessibility.js"></script>
+    <script src="Scripts/JavaScript/greenery.js"></script>
+    <script src="Scripts/JavaScript/services.js"></script>
+    <script src="Scripts/JavaScript/multimodality.js"></script>
+    <script src="Scripts/JavaScript/walkability.js"></script>
+    <script src="Scripts/JavaScript/connectivity.js"></script>
+    <script src="https://kit.fontawesome.com/7abfd05b6d.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- START OF ATLAS TUTORIAL -->
+    <div id="atlas-tutorial-overlay">
+        <div id="tutorial-arrow-section" style="margin-left: 45%; margin-top: 20%;"></div>
+        <div id="tutorial-prompt-box" style="margin-left: 45%; margin-top: 20%;">
+            <a class="tutorial-close-btn" onclick="closeTutorialPrompt();">x</a>
+            <p id="tutorial-text">This is a sample prompt text. Would you like to continue?</p>
+            <span class="tutorial-buttons">
+                <a id="button-1" onclick="">Button 1</a>
+                <a id="button-2" onclick="">Button 2</a>
+            </span>
+        </div>
+    </div>
+    <!-- END OF ATLAS TUTORIAL -->
+
+    <!-- START OF LEFT CITY SIDEBAR -->
+    <div id="myCitySidebar" class="left-sidebar">
+        <a class="close-btn" onclick="closeCitySidebar();">x</a>
+        <img id="city-image" src="Images/CityImages/Montreal-Island.jpeg" />
+        <p id="cn-text">City Name</p>
+        <h2 id="city-name-text"></h2>
+        <div class="city-stats" id="city-stats">
+            <p id="city-area">Area: </p>
+            <p id="city-population">Population in mil: </p>
+            <p id="city-density">Density: </p>
+            <p id="avail-transit-text">Available Transit Modes: </p>
+        </div>
+        <div id="city-transit-modes"></div>
+        <div id="population-transit-graph"></div>
+    </div>
+    <!-- END OF LEFT CITY SIDEBAR -->
+
+    <!-- START OF RIGHT NODE SIDEBAR -->
+    <div id="mySidebar" class="sidebar">
+        <a class="close-btn" onclick="closeSidebar();">x</a>
+        <div id="node-category-type"></div>
+        <div id="node-name"></div>
+        <div class="query-dropdown" id="query-dropdown">
+            <div class="dropdown"><button class="dropbtn" id="dropbtn">Select Query<i
+                        class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content" id="dropdown-content"></div>
+            </div>
+            <div id="query-definition"></div>
+        </div>
+        <p id="query-name" style="color: white;">Query rating:</p>
+        <div id="query-rating"></div>
+        <div style="height: 20px;"></div>
+        <div id="query-info"></div>
+        <div id="node-info">
+        </div>
+        <div id="transit-option-menu"></div>
+    </div>
+    <!-- END OF RIGHT NODE SIDEBAR -->
+
+    <!-- START OF RIGHT BOROUGH SIDEBAR -->
+    <div id="myBoroughSidebar" class="sidebar">
+        <a class="close-btn" onclick="closeBoroughSidebar();">x</a>
+        <div style="height: 20px;"></div>
+        <div id="borough-info"></div>
+        <div class="query-dropdown" id="borough-query-dropdown">
+            <table>
+                <tr valign="top">
+                    <td>
+                        <div id="demographics-button" onclick="displayPopData();" title="Get Borough Demographics"><i
+                                class="fas fa-chart-simple"></i></div>
+                    </td>
+                    <td>
+                        <div class="dropdown"><button class="dropbtn" id="borough-dropbtn">Select Query<i
+                                    class="fas fa-chevron-down"></i></button>
+                            <div class="dropdown-content" id="borough-dropdown-content"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div id="borough-query-definition"></div>
+        </div>
+        <p id="borough-query-name" style="color: white;">
+        <div id="borough-query-rating"></div>
+        <div id="borough-query-info"></div>
+    </div>
+    <!-- END OF RIGHT BOROUGH SIDEBAR -->
+
+    <!-- START OF HEADER AND MAP BODY -->
+    <div id="main">
+        <div id="en-fr-toggle" style="display: inline-flex; padding-left: 10px;">
+            <p class="toggleText" style="color: #fff;"> EN
+                <label class="switch">
+                    <input class="switch-input" type="checkbox" id="toggBtn1" onchange="FRAtlasPage();" data-on="Yes"
+                        data-off="No">
+                    <span class="slider round" id="atlas-en-fr-toggle"></span>
+                </label> FR
+            </p>
+        </div>
+        <h1 class="cammm-title"><a href="index.html">CAMMM</a></h1>
+        <i class="fas fa-clipboard-question" onclick="displayIntroPrompt();"></i>
+        <h2 id="city-name">Montreal Island</h2>
+        <i class="fas fa-info-circle" onclick="loadCitySidebar();"></i>
+    </div>
+    <div id="map"></div>
+    <!-- END OF HEADER AND MAP BODY -->
+
+    <script>
+        // TODO:Fix the timing of these functions to load borough and nodes better
+        readNodes();
+        displayIntroPrompt();
+        // readPopulation();
+        // setTimeout(readBoroughs, 50);
+        // console.log("Showing Parallel Files from HTML: ", parallelFiles);
+        // setTimeout(displayBoroughs, 350);
+        // if (parallelFiles != null) {
+        //     displayBoroughs();
+        // }
+        // setTimeout(displayIntroPrompt, 100);
+        // fetchGeoJson("city.json");
+        // setTimeout(readCityJSON, 250);
+        // setTimeout(loadCitySidebar, 300);
+
+        setTimeout(clickBoroughs, 350);
+        setTimeout(loadNodes, 300);
+
+        // START OF MAP FUNCTIONS
+        // do not move this code from html
+        var shortURL = 'mapbox://styles/carmela-cucuzzella/';
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
+
+        // Note: We are using Montreal_N_2-Test as the base map from Mapbox Studio
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: shortURL + 'ckzekgdsr001k14qfh7hkmabp',
+            center: [-73.624701, 45.525104],
+            zoom: 10.20
+        });
+
+        // do not move this code from html
+        var centerTemp = [];
+        function getMapCenter(nodeCoords) {
+            var x = window.matchMedia("(max-width: 600px)");
+
+            console.log("The screen is within 600px? ", x.matches);
+
+            if (x.matches) {
+                centerTemp = [nodeCoords[0], nodeCoords[1] - 0.003];
+                console.log("centerTemp if within 600px: ", centerTemp);
+            } else {
+                centerTemp = [nodeCoords[0] + 0.002, nodeCoords[1]];
+                console.log("centerTemp if more than 600px: ", centerTemp);
+            }
+        }
+        // END OF MAP FUNCTIONS
+
+    </script>
+
+</body>
+
+</html>

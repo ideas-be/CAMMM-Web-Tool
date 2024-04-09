@@ -1,0 +1,30 @@
+{
+    "Name_en": "Gatineau",
+    "Name_fr": "Gatineau",
+    "Population_in_mil": ".29",
+    "Area_in_sq_km": "381.3",
+    "TransitTypesStops": {
+        "Tram": 0,
+        "Metro": 0,
+        "Rail": 0,
+        "Bus": 1878,
+        "Ferry": 0,
+        "Cable": 0,
+        "Aerieal": 0,
+        "Funicular": 0,
+        "Trolleybus": 0,
+        "Monorail": 0
+    },
+    "TransitTypesLines": {
+        "Tram": 0,
+        "Metro": 0,
+        "Rail": 0,
+        "Bus": 98,
+        "Ferry": 0,
+        "Cable": 0,
+        "Aerieal": 0,
+        "Funicular": 0,
+        "Trolleybus": 0,
+        "Monorail": 0
+    }
+}

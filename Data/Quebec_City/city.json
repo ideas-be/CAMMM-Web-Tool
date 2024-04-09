@@ -1,0 +1,30 @@
+{
+    "Name_en": "Quebec",
+    "Name_fr": "Ville de Québec",
+    "Population_in_mil": ".54",
+    "Area_in_sq_km": "485.7",
+    "TransitTypesStops": {
+        "Tram": 0,
+        "Metro": 0,
+        "Rail": 0,
+        "Bus": 4652,
+        "Ferry": 0,
+        "Cable": 0,
+        "Aerieal": 0,
+        "Funicular": 0,
+        "Trolleybus": 0,
+        "Monorail": 0
+    },
+    "TransitTypesLines": {
+        "Tram": 0,
+        "Metro": 0,
+        "Rail": 0,
+        "Bus": 322,
+        "Ferry": 0,
+        "Cable": 0,
+        "Aerieal": 0,
+        "Funicular": 0,
+        "Trolleybus": 0,
+        "Monorail": 0
+    }
+}

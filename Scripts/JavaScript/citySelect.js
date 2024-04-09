@@ -1,13 +1,8 @@
 var city = [
     {
-        cityName: "Montreal Island",
-        cityNameFR: "Île de Montréal",
-        cityURL: "./atlas_montreal_island.html"
-    },
-    {
-        cityName: "Montreal Metropolitan Region",
-        cityNameFR: "Région métropolitaine de Montréal",
-        cityURL: "./atlas_montreal_metropolitan_region.html"
+        cityName: "Montreal",
+        cityNameFR: "Montréal",
+        cityURL: "./atlas_montreal.html"
     },
     {
         cityName: "Quebec City",
