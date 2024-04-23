@@ -127,6 +127,8 @@ function callQueryCalFunc() {
             setTimeout(calClosenessServices, 200);
             break;
         case "Greenery": console.log("Greenery");
+            fetchGeoJson("greenery.geojson");
+            setTimeout(loadGreeneryData, 200);
             break;
         case "Walkability": console.log("Walkability");
             break;
