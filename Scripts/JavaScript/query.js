@@ -157,4 +157,5 @@ function displayQueryRating(ratingValue) {
     var queryRatingDiv = document.getElementById("query-rating");
     var ratingHTML = "<span class=\"rating-value\">" + ratingValue + "</span><span style=\"color: #d81b60;\">/10\n</span><span class=\"rating-words\">" + ratingWord + "</span><div><progress id=\"rating-bar\" value=\"" + ratingValue * 10 + "\" max=\"100\"> 32% </progress></div>";
     queryRatingDiv.innerHTML = ratingHTML;
+    console.log("QUERY RATING DISPLAYED!!!!");
 }

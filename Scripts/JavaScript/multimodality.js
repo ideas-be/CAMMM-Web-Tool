@@ -215,11 +215,11 @@ function calMultiModality() {
 
     var myCityJson = readGeoJsonObj("city.geojson");
     console.log("City json read from query.js: ", myCityJson);
-    if (myCityJson.City.Name_en == "Montreal") {
+    if (myCityJson.Name_en == "Montreal") {
         var totalTransit = 0;
-        for (key in myCityJson["City"]["TransitTypesStops"]) {
+        for (key in myCityJson["TransitTypesStops"]) {
             // console.log(myCityJson["City"]["TransitTypesStops"][key]);
-            var value = myCityJson["City"]["TransitTypesStops"][key];
+            var value = myCityJson["TransitTypesStops"][key];
             if (value != 0) {
                 totalTransit += 1;
             }
