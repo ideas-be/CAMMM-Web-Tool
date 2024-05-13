@@ -10,7 +10,29 @@ For Montreal Metropolitan Region, we take the Montréal entry's value.
 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2310031101
 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410026201
 
-## OOM Pipeline (March-April)
+
+## AQTR Presentation - June 10
+- AQTR Presentation file
+  - A brief history of the Atlas
+  - Add examples tunned for a transit agency and /or a consultancy.
+  - The tangible benefits of the atlas.
+  - Show the link between transit and quality of life.
+  - remaining slides from UdeM (clean up)
+- AQTR script
+  - Write the script
+  - Translate to FR
+- Send updated slide deck to JFC + CC (June1-8)
+### Optional
+- Prepare handouts for CAMMM
+
+## OOM Pipeline
+- Borrough analysis
+- process Another CITY CHECK DATA
+    - Multimodality
+    - Universal Design
+    - Diversity of services and amenites
+    - Closeness of services and amenites
+    - Transit connectivity
 - Finish the multi-jurisdiction or Metropolitan Area tool
 - Add the BIXI data at Montreal
 - Add the BIXI data at Montreal MA 
@@ -20,13 +42,6 @@ https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410026201
     - Diversity of services and amenites
     - Closeness of services and amenites
     - Transit connectivity
-- process Another CITY CHECK DATA
-    - Multimodality
-    - Universal Design
-    - Diversity of services and amenites
-    - Closeness of services and amenites
-    - Transit connectivity
-- Borrough analysis
 - TOD index
   - brainstorm
 - Walkability
@@ -34,16 +49,11 @@ https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410026201
 - Route analysis
 
 
-## FN Pipeline (March-April)
-- Figma mockup of borough sidebar
-- ~~work on toggle for polygons~~
-- Work on TOD index sidebar
-- Work on Greenery sidebar
-- Work on Walkability sidebar
-- Fix landing page city dropdown
+## FN Pipeline
+- Take out Greenery query from the node level
 
 
-## Joint Pipeline (March-April)
+## Joint Pipeline
 - Brainstorm Safety query
 - Heatmap query
 - Work on the article for a journal
