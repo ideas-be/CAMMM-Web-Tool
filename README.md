@@ -5,34 +5,63 @@ Test committing this line from v2 branch for sanity check.
 100 meter buffer for Hubs  
 
 
-# April-May Pipeline 2024
+# 2024 Pipeline
 
-Mon & Tue - coding; Thu - research (articles)
+Mon (1st half) - project management
+Mon (2nd half) & Tue - coding
+Thu - research (articles)
+
+## AQTR Presentation - June 10
+- AQTR Presentation file
+  - A brief history of the Atlas
+  - Add examples tunned for a transit agency and /or a consultancy.
+  - The tangible benefits of the atlas.
+  - Show the link between transit and quality of life.
+  - remaining slides from UdeM (clean up)
+- AQTR script
+  - Write the script
+  - Translate to FR
+- Send updated slide deck to JFC + CC (June1-8)
+### Optional
+- Prepare handouts for CAMMM
+
+## OOM Pipeline
+- all cities
+  - Borough analysis
+  - Greenery
+- process Trois Riviers
+    - Multimodality
+    - Universal Design
+    - Diversity of services and amenites
+    - Closeness of services and amenites
+    - Transit connectivity
+- process the Montreal Metropolitan Area
+    - Multimodality
+    - Universal Design
+    - Diversity of services and amenites
+    - Closeness of services and amenites
+    - Transit connectivity
+- TOD index
+  - brainstorm
+- Walkability
+- Route analysis
+- Add the BIXI data at Montreal
+- Add the BIXI data at Montreal MA 
+
+## FN Pipeline
+- Work on fixing read files for queries
+- implement TR data in atlas UI
+- Take out Greenery query from the node level
+- Add licensing and copyright info tab in UI
+- Make a demo version of the atlas URL (to share with AQTR)
+- Update the display of pyramid for demographic data
+- Work on mobile compatibility for June 10 demo
 
 ## Joint Pipeline
 - Add license files to Github
 - Contact partners
 - Have application ready for PEG (June)
 - Clean up article outline for a journal
-
-## OOM Pipeline
-- Finish the multi-jurisdiction or Metropolitan Area tool
-- process the T-R Area
-    - Multimodality
-    - Universal Design
-    - Diversity of services and amenites
-    - Closeness of services and amenites
-    - Transit connectivity
-- all cities
-  - Borough analysis
-  - Greenery
-
-
-## FN Pipeline
-- Work on fixing read files for queries
-- Add licensing and copyright info tab in UI
-- implement TR data in atlas UI
-- Update the display of pyramid for demographic data
 
 
 # Tasks for later 2024
