@@ -43,10 +43,13 @@ function getCurrentLines() {
 
     console.log("All Routes: ", uniqueRoutes);
 
+    console.log("MYLINESJSON FEATURES: ", myLinesJson.features[0].properties.Route);
+
     for (i = 0; i < myLinesJson.features.length; i++) {
         for (route in uniqueRoutes) {
             if (uniqueRoutes[route] == myLinesJson.features[i].properties.Route) {
                 currentLines.push(myLinesJson.features[i]);
+                console.log("Each Current Lines: ", currentLines);
             }
         }
     }

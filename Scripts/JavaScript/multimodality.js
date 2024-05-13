@@ -211,7 +211,9 @@ function calMultiModality() {
     displayStopsLines();
 
     // fetchGeoJson("Lines.geojson");
+    // setTimeout(
     displayLines();
+    // , 300);
 
     var myCityJson = readGeoJsonObj("city.geojson");
     console.log("City json read from query.js: ", myCityJson);
