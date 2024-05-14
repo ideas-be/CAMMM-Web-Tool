@@ -1,0 +1,6130 @@
+{
+    "features": [
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "1305"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "1463"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "158"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1486"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1481"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1462"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1124"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1125"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1126"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1127"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1128"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1129"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1130"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1131"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1310"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1132"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1133"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1522"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1521"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1525"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1526"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1138"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1303"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1393"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1523"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1533"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1052"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1614"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1238"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 6,
+            "Id": "204"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "206"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "939"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "940"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "941"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1655"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 6,
+            "Betweeness": 8,
+            "Id": "943"
+        },
+        {
+            "Centrality": 10,
+            "Closeness": 10,
+            "Betweeness": 10,
+            "Id": "170"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "543"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "1437"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "590"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "592"
+        },
+        {
+            "Centrality": 10,
+            "Closeness": 10,
+            "Betweeness": 9,
+            "Id": "596"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 8,
+            "Id": "589"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 8,
+            "Id": "588"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 8,
+            "Id": "936"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 5,
+            "Id": "1017"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 5,
+            "Id": "1488"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 5,
+            "Id": "1582"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 5,
+            "Id": "1583"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 6,
+            "Id": "721"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 6,
+            "Id": "205"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "1509"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1613"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1051"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1540"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "1532"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1524"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "1304"
+        },
+        {
+            "Centrality": 9,
+            "Closeness": 10,
+            "Betweeness": 7,
+            "Id": "1466"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "1469"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "1635"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "1636"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "1637"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "120"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "966"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "128"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "126"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "130"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "967"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "137"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "134"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "641"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "143"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "142"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "140"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "657"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "655"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "1435"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "968"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "969"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "970"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "971"
+        },
+        {
+            "Centrality": 9,
+            "Closeness": 7,
+            "Betweeness": 6,
+            "Id": "907"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "972"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "973"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1067"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "432"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "553"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "552"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "551"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "548"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "546"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "25"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1068"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1109"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 3,
+            "Id": "591"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "569"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 4,
+            "Id": "26"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 4,
+            "Id": "547"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "549"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "550"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "555"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "556"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "494"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "1615"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "1180"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "669"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1181"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "960"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "961"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "962"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "963"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "660"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "658"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "656"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "139"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "141"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "640"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "642"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "135"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "136"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "133"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "964"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "129"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "125"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 2,
+            "Id": "127"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 2,
+            "Id": "119"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 2,
+            "Id": "1643"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "1634"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "778"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "1465"
+        },
+        {
+            "Centrality": 9,
+            "Closeness": 10,
+            "Betweeness": 7,
+            "Id": "1236"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1085"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1086"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1396"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1401"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "828"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "827"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1091"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1092"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "821"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "820"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "819"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "817"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "815"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1103"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "978"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "760"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "765"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "764"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "763"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "10"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1104"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "769"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "768"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "834"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "839"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1549"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1492"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1489"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1597"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "748"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1596"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1033"
+        },
+        {
+            "Centrality": 6,
+            "Closeness": 7,
+            "Betweeness": 8,
+            "Id": "836"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 7,
+            "Id": "157"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 7,
+            "Id": "1069"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 7,
+            "Id": "746"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 7,
+            "Id": "151"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 7,
+            "Id": "148"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 7,
+            "Id": "218"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 7,
+            "Id": "220"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 7,
+            "Id": "212"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 8,
+            "Id": "211"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 8,
+            "Id": "217"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 8,
+            "Id": "216"
+        },
+        {
+            "Centrality": 9,
+            "Closeness": 7,
+            "Betweeness": 9,
+            "Id": "209"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "202"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "214"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "213"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "210"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "219"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "221"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "147"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "150"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "164"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 7,
+            "Id": "759"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 7,
+            "Id": "837"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 7,
+            "Id": "1018"
+        },
+        {
+            "Centrality": 6,
+            "Closeness": 9,
+            "Betweeness": 7,
+            "Id": "1519"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "1561"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "1049"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "1050"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1543"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1491"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1490"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "840"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "835"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "771"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "770"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "1100"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "320"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "767"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "766"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "772"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "762"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "761"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "812"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "811"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "810"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "807"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "816"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "814"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "813"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1101"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1102"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1106"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "570"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "542"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "528"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "540"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "537"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "532"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "534"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "535"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "541"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "1640"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "1642"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "484"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "473"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "466"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "464"
+        },
+        {
+            "Centrality": 8,
+            "Closeness": 10,
+            "Betweeness": 8,
+            "Id": "386"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 10,
+            "Betweeness": 7,
+            "Id": "384"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 5,
+            "Id": "383"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 2,
+            "Id": "382"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "336"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "274"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "334"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "365"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "368"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "305"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 5,
+            "Id": "457"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 5,
+            "Id": "462"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "404"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "407"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "408"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "501"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "504"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "506"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "509"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "378"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "436"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "434"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "438"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "439"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1513"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "16"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "447"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "338"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1514"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "454"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "357"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "397"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "356"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "343"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "341"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "339"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "337"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "446"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "17"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1512"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "440"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "437"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "433"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "435"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "377"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "507"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 3,
+            "Id": "514"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 3,
+            "Id": "505"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 3,
+            "Id": "503"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "1168"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "406"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "405"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "461"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "1166"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 1,
+            "Id": "459"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "1203"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "304"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "1176"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "331"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "332"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "333"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "273"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "272"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "913"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "912"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 10,
+            "Betweeness": 8,
+            "Id": "385"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 8,
+            "Id": "387"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 10,
+            "Betweeness": 7,
+            "Id": "926"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "474"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "475"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "490"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "1641"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "1639"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "544"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "545"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "554"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "536"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "539"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "1170"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1161"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1171"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "498"
+        },
+        {
+            "Centrality": 7,
+            "Closeness": 10,
+            "Betweeness": 10,
+            "Id": "1291"
+        },
+        {
+            "Centrality": 9,
+            "Closeness": 10,
+            "Betweeness": 7,
+            "Id": "1447"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "1061"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "1302"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "1012"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "1013"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 7,
+            "Betweeness": 6,
+            "Id": "1014"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 6,
+            "Id": "1016"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "1470"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "1397"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1398"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1399"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1406"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "1314"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1400"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1402"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1403"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1331"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1404"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1405"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1183"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1184"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1185"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1186"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1344"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1407"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "985"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1422"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1432"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1440"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 10,
+            "Betweeness": 6,
+            "Id": "1010"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 6,
+            "Id": "1196"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "1606"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "1607"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1506"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1472"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1473"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1474"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "271"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1475"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "270"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1190"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1191"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1192"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1193"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1476"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1480"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1482"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1485"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1487"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "1496"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "1137"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "131"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "1140"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 7,
+            "Id": "1653"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 7,
+            "Betweeness": 6,
+            "Id": "887"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "1604"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "1605"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "984"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "1327"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1328"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1322"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1329"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "1197"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "456"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "1656"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "911"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "944"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 4,
+            "Id": "1189"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "935"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1330"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1324"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1325"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "1326"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "889"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 5,
+            "Id": "1589"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "1590"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "886"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 10,
+            "Betweeness": 6,
+            "Id": "1654"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "773"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "774"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "132"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "775"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "776"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "1135"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "1123"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "1143"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "1141"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "197"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "193"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "1142"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "1114"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1113"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1115"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "194"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "199"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "1248"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "1122"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1134"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1136"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1148"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1149"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1150"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1151"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1152"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1153"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1154"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1155"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "753"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "684"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1577"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "683"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1156"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1157"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "700"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "699"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "704"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1545"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1611"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1612"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1592"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1564"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "710"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "109"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 1,
+            "Id": "604"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "603"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "573"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "576"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "575"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "60"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "78"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "84"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "1158"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "1497"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 3,
+            "Id": "572"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "1011"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "571"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "79"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "59"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "951"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "574"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "114"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "605"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "55"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "110"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "712"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "711"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "709"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "708"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "705"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1544"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "1312"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "1313"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "1309"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "713"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "693"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "692"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "691"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "687"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "686"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "685"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1576"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1579"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1441"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "70"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1110"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1144"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1145"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1146"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1147"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "530"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "919"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "918"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "18"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "23"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "22"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "44"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "42"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "563"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "1439"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "560"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "522"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "520"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "516"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "515"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1659"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "335"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "388"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "363"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 1,
+            "Id": "1479"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 1,
+            "Id": "1542"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 1,
+            "Id": "317"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1483"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1484"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1528"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 10,
+            "Betweeness": 4,
+            "Id": "1498"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "1471"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 10,
+            "Betweeness": 6,
+            "Id": "1562"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 10,
+            "Betweeness": 6,
+            "Id": "1504"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 5,
+            "Id": "1503"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 5,
+            "Id": "1373"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "1374"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "1375"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "1376"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1377"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1500"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1501"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "1505"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "1499"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "1531"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "1371"
+        },
+        {
+            "Centrality": 7,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "376"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1502"
+        },
+        {
+            "Centrality": 6,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1560"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 1,
+            "Id": "1015"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "286"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "285"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "288"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "281"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "361"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "316"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "311"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "362"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "364"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "409"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "517"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "518"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "519"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "525"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "524"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "561"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "562"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "41"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "43"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "20"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "21"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "19"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "915"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "76"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "71"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "81"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "1558"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "1467"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "1559"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 3,
+            "Id": "499"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "497"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "1107"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "1529"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "480"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "37"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "39"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "463"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "521"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "40"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "38"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "481"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "1530"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "1357"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1358"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "500"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "478"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "1557"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "1464"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "287"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "298"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "297"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "291"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1449"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1450"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "1451"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "1452"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "1453"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "299"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "928"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "264"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "267"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "259"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "253"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "255"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "257"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "930"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "931"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "243"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "245"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "249"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "293"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 3,
+            "Id": "292"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "290"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "289"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1174"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "279"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "280"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "283"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "350"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "352"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "327"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "323"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "924"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "375"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "991"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 7,
+            "Id": "468"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 7,
+            "Id": "469"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "471"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "477"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "12"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "14"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "1301"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "538"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "13"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "9"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "476"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "472"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "470"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "403"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "401"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "920"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "322"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "328"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "324"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "353"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "351"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "284"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "275"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "276"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "277"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "296"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "295"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "294"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "248"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "244"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "242"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "241"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "254"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "258"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "256"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "252"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "269"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "268"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "263"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "9991"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "1433"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 1,
+            "Id": "1096"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1108"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "1468"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "379"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "380"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "1097"
+        },
+        {
+            "Centrality": 6,
+            "Closeness": 10,
+            "Betweeness": 5,
+            "Id": "482"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "9992"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "1554"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1460"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1459"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1458"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1457"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1442"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "146"
+        },
+        {
+            "Centrality": 6,
+            "Closeness": 9,
+            "Betweeness": 8,
+            "Id": "1445"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "565"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "1658"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "53"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "3"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "567"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "118"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "116"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "113"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "583"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "66"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "64"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "62"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "83"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "82"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "80"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "61"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "63"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "65"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "584"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "103"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "115"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "117"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "1"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "566"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "54"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "51"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1586"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "564"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 4,
+            "Id": "479"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "502"
+        },
+        {
+            "Centrality": 8,
+            "Closeness": 10,
+            "Betweeness": 9,
+            "Id": "1446"
+        },
+        {
+            "Centrality": 10,
+            "Closeness": 10,
+            "Betweeness": 10,
+            "Id": "1204"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "1112"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "381"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 10,
+            "Betweeness": 6,
+            "Id": "390"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 6,
+            "Id": "395"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 4,
+            "Id": "93"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 4,
+            "Id": "90"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "89"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "100"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "102"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "98"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "108"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "1434"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "105"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "945"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "95"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "623"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "625"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "628"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "946"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "630"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "633"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "636"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "639"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "86"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1657"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "947"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "672"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "608"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "611"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "948"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "615"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "613"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "619"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "874"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "1164"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "659"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "661"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "664"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "666"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "910"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "668"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "662"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "868"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1289"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "622"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "873"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "872"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "614"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "654"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "610"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "609"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "671"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "612"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "638"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "87"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "85"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "635"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "634"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "632"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "629"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "627"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "626"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "624"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "96"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "94"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "104"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "106"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "107"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 2,
+            "Id": "97"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "101"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "88"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "91"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "92"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "394"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "392"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "391"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "1111"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "731"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "730"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "729"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "736"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "735"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "734"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "733"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1340"
+        },
+        {
+            "Centrality": 7,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "728"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "727"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "176"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "182"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1139"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "180"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1179"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1062"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "1029"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "1031"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "1047"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "1048"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 2,
+            "Id": "152"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "1105"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "745"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 1,
+            "Id": "156"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "155"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "161"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "168"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1316"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "36"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "495"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "933"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "558"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "513"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "559"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 2,
+            "Id": "496"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "35"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "1315"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "169"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "160"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "159"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 1,
+            "Id": "742"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "838"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "743"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "738"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "737"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 3,
+            "Id": "732"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1043"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1574"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1572"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1573"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1575"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1551"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "689"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "698"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "697"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1517"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1004"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1003"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "780"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "786"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "789"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "788"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1569"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1568"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 4,
+            "Id": "1493"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1594"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "796"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "795"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "1478"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "706"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "707"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "950"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "162"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "757"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "1436"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "144"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "166"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "1177"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1311"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1477"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "794"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "793"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "1565"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "1563"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1495"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 4,
+            "Id": "1494"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "787"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "785"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "779"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "783"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 4,
+            "Id": "777"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1516"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1518"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1552"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "1556"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "681"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "680"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "679"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 4,
+            "Id": "678"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1571"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1000"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1045"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1002"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1042"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 4,
+            "Id": "1044"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 5,
+            "Id": "959"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 5,
+            "Id": "891"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 5,
+            "Id": "1430"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "1428"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 5,
+            "Id": "901"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "1419"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "843"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "842"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "846"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "1431"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "225"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 5,
+            "Id": "226"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "229"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "1645"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "851"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "850"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "853"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 5,
+            "Id": "1661"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "1539"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "1618"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "1663"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "1664"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "847"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "1424"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "857"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 5,
+            "Id": "858"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "800"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1409"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1411"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1412"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1410"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1408"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1426"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "801"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "859"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "856"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "1425"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 5,
+            "Id": "848"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "237"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "236"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1665"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1625"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1626"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1627"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "956"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "849"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1646"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "228"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "227"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "957"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "224"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "223"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "844"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "841"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "904"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1420"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "900"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1427"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "1429"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "890"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 5,
+            "Id": "888"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "885"
+        },
+        {
+            "Centrality": 5,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "980"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 5,
+            "Id": "871"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 4,
+            "Id": "981"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "870"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1628"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1629"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1630"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1538"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1662"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "852"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1456"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1455"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1454"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1619"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1620"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1621"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1622"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1623"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1624"
+        },
+        {
+            "Centrality": 1,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "235"
+        },
+        {
+            "Centrality": 2,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "1394"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 2,
+            "Betweeness": 1,
+            "Id": "1346"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "1365"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 1,
+            "Id": "1366"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 9,
+            "Betweeness": 4,
+            "Id": "1369"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "1370"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 4,
+            "Id": "1372"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "1385"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "1387"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 4,
+            "Id": "1367"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "1368"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "1351"
+        },
+        {
+            "Centrality": 7,
+            "Closeness": 10,
+            "Betweeness": 4,
+            "Id": "1220"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 10,
+            "Betweeness": 3,
+            "Id": "1380"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 10,
+            "Betweeness": 3,
+            "Id": "1381"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "1382"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 9,
+            "Betweeness": 3,
+            "Id": "1421"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 3,
+            "Id": "1383"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 7,
+            "Betweeness": 1,
+            "Id": "1384"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1395"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 6,
+            "Betweeness": 1,
+            "Id": "1386"
+        },
+        {
+            "Centrality": 7,
+            "Closeness": 10,
+            "Betweeness": 6,
+            "Id": "1347"
+        },
+        {
+            "Centrality": 6,
+            "Closeness": 10,
+            "Betweeness": 6,
+            "Id": "1348"
+        },
+        {
+            "Centrality": 6,
+            "Closeness": 10,
+            "Betweeness": 9,
+            "Id": "1507"
+        },
+        {
+            "Centrality": 6,
+            "Closeness": 10,
+            "Betweeness": 9,
+            "Id": "1448"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "1804"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "1806"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "1378"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "398"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 2,
+            "Id": "402"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "1379"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 2,
+            "Id": "1281"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "1801"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "1803"
+        },
+        {
+            "Centrality": 4,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "1802"
+        },
+        {
+            "Centrality": 9,
+            "Closeness": 4,
+            "Betweeness": 3,
+            "Id": "1257"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "1388"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "1389"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 6,
+            "Betweeness": 3,
+            "Id": "1390"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1391"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 3,
+            "Id": "1392"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "1807"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 5,
+            "Betweeness": 1,
+            "Id": "1805"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "1816"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "1809"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 4,
+            "Betweeness": 1,
+            "Id": "1810"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 1,
+            "Id": "1811"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 1,
+            "Id": "1812"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 1,
+            "Id": "1813"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 1,
+            "Id": "1814"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 3,
+            "Betweeness": 1,
+            "Id": "1815"
+        },
+        {
+            "Centrality": 2,
+            "Closeness": 10,
+            "Betweeness": 1,
+            "Id": "389"
+        },
+        {
+            "Centrality": 2,
+            "Closeness": 1,
+            "Betweeness": 1,
+            "Id": "983"
+        },
+        {
+            "Centrality": 3,
+            "Closeness": 8,
+            "Betweeness": 2,
+            "Id": "99"
+        }
+    ]
+}
