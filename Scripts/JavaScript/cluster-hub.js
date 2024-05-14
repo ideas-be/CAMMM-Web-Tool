@@ -6,7 +6,7 @@ var hubFeatures = [];
 var obj;
 var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
 function readNodes() {
-    a.open('GET', "Data/Montreal_Island/general.geojson", true);  // This is reading the JSON FILE 
+    a.open('GET', "Data/Montreal/general.geojson", true);  // This is reading the JSON FILE 
     // console.log("Reading the popup info file to load JSON");
 
     a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
@@ -14,8 +14,8 @@ function readNodes() {
         if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
             obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
             newJson(obj);
-            // queryDropDown();
-            // boroughQueryDropDown();
+            queryDropDown();
+            boroughQueryDropDown();
             smallClusterFeatures = getSmallClusters();
             // console.log("Small Cluster Features:\n");
             // console.log(smallClusterFeatures);

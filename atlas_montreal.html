@@ -604,41 +604,7 @@
         }
         // END OF MAP FUNCTIONS
 
-        // Read features JSON with new version of nodes
-        var smallClusterFeatures = [];
-        var mediumClusterFeatures = [];
-        var largeClusterFeatures = [];
-        var hubFeatures = [];
-        var obj;
-        var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-        function readNodes() {
-            a.open('GET', "Data/Montreal/general.geojson", true);  // This is reading the JSON FILE 
-            console.log("Reading the popup info file to load JSON");
 
-            a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
-
-                if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
-                    obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
-                    newJson(obj);
-                    queryDropDown();
-                    boroughQueryDropDown();
-                    smallClusterFeatures = getSmallClusters();
-                    console.log("Small Cluster Features:\n");
-                    console.log(smallClusterFeatures);
-                    mediumClusterFeatures = getMediumClusters();
-                    console.log("Medium Cluster Features:\n");
-                    console.log(mediumClusterFeatures);
-                    largeClusterFeatures = getLargeClusters();
-                    console.log("Large Cluster Features:\n");
-                    console.log(largeClusterFeatures);
-                    hubFeatures = getHubs();
-                    console.log("Hub Features:\n");
-                    console.log(hubFeatures);
-                }
-            }
-
-            a.send();        // Closes the XMLHttpRequest   
-        }
         setTimeout(readNodes, 10);
 
 
