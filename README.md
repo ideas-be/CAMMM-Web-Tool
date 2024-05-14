@@ -9,7 +9,7 @@ Test committing this line from v2 branch for sanity check.
 
 Mon (1st half) - project management
 Mon (2nd half) & Tue - coding
-Thu - research (articles)
+Thu - research (presentations & articles)
 
 ## AQTR Presentation - June 10
 - AQTR Presentation file
@@ -26,27 +26,26 @@ Thu - research (articles)
 - Prepare handouts for CAMMM
 
 ## OOM Pipeline
-- all cities
+- Fix automation issues
   - Borough analysis
   - Greenery
+  - Data wrangling 
+  - Managing the update cycle, automate as much as posible
+  - POPULATION automation
 - process Trois Riviers
-    - Multimodality
-    - Universal Design
-    - Diversity of services and amenites
-    - Closeness of services and amenites
-    - Transit connectivity
-- process the Montreal Metropolitan Area
-    - Multimodality
-    - Universal Design
-    - Diversity of services and amenites
-    - Closeness of services and amenites
-    - Transit connectivity
-- TOD index
-  - brainstorm
-- Walkability
-- Route analysis
-- Add the BIXI data at Montreal
-- Add the BIXI data at Montreal MA 
+    - Borough analysis [o]
+    - ~~Multimodality~~
+    - ~~Universal Design~~
+    - ~~Diversity of services and amenites~~
+    - ~~Closeness of services and amenites~~
+    - ~~Transit connectivity~~
+- ~~process the Montreal Metropolitan Area~~
+    - ~~Multimodality~~
+    - ~~Universal Design~~
+    - ~~Diversity of services and amenites~~
+    - ~~Closeness of services and amenites~~
+    - ~~Transit connectivity~~
+
 
 ## FN Pipeline
 - Fix HTML for all cities
@@ -63,7 +62,7 @@ Thu - research (articles)
 ## Joint Pipeline
 - Add license files to Github
 - Contact partners
-- Have application ready for PEG (June)
+- Have application ready for PEG (June or September?)
 - Clean up article outline for a journal
 
 

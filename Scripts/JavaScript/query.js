@@ -72,6 +72,8 @@ function insertQueryInfoButton() {
     var infoButtonHTML = "<span id=\"query-info-button\" style=\"font-size: 1em; color: #d81b60;\">" +
         "<i class=\"fas fa-info-circle\" onclick=\"showQueryDefinition();\"></i></span>";
 
+    console.log("INSERTING QUERY INFO BUTTON");
+
     queryDropdownDiv.innerHTML += infoButtonHTML;
     boroughQueryDropdownDiv.innerHTML += infoButtonHTML;
     // console.log("Info Button HTML is: ", infoButtonHTML);
