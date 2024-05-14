@@ -49,6 +49,9 @@ Thu - research (articles)
 - Add the BIXI data at Montreal MA 
 
 ## FN Pipeline
+- Fix HTML for all cities
+- Fix Borough Read File and Sidebar
+- Display Boroughs for all cities
 - Work on fixing read files for queries
 - implement TR data in atlas UI
 - Take out Greenery query from the node level
