@@ -2,16 +2,17 @@ var serviceProperties;
 
 var nodeNumberServices = 0;
 
+var myServicesJson = [];
 
 function fetchServiceProps() {
-    var myServicesJson = readGeoJsonObj("services.geojson");
+    myServicesJson = readGeoJsonObj("services.json");
 
     var nodeProperties = fetchNodeProps();
     console.log("Node Properties:");
     console.log(nodeProperties);
 
     // console.log("Node properties ID: ", nodeProperties.Id);
-    // console.log("Service Json ID: ", myServicesJson.features[0].properties.Id);
+    console.log("SERVICE JSON: ", myServicesJson);
 
     for (i = 0; i < myServicesJson.features.length; i++) {
         if (nodeProperties.Id == myServicesJson.features[i].properties.Id) {
