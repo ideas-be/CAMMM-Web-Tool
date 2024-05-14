@@ -32,7 +32,7 @@ function callBoroughQueryCalFunc() {
         // case "Demographics": displayPopData();
         //     break;
         case "Multimodality":
-            fetchGeoJson("city.geojson");
+            fetchGeoJson("city.json");
             // fetchGeoJson("Lines.geojson");
             setTimeout(displayBoroughMultimodality, 300);
             break;
@@ -76,10 +76,10 @@ function displayBoroughQueryRating(ratingValue) {
     var ratingHTML = "<span class=\"rating-value\">" + ratingValue + "</span><span style=\"color: #d81b60;\">/10\n</span><span class=\"rating-words\">" + ratingWord + "</span><div><progress id=\"rating-bar\" value=\"" + ratingValue * 10 + "\" max=\"100\"> 32% </progress></div>";
     queryRatingDiv.innerHTML = ratingHTML;
 }
+var myCityJson = readGeoJsonObj("city.json");
 
 function displayBoroughMultimodality() {
     // Display multimodality query info for selected borough
-    var myCityJson = readGeoJsonObj("city.geojson");
 
     if (myCityJson.Name_en == "Montreal") {
         var totalTransit = 0;
