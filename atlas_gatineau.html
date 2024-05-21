@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="Styles/UIv2.css">
     <script src="Scripts/JavaScript/atlas-tutorial.js"></script>
     <script src="Scripts/JavaScript/sidebar.js"></script>
+    <script src="Scripts/JavaScript/citySidebar.js"></script>
     <script src="Scripts/JavaScript/cluster-hub.js"></script>
+    <script src="Scripts/JavaScript/readFiles/parallelReading.js"></script>
     <script src="Scripts/JavaScript/readFiles/readCityFiles.js"></script>
+    <script src="Scripts/JavaScript/population.js"></script>
     <script src="Scripts/JavaScript/borough.js"></script>
     <script src="Scripts/JavaScript/borough_sidebar.js"></script>
     <script src="Scripts/JavaScript/borough_query.js"></script>
@@ -28,6 +31,8 @@
 </head>
 
 <body>
+
+    <!-- START OF ATLAS TUTORIAL -->
     <!-- testing a sidebar code -->
     <div id="atlas-tutorial-overlay">
         <div id="tutorial-arrow-section" style="margin-left: 45%; margin-top: 20%;"></div>
@@ -40,7 +45,26 @@
             </span>
         </div>
     </div>
+    <!-- END OF ATLAS TUTORIAL -->
 
+    <!-- START OF LEFT CITY SIDEBAR -->
+    <div id="myCitySidebar" class="left-sidebar">
+        <a class="close-btn" onclick="closeCitySidebar();">x</a>
+        <img id="city-image" src="Images/CityImages/Montreal-Island.jpeg" />
+        <p id="cn-text">City Name</p>
+        <h2 id="city-name-text"></h2>
+        <div class="city-stats" id="city-stats">
+            <p id="city-area">Area: </p>
+            <p id="city-population">Population in mil: </p>
+            <p id="city-density">Density: </p>
+            <p id="avail-transit-text">Available Transit Modes: </p>
+        </div>
+        <div id="city-transit-modes"></div>
+        <div id="population-transit-graph"></div>
+    </div>
+    <!-- END OF LEFT CITY SIDEBAR -->
+
+    <!-- START OF RIGHT NODE SIDEBAR -->
     <div id="mySidebar" class="sidebar">
         <a class="close-btn" onclick="closeSidebar();">x</a>
         <div id="node-category-type"></div>
@@ -61,18 +85,29 @@
         </div>
         <div id="transit-option-menu"></div>
     </div>
+    <!-- END OF RIGHT NODE SIDEBAR -->
 
+    <!-- START OF RIGHT BOROUGH SIDEBAR -->
     <!-- borough sidebar code -->
-
     <div id="myBoroughSidebar" class="sidebar">
         <a class="close-btn" onclick="closeBoroughSidebar();">x</a>
         <div style="height: 20px;"></div>
         <div id="borough-info"></div>
         <div class="query-dropdown" id="borough-query-dropdown">
-            <div class="dropdown"><button class="dropbtn" id="borough-dropbtn">Select Query<i
-                        class="fas fa-chevron-down"></i></button>
-                <div class="dropdown-content" id="borough-dropdown-content"></div>
-            </div>
+            <table>
+                <tr valign="top">
+                    <td>
+                        <div id="demographics-button" onclick="displayPopData();" title="Get Borough Demographics"><i
+                                class="fas fa-chart-simple"></i></div>
+                    </td>
+                    <td>
+                        <div class="dropdown"><button class="dropbtn" id="borough-dropbtn">Select Query<i
+                                    class="fas fa-chevron-down"></i></button>
+                            <div class="dropdown-content" id="borough-dropdown-content"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
             <div id="borough-query-definition"></div>
         </div>
         <p id="borough-query-name" style="color: white;">
@@ -81,28 +116,45 @@
         <!-- <div style="height: 20px;"></div> -->
         <div id="borough-query-info"></div>
     </div>
+    <!-- END OF RIGHT BOROUGH SIDEBAR -->
 
+    <!-- START OF HEADER AND MAP BODY -->
     <div id="main">
+        <div id="en-fr-toggle" style="display: inline-flex; padding-left: 10px;">
+            <p class="toggleText" style="color: #fff;"> EN
+                <label class="switch">
+                    <input class="switch-input" type="checkbox" id="toggBtn1" onchange="FRAtlasPage();" data-on="Yes"
+                        data-off="No">
+                    <span class="slider round" id="atlas-en-fr-toggle"></span>
+                </label> FR
+            </p>
+        </div>
         <h1 class="cammm-title"><a href="index.html">CAMMM</a></h1>
         <i class="fas fa-clipboard-question" onclick="displayIntroPrompt();"></i>
-        <h2 id="city-name">Gatineau</h2>
+        <h2 id="city-name">Montreal</h2><i class="fas fa-info-circle" onclick="loadCitySidebar();"></i>
     </div>
     <div id="map"></div>
+    <!-- END OF HEADER AND MAP BODY -->
 
     <!-- testing a sidebar code -->
     <script>
+        readNodes();
+        displayIntroPrompt();
+        setTimeout(clickBoroughs, 350);
+        setTimeout(loadNodes, 300);
 
-        function printSidebar(arrow) {
+        // function printSidebar(arrow) {
 
-            if (arrow == 'left') {
-                console.log("Left arrow was clicked!!");
+        //     if (arrow == 'left') {
+        //         console.log("Left arrow was clicked!!");
 
-            } else if (arrow == 'right') {
-                console.log("Right arrow was clicked!!");
-            }
-        }
+        //     } else if (arrow == 'right') {
+        //         console.log("Right arrow was clicked!!");
+        //     }
+        // }
 
-        setTimeout(displayIntroPrompt, 100);
+        // START OF MAP FUNCTIONS
+        // do not move this code from html
 
         var shortURL = 'mapbox://styles/carmela-cucuzzella/';
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2FybWVsYS1jdWN1enplbGxhIiwiYSI6ImNrZThua3M2djF0MmkzMnFodmlncjU1MzUifQ.kQ7CmjkzU5V5-sY7WFkzmg';
@@ -115,8 +167,8 @@
 
         var centerTemp = [];
 
-        setTimeout(displayBoroughs, 200);
-        setTimeout(clickBoroughs, 250);
+        setTimeout(displayBoroughs, 220);
+        // setTimeout(clickBoroughs, 250);
 
         function loadNodes() {
             map.on('load', () => {
@@ -556,43 +608,27 @@
                 console.log("centerTemp if more than 600px: ", centerTemp);
             }
         }
+        // END OF MAP FUNCTIONS
 
-        // Read features JSON with new version of nodes
-        var smallClusterFeatures = [];
-        var mediumClusterFeatures = [];
-        var largeClusterFeatures = [];
-        var hubFeatures = [];
-        var obj;
-        var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-        function readNodes() {
-            a.open('GET', "Data/Gatineau/general.geojson", true);  // This is reading the JSON FILE 
-            console.log("Reading the popup info file to load JSON");
+        setTimeout(readNodes, 10);
 
-            a.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+        // START OF POPULATION READ FILE
+        var jsonObj;
+        var b = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+        function readPopulation() {
+            b.open('GET', "Data/Montreal/population_borough.json", true);  // This is reading the JSON FILE 
+
+            b.onreadystatechange = function () {  //When the JSON file is open it starts a function 
 
                 if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
-                    obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
-                    newJson(obj);
-                    queryDropDown();
-                    // boroughQueryDropDown();
-                    smallClusterFeatures = getSmallClusters();
-                    console.log("Small Cluster Features:\n");
-                    console.log(smallClusterFeatures);
-                    mediumClusterFeatures = getMediumClusters();
-                    console.log("Medium Cluster Features:\n");
-                    console.log(mediumClusterFeatures);
-                    largeClusterFeatures = getLargeClusters();
-                    console.log("Large Cluster Features:\n");
-                    console.log(largeClusterFeatures);
-                    hubFeatures = getHubs();
-                    console.log("Hub Features:\n");
-                    console.log(hubFeatures);
+                    jsonObj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
+                    getPopJson(jsonObj);
                 }
             }
-
-            a.send();        // Closes the XMLHttpRequest   
+            b.send();        // Closes the XMLHttpRequest   
         }
-        setTimeout(readNodes, 10);
+        setTimeout(readPopulation, 20);
+        // END OF POPULATION READ FILE
 
     </script>
 

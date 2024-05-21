@@ -1,8 +1,9 @@
 var boroughGreenFeatures = [];
+var greenJSON = [];
 
 function loadGreeneryData() {
     var categoryTotal = 0;
-    var greenJSON = readGeoJsonObj("greenery.geojson");
+    greenJSON = readGeoJsonObj("greenery.geojson");
     console.log("Greenery JSON is: ", greenJSON);
     for (greenFeature in greenJSON.features) {
         if (greenJSON.features[greenFeature].properties.NOM == boroughQueryProps.NOM) {

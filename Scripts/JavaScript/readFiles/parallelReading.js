@@ -3,6 +3,7 @@ function loadJSONFilesInParallel(files) {
 }
 
 // Usage
+// TODO: Fix the file path for all cities
 const files = ["Data/Montreal/population_borough.json", "Data/Montreal/city.json", "Data/Montreal/borough.geojson", "Data/Montreal/Lines.geojson"];
 
 var parallelFiles;

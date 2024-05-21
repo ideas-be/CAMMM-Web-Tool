@@ -62,7 +62,7 @@ Thu - research (presentations & articles)
 ## Joint Pipeline
 - Add license files to Github
 - Contact partners
-- Have application ready for PEG (June or September?)
+- Have application ready for PEG (~~June or~~September?)
 - Clean up article outline for a journal
 
 

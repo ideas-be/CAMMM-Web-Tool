@@ -607,7 +607,9 @@
 
         setTimeout(readNodes, 10);
 
+        // TODO: (for boroughs.geojson) Remove the population field
 
+        // START OF POPULATION READ FILE
         var jsonObj;
         var b = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
         function readPopulation() {
@@ -623,6 +625,7 @@
             b.send();        // Closes the XMLHttpRequest   
         }
         setTimeout(readPopulation, 20);
+        // END OF POPULATION READ FILE
 
     </script>
 

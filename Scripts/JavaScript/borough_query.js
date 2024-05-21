@@ -354,6 +354,7 @@ function displayBoroughGreenery() {
     // Display greenery query info for selected borough
     console.log("Borough-level Greenery");
     fetchGeoJson("greenery.geojson");
+    // TODO: Find why greenery data doesn't load from this point on
     setTimeout(loadGreeneryData, 200);
 }
 // function displayBoroughWalkability() {
