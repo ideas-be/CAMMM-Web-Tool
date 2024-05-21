@@ -131,27 +131,15 @@
         </div>
         <h1 class="cammm-title"><a href="index.html">CAMMM</a></h1>
         <i class="fas fa-clipboard-question" onclick="displayIntroPrompt();"></i>
-        <h2 id="city-name">Montreal</h2><i class="fas fa-info-circle" onclick="loadCitySidebar();"></i>
+        <h2 id="city-name">Gatineau</h2><i class="fas fa-info-circle" onclick="loadCitySidebar();"></i>
     </div>
     <div id="map"></div>
     <!-- END OF HEADER AND MAP BODY -->
 
     <!-- testing a sidebar code -->
     <script>
-        readNodes();
         displayIntroPrompt();
         setTimeout(clickBoroughs, 350);
-        setTimeout(loadNodes, 300);
-
-        // function printSidebar(arrow) {
-
-        //     if (arrow == 'left') {
-        //         console.log("Left arrow was clicked!!");
-
-        //     } else if (arrow == 'right') {
-        //         console.log("Right arrow was clicked!!");
-        //     }
-        // }
 
         // START OF MAP FUNCTIONS
         // do not move this code from html
@@ -166,9 +154,6 @@
         });
 
         var centerTemp = [];
-
-        setTimeout(displayBoroughs, 220);
-        // setTimeout(clickBoroughs, 250);
 
         function loadNodes() {
             map.on('load', () => {

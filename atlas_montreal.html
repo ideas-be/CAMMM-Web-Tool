@@ -139,15 +139,8 @@
 
     <!-- testing a sidebar code -->
     <script>
-        readNodes();
         displayIntroPrompt();
-        // setTimeout(displayIntroPrompt, 100);
-        // fetchGeoJson("city.geojson");
-        // readPopulationJson();
-        // setTimeout(readCityJSON, 200);
-        // setTimeout(loadCitySidebar, 300);
         setTimeout(clickBoroughs, 350);
-        setTimeout(loadNodes, 300);
 
         // START OF MAP FUNCTIONS
         // do not move this code from html
@@ -162,10 +155,8 @@
         });
 
         // do not move this code from html
-        var centerTemp = [];
 
-        setTimeout(displayBoroughs, 220);
-        // setTimeout(clickBoroughs, 250);
+        var centerTemp = [];
 
         function loadNodes() {
             map.on('load', () => {
@@ -609,23 +600,23 @@
 
         // TODO: (for boroughs.geojson) Remove the population field
 
-        // START OF POPULATION READ FILE
-        var jsonObj;
-        var b = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-        function readPopulation() {
-            b.open('GET', "Data/Montreal/population_borough.json", true);  // This is reading the JSON FILE 
+        // // START OF POPULATION READ FILE
+        // var jsonObj;
+        // var b = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
+        // function readPopulation() {
+        //     b.open('GET', "Data/Montreal/population_borough.json", true);  // This is reading the JSON FILE
 
-            b.onreadystatechange = function () {  //When the JSON file is open it starts a function 
+        //     b.onreadystatechange = function () {  //When the JSON file is open it starts a function
 
-                if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
-                    jsonObj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
-                    getPopJson(jsonObj);
-                }
-            }
-            b.send();        // Closes the XMLHttpRequest   
-        }
-        setTimeout(readPopulation, 20);
-        // END OF POPULATION READ FILE
+        //         if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
+        //             jsonObj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON
+        //             getPopJson(jsonObj);
+        //         }
+        //     }
+        //     b.send();        // Closes the XMLHttpRequest
+        // }
+        // setTimeout(readPopulation, 20);
+        // // END OF POPULATION READ FILE
 
     </script>
 

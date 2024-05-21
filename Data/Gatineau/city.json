@@ -1,8 +1,9 @@
 {
     "Name_en": "Gatineau",
     "Name_fr": "Gatineau",
-    "Population_in_mil": ".29",
-    "Area_in_sq_km": "381.3",
+    "Population_in_mil": 0.29,
+    "Area_in_sq_km": 381.3,
+    "Density": 851.4,
     "TransitTypesStops": {
         "Tram": 0,
         "Metro": 0,
