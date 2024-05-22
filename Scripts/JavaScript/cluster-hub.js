@@ -4,9 +4,12 @@ var mediumClusterFeatures = [];
 var largeClusterFeatures = [];
 var hubFeatures = [];
 var obj;
+
 var a = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
 function readNodes() {
-    a.open('GET', "Data/Montreal/general.geojson", true);  // This is reading the JSON FILE 
+    var nodeFilePath = "Data/" + cityName + "/general.geojson";
+    console.log("NODE FILE PATH: ", nodeFilePath);
+    a.open('GET', nodeFilePath, true);  // This is reading the JSON FILE 
     // console.log("Reading the popup info file to load JSON");
 
     a.onreadystatechange = function () {  //When the JSON file is open it starts a function 

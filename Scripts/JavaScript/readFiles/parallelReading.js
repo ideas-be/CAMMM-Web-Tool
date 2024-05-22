@@ -13,6 +13,11 @@ const fileNames = ["population_borough.json", "city.json", "borough.geojson"
 var cityName = "";
 function getCityName() {
     cityName = document.getElementById("city-name").innerHTML;
+    if (cityName == "Quebec City") {
+        cityName = "Quebec_City";
+    } else if (cityName == "Trois Rivieres") {
+        cityName = "Trois_Rivieres";
+    }
     console.log("CITY FILES TO BE READ IS: ", cityName);
 }
 

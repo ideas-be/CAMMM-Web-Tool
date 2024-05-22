@@ -1,8 +1,9 @@
 {
     "Name_en": "Quebec",
     "Name_fr": "Ville de Québec",
-    "Population_in_mil": ".54",
-    "Area_in_sq_km": "485.7",
+    "Population_in_mil": 0.54,
+    "Area_in_sq_km": 485.7,
+    "Density": 1214.8,
     "TransitTypesStops": {
         "Tram": 0,
         "Metro": 0,

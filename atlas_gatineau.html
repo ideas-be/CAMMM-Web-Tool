@@ -8,6 +8,7 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
     <link rel="stylesheet" href="Styles/UIv2.css">
+    <script src="Scripts/JavaScript/en_fr.js"></script>
     <script src="Scripts/JavaScript/atlas-tutorial.js"></script>
     <script src="Scripts/JavaScript/sidebar.js"></script>
     <script src="Scripts/JavaScript/citySidebar.js"></script>
@@ -595,25 +596,7 @@
         }
         // END OF MAP FUNCTIONS
 
-        setTimeout(readNodes, 10);
-
-        // START OF POPULATION READ FILE
-        var jsonObj;
-        var b = new XMLHttpRequest();  // This is creating the variable that reads the JSON file
-        function readPopulation() {
-            b.open('GET', "Data/Montreal/population_borough.json", true);  // This is reading the JSON FILE 
-
-            b.onreadystatechange = function () {  //When the JSON file is open it starts a function 
-
-                if (this.readyState == 4) {     //When the file is read, code 4, this IF is True
-                    jsonObj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
-                    getPopJson(jsonObj);
-                }
-            }
-            b.send();        // Closes the XMLHttpRequest   
-        }
-        setTimeout(readPopulation, 20);
-        // END OF POPULATION READ FILE
+        setTimeout(readNodes, 15);
 
     </script>
 
