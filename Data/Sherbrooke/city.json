@@ -1,8 +1,9 @@
 {
     "Name_en": "Sherbrooke",
     "Name_fr": "Sherbrooke",
-    "Population_in_mil": ".17",
-    "Area_in_sq_km": "367",
+    "Population_in_mil": 0.17,
+    "Area_in_sq_km": 367,
+    "Density": 489.4,
     "TransitTypesStops": {
         "Tram": 0,
         "Metro": 0,

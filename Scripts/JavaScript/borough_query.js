@@ -81,48 +81,48 @@ var myCityJson = readGeoJsonObj("city.json");
 function displayBoroughMultimodality() {
     // Display multimodality query info for selected borough
 
-    if (myCityJson.Name_en == "Montreal") {
-        var totalTransit = 0;
-        for (key in myCityJson["TransitTypesStops"]) {
-            var value = myCityJson["TransitTypesStops"][key];
-            if (value != 0) {
-                totalTransit += 1;
-            }
+    // if (myCityJson.Name_en == "Montreal") {
+    var totalTransit = 0;
+    for (key in myCityJson["TransitTypesStops"]) {
+        var value = myCityJson["TransitTypesStops"][key];
+        if (value != 0) {
+            totalTransit += 1;
         }
-        // Adjusting for missing transit data for Montreal
-        totalTransit += 1;
+    }
+    // Adjusting for missing transit data for Montreal
+    totalTransit += 1;
 
-        console.log("Total transit");
-        console.log(totalTransit);
+    console.log("Total transit");
+    console.log(totalTransit);
 
-        // Multimodality Rating Formula
-        var boroughMultimodality = JSON.parse(boroughQueryProps.Multimodality);
+    // Multimodality Rating Formula
+    var boroughMultimodality = JSON.parse(boroughQueryProps.Multimodality);
 
-        console.log("Borough Multimodality: ", boroughMultimodality.AvailableModes.length);
+    console.log("Borough Multimodality: ", boroughMultimodality.AvailableModes.length);
 
-        var MultimodalityRating = (boroughMultimodality.AvailableModes.length / totalTransit) * 10;
-
-
-        displayBoroughQueryRating(MultimodalityRating.toFixed(0));
-
-        var transitIcons = ["fas fa-bus fa-2x", "fas fa-subway fa-2x", "fas fa-train fa-2x", "fas fa-train-tram fa-2x", "fas fa-car fa-2x", "fas fa-bicycle fa-2x"];
-        var transitList = ["Bus", "Metro", "Rail", "Tram", "Car-sharing", "Bike-sharing"];
-
-        // Looping and inserting available transit modes
-
-        var transitModeHTML = "<div id=\"transit-mode-section\">";
-        for (i = 0; i < transitIcons.length; i++) {
-
-            // Displaying available transit modes for now
-            if (transitList[i] == boroughMultimodality.AvailableModes[i]) {
-                transitModeHTML += "<div id=\"transit-mode\">" +
-                    "<i class=\"" + transitIcons[i] + "\"></i>" +
-                    "<div id=\"transit-mode-name\">" +
-                    "<p>" + boroughMultimodality.AvailableModes[i] + "</p>" + "</div>" + "</div>";
-            }
+    var MultimodalityRating = (boroughMultimodality.AvailableModes.length / totalTransit) * 10;
 
 
+    displayBoroughQueryRating(MultimodalityRating.toFixed(0));
+
+    var transitIcons = ["fas fa-bus fa-2x", "fas fa-subway fa-2x", "fas fa-train fa-2x", "fas fa-train-tram fa-2x", "fas fa-car fa-2x", "fas fa-bicycle fa-2x"];
+    var transitList = ["Bus", "Metro", "Rail", "Tram", "Car-sharing", "Bike-sharing"];
+
+    // Looping and inserting available transit modes
+
+    var transitModeHTML = "<div id=\"transit-mode-section\">";
+    for (i = 0; i < transitIcons.length; i++) {
+
+        // Displaying available transit modes for now
+        if (transitList[i] == boroughMultimodality.AvailableModes[i]) {
+            transitModeHTML += "<div id=\"transit-mode\">" +
+                "<i class=\"" + transitIcons[i] + "\"></i>" +
+                "<div id=\"transit-mode-name\">" +
+                "<p>" + boroughMultimodality.AvailableModes[i] + "</p>" + "</div>" + "</div>";
         }
+
+
+        // }
         for (i = 0; i < transitIcons.length; i++) {
 
             if (transitList[i] != boroughMultimodality.AvailableModes[i])

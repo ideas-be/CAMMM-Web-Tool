@@ -1,8 +1,9 @@
 {
     "Name_en": "Trois-Rivières",
     "Name_fr": "Trois-Rivières",
-    "Population_in_mil": ".\t13",
-    "Area_in_sq_km": "288.65",
+    "Population_in_mil": 0.13,
+    "Area_in_sq_km": 288.65,
+    "Density": 482.1,
     "TransitTypesStops": {
         "Tram": 0,
         "Metro": 0,
