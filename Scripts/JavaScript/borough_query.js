@@ -32,9 +32,7 @@ function callBoroughQueryCalFunc() {
         // case "Demographics": displayPopData();
         //     break;
         case "Multimodality":
-            fetchGeoJson("city.json");
-            // fetchGeoJson("Lines.geojson");
-            setTimeout(displayBoroughMultimodality, 300);
+            displayBoroughMultimodality();
             break;
         case "Universal Design & Accessibility":
             displayBoroughAccessibility();
@@ -76,7 +74,6 @@ function displayBoroughQueryRating(ratingValue) {
     var ratingHTML = "<span class=\"rating-value\">" + ratingValue + "</span><span style=\"color: #d81b60;\">/10\n</span><span class=\"rating-words\">" + ratingWord + "</span><div><progress id=\"rating-bar\" value=\"" + ratingValue * 10 + "\" max=\"100\"> 32% </progress></div>";
     queryRatingDiv.innerHTML = ratingHTML;
 }
-var myCityJson = readGeoJsonObj("city.json");
 
 function displayBoroughMultimodality() {
     // Display multimodality query info for selected borough
@@ -98,7 +95,7 @@ function displayBoroughMultimodality() {
     // Multimodality Rating Formula
     var boroughMultimodality = JSON.parse(boroughQueryProps.Multimodality);
 
-    console.log("Borough Multimodality: ", boroughMultimodality.AvailableModes.length);
+    console.log("Borough Multimodality: ", boroughMultimodality.AvailableModes);
 
     var MultimodalityRating = (boroughMultimodality.AvailableModes.length / totalTransit) * 10;
 
@@ -111,32 +108,45 @@ function displayBoroughMultimodality() {
     // Looping and inserting available transit modes
 
     var transitModeHTML = "<div id=\"transit-mode-section\">";
+
+    for (mode in boroughMultimodality.AvailableModes) {
+        for (transit in transitList) {
+            if (transitList[transit] == boroughMultimodality.AvailableModes[mode]) {
+                console.log("AVAILABLE MODE ", mode, " IS: ", transitList[transit]);
+                transitModeHTML += "<div id=\"transit-mode\">" +
+                    "<i class=\"" + transitIcons[transit] + "\"></i>" +
+                    "<div id=\"transit-mode-name\">" +
+                    "<p>" + boroughMultimodality.AvailableModes[mode] + "</p>" + "</div>" + "</div>";
+            }
+        }
+    }
+    // for (i = 0; i < transitIcons.length; i++) {
+
+    //     // Displaying available transit modes for now
+    //     if (transitList[i] == boroughMultimodality.AvailableModes[i]) {
+    //         console.log("AVAILABLE MODE ", i + 1, " IS: ", transitList[i]);
+    //         transitModeHTML += "<div id=\"transit-mode\">" +
+    //             "<i class=\"" + transitIcons[i] + "\"></i>" +
+    //             "<div id=\"transit-mode-name\">" +
+    //             "<p>" + boroughMultimodality.AvailableModes[i] + "</p>" + "</div>" + "</div>";
+    //     }
+    // }
+    // // }
+
+
     for (i = 0; i < transitIcons.length; i++) {
 
-        // Displaying available transit modes for now
-        if (transitList[i] == boroughMultimodality.AvailableModes[i]) {
+        if (transitList[i] != boroughMultimodality.AvailableModes[i])
             transitModeHTML += "<div id=\"transit-mode\">" +
-                "<i class=\"" + transitIcons[i] + "\"></i>" +
+                "<i class=\"" + transitIcons[i] + "\" style=\"color:#d3d3d3;\"></i>" +
                 "<div id=\"transit-mode-name\">" +
-                "<p>" + boroughMultimodality.AvailableModes[i] + "</p>" + "</div>" + "</div>";
-        }
-
-
-        // }
-        for (i = 0; i < transitIcons.length; i++) {
-
-            if (transitList[i] != boroughMultimodality.AvailableModes[i])
-                transitModeHTML += "<div id=\"transit-mode\">" +
-                    "<i class=\"" + transitIcons[i] + "\" style=\"color:#d3d3d3;\"></i>" +
-                    "<div id=\"transit-mode-name\">" +
-                    "<p>" + transitList[i] + "</p>" + "</div>" + "</div>";
-
-        }
-
-        document.getElementById("borough-query-info").innerHTML = transitModeHTML + "</div>Available Transit Modes";
+                "<p>" + transitList[i] + "</p>" + "</div>" + "</div>";
 
     }
 
+    console.log("TRANSIT MODES HTML: ", transitModeHTML);
+
+    document.getElementById("borough-query-info").innerHTML = transitModeHTML + "</div>Available Transit Modes";
 }
 
 function displayDiversityGraphs(boroughDiversityServices) {
@@ -354,7 +364,6 @@ function displayBoroughGreenery() {
     // Display greenery query info for selected borough
     console.log("Borough-level Greenery");
     fetchGeoJson("greenery.geojson");
-    // TODO: Find why greenery data doesn't load from this point on
     setTimeout(loadGreeneryData, 200);
 }
 // function displayBoroughWalkability() {

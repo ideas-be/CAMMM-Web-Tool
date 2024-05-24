@@ -11,6 +11,8 @@ function fetchGeoJson(jsonFile) {
     }).then(function (obj) {
         console.log("Fetching geojson:", fileName);
         console.log(obj);
+        objNames.push(jsonFile);
+        geojsonObjs.push(obj);
         return (obj);
     }).catch(function (error) {
         console.error("Something went wrong when reading file!!");
@@ -19,6 +21,12 @@ function fetchGeoJson(jsonFile) {
 }
 
 function readGeoJsonObj(selectedJson) {
+
+    console.log("OBJECTS FETCHED SO FAR: ", geojsonObjs);
+
+    console.log("READING FILE: ", selectedJson);
+
+
     // The objective of this function is:
     // to return the selected geojson object
     var index = 0;
