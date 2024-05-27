@@ -48,7 +48,7 @@ Thu - research (presentations & articles)
 
 
 ## FN Pipeline
-- Fix HTML for all cities
+- ~~Fix HTML for all cities~~
 - Fix Borough Read File and Sidebar
 - Display Boroughs for all cities
 - Work on fixing read files for queries

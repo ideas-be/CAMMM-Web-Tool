@@ -24,10 +24,11 @@ var queryDictionary = [
         title: "Transit Connectivity",
         definition: "The mathematical abstraction of the transit network that represents each of the point of access as nodes building up the network."
     },
-    {
-        title: "Greenery",
-        definition: "The observed level of natural vegetation around the transit nodes."
-    }
+    // TODO: Check how to remove greenery query at the node level
+    // { 
+    //     title: "Greenery",
+    //     definition: "The observed level of natural vegetation around the transit nodes."
+    // }
 ];
 
 function queryDropDown() {
