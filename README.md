@@ -32,7 +32,7 @@ Thu - research (presentations & articles)
   - Data wrangling 
   - Managing the update cycle, automate as much as posible
   - POPULATION automation
-- process Trois Riviers
+- process Trois Rivieres
     - Borough analysis [o]
     - ~~Multimodality~~
     - ~~Universal Design~~
