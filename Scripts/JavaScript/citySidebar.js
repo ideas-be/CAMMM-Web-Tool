@@ -13,7 +13,7 @@ var myCityJson = [];
 function getCityJSON(json) {
     myCityJson = json;
     console.log("City JSON is: ", myCityJson);
-    loadCitySidebar();
+    // loadCitySidebar();
 }
 
 function loadCitySidebar() {
