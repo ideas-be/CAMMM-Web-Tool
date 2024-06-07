@@ -31,10 +31,10 @@ function getPopJson(json) {
 
 
 function displayPopData() {
-    var MaleDemographicData = popJson.features[0].demographic_data.Males_demoData;
-    var FemaleDemographicData = popJson.features[0].demographic_data.Females_demoData;
+    var MaleDemographicData = popJson.features[19].demographic_data.Males_demoData;
+    var FemaleDemographicData = popJson.features[19].demographic_data.Females_demoData;
 
-    var popDataHTML = "<table style=\"font-size: 11px;\"><tr><td>male</td><td style=\"text-align: right;\">female</td></tr>";
+    var popDataHTML = "<table style=\"font-size: 11px;\"><tr><td>male</td><td></td><td style=\"text-align: right;\">female</td></tr>";
 
     if (demoButtonFlag == 0) {
         document.getElementById('demographics-button').style.backgroundColor = '#c21655';
@@ -47,8 +47,10 @@ function displayPopData() {
         var femaleKeys = Object.keys(FemaleDemographicData);
         femaleKeys.reverse();
 
+        var popAge = ["100+", "95-99", "90-94", "85-89", "80-84", "75-79", "70-74", "65-69", "60-64", "55-59", "50-54", "45-49", "40-44", "35-39", "30-34", "25-29", "20-24", "15-19", "10-14", "5-9", "0-4"];
+
         for (i = 0; i < maleKeys.length; i++) {
-            popDataHTML += "<tr><td><div class=\"demo-data-bar\" id=\"male-demo-data\" style=\"width:" + MaleDemographicData[maleKeys[i]] * 0.02 + "px;\">" + MaleDemographicData[maleKeys[i]] + "</div></td><td><div class=\"demo-data-bar\" id=\"female-demo-data\" style=\"width:" + FemaleDemographicData[femaleKeys[i]] * 0.02 + "px;\">" + FemaleDemographicData[femaleKeys[i]] + "</div></td></tr>";
+            popDataHTML += "<tr><td><div class=\"demo-data-bar\" id=\"male-demo-data\" style=\"width:" + MaleDemographicData[maleKeys[i]] * 0.0175 + "px;\">" + MaleDemographicData[maleKeys[i]] + "</div></td><td><div id=\"pop-age\" style=\"text-align: center; width: 30px;\"> " + popAge[i] + " </div></td><td><div class=\"demo-data-bar\" id=\"female-demo-data\" style=\"width:" + FemaleDemographicData[femaleKeys[i]] * 0.0175 + "px;\">" + FemaleDemographicData[femaleKeys[i]] + "</div></td></tr>";
         }
 
         document.getElementById('borough-query-rating').innerHTML = "";
