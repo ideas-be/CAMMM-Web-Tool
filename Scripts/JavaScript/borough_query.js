@@ -297,7 +297,7 @@ function displayBoroughAccessGraphs(boroughAccessibility) {
 
         if (transitAccessibility.Total > 0) {
 
-            accessibleBarWidth += (transitAccessibility.Accessible * 280) / transitAccessibility.Total;
+            accessibleBarWidth += (transitAccessibility.Accessible * 240) / transitAccessibility.Total;
 
             console.log("Accessible Bar Width: ", accessibleBarWidth);
 
