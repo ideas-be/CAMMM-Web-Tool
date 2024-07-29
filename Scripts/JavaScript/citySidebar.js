@@ -52,10 +52,18 @@ function closeCitySidebar() {
 
 function insertCityStats() {
     document.getElementById("city-name-text").innerHTML = myCityJson.Name_en;
+
+    // Inserting Area Info
     var cityArea = myCityJson.Area_in_sq_km;
-    document.getElementById("city-area").innerHTML += cityArea.toString() + " sq.km.";
-    document.getElementById("city-population").innerHTML += myCityJson.Population_in_mil.toString();
-    document.getElementById("city-density").innerHTML += myCityJson.Density.toString() + " people/sq.km.";
+    document.getElementById("city-area-value").innerHTML = cityArea.toString();
+    document.getElementById("city-area-unit").innerHTML = " sq.km.";
+
+    // Inserting Population Info
+    document.getElementById("city-population-value").innerHTML = myCityJson.Population_in_mil.toString();
+
+    // Inserting Density Info
+    document.getElementById("city-density-value").innerHTML = myCityJson.Density.toString();
+    document.getElementById("city-density-unit").innerHTML = " people/sq.km.";
 }
 
 var transitIconDictionary = [

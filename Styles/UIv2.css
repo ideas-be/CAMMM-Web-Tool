@@ -1257,7 +1257,11 @@ progress::-moz-progress-bar {
 }
 
 #myCitySidebar p {
-    font-size: 14px;
+    font-size: 16px;
+}
+
+#avail-transit-text {
+    padding-top: 10px;
 }
 
 #city-name-text {

@@ -39,16 +39,20 @@ function FRCityInfo() {
         console.log("Translating to FR");
         document.getElementById("cn-text").innerHTML = "Nom de la ville";
         document.getElementById("city-area").innerHTML = "Aire : ";
-        document.getElementById("city-population").innerHTML = "Population en mil : ";
+        document.getElementById("city-area-unit").innerHTML = " km2";
+        document.getElementById("city-population").innerHTML = "Population en millions : ";
         document.getElementById("city-density").innerHTML = "Densité : ";
+        document.getElementById("city-density-unit").innerHTML = " peuple/km2";
         document.getElementById("avail-transit-text").innerHTML = "Modes de transport disponibles : ";
 
     } else if (result == 'No') {
         console.log("Translating to EN");
         document.getElementById("cn-text").innerHTML = "City Name";
         document.getElementById("city-area").innerHTML = "Area: ";
+        document.getElementById("city-area-unit").innerHTML = " sq.km";
         document.getElementById("city-population").innerHTML = "Population in mil: ";
         document.getElementById("city-density").innerHTML = "Density: ";
+        document.getElementById("city-density-unit").innerHTML = " people/sq.km";
         document.getElementById("avail-transit-text").innerHTML = "Available Transit Modes: ";
     }
 }
