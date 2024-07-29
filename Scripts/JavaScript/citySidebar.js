@@ -113,10 +113,20 @@ function displayCityTransitModes() {
         for (i = 0; i < transitIconDictionary.length; i++) {
             if (availCityModes[transitMode] == transitIconDictionary[i].transitType) {
                 // console.log("Matching transit type is : ", transitIconDictionary[i].transitType);
+                var transitModeLabel = "";
+
+                switch (transitIconDictionary[i].transitType) {
+                    case "Rail": transitModeLabel = "train";
+                        break;
+                    case "Tram": transitModeLabel = "tramway";
+                        break;
+                    default: transitModeLabel = transitIconDictionary[i].transitType.toLowerCase();
+                }
+
                 transitModeHTML += "<div id=\"transit-mode\">" +
                     "<i class=\"" + transitIconDictionary[i].transitIcon + "\"></i>" +
                     "<div id=\"transit-mode-name\">" +
-                    "<p>" + transitIconDictionary[i].transitType.toLowerCase() + "</p>" + "</div>" + "</div>";
+                    "<p>" + transitModeLabel + "</p>" + "</div>" + "</div>";
             }
         }
     }

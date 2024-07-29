@@ -24,6 +24,7 @@ function FRLandingPage() {
 function FRAtlasPage() {
     console.log("Translating Atlas Page...");
     FRCityInfo();
+    FRBoroughSidebar();
 }
 
 function FRTutorial() {
@@ -54,5 +55,20 @@ function FRCityInfo() {
         document.getElementById("city-density").innerHTML = "Density: ";
         document.getElementById("city-density-unit").innerHTML = " people/sq.km";
         document.getElementById("avail-transit-text").innerHTML = "Available Transit Modes: ";
+    }
+}
+
+function FRBoroughSidebar() {
+    var result = document.getElementsByClassName("switch-input")[0].checked ? 'Yes' : 'No';
+
+    console.log("Result", result);
+
+    if (result == 'Yes') {
+        console.log("Translating to FR");
+        document.getElementById("borough-name-text").innerHTML = "Nom de l'arrondissement";
+
+    } else if (result == 'No') {
+        console.log("Translating to EN");
+        document.getElementById("borough-name-text").innerHTML = "Borough Name";
     }
 }

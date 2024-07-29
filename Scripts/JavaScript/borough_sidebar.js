@@ -29,11 +29,10 @@ function openBoroughSidebar(boroughQueries) {
 
     console.log("Borough area is: ", boroughArea);
 
-    var boroughInfoHTML = "<p>Borough Name</p><h2 id=\"borough-name\">" + boroughQueryProps.NOM + "</h2>" +
-        "<p>Area: <strong>" + boroughArea + " sq.m. </strong><br>" +
-        // "Population in thousands: <strong>" + boroughQueryProps.PopulationInThousands + "</strong><br>" +
-        "Number of Hubs: <strong>" + boroughQueryProps.NumOfHubs + "</strong><br>" +
-        "Number of Clusters: <strong>" + boroughQueryProps.NumOfClusters + "</strong><br>" + "</p>";
+    var boroughInfoHTML = "<p id=\"borough-name-text\">Borough Name</p><h2 id=\"borough-name\">" + boroughQueryProps.NOM + "</h2>" + "<table><tr>" +
+        "<td><p id=\"borough-area-text\">Area: </p></td><td><strong id=\"borough-area-value\">" + boroughArea + "</strong></td><td id=\"borough-area-unit\"> sq.m.</td></tr>" +
+        "<tr><td><p id=\"borough-hub-text\">Number of Hubs: </p></td><td><strong id=\"borough-hub-value\">" + boroughQueryProps.NumOfHubs + "</strong></td></tr>" +
+        "<tr><td><p id=\"borough-clusters-text\">Number of Clusters: </p></td><td><strong id=\"borough-clusters-value\">" + boroughQueryProps.NumOfClusters + "</strong><br>" + "</td></tr></table>";
     document.getElementById("borough-info").innerHTML += boroughInfoHTML;
 
 }
