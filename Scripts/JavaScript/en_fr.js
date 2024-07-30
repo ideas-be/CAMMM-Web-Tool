@@ -50,10 +50,10 @@ function FRCityInfo() {
         console.log("Translating to EN");
         document.getElementById("cn-text").innerHTML = "City Name";
         document.getElementById("city-area").innerHTML = "Area: ";
-        document.getElementById("city-area-unit").innerHTML = " sq.km";
+        document.getElementById("city-area-unit").innerHTML = " sq.km.";
         document.getElementById("city-population").innerHTML = "Population in mil: ";
         document.getElementById("city-density").innerHTML = "Density: ";
-        document.getElementById("city-density-unit").innerHTML = " people/sq.km";
+        document.getElementById("city-density-unit").innerHTML = " people/sq.km.";
         document.getElementById("avail-transit-text").innerHTML = "Available Transit Modes: ";
     }
 }
@@ -66,9 +66,17 @@ function FRBoroughSidebar() {
     if (result == 'Yes') {
         console.log("Translating to FR");
         document.getElementById("borough-name-text").innerHTML = "Nom de l'arrondissement";
+        document.getElementById("borough-area-text").innerHTML = "Aire : ";
+        document.getElementById("borough-area-unit").innerHTML = " m2";
+        document.getElementById("borough-hub-text").innerHTML = "Nombre de hubs : ";
+        document.getElementById("borough-cluster-text").innerHTML = "Nombre de clusters : ";
 
     } else if (result == 'No') {
         console.log("Translating to EN");
         document.getElementById("borough-name-text").innerHTML = "Borough Name";
+        document.getElementById("borough-area-text").innerHTML = "Area: ";
+        document.getElementById("borough-area-unit").innerHTML = " sq.m.";
+        document.getElementById("borough-hub-text").innerHTML = "Number of Hubs: ";
+        document.getElementById("borough-cluster-text").innerHTML = "Number of Clusters: ";
     }
 }
