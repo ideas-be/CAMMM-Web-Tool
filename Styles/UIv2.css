@@ -511,6 +511,7 @@ body {
 }
 
 .cammm-title {
+    margin-top: 0;
     font-size: 36px;
     padding-left: 20px;
     color: #ffffff;
@@ -528,7 +529,12 @@ body {
     color: #ffffff;
     float: right;
     margin: 0.67em;
+    margin-top: 0;
     padding-top: 20px;
+}
+
+h1 {
+    /* margin-top: 0; */
 }
 
 h2 {
@@ -657,7 +663,7 @@ h2 {
 .fas.fa-clipboard-question {
     color: #ffffff;
     font-size: 20px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     margin-left: 10px;
     /* display: block; */
 }
@@ -667,7 +673,8 @@ h2 {
     color: #e6bbca;
 }
 
-#atlas-tutorial-overlay {
+#atlas-tutorial-overlay,
+#contact-info-overlay {
     display: none;
     background-color: rgba(255, 255, 255, 0.5);
     /* color: #ffffff; */
@@ -695,7 +702,8 @@ h2 {
     position: fixed;
 }
 
-#tutorial-prompt-box {
+#tutorial-prompt-box,
+#contact-info-box {
     background-color: #ffffff;
     width: 250px;
     /* height: 150px; */
@@ -707,7 +715,8 @@ h2 {
     margin-top: 20%;
 }
 
-.tutorial-close-btn {
+.tutorial-close-btn,
+.contact-close-btn {
     padding: 3px 3px;
     position: relative;
     float: right;
@@ -722,12 +731,14 @@ h2 {
     background-color: #d81b60;
 }
 
-.tutorial-close-btn:hover {
+.tutorial-close-btn:hover,
+.contact-close-btn:hover {
     cursor: pointer;
     background-color: #9b1345;
 }
 
-#tutorial-text {
+#tutorial-text,
+#contact-text {
     margin: 40px 0px 20px 0px;
 }
 
@@ -1247,6 +1258,7 @@ progress::-moz-progress-bar {
     /* display: inline-flex; */
     /* margin-left: 600px; */
     /* right: 0; */
+    /* float: right; */
     color: #ffffff;
 }
 

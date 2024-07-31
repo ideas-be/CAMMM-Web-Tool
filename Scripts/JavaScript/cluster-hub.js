@@ -18,7 +18,7 @@ function readNodes() {
             obj = JSON.parse(this.responseText);   // This line parses the response text which is a string into a proper JSON 
             newJson(obj);
             queryDropDown();
-            boroughQueryDropDown();
+            boroughQueryDropDownEN();
             smallClusterFeatures = getSmallClusters();
             // console.log("Small Cluster Features:\n");
             // console.log(smallClusterFeatures);

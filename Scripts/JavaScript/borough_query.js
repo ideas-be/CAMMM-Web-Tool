@@ -1,6 +1,21 @@
-function boroughQueryDropDown() {
+function boroughQueryDropDownEN() {
 
     var queryList = ["Multimodality", "Diversity of Services and Amenities", "Closeness of Services and Amenities", "Universal Design & Accessibility", "Transit Connectivity", "Greenery"
+        // , "Walkability"
+    ];
+    var dropDownDiv = document.getElementById("borough-dropdown-content");
+    var dropDownHTML = "";
+
+    for (i = 0; i < queryList.length; i++) {
+        dropDownHTML += "<a href=\"#\" onclick=\"getSelectedBoroughQuery(\'" + queryList[i] + "\');\">" + queryList[i] + "</a>";
+    }
+
+    dropDownDiv.innerHTML = dropDownHTML;
+}
+
+function boroughQueryDropDownFR() {
+
+    var queryList = ["Multimodalité", "Diversité des services et commodités", "Proximité des services et commodités", "Conception universelle et accessibilité", "Connectivité des transports en commun", "Verdure"
         // , "Walkability"
     ];
     var dropDownDiv = document.getElementById("borough-dropdown-content");
@@ -34,23 +49,51 @@ function callBoroughQueryCalFunc() {
         case "Multimodality":
             displayBoroughMultimodality();
             break;
+        case "Multimodalité":
+            displayBoroughMultimodality();
+            FRQueryRating();
+            break;
         case "Universal Design & Accessibility":
             displayBoroughAccessibility();
+            break;
+        case "Conception universelle et accessibilité":
+            displayBoroughAccessibility();
+            FRQueryRating();
             break;
         case "Diversity of Services and Amenities":
             displayBoroughDiversity();
             break;
+        case "Diversité des services et commodités":
+            displayBoroughDiversity();
+            FRQueryRating();
+            break;
         case "Closeness of Services and Amenities":
             displayBoroughCloseness();
+            break;
+        case "Proximité des services et commodités":
+            displayBoroughCloseness();
+            FRQueryRating();
             break;
         case "Greenery":
             displayBoroughGreenery();
             break;
+        case "Verdure":
+            displayBoroughGreenery();
+            FRQueryRating();
+            break;
         case "Walkability":
             displayBoroughWalkability();
             break;
+        case "Marchabilité":
+            displayBoroughWalkability();
+            FRQueryRating();
+            break;
         case "Transit Connectivity":
             displayBoroughConnectivity();
+            break;
+        case "Connectivité des transports en commun":
+            displayBoroughConnectivity();
+            FRQueryRating();
             break;
         default: console.log("missing query");
     }
@@ -64,14 +107,17 @@ function displayBoroughQueryRating(ratingValue) {
         ratingWord = "Needs to Improve";
     } else if ((ratingValue >= 5) && (ratingValue < 7)) {
         ratingWord = "Good";
+        // ratingWord = "Good";
     } else if ((ratingValue >= 7) && (ratingValue < 9)) {
         ratingWord = "Very Good";
+        // ratingWord = "Very Good";
     } else if ((ratingValue > 9)) {
         ratingWord = "Excellent";
+        // ratingWord = "Excellent";
     }
 
     var queryRatingDiv = document.getElementById("borough-query-rating");
-    var ratingHTML = "<span class=\"rating-value\">" + ratingValue + "</span><span style=\"color: #d81b60;\">/10\n</span><span class=\"rating-words\">" + ratingWord + "</span><div><progress id=\"rating-bar\" value=\"" + ratingValue * 10 + "\" max=\"100\"> 32% </progress></div>";
+    var ratingHTML = "<span class=\"rating-value\">" + ratingValue + "</span><span style=\"color: #d81b60;\">/10\n</span><span class=\"rating-words\" id=\"rating-words\">" + ratingWord + "</span><div><progress id=\"rating-bar\" value=\"" + ratingValue * 10 + "\" max=\"100\"> 32% </progress></div>";
     queryRatingDiv.innerHTML = ratingHTML;
 }
 

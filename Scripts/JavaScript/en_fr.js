@@ -68,8 +68,11 @@ function FRBoroughSidebar() {
         document.getElementById("borough-name-text").innerHTML = "Nom de l'arrondissement";
         document.getElementById("borough-area-text").innerHTML = "Aire : ";
         document.getElementById("borough-area-unit").innerHTML = " m2";
-        document.getElementById("borough-hub-text").innerHTML = "Nombre de hubs : ";
-        document.getElementById("borough-cluster-text").innerHTML = "Nombre de clusters : ";
+        document.getElementById("borough-hub-text").innerHTML = "Nombre de « hubs » : ";
+        document.getElementById("borough-clusters-text").innerHTML = "Nombre de « clusters » : ";
+        document.getElementById("borough-dropbtn").innerHTML = "Sélectionner la requête<i class=\"fas fa-chevron-down\"></i>";
+        boroughQueryDropDownFR();
+        // FRQueryRating();
 
     } else if (result == 'No') {
         console.log("Translating to EN");
@@ -77,6 +80,30 @@ function FRBoroughSidebar() {
         document.getElementById("borough-area-text").innerHTML = "Area: ";
         document.getElementById("borough-area-unit").innerHTML = " sq.m.";
         document.getElementById("borough-hub-text").innerHTML = "Number of Hubs: ";
-        document.getElementById("borough-cluster-text").innerHTML = "Number of Clusters: ";
+        document.getElementById("borough-clusters-text").innerHTML = "Number of Clusters: ";
+        boroughQueryDropDownEN();
+        document.getElementById("borough-dropbtn").innerHTML = "Select Query<i class=\"fas fa-chevron-down\"></i>";
     }
+}
+
+function FRQueryRating() {
+
+    console.log("Translating Query Rating to FR");
+
+    var currentRating = document.getElementById("rating-words").innerHTML;
+
+    switch (currentRating) {
+        case "Needs to Improve": currentRating = "Doit s'améliorer";
+            break;
+        case "Good": currentRating = "Bien";
+            break;
+        case "Very Good": currentRating = "Très bien";
+            break;
+        case "Excellent": currentRating = "Excellent";
+            break;
+
+        default: console.log("Error reading query rating.");
+    }
+
+    document.getElementById("rating-words").innerHTML = currentRating;
 }
