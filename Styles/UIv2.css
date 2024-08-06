@@ -850,6 +850,10 @@ h2 {
     margin-left: 8px;
 }
 
+#borough-dropbtn-query {
+    display: inline;
+}
+
 .dropdown-content {
 
     margin-right: -70px;

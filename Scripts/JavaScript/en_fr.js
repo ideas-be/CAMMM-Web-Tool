@@ -70,7 +70,7 @@ function FRBoroughSidebar() {
         document.getElementById("borough-area-unit").innerHTML = " m2";
         document.getElementById("borough-hub-text").innerHTML = "Nombre de « hubs » : ";
         document.getElementById("borough-clusters-text").innerHTML = "Nombre de « clusters » : ";
-        document.getElementById("borough-dropbtn").innerHTML = "Sélectionner la requête<i class=\"fas fa-chevron-down\"></i>";
+        document.getElementById("borough-dropbtn-query").innerHTML = "Sélectionner la requête";
         boroughQueryDropDownFR();
         // FRQueryRating();
 
@@ -82,7 +82,7 @@ function FRBoroughSidebar() {
         document.getElementById("borough-hub-text").innerHTML = "Number of Hubs: ";
         document.getElementById("borough-clusters-text").innerHTML = "Number of Clusters: ";
         boroughQueryDropDownEN();
-        document.getElementById("borough-dropbtn").innerHTML = "Select Query<i class=\"fas fa-chevron-down\"></i>";
+        document.getElementById("borough-dropbtn-query").innerHTML = "Select Query";
     }
 }
 
@@ -106,4 +106,52 @@ function FRQueryRating() {
     }
 
     document.getElementById("rating-words").innerHTML = currentRating;
+}
+
+function FRQueryInfo() {
+    FRQueryRating();
+    var currentQuery = document.getElementById("borough-dropbtn-query").innerHTML;
+
+    switch (currentQuery) {
+        case "Multimodalité":
+            console.log("translating query info for multimodality");
+            document.getElementById("mode-carousel-title").innerHTML = "Modes de transport disponibles";
+            break;
+        case "Diversité des services et commodités":
+            console.log("translating query info for diversity of services");
+            FRServices();
+            document.getElementById("services-bargraph-title").innerHTML = "Types de services";
+            break;
+        case "Proximité des services et commodités":
+            console.log("translating query info for closeness of services");
+            FRServices();
+            document.getElementById("services-bargraph-title").innerHTML = "Distance aux services en m";
+            break;
+        case "Conception universelle et accessibilité":
+            console.log("translating query info for accessibility");
+            document.getElementById("accessibility-graph-title").innerHTML = "Accessibilité aux fauteuils roulants";
+            break;
+        case "Connectivité des transports en commun": break;
+        case "Verdure": break;
+        default: console.log("Error reading query!!!");
+    }
+}
+
+function FRServices() {
+    var serviceTypesHTML = document.getElementsByClassName("service-type");
+    console.log("Translating service types on bar graph");
+    for (i = 0; i < 3; i++) {
+        switch (serviceTypesHTML[i].innerHTML) {
+            case "Primary":
+                serviceTypesHTML[i].innerHTML = "Primaire";
+                break;
+            case "Secondary":
+                serviceTypesHTML[i].innerHTML = "Secondaire"; break;
+            case "Tertiary":
+                serviceTypesHTML[i].innerHTML = "Tertiaire"; break;
+            default: console.log("Error reading service type!!!");
+        }
+    }
+
+    document.getElementById("avail-services-text").innerHTML = "Services et commodités disponibles";
 }

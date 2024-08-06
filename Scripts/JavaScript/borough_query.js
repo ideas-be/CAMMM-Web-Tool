@@ -32,7 +32,7 @@ var selectedQuery = "Select Query";
 
 function getSelectedBoroughQuery(queryName) {
     selectedQuery = queryName;
-    document.getElementById("borough-dropbtn").innerHTML = selectedQuery + "<i class=\"fas fa-chevron-down\"></i>";
+    document.getElementById("borough-dropbtn-query").innerHTML = selectedQuery;
     callBoroughQueryCalFunc();
 
 }
@@ -51,49 +51,49 @@ function callBoroughQueryCalFunc() {
             break;
         case "Multimodalité":
             displayBoroughMultimodality();
-            FRQueryRating();
+            FRQueryInfo();
             break;
         case "Universal Design & Accessibility":
             displayBoroughAccessibility();
             break;
         case "Conception universelle et accessibilité":
             displayBoroughAccessibility();
-            FRQueryRating();
+            FRQueryInfo();
             break;
         case "Diversity of Services and Amenities":
             displayBoroughDiversity();
             break;
         case "Diversité des services et commodités":
             displayBoroughDiversity();
-            FRQueryRating();
+            FRQueryInfo();
             break;
         case "Closeness of Services and Amenities":
             displayBoroughCloseness();
             break;
         case "Proximité des services et commodités":
             displayBoroughCloseness();
-            FRQueryRating();
+            FRQueryInfo();
             break;
         case "Greenery":
             displayBoroughGreenery();
             break;
         case "Verdure":
             displayBoroughGreenery();
-            FRQueryRating();
+            FRQueryInfo();
             break;
         case "Walkability":
             displayBoroughWalkability();
             break;
         case "Marchabilité":
             displayBoroughWalkability();
-            FRQueryRating();
+            FRQueryInfo();
             break;
         case "Transit Connectivity":
             displayBoroughConnectivity();
             break;
         case "Connectivité des transports en commun":
             displayBoroughConnectivity();
-            FRQueryRating();
+            FRQueryInfo();
             break;
         default: console.log("missing query");
     }
@@ -149,7 +149,7 @@ function displayBoroughMultimodality() {
     displayBoroughQueryRating(MultimodalityRating.toFixed(0));
 
     var transitIcons = ["fas fa-bus fa-2x", "fas fa-subway fa-2x", "fas fa-train fa-2x", "fas fa-train-tram fa-2x", "fas fa-car fa-2x", "fas fa-bicycle fa-2x"];
-    var transitList = ["Bus", "Metro", "Rail", "Tram", "Car-sharing", "Bike-sharing"];
+    var transitList = ["Bus", "Metro", "Rail", "Tramway", "Car-sharing", "Bike-sharing"];
 
     // Looping and inserting available transit modes
 
@@ -192,7 +192,7 @@ function displayBoroughMultimodality() {
 
     console.log("TRANSIT MODES HTML: ", transitModeHTML);
 
-    document.getElementById("borough-query-info").innerHTML = transitModeHTML + "</div>Available Transit Modes";
+    document.getElementById("borough-query-info").innerHTML = transitModeHTML + "</div><p id=\"mode-carousel-title\">Available Transit Modes</p>";
 }
 
 function displayDiversityGraphs(boroughDiversityServices) {
@@ -207,7 +207,7 @@ function displayDiversityGraphs(boroughDiversityServices) {
     // Diversity Bar Graph HTML
     var diversityBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + boroughDiversityServices.NumOfPrimary + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + boroughDiversityServices.NumOfSecondary + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + boroughDiversityServices.NumOfTertiary + "</span></div>";
 
-    document.getElementById("borough-query-info").innerHTML = diversityBarGraphHTML + "</div>Types of Services";
+    document.getElementById("borough-query-info").innerHTML = diversityBarGraphHTML + "</div><p id=\"services-bargraph-title\">Types of Services</p>";
 }
 
 function displayAvailableServices() {
@@ -222,7 +222,7 @@ function displayAvailableServices() {
     for (serviceType in availableServices) {
         {
             // loop through all categories and append into HTML string
-            console.log("Service Type: ", serviceType);
+            // console.log("Service Type: ", serviceType);
             // check if the service is primary/secondary/tertiary and assign color
             // check the category of the service and assign icon
             for (category in availableServices[serviceType]) {
@@ -240,7 +240,7 @@ function displayAvailableServices() {
                 } else {
                     catName = category;
                 }
-                console.log("Category: ", catName);
+                // console.log("Category: ", catName);
 
                 availServiceMenuHTML += "<div class=\"service-option\" id=\"" + serviceType.toLowerCase() + "\">" + "<div class=\"borough-service-category-name\">" +
                     "<p>" + catName.toLowerCase() + "</p>" + "</div>" +
@@ -252,7 +252,7 @@ function displayAvailableServices() {
     }
 
     // insert HTML into sidebar
-    document.getElementById("borough-query-info").innerHTML += availServiceMenuHTML + "<p>Available Services and Amenities</p>";
+    document.getElementById("borough-query-info").innerHTML += availServiceMenuHTML + "<p id=\"avail-services-text\">Available Services and Amenities</p>";
 }
 
 function displayBoroughDiversity() {
@@ -294,7 +294,7 @@ function displayClosenessGraphs(boroughClosenessServices) {
     var closenessBarGraphHTML = "<div class=\"bar-graph\" id=\"primary-services\" style=\"width: " + primaryBarWidth + "px;\"><span class=\"service-type\">Primary</span><span class=\"service-number\">" + boroughClosenessServices.AvgDistPrimary.toFixed(0) + "</span></div>" + "<div class=\"bar-graph\" id=\"secondary-services\" style=\"width: " + secondaryBarWidth + "px;\"><span class=\"service-type\">Secondary</span><span class=\"service-number\">" + boroughClosenessServices.AvgDistSecondary.toFixed(0) + "</span></div>" + "<div class=\"bar-graph\" id=\"tertiary-services\" style=\"width: " + tertiaryBarWidth + "px;\"><span class=\"service-type\">Tertiary</span><span class=\"service-number\">" + boroughClosenessServices.AvgDistTertiary.toFixed(0) + "</span></div>";
 
     // Inserting bar graphs into query info HTML
-    document.getElementById("borough-query-info").innerHTML = closenessBarGraphHTML + "<div>Distances to Services in m</div>";
+    document.getElementById("borough-query-info").innerHTML = closenessBarGraphHTML + "<div id=\"services-bargraph-title\">Distances to Services in m</div>";
 }
 
 function displayBoroughCloseness() {
@@ -355,7 +355,7 @@ function displayBoroughAccessGraphs(boroughAccessibility) {
     }
 
     console.log("Accessibility HTML", accessibilityHTML);
-    document.getElementById("borough-query-info").innerHTML = accessibilityHTML + "</div>Wheelchair Accessibility";
+    document.getElementById("borough-query-info").innerHTML = accessibilityHTML + "</div><p id=\"accessibility-graph-title\">Wheelchair Accessibility</p>";
 }
 function displayBoroughAccessibility() {
     // Display universal accessibility query info for selected borough
