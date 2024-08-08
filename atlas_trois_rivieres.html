@@ -9,6 +9,7 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
     <link rel="stylesheet" href="Styles/UIv2.css">
     <script src="Scripts/JavaScript/en_fr.js"></script>
+    <script src="Scripts/JavaScript/contact.js"></script>
     <script src="Scripts/JavaScript/atlas-tutorial.js"></script>
     <script src="Scripts/JavaScript/sidebar.js"></script>
     <script src="Scripts/JavaScript/citySidebar.js"></script>
@@ -47,6 +48,16 @@
     </div>
     <!-- END OF ATLAS TUTORIAL -->
 
+    <!-- START OF CONTACT INFO POP UP -->
+    <div id="contact-info-overlay">
+        <div id="contact-info-box" style="margin-left: 45%; margin-top: 20%;">
+            <a class="contact-close-btn" onclick="closeContactInfo();">x</a>
+            <p id="contact-text">This is a contact prompt text.</p>
+        </div>
+    </div>
+
+    <!-- END OF CONTACT INFO POP UP -->
+
     <!-- START OF LEFT CITY SIDEBAR -->
     <div id="myCitySidebar" class="left-sidebar">
         <a class="close-btn" onclick="closeCitySidebar();">x</a>
@@ -54,10 +65,24 @@
         <p id="cn-text">City Name</p>
         <h2 id="city-name-text"></h2>
         <div class="city-stats" id="city-stats">
-            <p id="city-area">Area: </p>
-            <p id="city-population">Population in mil: </p>
-            <p id="city-density">Density: </p>
+            <table>
+                <tr>
+                    <td id="city-area">Area: </td>
+                    <td id="city-area-value"></td>
+                    <td id="city-area-unit"></td>
+                </tr>
+                <tr>
+                    <td id="city-population">Population in mil:</td>
+                    <td id="city-population-value"></td>
+                </tr>
+                <tr>
+                    <td id="city-density">Density: </td>
+                    <td id="city-density-value"></td>
+                    <td id="city-density-unit"></td>
+                </tr>
+            </table>
             <p id="avail-transit-text">Available Transit Modes: </p>
+
         </div>
         <div id="city-transit-modes"></div>
         <div id="population-transit-graph"></div>
@@ -120,6 +145,11 @@
 
     <!-- START OF HEADER AND MAP BODY -->
     <div id="main">
+        <div>
+            <p onclick="displayContactInfo();"
+                style="margin-left: 20px; font-size: 10px; color: #ffffff; font-weight: bold; text-decoration: none;">
+                CONTACT</p>
+        </div>
         <div id="en-fr-toggle" style="display: inline-flex; padding-left: 10px;">
             <p class="toggleText" style="color: #fff;"> EN
                 <label class="switch">
@@ -138,7 +168,7 @@
 
     <!-- testing a sidebar code -->
     <script>
-        displayIntroPrompt();
+        // displayIntroPrompt();
         setTimeout(clickBoroughs, 350);
 
         // START OF MAP FUNCTIONS

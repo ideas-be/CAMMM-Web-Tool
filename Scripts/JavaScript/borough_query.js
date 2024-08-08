@@ -410,9 +410,7 @@ function displayBoroughGreenery() {
     // Display greenery query info for selected borough
     console.log("Borough-level Greenery");
     fetchGeoJson("greenery.geojson");
-    // setTimeout(
     loadGreeneryData();
-    // , 200);
 }
 // function displayBoroughWalkability() {
 //     // Display walkability query info for selected borough

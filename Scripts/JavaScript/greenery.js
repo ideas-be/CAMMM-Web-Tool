@@ -2,6 +2,7 @@ var boroughGreenFeatures = [];
 var greenJSON = [];
 
 function loadGreeneryData() {
+    boroughGreenFeatures = [];
     var categoryTotal = 0;
     greenJSON = readGeoJsonObj("greenery.geojson");
     console.log("Greenery JSON is: ", greenJSON);
@@ -63,11 +64,15 @@ function renderGreenNodes() {
 
 function displayGreenNodeBarGraphs() {
 
+    // console.log("sparseBarWidth", sparseBarWidth);
+
     var sparseFeatures = 0;
     var fairFeatures = 0;
     var moderateFeatures = 0;
     var goodFeatures = 0;
     var denseFeatures = 0;
+
+    console.log("sparseFeatures", sparseFeatures);
 
     // TODO: Update Boroughs for New Greenery Data in 5 cities
 
@@ -88,11 +93,11 @@ function displayGreenNodeBarGraphs() {
     }
 
     // Display the bar graph with numbers of nodes
-    var sparseBarWidth = (sparseFeatures / boroughGreenFeatures.length) * 1000;
-    var fairBarWidth = (fairFeatures / boroughGreenFeatures.length) * 1000;
-    var moderateBarWidth = (moderateFeatures / boroughGreenFeatures.length) * 1000;
-    var goodBarWidth = (goodFeatures / boroughGreenFeatures.length) * 1000;
-    var denseBarWidth = (denseFeatures / boroughGreenFeatures.length) * 1000;
+    var sparseBarWidth = (sparseFeatures / boroughGreenFeatures.length) * 1100;
+    var fairBarWidth = (fairFeatures / boroughGreenFeatures.length) * 1100;
+    var moderateBarWidth = (moderateFeatures / boroughGreenFeatures.length) * 1100;
+    var goodBarWidth = (goodFeatures / boroughGreenFeatures.length) * 1100;
+    var denseBarWidth = (denseFeatures / boroughGreenFeatures.length) * 1100;
 
 
     // Greenery Bar Graph HTML
@@ -105,4 +110,7 @@ function displayGreenNodeBarGraphs() {
 
     document.getElementById("borough-query-info").innerHTML = greeneryBarGraphHTML + "</div><p id=\"greenery-graph-title\">Number of Nodes by Greenery Index</p>";
 
+
+    console.log("sparseFeatures", sparseFeatures);
+    // console.log("sparseBarWidth", sparseBarWidth);
 }
