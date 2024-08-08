@@ -378,13 +378,13 @@ function displayBoroughAccessibility() {
 function displayBoroughConnectivityGraphs(boroughConnectvity) {
     var queryInfoDiv = document.getElementById("borough-query-info");
 
-    var connectivityHTML = "<p>Network Analysis Metrics</p><div id=\"connectivity-graphs\">";
+    var connectivityHTML = "<p id=\"connectivity-graph-title\">Network Analysis Metrics</p><div id=\"connectivity-graphs\">";
 
     var centralityWidth = boroughConnectvity.Centrality * 50 + 20;
     var closenessWidth = boroughConnectvity.Closeness * 50;
     var betweennessWidth = boroughConnectvity.Betweenness * 50 + 80;
 
-    connectivityHTML += "<div class=\"bar-graph\" id=\"centrality\" style=\"width: " + centralityWidth + "px;\"><span class=\"metrics-type\">Centrality</span><span class=\"metrics-number\">" + boroughConnectvity.Centrality + "</span></div><p>The higher the value, the better the connection to the rest of the transit network.</p>" + "<div class=\"bar-graph\" id=\"closeness\" style=\"width: " + closenessWidth + "px;\"><span class=\"metrics-type\">Closeness</span><span class=\"metrics-number\">" + boroughConnectvity.Closeness + "</span></div><p>The higher the value, the more likely this node will be used in a trip.</p>" + "<div class=\"bar-graph\" id=\"betweenness\" style=\"width: " + betweennessWidth + "px;\"><span class=\"metrics-type\">Betweenness</span><span class=\"metrics-number\">" + boroughConnectvity.Betweenness + "</span></div><p>The higher the value, the larger the number of connections to this node.</p>";
+    connectivityHTML += "<div class=\"bar-graph\" id=\"centrality\" style=\"width: " + centralityWidth + "px;\"><span class=\"metrics-type\">Centrality</span><span class=\"metrics-number\">" + boroughConnectvity.Centrality + "</span></div><p class=\"metrics-definition\">The higher the value, the better the connection to the rest of the transit network.</p>" + "<div class=\"bar-graph\" id=\"closeness\" style=\"width: " + closenessWidth + "px;\"><span class=\"metrics-type\">Closeness</span><span class=\"metrics-number\">" + boroughConnectvity.Closeness + "</span></div><p class=\"metrics-definition\">The higher the value, the more likely this node will be used in a trip.</p>" + "<div class=\"bar-graph\" id=\"betweenness\" style=\"width: " + betweennessWidth + "px;\"><span class=\"metrics-type\">Betweenness</span><span class=\"metrics-number\">" + boroughConnectvity.Betweenness + "</span></div><p class=\"metrics-definition\">The higher the value, the larger the number of connections to this node.</p>";
 
     queryInfoDiv.innerHTML = connectivityHTML + "</div>";
     console.log("Connectivity HTML: ", queryInfoDiv);
@@ -410,7 +410,9 @@ function displayBoroughGreenery() {
     // Display greenery query info for selected borough
     console.log("Borough-level Greenery");
     fetchGeoJson("greenery.geojson");
-    setTimeout(loadGreeneryData, 200);
+    // setTimeout(
+    loadGreeneryData();
+    // , 200);
 }
 // function displayBoroughWalkability() {
 //     // Display walkability query info for selected borough

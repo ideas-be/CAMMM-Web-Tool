@@ -131,8 +131,14 @@ function FRQueryInfo() {
             console.log("translating query info for accessibility");
             document.getElementById("accessibility-graph-title").innerHTML = "Accessibilité aux fauteuils roulants";
             break;
-        case "Connectivité des transports en commun": break;
-        case "Verdure": break;
+        case "Connectivité des transports en commun":
+            console.log("translating query info for connectivity");
+            FRConnectivityMetrics();
+            break;
+        case "Verdure":
+            console.log("translating query info for greenery");
+            FRGreeneryInfo();
+            break;
         default: console.log("Error reading query!!!");
     }
 }
@@ -154,4 +160,56 @@ function FRServices() {
     }
 
     document.getElementById("avail-services-text").innerHTML = "Services et commodités disponibles";
+}
+
+function FRConnectivityMetrics() {
+    document.getElementById("connectivity-graph-title").innerHTML = "Métriques d'analyse de réseau";
+
+    var metricsTypesHTML = document.getElementsByClassName("metrics-type");
+    var metricsDefinitionsHTML = document.getElementsByClassName("metrics-definition");
+    console.log("Translating network analysis metrics on bar graph");
+    for (i = 0; i < 3; i++) {
+        switch (metricsTypesHTML[i].innerHTML) {
+            case "Centrality":
+                metricsTypesHTML[i].innerHTML = "Centralité";
+                metricsDefinitionsHTML[i].innerHTML = "Plus la valeur est élevée, meilleure est la connexion avec le reste du réseau de transit.";
+                break;
+            case "Closeness":
+                metricsTypesHTML[i].innerHTML = "Proximité";
+                metricsDefinitionsHTML[i].innerHTML = "Plus la valeur est élevée, plus ce nœud est susceptible d'être utilisé lors d'un déplacement.";
+                break;
+            case "Betweenness":
+                metricsTypesHTML[i].innerHTML = "Interdépendance";
+                metricsDefinitionsHTML[i].innerHTML = "Plus la valeur est élevée, plus le nombre de connexions à ce nœud est important.";
+                break;
+            default: console.log("Error reading service type!!!");
+        }
+    }
+}
+
+function FRGreeneryInfo() {
+    var coverageTypesHTML = document.getElementsByClassName("coverage-type");
+
+    for (i = 0; i < 5; i++) {
+        switch (coverageTypesHTML[i].innerHTML) {
+            case "Sparse Coverage":
+                coverageTypesHTML[i].innerHTML = "Couverture éparse";
+                break;
+            case "Fair Coverage":
+                coverageTypesHTML[i].innerHTML = "Couverture adéquate";
+                break;
+            case "Moderate Coverage":
+                coverageTypesHTML[i].innerHTML = "Couverture moyenne";
+                break;
+            case "Good Coverage":
+                coverageTypesHTML[i].innerHTML = "Bonne couverture";
+                break;
+            case "Dense Coverage":
+                coverageTypesHTML[i].innerHTML = "Couverture dense";
+                break;
+            default: console.log("Error reading service type!!!");
+        }
+    }
+
+    document.getElementById("greenery-graph-title").innerHTML = "Nombre de nœuds par indice de verdure";
 }

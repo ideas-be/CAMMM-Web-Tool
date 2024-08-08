@@ -103,6 +103,6 @@ function displayGreenNodeBarGraphs() {
         "<div class=\"bar-graph\" id=\"dense-coverage\" style=\"width: " + denseBarWidth + "px;\"><span class=\"coverage-type\">Dense Coverage</span><span class=\"node-number\">" + denseFeatures + "</span></div>";
 
 
-    document.getElementById("borough-query-info").innerHTML = greeneryBarGraphHTML + "</div>Number of Nodes by Greenery Index";
+    document.getElementById("borough-query-info").innerHTML = greeneryBarGraphHTML + "</div><p id=\"greenery-graph-title\">Number of Nodes by Greenery Index</p>";
 
 }
