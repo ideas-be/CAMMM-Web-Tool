@@ -28,7 +28,14 @@ function FRAtlasPage() {
 }
 
 function FRTutorial() {
+    var result = document.getElementsByClassName("switch-input")[0].checked ? 'Yes' : 'No';
 
+    if (result == 'Yes') {
+        console.log("Translating tutorial to FR.");
+
+    } else if (result == 'No') {
+        console.log("Translating tutorial to EN.");
+    }
 }
 
 function FRCityInfo() {

@@ -694,6 +694,19 @@ h2 {
     /* margin-left: -20px; */
 }
 
+#contact-button {
+    margin-left: 20px;
+    font-size: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#contact-button:hover {
+    cursor: pointer;
+    color: #e6bbca;
+}
+
 #tutorial-arrow-section {
     width: 250px;
     padding: 10px 20px;
@@ -1264,6 +1277,11 @@ progress::-moz-progress-bar {
     /* right: 0; */
     /* float: right; */
     color: #ffffff;
+}
+
+#main .fas.fa-info-circle:hover {
+    cursor: pointer;
+    color: #e6bbca;
 }
 
 #city-image {
